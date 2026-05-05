@@ -1,0 +1,21 @@
+{
+  "version": "9.3.3",
+  "source": "https://github.com/elastic/elasticsearch-specification",
+  "endpoints": [
+    {
+      "name": "search",
+      "request_type": "SearchRequest",
+      "response_type": "SearchResponse"
+    },
+    {
+      "name": "indices_create",
+      "request_type": "IndicesCreateRequest",
+      "response_type": "IndicesCreateResponse"
+    },
+    {
+      "name": "security_create_api_key",
+      "request_type": "SecurityCreateApiKeyRequest",
+      "response_type": "SecurityCreateApiKeyResponse"
+    }
+  ]
+}

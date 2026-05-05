@@ -1,0 +1,12 @@
+import {
+  "moonbit-community/elasticsearch" @es,
+}
+
+import {
+  "moonbitlang/async",
+  "moonbitlang/async/http",
+  "moonbitlang/async/socket",
+  "moonbitlang/core/json",
+} for "test"
+
+supported_targets = "+native"

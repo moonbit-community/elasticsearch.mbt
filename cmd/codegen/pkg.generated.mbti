@@ -1,0 +1,26 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "moonbit-community/elasticsearch/cmd/codegen"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+
+// Errors
+
+// Types and methods
+type BodyKind derive(@debug.Debug)
+
+type EndpointSpec derive(@debug.Debug)
+
+type FieldSpec derive(@debug.Debug)
+
+type PathParam derive(@debug.Debug)
+
+type UrlSpec derive(@debug.Debug)
+
+// Type aliases
+
+// Traits
+
