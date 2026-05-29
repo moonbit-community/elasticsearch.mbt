@@ -682,7 +682,7 @@ fn write_json_to_json_impl(
   let receiver = if fields.length() == 0 { "_self" } else { "self" }
   out.write_string("///|\n")
   out.write_string(
-    "pub impl ToJson for \{type_name} with to_json(\{receiver} : \{type_name}) -> Json {\n",
+    "pub impl ToJson for \{type_name} with fn to_json(\{receiver} : \{type_name}) -> Json {\n",
   )
   out.write_string("  let obj : Map[String, Json] = {}\n")
   for field in fields {
@@ -709,7 +709,7 @@ fn write_json_from_json_impl(
   let error_message = mbt_string(type_name + ": expected object")
   out.write_string("///|\n")
   out.write_string(
-    "pub impl FromJson for \{type_name} with from_json(json, path) {\n",
+    "pub impl FromJson for \{type_name} with fn from_json(json, path) {\n",
   )
   if fields.length() == 0 {
     out.write_string(

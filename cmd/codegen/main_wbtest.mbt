@@ -100,6 +100,14 @@ test "generate fixture endpoints from official schema shape" {
   assert_eq(endpoints.length(), 2)
   let root = generate_root(endpoints)
   assert_true(root.contains("pub async fn Client::search("))
+  assert_true(root.contains("pub impl ToJson for SearchQuery with fn to_json("))
+  assert_true(
+    root.contains(
+      "pub impl FromJson for SearchQuery with fn from_json(json, path)",
+    ),
+  )
+  assert_eq(root.contains("with to_json("), false)
+  assert_eq(root.contains("with from_json("), false)
   assert_true(root.contains("index? : String"))
   assert_true(root.contains("warning: match obj.get(\"warning\")"))
   assert_true(
