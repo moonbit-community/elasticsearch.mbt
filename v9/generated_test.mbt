@@ -86,7 +86,7 @@ async test "v9 wrappers integrate with root client endpoints" {
     )
     defer client.close()
     let info = @v9.info(client, InfoRequest::new())
-    assert_eq(info.body.cluster_uuid, Json::string("uuid-v9"))
+    @debug.assert_eq(info.body.cluster_uuid, Json::string("uuid-v9"))
     let search = @v9.search(
       client,
       SearchRequest::new(

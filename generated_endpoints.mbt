@@ -4,7 +4,7 @@
 pub(all) struct AsyncSearchDeleteQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for AsyncSearchDeleteQuery with to_json(
+pub impl ToJson for AsyncSearchDeleteQuery with fn to_json(
   _self : AsyncSearchDeleteQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -12,7 +12,7 @@ pub impl ToJson for AsyncSearchDeleteQuery with to_json(
 }
 
 ///|
-pub impl FromJson for AsyncSearchDeleteQuery with from_json(json, path) {
+pub impl FromJson for AsyncSearchDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "AsyncSearchDeleteQuery: expected object"),
@@ -75,7 +75,9 @@ pub(all) struct AsyncSearchGetQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for AsyncSearchGetQuery with to_json(self : AsyncSearchGetQuery) -> Json {
+pub impl ToJson for AsyncSearchGetQuery with fn to_json(
+  self : AsyncSearchGetQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.keep_alive {
     Some(value) => obj["keep_alive"] = value.to_json()
@@ -97,7 +99,7 @@ pub impl ToJson for AsyncSearchGetQuery with to_json(self : AsyncSearchGetQuery)
 }
 
 ///|
-pub impl FromJson for AsyncSearchGetQuery with from_json(json, path) {
+pub impl FromJson for AsyncSearchGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "AsyncSearchGetQuery: expected object"))
   }
@@ -218,7 +220,7 @@ pub(all) struct AsyncSearchStatusQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for AsyncSearchStatusQuery with to_json(
+pub impl ToJson for AsyncSearchStatusQuery with fn to_json(
   self : AsyncSearchStatusQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -230,7 +232,7 @@ pub impl ToJson for AsyncSearchStatusQuery with to_json(
 }
 
 ///|
-pub impl FromJson for AsyncSearchStatusQuery with from_json(json, path) {
+pub impl FromJson for AsyncSearchStatusQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "AsyncSearchStatusQuery: expected object"),
@@ -345,7 +347,7 @@ pub(all) struct AsyncSearchSubmitQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for AsyncSearchSubmitQuery with to_json(
+pub impl ToJson for AsyncSearchSubmitQuery with fn to_json(
   self : AsyncSearchSubmitQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -525,7 +527,7 @@ pub impl ToJson for AsyncSearchSubmitQuery with to_json(
 }
 
 ///|
-pub impl FromJson for AsyncSearchSubmitQuery with from_json(json, path) {
+pub impl FromJson for AsyncSearchSubmitQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "AsyncSearchSubmitQuery: expected object"),
@@ -1119,7 +1121,7 @@ pub(all) struct AsyncSearchSubmitBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for AsyncSearchSubmitBody with to_json(
+pub impl ToJson for AsyncSearchSubmitBody with fn to_json(
   self : AsyncSearchSubmitBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -1259,7 +1261,7 @@ pub impl ToJson for AsyncSearchSubmitBody with to_json(
 }
 
 ///|
-pub impl FromJson for AsyncSearchSubmitBody with from_json(json, path) {
+pub impl FromJson for AsyncSearchSubmitBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "AsyncSearchSubmitBody: expected object"),
@@ -1573,7 +1575,7 @@ pub(all) struct AutoscalingDeleteAutoscalingPolicyQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for AutoscalingDeleteAutoscalingPolicyQuery with to_json(
+pub impl ToJson for AutoscalingDeleteAutoscalingPolicyQuery with fn to_json(
   self : AutoscalingDeleteAutoscalingPolicyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -1589,7 +1591,7 @@ pub impl ToJson for AutoscalingDeleteAutoscalingPolicyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for AutoscalingDeleteAutoscalingPolicyQuery with from_json(
+pub impl FromJson for AutoscalingDeleteAutoscalingPolicyQuery with fn from_json(
   json,
   path,
 ) {
@@ -1675,7 +1677,7 @@ pub(all) struct AutoscalingGetAutoscalingCapacityQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for AutoscalingGetAutoscalingCapacityQuery with to_json(
+pub impl ToJson for AutoscalingGetAutoscalingCapacityQuery with fn to_json(
   self : AutoscalingGetAutoscalingCapacityQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -1687,7 +1689,7 @@ pub impl ToJson for AutoscalingGetAutoscalingCapacityQuery with to_json(
 }
 
 ///|
-pub impl FromJson for AutoscalingGetAutoscalingCapacityQuery with from_json(
+pub impl FromJson for AutoscalingGetAutoscalingCapacityQuery with fn from_json(
   json,
   path,
 ) {
@@ -1731,7 +1733,7 @@ pub(all) struct AutoscalingGetAutoscalingCapacityResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for AutoscalingGetAutoscalingCapacityResponse with to_json(
+pub impl ToJson for AutoscalingGetAutoscalingCapacityResponse with fn to_json(
   self : AutoscalingGetAutoscalingCapacityResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -1740,7 +1742,7 @@ pub impl ToJson for AutoscalingGetAutoscalingCapacityResponse with to_json(
 }
 
 ///|
-pub impl FromJson for AutoscalingGetAutoscalingCapacityResponse with from_json(
+pub impl FromJson for AutoscalingGetAutoscalingCapacityResponse with fn from_json(
   json,
   path,
 ) {
@@ -1789,7 +1791,7 @@ pub(all) struct AutoscalingGetAutoscalingPolicyQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for AutoscalingGetAutoscalingPolicyQuery with to_json(
+pub impl ToJson for AutoscalingGetAutoscalingPolicyQuery with fn to_json(
   self : AutoscalingGetAutoscalingPolicyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -1801,7 +1803,7 @@ pub impl ToJson for AutoscalingGetAutoscalingPolicyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for AutoscalingGetAutoscalingPolicyQuery with from_json(
+pub impl FromJson for AutoscalingGetAutoscalingPolicyQuery with fn from_json(
   json,
   path,
 ) {
@@ -1878,7 +1880,7 @@ pub(all) struct AutoscalingPutAutoscalingPolicyQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for AutoscalingPutAutoscalingPolicyQuery with to_json(
+pub impl ToJson for AutoscalingPutAutoscalingPolicyQuery with fn to_json(
   self : AutoscalingPutAutoscalingPolicyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -1894,7 +1896,7 @@ pub impl ToJson for AutoscalingPutAutoscalingPolicyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for AutoscalingPutAutoscalingPolicyQuery with from_json(
+pub impl FromJson for AutoscalingPutAutoscalingPolicyQuery with fn from_json(
   json,
   path,
 ) {
@@ -1997,7 +1999,7 @@ pub(all) struct BulkQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for BulkQuery with to_json(self : BulkQuery) -> Json {
+pub impl ToJson for BulkQuery with fn to_json(self : BulkQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.include_source_on_error {
     Some(value) => obj["include_source_on_error"] = value.to_json()
@@ -2051,7 +2053,7 @@ pub impl ToJson for BulkQuery with to_json(self : BulkQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for BulkQuery with from_json(json, path) {
+pub impl FromJson for BulkQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "BulkQuery: expected object"))
   }
@@ -2233,7 +2235,7 @@ pub(all) struct BulkResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for BulkResponse with to_json(self : BulkResponse) -> Json {
+pub impl ToJson for BulkResponse with fn to_json(self : BulkResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["errors"] = self.errors.to_json()
   obj["items"] = self.items.to_json()
@@ -2246,7 +2248,7 @@ pub impl ToJson for BulkResponse with to_json(self : BulkResponse) -> Json {
 }
 
 ///|
-pub impl FromJson for BulkResponse with from_json(json, path) {
+pub impl FromJson for BulkResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "BulkResponse: expected object"))
   }
@@ -2316,7 +2318,9 @@ pub(all) struct CancelReindexQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CancelReindexQuery with to_json(self : CancelReindexQuery) -> Json {
+pub impl ToJson for CancelReindexQuery with fn to_json(
+  self : CancelReindexQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.wait_for_completion {
     Some(value) => obj["wait_for_completion"] = value.to_json()
@@ -2326,7 +2330,7 @@ pub impl ToJson for CancelReindexQuery with to_json(self : CancelReindexQuery) -
 }
 
 ///|
-pub impl FromJson for CancelReindexQuery with from_json(json, path) {
+pub impl FromJson for CancelReindexQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CancelReindexQuery: expected object"))
   }
@@ -2377,7 +2381,7 @@ pub(all) struct CancelReindexResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CancelReindexResponse with to_json(
+pub impl ToJson for CancelReindexResponse with fn to_json(
   self : CancelReindexResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -2433,7 +2437,7 @@ pub impl ToJson for CancelReindexResponse with to_json(
 }
 
 ///|
-pub impl FromJson for CancelReindexResponse with from_json(json, path) {
+pub impl FromJson for CancelReindexResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CancelReindexResponse: expected object"),
@@ -2551,7 +2555,7 @@ pub(all) struct CapabilitiesQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CapabilitiesQuery with to_json(self : CapabilitiesQuery) -> Json {
+pub impl ToJson for CapabilitiesQuery with fn to_json(self : CapabilitiesQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.method_ {
     Some(value) => obj["method"] = value.to_json()
@@ -2581,7 +2585,7 @@ pub impl ToJson for CapabilitiesQuery with to_json(self : CapabilitiesQuery) -> 
 }
 
 ///|
-pub impl FromJson for CapabilitiesQuery with from_json(json, path) {
+pub impl FromJson for CapabilitiesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CapabilitiesQuery: expected object"))
   }
@@ -2675,7 +2679,7 @@ pub(all) struct CapabilitiesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CapabilitiesResponse with to_json(
+pub impl ToJson for CapabilitiesResponse with fn to_json(
   self : CapabilitiesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -2690,7 +2694,7 @@ pub impl ToJson for CapabilitiesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for CapabilitiesResponse with from_json(json, path) {
+pub impl FromJson for CapabilitiesResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CapabilitiesResponse: expected object"))
   }
@@ -2747,7 +2751,7 @@ pub(all) struct CatAliasesQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatAliasesQuery with to_json(self : CatAliasesQuery) -> Json {
+pub impl ToJson for CatAliasesQuery with fn to_json(self : CatAliasesQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.h {
     Some(value) => obj["h"] = value.to_json()
@@ -2769,7 +2773,7 @@ pub impl ToJson for CatAliasesQuery with to_json(self : CatAliasesQuery) -> Json
 }
 
 ///|
-pub impl FromJson for CatAliasesQuery with from_json(json, path) {
+pub impl FromJson for CatAliasesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatAliasesQuery: expected object"))
   }
@@ -2880,7 +2884,9 @@ pub(all) struct CatAllocationQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatAllocationQuery with to_json(self : CatAllocationQuery) -> Json {
+pub impl ToJson for CatAllocationQuery with fn to_json(
+  self : CatAllocationQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.h {
     Some(value) => obj["h"] = value.to_json()
@@ -2902,7 +2908,7 @@ pub impl ToJson for CatAllocationQuery with to_json(self : CatAllocationQuery) -
 }
 
 ///|
-pub impl FromJson for CatAllocationQuery with from_json(json, path) {
+pub impl FromJson for CatAllocationQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatAllocationQuery: expected object"))
   }
@@ -3012,7 +3018,7 @@ pub(all) struct CatCircuitBreakerQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatCircuitBreakerQuery with to_json(
+pub impl ToJson for CatCircuitBreakerQuery with fn to_json(
   self : CatCircuitBreakerQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -3036,7 +3042,7 @@ pub impl ToJson for CatCircuitBreakerQuery with to_json(
 }
 
 ///|
-pub impl FromJson for CatCircuitBreakerQuery with from_json(json, path) {
+pub impl FromJson for CatCircuitBreakerQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CatCircuitBreakerQuery: expected object"),
@@ -3150,7 +3156,7 @@ pub(all) struct CatComponentTemplatesQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatComponentTemplatesQuery with to_json(
+pub impl ToJson for CatComponentTemplatesQuery with fn to_json(
   self : CatComponentTemplatesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -3174,7 +3180,7 @@ pub impl ToJson for CatComponentTemplatesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for CatComponentTemplatesQuery with from_json(json, path) {
+pub impl FromJson for CatComponentTemplatesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CatComponentTemplatesQuery: expected object"),
@@ -3284,7 +3290,7 @@ pub(all) struct CatCountQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatCountQuery with to_json(self : CatCountQuery) -> Json {
+pub impl ToJson for CatCountQuery with fn to_json(self : CatCountQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.h {
     Some(value) => obj["h"] = value.to_json()
@@ -3298,7 +3304,7 @@ pub impl ToJson for CatCountQuery with to_json(self : CatCountQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for CatCountQuery with from_json(json, path) {
+pub impl FromJson for CatCountQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatCountQuery: expected object"))
   }
@@ -3381,7 +3387,7 @@ pub(all) struct CatFielddataQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatFielddataQuery with to_json(self : CatFielddataQuery) -> Json {
+pub impl ToJson for CatFielddataQuery with fn to_json(self : CatFielddataQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.fields {
     Some(value) => obj["fields"] = value.to_json()
@@ -3399,7 +3405,7 @@ pub impl ToJson for CatFielddataQuery with to_json(self : CatFielddataQuery) -> 
 }
 
 ///|
-pub impl FromJson for CatFielddataQuery with from_json(json, path) {
+pub impl FromJson for CatFielddataQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatFielddataQuery: expected object"))
   }
@@ -3497,7 +3503,7 @@ pub(all) struct CatHealthQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatHealthQuery with to_json(self : CatHealthQuery) -> Json {
+pub impl ToJson for CatHealthQuery with fn to_json(self : CatHealthQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.ts {
     Some(value) => obj["ts"] = value.to_json()
@@ -3515,7 +3521,7 @@ pub impl ToJson for CatHealthQuery with to_json(self : CatHealthQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for CatHealthQuery with from_json(json, path) {
+pub impl FromJson for CatHealthQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatHealthQuery: expected object"))
   }
@@ -3597,13 +3603,13 @@ pub async fn Client::cat_health(
 pub(all) struct CatHelpQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatHelpQuery with to_json(_self : CatHelpQuery) -> Json {
+pub impl ToJson for CatHelpQuery with fn to_json(_self : CatHelpQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for CatHelpQuery with from_json(json, path) {
+pub impl FromJson for CatHelpQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "CatHelpQuery: expected object"))
   }
@@ -3659,7 +3665,7 @@ pub(all) struct CatIndicesQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatIndicesQuery with to_json(self : CatIndicesQuery) -> Json {
+pub impl ToJson for CatIndicesQuery with fn to_json(self : CatIndicesQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
@@ -3693,7 +3699,7 @@ pub impl ToJson for CatIndicesQuery with to_json(self : CatIndicesQuery) -> Json
 }
 
 ///|
-pub impl FromJson for CatIndicesQuery with from_json(json, path) {
+pub impl FromJson for CatIndicesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatIndicesQuery: expected object"))
   }
@@ -3846,7 +3852,7 @@ pub(all) struct CatMasterQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatMasterQuery with to_json(self : CatMasterQuery) -> Json {
+pub impl ToJson for CatMasterQuery with fn to_json(self : CatMasterQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.h {
     Some(value) => obj["h"] = value.to_json()
@@ -3868,7 +3874,7 @@ pub impl ToJson for CatMasterQuery with to_json(self : CatMasterQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for CatMasterQuery with from_json(json, path) {
+pub impl FromJson for CatMasterQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatMasterQuery: expected object"))
   }
@@ -3965,7 +3971,7 @@ pub(all) struct CatMlDataFrameAnalyticsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatMlDataFrameAnalyticsQuery with to_json(
+pub impl ToJson for CatMlDataFrameAnalyticsQuery with fn to_json(
   self : CatMlDataFrameAnalyticsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -3985,7 +3991,7 @@ pub impl ToJson for CatMlDataFrameAnalyticsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for CatMlDataFrameAnalyticsQuery with from_json(json, path) {
+pub impl FromJson for CatMlDataFrameAnalyticsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CatMlDataFrameAnalyticsQuery: expected object"),
@@ -4086,7 +4092,9 @@ pub(all) struct CatMlDatafeedsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatMlDatafeedsQuery with to_json(self : CatMlDatafeedsQuery) -> Json {
+pub impl ToJson for CatMlDatafeedsQuery with fn to_json(
+  self : CatMlDatafeedsQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
@@ -4104,7 +4112,7 @@ pub impl ToJson for CatMlDatafeedsQuery with to_json(self : CatMlDatafeedsQuery)
 }
 
 ///|
-pub impl FromJson for CatMlDatafeedsQuery with from_json(json, path) {
+pub impl FromJson for CatMlDatafeedsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatMlDatafeedsQuery: expected object"))
   }
@@ -4203,7 +4211,7 @@ pub(all) struct CatMlJobsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatMlJobsQuery with to_json(self : CatMlJobsQuery) -> Json {
+pub impl ToJson for CatMlJobsQuery with fn to_json(self : CatMlJobsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
@@ -4221,7 +4229,7 @@ pub impl ToJson for CatMlJobsQuery with to_json(self : CatMlJobsQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for CatMlJobsQuery with from_json(json, path) {
+pub impl FromJson for CatMlJobsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatMlJobsQuery: expected object"))
   }
@@ -4322,7 +4330,7 @@ pub(all) struct CatMlTrainedModelsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatMlTrainedModelsQuery with to_json(
+pub impl ToJson for CatMlTrainedModelsQuery with fn to_json(
   self : CatMlTrainedModelsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -4350,7 +4358,7 @@ pub impl ToJson for CatMlTrainedModelsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for CatMlTrainedModelsQuery with from_json(json, path) {
+pub impl FromJson for CatMlTrainedModelsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CatMlTrainedModelsQuery: expected object"),
@@ -4472,7 +4480,7 @@ pub(all) struct CatNodeattrsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatNodeattrsQuery with to_json(self : CatNodeattrsQuery) -> Json {
+pub impl ToJson for CatNodeattrsQuery with fn to_json(self : CatNodeattrsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.h {
     Some(value) => obj["h"] = value.to_json()
@@ -4494,7 +4502,7 @@ pub impl ToJson for CatNodeattrsQuery with to_json(self : CatNodeattrsQuery) -> 
 }
 
 ///|
-pub impl FromJson for CatNodeattrsQuery with from_json(json, path) {
+pub impl FromJson for CatNodeattrsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatNodeattrsQuery: expected object"))
   }
@@ -4593,7 +4601,7 @@ pub(all) struct CatNodesQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatNodesQuery with to_json(self : CatNodesQuery) -> Json {
+pub impl ToJson for CatNodesQuery with fn to_json(self : CatNodesQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.full_id {
     Some(value) => obj["full_id"] = value.to_json()
@@ -4619,7 +4627,7 @@ pub impl ToJson for CatNodesQuery with to_json(self : CatNodesQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for CatNodesQuery with from_json(json, path) {
+pub impl FromJson for CatNodesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatNodesQuery: expected object"))
   }
@@ -4729,7 +4737,7 @@ pub(all) struct CatPendingTasksQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatPendingTasksQuery with to_json(
+pub impl ToJson for CatPendingTasksQuery with fn to_json(
   self : CatPendingTasksQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -4753,7 +4761,7 @@ pub impl ToJson for CatPendingTasksQuery with to_json(
 }
 
 ///|
-pub impl FromJson for CatPendingTasksQuery with from_json(json, path) {
+pub impl FromJson for CatPendingTasksQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatPendingTasksQuery: expected object"))
   }
@@ -4852,7 +4860,7 @@ pub(all) struct CatPluginsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatPluginsQuery with to_json(self : CatPluginsQuery) -> Json {
+pub impl ToJson for CatPluginsQuery with fn to_json(self : CatPluginsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.h {
     Some(value) => obj["h"] = value.to_json()
@@ -4878,7 +4886,7 @@ pub impl ToJson for CatPluginsQuery with to_json(self : CatPluginsQuery) -> Json
 }
 
 ///|
-pub impl FromJson for CatPluginsQuery with from_json(json, path) {
+pub impl FromJson for CatPluginsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatPluginsQuery: expected object"))
   }
@@ -4988,7 +4996,7 @@ pub(all) struct CatRecoveryQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatRecoveryQuery with to_json(self : CatRecoveryQuery) -> Json {
+pub impl ToJson for CatRecoveryQuery with fn to_json(self : CatRecoveryQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.active_only {
     Some(value) => obj["active_only"] = value.to_json()
@@ -5014,7 +5022,7 @@ pub impl ToJson for CatRecoveryQuery with to_json(self : CatRecoveryQuery) -> Js
 }
 
 ///|
-pub impl FromJson for CatRecoveryQuery with from_json(json, path) {
+pub impl FromJson for CatRecoveryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatRecoveryQuery: expected object"))
   }
@@ -5134,7 +5142,7 @@ pub(all) struct CatRepositoriesQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatRepositoriesQuery with to_json(
+pub impl ToJson for CatRepositoriesQuery with fn to_json(
   self : CatRepositoriesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -5158,7 +5166,7 @@ pub impl ToJson for CatRepositoriesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for CatRepositoriesQuery with from_json(json, path) {
+pub impl FromJson for CatRepositoriesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatRepositoriesQuery: expected object"))
   }
@@ -5261,7 +5269,7 @@ pub(all) struct CatSegmentsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatSegmentsQuery with to_json(self : CatSegmentsQuery) -> Json {
+pub impl ToJson for CatSegmentsQuery with fn to_json(self : CatSegmentsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.h {
     Some(value) => obj["h"] = value.to_json()
@@ -5303,7 +5311,7 @@ pub impl ToJson for CatSegmentsQuery with to_json(self : CatSegmentsQuery) -> Js
 }
 
 ///|
-pub impl FromJson for CatSegmentsQuery with from_json(json, path) {
+pub impl FromJson for CatSegmentsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatSegmentsQuery: expected object"))
   }
@@ -5477,7 +5485,7 @@ pub(all) struct CatShardsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatShardsQuery with to_json(self : CatShardsQuery) -> Json {
+pub impl ToJson for CatShardsQuery with fn to_json(self : CatShardsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.h {
     Some(value) => obj["h"] = value.to_json()
@@ -5495,7 +5503,7 @@ pub impl ToJson for CatShardsQuery with to_json(self : CatShardsQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for CatShardsQuery with from_json(json, path) {
+pub impl FromJson for CatShardsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatShardsQuery: expected object"))
   }
@@ -5595,7 +5603,7 @@ pub(all) struct CatSnapshotsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatSnapshotsQuery with to_json(self : CatSnapshotsQuery) -> Json {
+pub impl ToJson for CatSnapshotsQuery with fn to_json(self : CatSnapshotsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.ignore_unavailable {
     Some(value) => obj["ignore_unavailable"] = value.to_json()
@@ -5617,7 +5625,7 @@ pub impl ToJson for CatSnapshotsQuery with to_json(self : CatSnapshotsQuery) -> 
 }
 
 ///|
-pub impl FromJson for CatSnapshotsQuery with from_json(json, path) {
+pub impl FromJson for CatSnapshotsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatSnapshotsQuery: expected object"))
   }
@@ -5732,7 +5740,7 @@ pub(all) struct CatTasksQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatTasksQuery with to_json(self : CatTasksQuery) -> Json {
+pub impl ToJson for CatTasksQuery with fn to_json(self : CatTasksQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.actions {
     Some(value) => obj["actions"] = value.to_json()
@@ -5770,7 +5778,7 @@ pub impl ToJson for CatTasksQuery with to_json(self : CatTasksQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for CatTasksQuery with from_json(json, path) {
+pub impl FromJson for CatTasksQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatTasksQuery: expected object"))
   }
@@ -5917,7 +5925,7 @@ pub(all) struct CatTemplatesQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatTemplatesQuery with to_json(self : CatTemplatesQuery) -> Json {
+pub impl ToJson for CatTemplatesQuery with fn to_json(self : CatTemplatesQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.h {
     Some(value) => obj["h"] = value.to_json()
@@ -5939,7 +5947,7 @@ pub impl ToJson for CatTemplatesQuery with to_json(self : CatTemplatesQuery) -> 
 }
 
 ///|
-pub impl FromJson for CatTemplatesQuery with from_json(json, path) {
+pub impl FromJson for CatTemplatesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatTemplatesQuery: expected object"))
   }
@@ -6049,7 +6057,9 @@ pub(all) struct CatThreadPoolQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatThreadPoolQuery with to_json(self : CatThreadPoolQuery) -> Json {
+pub impl ToJson for CatThreadPoolQuery with fn to_json(
+  self : CatThreadPoolQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.h {
     Some(value) => obj["h"] = value.to_json()
@@ -6071,7 +6081,7 @@ pub impl ToJson for CatThreadPoolQuery with to_json(self : CatThreadPoolQuery) -
 }
 
 ///|
-pub impl FromJson for CatThreadPoolQuery with from_json(json, path) {
+pub impl FromJson for CatThreadPoolQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatThreadPoolQuery: expected object"))
   }
@@ -6184,7 +6194,9 @@ pub(all) struct CatTransformsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CatTransformsQuery with to_json(self : CatTransformsQuery) -> Json {
+pub impl ToJson for CatTransformsQuery with fn to_json(
+  self : CatTransformsQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
@@ -6210,7 +6222,7 @@ pub impl ToJson for CatTransformsQuery with to_json(self : CatTransformsQuery) -
 }
 
 ///|
-pub impl FromJson for CatTransformsQuery with from_json(json, path) {
+pub impl FromJson for CatTransformsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CatTransformsQuery: expected object"))
   }
@@ -6327,7 +6339,7 @@ pub(all) struct CcrDeleteAutoFollowPatternQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrDeleteAutoFollowPatternQuery with to_json(
+pub impl ToJson for CcrDeleteAutoFollowPatternQuery with fn to_json(
   self : CcrDeleteAutoFollowPatternQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -6339,7 +6351,10 @@ pub impl ToJson for CcrDeleteAutoFollowPatternQuery with to_json(
 }
 
 ///|
-pub impl FromJson for CcrDeleteAutoFollowPatternQuery with from_json(json, path) {
+pub impl FromJson for CcrDeleteAutoFollowPatternQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CcrDeleteAutoFollowPatternQuery: expected object"),
@@ -6413,7 +6428,7 @@ pub(all) struct CcrFollowQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrFollowQuery with to_json(self : CcrFollowQuery) -> Json {
+pub impl ToJson for CcrFollowQuery with fn to_json(self : CcrFollowQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -6427,7 +6442,7 @@ pub impl ToJson for CcrFollowQuery with to_json(self : CcrFollowQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for CcrFollowQuery with from_json(json, path) {
+pub impl FromJson for CcrFollowQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CcrFollowQuery: expected object"))
   }
@@ -6493,7 +6508,7 @@ pub(all) struct CcrFollowBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrFollowBody with to_json(self : CcrFollowBody) -> Json {
+pub impl ToJson for CcrFollowBody with fn to_json(self : CcrFollowBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.data_stream_name {
     Some(value) => obj["data_stream_name"] = value.to_json()
@@ -6549,7 +6564,7 @@ pub impl ToJson for CcrFollowBody with to_json(self : CcrFollowBody) -> Json {
 }
 
 ///|
-pub impl FromJson for CcrFollowBody with from_json(json, path) {
+pub impl FromJson for CcrFollowBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CcrFollowBody: expected object"))
   }
@@ -6707,7 +6722,7 @@ pub(all) struct CcrFollowResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrFollowResponse with to_json(self : CcrFollowResponse) -> Json {
+pub impl ToJson for CcrFollowResponse with fn to_json(self : CcrFollowResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["follow_index_created"] = self.follow_index_created.to_json()
   obj["follow_index_shards_acked"] = self.follow_index_shards_acked.to_json()
@@ -6716,7 +6731,7 @@ pub impl ToJson for CcrFollowResponse with to_json(self : CcrFollowResponse) -> 
 }
 
 ///|
-pub impl FromJson for CcrFollowResponse with from_json(json, path) {
+pub impl FromJson for CcrFollowResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CcrFollowResponse: expected object"))
   }
@@ -6774,7 +6789,9 @@ pub(all) struct CcrFollowInfoQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrFollowInfoQuery with to_json(self : CcrFollowInfoQuery) -> Json {
+pub impl ToJson for CcrFollowInfoQuery with fn to_json(
+  self : CcrFollowInfoQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -6784,7 +6801,7 @@ pub impl ToJson for CcrFollowInfoQuery with to_json(self : CcrFollowInfoQuery) -
 }
 
 ///|
-pub impl FromJson for CcrFollowInfoQuery with from_json(json, path) {
+pub impl FromJson for CcrFollowInfoQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CcrFollowInfoQuery: expected object"))
   }
@@ -6821,7 +6838,7 @@ pub(all) struct CcrFollowInfoResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrFollowInfoResponse with to_json(
+pub impl ToJson for CcrFollowInfoResponse with fn to_json(
   self : CcrFollowInfoResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -6830,7 +6847,7 @@ pub impl ToJson for CcrFollowInfoResponse with to_json(
 }
 
 ///|
-pub impl FromJson for CcrFollowInfoResponse with from_json(json, path) {
+pub impl FromJson for CcrFollowInfoResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CcrFollowInfoResponse: expected object"),
@@ -6879,7 +6896,9 @@ pub(all) struct CcrFollowStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrFollowStatsQuery with to_json(self : CcrFollowStatsQuery) -> Json {
+pub impl ToJson for CcrFollowStatsQuery with fn to_json(
+  self : CcrFollowStatsQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
@@ -6889,7 +6908,7 @@ pub impl ToJson for CcrFollowStatsQuery with to_json(self : CcrFollowStatsQuery)
 }
 
 ///|
-pub impl FromJson for CcrFollowStatsQuery with from_json(json, path) {
+pub impl FromJson for CcrFollowStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CcrFollowStatsQuery: expected object"))
   }
@@ -6925,7 +6944,7 @@ pub(all) struct CcrFollowStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrFollowStatsResponse with to_json(
+pub impl ToJson for CcrFollowStatsResponse with fn to_json(
   self : CcrFollowStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -6934,7 +6953,7 @@ pub impl ToJson for CcrFollowStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for CcrFollowStatsResponse with from_json(json, path) {
+pub impl FromJson for CcrFollowStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CcrFollowStatsResponse: expected object"),
@@ -6983,7 +7002,7 @@ pub(all) struct CcrForgetFollowerQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrForgetFollowerQuery with to_json(
+pub impl ToJson for CcrForgetFollowerQuery with fn to_json(
   self : CcrForgetFollowerQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -6995,7 +7014,7 @@ pub impl ToJson for CcrForgetFollowerQuery with to_json(
 }
 
 ///|
-pub impl FromJson for CcrForgetFollowerQuery with from_json(json, path) {
+pub impl FromJson for CcrForgetFollowerQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CcrForgetFollowerQuery: expected object"),
@@ -7036,7 +7055,7 @@ pub(all) struct CcrForgetFollowerBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrForgetFollowerBody with to_json(
+pub impl ToJson for CcrForgetFollowerBody with fn to_json(
   self : CcrForgetFollowerBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -7060,7 +7079,7 @@ pub impl ToJson for CcrForgetFollowerBody with to_json(
 }
 
 ///|
-pub impl FromJson for CcrForgetFollowerBody with from_json(json, path) {
+pub impl FromJson for CcrForgetFollowerBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CcrForgetFollowerBody: expected object"),
@@ -7115,7 +7134,7 @@ pub(all) struct CcrForgetFollowerResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrForgetFollowerResponse with to_json(
+pub impl ToJson for CcrForgetFollowerResponse with fn to_json(
   self : CcrForgetFollowerResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -7124,7 +7143,7 @@ pub impl ToJson for CcrForgetFollowerResponse with to_json(
 }
 
 ///|
-pub impl FromJson for CcrForgetFollowerResponse with from_json(json, path) {
+pub impl FromJson for CcrForgetFollowerResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CcrForgetFollowerResponse: expected object"),
@@ -7176,7 +7195,7 @@ pub(all) struct CcrGetAutoFollowPatternQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrGetAutoFollowPatternQuery with to_json(
+pub impl ToJson for CcrGetAutoFollowPatternQuery with fn to_json(
   self : CcrGetAutoFollowPatternQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -7188,7 +7207,7 @@ pub impl ToJson for CcrGetAutoFollowPatternQuery with to_json(
 }
 
 ///|
-pub impl FromJson for CcrGetAutoFollowPatternQuery with from_json(json, path) {
+pub impl FromJson for CcrGetAutoFollowPatternQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CcrGetAutoFollowPatternQuery: expected object"),
@@ -7229,7 +7248,7 @@ pub(all) struct CcrGetAutoFollowPatternResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrGetAutoFollowPatternResponse with to_json(
+pub impl ToJson for CcrGetAutoFollowPatternResponse with fn to_json(
   self : CcrGetAutoFollowPatternResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -7238,7 +7257,10 @@ pub impl ToJson for CcrGetAutoFollowPatternResponse with to_json(
 }
 
 ///|
-pub impl FromJson for CcrGetAutoFollowPatternResponse with from_json(json, path) {
+pub impl FromJson for CcrGetAutoFollowPatternResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CcrGetAutoFollowPatternResponse: expected object"),
@@ -7293,7 +7315,7 @@ pub(all) struct CcrPauseAutoFollowPatternQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrPauseAutoFollowPatternQuery with to_json(
+pub impl ToJson for CcrPauseAutoFollowPatternQuery with fn to_json(
   self : CcrPauseAutoFollowPatternQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -7305,7 +7327,10 @@ pub impl ToJson for CcrPauseAutoFollowPatternQuery with to_json(
 }
 
 ///|
-pub impl FromJson for CcrPauseAutoFollowPatternQuery with from_json(json, path) {
+pub impl FromJson for CcrPauseAutoFollowPatternQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CcrPauseAutoFollowPatternQuery: expected object"),
@@ -7378,7 +7403,9 @@ pub(all) struct CcrPauseFollowQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrPauseFollowQuery with to_json(self : CcrPauseFollowQuery) -> Json {
+pub impl ToJson for CcrPauseFollowQuery with fn to_json(
+  self : CcrPauseFollowQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -7388,7 +7415,7 @@ pub impl ToJson for CcrPauseFollowQuery with to_json(self : CcrPauseFollowQuery)
 }
 
 ///|
-pub impl FromJson for CcrPauseFollowQuery with from_json(json, path) {
+pub impl FromJson for CcrPauseFollowQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CcrPauseFollowQuery: expected object"))
   }
@@ -7459,7 +7486,7 @@ pub(all) struct CcrPutAutoFollowPatternQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrPutAutoFollowPatternQuery with to_json(
+pub impl ToJson for CcrPutAutoFollowPatternQuery with fn to_json(
   self : CcrPutAutoFollowPatternQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -7471,7 +7498,7 @@ pub impl ToJson for CcrPutAutoFollowPatternQuery with to_json(
 }
 
 ///|
-pub impl FromJson for CcrPutAutoFollowPatternQuery with from_json(json, path) {
+pub impl FromJson for CcrPutAutoFollowPatternQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CcrPutAutoFollowPatternQuery: expected object"),
@@ -7526,7 +7553,7 @@ pub(all) struct CcrPutAutoFollowPatternBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrPutAutoFollowPatternBody with to_json(
+pub impl ToJson for CcrPutAutoFollowPatternBody with fn to_json(
   self : CcrPutAutoFollowPatternBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -7591,7 +7618,7 @@ pub impl ToJson for CcrPutAutoFollowPatternBody with to_json(
 }
 
 ///|
-pub impl FromJson for CcrPutAutoFollowPatternBody with from_json(json, path) {
+pub impl FromJson for CcrPutAutoFollowPatternBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CcrPutAutoFollowPatternBody: expected object"),
@@ -7800,7 +7827,7 @@ pub(all) struct CcrResumeAutoFollowPatternQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrResumeAutoFollowPatternQuery with to_json(
+pub impl ToJson for CcrResumeAutoFollowPatternQuery with fn to_json(
   self : CcrResumeAutoFollowPatternQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -7812,7 +7839,10 @@ pub impl ToJson for CcrResumeAutoFollowPatternQuery with to_json(
 }
 
 ///|
-pub impl FromJson for CcrResumeAutoFollowPatternQuery with from_json(json, path) {
+pub impl FromJson for CcrResumeAutoFollowPatternQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "CcrResumeAutoFollowPatternQuery: expected object"),
@@ -7885,7 +7915,7 @@ pub(all) struct CcrResumeFollowQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrResumeFollowQuery with to_json(
+pub impl ToJson for CcrResumeFollowQuery with fn to_json(
   self : CcrResumeFollowQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -7897,7 +7927,7 @@ pub impl ToJson for CcrResumeFollowQuery with to_json(
 }
 
 ///|
-pub impl FromJson for CcrResumeFollowQuery with from_json(json, path) {
+pub impl FromJson for CcrResumeFollowQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CcrResumeFollowQuery: expected object"))
   }
@@ -7945,7 +7975,9 @@ pub(all) struct CcrResumeFollowBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrResumeFollowBody with to_json(self : CcrResumeFollowBody) -> Json {
+pub impl ToJson for CcrResumeFollowBody with fn to_json(
+  self : CcrResumeFollowBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.max_outstanding_read_requests {
     Some(value) => obj["max_outstanding_read_requests"] = value.to_json()
@@ -7991,7 +8023,7 @@ pub impl ToJson for CcrResumeFollowBody with to_json(self : CcrResumeFollowBody)
 }
 
 ///|
-pub impl FromJson for CcrResumeFollowBody with from_json(json, path) {
+pub impl FromJson for CcrResumeFollowBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CcrResumeFollowBody: expected object"))
   }
@@ -8159,7 +8191,7 @@ pub(all) struct CcrStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrStatsQuery with to_json(self : CcrStatsQuery) -> Json {
+pub impl ToJson for CcrStatsQuery with fn to_json(self : CcrStatsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -8173,7 +8205,7 @@ pub impl ToJson for CcrStatsQuery with to_json(self : CcrStatsQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for CcrStatsQuery with from_json(json, path) {
+pub impl FromJson for CcrStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CcrStatsQuery: expected object"))
   }
@@ -8221,7 +8253,7 @@ pub(all) struct CcrStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrStatsResponse with to_json(self : CcrStatsResponse) -> Json {
+pub impl ToJson for CcrStatsResponse with fn to_json(self : CcrStatsResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["auto_follow_stats"] = self.auto_follow_stats.to_json()
   obj["follow_stats"] = self.follow_stats.to_json()
@@ -8229,7 +8261,7 @@ pub impl ToJson for CcrStatsResponse with to_json(self : CcrStatsResponse) -> Js
 }
 
 ///|
-pub impl FromJson for CcrStatsResponse with from_json(json, path) {
+pub impl FromJson for CcrStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CcrStatsResponse: expected object"))
   }
@@ -8274,7 +8306,7 @@ pub(all) struct CcrUnfollowQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CcrUnfollowQuery with to_json(self : CcrUnfollowQuery) -> Json {
+pub impl ToJson for CcrUnfollowQuery with fn to_json(self : CcrUnfollowQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -8284,7 +8316,7 @@ pub impl ToJson for CcrUnfollowQuery with to_json(self : CcrUnfollowQuery) -> Js
 }
 
 ///|
-pub impl FromJson for CcrUnfollowQuery with from_json(json, path) {
+pub impl FromJson for CcrUnfollowQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CcrUnfollowQuery: expected object"))
   }
@@ -8351,13 +8383,13 @@ pub async fn Client::ccr_unfollow(
 pub(all) struct ClearScrollQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClearScrollQuery with to_json(_self : ClearScrollQuery) -> Json {
+pub impl ToJson for ClearScrollQuery with fn to_json(_self : ClearScrollQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for ClearScrollQuery with from_json(json, path) {
+pub impl FromJson for ClearScrollQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "ClearScrollQuery: expected object"))
   }
@@ -8387,7 +8419,9 @@ pub(all) struct ClearScrollResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClearScrollResponse with to_json(self : ClearScrollResponse) -> Json {
+pub impl ToJson for ClearScrollResponse with fn to_json(
+  self : ClearScrollResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["succeeded"] = self.succeeded.to_json()
   obj["num_freed"] = self.num_freed.to_json()
@@ -8395,7 +8429,7 @@ pub impl ToJson for ClearScrollResponse with to_json(self : ClearScrollResponse)
 }
 
 ///|
-pub impl FromJson for ClearScrollResponse with from_json(json, path) {
+pub impl FromJson for ClearScrollResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ClearScrollResponse: expected object"))
   }
@@ -8456,7 +8490,7 @@ pub async fn Client::clear_scroll(
 pub(all) struct ClosePointInTimeQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClosePointInTimeQuery with to_json(
+pub impl ToJson for ClosePointInTimeQuery with fn to_json(
   _self : ClosePointInTimeQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -8464,7 +8498,7 @@ pub impl ToJson for ClosePointInTimeQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ClosePointInTimeQuery with from_json(json, path) {
+pub impl FromJson for ClosePointInTimeQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ClosePointInTimeQuery: expected object"),
@@ -8492,7 +8526,7 @@ pub(all) struct ClosePointInTimeBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClosePointInTimeBody with to_json(
+pub impl ToJson for ClosePointInTimeBody with fn to_json(
   self : ClosePointInTimeBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -8501,7 +8535,7 @@ pub impl ToJson for ClosePointInTimeBody with to_json(
 }
 
 ///|
-pub impl FromJson for ClosePointInTimeBody with from_json(json, path) {
+pub impl FromJson for ClosePointInTimeBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ClosePointInTimeBody: expected object"))
   }
@@ -8525,7 +8559,7 @@ pub(all) struct ClosePointInTimeResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClosePointInTimeResponse with to_json(
+pub impl ToJson for ClosePointInTimeResponse with fn to_json(
   self : ClosePointInTimeResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -8535,7 +8569,7 @@ pub impl ToJson for ClosePointInTimeResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ClosePointInTimeResponse with from_json(json, path) {
+pub impl FromJson for ClosePointInTimeResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ClosePointInTimeResponse: expected object"),
@@ -8591,7 +8625,7 @@ pub(all) struct ClusterAllocationExplainQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterAllocationExplainQuery with to_json(
+pub impl ToJson for ClusterAllocationExplainQuery with fn to_json(
   self : ClusterAllocationExplainQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -8627,7 +8661,10 @@ pub impl ToJson for ClusterAllocationExplainQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterAllocationExplainQuery with from_json(json, path) {
+pub impl FromJson for ClusterAllocationExplainQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ClusterAllocationExplainQuery: expected object"),
@@ -8743,7 +8780,7 @@ pub(all) struct ClusterAllocationExplainBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterAllocationExplainBody with to_json(
+pub impl ToJson for ClusterAllocationExplainBody with fn to_json(
   self : ClusterAllocationExplainBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -8767,7 +8804,7 @@ pub impl ToJson for ClusterAllocationExplainBody with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterAllocationExplainBody with from_json(json, path) {
+pub impl FromJson for ClusterAllocationExplainBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ClusterAllocationExplainBody: expected object"),
@@ -8838,7 +8875,7 @@ pub(all) struct ClusterAllocationExplainResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterAllocationExplainResponse with to_json(
+pub impl ToJson for ClusterAllocationExplainResponse with fn to_json(
   self : ClusterAllocationExplainResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -8934,7 +8971,7 @@ pub impl ToJson for ClusterAllocationExplainResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterAllocationExplainResponse with from_json(
+pub impl FromJson for ClusterAllocationExplainResponse with fn from_json(
   json,
   path,
 ) {
@@ -9159,7 +9196,7 @@ pub(all) struct ClusterDeleteComponentTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterDeleteComponentTemplateQuery with to_json(
+pub impl ToJson for ClusterDeleteComponentTemplateQuery with fn to_json(
   self : ClusterDeleteComponentTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -9175,7 +9212,7 @@ pub impl ToJson for ClusterDeleteComponentTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterDeleteComponentTemplateQuery with from_json(
+pub impl FromJson for ClusterDeleteComponentTemplateQuery with fn from_json(
   json,
   path,
 ) {
@@ -9262,7 +9299,7 @@ pub(all) struct ClusterDeleteVotingConfigExclusionsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterDeleteVotingConfigExclusionsQuery with to_json(
+pub impl ToJson for ClusterDeleteVotingConfigExclusionsQuery with fn to_json(
   self : ClusterDeleteVotingConfigExclusionsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -9278,7 +9315,7 @@ pub impl ToJson for ClusterDeleteVotingConfigExclusionsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterDeleteVotingConfigExclusionsQuery with from_json(
+pub impl FromJson for ClusterDeleteVotingConfigExclusionsQuery with fn from_json(
   json,
   path,
 ) {
@@ -9363,7 +9400,7 @@ pub(all) struct ClusterExistsComponentTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterExistsComponentTemplateQuery with to_json(
+pub impl ToJson for ClusterExistsComponentTemplateQuery with fn to_json(
   self : ClusterExistsComponentTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -9379,7 +9416,7 @@ pub impl ToJson for ClusterExistsComponentTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterExistsComponentTemplateQuery with from_json(
+pub impl FromJson for ClusterExistsComponentTemplateQuery with fn from_json(
   json,
   path,
 ) {
@@ -9469,7 +9506,7 @@ pub(all) struct ClusterGetComponentTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterGetComponentTemplateQuery with to_json(
+pub impl ToJson for ClusterGetComponentTemplateQuery with fn to_json(
   self : ClusterGetComponentTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -9497,7 +9534,7 @@ pub impl ToJson for ClusterGetComponentTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterGetComponentTemplateQuery with from_json(
+pub impl FromJson for ClusterGetComponentTemplateQuery with fn from_json(
   json,
   path,
 ) {
@@ -9584,7 +9621,7 @@ pub(all) struct ClusterGetComponentTemplateResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterGetComponentTemplateResponse with to_json(
+pub impl ToJson for ClusterGetComponentTemplateResponse with fn to_json(
   self : ClusterGetComponentTemplateResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -9593,7 +9630,7 @@ pub impl ToJson for ClusterGetComponentTemplateResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterGetComponentTemplateResponse with from_json(
+pub impl FromJson for ClusterGetComponentTemplateResponse with fn from_json(
   json,
   path,
 ) {
@@ -9654,7 +9691,7 @@ pub(all) struct ClusterGetSettingsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterGetSettingsQuery with to_json(
+pub impl ToJson for ClusterGetSettingsQuery with fn to_json(
   self : ClusterGetSettingsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -9678,7 +9715,7 @@ pub impl ToJson for ClusterGetSettingsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterGetSettingsQuery with from_json(json, path) {
+pub impl FromJson for ClusterGetSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ClusterGetSettingsQuery: expected object"),
@@ -9753,7 +9790,7 @@ pub(all) struct ClusterGetSettingsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterGetSettingsResponse with to_json(
+pub impl ToJson for ClusterGetSettingsResponse with fn to_json(
   self : ClusterGetSettingsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -9767,7 +9804,7 @@ pub impl ToJson for ClusterGetSettingsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterGetSettingsResponse with from_json(json, path) {
+pub impl FromJson for ClusterGetSettingsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ClusterGetSettingsResponse: expected object"),
@@ -9829,7 +9866,9 @@ pub(all) struct ClusterHealthQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterHealthQuery with to_json(self : ClusterHealthQuery) -> Json {
+pub impl ToJson for ClusterHealthQuery with fn to_json(
+  self : ClusterHealthQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
@@ -9879,7 +9918,7 @@ pub impl ToJson for ClusterHealthQuery with to_json(self : ClusterHealthQuery) -
 }
 
 ///|
-pub impl FromJson for ClusterHealthQuery with from_json(json, path) {
+pub impl FromJson for ClusterHealthQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ClusterHealthQuery: expected object"))
   }
@@ -10090,13 +10129,13 @@ pub async fn Client::cluster_health(
 pub(all) struct ClusterInfoQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterInfoQuery with to_json(_self : ClusterInfoQuery) -> Json {
+pub impl ToJson for ClusterInfoQuery with fn to_json(_self : ClusterInfoQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for ClusterInfoQuery with from_json(json, path) {
+pub impl FromJson for ClusterInfoQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "ClusterInfoQuery: expected object"))
   }
@@ -10126,7 +10165,9 @@ pub(all) struct ClusterInfoResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterInfoResponse with to_json(self : ClusterInfoResponse) -> Json {
+pub impl ToJson for ClusterInfoResponse with fn to_json(
+  self : ClusterInfoResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["cluster_name"] = self.cluster_name.to_json()
   match self.http {
@@ -10149,7 +10190,7 @@ pub impl ToJson for ClusterInfoResponse with to_json(self : ClusterInfoResponse)
 }
 
 ///|
-pub impl FromJson for ClusterInfoResponse with from_json(json, path) {
+pub impl FromJson for ClusterInfoResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ClusterInfoResponse: expected object"))
   }
@@ -10218,7 +10259,7 @@ pub(all) struct ClusterPendingTasksQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterPendingTasksQuery with to_json(
+pub impl ToJson for ClusterPendingTasksQuery with fn to_json(
   self : ClusterPendingTasksQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -10234,7 +10275,7 @@ pub impl ToJson for ClusterPendingTasksQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterPendingTasksQuery with from_json(json, path) {
+pub impl FromJson for ClusterPendingTasksQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ClusterPendingTasksQuery: expected object"),
@@ -10285,7 +10326,7 @@ pub(all) struct ClusterPendingTasksResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterPendingTasksResponse with to_json(
+pub impl ToJson for ClusterPendingTasksResponse with fn to_json(
   self : ClusterPendingTasksResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -10294,7 +10335,7 @@ pub impl ToJson for ClusterPendingTasksResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterPendingTasksResponse with from_json(json, path) {
+pub impl FromJson for ClusterPendingTasksResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ClusterPendingTasksResponse: expected object"),
@@ -10343,7 +10384,7 @@ pub(all) struct ClusterPostVotingConfigExclusionsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterPostVotingConfigExclusionsQuery with to_json(
+pub impl ToJson for ClusterPostVotingConfigExclusionsQuery with fn to_json(
   self : ClusterPostVotingConfigExclusionsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -10367,7 +10408,7 @@ pub impl ToJson for ClusterPostVotingConfigExclusionsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterPostVotingConfigExclusionsQuery with from_json(
+pub impl FromJson for ClusterPostVotingConfigExclusionsQuery with fn from_json(
   json,
   path,
 ) {
@@ -10473,7 +10514,7 @@ pub(all) struct ClusterPutComponentTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterPutComponentTemplateQuery with to_json(
+pub impl ToJson for ClusterPutComponentTemplateQuery with fn to_json(
   self : ClusterPutComponentTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -10493,7 +10534,7 @@ pub impl ToJson for ClusterPutComponentTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterPutComponentTemplateQuery with from_json(
+pub impl FromJson for ClusterPutComponentTemplateQuery with fn from_json(
   json,
   path,
 ) {
@@ -10560,7 +10601,7 @@ pub(all) struct ClusterPutComponentTemplateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterPutComponentTemplateBody with to_json(
+pub impl ToJson for ClusterPutComponentTemplateBody with fn to_json(
   self : ClusterPutComponentTemplateBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -10581,7 +10622,10 @@ pub impl ToJson for ClusterPutComponentTemplateBody with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterPutComponentTemplateBody with from_json(json, path) {
+pub impl FromJson for ClusterPutComponentTemplateBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ClusterPutComponentTemplateBody: expected object"),
@@ -10664,7 +10708,7 @@ pub(all) struct ClusterPutSettingsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterPutSettingsQuery with to_json(
+pub impl ToJson for ClusterPutSettingsQuery with fn to_json(
   self : ClusterPutSettingsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -10684,7 +10728,7 @@ pub impl ToJson for ClusterPutSettingsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterPutSettingsQuery with from_json(json, path) {
+pub impl FromJson for ClusterPutSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ClusterPutSettingsQuery: expected object"),
@@ -10747,7 +10791,7 @@ pub(all) struct ClusterPutSettingsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterPutSettingsBody with to_json(
+pub impl ToJson for ClusterPutSettingsBody with fn to_json(
   self : ClusterPutSettingsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -10763,7 +10807,7 @@ pub impl ToJson for ClusterPutSettingsBody with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterPutSettingsBody with from_json(json, path) {
+pub impl FromJson for ClusterPutSettingsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ClusterPutSettingsBody: expected object"),
@@ -10801,7 +10845,7 @@ pub(all) struct ClusterPutSettingsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterPutSettingsResponse with to_json(
+pub impl ToJson for ClusterPutSettingsResponse with fn to_json(
   self : ClusterPutSettingsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -10812,7 +10856,7 @@ pub impl ToJson for ClusterPutSettingsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterPutSettingsResponse with from_json(json, path) {
+pub impl FromJson for ClusterPutSettingsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ClusterPutSettingsResponse: expected object"),
@@ -10864,7 +10908,7 @@ pub async fn Client::cluster_put_settings(
 pub(all) struct ClusterRemoteInfoQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterRemoteInfoQuery with to_json(
+pub impl ToJson for ClusterRemoteInfoQuery with fn to_json(
   _self : ClusterRemoteInfoQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -10872,7 +10916,7 @@ pub impl ToJson for ClusterRemoteInfoQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterRemoteInfoQuery with from_json(json, path) {
+pub impl FromJson for ClusterRemoteInfoQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ClusterRemoteInfoQuery: expected object"),
@@ -10931,7 +10975,9 @@ pub(all) struct ClusterRerouteQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterRerouteQuery with to_json(self : ClusterRerouteQuery) -> Json {
+pub impl ToJson for ClusterRerouteQuery with fn to_json(
+  self : ClusterRerouteQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.dry_run {
     Some(value) => obj["dry_run"] = value.to_json()
@@ -10961,7 +11007,7 @@ pub impl ToJson for ClusterRerouteQuery with to_json(self : ClusterRerouteQuery)
 }
 
 ///|
-pub impl FromJson for ClusterRerouteQuery with from_json(json, path) {
+pub impl FromJson for ClusterRerouteQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ClusterRerouteQuery: expected object"))
   }
@@ -11051,7 +11097,9 @@ pub(all) struct ClusterRerouteBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterRerouteBody with to_json(self : ClusterRerouteBody) -> Json {
+pub impl ToJson for ClusterRerouteBody with fn to_json(
+  self : ClusterRerouteBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.commands {
     Some(value) => obj["commands"] = value.to_json()
@@ -11061,7 +11109,7 @@ pub impl ToJson for ClusterRerouteBody with to_json(self : ClusterRerouteBody) -
 }
 
 ///|
-pub impl FromJson for ClusterRerouteBody with from_json(json, path) {
+pub impl FromJson for ClusterRerouteBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ClusterRerouteBody: expected object"))
   }
@@ -11087,7 +11135,7 @@ pub(all) struct ClusterRerouteResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterRerouteResponse with to_json(
+pub impl ToJson for ClusterRerouteResponse with fn to_json(
   self : ClusterRerouteResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -11104,7 +11152,7 @@ pub impl ToJson for ClusterRerouteResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ClusterRerouteResponse with from_json(json, path) {
+pub impl FromJson for ClusterRerouteResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ClusterRerouteResponse: expected object"),
@@ -11171,7 +11219,7 @@ pub(all) struct ClusterStateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterStateQuery with to_json(self : ClusterStateQuery) -> Json {
+pub impl ToJson for ClusterStateQuery with fn to_json(self : ClusterStateQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -11209,7 +11257,7 @@ pub impl ToJson for ClusterStateQuery with to_json(self : ClusterStateQuery) -> 
 }
 
 ///|
-pub impl FromJson for ClusterStateQuery with from_json(json, path) {
+pub impl FromJson for ClusterStateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ClusterStateQuery: expected object"))
   }
@@ -11382,7 +11430,7 @@ pub(all) struct ClusterStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ClusterStatsQuery with to_json(self : ClusterStatsQuery) -> Json {
+pub impl ToJson for ClusterStatsQuery with fn to_json(self : ClusterStatsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.include_remotes {
     Some(value) => obj["include_remotes"] = value.to_json()
@@ -11396,7 +11444,7 @@ pub impl ToJson for ClusterStatsQuery with to_json(self : ClusterStatsQuery) -> 
 }
 
 ///|
-pub impl FromJson for ClusterStatsQuery with from_json(json, path) {
+pub impl FromJson for ClusterStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ClusterStatsQuery: expected object"))
   }
@@ -11481,7 +11529,7 @@ pub async fn Client::cluster_stats(
 pub(all) struct ConnectorCheckInQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorCheckInQuery with to_json(
+pub impl ToJson for ConnectorCheckInQuery with fn to_json(
   _self : ConnectorCheckInQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -11489,7 +11537,7 @@ pub impl ToJson for ConnectorCheckInQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorCheckInQuery with from_json(json, path) {
+pub impl FromJson for ConnectorCheckInQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorCheckInQuery: expected object"),
@@ -11517,7 +11565,7 @@ pub(all) struct ConnectorCheckInResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorCheckInResponse with to_json(
+pub impl ToJson for ConnectorCheckInResponse with fn to_json(
   self : ConnectorCheckInResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -11526,7 +11574,7 @@ pub impl ToJson for ConnectorCheckInResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorCheckInResponse with from_json(json, path) {
+pub impl FromJson for ConnectorCheckInResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorCheckInResponse: expected object"),
@@ -11576,7 +11624,7 @@ pub(all) struct ConnectorDeleteQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorDeleteQuery with to_json(
+pub impl ToJson for ConnectorDeleteQuery with fn to_json(
   self : ConnectorDeleteQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -11592,7 +11640,7 @@ pub impl ToJson for ConnectorDeleteQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorDeleteQuery with from_json(json, path) {
+pub impl FromJson for ConnectorDeleteQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ConnectorDeleteQuery: expected object"))
   }
@@ -11673,7 +11721,7 @@ pub(all) struct ConnectorGetQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorGetQuery with to_json(self : ConnectorGetQuery) -> Json {
+pub impl ToJson for ConnectorGetQuery with fn to_json(self : ConnectorGetQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.include_deleted {
     Some(value) => obj["include_deleted"] = value.to_json()
@@ -11683,7 +11731,7 @@ pub impl ToJson for ConnectorGetQuery with to_json(self : ConnectorGetQuery) -> 
 }
 
 ///|
-pub impl FromJson for ConnectorGetQuery with from_json(json, path) {
+pub impl FromJson for ConnectorGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ConnectorGetQuery: expected object"))
   }
@@ -11750,7 +11798,7 @@ pub async fn Client::connector_get(
 pub(all) struct ConnectorLastSyncQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorLastSyncQuery with to_json(
+pub impl ToJson for ConnectorLastSyncQuery with fn to_json(
   _self : ConnectorLastSyncQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -11758,7 +11806,7 @@ pub impl ToJson for ConnectorLastSyncQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorLastSyncQuery with from_json(json, path) {
+pub impl FromJson for ConnectorLastSyncQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorLastSyncQuery: expected object"),
@@ -11797,7 +11845,7 @@ pub(all) struct ConnectorLastSyncBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorLastSyncBody with to_json(
+pub impl ToJson for ConnectorLastSyncBody with fn to_json(
   self : ConnectorLastSyncBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -11854,7 +11902,7 @@ pub impl ToJson for ConnectorLastSyncBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorLastSyncBody with from_json(json, path) {
+pub impl FromJson for ConnectorLastSyncBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorLastSyncBody: expected object"),
@@ -12009,7 +12057,7 @@ pub(all) struct ConnectorLastSyncResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorLastSyncResponse with to_json(
+pub impl ToJson for ConnectorLastSyncResponse with fn to_json(
   self : ConnectorLastSyncResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -12018,7 +12066,7 @@ pub impl ToJson for ConnectorLastSyncResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorLastSyncResponse with from_json(json, path) {
+pub impl FromJson for ConnectorLastSyncResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorLastSyncResponse: expected object"),
@@ -12078,7 +12126,9 @@ pub(all) struct ConnectorListQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorListQuery with to_json(self : ConnectorListQuery) -> Json {
+pub impl ToJson for ConnectorListQuery with fn to_json(
+  self : ConnectorListQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.from {
     Some(value) => obj["from"] = value.to_json()
@@ -12112,7 +12162,7 @@ pub impl ToJson for ConnectorListQuery with to_json(self : ConnectorListQuery) -
 }
 
 ///|
-pub impl FromJson for ConnectorListQuery with from_json(json, path) {
+pub impl FromJson for ConnectorListQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ConnectorListQuery: expected object"))
   }
@@ -12223,7 +12273,7 @@ pub(all) struct ConnectorListResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorListResponse with to_json(
+pub impl ToJson for ConnectorListResponse with fn to_json(
   self : ConnectorListResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -12233,7 +12283,7 @@ pub impl ToJson for ConnectorListResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorListResponse with from_json(json, path) {
+pub impl FromJson for ConnectorListResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorListResponse: expected object"),
@@ -12278,13 +12328,15 @@ pub async fn Client::connector_list(
 pub(all) struct ConnectorPostQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorPostQuery with to_json(_self : ConnectorPostQuery) -> Json {
+pub impl ToJson for ConnectorPostQuery with fn to_json(
+  _self : ConnectorPostQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for ConnectorPostQuery with from_json(json, path) {
+pub impl FromJson for ConnectorPostQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "ConnectorPostQuery: expected object"))
   }
@@ -12315,7 +12367,7 @@ pub(all) struct ConnectorPostBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorPostBody with to_json(self : ConnectorPostBody) -> Json {
+pub impl ToJson for ConnectorPostBody with fn to_json(self : ConnectorPostBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.description {
     Some(value) => obj["description"] = value.to_json()
@@ -12345,7 +12397,7 @@ pub impl ToJson for ConnectorPostBody with to_json(self : ConnectorPostBody) -> 
 }
 
 ///|
-pub impl FromJson for ConnectorPostBody with from_json(json, path) {
+pub impl FromJson for ConnectorPostBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ConnectorPostBody: expected object"))
   }
@@ -12406,7 +12458,7 @@ pub(all) struct ConnectorPostResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorPostResponse with to_json(
+pub impl ToJson for ConnectorPostResponse with fn to_json(
   self : ConnectorPostResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -12416,7 +12468,7 @@ pub impl ToJson for ConnectorPostResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorPostResponse with from_json(json, path) {
+pub impl FromJson for ConnectorPostResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorPostResponse: expected object"),
@@ -12467,13 +12519,13 @@ pub async fn Client::connector_post(
 pub(all) struct ConnectorPutQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorPutQuery with to_json(_self : ConnectorPutQuery) -> Json {
+pub impl ToJson for ConnectorPutQuery with fn to_json(_self : ConnectorPutQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for ConnectorPutQuery with from_json(json, path) {
+pub impl FromJson for ConnectorPutQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "ConnectorPutQuery: expected object"))
   }
@@ -12504,7 +12556,7 @@ pub(all) struct ConnectorPutBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorPutBody with to_json(self : ConnectorPutBody) -> Json {
+pub impl ToJson for ConnectorPutBody with fn to_json(self : ConnectorPutBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.description {
     Some(value) => obj["description"] = value.to_json()
@@ -12534,7 +12586,7 @@ pub impl ToJson for ConnectorPutBody with to_json(self : ConnectorPutBody) -> Js
 }
 
 ///|
-pub impl FromJson for ConnectorPutBody with from_json(json, path) {
+pub impl FromJson for ConnectorPutBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ConnectorPutBody: expected object"))
   }
@@ -12595,7 +12647,7 @@ pub(all) struct ConnectorPutResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorPutResponse with to_json(
+pub impl ToJson for ConnectorPutResponse with fn to_json(
   self : ConnectorPutResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -12605,7 +12657,7 @@ pub impl ToJson for ConnectorPutResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorPutResponse with from_json(json, path) {
+pub impl FromJson for ConnectorPutResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ConnectorPutResponse: expected object"))
   }
@@ -12666,7 +12718,7 @@ pub async fn Client::connector_put(
 pub(all) struct ConnectorSecretDeleteQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSecretDeleteQuery with to_json(
+pub impl ToJson for ConnectorSecretDeleteQuery with fn to_json(
   _self : ConnectorSecretDeleteQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -12674,7 +12726,7 @@ pub impl ToJson for ConnectorSecretDeleteQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSecretDeleteQuery with from_json(json, path) {
+pub impl FromJson for ConnectorSecretDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSecretDeleteQuery: expected object"),
@@ -12702,7 +12754,7 @@ pub(all) struct ConnectorSecretDeleteResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSecretDeleteResponse with to_json(
+pub impl ToJson for ConnectorSecretDeleteResponse with fn to_json(
   self : ConnectorSecretDeleteResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -12711,7 +12763,10 @@ pub impl ToJson for ConnectorSecretDeleteResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSecretDeleteResponse with from_json(json, path) {
+pub impl FromJson for ConnectorSecretDeleteResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSecretDeleteResponse: expected object"),
@@ -12758,7 +12813,7 @@ pub async fn Client::connector_secret_delete(
 pub(all) struct ConnectorSecretGetQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSecretGetQuery with to_json(
+pub impl ToJson for ConnectorSecretGetQuery with fn to_json(
   _self : ConnectorSecretGetQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -12766,7 +12821,7 @@ pub impl ToJson for ConnectorSecretGetQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSecretGetQuery with from_json(json, path) {
+pub impl FromJson for ConnectorSecretGetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSecretGetQuery: expected object"),
@@ -12795,7 +12850,7 @@ pub(all) struct ConnectorSecretGetResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSecretGetResponse with to_json(
+pub impl ToJson for ConnectorSecretGetResponse with fn to_json(
   self : ConnectorSecretGetResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -12805,7 +12860,7 @@ pub impl ToJson for ConnectorSecretGetResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSecretGetResponse with from_json(json, path) {
+pub impl FromJson for ConnectorSecretGetResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSecretGetResponse: expected object"),
@@ -12856,7 +12911,7 @@ pub async fn Client::connector_secret_get(
 pub(all) struct ConnectorSecretPostQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSecretPostQuery with to_json(
+pub impl ToJson for ConnectorSecretPostQuery with fn to_json(
   _self : ConnectorSecretPostQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -12864,7 +12919,7 @@ pub impl ToJson for ConnectorSecretPostQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSecretPostQuery with from_json(json, path) {
+pub impl FromJson for ConnectorSecretPostQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSecretPostQuery: expected object"),
@@ -12892,7 +12947,7 @@ pub(all) struct ConnectorSecretPostResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSecretPostResponse with to_json(
+pub impl ToJson for ConnectorSecretPostResponse with fn to_json(
   self : ConnectorSecretPostResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -12901,7 +12956,7 @@ pub impl ToJson for ConnectorSecretPostResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSecretPostResponse with from_json(json, path) {
+pub impl FromJson for ConnectorSecretPostResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSecretPostResponse: expected object"),
@@ -12942,7 +12997,7 @@ pub async fn Client::connector_secret_post(
 pub(all) struct ConnectorSecretPutQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSecretPutQuery with to_json(
+pub impl ToJson for ConnectorSecretPutQuery with fn to_json(
   _self : ConnectorSecretPutQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -12950,7 +13005,7 @@ pub impl ToJson for ConnectorSecretPutQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSecretPutQuery with from_json(json, path) {
+pub impl FromJson for ConnectorSecretPutQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSecretPutQuery: expected object"),
@@ -12978,7 +13033,7 @@ pub(all) struct ConnectorSecretPutResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSecretPutResponse with to_json(
+pub impl ToJson for ConnectorSecretPutResponse with fn to_json(
   self : ConnectorSecretPutResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -12987,7 +13042,7 @@ pub impl ToJson for ConnectorSecretPutResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSecretPutResponse with from_json(json, path) {
+pub impl FromJson for ConnectorSecretPutResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSecretPutResponse: expected object"),
@@ -13034,7 +13089,7 @@ pub async fn Client::connector_secret_put(
 pub(all) struct ConnectorSyncJobCancelQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobCancelQuery with to_json(
+pub impl ToJson for ConnectorSyncJobCancelQuery with fn to_json(
   _self : ConnectorSyncJobCancelQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13042,7 +13097,7 @@ pub impl ToJson for ConnectorSyncJobCancelQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobCancelQuery with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobCancelQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobCancelQuery: expected object"),
@@ -13070,7 +13125,7 @@ pub(all) struct ConnectorSyncJobCancelResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobCancelResponse with to_json(
+pub impl ToJson for ConnectorSyncJobCancelResponse with fn to_json(
   self : ConnectorSyncJobCancelResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13079,7 +13134,10 @@ pub impl ToJson for ConnectorSyncJobCancelResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobCancelResponse with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobCancelResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobCancelResponse: expected object"),
@@ -13131,7 +13189,7 @@ pub async fn Client::connector_sync_job_cancel(
 pub(all) struct ConnectorSyncJobCheckInQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobCheckInQuery with to_json(
+pub impl ToJson for ConnectorSyncJobCheckInQuery with fn to_json(
   _self : ConnectorSyncJobCheckInQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13139,7 +13197,7 @@ pub impl ToJson for ConnectorSyncJobCheckInQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobCheckInQuery with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobCheckInQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobCheckInQuery: expected object"),
@@ -13202,7 +13260,7 @@ pub async fn Client::connector_sync_job_check_in(
 pub(all) struct ConnectorSyncJobClaimQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobClaimQuery with to_json(
+pub impl ToJson for ConnectorSyncJobClaimQuery with fn to_json(
   _self : ConnectorSyncJobClaimQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13210,7 +13268,7 @@ pub impl ToJson for ConnectorSyncJobClaimQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobClaimQuery with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobClaimQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobClaimQuery: expected object"),
@@ -13239,7 +13297,7 @@ pub(all) struct ConnectorSyncJobClaimBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobClaimBody with to_json(
+pub impl ToJson for ConnectorSyncJobClaimBody with fn to_json(
   self : ConnectorSyncJobClaimBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13252,7 +13310,7 @@ pub impl ToJson for ConnectorSyncJobClaimBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobClaimBody with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobClaimBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobClaimBody: expected object"),
@@ -13323,7 +13381,7 @@ pub async fn Client::connector_sync_job_claim(
 pub(all) struct ConnectorSyncJobDeleteQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobDeleteQuery with to_json(
+pub impl ToJson for ConnectorSyncJobDeleteQuery with fn to_json(
   _self : ConnectorSyncJobDeleteQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13331,7 +13389,7 @@ pub impl ToJson for ConnectorSyncJobDeleteQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobDeleteQuery with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobDeleteQuery: expected object"),
@@ -13393,7 +13451,7 @@ pub async fn Client::connector_sync_job_delete(
 pub(all) struct ConnectorSyncJobErrorQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobErrorQuery with to_json(
+pub impl ToJson for ConnectorSyncJobErrorQuery with fn to_json(
   _self : ConnectorSyncJobErrorQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13401,7 +13459,7 @@ pub impl ToJson for ConnectorSyncJobErrorQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobErrorQuery with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobErrorQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobErrorQuery: expected object"),
@@ -13429,7 +13487,7 @@ pub(all) struct ConnectorSyncJobErrorBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobErrorBody with to_json(
+pub impl ToJson for ConnectorSyncJobErrorBody with fn to_json(
   self : ConnectorSyncJobErrorBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13438,7 +13496,7 @@ pub impl ToJson for ConnectorSyncJobErrorBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobErrorBody with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobErrorBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobErrorBody: expected object"),
@@ -13502,7 +13560,7 @@ pub async fn Client::connector_sync_job_error(
 pub(all) struct ConnectorSyncJobGetQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobGetQuery with to_json(
+pub impl ToJson for ConnectorSyncJobGetQuery with fn to_json(
   _self : ConnectorSyncJobGetQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13510,7 +13568,7 @@ pub impl ToJson for ConnectorSyncJobGetQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobGetQuery with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobGetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobGetQuery: expected object"),
@@ -13578,7 +13636,7 @@ pub(all) struct ConnectorSyncJobListQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobListQuery with to_json(
+pub impl ToJson for ConnectorSyncJobListQuery with fn to_json(
   self : ConnectorSyncJobListQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13606,7 +13664,7 @@ pub impl ToJson for ConnectorSyncJobListQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobListQuery with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobListQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobListQuery: expected object"),
@@ -13688,7 +13746,7 @@ pub(all) struct ConnectorSyncJobListResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobListResponse with to_json(
+pub impl ToJson for ConnectorSyncJobListResponse with fn to_json(
   self : ConnectorSyncJobListResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13698,7 +13756,7 @@ pub impl ToJson for ConnectorSyncJobListResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobListResponse with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobListResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobListResponse: expected object"),
@@ -13746,7 +13804,7 @@ pub async fn Client::connector_sync_job_list(
 pub(all) struct ConnectorSyncJobPostQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobPostQuery with to_json(
+pub impl ToJson for ConnectorSyncJobPostQuery with fn to_json(
   _self : ConnectorSyncJobPostQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13754,7 +13812,7 @@ pub impl ToJson for ConnectorSyncJobPostQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobPostQuery with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobPostQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobPostQuery: expected object"),
@@ -13784,7 +13842,7 @@ pub(all) struct ConnectorSyncJobPostBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobPostBody with to_json(
+pub impl ToJson for ConnectorSyncJobPostBody with fn to_json(
   self : ConnectorSyncJobPostBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13801,7 +13859,7 @@ pub impl ToJson for ConnectorSyncJobPostBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobPostBody with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobPostBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobPostBody: expected object"),
@@ -13841,7 +13899,7 @@ pub(all) struct ConnectorSyncJobPostResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobPostResponse with to_json(
+pub impl ToJson for ConnectorSyncJobPostResponse with fn to_json(
   self : ConnectorSyncJobPostResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13850,7 +13908,7 @@ pub impl ToJson for ConnectorSyncJobPostResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobPostResponse with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobPostResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobPostResponse: expected object"),
@@ -13897,7 +13955,7 @@ pub async fn Client::connector_sync_job_post(
 pub(all) struct ConnectorSyncJobUpdateStatsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobUpdateStatsQuery with to_json(
+pub impl ToJson for ConnectorSyncJobUpdateStatsQuery with fn to_json(
   _self : ConnectorSyncJobUpdateStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13905,7 +13963,7 @@ pub impl ToJson for ConnectorSyncJobUpdateStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobUpdateStatsQuery with from_json(
+pub impl FromJson for ConnectorSyncJobUpdateStatsQuery with fn from_json(
   json,
   path,
 ) {
@@ -13941,7 +13999,7 @@ pub(all) struct ConnectorSyncJobUpdateStatsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorSyncJobUpdateStatsBody with to_json(
+pub impl ToJson for ConnectorSyncJobUpdateStatsBody with fn to_json(
   self : ConnectorSyncJobUpdateStatsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -13964,7 +14022,10 @@ pub impl ToJson for ConnectorSyncJobUpdateStatsBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorSyncJobUpdateStatsBody with from_json(json, path) {
+pub impl FromJson for ConnectorSyncJobUpdateStatsBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorSyncJobUpdateStatsBody: expected object"),
@@ -14065,7 +14126,7 @@ pub async fn Client::connector_sync_job_update_stats(
 pub(all) struct ConnectorUpdateActiveFilteringQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateActiveFilteringQuery with to_json(
+pub impl ToJson for ConnectorUpdateActiveFilteringQuery with fn to_json(
   _self : ConnectorUpdateActiveFilteringQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14073,7 +14134,7 @@ pub impl ToJson for ConnectorUpdateActiveFilteringQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateActiveFilteringQuery with from_json(
+pub impl FromJson for ConnectorUpdateActiveFilteringQuery with fn from_json(
   json,
   path,
 ) {
@@ -14107,7 +14168,7 @@ pub(all) struct ConnectorUpdateActiveFilteringResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateActiveFilteringResponse with to_json(
+pub impl ToJson for ConnectorUpdateActiveFilteringResponse with fn to_json(
   self : ConnectorUpdateActiveFilteringResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14116,7 +14177,7 @@ pub impl ToJson for ConnectorUpdateActiveFilteringResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateActiveFilteringResponse with from_json(
+pub impl FromJson for ConnectorUpdateActiveFilteringResponse with fn from_json(
   json,
   path,
 ) {
@@ -14176,7 +14237,7 @@ pub async fn Client::connector_update_active_filtering(
 pub(all) struct ConnectorUpdateApiKeyIdQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateApiKeyIdQuery with to_json(
+pub impl ToJson for ConnectorUpdateApiKeyIdQuery with fn to_json(
   _self : ConnectorUpdateApiKeyIdQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14184,7 +14245,7 @@ pub impl ToJson for ConnectorUpdateApiKeyIdQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateApiKeyIdQuery with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateApiKeyIdQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateApiKeyIdQuery: expected object"),
@@ -14213,7 +14274,7 @@ pub(all) struct ConnectorUpdateApiKeyIdBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateApiKeyIdBody with to_json(
+pub impl ToJson for ConnectorUpdateApiKeyIdBody with fn to_json(
   self : ConnectorUpdateApiKeyIdBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14229,7 +14290,7 @@ pub impl ToJson for ConnectorUpdateApiKeyIdBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateApiKeyIdBody with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateApiKeyIdBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateApiKeyIdBody: expected object"),
@@ -14265,7 +14326,7 @@ pub(all) struct ConnectorUpdateApiKeyIdResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateApiKeyIdResponse with to_json(
+pub impl ToJson for ConnectorUpdateApiKeyIdResponse with fn to_json(
   self : ConnectorUpdateApiKeyIdResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14274,7 +14335,10 @@ pub impl ToJson for ConnectorUpdateApiKeyIdResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateApiKeyIdResponse with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateApiKeyIdResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateApiKeyIdResponse: expected object"),
@@ -14328,7 +14392,7 @@ pub async fn Client::connector_update_api_key_id(
 pub(all) struct ConnectorUpdateConfigurationQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateConfigurationQuery with to_json(
+pub impl ToJson for ConnectorUpdateConfigurationQuery with fn to_json(
   _self : ConnectorUpdateConfigurationQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14336,7 +14400,7 @@ pub impl ToJson for ConnectorUpdateConfigurationQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateConfigurationQuery with from_json(
+pub impl FromJson for ConnectorUpdateConfigurationQuery with fn from_json(
   json,
   path,
 ) {
@@ -14368,7 +14432,7 @@ pub(all) struct ConnectorUpdateConfigurationBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateConfigurationBody with to_json(
+pub impl ToJson for ConnectorUpdateConfigurationBody with fn to_json(
   self : ConnectorUpdateConfigurationBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14384,7 +14448,7 @@ pub impl ToJson for ConnectorUpdateConfigurationBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateConfigurationBody with from_json(
+pub impl FromJson for ConnectorUpdateConfigurationBody with fn from_json(
   json,
   path,
 ) {
@@ -14422,7 +14486,7 @@ pub(all) struct ConnectorUpdateConfigurationResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateConfigurationResponse with to_json(
+pub impl ToJson for ConnectorUpdateConfigurationResponse with fn to_json(
   self : ConnectorUpdateConfigurationResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14431,7 +14495,7 @@ pub impl ToJson for ConnectorUpdateConfigurationResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateConfigurationResponse with from_json(
+pub impl FromJson for ConnectorUpdateConfigurationResponse with fn from_json(
   json,
   path,
 ) {
@@ -14488,7 +14552,7 @@ pub async fn Client::connector_update_configuration(
 pub(all) struct ConnectorUpdateErrorQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateErrorQuery with to_json(
+pub impl ToJson for ConnectorUpdateErrorQuery with fn to_json(
   _self : ConnectorUpdateErrorQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14496,7 +14560,7 @@ pub impl ToJson for ConnectorUpdateErrorQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateErrorQuery with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateErrorQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateErrorQuery: expected object"),
@@ -14524,7 +14588,7 @@ pub(all) struct ConnectorUpdateErrorBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateErrorBody with to_json(
+pub impl ToJson for ConnectorUpdateErrorBody with fn to_json(
   self : ConnectorUpdateErrorBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14533,7 +14597,7 @@ pub impl ToJson for ConnectorUpdateErrorBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateErrorBody with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateErrorBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateErrorBody: expected object"),
@@ -14558,7 +14622,7 @@ pub(all) struct ConnectorUpdateErrorResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateErrorResponse with to_json(
+pub impl ToJson for ConnectorUpdateErrorResponse with fn to_json(
   self : ConnectorUpdateErrorResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14567,7 +14631,7 @@ pub impl ToJson for ConnectorUpdateErrorResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateErrorResponse with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateErrorResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateErrorResponse: expected object"),
@@ -14617,7 +14681,7 @@ pub async fn Client::connector_update_error(
 pub(all) struct ConnectorUpdateFeaturesQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateFeaturesQuery with to_json(
+pub impl ToJson for ConnectorUpdateFeaturesQuery with fn to_json(
   _self : ConnectorUpdateFeaturesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14625,7 +14689,7 @@ pub impl ToJson for ConnectorUpdateFeaturesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateFeaturesQuery with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateFeaturesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateFeaturesQuery: expected object"),
@@ -14653,7 +14717,7 @@ pub(all) struct ConnectorUpdateFeaturesBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateFeaturesBody with to_json(
+pub impl ToJson for ConnectorUpdateFeaturesBody with fn to_json(
   self : ConnectorUpdateFeaturesBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14662,7 +14726,7 @@ pub impl ToJson for ConnectorUpdateFeaturesBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateFeaturesBody with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateFeaturesBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateFeaturesBody: expected object"),
@@ -14689,7 +14753,7 @@ pub(all) struct ConnectorUpdateFeaturesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateFeaturesResponse with to_json(
+pub impl ToJson for ConnectorUpdateFeaturesResponse with fn to_json(
   self : ConnectorUpdateFeaturesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14698,7 +14762,10 @@ pub impl ToJson for ConnectorUpdateFeaturesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateFeaturesResponse with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateFeaturesResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateFeaturesResponse: expected object"),
@@ -14748,7 +14815,7 @@ pub async fn Client::connector_update_features(
 pub(all) struct ConnectorUpdateFilteringQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateFilteringQuery with to_json(
+pub impl ToJson for ConnectorUpdateFilteringQuery with fn to_json(
   _self : ConnectorUpdateFilteringQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14756,7 +14823,10 @@ pub impl ToJson for ConnectorUpdateFilteringQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateFilteringQuery with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateFilteringQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateFilteringQuery: expected object"),
@@ -14786,7 +14856,7 @@ pub(all) struct ConnectorUpdateFilteringBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateFilteringBody with to_json(
+pub impl ToJson for ConnectorUpdateFilteringBody with fn to_json(
   self : ConnectorUpdateFilteringBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14806,7 +14876,7 @@ pub impl ToJson for ConnectorUpdateFilteringBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateFilteringBody with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateFilteringBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateFilteringBody: expected object"),
@@ -14848,7 +14918,7 @@ pub(all) struct ConnectorUpdateFilteringResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateFilteringResponse with to_json(
+pub impl ToJson for ConnectorUpdateFilteringResponse with fn to_json(
   self : ConnectorUpdateFilteringResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14857,7 +14927,7 @@ pub impl ToJson for ConnectorUpdateFilteringResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateFilteringResponse with from_json(
+pub impl FromJson for ConnectorUpdateFilteringResponse with fn from_json(
   json,
   path,
 ) {
@@ -14912,7 +14982,7 @@ pub async fn Client::connector_update_filtering(
 pub(all) struct ConnectorUpdateFilteringValidationQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateFilteringValidationQuery with to_json(
+pub impl ToJson for ConnectorUpdateFilteringValidationQuery with fn to_json(
   _self : ConnectorUpdateFilteringValidationQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14920,7 +14990,7 @@ pub impl ToJson for ConnectorUpdateFilteringValidationQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateFilteringValidationQuery with from_json(
+pub impl FromJson for ConnectorUpdateFilteringValidationQuery with fn from_json(
   json,
   path,
 ) {
@@ -14951,7 +15021,7 @@ pub(all) struct ConnectorUpdateFilteringValidationBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateFilteringValidationBody with to_json(
+pub impl ToJson for ConnectorUpdateFilteringValidationBody with fn to_json(
   self : ConnectorUpdateFilteringValidationBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14960,7 +15030,7 @@ pub impl ToJson for ConnectorUpdateFilteringValidationBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateFilteringValidationBody with from_json(
+pub impl FromJson for ConnectorUpdateFilteringValidationBody with fn from_json(
   json,
   path,
 ) {
@@ -14990,7 +15060,7 @@ pub(all) struct ConnectorUpdateFilteringValidationResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateFilteringValidationResponse with to_json(
+pub impl ToJson for ConnectorUpdateFilteringValidationResponse with fn to_json(
   self : ConnectorUpdateFilteringValidationResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -14999,7 +15069,7 @@ pub impl ToJson for ConnectorUpdateFilteringValidationResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateFilteringValidationResponse with from_json(
+pub impl FromJson for ConnectorUpdateFilteringValidationResponse with fn from_json(
   json,
   path,
 ) {
@@ -15056,7 +15126,7 @@ pub async fn Client::connector_update_filtering_validation(
 pub(all) struct ConnectorUpdateIndexNameQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateIndexNameQuery with to_json(
+pub impl ToJson for ConnectorUpdateIndexNameQuery with fn to_json(
   _self : ConnectorUpdateIndexNameQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15064,7 +15134,10 @@ pub impl ToJson for ConnectorUpdateIndexNameQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateIndexNameQuery with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateIndexNameQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateIndexNameQuery: expected object"),
@@ -15092,7 +15165,7 @@ pub(all) struct ConnectorUpdateIndexNameBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateIndexNameBody with to_json(
+pub impl ToJson for ConnectorUpdateIndexNameBody with fn to_json(
   self : ConnectorUpdateIndexNameBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15101,7 +15174,7 @@ pub impl ToJson for ConnectorUpdateIndexNameBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateIndexNameBody with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateIndexNameBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateIndexNameBody: expected object"),
@@ -15128,7 +15201,7 @@ pub(all) struct ConnectorUpdateIndexNameResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateIndexNameResponse with to_json(
+pub impl ToJson for ConnectorUpdateIndexNameResponse with fn to_json(
   self : ConnectorUpdateIndexNameResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15137,7 +15210,7 @@ pub impl ToJson for ConnectorUpdateIndexNameResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateIndexNameResponse with from_json(
+pub impl FromJson for ConnectorUpdateIndexNameResponse with fn from_json(
   json,
   path,
 ) {
@@ -15194,7 +15267,7 @@ pub async fn Client::connector_update_index_name(
 pub(all) struct ConnectorUpdateNameQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateNameQuery with to_json(
+pub impl ToJson for ConnectorUpdateNameQuery with fn to_json(
   _self : ConnectorUpdateNameQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15202,7 +15275,7 @@ pub impl ToJson for ConnectorUpdateNameQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateNameQuery with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateNameQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateNameQuery: expected object"),
@@ -15231,7 +15304,7 @@ pub(all) struct ConnectorUpdateNameBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateNameBody with to_json(
+pub impl ToJson for ConnectorUpdateNameBody with fn to_json(
   self : ConnectorUpdateNameBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15247,7 +15320,7 @@ pub impl ToJson for ConnectorUpdateNameBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateNameBody with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateNameBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateNameBody: expected object"),
@@ -15282,7 +15355,7 @@ pub(all) struct ConnectorUpdateNameResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateNameResponse with to_json(
+pub impl ToJson for ConnectorUpdateNameResponse with fn to_json(
   self : ConnectorUpdateNameResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15291,7 +15364,7 @@ pub impl ToJson for ConnectorUpdateNameResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateNameResponse with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateNameResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateNameResponse: expected object"),
@@ -15341,7 +15414,7 @@ pub async fn Client::connector_update_name(
 pub(all) struct ConnectorUpdateNativeQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateNativeQuery with to_json(
+pub impl ToJson for ConnectorUpdateNativeQuery with fn to_json(
   _self : ConnectorUpdateNativeQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15349,7 +15422,7 @@ pub impl ToJson for ConnectorUpdateNativeQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateNativeQuery with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateNativeQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateNativeQuery: expected object"),
@@ -15377,7 +15450,7 @@ pub(all) struct ConnectorUpdateNativeBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateNativeBody with to_json(
+pub impl ToJson for ConnectorUpdateNativeBody with fn to_json(
   self : ConnectorUpdateNativeBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15386,7 +15459,7 @@ pub impl ToJson for ConnectorUpdateNativeBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateNativeBody with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateNativeBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateNativeBody: expected object"),
@@ -15413,7 +15486,7 @@ pub(all) struct ConnectorUpdateNativeResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateNativeResponse with to_json(
+pub impl ToJson for ConnectorUpdateNativeResponse with fn to_json(
   self : ConnectorUpdateNativeResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15422,7 +15495,10 @@ pub impl ToJson for ConnectorUpdateNativeResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateNativeResponse with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateNativeResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateNativeResponse: expected object"),
@@ -15472,7 +15548,7 @@ pub async fn Client::connector_update_native(
 pub(all) struct ConnectorUpdatePipelineQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdatePipelineQuery with to_json(
+pub impl ToJson for ConnectorUpdatePipelineQuery with fn to_json(
   _self : ConnectorUpdatePipelineQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15480,7 +15556,7 @@ pub impl ToJson for ConnectorUpdatePipelineQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdatePipelineQuery with from_json(json, path) {
+pub impl FromJson for ConnectorUpdatePipelineQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdatePipelineQuery: expected object"),
@@ -15508,7 +15584,7 @@ pub(all) struct ConnectorUpdatePipelineBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdatePipelineBody with to_json(
+pub impl ToJson for ConnectorUpdatePipelineBody with fn to_json(
   self : ConnectorUpdatePipelineBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15517,7 +15593,7 @@ pub impl ToJson for ConnectorUpdatePipelineBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdatePipelineBody with from_json(json, path) {
+pub impl FromJson for ConnectorUpdatePipelineBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdatePipelineBody: expected object"),
@@ -15544,7 +15620,7 @@ pub(all) struct ConnectorUpdatePipelineResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdatePipelineResponse with to_json(
+pub impl ToJson for ConnectorUpdatePipelineResponse with fn to_json(
   self : ConnectorUpdatePipelineResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15553,7 +15629,10 @@ pub impl ToJson for ConnectorUpdatePipelineResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdatePipelineResponse with from_json(json, path) {
+pub impl FromJson for ConnectorUpdatePipelineResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdatePipelineResponse: expected object"),
@@ -15603,7 +15682,7 @@ pub async fn Client::connector_update_pipeline(
 pub(all) struct ConnectorUpdateSchedulingQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateSchedulingQuery with to_json(
+pub impl ToJson for ConnectorUpdateSchedulingQuery with fn to_json(
   _self : ConnectorUpdateSchedulingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15611,7 +15690,10 @@ pub impl ToJson for ConnectorUpdateSchedulingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateSchedulingQuery with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateSchedulingQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateSchedulingQuery: expected object"),
@@ -15639,7 +15721,7 @@ pub(all) struct ConnectorUpdateSchedulingBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateSchedulingBody with to_json(
+pub impl ToJson for ConnectorUpdateSchedulingBody with fn to_json(
   self : ConnectorUpdateSchedulingBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15648,7 +15730,10 @@ pub impl ToJson for ConnectorUpdateSchedulingBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateSchedulingBody with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateSchedulingBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateSchedulingBody: expected object"),
@@ -15675,7 +15760,7 @@ pub(all) struct ConnectorUpdateSchedulingResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateSchedulingResponse with to_json(
+pub impl ToJson for ConnectorUpdateSchedulingResponse with fn to_json(
   self : ConnectorUpdateSchedulingResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15684,7 +15769,7 @@ pub impl ToJson for ConnectorUpdateSchedulingResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateSchedulingResponse with from_json(
+pub impl FromJson for ConnectorUpdateSchedulingResponse with fn from_json(
   json,
   path,
 ) {
@@ -15741,7 +15826,7 @@ pub async fn Client::connector_update_scheduling(
 pub(all) struct ConnectorUpdateServiceTypeQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateServiceTypeQuery with to_json(
+pub impl ToJson for ConnectorUpdateServiceTypeQuery with fn to_json(
   _self : ConnectorUpdateServiceTypeQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15749,7 +15834,10 @@ pub impl ToJson for ConnectorUpdateServiceTypeQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateServiceTypeQuery with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateServiceTypeQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateServiceTypeQuery: expected object"),
@@ -15777,7 +15865,7 @@ pub(all) struct ConnectorUpdateServiceTypeBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateServiceTypeBody with to_json(
+pub impl ToJson for ConnectorUpdateServiceTypeBody with fn to_json(
   self : ConnectorUpdateServiceTypeBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15786,7 +15874,10 @@ pub impl ToJson for ConnectorUpdateServiceTypeBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateServiceTypeBody with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateServiceTypeBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateServiceTypeBody: expected object"),
@@ -15813,7 +15904,7 @@ pub(all) struct ConnectorUpdateServiceTypeResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateServiceTypeResponse with to_json(
+pub impl ToJson for ConnectorUpdateServiceTypeResponse with fn to_json(
   self : ConnectorUpdateServiceTypeResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15822,7 +15913,7 @@ pub impl ToJson for ConnectorUpdateServiceTypeResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateServiceTypeResponse with from_json(
+pub impl FromJson for ConnectorUpdateServiceTypeResponse with fn from_json(
   json,
   path,
 ) {
@@ -15879,7 +15970,7 @@ pub async fn Client::connector_update_service_type(
 pub(all) struct ConnectorUpdateStatusQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateStatusQuery with to_json(
+pub impl ToJson for ConnectorUpdateStatusQuery with fn to_json(
   _self : ConnectorUpdateStatusQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15887,7 +15978,7 @@ pub impl ToJson for ConnectorUpdateStatusQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateStatusQuery with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateStatusQuery: expected object"),
@@ -15915,7 +16006,7 @@ pub(all) struct ConnectorUpdateStatusBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateStatusBody with to_json(
+pub impl ToJson for ConnectorUpdateStatusBody with fn to_json(
   self : ConnectorUpdateStatusBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15924,7 +16015,7 @@ pub impl ToJson for ConnectorUpdateStatusBody with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateStatusBody with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateStatusBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateStatusBody: expected object"),
@@ -15951,7 +16042,7 @@ pub(all) struct ConnectorUpdateStatusResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ConnectorUpdateStatusResponse with to_json(
+pub impl ToJson for ConnectorUpdateStatusResponse with fn to_json(
   self : ConnectorUpdateStatusResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -15960,7 +16051,10 @@ pub impl ToJson for ConnectorUpdateStatusResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ConnectorUpdateStatusResponse with from_json(json, path) {
+pub impl FromJson for ConnectorUpdateStatusResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ConnectorUpdateStatusResponse: expected object"),
@@ -16025,7 +16119,7 @@ pub(all) struct CountQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CountQuery with to_json(self : CountQuery) -> Json {
+pub impl ToJson for CountQuery with fn to_json(self : CountQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -16087,7 +16181,7 @@ pub impl ToJson for CountQuery with to_json(self : CountQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for CountQuery with from_json(json, path) {
+pub impl FromJson for CountQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CountQuery: expected object"))
   }
@@ -16278,7 +16372,7 @@ pub(all) struct CountBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CountBody with to_json(self : CountBody) -> Json {
+pub impl ToJson for CountBody with fn to_json(self : CountBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.query {
     Some(value) => obj["query"] = value.to_json()
@@ -16292,7 +16386,7 @@ pub impl ToJson for CountBody with to_json(self : CountBody) -> Json {
 }
 
 ///|
-pub impl FromJson for CountBody with from_json(json, path) {
+pub impl FromJson for CountBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CountBody: expected object"))
   }
@@ -16323,7 +16417,7 @@ pub(all) struct CountResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CountResponse with to_json(self : CountResponse) -> Json {
+pub impl ToJson for CountResponse with fn to_json(self : CountResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["count"] = self.count.to_json()
   obj["_shards"] = self._shards.to_json()
@@ -16331,7 +16425,7 @@ pub impl ToJson for CountResponse with to_json(self : CountResponse) -> Json {
 }
 
 ///|
-pub impl FromJson for CountResponse with from_json(json, path) {
+pub impl FromJson for CountResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CountResponse: expected object"))
   }
@@ -16403,7 +16497,7 @@ pub(all) struct CreateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for CreateQuery with to_json(self : CreateQuery) -> Json {
+pub impl ToJson for CreateQuery with fn to_json(self : CreateQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.include_source_on_error {
     Some(value) => obj["include_source_on_error"] = value.to_json()
@@ -16449,7 +16543,7 @@ pub impl ToJson for CreateQuery with to_json(self : CreateQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for CreateQuery with from_json(json, path) {
+pub impl FromJson for CreateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "CreateQuery: expected object"))
   }
@@ -16641,7 +16735,7 @@ pub(all) struct DanglingIndicesDeleteDanglingIndexQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for DanglingIndicesDeleteDanglingIndexQuery with to_json(
+pub impl ToJson for DanglingIndicesDeleteDanglingIndexQuery with fn to_json(
   self : DanglingIndicesDeleteDanglingIndexQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -16661,7 +16755,7 @@ pub impl ToJson for DanglingIndicesDeleteDanglingIndexQuery with to_json(
 }
 
 ///|
-pub impl FromJson for DanglingIndicesDeleteDanglingIndexQuery with from_json(
+pub impl FromJson for DanglingIndicesDeleteDanglingIndexQuery with fn from_json(
   json,
   path,
 ) {
@@ -16760,7 +16854,7 @@ pub(all) struct DanglingIndicesImportDanglingIndexQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for DanglingIndicesImportDanglingIndexQuery with to_json(
+pub impl ToJson for DanglingIndicesImportDanglingIndexQuery with fn to_json(
   self : DanglingIndicesImportDanglingIndexQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -16780,7 +16874,7 @@ pub impl ToJson for DanglingIndicesImportDanglingIndexQuery with to_json(
 }
 
 ///|
-pub impl FromJson for DanglingIndicesImportDanglingIndexQuery with from_json(
+pub impl FromJson for DanglingIndicesImportDanglingIndexQuery with fn from_json(
   json,
   path,
 ) {
@@ -16875,7 +16969,7 @@ pub async fn Client::dangling_indices_import_dangling_index(
 pub(all) struct DanglingIndicesListDanglingIndicesQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for DanglingIndicesListDanglingIndicesQuery with to_json(
+pub impl ToJson for DanglingIndicesListDanglingIndicesQuery with fn to_json(
   _self : DanglingIndicesListDanglingIndicesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -16883,7 +16977,7 @@ pub impl ToJson for DanglingIndicesListDanglingIndicesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for DanglingIndicesListDanglingIndicesQuery with from_json(
+pub impl FromJson for DanglingIndicesListDanglingIndicesQuery with fn from_json(
   json,
   path,
 ) {
@@ -16914,7 +17008,7 @@ pub(all) struct DanglingIndicesListDanglingIndicesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for DanglingIndicesListDanglingIndicesResponse with to_json(
+pub impl ToJson for DanglingIndicesListDanglingIndicesResponse with fn to_json(
   self : DanglingIndicesListDanglingIndicesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -16923,7 +17017,7 @@ pub impl ToJson for DanglingIndicesListDanglingIndicesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for DanglingIndicesListDanglingIndicesResponse with from_json(
+pub impl FromJson for DanglingIndicesListDanglingIndicesResponse with fn from_json(
   json,
   path,
 ) {
@@ -16976,7 +17070,7 @@ pub(all) struct DeleteQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for DeleteQuery with to_json(self : DeleteQuery) -> Json {
+pub impl ToJson for DeleteQuery with fn to_json(self : DeleteQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.if_primary_term {
     Some(value) => obj["if_primary_term"] = value.to_json()
@@ -17014,7 +17108,7 @@ pub impl ToJson for DeleteQuery with to_json(self : DeleteQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for DeleteQuery with from_json(json, path) {
+pub impl FromJson for DeleteQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "DeleteQuery: expected object"))
   }
@@ -17199,7 +17293,9 @@ pub(all) struct DeleteByQueryQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for DeleteByQueryQuery with to_json(self : DeleteByQueryQuery) -> Json {
+pub impl ToJson for DeleteByQueryQuery with fn to_json(
+  self : DeleteByQueryQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -17321,7 +17417,7 @@ pub impl ToJson for DeleteByQueryQuery with to_json(self : DeleteByQueryQuery) -
 }
 
 ///|
-pub impl FromJson for DeleteByQueryQuery with from_json(json, path) {
+pub impl FromJson for DeleteByQueryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "DeleteByQueryQuery: expected object"))
   }
@@ -17692,7 +17788,7 @@ pub(all) struct DeleteByQueryBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for DeleteByQueryBody with to_json(self : DeleteByQueryBody) -> Json {
+pub impl ToJson for DeleteByQueryBody with fn to_json(self : DeleteByQueryBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.max_docs {
     Some(value) => obj["max_docs"] = value.to_json()
@@ -17714,7 +17810,7 @@ pub impl ToJson for DeleteByQueryBody with to_json(self : DeleteByQueryBody) -> 
 }
 
 ///|
-pub impl FromJson for DeleteByQueryBody with from_json(json, path) {
+pub impl FromJson for DeleteByQueryBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "DeleteByQueryBody: expected object"))
   }
@@ -17774,7 +17870,7 @@ pub(all) struct DeleteByQueryResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for DeleteByQueryResponse with to_json(
+pub impl ToJson for DeleteByQueryResponse with fn to_json(
   self : DeleteByQueryResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -17850,7 +17946,7 @@ pub impl ToJson for DeleteByQueryResponse with to_json(
 }
 
 ///|
-pub impl FromJson for DeleteByQueryResponse with from_json(json, path) {
+pub impl FromJson for DeleteByQueryResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "DeleteByQueryResponse: expected object"),
@@ -17992,7 +18088,7 @@ pub(all) struct DeleteByQueryRethrottleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for DeleteByQueryRethrottleQuery with to_json(
+pub impl ToJson for DeleteByQueryRethrottleQuery with fn to_json(
   self : DeleteByQueryRethrottleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -18001,7 +18097,7 @@ pub impl ToJson for DeleteByQueryRethrottleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for DeleteByQueryRethrottleQuery with from_json(json, path) {
+pub impl FromJson for DeleteByQueryRethrottleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "DeleteByQueryRethrottleQuery: expected object"),
@@ -18074,7 +18170,7 @@ pub(all) struct DeleteScriptQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for DeleteScriptQuery with to_json(self : DeleteScriptQuery) -> Json {
+pub impl ToJson for DeleteScriptQuery with fn to_json(self : DeleteScriptQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -18088,7 +18184,7 @@ pub impl ToJson for DeleteScriptQuery with to_json(self : DeleteScriptQuery) -> 
 }
 
 ///|
-pub impl FromJson for DeleteScriptQuery with from_json(json, path) {
+pub impl FromJson for DeleteScriptQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "DeleteScriptQuery: expected object"))
   }
@@ -18166,7 +18262,7 @@ pub(all) struct EnrichDeletePolicyQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EnrichDeletePolicyQuery with to_json(
+pub impl ToJson for EnrichDeletePolicyQuery with fn to_json(
   self : EnrichDeletePolicyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -18178,7 +18274,7 @@ pub impl ToJson for EnrichDeletePolicyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for EnrichDeletePolicyQuery with from_json(json, path) {
+pub impl FromJson for EnrichDeletePolicyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "EnrichDeletePolicyQuery: expected object"),
@@ -18252,7 +18348,7 @@ pub(all) struct EnrichExecutePolicyQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EnrichExecutePolicyQuery with to_json(
+pub impl ToJson for EnrichExecutePolicyQuery with fn to_json(
   self : EnrichExecutePolicyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -18268,7 +18364,7 @@ pub impl ToJson for EnrichExecutePolicyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for EnrichExecutePolicyQuery with from_json(json, path) {
+pub impl FromJson for EnrichExecutePolicyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "EnrichExecutePolicyQuery: expected object"),
@@ -18322,7 +18418,7 @@ pub(all) struct EnrichExecutePolicyResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EnrichExecutePolicyResponse with to_json(
+pub impl ToJson for EnrichExecutePolicyResponse with fn to_json(
   self : EnrichExecutePolicyResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -18338,7 +18434,7 @@ pub impl ToJson for EnrichExecutePolicyResponse with to_json(
 }
 
 ///|
-pub impl FromJson for EnrichExecutePolicyResponse with from_json(json, path) {
+pub impl FromJson for EnrichExecutePolicyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "EnrichExecutePolicyResponse: expected object"),
@@ -18393,7 +18489,7 @@ pub(all) struct EnrichGetPolicyQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EnrichGetPolicyQuery with to_json(
+pub impl ToJson for EnrichGetPolicyQuery with fn to_json(
   self : EnrichGetPolicyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -18405,7 +18501,7 @@ pub impl ToJson for EnrichGetPolicyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for EnrichGetPolicyQuery with from_json(json, path) {
+pub impl FromJson for EnrichGetPolicyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EnrichGetPolicyQuery: expected object"))
   }
@@ -18444,7 +18540,7 @@ pub(all) struct EnrichGetPolicyResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EnrichGetPolicyResponse with to_json(
+pub impl ToJson for EnrichGetPolicyResponse with fn to_json(
   self : EnrichGetPolicyResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -18453,7 +18549,7 @@ pub impl ToJson for EnrichGetPolicyResponse with to_json(
 }
 
 ///|
-pub impl FromJson for EnrichGetPolicyResponse with from_json(json, path) {
+pub impl FromJson for EnrichGetPolicyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "EnrichGetPolicyResponse: expected object"),
@@ -18508,7 +18604,7 @@ pub(all) struct EnrichPutPolicyQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EnrichPutPolicyQuery with to_json(
+pub impl ToJson for EnrichPutPolicyQuery with fn to_json(
   self : EnrichPutPolicyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -18520,7 +18616,7 @@ pub impl ToJson for EnrichPutPolicyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for EnrichPutPolicyQuery with from_json(json, path) {
+pub impl FromJson for EnrichPutPolicyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EnrichPutPolicyQuery: expected object"))
   }
@@ -18561,7 +18657,9 @@ pub(all) struct EnrichPutPolicyBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EnrichPutPolicyBody with to_json(self : EnrichPutPolicyBody) -> Json {
+pub impl ToJson for EnrichPutPolicyBody with fn to_json(
+  self : EnrichPutPolicyBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.geo_match {
     Some(value) => obj["geo_match"] = value.to_json()
@@ -18579,7 +18677,7 @@ pub impl ToJson for EnrichPutPolicyBody with to_json(self : EnrichPutPolicyBody)
 }
 
 ///|
-pub impl FromJson for EnrichPutPolicyBody with from_json(json, path) {
+pub impl FromJson for EnrichPutPolicyBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EnrichPutPolicyBody: expected object"))
   }
@@ -18653,7 +18751,7 @@ pub(all) struct EnrichStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EnrichStatsQuery with to_json(self : EnrichStatsQuery) -> Json {
+pub impl ToJson for EnrichStatsQuery with fn to_json(self : EnrichStatsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -18663,7 +18761,7 @@ pub impl ToJson for EnrichStatsQuery with to_json(self : EnrichStatsQuery) -> Js
 }
 
 ///|
-pub impl FromJson for EnrichStatsQuery with from_json(json, path) {
+pub impl FromJson for EnrichStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EnrichStatsQuery: expected object"))
   }
@@ -18702,7 +18800,9 @@ pub(all) struct EnrichStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EnrichStatsResponse with to_json(self : EnrichStatsResponse) -> Json {
+pub impl ToJson for EnrichStatsResponse with fn to_json(
+  self : EnrichStatsResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["coordinator_stats"] = self.coordinator_stats.to_json()
   obj["executing_policies"] = self.executing_policies.to_json()
@@ -18714,7 +18814,7 @@ pub impl ToJson for EnrichStatsResponse with to_json(self : EnrichStatsResponse)
 }
 
 ///|
-pub impl FromJson for EnrichStatsResponse with from_json(json, path) {
+pub impl FromJson for EnrichStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EnrichStatsResponse: expected object"))
   }
@@ -18763,13 +18863,13 @@ pub async fn Client::enrich_stats(
 pub(all) struct EqlDeleteQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EqlDeleteQuery with to_json(_self : EqlDeleteQuery) -> Json {
+pub impl ToJson for EqlDeleteQuery with fn to_json(_self : EqlDeleteQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for EqlDeleteQuery with from_json(json, path) {
+pub impl FromJson for EqlDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "EqlDeleteQuery: expected object"))
   }
@@ -18828,7 +18928,7 @@ pub(all) struct EqlGetQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EqlGetQuery with to_json(self : EqlGetQuery) -> Json {
+pub impl ToJson for EqlGetQuery with fn to_json(self : EqlGetQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.keep_alive {
     Some(value) => obj["keep_alive"] = value.to_json()
@@ -18842,7 +18942,7 @@ pub impl ToJson for EqlGetQuery with to_json(self : EqlGetQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for EqlGetQuery with from_json(json, path) {
+pub impl FromJson for EqlGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EqlGetQuery: expected object"))
   }
@@ -18926,13 +19026,13 @@ pub async fn Client::eql_get(
 pub(all) struct EqlGetStatusQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EqlGetStatusQuery with to_json(_self : EqlGetStatusQuery) -> Json {
+pub impl ToJson for EqlGetStatusQuery with fn to_json(_self : EqlGetStatusQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for EqlGetStatusQuery with from_json(json, path) {
+pub impl FromJson for EqlGetStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "EqlGetStatusQuery: expected object"))
   }
@@ -18963,7 +19063,7 @@ pub(all) struct EqlGetStatusResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EqlGetStatusResponse with to_json(
+pub impl ToJson for EqlGetStatusResponse with fn to_json(
   self : EqlGetStatusResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -18986,7 +19086,7 @@ pub impl ToJson for EqlGetStatusResponse with to_json(
 }
 
 ///|
-pub impl FromJson for EqlGetStatusResponse with from_json(json, path) {
+pub impl FromJson for EqlGetStatusResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EqlGetStatusResponse: expected object"))
   }
@@ -19069,7 +19169,7 @@ pub(all) struct EqlSearchQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EqlSearchQuery with to_json(self : EqlSearchQuery) -> Json {
+pub impl ToJson for EqlSearchQuery with fn to_json(self : EqlSearchQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -19111,7 +19211,7 @@ pub impl ToJson for EqlSearchQuery with to_json(self : EqlSearchQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for EqlSearchQuery with from_json(json, path) {
+pub impl FromJson for EqlSearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EqlSearchQuery: expected object"))
   }
@@ -19288,7 +19388,7 @@ pub(all) struct EqlSearchBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EqlSearchBody with to_json(self : EqlSearchBody) -> Json {
+pub impl ToJson for EqlSearchBody with fn to_json(self : EqlSearchBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.project_routing {
     Some(value) => obj["project_routing"] = value.to_json()
@@ -19363,7 +19463,7 @@ pub impl ToJson for EqlSearchBody with to_json(self : EqlSearchBody) -> Json {
 }
 
 ///|
-pub impl FromJson for EqlSearchBody with from_json(json, path) {
+pub impl FromJson for EqlSearchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EqlSearchBody: expected object"))
   }
@@ -19578,7 +19678,9 @@ pub(all) struct EsqlAsyncQueryQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlAsyncQueryQuery with to_json(self : EsqlAsyncQueryQuery) -> Json {
+pub impl ToJson for EsqlAsyncQueryQuery with fn to_json(
+  self : EsqlAsyncQueryQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_partial_results {
     Some(value) => obj["allow_partial_results"] = value.to_json()
@@ -19600,7 +19702,7 @@ pub impl ToJson for EsqlAsyncQueryQuery with to_json(self : EsqlAsyncQueryQuery)
 }
 
 ///|
-pub impl FromJson for EsqlAsyncQueryQuery with from_json(json, path) {
+pub impl FromJson for EsqlAsyncQueryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EsqlAsyncQueryQuery: expected object"))
   }
@@ -19685,7 +19787,9 @@ pub(all) struct EsqlAsyncQueryBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlAsyncQueryBody with to_json(self : EsqlAsyncQueryBody) -> Json {
+pub impl ToJson for EsqlAsyncQueryBody with fn to_json(
+  self : EsqlAsyncQueryBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.columnar {
     Some(value) => obj["columnar"] = value.to_json()
@@ -19744,7 +19848,7 @@ pub impl ToJson for EsqlAsyncQueryBody with to_json(self : EsqlAsyncQueryBody) -
 }
 
 ///|
-pub impl FromJson for EsqlAsyncQueryBody with from_json(json, path) {
+pub impl FromJson for EsqlAsyncQueryBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EsqlAsyncQueryBody: expected object"))
   }
@@ -19906,7 +20010,7 @@ pub async fn Client::esql_async_query(
 pub(all) struct EsqlAsyncQueryDeleteQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlAsyncQueryDeleteQuery with to_json(
+pub impl ToJson for EsqlAsyncQueryDeleteQuery with fn to_json(
   _self : EsqlAsyncQueryDeleteQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -19914,7 +20018,7 @@ pub impl ToJson for EsqlAsyncQueryDeleteQuery with to_json(
 }
 
 ///|
-pub impl FromJson for EsqlAsyncQueryDeleteQuery with from_json(json, path) {
+pub impl FromJson for EsqlAsyncQueryDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "EsqlAsyncQueryDeleteQuery: expected object"),
@@ -19977,7 +20081,7 @@ pub(all) struct EsqlAsyncQueryGetQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlAsyncQueryGetQuery with to_json(
+pub impl ToJson for EsqlAsyncQueryGetQuery with fn to_json(
   self : EsqlAsyncQueryGetQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -20001,7 +20105,7 @@ pub impl ToJson for EsqlAsyncQueryGetQuery with to_json(
 }
 
 ///|
-pub impl FromJson for EsqlAsyncQueryGetQuery with from_json(json, path) {
+pub impl FromJson for EsqlAsyncQueryGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "EsqlAsyncQueryGetQuery: expected object"),
@@ -20112,7 +20216,7 @@ pub(all) struct EsqlAsyncQueryStopQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlAsyncQueryStopQuery with to_json(
+pub impl ToJson for EsqlAsyncQueryStopQuery with fn to_json(
   self : EsqlAsyncQueryStopQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -20124,7 +20228,7 @@ pub impl ToJson for EsqlAsyncQueryStopQuery with to_json(
 }
 
 ///|
-pub impl FromJson for EsqlAsyncQueryStopQuery with from_json(json, path) {
+pub impl FromJson for EsqlAsyncQueryStopQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "EsqlAsyncQueryStopQuery: expected object"),
@@ -20195,7 +20299,7 @@ pub async fn Client::esql_async_query_stop(
 pub(all) struct EsqlDeleteViewQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlDeleteViewQuery with to_json(
+pub impl ToJson for EsqlDeleteViewQuery with fn to_json(
   _self : EsqlDeleteViewQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -20203,7 +20307,7 @@ pub impl ToJson for EsqlDeleteViewQuery with to_json(
 }
 
 ///|
-pub impl FromJson for EsqlDeleteViewQuery with from_json(json, path) {
+pub impl FromJson for EsqlDeleteViewQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "EsqlDeleteViewQuery: expected object"))
   }
@@ -20268,13 +20372,13 @@ pub async fn Client::esql_delete_view(
 pub(all) struct EsqlGetQueryQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlGetQueryQuery with to_json(_self : EsqlGetQueryQuery) -> Json {
+pub impl ToJson for EsqlGetQueryQuery with fn to_json(_self : EsqlGetQueryQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for EsqlGetQueryQuery with from_json(json, path) {
+pub impl FromJson for EsqlGetQueryQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "EsqlGetQueryQuery: expected object"))
   }
@@ -20309,7 +20413,7 @@ pub(all) struct EsqlGetQueryResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlGetQueryResponse with to_json(
+pub impl ToJson for EsqlGetQueryResponse with fn to_json(
   self : EsqlGetQueryResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -20324,7 +20428,7 @@ pub impl ToJson for EsqlGetQueryResponse with to_json(
 }
 
 ///|
-pub impl FromJson for EsqlGetQueryResponse with from_json(json, path) {
+pub impl FromJson for EsqlGetQueryResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EsqlGetQueryResponse: expected object"))
   }
@@ -20399,13 +20503,13 @@ pub async fn Client::esql_get_query(
 pub(all) struct EsqlGetViewQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlGetViewQuery with to_json(_self : EsqlGetViewQuery) -> Json {
+pub impl ToJson for EsqlGetViewQuery with fn to_json(_self : EsqlGetViewQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for EsqlGetViewQuery with from_json(json, path) {
+pub impl FromJson for EsqlGetViewQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "EsqlGetViewQuery: expected object"))
   }
@@ -20434,14 +20538,16 @@ pub(all) struct EsqlGetViewResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlGetViewResponse with to_json(self : EsqlGetViewResponse) -> Json {
+pub impl ToJson for EsqlGetViewResponse with fn to_json(
+  self : EsqlGetViewResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["views"] = self.views.to_json()
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for EsqlGetViewResponse with from_json(json, path) {
+pub impl FromJson for EsqlGetViewResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EsqlGetViewResponse: expected object"))
   }
@@ -20498,7 +20604,7 @@ pub async fn Client::esql_get_view(
 pub(all) struct EsqlListQueriesQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlListQueriesQuery with to_json(
+pub impl ToJson for EsqlListQueriesQuery with fn to_json(
   _self : EsqlListQueriesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -20506,7 +20612,7 @@ pub impl ToJson for EsqlListQueriesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for EsqlListQueriesQuery with from_json(json, path) {
+pub impl FromJson for EsqlListQueriesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "EsqlListQueriesQuery: expected object"))
   }
@@ -20535,7 +20641,7 @@ pub(all) struct EsqlListQueriesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlListQueriesResponse with to_json(
+pub impl ToJson for EsqlListQueriesResponse with fn to_json(
   self : EsqlListQueriesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -20544,7 +20650,7 @@ pub impl ToJson for EsqlListQueriesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for EsqlListQueriesResponse with from_json(json, path) {
+pub impl FromJson for EsqlListQueriesResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "EsqlListQueriesResponse: expected object"),
@@ -20591,13 +20697,13 @@ pub async fn Client::esql_list_queries(
 pub(all) struct EsqlPutViewQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlPutViewQuery with to_json(_self : EsqlPutViewQuery) -> Json {
+pub impl ToJson for EsqlPutViewQuery with fn to_json(_self : EsqlPutViewQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for EsqlPutViewQuery with from_json(json, path) {
+pub impl FromJson for EsqlPutViewQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "EsqlPutViewQuery: expected object"))
   }
@@ -20623,14 +20729,14 @@ pub(all) struct EsqlPutViewBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlPutViewBody with to_json(self : EsqlPutViewBody) -> Json {
+pub impl ToJson for EsqlPutViewBody with fn to_json(self : EsqlPutViewBody) -> Json {
   let obj : Map[String, Json] = {}
   obj["query"] = self.query.to_json()
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for EsqlPutViewBody with from_json(json, path) {
+pub impl FromJson for EsqlPutViewBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EsqlPutViewBody: expected object"))
   }
@@ -20691,7 +20797,7 @@ pub(all) struct EsqlQueryQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlQueryQuery with to_json(self : EsqlQueryQuery) -> Json {
+pub impl ToJson for EsqlQueryQuery with fn to_json(self : EsqlQueryQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.format {
     Some(value) => obj["format"] = value.to_json()
@@ -20713,7 +20819,7 @@ pub impl ToJson for EsqlQueryQuery with to_json(self : EsqlQueryQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for EsqlQueryQuery with from_json(json, path) {
+pub impl FromJson for EsqlQueryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EsqlQueryQuery: expected object"))
   }
@@ -20795,7 +20901,7 @@ pub(all) struct EsqlQueryBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for EsqlQueryBody with to_json(self : EsqlQueryBody) -> Json {
+pub impl ToJson for EsqlQueryBody with fn to_json(self : EsqlQueryBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.columnar {
     Some(value) => obj["columnar"] = value.to_json()
@@ -20842,7 +20948,7 @@ pub impl ToJson for EsqlQueryBody with to_json(self : EsqlQueryBody) -> Json {
 }
 
 ///|
-pub impl FromJson for EsqlQueryBody with from_json(json, path) {
+pub impl FromJson for EsqlQueryBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "EsqlQueryBody: expected object"))
   }
@@ -20986,7 +21092,7 @@ pub(all) struct ExistsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ExistsQuery with to_json(self : ExistsQuery) -> Json {
+pub impl ToJson for ExistsQuery with fn to_json(self : ExistsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.preference {
     Some(value) => obj["preference"] = value.to_json()
@@ -21032,7 +21138,7 @@ pub impl ToJson for ExistsQuery with to_json(self : ExistsQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for ExistsQuery with from_json(json, path) {
+pub impl FromJson for ExistsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ExistsQuery: expected object"))
   }
@@ -21217,7 +21323,7 @@ pub(all) struct ExistsSourceQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ExistsSourceQuery with to_json(self : ExistsSourceQuery) -> Json {
+pub impl ToJson for ExistsSourceQuery with fn to_json(self : ExistsSourceQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.preference {
     Some(value) => obj["preference"] = value.to_json()
@@ -21259,7 +21365,7 @@ pub impl ToJson for ExistsSourceQuery with to_json(self : ExistsSourceQuery) -> 
 }
 
 ///|
-pub impl FromJson for ExistsSourceQuery with from_json(json, path) {
+pub impl FromJson for ExistsSourceQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ExistsSourceQuery: expected object"))
   }
@@ -21437,7 +21543,7 @@ pub(all) struct ExplainQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ExplainQuery with to_json(self : ExplainQuery) -> Json {
+pub impl ToJson for ExplainQuery with fn to_json(self : ExplainQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.analyzer {
     Some(value) => obj["analyzer"] = value.to_json()
@@ -21491,7 +21597,7 @@ pub impl ToJson for ExplainQuery with to_json(self : ExplainQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for ExplainQuery with from_json(json, path) {
+pub impl FromJson for ExplainQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ExplainQuery: expected object"))
   }
@@ -21656,7 +21762,7 @@ pub(all) struct ExplainBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ExplainBody with to_json(self : ExplainBody) -> Json {
+pub impl ToJson for ExplainBody with fn to_json(self : ExplainBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.query {
     Some(value) => obj["query"] = value.to_json()
@@ -21666,7 +21772,7 @@ pub impl ToJson for ExplainBody with to_json(self : ExplainBody) -> Json {
 }
 
 ///|
-pub impl FromJson for ExplainBody with from_json(json, path) {
+pub impl FromJson for ExplainBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ExplainBody: expected object"))
   }
@@ -21694,7 +21800,7 @@ pub(all) struct ExplainResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ExplainResponse with to_json(self : ExplainResponse) -> Json {
+pub impl ToJson for ExplainResponse with fn to_json(self : ExplainResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["_index"] = self._index.to_json()
   obj["_id"] = self._id.to_json()
@@ -21711,7 +21817,7 @@ pub impl ToJson for ExplainResponse with to_json(self : ExplainResponse) -> Json
 }
 
 ///|
-pub impl FromJson for ExplainResponse with from_json(json, path) {
+pub impl FromJson for ExplainResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ExplainResponse: expected object"))
   }
@@ -21786,7 +21892,7 @@ pub(all) struct FeaturesGetFeaturesQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FeaturesGetFeaturesQuery with to_json(
+pub impl ToJson for FeaturesGetFeaturesQuery with fn to_json(
   self : FeaturesGetFeaturesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -21798,7 +21904,7 @@ pub impl ToJson for FeaturesGetFeaturesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for FeaturesGetFeaturesQuery with from_json(json, path) {
+pub impl FromJson for FeaturesGetFeaturesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "FeaturesGetFeaturesQuery: expected object"),
@@ -21839,7 +21945,7 @@ pub(all) struct FeaturesGetFeaturesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FeaturesGetFeaturesResponse with to_json(
+pub impl ToJson for FeaturesGetFeaturesResponse with fn to_json(
   self : FeaturesGetFeaturesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -21848,7 +21954,7 @@ pub impl ToJson for FeaturesGetFeaturesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for FeaturesGetFeaturesResponse with from_json(json, path) {
+pub impl FromJson for FeaturesGetFeaturesResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "FeaturesGetFeaturesResponse: expected object"),
@@ -21891,7 +21997,7 @@ pub(all) struct FeaturesResetFeaturesQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FeaturesResetFeaturesQuery with to_json(
+pub impl ToJson for FeaturesResetFeaturesQuery with fn to_json(
   self : FeaturesResetFeaturesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -21903,7 +22009,7 @@ pub impl ToJson for FeaturesResetFeaturesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for FeaturesResetFeaturesQuery with from_json(json, path) {
+pub impl FromJson for FeaturesResetFeaturesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "FeaturesResetFeaturesQuery: expected object"),
@@ -21944,7 +22050,7 @@ pub(all) struct FeaturesResetFeaturesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FeaturesResetFeaturesResponse with to_json(
+pub impl ToJson for FeaturesResetFeaturesResponse with fn to_json(
   self : FeaturesResetFeaturesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -21953,7 +22059,10 @@ pub impl ToJson for FeaturesResetFeaturesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for FeaturesResetFeaturesResponse with from_json(json, path) {
+pub impl FromJson for FeaturesResetFeaturesResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "FeaturesResetFeaturesResponse: expected object"),
@@ -22003,7 +22112,7 @@ pub(all) struct FieldCapsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FieldCapsQuery with to_json(self : FieldCapsQuery) -> Json {
+pub impl ToJson for FieldCapsQuery with fn to_json(self : FieldCapsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -22041,7 +22150,7 @@ pub impl ToJson for FieldCapsQuery with to_json(self : FieldCapsQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for FieldCapsQuery with from_json(json, path) {
+pub impl FromJson for FieldCapsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "FieldCapsQuery: expected object"))
   }
@@ -22167,7 +22276,7 @@ pub(all) struct FieldCapsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FieldCapsBody with to_json(self : FieldCapsBody) -> Json {
+pub impl ToJson for FieldCapsBody with fn to_json(self : FieldCapsBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.fields {
     Some(value) => obj["fields"] = value.to_json()
@@ -22189,7 +22298,7 @@ pub impl ToJson for FieldCapsBody with to_json(self : FieldCapsBody) -> Json {
 }
 
 ///|
-pub impl FromJson for FieldCapsBody with from_json(json, path) {
+pub impl FromJson for FieldCapsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "FieldCapsBody: expected object"))
   }
@@ -22237,7 +22346,7 @@ pub(all) struct FieldCapsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FieldCapsResponse with to_json(self : FieldCapsResponse) -> Json {
+pub impl ToJson for FieldCapsResponse with fn to_json(self : FieldCapsResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["indices"] = self.indices.to_json()
   obj["fields"] = self.fields.to_json()
@@ -22245,7 +22354,7 @@ pub impl ToJson for FieldCapsResponse with to_json(self : FieldCapsResponse) -> 
 }
 
 ///|
-pub impl FromJson for FieldCapsResponse with from_json(json, path) {
+pub impl FromJson for FieldCapsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "FieldCapsResponse: expected object"))
   }
@@ -22306,7 +22415,7 @@ pub async fn Client::field_caps(
 pub(all) struct FleetDeleteSecretQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FleetDeleteSecretQuery with to_json(
+pub impl ToJson for FleetDeleteSecretQuery with fn to_json(
   _self : FleetDeleteSecretQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -22314,7 +22423,7 @@ pub impl ToJson for FleetDeleteSecretQuery with to_json(
 }
 
 ///|
-pub impl FromJson for FleetDeleteSecretQuery with from_json(json, path) {
+pub impl FromJson for FleetDeleteSecretQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "FleetDeleteSecretQuery: expected object"),
@@ -22342,7 +22451,7 @@ pub(all) struct FleetDeleteSecretResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FleetDeleteSecretResponse with to_json(
+pub impl ToJson for FleetDeleteSecretResponse with fn to_json(
   self : FleetDeleteSecretResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -22351,7 +22460,7 @@ pub impl ToJson for FleetDeleteSecretResponse with to_json(
 }
 
 ///|
-pub impl FromJson for FleetDeleteSecretResponse with from_json(json, path) {
+pub impl FromJson for FleetDeleteSecretResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "FleetDeleteSecretResponse: expected object"),
@@ -22398,7 +22507,7 @@ pub async fn Client::fleet_delete_secret(
 pub(all) struct FleetGetSecretQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FleetGetSecretQuery with to_json(
+pub impl ToJson for FleetGetSecretQuery with fn to_json(
   _self : FleetGetSecretQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -22406,7 +22515,7 @@ pub impl ToJson for FleetGetSecretQuery with to_json(
 }
 
 ///|
-pub impl FromJson for FleetGetSecretQuery with from_json(json, path) {
+pub impl FromJson for FleetGetSecretQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "FleetGetSecretQuery: expected object"))
   }
@@ -22433,7 +22542,7 @@ pub(all) struct FleetGetSecretResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FleetGetSecretResponse with to_json(
+pub impl ToJson for FleetGetSecretResponse with fn to_json(
   self : FleetGetSecretResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -22443,7 +22552,7 @@ pub impl ToJson for FleetGetSecretResponse with to_json(
 }
 
 ///|
-pub impl FromJson for FleetGetSecretResponse with from_json(json, path) {
+pub impl FromJson for FleetGetSecretResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "FleetGetSecretResponse: expected object"),
@@ -22499,7 +22608,7 @@ pub(all) struct FleetGlobalCheckpointsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FleetGlobalCheckpointsQuery with to_json(
+pub impl ToJson for FleetGlobalCheckpointsQuery with fn to_json(
   self : FleetGlobalCheckpointsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -22523,7 +22632,7 @@ pub impl ToJson for FleetGlobalCheckpointsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for FleetGlobalCheckpointsQuery with from_json(json, path) {
+pub impl FromJson for FleetGlobalCheckpointsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "FleetGlobalCheckpointsQuery: expected object"),
@@ -22600,7 +22709,7 @@ pub(all) struct FleetGlobalCheckpointsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FleetGlobalCheckpointsResponse with to_json(
+pub impl ToJson for FleetGlobalCheckpointsResponse with fn to_json(
   self : FleetGlobalCheckpointsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -22610,7 +22719,10 @@ pub impl ToJson for FleetGlobalCheckpointsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for FleetGlobalCheckpointsResponse with from_json(json, path) {
+pub impl FromJson for FleetGlobalCheckpointsResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "FleetGlobalCheckpointsResponse: expected object"),
@@ -22681,7 +22793,7 @@ pub(all) struct FleetMsearchQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FleetMsearchQuery with to_json(self : FleetMsearchQuery) -> Json {
+pub impl ToJson for FleetMsearchQuery with fn to_json(self : FleetMsearchQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -22739,7 +22851,7 @@ pub impl ToJson for FleetMsearchQuery with to_json(self : FleetMsearchQuery) -> 
 }
 
 ///|
-pub impl FromJson for FleetMsearchQuery with from_json(json, path) {
+pub impl FromJson for FleetMsearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "FleetMsearchQuery: expected object"))
   }
@@ -22952,7 +23064,7 @@ pub(all) struct FleetMsearchResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FleetMsearchResponse with to_json(
+pub impl ToJson for FleetMsearchResponse with fn to_json(
   self : FleetMsearchResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -22961,7 +23073,7 @@ pub impl ToJson for FleetMsearchResponse with to_json(
 }
 
 ///|
-pub impl FromJson for FleetMsearchResponse with from_json(json, path) {
+pub impl FromJson for FleetMsearchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "FleetMsearchResponse: expected object"))
   }
@@ -23015,7 +23127,7 @@ pub async fn Client::fleet_msearch(
 pub(all) struct FleetPostSecretQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FleetPostSecretQuery with to_json(
+pub impl ToJson for FleetPostSecretQuery with fn to_json(
   _self : FleetPostSecretQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -23023,7 +23135,7 @@ pub impl ToJson for FleetPostSecretQuery with to_json(
 }
 
 ///|
-pub impl FromJson for FleetPostSecretQuery with from_json(json, path) {
+pub impl FromJson for FleetPostSecretQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "FleetPostSecretQuery: expected object"))
   }
@@ -23049,7 +23161,7 @@ pub(all) struct FleetPostSecretResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FleetPostSecretResponse with to_json(
+pub impl ToJson for FleetPostSecretResponse with fn to_json(
   self : FleetPostSecretResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -23058,7 +23170,7 @@ pub impl ToJson for FleetPostSecretResponse with to_json(
 }
 
 ///|
-pub impl FromJson for FleetPostSecretResponse with from_json(json, path) {
+pub impl FromJson for FleetPostSecretResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "FleetPostSecretResponse: expected object"),
@@ -23143,7 +23255,7 @@ pub(all) struct FleetSearchQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FleetSearchQuery with to_json(self : FleetSearchQuery) -> Json {
+pub impl ToJson for FleetSearchQuery with fn to_json(self : FleetSearchQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -23321,7 +23433,7 @@ pub impl ToJson for FleetSearchQuery with to_json(self : FleetSearchQuery) -> Js
 }
 
 ///|
-pub impl FromJson for FleetSearchQuery with from_json(json, path) {
+pub impl FromJson for FleetSearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "FleetSearchQuery: expected object"))
   }
@@ -23906,7 +24018,7 @@ pub(all) struct FleetSearchBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FleetSearchBody with to_json(self : FleetSearchBody) -> Json {
+pub impl ToJson for FleetSearchBody with fn to_json(self : FleetSearchBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.aggregations {
     Some(value) => obj["aggregations"] = value.to_json()
@@ -24036,7 +24148,7 @@ pub impl ToJson for FleetSearchBody with to_json(self : FleetSearchBody) -> Json
 }
 
 ///|
-pub impl FromJson for FleetSearchBody with from_json(json, path) {
+pub impl FromJson for FleetSearchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "FleetSearchBody: expected object"))
   }
@@ -24301,7 +24413,9 @@ pub(all) struct FleetSearchResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for FleetSearchResponse with to_json(self : FleetSearchResponse) -> Json {
+pub impl ToJson for FleetSearchResponse with fn to_json(
+  self : FleetSearchResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["took"] = self.took.to_json()
   obj["timed_out"] = self.timed_out.to_json()
@@ -24351,7 +24465,7 @@ pub impl ToJson for FleetSearchResponse with to_json(self : FleetSearchResponse)
 }
 
 ///|
-pub impl FromJson for FleetSearchResponse with from_json(json, path) {
+pub impl FromJson for FleetSearchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "FleetSearchResponse: expected object"))
   }
@@ -24480,7 +24594,7 @@ pub(all) struct GetQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for GetQuery with to_json(self : GetQuery) -> Json {
+pub impl ToJson for GetQuery with fn to_json(self : GetQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.force_synthetic_source {
     Some(value) => obj["force_synthetic_source"] = value.to_json()
@@ -24534,7 +24648,7 @@ pub impl ToJson for GetQuery with to_json(self : GetQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for GetQuery with from_json(json, path) {
+pub impl FromJson for GetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "GetQuery: expected object"))
   }
@@ -24742,7 +24856,7 @@ pub(all) struct GetReindexQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for GetReindexQuery with to_json(self : GetReindexQuery) -> Json {
+pub impl ToJson for GetReindexQuery with fn to_json(self : GetReindexQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.wait_for_completion {
     Some(value) => obj["wait_for_completion"] = value.to_json()
@@ -24756,7 +24870,7 @@ pub impl ToJson for GetReindexQuery with to_json(self : GetReindexQuery) -> Json
 }
 
 ///|
-pub impl FromJson for GetReindexQuery with from_json(json, path) {
+pub impl FromJson for GetReindexQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "GetReindexQuery: expected object"))
   }
@@ -24816,7 +24930,9 @@ pub(all) struct GetReindexResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for GetReindexResponse with to_json(self : GetReindexResponse) -> Json {
+pub impl ToJson for GetReindexResponse with fn to_json(
+  self : GetReindexResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["completed"] = self.completed.to_json()
   obj["id"] = self.id.to_json()
@@ -24851,7 +24967,7 @@ pub impl ToJson for GetReindexResponse with to_json(self : GetReindexResponse) -
 }
 
 ///|
-pub impl FromJson for GetReindexResponse with from_json(json, path) {
+pub impl FromJson for GetReindexResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "GetReindexResponse: expected object"))
   }
@@ -24947,7 +25063,7 @@ pub(all) struct GetScriptQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for GetScriptQuery with to_json(self : GetScriptQuery) -> Json {
+pub impl ToJson for GetScriptQuery with fn to_json(self : GetScriptQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -24957,7 +25073,7 @@ pub impl ToJson for GetScriptQuery with to_json(self : GetScriptQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for GetScriptQuery with from_json(json, path) {
+pub impl FromJson for GetScriptQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "GetScriptQuery: expected object"))
   }
@@ -24996,7 +25112,7 @@ pub(all) struct GetScriptResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for GetScriptResponse with to_json(self : GetScriptResponse) -> Json {
+pub impl ToJson for GetScriptResponse with fn to_json(self : GetScriptResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["_id"] = self._id.to_json()
   obj["found"] = self.found.to_json()
@@ -25008,7 +25124,7 @@ pub impl ToJson for GetScriptResponse with to_json(self : GetScriptResponse) -> 
 }
 
 ///|
-pub impl FromJson for GetScriptResponse with from_json(json, path) {
+pub impl FromJson for GetScriptResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "GetScriptResponse: expected object"))
   }
@@ -25059,7 +25175,7 @@ pub async fn Client::get_script(
 pub(all) struct GetScriptContextQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for GetScriptContextQuery with to_json(
+pub impl ToJson for GetScriptContextQuery with fn to_json(
   _self : GetScriptContextQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -25067,7 +25183,7 @@ pub impl ToJson for GetScriptContextQuery with to_json(
 }
 
 ///|
-pub impl FromJson for GetScriptContextQuery with from_json(json, path) {
+pub impl FromJson for GetScriptContextQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "GetScriptContextQuery: expected object"),
@@ -25095,7 +25211,7 @@ pub(all) struct GetScriptContextResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for GetScriptContextResponse with to_json(
+pub impl ToJson for GetScriptContextResponse with fn to_json(
   self : GetScriptContextResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -25104,7 +25220,7 @@ pub impl ToJson for GetScriptContextResponse with to_json(
 }
 
 ///|
-pub impl FromJson for GetScriptContextResponse with from_json(json, path) {
+pub impl FromJson for GetScriptContextResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "GetScriptContextResponse: expected object"),
@@ -25145,7 +25261,7 @@ pub async fn Client::get_script_context(
 pub(all) struct GetScriptLanguagesQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for GetScriptLanguagesQuery with to_json(
+pub impl ToJson for GetScriptLanguagesQuery with fn to_json(
   _self : GetScriptLanguagesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -25153,7 +25269,7 @@ pub impl ToJson for GetScriptLanguagesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for GetScriptLanguagesQuery with from_json(json, path) {
+pub impl FromJson for GetScriptLanguagesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "GetScriptLanguagesQuery: expected object"),
@@ -25182,7 +25298,7 @@ pub(all) struct GetScriptLanguagesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for GetScriptLanguagesResponse with to_json(
+pub impl ToJson for GetScriptLanguagesResponse with fn to_json(
   self : GetScriptLanguagesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -25192,7 +25308,7 @@ pub impl ToJson for GetScriptLanguagesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for GetScriptLanguagesResponse with from_json(json, path) {
+pub impl FromJson for GetScriptLanguagesResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "GetScriptLanguagesResponse: expected object"),
@@ -25247,7 +25363,7 @@ pub(all) struct GetSourceQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for GetSourceQuery with to_json(self : GetSourceQuery) -> Json {
+pub impl ToJson for GetSourceQuery with fn to_json(self : GetSourceQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.preference {
     Some(value) => obj["preference"] = value.to_json()
@@ -25289,7 +25405,7 @@ pub impl ToJson for GetSourceQuery with to_json(self : GetSourceQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for GetSourceQuery with from_json(json, path) {
+pub impl FromJson for GetSourceQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "GetSourceQuery: expected object"))
   }
@@ -25457,7 +25573,7 @@ pub(all) struct GraphExploreQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for GraphExploreQuery with to_json(self : GraphExploreQuery) -> Json {
+pub impl ToJson for GraphExploreQuery with fn to_json(self : GraphExploreQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.routing {
     Some(value) => obj["routing"] = value.to_json()
@@ -25471,7 +25587,7 @@ pub impl ToJson for GraphExploreQuery with to_json(self : GraphExploreQuery) -> 
 }
 
 ///|
-pub impl FromJson for GraphExploreQuery with from_json(json, path) {
+pub impl FromJson for GraphExploreQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "GraphExploreQuery: expected object"))
   }
@@ -25522,7 +25638,7 @@ pub(all) struct GraphExploreBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for GraphExploreBody with to_json(self : GraphExploreBody) -> Json {
+pub impl ToJson for GraphExploreBody with fn to_json(self : GraphExploreBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.connections {
     Some(value) => obj["connections"] = value.to_json()
@@ -25544,7 +25660,7 @@ pub impl ToJson for GraphExploreBody with to_json(self : GraphExploreBody) -> Js
 }
 
 ///|
-pub impl FromJson for GraphExploreBody with from_json(json, path) {
+pub impl FromJson for GraphExploreBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "GraphExploreBody: expected object"))
   }
@@ -25593,7 +25709,7 @@ pub(all) struct GraphExploreResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for GraphExploreResponse with to_json(
+pub impl ToJson for GraphExploreResponse with fn to_json(
   self : GraphExploreResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -25606,7 +25722,7 @@ pub impl ToJson for GraphExploreResponse with to_json(
 }
 
 ///|
-pub impl FromJson for GraphExploreResponse with from_json(json, path) {
+pub impl FromJson for GraphExploreResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "GraphExploreResponse: expected object"))
   }
@@ -25674,7 +25790,7 @@ pub(all) struct HealthReportQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for HealthReportQuery with to_json(self : HealthReportQuery) -> Json {
+pub impl ToJson for HealthReportQuery with fn to_json(self : HealthReportQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
@@ -25692,7 +25808,7 @@ pub impl ToJson for HealthReportQuery with to_json(self : HealthReportQuery) -> 
 }
 
 ///|
-pub impl FromJson for HealthReportQuery with from_json(json, path) {
+pub impl FromJson for HealthReportQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "HealthReportQuery: expected object"))
   }
@@ -25752,7 +25868,7 @@ pub(all) struct HealthReportResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for HealthReportResponse with to_json(
+pub impl ToJson for HealthReportResponse with fn to_json(
   self : HealthReportResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -25766,7 +25882,7 @@ pub impl ToJson for HealthReportResponse with to_json(
 }
 
 ///|
-pub impl FromJson for HealthReportResponse with from_json(json, path) {
+pub impl FromJson for HealthReportResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "HealthReportResponse: expected object"))
   }
@@ -25829,7 +25945,7 @@ pub(all) struct IlmDeleteLifecycleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmDeleteLifecycleQuery with to_json(
+pub impl ToJson for IlmDeleteLifecycleQuery with fn to_json(
   self : IlmDeleteLifecycleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -25845,7 +25961,7 @@ pub impl ToJson for IlmDeleteLifecycleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IlmDeleteLifecycleQuery with from_json(json, path) {
+pub impl FromJson for IlmDeleteLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IlmDeleteLifecycleQuery: expected object"),
@@ -25930,7 +26046,7 @@ pub(all) struct IlmExplainLifecycleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmExplainLifecycleQuery with to_json(
+pub impl ToJson for IlmExplainLifecycleQuery with fn to_json(
   self : IlmExplainLifecycleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -25950,7 +26066,7 @@ pub impl ToJson for IlmExplainLifecycleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IlmExplainLifecycleQuery with from_json(json, path) {
+pub impl FromJson for IlmExplainLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IlmExplainLifecycleQuery: expected object"),
@@ -26013,7 +26129,7 @@ pub(all) struct IlmExplainLifecycleResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmExplainLifecycleResponse with to_json(
+pub impl ToJson for IlmExplainLifecycleResponse with fn to_json(
   self : IlmExplainLifecycleResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -26022,7 +26138,7 @@ pub impl ToJson for IlmExplainLifecycleResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IlmExplainLifecycleResponse with from_json(json, path) {
+pub impl FromJson for IlmExplainLifecycleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IlmExplainLifecycleResponse: expected object"),
@@ -26072,7 +26188,7 @@ pub(all) struct IlmGetLifecycleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmGetLifecycleQuery with to_json(
+pub impl ToJson for IlmGetLifecycleQuery with fn to_json(
   self : IlmGetLifecycleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -26088,7 +26204,7 @@ pub impl ToJson for IlmGetLifecycleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IlmGetLifecycleQuery with from_json(json, path) {
+pub impl FromJson for IlmGetLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IlmGetLifecycleQuery: expected object"))
   }
@@ -26173,13 +26289,13 @@ pub async fn Client::ilm_get_lifecycle(
 pub(all) struct IlmGetStatusQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmGetStatusQuery with to_json(_self : IlmGetStatusQuery) -> Json {
+pub impl ToJson for IlmGetStatusQuery with fn to_json(_self : IlmGetStatusQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for IlmGetStatusQuery with from_json(json, path) {
+pub impl FromJson for IlmGetStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "IlmGetStatusQuery: expected object"))
   }
@@ -26205,7 +26321,7 @@ pub(all) struct IlmGetStatusResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmGetStatusResponse with to_json(
+pub impl ToJson for IlmGetStatusResponse with fn to_json(
   self : IlmGetStatusResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -26214,7 +26330,7 @@ pub impl ToJson for IlmGetStatusResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IlmGetStatusResponse with from_json(json, path) {
+pub impl FromJson for IlmGetStatusResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IlmGetStatusResponse: expected object"))
   }
@@ -26256,7 +26372,7 @@ pub(all) struct IlmMigrateToDataTiersQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmMigrateToDataTiersQuery with to_json(
+pub impl ToJson for IlmMigrateToDataTiersQuery with fn to_json(
   self : IlmMigrateToDataTiersQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -26272,7 +26388,7 @@ pub impl ToJson for IlmMigrateToDataTiersQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IlmMigrateToDataTiersQuery with from_json(json, path) {
+pub impl FromJson for IlmMigrateToDataTiersQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IlmMigrateToDataTiersQuery: expected object"),
@@ -26324,7 +26440,7 @@ pub(all) struct IlmMigrateToDataTiersBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmMigrateToDataTiersBody with to_json(
+pub impl ToJson for IlmMigrateToDataTiersBody with fn to_json(
   self : IlmMigrateToDataTiersBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -26340,7 +26456,7 @@ pub impl ToJson for IlmMigrateToDataTiersBody with to_json(
 }
 
 ///|
-pub impl FromJson for IlmMigrateToDataTiersBody with from_json(json, path) {
+pub impl FromJson for IlmMigrateToDataTiersBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IlmMigrateToDataTiersBody: expected object"),
@@ -26384,7 +26500,7 @@ pub(all) struct IlmMigrateToDataTiersResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmMigrateToDataTiersResponse with to_json(
+pub impl ToJson for IlmMigrateToDataTiersResponse with fn to_json(
   self : IlmMigrateToDataTiersResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -26399,7 +26515,10 @@ pub impl ToJson for IlmMigrateToDataTiersResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IlmMigrateToDataTiersResponse with from_json(json, path) {
+pub impl FromJson for IlmMigrateToDataTiersResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IlmMigrateToDataTiersResponse: expected object"),
@@ -26473,13 +26592,15 @@ pub async fn Client::ilm_migrate_to_data_tiers(
 pub(all) struct IlmMoveToStepQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmMoveToStepQuery with to_json(_self : IlmMoveToStepQuery) -> Json {
+pub impl ToJson for IlmMoveToStepQuery with fn to_json(
+  _self : IlmMoveToStepQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for IlmMoveToStepQuery with from_json(json, path) {
+pub impl FromJson for IlmMoveToStepQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "IlmMoveToStepQuery: expected object"))
   }
@@ -26506,7 +26627,7 @@ pub(all) struct IlmMoveToStepBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmMoveToStepBody with to_json(self : IlmMoveToStepBody) -> Json {
+pub impl ToJson for IlmMoveToStepBody with fn to_json(self : IlmMoveToStepBody) -> Json {
   let obj : Map[String, Json] = {}
   obj["current_step"] = self.current_step.to_json()
   obj["next_step"] = self.next_step.to_json()
@@ -26514,7 +26635,7 @@ pub impl ToJson for IlmMoveToStepBody with to_json(self : IlmMoveToStepBody) -> 
 }
 
 ///|
-pub impl FromJson for IlmMoveToStepBody with from_json(json, path) {
+pub impl FromJson for IlmMoveToStepBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IlmMoveToStepBody: expected object"))
   }
@@ -26580,7 +26701,7 @@ pub(all) struct IlmPutLifecycleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmPutLifecycleQuery with to_json(
+pub impl ToJson for IlmPutLifecycleQuery with fn to_json(
   self : IlmPutLifecycleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -26596,7 +26717,7 @@ pub impl ToJson for IlmPutLifecycleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IlmPutLifecycleQuery with from_json(json, path) {
+pub impl FromJson for IlmPutLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IlmPutLifecycleQuery: expected object"))
   }
@@ -26645,7 +26766,9 @@ pub(all) struct IlmPutLifecycleBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmPutLifecycleBody with to_json(self : IlmPutLifecycleBody) -> Json {
+pub impl ToJson for IlmPutLifecycleBody with fn to_json(
+  self : IlmPutLifecycleBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.policy {
     Some(value) => obj["policy"] = value.to_json()
@@ -26655,7 +26778,7 @@ pub impl ToJson for IlmPutLifecycleBody with to_json(self : IlmPutLifecycleBody)
 }
 
 ///|
-pub impl FromJson for IlmPutLifecycleBody with from_json(json, path) {
+pub impl FromJson for IlmPutLifecycleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IlmPutLifecycleBody: expected object"))
   }
@@ -26712,7 +26835,7 @@ pub async fn Client::ilm_put_lifecycle(
 pub(all) struct IlmRemovePolicyQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmRemovePolicyQuery with to_json(
+pub impl ToJson for IlmRemovePolicyQuery with fn to_json(
   _self : IlmRemovePolicyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -26720,7 +26843,7 @@ pub impl ToJson for IlmRemovePolicyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IlmRemovePolicyQuery with from_json(json, path) {
+pub impl FromJson for IlmRemovePolicyQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "IlmRemovePolicyQuery: expected object"))
   }
@@ -26747,7 +26870,7 @@ pub(all) struct IlmRemovePolicyResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmRemovePolicyResponse with to_json(
+pub impl ToJson for IlmRemovePolicyResponse with fn to_json(
   self : IlmRemovePolicyResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -26757,7 +26880,7 @@ pub impl ToJson for IlmRemovePolicyResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IlmRemovePolicyResponse with from_json(json, path) {
+pub impl FromJson for IlmRemovePolicyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IlmRemovePolicyResponse: expected object"),
@@ -26808,13 +26931,13 @@ pub async fn Client::ilm_remove_policy(
 pub(all) struct IlmRetryQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmRetryQuery with to_json(_self : IlmRetryQuery) -> Json {
+pub impl ToJson for IlmRetryQuery with fn to_json(_self : IlmRetryQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for IlmRetryQuery with from_json(json, path) {
+pub impl FromJson for IlmRetryQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "IlmRetryQuery: expected object"))
   }
@@ -26873,7 +26996,7 @@ pub(all) struct IlmStartQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmStartQuery with to_json(self : IlmStartQuery) -> Json {
+pub impl ToJson for IlmStartQuery with fn to_json(self : IlmStartQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -26887,7 +27010,7 @@ pub impl ToJson for IlmStartQuery with to_json(self : IlmStartQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for IlmStartQuery with from_json(json, path) {
+pub impl FromJson for IlmStartQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IlmStartQuery: expected object"))
   }
@@ -26961,7 +27084,7 @@ pub(all) struct IlmStopQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IlmStopQuery with to_json(self : IlmStopQuery) -> Json {
+pub impl ToJson for IlmStopQuery with fn to_json(self : IlmStopQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -26975,7 +27098,7 @@ pub impl ToJson for IlmStopQuery with to_json(self : IlmStopQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for IlmStopQuery with from_json(json, path) {
+pub impl FromJson for IlmStopQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IlmStopQuery: expected object"))
   }
@@ -27060,7 +27183,7 @@ pub(all) struct IndexQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndexQuery with to_json(self : IndexQuery) -> Json {
+pub impl ToJson for IndexQuery with fn to_json(self : IndexQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.if_primary_term {
     Some(value) => obj["if_primary_term"] = value.to_json()
@@ -27118,7 +27241,7 @@ pub impl ToJson for IndexQuery with to_json(self : IndexQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for IndexQuery with from_json(json, path) {
+pub impl FromJson for IndexQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndexQuery: expected object"))
   }
@@ -27353,7 +27476,7 @@ pub(all) struct IndicesAddBlockQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesAddBlockQuery with to_json(
+pub impl ToJson for IndicesAddBlockQuery with fn to_json(
   self : IndicesAddBlockQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -27381,7 +27504,7 @@ pub impl ToJson for IndicesAddBlockQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesAddBlockQuery with from_json(json, path) {
+pub impl FromJson for IndicesAddBlockQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesAddBlockQuery: expected object"))
   }
@@ -27471,7 +27594,7 @@ pub(all) struct IndicesAddBlockResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesAddBlockResponse with to_json(
+pub impl ToJson for IndicesAddBlockResponse with fn to_json(
   self : IndicesAddBlockResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -27482,7 +27605,7 @@ pub impl ToJson for IndicesAddBlockResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesAddBlockResponse with from_json(json, path) {
+pub impl FromJson for IndicesAddBlockResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesAddBlockResponse: expected object"),
@@ -27542,7 +27665,9 @@ pub(all) struct IndicesAnalyzeQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesAnalyzeQuery with to_json(self : IndicesAnalyzeQuery) -> Json {
+pub impl ToJson for IndicesAnalyzeQuery with fn to_json(
+  self : IndicesAnalyzeQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.index {
     Some(value) => obj["index"] = value.to_json()
@@ -27552,7 +27677,7 @@ pub impl ToJson for IndicesAnalyzeQuery with to_json(self : IndicesAnalyzeQuery)
 }
 
 ///|
-pub impl FromJson for IndicesAnalyzeQuery with from_json(json, path) {
+pub impl FromJson for IndicesAnalyzeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesAnalyzeQuery: expected object"))
   }
@@ -27596,7 +27721,9 @@ pub(all) struct IndicesAnalyzeBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesAnalyzeBody with to_json(self : IndicesAnalyzeBody) -> Json {
+pub impl ToJson for IndicesAnalyzeBody with fn to_json(
+  self : IndicesAnalyzeBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.analyzer {
     Some(value) => obj["analyzer"] = value.to_json()
@@ -27638,7 +27765,7 @@ pub impl ToJson for IndicesAnalyzeBody with to_json(self : IndicesAnalyzeBody) -
 }
 
 ///|
-pub impl FromJson for IndicesAnalyzeBody with from_json(json, path) {
+pub impl FromJson for IndicesAnalyzeBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesAnalyzeBody: expected object"))
   }
@@ -27727,7 +27854,7 @@ pub(all) struct IndicesAnalyzeResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesAnalyzeResponse with to_json(
+pub impl ToJson for IndicesAnalyzeResponse with fn to_json(
   self : IndicesAnalyzeResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -27743,7 +27870,7 @@ pub impl ToJson for IndicesAnalyzeResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesAnalyzeResponse with from_json(json, path) {
+pub impl FromJson for IndicesAnalyzeResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesAnalyzeResponse: expected object"),
@@ -27805,7 +27932,7 @@ pub async fn Client::indices_analyze(
 pub(all) struct IndicesCancelMigrateReindexQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesCancelMigrateReindexQuery with to_json(
+pub impl ToJson for IndicesCancelMigrateReindexQuery with fn to_json(
   _self : IndicesCancelMigrateReindexQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -27813,7 +27940,7 @@ pub impl ToJson for IndicesCancelMigrateReindexQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesCancelMigrateReindexQuery with from_json(
+pub impl FromJson for IndicesCancelMigrateReindexQuery with fn from_json(
   json,
   path,
 ) {
@@ -27892,7 +28019,7 @@ pub(all) struct IndicesClearCacheQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesClearCacheQuery with to_json(
+pub impl ToJson for IndicesClearCacheQuery with fn to_json(
   self : IndicesClearCacheQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -27932,7 +28059,7 @@ pub impl ToJson for IndicesClearCacheQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesClearCacheQuery with from_json(json, path) {
+pub impl FromJson for IndicesClearCacheQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesClearCacheQuery: expected object"),
@@ -28095,7 +28222,7 @@ pub(all) struct IndicesCloneQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesCloneQuery with to_json(self : IndicesCloneQuery) -> Json {
+pub impl ToJson for IndicesCloneQuery with fn to_json(self : IndicesCloneQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -28113,7 +28240,7 @@ pub impl ToJson for IndicesCloneQuery with to_json(self : IndicesCloneQuery) -> 
 }
 
 ///|
-pub impl FromJson for IndicesCloneQuery with from_json(json, path) {
+pub impl FromJson for IndicesCloneQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesCloneQuery: expected object"))
   }
@@ -28177,7 +28304,7 @@ pub(all) struct IndicesCloneBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesCloneBody with to_json(self : IndicesCloneBody) -> Json {
+pub impl ToJson for IndicesCloneBody with fn to_json(self : IndicesCloneBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.aliases {
     Some(value) => obj["aliases"] = value.to_json()
@@ -28191,7 +28318,7 @@ pub impl ToJson for IndicesCloneBody with to_json(self : IndicesCloneBody) -> Js
 }
 
 ///|
-pub impl FromJson for IndicesCloneBody with from_json(json, path) {
+pub impl FromJson for IndicesCloneBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesCloneBody: expected object"))
   }
@@ -28225,7 +28352,7 @@ pub(all) struct IndicesCloneResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesCloneResponse with to_json(
+pub impl ToJson for IndicesCloneResponse with fn to_json(
   self : IndicesCloneResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -28236,7 +28363,7 @@ pub impl ToJson for IndicesCloneResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesCloneResponse with from_json(json, path) {
+pub impl FromJson for IndicesCloneResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesCloneResponse: expected object"))
   }
@@ -28305,7 +28432,7 @@ pub(all) struct IndicesCloseQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesCloseQuery with to_json(self : IndicesCloseQuery) -> Json {
+pub impl ToJson for IndicesCloseQuery with fn to_json(self : IndicesCloseQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -28335,7 +28462,7 @@ pub impl ToJson for IndicesCloseQuery with to_json(self : IndicesCloseQuery) -> 
 }
 
 ///|
-pub impl FromJson for IndicesCloseQuery with from_json(json, path) {
+pub impl FromJson for IndicesCloseQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesCloseQuery: expected object"))
   }
@@ -28440,7 +28567,7 @@ pub(all) struct IndicesCloseResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesCloseResponse with to_json(
+pub impl ToJson for IndicesCloseResponse with fn to_json(
   self : IndicesCloseResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -28451,7 +28578,7 @@ pub impl ToJson for IndicesCloseResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesCloseResponse with from_json(json, path) {
+pub impl FromJson for IndicesCloseResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesCloseResponse: expected object"))
   }
@@ -28508,7 +28635,9 @@ pub(all) struct IndicesCreateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesCreateQuery with to_json(self : IndicesCreateQuery) -> Json {
+pub impl ToJson for IndicesCreateQuery with fn to_json(
+  self : IndicesCreateQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -28526,7 +28655,7 @@ pub impl ToJson for IndicesCreateQuery with to_json(self : IndicesCreateQuery) -
 }
 
 ///|
-pub impl FromJson for IndicesCreateQuery with from_json(json, path) {
+pub impl FromJson for IndicesCreateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesCreateQuery: expected object"))
   }
@@ -28591,7 +28720,7 @@ pub(all) struct IndicesCreateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesCreateBody with to_json(self : IndicesCreateBody) -> Json {
+pub impl ToJson for IndicesCreateBody with fn to_json(self : IndicesCreateBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.aliases {
     Some(value) => obj["aliases"] = value.to_json()
@@ -28609,7 +28738,7 @@ pub impl ToJson for IndicesCreateBody with to_json(self : IndicesCreateBody) -> 
 }
 
 ///|
-pub impl FromJson for IndicesCreateBody with from_json(json, path) {
+pub impl FromJson for IndicesCreateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesCreateBody: expected object"))
   }
@@ -28649,7 +28778,7 @@ pub(all) struct IndicesCreateResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesCreateResponse with to_json(
+pub impl ToJson for IndicesCreateResponse with fn to_json(
   self : IndicesCreateResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -28660,7 +28789,7 @@ pub impl ToJson for IndicesCreateResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesCreateResponse with from_json(json, path) {
+pub impl FromJson for IndicesCreateResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesCreateResponse: expected object"),
@@ -28721,7 +28850,7 @@ pub(all) struct IndicesCreateDataStreamQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesCreateDataStreamQuery with to_json(
+pub impl ToJson for IndicesCreateDataStreamQuery with fn to_json(
   self : IndicesCreateDataStreamQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -28737,7 +28866,7 @@ pub impl ToJson for IndicesCreateDataStreamQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesCreateDataStreamQuery with from_json(json, path) {
+pub impl FromJson for IndicesCreateDataStreamQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesCreateDataStreamQuery: expected object"),
@@ -28818,7 +28947,7 @@ pub async fn Client::indices_create_data_stream(
 pub(all) struct IndicesCreateFromQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesCreateFromQuery with to_json(
+pub impl ToJson for IndicesCreateFromQuery with fn to_json(
   _self : IndicesCreateFromQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -28826,7 +28955,7 @@ pub impl ToJson for IndicesCreateFromQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesCreateFromQuery with from_json(json, path) {
+pub impl FromJson for IndicesCreateFromQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "IndicesCreateFromQuery: expected object"),
@@ -28859,7 +28988,7 @@ pub(all) struct IndicesCreateFromResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesCreateFromResponse with to_json(
+pub impl ToJson for IndicesCreateFromResponse with fn to_json(
   self : IndicesCreateFromResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -28870,7 +28999,7 @@ pub impl ToJson for IndicesCreateFromResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesCreateFromResponse with from_json(json, path) {
+pub impl FromJson for IndicesCreateFromResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesCreateFromResponse: expected object"),
@@ -28936,7 +29065,7 @@ pub(all) struct IndicesDataStreamsStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesDataStreamsStatsQuery with to_json(
+pub impl ToJson for IndicesDataStreamsStatsQuery with fn to_json(
   self : IndicesDataStreamsStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -28948,7 +29077,7 @@ pub impl ToJson for IndicesDataStreamsStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesDataStreamsStatsQuery with from_json(json, path) {
+pub impl FromJson for IndicesDataStreamsStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesDataStreamsStatsQuery: expected object"),
@@ -28994,7 +29123,7 @@ pub(all) struct IndicesDataStreamsStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesDataStreamsStatsResponse with to_json(
+pub impl ToJson for IndicesDataStreamsStatsResponse with fn to_json(
   self : IndicesDataStreamsStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -29011,7 +29140,10 @@ pub impl ToJson for IndicesDataStreamsStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesDataStreamsStatsResponse with from_json(json, path) {
+pub impl FromJson for IndicesDataStreamsStatsResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesDataStreamsStatsResponse: expected object"),
@@ -29092,7 +29224,9 @@ pub(all) struct IndicesDeleteQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesDeleteQuery with to_json(self : IndicesDeleteQuery) -> Json {
+pub impl ToJson for IndicesDeleteQuery with fn to_json(
+  self : IndicesDeleteQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -29118,7 +29252,7 @@ pub impl ToJson for IndicesDeleteQuery with to_json(self : IndicesDeleteQuery) -
 }
 
 ///|
-pub impl FromJson for IndicesDeleteQuery with from_json(json, path) {
+pub impl FromJson for IndicesDeleteQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesDeleteQuery: expected object"))
   }
@@ -29236,7 +29370,7 @@ pub(all) struct IndicesDeleteAliasQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesDeleteAliasQuery with to_json(
+pub impl ToJson for IndicesDeleteAliasQuery with fn to_json(
   self : IndicesDeleteAliasQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -29252,7 +29386,7 @@ pub impl ToJson for IndicesDeleteAliasQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesDeleteAliasQuery with from_json(json, path) {
+pub impl FromJson for IndicesDeleteAliasQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesDeleteAliasQuery: expected object"),
@@ -29343,7 +29477,7 @@ pub(all) struct IndicesDeleteDataLifecycleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesDeleteDataLifecycleQuery with to_json(
+pub impl ToJson for IndicesDeleteDataLifecycleQuery with fn to_json(
   self : IndicesDeleteDataLifecycleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -29363,7 +29497,10 @@ pub impl ToJson for IndicesDeleteDataLifecycleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesDeleteDataLifecycleQuery with from_json(json, path) {
+pub impl FromJson for IndicesDeleteDataLifecycleQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesDeleteDataLifecycleQuery: expected object"),
@@ -29458,7 +29595,7 @@ pub(all) struct IndicesDeleteDataStreamQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesDeleteDataStreamQuery with to_json(
+pub impl ToJson for IndicesDeleteDataStreamQuery with fn to_json(
   self : IndicesDeleteDataStreamQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -29474,7 +29611,7 @@ pub impl ToJson for IndicesDeleteDataStreamQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesDeleteDataStreamQuery with from_json(json, path) {
+pub impl FromJson for IndicesDeleteDataStreamQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesDeleteDataStreamQuery: expected object"),
@@ -29560,7 +29697,7 @@ pub(all) struct IndicesDeleteDataStreamOptionsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesDeleteDataStreamOptionsQuery with to_json(
+pub impl ToJson for IndicesDeleteDataStreamOptionsQuery with fn to_json(
   self : IndicesDeleteDataStreamOptionsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -29580,7 +29717,7 @@ pub impl ToJson for IndicesDeleteDataStreamOptionsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesDeleteDataStreamOptionsQuery with from_json(
+pub impl FromJson for IndicesDeleteDataStreamOptionsQuery with fn from_json(
   json,
   path,
 ) {
@@ -29678,7 +29815,7 @@ pub(all) struct IndicesDeleteIndexTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesDeleteIndexTemplateQuery with to_json(
+pub impl ToJson for IndicesDeleteIndexTemplateQuery with fn to_json(
   self : IndicesDeleteIndexTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -29694,7 +29831,10 @@ pub impl ToJson for IndicesDeleteIndexTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesDeleteIndexTemplateQuery with from_json(json, path) {
+pub impl FromJson for IndicesDeleteIndexTemplateQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesDeleteIndexTemplateQuery: expected object"),
@@ -29778,7 +29918,7 @@ pub(all) struct IndicesDeleteTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesDeleteTemplateQuery with to_json(
+pub impl ToJson for IndicesDeleteTemplateQuery with fn to_json(
   self : IndicesDeleteTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -29794,7 +29934,7 @@ pub impl ToJson for IndicesDeleteTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesDeleteTemplateQuery with from_json(json, path) {
+pub impl FromJson for IndicesDeleteTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesDeleteTemplateQuery: expected object"),
@@ -29881,7 +30021,7 @@ pub(all) struct IndicesDiskUsageQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesDiskUsageQuery with to_json(
+pub impl ToJson for IndicesDiskUsageQuery with fn to_json(
   self : IndicesDiskUsageQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -29909,7 +30049,7 @@ pub impl ToJson for IndicesDiskUsageQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesDiskUsageQuery with from_json(json, path) {
+pub impl FromJson for IndicesDiskUsageQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesDiskUsageQuery: expected object"),
@@ -30030,7 +30170,7 @@ pub async fn Client::indices_disk_usage(
 pub(all) struct IndicesDownsampleQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesDownsampleQuery with to_json(
+pub impl ToJson for IndicesDownsampleQuery with fn to_json(
   _self : IndicesDownsampleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -30038,7 +30178,7 @@ pub impl ToJson for IndicesDownsampleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesDownsampleQuery with from_json(json, path) {
+pub impl FromJson for IndicesDownsampleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "IndicesDownsampleQuery: expected object"),
@@ -30116,7 +30256,9 @@ pub(all) struct IndicesExistsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesExistsQuery with to_json(self : IndicesExistsQuery) -> Json {
+pub impl ToJson for IndicesExistsQuery with fn to_json(
+  self : IndicesExistsQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -30146,7 +30288,7 @@ pub impl ToJson for IndicesExistsQuery with to_json(self : IndicesExistsQuery) -
 }
 
 ///|
-pub impl FromJson for IndicesExistsQuery with from_json(json, path) {
+pub impl FromJson for IndicesExistsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesExistsQuery: expected object"))
   }
@@ -30278,7 +30420,7 @@ pub(all) struct IndicesExistsAliasQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesExistsAliasQuery with to_json(
+pub impl ToJson for IndicesExistsAliasQuery with fn to_json(
   self : IndicesExistsAliasQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -30302,7 +30444,7 @@ pub impl ToJson for IndicesExistsAliasQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesExistsAliasQuery with from_json(json, path) {
+pub impl FromJson for IndicesExistsAliasQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesExistsAliasQuery: expected object"),
@@ -30419,7 +30561,7 @@ pub(all) struct IndicesExistsIndexTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesExistsIndexTemplateQuery with to_json(
+pub impl ToJson for IndicesExistsIndexTemplateQuery with fn to_json(
   self : IndicesExistsIndexTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -30439,7 +30581,10 @@ pub impl ToJson for IndicesExistsIndexTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesExistsIndexTemplateQuery with from_json(json, path) {
+pub impl FromJson for IndicesExistsIndexTemplateQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesExistsIndexTemplateQuery: expected object"),
@@ -30535,7 +30680,7 @@ pub(all) struct IndicesExistsTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesExistsTemplateQuery with to_json(
+pub impl ToJson for IndicesExistsTemplateQuery with fn to_json(
   self : IndicesExistsTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -30555,7 +30700,7 @@ pub impl ToJson for IndicesExistsTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesExistsTemplateQuery with from_json(json, path) {
+pub impl FromJson for IndicesExistsTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesExistsTemplateQuery: expected object"),
@@ -30650,7 +30795,7 @@ pub(all) struct IndicesExplainDataLifecycleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesExplainDataLifecycleQuery with to_json(
+pub impl ToJson for IndicesExplainDataLifecycleQuery with fn to_json(
   self : IndicesExplainDataLifecycleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -30666,7 +30811,7 @@ pub impl ToJson for IndicesExplainDataLifecycleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesExplainDataLifecycleQuery with from_json(
+pub impl FromJson for IndicesExplainDataLifecycleQuery with fn from_json(
   json,
   path,
 ) {
@@ -30721,7 +30866,7 @@ pub(all) struct IndicesExplainDataLifecycleResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesExplainDataLifecycleResponse with to_json(
+pub impl ToJson for IndicesExplainDataLifecycleResponse with fn to_json(
   self : IndicesExplainDataLifecycleResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -30730,7 +30875,7 @@ pub impl ToJson for IndicesExplainDataLifecycleResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesExplainDataLifecycleResponse with from_json(
+pub impl FromJson for IndicesExplainDataLifecycleResponse with fn from_json(
   json,
   path,
 ) {
@@ -30785,7 +30930,7 @@ pub(all) struct IndicesFieldUsageStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesFieldUsageStatsQuery with to_json(
+pub impl ToJson for IndicesFieldUsageStatsQuery with fn to_json(
   self : IndicesFieldUsageStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -30809,7 +30954,7 @@ pub impl ToJson for IndicesFieldUsageStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesFieldUsageStatsQuery with from_json(json, path) {
+pub impl FromJson for IndicesFieldUsageStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesFieldUsageStatsQuery: expected object"),
@@ -30918,7 +31063,7 @@ pub(all) struct IndicesFlushQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesFlushQuery with to_json(self : IndicesFlushQuery) -> Json {
+pub impl ToJson for IndicesFlushQuery with fn to_json(self : IndicesFlushQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -30944,7 +31089,7 @@ pub impl ToJson for IndicesFlushQuery with to_json(self : IndicesFlushQuery) -> 
 }
 
 ///|
-pub impl FromJson for IndicesFlushQuery with from_json(json, path) {
+pub impl FromJson for IndicesFlushQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesFlushQuery: expected object"))
   }
@@ -31076,7 +31221,7 @@ pub(all) struct IndicesForcemergeQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesForcemergeQuery with to_json(
+pub impl ToJson for IndicesForcemergeQuery with fn to_json(
   self : IndicesForcemergeQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -31112,7 +31257,7 @@ pub impl ToJson for IndicesForcemergeQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesForcemergeQuery with from_json(json, path) {
+pub impl FromJson for IndicesForcemergeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesForcemergeQuery: expected object"),
@@ -31273,7 +31418,7 @@ pub(all) struct IndicesGetQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetQuery with to_json(self : IndicesGetQuery) -> Json {
+pub impl ToJson for IndicesGetQuery with fn to_json(self : IndicesGetQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -31311,7 +31456,7 @@ pub impl ToJson for IndicesGetQuery with to_json(self : IndicesGetQuery) -> Json
 }
 
 ///|
-pub impl FromJson for IndicesGetQuery with from_json(json, path) {
+pub impl FromJson for IndicesGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesGetQuery: expected object"))
   }
@@ -31466,7 +31611,7 @@ pub(all) struct IndicesGetAliasQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetAliasQuery with to_json(
+pub impl ToJson for IndicesGetAliasQuery with fn to_json(
   self : IndicesGetAliasQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -31490,7 +31635,7 @@ pub impl ToJson for IndicesGetAliasQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetAliasQuery with from_json(json, path) {
+pub impl FromJson for IndicesGetAliasQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesGetAliasQuery: expected object"))
   }
@@ -31610,7 +31755,7 @@ pub(all) struct IndicesGetDataLifecycleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetDataLifecycleQuery with to_json(
+pub impl ToJson for IndicesGetDataLifecycleQuery with fn to_json(
   self : IndicesGetDataLifecycleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -31630,7 +31775,7 @@ pub impl ToJson for IndicesGetDataLifecycleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetDataLifecycleQuery with from_json(json, path) {
+pub impl FromJson for IndicesGetDataLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesGetDataLifecycleQuery: expected object"),
@@ -31693,7 +31838,7 @@ pub(all) struct IndicesGetDataLifecycleResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetDataLifecycleResponse with to_json(
+pub impl ToJson for IndicesGetDataLifecycleResponse with fn to_json(
   self : IndicesGetDataLifecycleResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -31702,7 +31847,10 @@ pub impl ToJson for IndicesGetDataLifecycleResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetDataLifecycleResponse with from_json(json, path) {
+pub impl FromJson for IndicesGetDataLifecycleResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesGetDataLifecycleResponse: expected object"),
@@ -31749,7 +31897,7 @@ pub async fn Client::indices_get_data_lifecycle(
 pub(all) struct IndicesGetDataLifecycleStatsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetDataLifecycleStatsQuery with to_json(
+pub impl ToJson for IndicesGetDataLifecycleStatsQuery with fn to_json(
   _self : IndicesGetDataLifecycleStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -31757,7 +31905,7 @@ pub impl ToJson for IndicesGetDataLifecycleStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetDataLifecycleStatsQuery with from_json(
+pub impl FromJson for IndicesGetDataLifecycleStatsQuery with fn from_json(
   json,
   path,
 ) {
@@ -31791,7 +31939,7 @@ pub(all) struct IndicesGetDataLifecycleStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetDataLifecycleStatsResponse with to_json(
+pub impl ToJson for IndicesGetDataLifecycleStatsResponse with fn to_json(
   self : IndicesGetDataLifecycleStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -31809,7 +31957,7 @@ pub impl ToJson for IndicesGetDataLifecycleStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetDataLifecycleStatsResponse with from_json(
+pub impl FromJson for IndicesGetDataLifecycleStatsResponse with fn from_json(
   json,
   path,
 ) {
@@ -31885,7 +32033,7 @@ pub(all) struct IndicesGetDataStreamQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetDataStreamQuery with to_json(
+pub impl ToJson for IndicesGetDataStreamQuery with fn to_json(
   self : IndicesGetDataStreamQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -31909,7 +32057,7 @@ pub impl ToJson for IndicesGetDataStreamQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetDataStreamQuery with from_json(json, path) {
+pub impl FromJson for IndicesGetDataStreamQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesGetDataStreamQuery: expected object"),
@@ -31982,7 +32130,7 @@ pub(all) struct IndicesGetDataStreamResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetDataStreamResponse with to_json(
+pub impl ToJson for IndicesGetDataStreamResponse with fn to_json(
   self : IndicesGetDataStreamResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -31991,7 +32139,7 @@ pub impl ToJson for IndicesGetDataStreamResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetDataStreamResponse with from_json(json, path) {
+pub impl FromJson for IndicesGetDataStreamResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesGetDataStreamResponse: expected object"),
@@ -32046,7 +32194,7 @@ pub(all) struct IndicesGetDataStreamMappingsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetDataStreamMappingsQuery with to_json(
+pub impl ToJson for IndicesGetDataStreamMappingsQuery with fn to_json(
   self : IndicesGetDataStreamMappingsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -32058,7 +32206,7 @@ pub impl ToJson for IndicesGetDataStreamMappingsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetDataStreamMappingsQuery with from_json(
+pub impl FromJson for IndicesGetDataStreamMappingsQuery with fn from_json(
   json,
   path,
 ) {
@@ -32102,7 +32250,7 @@ pub(all) struct IndicesGetDataStreamMappingsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetDataStreamMappingsResponse with to_json(
+pub impl ToJson for IndicesGetDataStreamMappingsResponse with fn to_json(
   self : IndicesGetDataStreamMappingsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -32111,7 +32259,7 @@ pub impl ToJson for IndicesGetDataStreamMappingsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetDataStreamMappingsResponse with from_json(
+pub impl FromJson for IndicesGetDataStreamMappingsResponse with fn from_json(
   json,
   path,
 ) {
@@ -32164,7 +32312,7 @@ pub(all) struct IndicesGetDataStreamOptionsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetDataStreamOptionsQuery with to_json(
+pub impl ToJson for IndicesGetDataStreamOptionsQuery with fn to_json(
   self : IndicesGetDataStreamOptionsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -32180,7 +32328,7 @@ pub impl ToJson for IndicesGetDataStreamOptionsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetDataStreamOptionsQuery with from_json(
+pub impl FromJson for IndicesGetDataStreamOptionsQuery with fn from_json(
   json,
   path,
 ) {
@@ -32235,7 +32383,7 @@ pub(all) struct IndicesGetDataStreamOptionsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetDataStreamOptionsResponse with to_json(
+pub impl ToJson for IndicesGetDataStreamOptionsResponse with fn to_json(
   self : IndicesGetDataStreamOptionsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -32244,7 +32392,7 @@ pub impl ToJson for IndicesGetDataStreamOptionsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetDataStreamOptionsResponse with from_json(
+pub impl FromJson for IndicesGetDataStreamOptionsResponse with fn from_json(
   json,
   path,
 ) {
@@ -32296,7 +32444,7 @@ pub(all) struct IndicesGetDataStreamSettingsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetDataStreamSettingsQuery with to_json(
+pub impl ToJson for IndicesGetDataStreamSettingsQuery with fn to_json(
   self : IndicesGetDataStreamSettingsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -32308,7 +32456,7 @@ pub impl ToJson for IndicesGetDataStreamSettingsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetDataStreamSettingsQuery with from_json(
+pub impl FromJson for IndicesGetDataStreamSettingsQuery with fn from_json(
   json,
   path,
 ) {
@@ -32352,7 +32500,7 @@ pub(all) struct IndicesGetDataStreamSettingsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetDataStreamSettingsResponse with to_json(
+pub impl ToJson for IndicesGetDataStreamSettingsResponse with fn to_json(
   self : IndicesGetDataStreamSettingsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -32361,7 +32509,7 @@ pub impl ToJson for IndicesGetDataStreamSettingsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetDataStreamSettingsResponse with from_json(
+pub impl FromJson for IndicesGetDataStreamSettingsResponse with fn from_json(
   json,
   path,
 ) {
@@ -32416,7 +32564,7 @@ pub(all) struct IndicesGetFieldMappingQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetFieldMappingQuery with to_json(
+pub impl ToJson for IndicesGetFieldMappingQuery with fn to_json(
   self : IndicesGetFieldMappingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -32440,7 +32588,7 @@ pub impl ToJson for IndicesGetFieldMappingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetFieldMappingQuery with from_json(json, path) {
+pub impl FromJson for IndicesGetFieldMappingQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesGetFieldMappingQuery: expected object"),
@@ -32558,7 +32706,7 @@ pub(all) struct IndicesGetIndexTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetIndexTemplateQuery with to_json(
+pub impl ToJson for IndicesGetIndexTemplateQuery with fn to_json(
   self : IndicesGetIndexTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -32582,7 +32730,7 @@ pub impl ToJson for IndicesGetIndexTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetIndexTemplateQuery with from_json(json, path) {
+pub impl FromJson for IndicesGetIndexTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesGetIndexTemplateQuery: expected object"),
@@ -32655,7 +32803,7 @@ pub(all) struct IndicesGetIndexTemplateResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetIndexTemplateResponse with to_json(
+pub impl ToJson for IndicesGetIndexTemplateResponse with fn to_json(
   self : IndicesGetIndexTemplateResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -32664,7 +32812,10 @@ pub impl ToJson for IndicesGetIndexTemplateResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetIndexTemplateResponse with from_json(json, path) {
+pub impl FromJson for IndicesGetIndexTemplateResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesGetIndexTemplateResponse: expected object"),
@@ -32723,7 +32874,7 @@ pub(all) struct IndicesGetMappingQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetMappingQuery with to_json(
+pub impl ToJson for IndicesGetMappingQuery with fn to_json(
   self : IndicesGetMappingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -32751,7 +32902,7 @@ pub impl ToJson for IndicesGetMappingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetMappingQuery with from_json(json, path) {
+pub impl FromJson for IndicesGetMappingQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesGetMappingQuery: expected object"),
@@ -32877,7 +33028,7 @@ pub async fn Client::indices_get_mapping(
 pub(all) struct IndicesGetMigrateReindexStatusQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetMigrateReindexStatusQuery with to_json(
+pub impl ToJson for IndicesGetMigrateReindexStatusQuery with fn to_json(
   _self : IndicesGetMigrateReindexStatusQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -32885,7 +33036,7 @@ pub impl ToJson for IndicesGetMigrateReindexStatusQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetMigrateReindexStatusQuery with from_json(
+pub impl FromJson for IndicesGetMigrateReindexStatusQuery with fn from_json(
   json,
   path,
 ) {
@@ -32928,7 +33079,7 @@ pub(all) struct IndicesGetMigrateReindexStatusResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetMigrateReindexStatusResponse with to_json(
+pub impl ToJson for IndicesGetMigrateReindexStatusResponse with fn to_json(
   self : IndicesGetMigrateReindexStatusResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -32952,7 +33103,7 @@ pub impl ToJson for IndicesGetMigrateReindexStatusResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetMigrateReindexStatusResponse with from_json(
+pub impl FromJson for IndicesGetMigrateReindexStatusResponse with fn from_json(
   json,
   path,
 ) {
@@ -33056,7 +33207,7 @@ pub(all) struct IndicesGetSettingsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetSettingsQuery with to_json(
+pub impl ToJson for IndicesGetSettingsQuery with fn to_json(
   self : IndicesGetSettingsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -33092,7 +33243,7 @@ pub impl ToJson for IndicesGetSettingsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetSettingsQuery with from_json(json, path) {
+pub impl FromJson for IndicesGetSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesGetSettingsQuery: expected object"),
@@ -33254,7 +33405,7 @@ pub(all) struct IndicesGetTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesGetTemplateQuery with to_json(
+pub impl ToJson for IndicesGetTemplateQuery with fn to_json(
   self : IndicesGetTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -33274,7 +33425,7 @@ pub impl ToJson for IndicesGetTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesGetTemplateQuery with from_json(json, path) {
+pub impl FromJson for IndicesGetTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesGetTemplateQuery: expected object"),
@@ -33372,7 +33523,7 @@ pub async fn Client::indices_get_template(
 pub(all) struct IndicesMigrateReindexQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesMigrateReindexQuery with to_json(
+pub impl ToJson for IndicesMigrateReindexQuery with fn to_json(
   _self : IndicesMigrateReindexQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -33380,7 +33531,7 @@ pub impl ToJson for IndicesMigrateReindexQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesMigrateReindexQuery with from_json(json, path) {
+pub impl FromJson for IndicesMigrateReindexQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "IndicesMigrateReindexQuery: expected object"),
@@ -33441,7 +33592,7 @@ pub(all) struct IndicesMigrateToDataStreamQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesMigrateToDataStreamQuery with to_json(
+pub impl ToJson for IndicesMigrateToDataStreamQuery with fn to_json(
   self : IndicesMigrateToDataStreamQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -33457,7 +33608,10 @@ pub impl ToJson for IndicesMigrateToDataStreamQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesMigrateToDataStreamQuery with from_json(json, path) {
+pub impl FromJson for IndicesMigrateToDataStreamQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesMigrateToDataStreamQuery: expected object"),
@@ -33538,7 +33692,7 @@ pub async fn Client::indices_migrate_to_data_stream(
 pub(all) struct IndicesModifyDataStreamQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesModifyDataStreamQuery with to_json(
+pub impl ToJson for IndicesModifyDataStreamQuery with fn to_json(
   _self : IndicesModifyDataStreamQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -33546,7 +33700,7 @@ pub impl ToJson for IndicesModifyDataStreamQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesModifyDataStreamQuery with from_json(json, path) {
+pub impl FromJson for IndicesModifyDataStreamQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "IndicesModifyDataStreamQuery: expected object"),
@@ -33574,7 +33728,7 @@ pub(all) struct IndicesModifyDataStreamBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesModifyDataStreamBody with to_json(
+pub impl ToJson for IndicesModifyDataStreamBody with fn to_json(
   self : IndicesModifyDataStreamBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -33583,7 +33737,7 @@ pub impl ToJson for IndicesModifyDataStreamBody with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesModifyDataStreamBody with from_json(json, path) {
+pub impl FromJson for IndicesModifyDataStreamBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesModifyDataStreamBody: expected object"),
@@ -33647,7 +33801,7 @@ pub(all) struct IndicesOpenQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesOpenQuery with to_json(self : IndicesOpenQuery) -> Json {
+pub impl ToJson for IndicesOpenQuery with fn to_json(self : IndicesOpenQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -33677,7 +33831,7 @@ pub impl ToJson for IndicesOpenQuery with to_json(self : IndicesOpenQuery) -> Js
 }
 
 ///|
-pub impl FromJson for IndicesOpenQuery with from_json(json, path) {
+pub impl FromJson for IndicesOpenQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesOpenQuery: expected object"))
   }
@@ -33781,7 +33935,9 @@ pub(all) struct IndicesOpenResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesOpenResponse with to_json(self : IndicesOpenResponse) -> Json {
+pub impl ToJson for IndicesOpenResponse with fn to_json(
+  self : IndicesOpenResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["shards_acknowledged"] = self.shards_acknowledged.to_json()
@@ -33789,7 +33945,7 @@ pub impl ToJson for IndicesOpenResponse with to_json(self : IndicesOpenResponse)
 }
 
 ///|
-pub impl FromJson for IndicesOpenResponse with from_json(json, path) {
+pub impl FromJson for IndicesOpenResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesOpenResponse: expected object"))
   }
@@ -33840,7 +33996,7 @@ pub(all) struct IndicesPromoteDataStreamQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPromoteDataStreamQuery with to_json(
+pub impl ToJson for IndicesPromoteDataStreamQuery with fn to_json(
   self : IndicesPromoteDataStreamQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -33852,7 +34008,10 @@ pub impl ToJson for IndicesPromoteDataStreamQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPromoteDataStreamQuery with from_json(json, path) {
+pub impl FromJson for IndicesPromoteDataStreamQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesPromoteDataStreamQuery: expected object"),
@@ -33926,7 +34085,7 @@ pub(all) struct IndicesPutAliasQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutAliasQuery with to_json(
+pub impl ToJson for IndicesPutAliasQuery with fn to_json(
   self : IndicesPutAliasQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -33942,7 +34101,7 @@ pub impl ToJson for IndicesPutAliasQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutAliasQuery with from_json(json, path) {
+pub impl FromJson for IndicesPutAliasQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesPutAliasQuery: expected object"))
   }
@@ -33995,7 +34154,9 @@ pub(all) struct IndicesPutAliasBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutAliasBody with to_json(self : IndicesPutAliasBody) -> Json {
+pub impl ToJson for IndicesPutAliasBody with fn to_json(
+  self : IndicesPutAliasBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.filter {
     Some(value) => obj["filter"] = value.to_json()
@@ -34021,7 +34182,7 @@ pub impl ToJson for IndicesPutAliasBody with to_json(self : IndicesPutAliasBody)
 }
 
 ///|
-pub impl FromJson for IndicesPutAliasBody with from_json(json, path) {
+pub impl FromJson for IndicesPutAliasBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesPutAliasBody: expected object"))
   }
@@ -34120,7 +34281,7 @@ pub(all) struct IndicesPutDataLifecycleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutDataLifecycleQuery with to_json(
+pub impl ToJson for IndicesPutDataLifecycleQuery with fn to_json(
   self : IndicesPutDataLifecycleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -34140,7 +34301,7 @@ pub impl ToJson for IndicesPutDataLifecycleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutDataLifecycleQuery with from_json(json, path) {
+pub impl FromJson for IndicesPutDataLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesPutDataLifecycleQuery: expected object"),
@@ -34205,7 +34366,7 @@ pub(all) struct IndicesPutDataLifecycleBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutDataLifecycleBody with to_json(
+pub impl ToJson for IndicesPutDataLifecycleBody with fn to_json(
   self : IndicesPutDataLifecycleBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -34229,7 +34390,7 @@ pub impl ToJson for IndicesPutDataLifecycleBody with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutDataLifecycleBody with from_json(json, path) {
+pub impl FromJson for IndicesPutDataLifecycleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesPutDataLifecycleBody: expected object"),
@@ -34315,7 +34476,7 @@ pub(all) struct IndicesPutDataStreamMappingsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutDataStreamMappingsQuery with to_json(
+pub impl ToJson for IndicesPutDataStreamMappingsQuery with fn to_json(
   self : IndicesPutDataStreamMappingsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -34335,7 +34496,7 @@ pub impl ToJson for IndicesPutDataStreamMappingsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutDataStreamMappingsQuery with from_json(
+pub impl FromJson for IndicesPutDataStreamMappingsQuery with fn from_json(
   json,
   path,
 ) {
@@ -34399,7 +34560,7 @@ pub(all) struct IndicesPutDataStreamMappingsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutDataStreamMappingsResponse with to_json(
+pub impl ToJson for IndicesPutDataStreamMappingsResponse with fn to_json(
   self : IndicesPutDataStreamMappingsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -34408,7 +34569,7 @@ pub impl ToJson for IndicesPutDataStreamMappingsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutDataStreamMappingsResponse with from_json(
+pub impl FromJson for IndicesPutDataStreamMappingsResponse with fn from_json(
   json,
   path,
 ) {
@@ -34462,7 +34623,7 @@ pub(all) struct IndicesPutDataStreamOptionsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutDataStreamOptionsQuery with to_json(
+pub impl ToJson for IndicesPutDataStreamOptionsQuery with fn to_json(
   self : IndicesPutDataStreamOptionsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -34482,7 +34643,7 @@ pub impl ToJson for IndicesPutDataStreamOptionsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutDataStreamOptionsQuery with from_json(
+pub impl FromJson for IndicesPutDataStreamOptionsQuery with fn from_json(
   json,
   path,
 ) {
@@ -34547,7 +34708,7 @@ pub(all) struct IndicesPutDataStreamOptionsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutDataStreamOptionsBody with to_json(
+pub impl ToJson for IndicesPutDataStreamOptionsBody with fn to_json(
   self : IndicesPutDataStreamOptionsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -34559,7 +34720,10 @@ pub impl ToJson for IndicesPutDataStreamOptionsBody with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutDataStreamOptionsBody with from_json(json, path) {
+pub impl FromJson for IndicesPutDataStreamOptionsBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesPutDataStreamOptionsBody: expected object"),
@@ -34625,7 +34789,7 @@ pub(all) struct IndicesPutDataStreamSettingsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutDataStreamSettingsQuery with to_json(
+pub impl ToJson for IndicesPutDataStreamSettingsQuery with fn to_json(
   self : IndicesPutDataStreamSettingsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -34645,7 +34809,7 @@ pub impl ToJson for IndicesPutDataStreamSettingsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutDataStreamSettingsQuery with from_json(
+pub impl FromJson for IndicesPutDataStreamSettingsQuery with fn from_json(
   json,
   path,
 ) {
@@ -34709,7 +34873,7 @@ pub(all) struct IndicesPutDataStreamSettingsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutDataStreamSettingsResponse with to_json(
+pub impl ToJson for IndicesPutDataStreamSettingsResponse with fn to_json(
   self : IndicesPutDataStreamSettingsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -34718,7 +34882,7 @@ pub impl ToJson for IndicesPutDataStreamSettingsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutDataStreamSettingsResponse with from_json(
+pub impl FromJson for IndicesPutDataStreamSettingsResponse with fn from_json(
   json,
   path,
 ) {
@@ -34772,7 +34936,7 @@ pub(all) struct IndicesPutIndexTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutIndexTemplateQuery with to_json(
+pub impl ToJson for IndicesPutIndexTemplateQuery with fn to_json(
   self : IndicesPutIndexTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -34792,7 +34956,7 @@ pub impl ToJson for IndicesPutIndexTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutIndexTemplateQuery with from_json(json, path) {
+pub impl FromJson for IndicesPutIndexTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesPutIndexTemplateQuery: expected object"),
@@ -34862,7 +35026,7 @@ pub(all) struct IndicesPutIndexTemplateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutIndexTemplateBody with to_json(
+pub impl ToJson for IndicesPutIndexTemplateBody with fn to_json(
   self : IndicesPutIndexTemplateBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -34910,7 +35074,7 @@ pub impl ToJson for IndicesPutIndexTemplateBody with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutIndexTemplateBody with from_json(json, path) {
+pub impl FromJson for IndicesPutIndexTemplateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesPutIndexTemplateBody: expected object"),
@@ -35055,7 +35219,7 @@ pub(all) struct IndicesPutMappingQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutMappingQuery with to_json(
+pub impl ToJson for IndicesPutMappingQuery with fn to_json(
   self : IndicesPutMappingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -35087,7 +35251,7 @@ pub impl ToJson for IndicesPutMappingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutMappingQuery with from_json(json, path) {
+pub impl FromJson for IndicesPutMappingQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesPutMappingQuery: expected object"),
@@ -35199,7 +35363,7 @@ pub(all) struct IndicesPutMappingBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutMappingBody with to_json(
+pub impl ToJson for IndicesPutMappingBody with fn to_json(
   self : IndicesPutMappingBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -35251,7 +35415,7 @@ pub impl ToJson for IndicesPutMappingBody with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutMappingBody with from_json(json, path) {
+pub impl FromJson for IndicesPutMappingBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesPutMappingBody: expected object"),
@@ -35399,7 +35563,7 @@ pub(all) struct IndicesPutSettingsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutSettingsQuery with to_json(
+pub impl ToJson for IndicesPutSettingsQuery with fn to_json(
   self : IndicesPutSettingsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -35439,7 +35603,7 @@ pub impl ToJson for IndicesPutSettingsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutSettingsQuery with from_json(json, path) {
+pub impl FromJson for IndicesPutSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesPutSettingsQuery: expected object"),
@@ -35611,7 +35775,7 @@ pub(all) struct IndicesPutTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutTemplateQuery with to_json(
+pub impl ToJson for IndicesPutTemplateQuery with fn to_json(
   self : IndicesPutTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -35635,7 +35799,7 @@ pub impl ToJson for IndicesPutTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutTemplateQuery with from_json(json, path) {
+pub impl FromJson for IndicesPutTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesPutTemplateQuery: expected object"),
@@ -35711,7 +35875,7 @@ pub(all) struct IndicesPutTemplateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesPutTemplateBody with to_json(
+pub impl ToJson for IndicesPutTemplateBody with fn to_json(
   self : IndicesPutTemplateBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -35743,7 +35907,7 @@ pub impl ToJson for IndicesPutTemplateBody with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesPutTemplateBody with from_json(json, path) {
+pub impl FromJson for IndicesPutTemplateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesPutTemplateBody: expected object"),
@@ -35841,7 +36005,7 @@ pub(all) struct IndicesRecoveryQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesRecoveryQuery with to_json(
+pub impl ToJson for IndicesRecoveryQuery with fn to_json(
   self : IndicesRecoveryQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -35869,7 +36033,7 @@ pub impl ToJson for IndicesRecoveryQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesRecoveryQuery with from_json(json, path) {
+pub impl FromJson for IndicesRecoveryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesRecoveryQuery: expected object"))
   }
@@ -35997,7 +36161,9 @@ pub(all) struct IndicesRefreshQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesRefreshQuery with to_json(self : IndicesRefreshQuery) -> Json {
+pub impl ToJson for IndicesRefreshQuery with fn to_json(
+  self : IndicesRefreshQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -36015,7 +36181,7 @@ pub impl ToJson for IndicesRefreshQuery with to_json(self : IndicesRefreshQuery)
 }
 
 ///|
-pub impl FromJson for IndicesRefreshQuery with from_json(json, path) {
+pub impl FromJson for IndicesRefreshQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesRefreshQuery: expected object"))
   }
@@ -36117,7 +36283,7 @@ pub(all) struct IndicesReloadSearchAnalyzersQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesReloadSearchAnalyzersQuery with to_json(
+pub impl ToJson for IndicesReloadSearchAnalyzersQuery with fn to_json(
   self : IndicesReloadSearchAnalyzersQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -36141,7 +36307,7 @@ pub impl ToJson for IndicesReloadSearchAnalyzersQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesReloadSearchAnalyzersQuery with from_json(
+pub impl FromJson for IndicesReloadSearchAnalyzersQuery with fn from_json(
   json,
   path,
 ) {
@@ -36253,7 +36419,7 @@ pub(all) struct IndicesRemoveBlockQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesRemoveBlockQuery with to_json(
+pub impl ToJson for IndicesRemoveBlockQuery with fn to_json(
   self : IndicesRemoveBlockQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -36281,7 +36447,7 @@ pub impl ToJson for IndicesRemoveBlockQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesRemoveBlockQuery with from_json(json, path) {
+pub impl FromJson for IndicesRemoveBlockQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesRemoveBlockQuery: expected object"),
@@ -36372,7 +36538,7 @@ pub(all) struct IndicesRemoveBlockResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesRemoveBlockResponse with to_json(
+pub impl ToJson for IndicesRemoveBlockResponse with fn to_json(
   self : IndicesRemoveBlockResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -36382,7 +36548,7 @@ pub impl ToJson for IndicesRemoveBlockResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesRemoveBlockResponse with from_json(json, path) {
+pub impl FromJson for IndicesRemoveBlockResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesRemoveBlockResponse: expected object"),
@@ -36442,7 +36608,7 @@ pub(all) struct IndicesResolveClusterQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesResolveClusterQuery with to_json(
+pub impl ToJson for IndicesResolveClusterQuery with fn to_json(
   self : IndicesResolveClusterQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -36470,7 +36636,7 @@ pub impl ToJson for IndicesResolveClusterQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesResolveClusterQuery with from_json(json, path) {
+pub impl FromJson for IndicesResolveClusterQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesResolveClusterQuery: expected object"),
@@ -36601,7 +36767,7 @@ pub(all) struct IndicesResolveIndexQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesResolveIndexQuery with to_json(
+pub impl ToJson for IndicesResolveIndexQuery with fn to_json(
   self : IndicesResolveIndexQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -36625,7 +36791,7 @@ pub impl ToJson for IndicesResolveIndexQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesResolveIndexQuery with from_json(json, path) {
+pub impl FromJson for IndicesResolveIndexQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesResolveIndexQuery: expected object"),
@@ -36700,7 +36866,7 @@ pub(all) struct IndicesResolveIndexResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesResolveIndexResponse with to_json(
+pub impl ToJson for IndicesResolveIndexResponse with fn to_json(
   self : IndicesResolveIndexResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -36711,7 +36877,7 @@ pub impl ToJson for IndicesResolveIndexResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesResolveIndexResponse with from_json(json, path) {
+pub impl FromJson for IndicesResolveIndexResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesResolveIndexResponse: expected object"),
@@ -36772,7 +36938,7 @@ pub(all) struct IndicesRolloverQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesRolloverQuery with to_json(
+pub impl ToJson for IndicesRolloverQuery with fn to_json(
   self : IndicesRolloverQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -36800,7 +36966,7 @@ pub impl ToJson for IndicesRolloverQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesRolloverQuery with from_json(json, path) {
+pub impl FromJson for IndicesRolloverQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesRolloverQuery: expected object"))
   }
@@ -36886,7 +37052,9 @@ pub(all) struct IndicesRolloverBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesRolloverBody with to_json(self : IndicesRolloverBody) -> Json {
+pub impl ToJson for IndicesRolloverBody with fn to_json(
+  self : IndicesRolloverBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.aliases {
     Some(value) => obj["aliases"] = value.to_json()
@@ -36908,7 +37076,7 @@ pub impl ToJson for IndicesRolloverBody with to_json(self : IndicesRolloverBody)
 }
 
 ///|
-pub impl FromJson for IndicesRolloverBody with from_json(json, path) {
+pub impl FromJson for IndicesRolloverBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesRolloverBody: expected object"))
   }
@@ -36959,7 +37127,7 @@ pub(all) struct IndicesRolloverResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesRolloverResponse with to_json(
+pub impl ToJson for IndicesRolloverResponse with fn to_json(
   self : IndicesRolloverResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -36974,7 +37142,7 @@ pub impl ToJson for IndicesRolloverResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesRolloverResponse with from_json(json, path) {
+pub impl FromJson for IndicesRolloverResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesRolloverResponse: expected object"),
@@ -37064,7 +37232,7 @@ pub(all) struct IndicesSegmentsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesSegmentsQuery with to_json(
+pub impl ToJson for IndicesSegmentsQuery with fn to_json(
   self : IndicesSegmentsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -37084,7 +37252,7 @@ pub impl ToJson for IndicesSegmentsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesSegmentsQuery with from_json(json, path) {
+pub impl FromJson for IndicesSegmentsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesSegmentsQuery: expected object"))
   }
@@ -37146,7 +37314,7 @@ pub(all) struct IndicesSegmentsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesSegmentsResponse with to_json(
+pub impl ToJson for IndicesSegmentsResponse with fn to_json(
   self : IndicesSegmentsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -37156,7 +37324,7 @@ pub impl ToJson for IndicesSegmentsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesSegmentsResponse with from_json(json, path) {
+pub impl FromJson for IndicesSegmentsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesSegmentsResponse: expected object"),
@@ -37218,7 +37386,7 @@ pub(all) struct IndicesShardStoresQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesShardStoresQuery with to_json(
+pub impl ToJson for IndicesShardStoresQuery with fn to_json(
   self : IndicesShardStoresQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -37242,7 +37410,7 @@ pub impl ToJson for IndicesShardStoresQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesShardStoresQuery with from_json(json, path) {
+pub impl FromJson for IndicesShardStoresQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesShardStoresQuery: expected object"),
@@ -37315,7 +37483,7 @@ pub(all) struct IndicesShardStoresResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesShardStoresResponse with to_json(
+pub impl ToJson for IndicesShardStoresResponse with fn to_json(
   self : IndicesShardStoresResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -37324,7 +37492,7 @@ pub impl ToJson for IndicesShardStoresResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesShardStoresResponse with from_json(json, path) {
+pub impl FromJson for IndicesShardStoresResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesShardStoresResponse: expected object"),
@@ -37381,7 +37549,9 @@ pub(all) struct IndicesShrinkQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesShrinkQuery with to_json(self : IndicesShrinkQuery) -> Json {
+pub impl ToJson for IndicesShrinkQuery with fn to_json(
+  self : IndicesShrinkQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -37399,7 +37569,7 @@ pub impl ToJson for IndicesShrinkQuery with to_json(self : IndicesShrinkQuery) -
 }
 
 ///|
-pub impl FromJson for IndicesShrinkQuery with from_json(json, path) {
+pub impl FromJson for IndicesShrinkQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesShrinkQuery: expected object"))
   }
@@ -37463,7 +37633,7 @@ pub(all) struct IndicesShrinkBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesShrinkBody with to_json(self : IndicesShrinkBody) -> Json {
+pub impl ToJson for IndicesShrinkBody with fn to_json(self : IndicesShrinkBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.aliases {
     Some(value) => obj["aliases"] = value.to_json()
@@ -37477,7 +37647,7 @@ pub impl ToJson for IndicesShrinkBody with to_json(self : IndicesShrinkBody) -> 
 }
 
 ///|
-pub impl FromJson for IndicesShrinkBody with from_json(json, path) {
+pub impl FromJson for IndicesShrinkBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesShrinkBody: expected object"))
   }
@@ -37511,7 +37681,7 @@ pub(all) struct IndicesShrinkResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesShrinkResponse with to_json(
+pub impl ToJson for IndicesShrinkResponse with fn to_json(
   self : IndicesShrinkResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -37522,7 +37692,7 @@ pub impl ToJson for IndicesShrinkResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesShrinkResponse with from_json(json, path) {
+pub impl FromJson for IndicesShrinkResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesShrinkResponse: expected object"),
@@ -37588,7 +37758,7 @@ pub(all) struct IndicesSimulateIndexTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesSimulateIndexTemplateQuery with to_json(
+pub impl ToJson for IndicesSimulateIndexTemplateQuery with fn to_json(
   self : IndicesSimulateIndexTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -37612,7 +37782,7 @@ pub impl ToJson for IndicesSimulateIndexTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesSimulateIndexTemplateQuery with from_json(
+pub impl FromJson for IndicesSimulateIndexTemplateQuery with fn from_json(
   json,
   path,
 ) {
@@ -37691,7 +37861,7 @@ pub(all) struct IndicesSimulateIndexTemplateResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesSimulateIndexTemplateResponse with to_json(
+pub impl ToJson for IndicesSimulateIndexTemplateResponse with fn to_json(
   self : IndicesSimulateIndexTemplateResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -37704,7 +37874,7 @@ pub impl ToJson for IndicesSimulateIndexTemplateResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesSimulateIndexTemplateResponse with from_json(
+pub impl FromJson for IndicesSimulateIndexTemplateResponse with fn from_json(
   json,
   path,
 ) {
@@ -37771,7 +37941,7 @@ pub(all) struct IndicesSimulateTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesSimulateTemplateQuery with to_json(
+pub impl ToJson for IndicesSimulateTemplateQuery with fn to_json(
   self : IndicesSimulateTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -37795,7 +37965,7 @@ pub impl ToJson for IndicesSimulateTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesSimulateTemplateQuery with from_json(json, path) {
+pub impl FromJson for IndicesSimulateTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesSimulateTemplateQuery: expected object"),
@@ -37876,7 +38046,7 @@ pub(all) struct IndicesSimulateTemplateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesSimulateTemplateBody with to_json(
+pub impl ToJson for IndicesSimulateTemplateBody with fn to_json(
   self : IndicesSimulateTemplateBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -37924,7 +38094,7 @@ pub impl ToJson for IndicesSimulateTemplateBody with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesSimulateTemplateBody with from_json(json, path) {
+pub impl FromJson for IndicesSimulateTemplateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesSimulateTemplateBody: expected object"),
@@ -38030,7 +38200,7 @@ pub(all) struct IndicesSimulateTemplateResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesSimulateTemplateResponse with to_json(
+pub impl ToJson for IndicesSimulateTemplateResponse with fn to_json(
   self : IndicesSimulateTemplateResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -38043,7 +38213,10 @@ pub impl ToJson for IndicesSimulateTemplateResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesSimulateTemplateResponse with from_json(json, path) {
+pub impl FromJson for IndicesSimulateTemplateResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesSimulateTemplateResponse: expected object"),
@@ -38112,7 +38285,7 @@ pub(all) struct IndicesSplitQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesSplitQuery with to_json(self : IndicesSplitQuery) -> Json {
+pub impl ToJson for IndicesSplitQuery with fn to_json(self : IndicesSplitQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -38130,7 +38303,7 @@ pub impl ToJson for IndicesSplitQuery with to_json(self : IndicesSplitQuery) -> 
 }
 
 ///|
-pub impl FromJson for IndicesSplitQuery with from_json(json, path) {
+pub impl FromJson for IndicesSplitQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesSplitQuery: expected object"))
   }
@@ -38194,7 +38367,7 @@ pub(all) struct IndicesSplitBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesSplitBody with to_json(self : IndicesSplitBody) -> Json {
+pub impl ToJson for IndicesSplitBody with fn to_json(self : IndicesSplitBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.aliases {
     Some(value) => obj["aliases"] = value.to_json()
@@ -38208,7 +38381,7 @@ pub impl ToJson for IndicesSplitBody with to_json(self : IndicesSplitBody) -> Js
 }
 
 ///|
-pub impl FromJson for IndicesSplitBody with from_json(json, path) {
+pub impl FromJson for IndicesSplitBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesSplitBody: expected object"))
   }
@@ -38242,7 +38415,7 @@ pub(all) struct IndicesSplitResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesSplitResponse with to_json(
+pub impl ToJson for IndicesSplitResponse with fn to_json(
   self : IndicesSplitResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -38253,7 +38426,7 @@ pub impl ToJson for IndicesSplitResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesSplitResponse with from_json(json, path) {
+pub impl FromJson for IndicesSplitResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesSplitResponse: expected object"))
   }
@@ -38322,7 +38495,7 @@ pub(all) struct IndicesStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesStatsQuery with to_json(self : IndicesStatsQuery) -> Json {
+pub impl ToJson for IndicesStatsQuery with fn to_json(self : IndicesStatsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.completion_fields {
     Some(value) => obj["completion_fields"] = value.to_json()
@@ -38364,7 +38537,7 @@ pub impl ToJson for IndicesStatsQuery with to_json(self : IndicesStatsQuery) -> 
 }
 
 ///|
-pub impl FromJson for IndicesStatsQuery with from_json(json, path) {
+pub impl FromJson for IndicesStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesStatsQuery: expected object"))
   }
@@ -38510,7 +38683,7 @@ pub(all) struct IndicesStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesStatsResponse with to_json(
+pub impl ToJson for IndicesStatsResponse with fn to_json(
   self : IndicesStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -38524,7 +38697,7 @@ pub impl ToJson for IndicesStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesStatsResponse with from_json(json, path) {
+pub impl FromJson for IndicesStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IndicesStatsResponse: expected object"))
   }
@@ -38595,7 +38768,7 @@ pub(all) struct IndicesUpdateAliasesQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesUpdateAliasesQuery with to_json(
+pub impl ToJson for IndicesUpdateAliasesQuery with fn to_json(
   self : IndicesUpdateAliasesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -38611,7 +38784,7 @@ pub impl ToJson for IndicesUpdateAliasesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesUpdateAliasesQuery with from_json(json, path) {
+pub impl FromJson for IndicesUpdateAliasesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesUpdateAliasesQuery: expected object"),
@@ -38662,7 +38835,7 @@ pub(all) struct IndicesUpdateAliasesBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesUpdateAliasesBody with to_json(
+pub impl ToJson for IndicesUpdateAliasesBody with fn to_json(
   self : IndicesUpdateAliasesBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -38674,7 +38847,7 @@ pub impl ToJson for IndicesUpdateAliasesBody with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesUpdateAliasesBody with from_json(json, path) {
+pub impl FromJson for IndicesUpdateAliasesBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesUpdateAliasesBody: expected object"),
@@ -38742,7 +38915,7 @@ pub(all) struct IndicesValidateQueryQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesValidateQueryQuery with to_json(
+pub impl ToJson for IndicesValidateQueryQuery with fn to_json(
   self : IndicesValidateQueryQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -38798,7 +38971,7 @@ pub impl ToJson for IndicesValidateQueryQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesValidateQueryQuery with from_json(json, path) {
+pub impl FromJson for IndicesValidateQueryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesValidateQueryQuery: expected object"),
@@ -38967,7 +39140,7 @@ pub(all) struct IndicesValidateQueryBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesValidateQueryBody with to_json(
+pub impl ToJson for IndicesValidateQueryBody with fn to_json(
   self : IndicesValidateQueryBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -38979,7 +39152,7 @@ pub impl ToJson for IndicesValidateQueryBody with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesValidateQueryBody with from_json(json, path) {
+pub impl FromJson for IndicesValidateQueryBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesValidateQueryBody: expected object"),
@@ -39008,7 +39181,7 @@ pub(all) struct IndicesValidateQueryResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IndicesValidateQueryResponse with to_json(
+pub impl ToJson for IndicesValidateQueryResponse with fn to_json(
   self : IndicesValidateQueryResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -39029,7 +39202,7 @@ pub impl ToJson for IndicesValidateQueryResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IndicesValidateQueryResponse with from_json(json, path) {
+pub impl FromJson for IndicesValidateQueryResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IndicesValidateQueryResponse: expected object"),
@@ -39106,7 +39279,7 @@ pub(all) struct InferenceChatCompletionUnifiedQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceChatCompletionUnifiedQuery with to_json(
+pub impl ToJson for InferenceChatCompletionUnifiedQuery with fn to_json(
   self : InferenceChatCompletionUnifiedQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -39118,7 +39291,7 @@ pub impl ToJson for InferenceChatCompletionUnifiedQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceChatCompletionUnifiedQuery with from_json(
+pub impl FromJson for InferenceChatCompletionUnifiedQuery with fn from_json(
   json,
   path,
 ) {
@@ -39203,7 +39376,7 @@ pub(all) struct InferenceCompletionQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceCompletionQuery with to_json(
+pub impl ToJson for InferenceCompletionQuery with fn to_json(
   self : InferenceCompletionQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -39215,7 +39388,7 @@ pub impl ToJson for InferenceCompletionQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceCompletionQuery with from_json(json, path) {
+pub impl FromJson for InferenceCompletionQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferenceCompletionQuery: expected object"),
@@ -39256,7 +39429,7 @@ pub(all) struct InferenceCompletionBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceCompletionBody with to_json(
+pub impl ToJson for InferenceCompletionBody with fn to_json(
   self : InferenceCompletionBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -39269,7 +39442,7 @@ pub impl ToJson for InferenceCompletionBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceCompletionBody with from_json(json, path) {
+pub impl FromJson for InferenceCompletionBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferenceCompletionBody: expected object"),
@@ -39341,7 +39514,7 @@ pub(all) struct InferenceDeleteQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceDeleteQuery with to_json(
+pub impl ToJson for InferenceDeleteQuery with fn to_json(
   self : InferenceDeleteQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -39357,7 +39530,7 @@ pub impl ToJson for InferenceDeleteQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceDeleteQuery with from_json(json, path) {
+pub impl FromJson for InferenceDeleteQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "InferenceDeleteQuery: expected object"))
   }
@@ -39448,7 +39621,7 @@ pub(all) struct InferenceEmbeddingQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceEmbeddingQuery with to_json(
+pub impl ToJson for InferenceEmbeddingQuery with fn to_json(
   self : InferenceEmbeddingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -39460,7 +39633,7 @@ pub impl ToJson for InferenceEmbeddingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceEmbeddingQuery with from_json(json, path) {
+pub impl FromJson for InferenceEmbeddingQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferenceEmbeddingQuery: expected object"),
@@ -39536,13 +39709,13 @@ pub async fn Client::inference_embedding(
 pub(all) struct InferenceGetQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceGetQuery with to_json(_self : InferenceGetQuery) -> Json {
+pub impl ToJson for InferenceGetQuery with fn to_json(_self : InferenceGetQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for InferenceGetQuery with from_json(json, path) {
+pub impl FromJson for InferenceGetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "InferenceGetQuery: expected object"))
   }
@@ -39568,7 +39741,7 @@ pub(all) struct InferenceGetResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceGetResponse with to_json(
+pub impl ToJson for InferenceGetResponse with fn to_json(
   self : InferenceGetResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -39577,7 +39750,7 @@ pub impl ToJson for InferenceGetResponse with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceGetResponse with from_json(json, path) {
+pub impl FromJson for InferenceGetResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "InferenceGetResponse: expected object"))
   }
@@ -39640,7 +39813,7 @@ pub(all) struct InferenceInferenceQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceInferenceQuery with to_json(
+pub impl ToJson for InferenceInferenceQuery with fn to_json(
   self : InferenceInferenceQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -39652,7 +39825,7 @@ pub impl ToJson for InferenceInferenceQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceInferenceQuery with from_json(json, path) {
+pub impl FromJson for InferenceInferenceQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferenceInferenceQuery: expected object"),
@@ -39695,7 +39868,7 @@ pub(all) struct InferenceInferenceBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceInferenceBody with to_json(
+pub impl ToJson for InferenceInferenceBody with fn to_json(
   self : InferenceInferenceBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -39716,7 +39889,7 @@ pub impl ToJson for InferenceInferenceBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceInferenceBody with from_json(json, path) {
+pub impl FromJson for InferenceInferenceBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferenceInferenceBody: expected object"),
@@ -39809,7 +39982,7 @@ pub(all) struct InferencePutQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutQuery with to_json(self : InferencePutQuery) -> Json {
+pub impl ToJson for InferencePutQuery with fn to_json(self : InferencePutQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
@@ -39819,7 +39992,7 @@ pub impl ToJson for InferencePutQuery with to_json(self : InferencePutQuery) -> 
 }
 
 ///|
-pub impl FromJson for InferencePutQuery with from_json(json, path) {
+pub impl FromJson for InferencePutQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "InferencePutQuery: expected object"))
   }
@@ -39904,7 +40077,7 @@ pub(all) struct InferencePutAi21Query {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutAi21Query with to_json(
+pub impl ToJson for InferencePutAi21Query with fn to_json(
   self : InferencePutAi21Query,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -39916,7 +40089,7 @@ pub impl ToJson for InferencePutAi21Query with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutAi21Query with from_json(json, path) {
+pub impl FromJson for InferencePutAi21Query with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutAi21Query: expected object"),
@@ -39955,7 +40128,7 @@ pub(all) struct InferencePutAi21Body {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutAi21Body with to_json(
+pub impl ToJson for InferencePutAi21Body with fn to_json(
   self : InferencePutAi21Body,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -39965,7 +40138,7 @@ pub impl ToJson for InferencePutAi21Body with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutAi21Body with from_json(json, path) {
+pub impl FromJson for InferencePutAi21Body with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "InferencePutAi21Body: expected object"))
   }
@@ -40037,7 +40210,7 @@ pub(all) struct InferencePutAlibabacloudQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutAlibabacloudQuery with to_json(
+pub impl ToJson for InferencePutAlibabacloudQuery with fn to_json(
   self : InferencePutAlibabacloudQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -40049,7 +40222,10 @@ pub impl ToJson for InferencePutAlibabacloudQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutAlibabacloudQuery with from_json(json, path) {
+pub impl FromJson for InferencePutAlibabacloudQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutAlibabacloudQuery: expected object"),
@@ -40092,7 +40268,7 @@ pub(all) struct InferencePutAlibabacloudBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutAlibabacloudBody with to_json(
+pub impl ToJson for InferencePutAlibabacloudBody with fn to_json(
   self : InferencePutAlibabacloudBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -40110,7 +40286,7 @@ pub impl ToJson for InferencePutAlibabacloudBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutAlibabacloudBody with from_json(json, path) {
+pub impl FromJson for InferencePutAlibabacloudBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutAlibabacloudBody: expected object"),
@@ -40198,7 +40374,7 @@ pub(all) struct InferencePutAmazonbedrockQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutAmazonbedrockQuery with to_json(
+pub impl ToJson for InferencePutAmazonbedrockQuery with fn to_json(
   self : InferencePutAmazonbedrockQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -40210,7 +40386,10 @@ pub impl ToJson for InferencePutAmazonbedrockQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutAmazonbedrockQuery with from_json(json, path) {
+pub impl FromJson for InferencePutAmazonbedrockQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutAmazonbedrockQuery: expected object"),
@@ -40253,7 +40432,7 @@ pub(all) struct InferencePutAmazonbedrockBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutAmazonbedrockBody with to_json(
+pub impl ToJson for InferencePutAmazonbedrockBody with fn to_json(
   self : InferencePutAmazonbedrockBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -40271,7 +40450,10 @@ pub impl ToJson for InferencePutAmazonbedrockBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutAmazonbedrockBody with from_json(json, path) {
+pub impl FromJson for InferencePutAmazonbedrockBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutAmazonbedrockBody: expected object"),
@@ -40359,7 +40541,7 @@ pub(all) struct InferencePutAmazonsagemakerQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutAmazonsagemakerQuery with to_json(
+pub impl ToJson for InferencePutAmazonsagemakerQuery with fn to_json(
   self : InferencePutAmazonsagemakerQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -40371,7 +40553,7 @@ pub impl ToJson for InferencePutAmazonsagemakerQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutAmazonsagemakerQuery with from_json(
+pub impl FromJson for InferencePutAmazonsagemakerQuery with fn from_json(
   json,
   path,
 ) {
@@ -40417,7 +40599,7 @@ pub(all) struct InferencePutAmazonsagemakerBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutAmazonsagemakerBody with to_json(
+pub impl ToJson for InferencePutAmazonsagemakerBody with fn to_json(
   self : InferencePutAmazonsagemakerBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -40435,7 +40617,10 @@ pub impl ToJson for InferencePutAmazonsagemakerBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutAmazonsagemakerBody with from_json(json, path) {
+pub impl FromJson for InferencePutAmazonsagemakerBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutAmazonsagemakerBody: expected object"),
@@ -40524,7 +40709,7 @@ pub(all) struct InferencePutAnthropicQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutAnthropicQuery with to_json(
+pub impl ToJson for InferencePutAnthropicQuery with fn to_json(
   self : InferencePutAnthropicQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -40536,7 +40721,7 @@ pub impl ToJson for InferencePutAnthropicQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutAnthropicQuery with from_json(json, path) {
+pub impl FromJson for InferencePutAnthropicQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutAnthropicQuery: expected object"),
@@ -40578,7 +40763,7 @@ pub(all) struct InferencePutAnthropicBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutAnthropicBody with to_json(
+pub impl ToJson for InferencePutAnthropicBody with fn to_json(
   self : InferencePutAnthropicBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -40592,7 +40777,7 @@ pub impl ToJson for InferencePutAnthropicBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutAnthropicBody with from_json(json, path) {
+pub impl FromJson for InferencePutAnthropicBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutAnthropicBody: expected object"),
@@ -40673,7 +40858,7 @@ pub(all) struct InferencePutAzureaistudioQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutAzureaistudioQuery with to_json(
+pub impl ToJson for InferencePutAzureaistudioQuery with fn to_json(
   self : InferencePutAzureaistudioQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -40685,7 +40870,10 @@ pub impl ToJson for InferencePutAzureaistudioQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutAzureaistudioQuery with from_json(json, path) {
+pub impl FromJson for InferencePutAzureaistudioQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutAzureaistudioQuery: expected object"),
@@ -40728,7 +40916,7 @@ pub(all) struct InferencePutAzureaistudioBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutAzureaistudioBody with to_json(
+pub impl ToJson for InferencePutAzureaistudioBody with fn to_json(
   self : InferencePutAzureaistudioBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -40746,7 +40934,10 @@ pub impl ToJson for InferencePutAzureaistudioBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutAzureaistudioBody with from_json(json, path) {
+pub impl FromJson for InferencePutAzureaistudioBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutAzureaistudioBody: expected object"),
@@ -40834,7 +41025,7 @@ pub(all) struct InferencePutAzureopenaiQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutAzureopenaiQuery with to_json(
+pub impl ToJson for InferencePutAzureopenaiQuery with fn to_json(
   self : InferencePutAzureopenaiQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -40846,7 +41037,7 @@ pub impl ToJson for InferencePutAzureopenaiQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutAzureopenaiQuery with from_json(json, path) {
+pub impl FromJson for InferencePutAzureopenaiQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutAzureopenaiQuery: expected object"),
@@ -40889,7 +41080,7 @@ pub(all) struct InferencePutAzureopenaiBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutAzureopenaiBody with to_json(
+pub impl ToJson for InferencePutAzureopenaiBody with fn to_json(
   self : InferencePutAzureopenaiBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -40907,7 +41098,7 @@ pub impl ToJson for InferencePutAzureopenaiBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutAzureopenaiBody with from_json(json, path) {
+pub impl FromJson for InferencePutAzureopenaiBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutAzureopenaiBody: expected object"),
@@ -40995,7 +41186,7 @@ pub(all) struct InferencePutCohereQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutCohereQuery with to_json(
+pub impl ToJson for InferencePutCohereQuery with fn to_json(
   self : InferencePutCohereQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -41007,7 +41198,7 @@ pub impl ToJson for InferencePutCohereQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutCohereQuery with from_json(json, path) {
+pub impl FromJson for InferencePutCohereQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutCohereQuery: expected object"),
@@ -41050,7 +41241,7 @@ pub(all) struct InferencePutCohereBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutCohereBody with to_json(
+pub impl ToJson for InferencePutCohereBody with fn to_json(
   self : InferencePutCohereBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -41068,7 +41259,7 @@ pub impl ToJson for InferencePutCohereBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutCohereBody with from_json(json, path) {
+pub impl FromJson for InferencePutCohereBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutCohereBody: expected object"),
@@ -41156,7 +41347,7 @@ pub(all) struct InferencePutContextualaiQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutContextualaiQuery with to_json(
+pub impl ToJson for InferencePutContextualaiQuery with fn to_json(
   self : InferencePutContextualaiQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -41168,7 +41359,10 @@ pub impl ToJson for InferencePutContextualaiQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutContextualaiQuery with from_json(json, path) {
+pub impl FromJson for InferencePutContextualaiQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutContextualaiQuery: expected object"),
@@ -41210,7 +41404,7 @@ pub(all) struct InferencePutContextualaiBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutContextualaiBody with to_json(
+pub impl ToJson for InferencePutContextualaiBody with fn to_json(
   self : InferencePutContextualaiBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -41224,7 +41418,7 @@ pub impl ToJson for InferencePutContextualaiBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutContextualaiBody with from_json(json, path) {
+pub impl FromJson for InferencePutContextualaiBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutContextualaiBody: expected object"),
@@ -41303,7 +41497,7 @@ pub async fn Client::inference_put_contextualai(
 pub(all) struct InferencePutCustomQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutCustomQuery with to_json(
+pub impl ToJson for InferencePutCustomQuery with fn to_json(
   _self : InferencePutCustomQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -41311,7 +41505,7 @@ pub impl ToJson for InferencePutCustomQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutCustomQuery with from_json(json, path) {
+pub impl FromJson for InferencePutCustomQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "InferencePutCustomQuery: expected object"),
@@ -41342,7 +41536,7 @@ pub(all) struct InferencePutCustomBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutCustomBody with to_json(
+pub impl ToJson for InferencePutCustomBody with fn to_json(
   self : InferencePutCustomBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -41360,7 +41554,7 @@ pub impl ToJson for InferencePutCustomBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutCustomBody with from_json(json, path) {
+pub impl FromJson for InferencePutCustomBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutCustomBody: expected object"),
@@ -41448,7 +41642,7 @@ pub(all) struct InferencePutDeepseekQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutDeepseekQuery with to_json(
+pub impl ToJson for InferencePutDeepseekQuery with fn to_json(
   self : InferencePutDeepseekQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -41460,7 +41654,7 @@ pub impl ToJson for InferencePutDeepseekQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutDeepseekQuery with from_json(json, path) {
+pub impl FromJson for InferencePutDeepseekQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutDeepseekQuery: expected object"),
@@ -41501,7 +41695,7 @@ pub(all) struct InferencePutDeepseekBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutDeepseekBody with to_json(
+pub impl ToJson for InferencePutDeepseekBody with fn to_json(
   self : InferencePutDeepseekBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -41511,7 +41705,7 @@ pub impl ToJson for InferencePutDeepseekBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutDeepseekBody with from_json(json, path) {
+pub impl FromJson for InferencePutDeepseekBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutDeepseekBody: expected object"),
@@ -41585,7 +41779,7 @@ pub(all) struct InferencePutElasticsearchQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutElasticsearchQuery with to_json(
+pub impl ToJson for InferencePutElasticsearchQuery with fn to_json(
   self : InferencePutElasticsearchQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -41597,7 +41791,10 @@ pub impl ToJson for InferencePutElasticsearchQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutElasticsearchQuery with from_json(json, path) {
+pub impl FromJson for InferencePutElasticsearchQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutElasticsearchQuery: expected object"),
@@ -41640,7 +41837,7 @@ pub(all) struct InferencePutElasticsearchBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutElasticsearchBody with to_json(
+pub impl ToJson for InferencePutElasticsearchBody with fn to_json(
   self : InferencePutElasticsearchBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -41658,7 +41855,10 @@ pub impl ToJson for InferencePutElasticsearchBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutElasticsearchBody with from_json(json, path) {
+pub impl FromJson for InferencePutElasticsearchBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutElasticsearchBody: expected object"),
@@ -41746,7 +41946,7 @@ pub(all) struct InferencePutElserQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutElserQuery with to_json(
+pub impl ToJson for InferencePutElserQuery with fn to_json(
   self : InferencePutElserQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -41758,7 +41958,7 @@ pub impl ToJson for InferencePutElserQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutElserQuery with from_json(json, path) {
+pub impl FromJson for InferencePutElserQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutElserQuery: expected object"),
@@ -41798,7 +41998,7 @@ pub(all) struct InferencePutElserBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutElserBody with to_json(
+pub impl ToJson for InferencePutElserBody with fn to_json(
   self : InferencePutElserBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -41812,7 +42012,7 @@ pub impl ToJson for InferencePutElserBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutElserBody with from_json(json, path) {
+pub impl FromJson for InferencePutElserBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutElserBody: expected object"),
@@ -41893,7 +42093,7 @@ pub(all) struct InferencePutFireworksaiQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutFireworksaiQuery with to_json(
+pub impl ToJson for InferencePutFireworksaiQuery with fn to_json(
   self : InferencePutFireworksaiQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -41905,7 +42105,7 @@ pub impl ToJson for InferencePutFireworksaiQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutFireworksaiQuery with from_json(json, path) {
+pub impl FromJson for InferencePutFireworksaiQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutFireworksaiQuery: expected object"),
@@ -41948,7 +42148,7 @@ pub(all) struct InferencePutFireworksaiBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutFireworksaiBody with to_json(
+pub impl ToJson for InferencePutFireworksaiBody with fn to_json(
   self : InferencePutFireworksaiBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -41966,7 +42166,7 @@ pub impl ToJson for InferencePutFireworksaiBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutFireworksaiBody with from_json(json, path) {
+pub impl FromJson for InferencePutFireworksaiBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutFireworksaiBody: expected object"),
@@ -42054,7 +42254,7 @@ pub(all) struct InferencePutGoogleaistudioQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutGoogleaistudioQuery with to_json(
+pub impl ToJson for InferencePutGoogleaistudioQuery with fn to_json(
   self : InferencePutGoogleaistudioQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -42066,7 +42266,10 @@ pub impl ToJson for InferencePutGoogleaistudioQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutGoogleaistudioQuery with from_json(json, path) {
+pub impl FromJson for InferencePutGoogleaistudioQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutGoogleaistudioQuery: expected object"),
@@ -42108,7 +42311,7 @@ pub(all) struct InferencePutGoogleaistudioBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutGoogleaistudioBody with to_json(
+pub impl ToJson for InferencePutGoogleaistudioBody with fn to_json(
   self : InferencePutGoogleaistudioBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -42122,7 +42325,10 @@ pub impl ToJson for InferencePutGoogleaistudioBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutGoogleaistudioBody with from_json(json, path) {
+pub impl FromJson for InferencePutGoogleaistudioBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutGoogleaistudioBody: expected object"),
@@ -42204,7 +42410,7 @@ pub(all) struct InferencePutGooglevertexaiQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutGooglevertexaiQuery with to_json(
+pub impl ToJson for InferencePutGooglevertexaiQuery with fn to_json(
   self : InferencePutGooglevertexaiQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -42216,7 +42422,10 @@ pub impl ToJson for InferencePutGooglevertexaiQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutGooglevertexaiQuery with from_json(json, path) {
+pub impl FromJson for InferencePutGooglevertexaiQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutGooglevertexaiQuery: expected object"),
@@ -42259,7 +42468,7 @@ pub(all) struct InferencePutGooglevertexaiBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutGooglevertexaiBody with to_json(
+pub impl ToJson for InferencePutGooglevertexaiBody with fn to_json(
   self : InferencePutGooglevertexaiBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -42277,7 +42486,10 @@ pub impl ToJson for InferencePutGooglevertexaiBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutGooglevertexaiBody with from_json(json, path) {
+pub impl FromJson for InferencePutGooglevertexaiBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutGooglevertexaiBody: expected object"),
@@ -42366,7 +42578,7 @@ pub(all) struct InferencePutGroqQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutGroqQuery with to_json(
+pub impl ToJson for InferencePutGroqQuery with fn to_json(
   self : InferencePutGroqQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -42378,7 +42590,7 @@ pub impl ToJson for InferencePutGroqQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutGroqQuery with from_json(json, path) {
+pub impl FromJson for InferencePutGroqQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutGroqQuery: expected object"),
@@ -42417,7 +42629,7 @@ pub(all) struct InferencePutGroqBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutGroqBody with to_json(
+pub impl ToJson for InferencePutGroqBody with fn to_json(
   self : InferencePutGroqBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -42427,7 +42639,7 @@ pub impl ToJson for InferencePutGroqBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutGroqBody with from_json(json, path) {
+pub impl FromJson for InferencePutGroqBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "InferencePutGroqBody: expected object"))
   }
@@ -42499,7 +42711,7 @@ pub(all) struct InferencePutHuggingFaceQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutHuggingFaceQuery with to_json(
+pub impl ToJson for InferencePutHuggingFaceQuery with fn to_json(
   self : InferencePutHuggingFaceQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -42511,7 +42723,7 @@ pub impl ToJson for InferencePutHuggingFaceQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutHuggingFaceQuery with from_json(json, path) {
+pub impl FromJson for InferencePutHuggingFaceQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutHuggingFaceQuery: expected object"),
@@ -42554,7 +42766,7 @@ pub(all) struct InferencePutHuggingFaceBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutHuggingFaceBody with to_json(
+pub impl ToJson for InferencePutHuggingFaceBody with fn to_json(
   self : InferencePutHuggingFaceBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -42572,7 +42784,7 @@ pub impl ToJson for InferencePutHuggingFaceBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutHuggingFaceBody with from_json(json, path) {
+pub impl FromJson for InferencePutHuggingFaceBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutHuggingFaceBody: expected object"),
@@ -42660,7 +42872,7 @@ pub(all) struct InferencePutJinaaiQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutJinaaiQuery with to_json(
+pub impl ToJson for InferencePutJinaaiQuery with fn to_json(
   self : InferencePutJinaaiQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -42672,7 +42884,7 @@ pub impl ToJson for InferencePutJinaaiQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutJinaaiQuery with from_json(json, path) {
+pub impl FromJson for InferencePutJinaaiQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutJinaaiQuery: expected object"),
@@ -42715,7 +42927,7 @@ pub(all) struct InferencePutJinaaiBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutJinaaiBody with to_json(
+pub impl ToJson for InferencePutJinaaiBody with fn to_json(
   self : InferencePutJinaaiBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -42733,7 +42945,7 @@ pub impl ToJson for InferencePutJinaaiBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutJinaaiBody with from_json(json, path) {
+pub impl FromJson for InferencePutJinaaiBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutJinaaiBody: expected object"),
@@ -42821,7 +43033,7 @@ pub(all) struct InferencePutLlamaQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutLlamaQuery with to_json(
+pub impl ToJson for InferencePutLlamaQuery with fn to_json(
   self : InferencePutLlamaQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -42833,7 +43045,7 @@ pub impl ToJson for InferencePutLlamaQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutLlamaQuery with from_json(json, path) {
+pub impl FromJson for InferencePutLlamaQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutLlamaQuery: expected object"),
@@ -42873,7 +43085,7 @@ pub(all) struct InferencePutLlamaBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutLlamaBody with to_json(
+pub impl ToJson for InferencePutLlamaBody with fn to_json(
   self : InferencePutLlamaBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -42887,7 +43099,7 @@ pub impl ToJson for InferencePutLlamaBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutLlamaBody with from_json(json, path) {
+pub impl FromJson for InferencePutLlamaBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutLlamaBody: expected object"),
@@ -42968,7 +43180,7 @@ pub(all) struct InferencePutMistralQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutMistralQuery with to_json(
+pub impl ToJson for InferencePutMistralQuery with fn to_json(
   self : InferencePutMistralQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -42980,7 +43192,7 @@ pub impl ToJson for InferencePutMistralQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutMistralQuery with from_json(json, path) {
+pub impl FromJson for InferencePutMistralQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutMistralQuery: expected object"),
@@ -43022,7 +43234,7 @@ pub(all) struct InferencePutMistralBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutMistralBody with to_json(
+pub impl ToJson for InferencePutMistralBody with fn to_json(
   self : InferencePutMistralBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -43036,7 +43248,7 @@ pub impl ToJson for InferencePutMistralBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutMistralBody with from_json(json, path) {
+pub impl FromJson for InferencePutMistralBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutMistralBody: expected object"),
@@ -43117,7 +43329,7 @@ pub(all) struct InferencePutNvidiaQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutNvidiaQuery with to_json(
+pub impl ToJson for InferencePutNvidiaQuery with fn to_json(
   self : InferencePutNvidiaQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -43129,7 +43341,7 @@ pub impl ToJson for InferencePutNvidiaQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutNvidiaQuery with from_json(json, path) {
+pub impl FromJson for InferencePutNvidiaQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutNvidiaQuery: expected object"),
@@ -43172,7 +43384,7 @@ pub(all) struct InferencePutNvidiaBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutNvidiaBody with to_json(
+pub impl ToJson for InferencePutNvidiaBody with fn to_json(
   self : InferencePutNvidiaBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -43190,7 +43402,7 @@ pub impl ToJson for InferencePutNvidiaBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutNvidiaBody with from_json(json, path) {
+pub impl FromJson for InferencePutNvidiaBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutNvidiaBody: expected object"),
@@ -43278,7 +43490,7 @@ pub(all) struct InferencePutOpenaiQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutOpenaiQuery with to_json(
+pub impl ToJson for InferencePutOpenaiQuery with fn to_json(
   self : InferencePutOpenaiQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -43290,7 +43502,7 @@ pub impl ToJson for InferencePutOpenaiQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutOpenaiQuery with from_json(json, path) {
+pub impl FromJson for InferencePutOpenaiQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutOpenaiQuery: expected object"),
@@ -43333,7 +43545,7 @@ pub(all) struct InferencePutOpenaiBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutOpenaiBody with to_json(
+pub impl ToJson for InferencePutOpenaiBody with fn to_json(
   self : InferencePutOpenaiBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -43351,7 +43563,7 @@ pub impl ToJson for InferencePutOpenaiBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutOpenaiBody with from_json(json, path) {
+pub impl FromJson for InferencePutOpenaiBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutOpenaiBody: expected object"),
@@ -43439,7 +43651,7 @@ pub(all) struct InferencePutOpenshiftAiQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutOpenshiftAiQuery with to_json(
+pub impl ToJson for InferencePutOpenshiftAiQuery with fn to_json(
   self : InferencePutOpenshiftAiQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -43451,7 +43663,7 @@ pub impl ToJson for InferencePutOpenshiftAiQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutOpenshiftAiQuery with from_json(json, path) {
+pub impl FromJson for InferencePutOpenshiftAiQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutOpenshiftAiQuery: expected object"),
@@ -43494,7 +43706,7 @@ pub(all) struct InferencePutOpenshiftAiBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutOpenshiftAiBody with to_json(
+pub impl ToJson for InferencePutOpenshiftAiBody with fn to_json(
   self : InferencePutOpenshiftAiBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -43512,7 +43724,7 @@ pub impl ToJson for InferencePutOpenshiftAiBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutOpenshiftAiBody with from_json(json, path) {
+pub impl FromJson for InferencePutOpenshiftAiBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutOpenshiftAiBody: expected object"),
@@ -43600,7 +43812,7 @@ pub(all) struct InferencePutVoyageaiQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutVoyageaiQuery with to_json(
+pub impl ToJson for InferencePutVoyageaiQuery with fn to_json(
   self : InferencePutVoyageaiQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -43612,7 +43824,7 @@ pub impl ToJson for InferencePutVoyageaiQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutVoyageaiQuery with from_json(json, path) {
+pub impl FromJson for InferencePutVoyageaiQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutVoyageaiQuery: expected object"),
@@ -43655,7 +43867,7 @@ pub(all) struct InferencePutVoyageaiBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutVoyageaiBody with to_json(
+pub impl ToJson for InferencePutVoyageaiBody with fn to_json(
   self : InferencePutVoyageaiBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -43673,7 +43885,7 @@ pub impl ToJson for InferencePutVoyageaiBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutVoyageaiBody with from_json(json, path) {
+pub impl FromJson for InferencePutVoyageaiBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutVoyageaiBody: expected object"),
@@ -43761,7 +43973,7 @@ pub(all) struct InferencePutWatsonxQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutWatsonxQuery with to_json(
+pub impl ToJson for InferencePutWatsonxQuery with fn to_json(
   self : InferencePutWatsonxQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -43773,7 +43985,7 @@ pub impl ToJson for InferencePutWatsonxQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutWatsonxQuery with from_json(json, path) {
+pub impl FromJson for InferencePutWatsonxQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutWatsonxQuery: expected object"),
@@ -43815,7 +44027,7 @@ pub(all) struct InferencePutWatsonxBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferencePutWatsonxBody with to_json(
+pub impl ToJson for InferencePutWatsonxBody with fn to_json(
   self : InferencePutWatsonxBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -43829,7 +44041,7 @@ pub impl ToJson for InferencePutWatsonxBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferencePutWatsonxBody with from_json(json, path) {
+pub impl FromJson for InferencePutWatsonxBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferencePutWatsonxBody: expected object"),
@@ -43910,7 +44122,7 @@ pub(all) struct InferenceRerankQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceRerankQuery with to_json(
+pub impl ToJson for InferenceRerankQuery with fn to_json(
   self : InferenceRerankQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -43922,7 +44134,7 @@ pub impl ToJson for InferenceRerankQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceRerankQuery with from_json(json, path) {
+pub impl FromJson for InferenceRerankQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "InferenceRerankQuery: expected object"))
   }
@@ -43962,7 +44174,9 @@ pub(all) struct InferenceRerankBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceRerankBody with to_json(self : InferenceRerankBody) -> Json {
+pub impl ToJson for InferenceRerankBody with fn to_json(
+  self : InferenceRerankBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["query"] = self.query.to_json()
   obj["input"] = self.input.to_json()
@@ -43982,7 +44196,7 @@ pub impl ToJson for InferenceRerankBody with to_json(self : InferenceRerankBody)
 }
 
 ///|
-pub impl FromJson for InferenceRerankBody with from_json(json, path) {
+pub impl FromJson for InferenceRerankBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "InferenceRerankBody: expected object"))
   }
@@ -44067,7 +44281,7 @@ pub(all) struct InferenceSparseEmbeddingQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceSparseEmbeddingQuery with to_json(
+pub impl ToJson for InferenceSparseEmbeddingQuery with fn to_json(
   self : InferenceSparseEmbeddingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -44079,7 +44293,10 @@ pub impl ToJson for InferenceSparseEmbeddingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceSparseEmbeddingQuery with from_json(json, path) {
+pub impl FromJson for InferenceSparseEmbeddingQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferenceSparseEmbeddingQuery: expected object"),
@@ -44120,7 +44337,7 @@ pub(all) struct InferenceSparseEmbeddingBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceSparseEmbeddingBody with to_json(
+pub impl ToJson for InferenceSparseEmbeddingBody with fn to_json(
   self : InferenceSparseEmbeddingBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -44133,7 +44350,7 @@ pub impl ToJson for InferenceSparseEmbeddingBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceSparseEmbeddingBody with from_json(json, path) {
+pub impl FromJson for InferenceSparseEmbeddingBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferenceSparseEmbeddingBody: expected object"),
@@ -44206,7 +44423,7 @@ pub(all) struct InferenceStreamCompletionQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceStreamCompletionQuery with to_json(
+pub impl ToJson for InferenceStreamCompletionQuery with fn to_json(
   self : InferenceStreamCompletionQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -44218,7 +44435,10 @@ pub impl ToJson for InferenceStreamCompletionQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceStreamCompletionQuery with from_json(json, path) {
+pub impl FromJson for InferenceStreamCompletionQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferenceStreamCompletionQuery: expected object"),
@@ -44259,7 +44479,7 @@ pub(all) struct InferenceStreamCompletionBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceStreamCompletionBody with to_json(
+pub impl ToJson for InferenceStreamCompletionBody with fn to_json(
   self : InferenceStreamCompletionBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -44272,7 +44492,10 @@ pub impl ToJson for InferenceStreamCompletionBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceStreamCompletionBody with from_json(json, path) {
+pub impl FromJson for InferenceStreamCompletionBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferenceStreamCompletionBody: expected object"),
@@ -44345,7 +44568,7 @@ pub(all) struct InferenceTextEmbeddingQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceTextEmbeddingQuery with to_json(
+pub impl ToJson for InferenceTextEmbeddingQuery with fn to_json(
   self : InferenceTextEmbeddingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -44357,7 +44580,7 @@ pub impl ToJson for InferenceTextEmbeddingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceTextEmbeddingQuery with from_json(json, path) {
+pub impl FromJson for InferenceTextEmbeddingQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferenceTextEmbeddingQuery: expected object"),
@@ -44399,7 +44622,7 @@ pub(all) struct InferenceTextEmbeddingBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceTextEmbeddingBody with to_json(
+pub impl ToJson for InferenceTextEmbeddingBody with fn to_json(
   self : InferenceTextEmbeddingBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -44416,7 +44639,7 @@ pub impl ToJson for InferenceTextEmbeddingBody with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceTextEmbeddingBody with from_json(json, path) {
+pub impl FromJson for InferenceTextEmbeddingBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "InferenceTextEmbeddingBody: expected object"),
@@ -44494,7 +44717,7 @@ pub async fn Client::inference_text_embedding(
 pub(all) struct InferenceUpdateQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InferenceUpdateQuery with to_json(
+pub impl ToJson for InferenceUpdateQuery with fn to_json(
   _self : InferenceUpdateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -44502,7 +44725,7 @@ pub impl ToJson for InferenceUpdateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for InferenceUpdateQuery with from_json(json, path) {
+pub impl FromJson for InferenceUpdateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "InferenceUpdateQuery: expected object"))
   }
@@ -44575,13 +44798,13 @@ pub async fn Client::inference_update(
 pub(all) struct InfoQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InfoQuery with to_json(_self : InfoQuery) -> Json {
+pub impl ToJson for InfoQuery with fn to_json(_self : InfoQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for InfoQuery with from_json(json, path) {
+pub impl FromJson for InfoQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "InfoQuery: expected object"))
   }
@@ -44609,7 +44832,7 @@ pub(all) struct InfoResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for InfoResponse with to_json(self : InfoResponse) -> Json {
+pub impl ToJson for InfoResponse with fn to_json(self : InfoResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["cluster_name"] = self.cluster_name.to_json()
   obj["cluster_uuid"] = self.cluster_uuid.to_json()
@@ -44620,7 +44843,7 @@ pub impl ToJson for InfoResponse with to_json(self : InfoResponse) -> Json {
 }
 
 ///|
-pub impl FromJson for InfoResponse with from_json(json, path) {
+pub impl FromJson for InfoResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "InfoResponse: expected object"))
   }
@@ -44676,7 +44899,7 @@ pub(all) struct IngestDeleteGeoipDatabaseQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestDeleteGeoipDatabaseQuery with to_json(
+pub impl ToJson for IngestDeleteGeoipDatabaseQuery with fn to_json(
   self : IngestDeleteGeoipDatabaseQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -44692,7 +44915,10 @@ pub impl ToJson for IngestDeleteGeoipDatabaseQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IngestDeleteGeoipDatabaseQuery with from_json(json, path) {
+pub impl FromJson for IngestDeleteGeoipDatabaseQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IngestDeleteGeoipDatabaseQuery: expected object"),
@@ -44776,7 +45002,7 @@ pub(all) struct IngestDeleteIpLocationDatabaseQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestDeleteIpLocationDatabaseQuery with to_json(
+pub impl ToJson for IngestDeleteIpLocationDatabaseQuery with fn to_json(
   self : IngestDeleteIpLocationDatabaseQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -44792,7 +45018,7 @@ pub impl ToJson for IngestDeleteIpLocationDatabaseQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IngestDeleteIpLocationDatabaseQuery with from_json(
+pub impl FromJson for IngestDeleteIpLocationDatabaseQuery with fn from_json(
   json,
   path,
 ) {
@@ -44879,7 +45105,7 @@ pub(all) struct IngestDeletePipelineQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestDeletePipelineQuery with to_json(
+pub impl ToJson for IngestDeletePipelineQuery with fn to_json(
   self : IngestDeletePipelineQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -44895,7 +45121,7 @@ pub impl ToJson for IngestDeletePipelineQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IngestDeletePipelineQuery with from_json(json, path) {
+pub impl FromJson for IngestDeletePipelineQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IngestDeletePipelineQuery: expected object"),
@@ -44976,7 +45202,7 @@ pub async fn Client::ingest_delete_pipeline(
 pub(all) struct IngestGeoIpStatsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestGeoIpStatsQuery with to_json(
+pub impl ToJson for IngestGeoIpStatsQuery with fn to_json(
   _self : IngestGeoIpStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -44984,7 +45210,7 @@ pub impl ToJson for IngestGeoIpStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IngestGeoIpStatsQuery with from_json(json, path) {
+pub impl FromJson for IngestGeoIpStatsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "IngestGeoIpStatsQuery: expected object"),
@@ -45013,7 +45239,7 @@ pub(all) struct IngestGeoIpStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestGeoIpStatsResponse with to_json(
+pub impl ToJson for IngestGeoIpStatsResponse with fn to_json(
   self : IngestGeoIpStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -45023,7 +45249,7 @@ pub impl ToJson for IngestGeoIpStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IngestGeoIpStatsResponse with from_json(json, path) {
+pub impl FromJson for IngestGeoIpStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IngestGeoIpStatsResponse: expected object"),
@@ -45068,7 +45294,7 @@ pub async fn Client::ingest_geo_ip_stats(
 pub(all) struct IngestGetGeoipDatabaseQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestGetGeoipDatabaseQuery with to_json(
+pub impl ToJson for IngestGetGeoipDatabaseQuery with fn to_json(
   _self : IngestGetGeoipDatabaseQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -45076,7 +45302,7 @@ pub impl ToJson for IngestGetGeoipDatabaseQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IngestGetGeoipDatabaseQuery with from_json(json, path) {
+pub impl FromJson for IngestGetGeoipDatabaseQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "IngestGetGeoipDatabaseQuery: expected object"),
@@ -45104,7 +45330,7 @@ pub(all) struct IngestGetGeoipDatabaseResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestGetGeoipDatabaseResponse with to_json(
+pub impl ToJson for IngestGetGeoipDatabaseResponse with fn to_json(
   self : IngestGetGeoipDatabaseResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -45113,7 +45339,10 @@ pub impl ToJson for IngestGetGeoipDatabaseResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IngestGetGeoipDatabaseResponse with from_json(json, path) {
+pub impl FromJson for IngestGetGeoipDatabaseResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IngestGetGeoipDatabaseResponse: expected object"),
@@ -45166,7 +45395,7 @@ pub async fn Client::ingest_get_geoip_database(
 pub(all) struct IngestGetIpLocationDatabaseQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestGetIpLocationDatabaseQuery with to_json(
+pub impl ToJson for IngestGetIpLocationDatabaseQuery with fn to_json(
   _self : IngestGetIpLocationDatabaseQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -45174,7 +45403,7 @@ pub impl ToJson for IngestGetIpLocationDatabaseQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IngestGetIpLocationDatabaseQuery with from_json(
+pub impl FromJson for IngestGetIpLocationDatabaseQuery with fn from_json(
   json,
   path,
 ) {
@@ -45205,7 +45434,7 @@ pub(all) struct IngestGetIpLocationDatabaseResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestGetIpLocationDatabaseResponse with to_json(
+pub impl ToJson for IngestGetIpLocationDatabaseResponse with fn to_json(
   self : IngestGetIpLocationDatabaseResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -45214,7 +45443,7 @@ pub impl ToJson for IngestGetIpLocationDatabaseResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IngestGetIpLocationDatabaseResponse with from_json(
+pub impl FromJson for IngestGetIpLocationDatabaseResponse with fn from_json(
   json,
   path,
 ) {
@@ -45273,7 +45502,7 @@ pub(all) struct IngestGetPipelineQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestGetPipelineQuery with to_json(
+pub impl ToJson for IngestGetPipelineQuery with fn to_json(
   self : IngestGetPipelineQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -45289,7 +45518,7 @@ pub impl ToJson for IngestGetPipelineQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IngestGetPipelineQuery with from_json(json, path) {
+pub impl FromJson for IngestGetPipelineQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IngestGetPipelineQuery: expected object"),
@@ -45376,7 +45605,7 @@ pub async fn Client::ingest_get_pipeline(
 pub(all) struct IngestProcessorGrokQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestProcessorGrokQuery with to_json(
+pub impl ToJson for IngestProcessorGrokQuery with fn to_json(
   _self : IngestProcessorGrokQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -45384,7 +45613,7 @@ pub impl ToJson for IngestProcessorGrokQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IngestProcessorGrokQuery with from_json(json, path) {
+pub impl FromJson for IngestProcessorGrokQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "IngestProcessorGrokQuery: expected object"),
@@ -45412,7 +45641,7 @@ pub(all) struct IngestProcessorGrokResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestProcessorGrokResponse with to_json(
+pub impl ToJson for IngestProcessorGrokResponse with fn to_json(
   self : IngestProcessorGrokResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -45421,7 +45650,7 @@ pub impl ToJson for IngestProcessorGrokResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IngestProcessorGrokResponse with from_json(json, path) {
+pub impl FromJson for IngestProcessorGrokResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IngestProcessorGrokResponse: expected object"),
@@ -45468,7 +45697,7 @@ pub(all) struct IngestPutGeoipDatabaseQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestPutGeoipDatabaseQuery with to_json(
+pub impl ToJson for IngestPutGeoipDatabaseQuery with fn to_json(
   self : IngestPutGeoipDatabaseQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -45484,7 +45713,7 @@ pub impl ToJson for IngestPutGeoipDatabaseQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IngestPutGeoipDatabaseQuery with from_json(json, path) {
+pub impl FromJson for IngestPutGeoipDatabaseQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IngestPutGeoipDatabaseQuery: expected object"),
@@ -45536,7 +45765,7 @@ pub(all) struct IngestPutGeoipDatabaseBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestPutGeoipDatabaseBody with to_json(
+pub impl ToJson for IngestPutGeoipDatabaseBody with fn to_json(
   self : IngestPutGeoipDatabaseBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -45546,7 +45775,7 @@ pub impl ToJson for IngestPutGeoipDatabaseBody with to_json(
 }
 
 ///|
-pub impl FromJson for IngestPutGeoipDatabaseBody with from_json(json, path) {
+pub impl FromJson for IngestPutGeoipDatabaseBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IngestPutGeoipDatabaseBody: expected object"),
@@ -45614,7 +45843,7 @@ pub(all) struct IngestPutIpLocationDatabaseQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestPutIpLocationDatabaseQuery with to_json(
+pub impl ToJson for IngestPutIpLocationDatabaseQuery with fn to_json(
   self : IngestPutIpLocationDatabaseQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -45630,7 +45859,7 @@ pub impl ToJson for IngestPutIpLocationDatabaseQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IngestPutIpLocationDatabaseQuery with from_json(
+pub impl FromJson for IngestPutIpLocationDatabaseQuery with fn from_json(
   json,
   path,
 ) {
@@ -45724,7 +45953,7 @@ pub(all) struct IngestPutPipelineQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestPutPipelineQuery with to_json(
+pub impl ToJson for IngestPutPipelineQuery with fn to_json(
   self : IngestPutPipelineQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -45744,7 +45973,7 @@ pub impl ToJson for IngestPutPipelineQuery with to_json(
 }
 
 ///|
-pub impl FromJson for IngestPutPipelineQuery with from_json(json, path) {
+pub impl FromJson for IngestPutPipelineQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IngestPutPipelineQuery: expected object"),
@@ -45812,7 +46041,7 @@ pub(all) struct IngestPutPipelineBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestPutPipelineBody with to_json(
+pub impl ToJson for IngestPutPipelineBody with fn to_json(
   self : IngestPutPipelineBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -45848,7 +46077,7 @@ pub impl ToJson for IngestPutPipelineBody with to_json(
 }
 
 ///|
-pub impl FromJson for IngestPutPipelineBody with from_json(json, path) {
+pub impl FromJson for IngestPutPipelineBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IngestPutPipelineBody: expected object"),
@@ -45960,7 +46189,9 @@ pub(all) struct IngestSimulateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestSimulateQuery with to_json(self : IngestSimulateQuery) -> Json {
+pub impl ToJson for IngestSimulateQuery with fn to_json(
+  self : IngestSimulateQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.verbose {
     Some(value) => obj["verbose"] = value.to_json()
@@ -45970,7 +46201,7 @@ pub impl ToJson for IngestSimulateQuery with to_json(self : IngestSimulateQuery)
 }
 
 ///|
-pub impl FromJson for IngestSimulateQuery with from_json(json, path) {
+pub impl FromJson for IngestSimulateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IngestSimulateQuery: expected object"))
   }
@@ -46007,7 +46238,9 @@ pub(all) struct IngestSimulateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestSimulateBody with to_json(self : IngestSimulateBody) -> Json {
+pub impl ToJson for IngestSimulateBody with fn to_json(
+  self : IngestSimulateBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["docs"] = self.docs.to_json()
   match self.pipeline {
@@ -46018,7 +46251,7 @@ pub impl ToJson for IngestSimulateBody with to_json(self : IngestSimulateBody) -
 }
 
 ///|
-pub impl FromJson for IngestSimulateBody with from_json(json, path) {
+pub impl FromJson for IngestSimulateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "IngestSimulateBody: expected object"))
   }
@@ -46049,7 +46282,7 @@ pub(all) struct IngestSimulateResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for IngestSimulateResponse with to_json(
+pub impl ToJson for IngestSimulateResponse with fn to_json(
   self : IngestSimulateResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -46058,7 +46291,7 @@ pub impl ToJson for IngestSimulateResponse with to_json(
 }
 
 ///|
-pub impl FromJson for IngestSimulateResponse with from_json(json, path) {
+pub impl FromJson for IngestSimulateResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "IngestSimulateResponse: expected object"),
@@ -46116,7 +46349,7 @@ pub(all) struct KnnSearchQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for KnnSearchQuery with to_json(self : KnnSearchQuery) -> Json {
+pub impl ToJson for KnnSearchQuery with fn to_json(self : KnnSearchQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.routing {
     Some(value) => obj["routing"] = value.to_json()
@@ -46126,7 +46359,7 @@ pub impl ToJson for KnnSearchQuery with to_json(self : KnnSearchQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for KnnSearchQuery with from_json(json, path) {
+pub impl FromJson for KnnSearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "KnnSearchQuery: expected object"))
   }
@@ -46167,7 +46400,7 @@ pub(all) struct KnnSearchBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for KnnSearchBody with to_json(self : KnnSearchBody) -> Json {
+pub impl ToJson for KnnSearchBody with fn to_json(self : KnnSearchBody) -> Json {
   let obj : Map[String, Json] = {}
   match self._source {
     Some(value) => obj["_source"] = value.to_json()
@@ -46194,7 +46427,7 @@ pub impl ToJson for KnnSearchBody with to_json(self : KnnSearchBody) -> Json {
 }
 
 ///|
-pub impl FromJson for KnnSearchBody with from_json(json, path) {
+pub impl FromJson for KnnSearchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "KnnSearchBody: expected object"))
   }
@@ -46256,7 +46489,7 @@ pub(all) struct KnnSearchResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for KnnSearchResponse with to_json(self : KnnSearchResponse) -> Json {
+pub impl ToJson for KnnSearchResponse with fn to_json(self : KnnSearchResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["took"] = self.took.to_json()
   obj["timed_out"] = self.timed_out.to_json()
@@ -46274,7 +46507,7 @@ pub impl ToJson for KnnSearchResponse with to_json(self : KnnSearchResponse) -> 
 }
 
 ///|
-pub impl FromJson for KnnSearchResponse with from_json(json, path) {
+pub impl FromJson for KnnSearchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "KnnSearchResponse: expected object"))
   }
@@ -46348,7 +46581,9 @@ pub(all) struct LicenseDeleteQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LicenseDeleteQuery with to_json(self : LicenseDeleteQuery) -> Json {
+pub impl ToJson for LicenseDeleteQuery with fn to_json(
+  self : LicenseDeleteQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -46362,7 +46597,7 @@ pub impl ToJson for LicenseDeleteQuery with to_json(self : LicenseDeleteQuery) -
 }
 
 ///|
-pub impl FromJson for LicenseDeleteQuery with from_json(json, path) {
+pub impl FromJson for LicenseDeleteQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "LicenseDeleteQuery: expected object"))
   }
@@ -46438,7 +46673,7 @@ pub(all) struct LicenseGetQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LicenseGetQuery with to_json(self : LicenseGetQuery) -> Json {
+pub impl ToJson for LicenseGetQuery with fn to_json(self : LicenseGetQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.accept_enterprise {
     Some(value) => obj["accept_enterprise"] = value.to_json()
@@ -46452,7 +46687,7 @@ pub impl ToJson for LicenseGetQuery with to_json(self : LicenseGetQuery) -> Json
 }
 
 ///|
-pub impl FromJson for LicenseGetQuery with from_json(json, path) {
+pub impl FromJson for LicenseGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "LicenseGetQuery: expected object"))
   }
@@ -46501,14 +46736,16 @@ pub(all) struct LicenseGetResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LicenseGetResponse with to_json(self : LicenseGetResponse) -> Json {
+pub impl ToJson for LicenseGetResponse with fn to_json(
+  self : LicenseGetResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["license"] = self.license.to_json()
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for LicenseGetResponse with from_json(json, path) {
+pub impl FromJson for LicenseGetResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "LicenseGetResponse: expected object"))
   }
@@ -46547,7 +46784,7 @@ pub async fn Client::license_get(
 pub(all) struct LicenseGetBasicStatusQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LicenseGetBasicStatusQuery with to_json(
+pub impl ToJson for LicenseGetBasicStatusQuery with fn to_json(
   _self : LicenseGetBasicStatusQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -46555,7 +46792,7 @@ pub impl ToJson for LicenseGetBasicStatusQuery with to_json(
 }
 
 ///|
-pub impl FromJson for LicenseGetBasicStatusQuery with from_json(json, path) {
+pub impl FromJson for LicenseGetBasicStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "LicenseGetBasicStatusQuery: expected object"),
@@ -46583,7 +46820,7 @@ pub(all) struct LicenseGetBasicStatusResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LicenseGetBasicStatusResponse with to_json(
+pub impl ToJson for LicenseGetBasicStatusResponse with fn to_json(
   self : LicenseGetBasicStatusResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -46592,7 +46829,10 @@ pub impl ToJson for LicenseGetBasicStatusResponse with to_json(
 }
 
 ///|
-pub impl FromJson for LicenseGetBasicStatusResponse with from_json(json, path) {
+pub impl FromJson for LicenseGetBasicStatusResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "LicenseGetBasicStatusResponse: expected object"),
@@ -46636,7 +46876,7 @@ pub async fn Client::license_get_basic_status(
 pub(all) struct LicenseGetTrialStatusQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LicenseGetTrialStatusQuery with to_json(
+pub impl ToJson for LicenseGetTrialStatusQuery with fn to_json(
   _self : LicenseGetTrialStatusQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -46644,7 +46884,7 @@ pub impl ToJson for LicenseGetTrialStatusQuery with to_json(
 }
 
 ///|
-pub impl FromJson for LicenseGetTrialStatusQuery with from_json(json, path) {
+pub impl FromJson for LicenseGetTrialStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "LicenseGetTrialStatusQuery: expected object"),
@@ -46672,7 +46912,7 @@ pub(all) struct LicenseGetTrialStatusResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LicenseGetTrialStatusResponse with to_json(
+pub impl ToJson for LicenseGetTrialStatusResponse with fn to_json(
   self : LicenseGetTrialStatusResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -46681,7 +46921,10 @@ pub impl ToJson for LicenseGetTrialStatusResponse with to_json(
 }
 
 ///|
-pub impl FromJson for LicenseGetTrialStatusResponse with from_json(json, path) {
+pub impl FromJson for LicenseGetTrialStatusResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "LicenseGetTrialStatusResponse: expected object"),
@@ -46729,7 +46972,7 @@ pub(all) struct LicensePostQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LicensePostQuery with to_json(self : LicensePostQuery) -> Json {
+pub impl ToJson for LicensePostQuery with fn to_json(self : LicensePostQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.acknowledge {
     Some(value) => obj["acknowledge"] = value.to_json()
@@ -46747,7 +46990,7 @@ pub impl ToJson for LicensePostQuery with to_json(self : LicensePostQuery) -> Js
 }
 
 ///|
-pub impl FromJson for LicensePostQuery with from_json(json, path) {
+pub impl FromJson for LicensePostQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "LicensePostQuery: expected object"))
   }
@@ -46808,7 +47051,7 @@ pub(all) struct LicensePostBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LicensePostBody with to_json(self : LicensePostBody) -> Json {
+pub impl ToJson for LicensePostBody with fn to_json(self : LicensePostBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.license {
     Some(value) => obj["license"] = value.to_json()
@@ -46822,7 +47065,7 @@ pub impl ToJson for LicensePostBody with to_json(self : LicensePostBody) -> Json
 }
 
 ///|
-pub impl FromJson for LicensePostBody with from_json(json, path) {
+pub impl FromJson for LicensePostBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "LicensePostBody: expected object"))
   }
@@ -46856,7 +47099,9 @@ pub(all) struct LicensePostResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LicensePostResponse with to_json(self : LicensePostResponse) -> Json {
+pub impl ToJson for LicensePostResponse with fn to_json(
+  self : LicensePostResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.acknowledge {
     Some(value) => obj["acknowledge"] = value.to_json()
@@ -46868,7 +47113,7 @@ pub impl ToJson for LicensePostResponse with to_json(self : LicensePostResponse)
 }
 
 ///|
-pub impl FromJson for LicensePostResponse with from_json(json, path) {
+pub impl FromJson for LicensePostResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "LicensePostResponse: expected object"))
   }
@@ -46927,7 +47172,7 @@ pub(all) struct LicensePostStartBasicQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LicensePostStartBasicQuery with to_json(
+pub impl ToJson for LicensePostStartBasicQuery with fn to_json(
   self : LicensePostStartBasicQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -46947,7 +47192,7 @@ pub impl ToJson for LicensePostStartBasicQuery with to_json(
 }
 
 ///|
-pub impl FromJson for LicensePostStartBasicQuery with from_json(json, path) {
+pub impl FromJson for LicensePostStartBasicQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "LicensePostStartBasicQuery: expected object"),
@@ -47013,7 +47258,7 @@ pub(all) struct LicensePostStartBasicResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LicensePostStartBasicResponse with to_json(
+pub impl ToJson for LicensePostStartBasicResponse with fn to_json(
   self : LicensePostStartBasicResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -47035,7 +47280,10 @@ pub impl ToJson for LicensePostStartBasicResponse with to_json(
 }
 
 ///|
-pub impl FromJson for LicensePostStartBasicResponse with from_json(json, path) {
+pub impl FromJson for LicensePostStartBasicResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "LicensePostStartBasicResponse: expected object"),
@@ -47104,7 +47352,7 @@ pub(all) struct LicensePostStartTrialQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LicensePostStartTrialQuery with to_json(
+pub impl ToJson for LicensePostStartTrialQuery with fn to_json(
   self : LicensePostStartTrialQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -47124,7 +47372,7 @@ pub impl ToJson for LicensePostStartTrialQuery with to_json(
 }
 
 ///|
-pub impl FromJson for LicensePostStartTrialQuery with from_json(json, path) {
+pub impl FromJson for LicensePostStartTrialQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "LicensePostStartTrialQuery: expected object"),
@@ -47189,7 +47437,7 @@ pub(all) struct LicensePostStartTrialResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LicensePostStartTrialResponse with to_json(
+pub impl ToJson for LicensePostStartTrialResponse with fn to_json(
   self : LicensePostStartTrialResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -47207,7 +47455,10 @@ pub impl ToJson for LicensePostStartTrialResponse with to_json(
 }
 
 ///|
-pub impl FromJson for LicensePostStartTrialResponse with from_json(json, path) {
+pub impl FromJson for LicensePostStartTrialResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "LicensePostStartTrialResponse: expected object"),
@@ -47268,7 +47519,7 @@ pub(all) struct ListReindexQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ListReindexQuery with to_json(self : ListReindexQuery) -> Json {
+pub impl ToJson for ListReindexQuery with fn to_json(self : ListReindexQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.detailed {
     Some(value) => obj["detailed"] = value.to_json()
@@ -47278,7 +47529,7 @@ pub impl ToJson for ListReindexQuery with to_json(self : ListReindexQuery) -> Js
 }
 
 ///|
-pub impl FromJson for ListReindexQuery with from_json(json, path) {
+pub impl FromJson for ListReindexQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ListReindexQuery: expected object"))
   }
@@ -47316,7 +47567,9 @@ pub(all) struct ListReindexResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ListReindexResponse with to_json(self : ListReindexResponse) -> Json {
+pub impl ToJson for ListReindexResponse with fn to_json(
+  self : ListReindexResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["reindex"] = self.reindex.to_json()
   match self.task_failures {
@@ -47331,7 +47584,7 @@ pub impl ToJson for ListReindexResponse with to_json(self : ListReindexResponse)
 }
 
 ///|
-pub impl FromJson for ListReindexResponse with from_json(json, path) {
+pub impl FromJson for ListReindexResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ListReindexResponse: expected object"))
   }
@@ -47382,7 +47635,7 @@ pub async fn Client::list_reindex(
 pub(all) struct LogstashDeletePipelineQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LogstashDeletePipelineQuery with to_json(
+pub impl ToJson for LogstashDeletePipelineQuery with fn to_json(
   _self : LogstashDeletePipelineQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -47390,7 +47643,7 @@ pub impl ToJson for LogstashDeletePipelineQuery with to_json(
 }
 
 ///|
-pub impl FromJson for LogstashDeletePipelineQuery with from_json(json, path) {
+pub impl FromJson for LogstashDeletePipelineQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "LogstashDeletePipelineQuery: expected object"),
@@ -47448,7 +47701,7 @@ pub async fn Client::logstash_delete_pipeline(
 pub(all) struct LogstashGetPipelineQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LogstashGetPipelineQuery with to_json(
+pub impl ToJson for LogstashGetPipelineQuery with fn to_json(
   _self : LogstashGetPipelineQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -47456,7 +47709,7 @@ pub impl ToJson for LogstashGetPipelineQuery with to_json(
 }
 
 ///|
-pub impl FromJson for LogstashGetPipelineQuery with from_json(json, path) {
+pub impl FromJson for LogstashGetPipelineQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "LogstashGetPipelineQuery: expected object"),
@@ -47520,7 +47773,7 @@ pub async fn Client::logstash_get_pipeline(
 pub(all) struct LogstashPutPipelineQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for LogstashPutPipelineQuery with to_json(
+pub impl ToJson for LogstashPutPipelineQuery with fn to_json(
   _self : LogstashPutPipelineQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -47528,7 +47781,7 @@ pub impl ToJson for LogstashPutPipelineQuery with to_json(
 }
 
 ///|
-pub impl FromJson for LogstashPutPipelineQuery with from_json(json, path) {
+pub impl FromJson for LogstashPutPipelineQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "LogstashPutPipelineQuery: expected object"),
@@ -47602,7 +47855,7 @@ pub(all) struct MgetQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MgetQuery with to_json(self : MgetQuery) -> Json {
+pub impl ToJson for MgetQuery with fn to_json(self : MgetQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.force_synthetic_source {
     Some(value) => obj["force_synthetic_source"] = value.to_json()
@@ -47644,7 +47897,7 @@ pub impl ToJson for MgetQuery with to_json(self : MgetQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for MgetQuery with from_json(json, path) {
+pub impl FromJson for MgetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MgetQuery: expected object"))
   }
@@ -47779,7 +48032,7 @@ pub(all) struct MgetBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MgetBody with to_json(self : MgetBody) -> Json {
+pub impl ToJson for MgetBody with fn to_json(self : MgetBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.docs {
     Some(value) => obj["docs"] = value.to_json()
@@ -47793,7 +48046,7 @@ pub impl ToJson for MgetBody with to_json(self : MgetBody) -> Json {
 }
 
 ///|
-pub impl FromJson for MgetBody with from_json(json, path) {
+pub impl FromJson for MgetBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MgetBody: expected object"))
   }
@@ -47822,14 +48075,14 @@ pub(all) struct MgetResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MgetResponse with to_json(self : MgetResponse) -> Json {
+pub impl ToJson for MgetResponse with fn to_json(self : MgetResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["docs"] = self.docs.to_json()
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for MgetResponse with from_json(json, path) {
+pub impl FromJson for MgetResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MgetResponse: expected object"))
   }
@@ -47883,7 +48136,7 @@ pub async fn Client::mget(
 pub(all) struct MigrationDeprecationsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MigrationDeprecationsQuery with to_json(
+pub impl ToJson for MigrationDeprecationsQuery with fn to_json(
   _self : MigrationDeprecationsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -47891,7 +48144,7 @@ pub impl ToJson for MigrationDeprecationsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MigrationDeprecationsQuery with from_json(json, path) {
+pub impl FromJson for MigrationDeprecationsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "MigrationDeprecationsQuery: expected object"),
@@ -47925,7 +48178,7 @@ pub(all) struct MigrationDeprecationsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MigrationDeprecationsResponse with to_json(
+pub impl ToJson for MigrationDeprecationsResponse with fn to_json(
   self : MigrationDeprecationsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -47940,7 +48193,10 @@ pub impl ToJson for MigrationDeprecationsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MigrationDeprecationsResponse with from_json(json, path) {
+pub impl FromJson for MigrationDeprecationsResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MigrationDeprecationsResponse: expected object"),
@@ -48017,7 +48273,7 @@ pub async fn Client::migration_deprecations(
 pub(all) struct MigrationGetFeatureUpgradeStatusQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MigrationGetFeatureUpgradeStatusQuery with to_json(
+pub impl ToJson for MigrationGetFeatureUpgradeStatusQuery with fn to_json(
   _self : MigrationGetFeatureUpgradeStatusQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -48025,7 +48281,7 @@ pub impl ToJson for MigrationGetFeatureUpgradeStatusQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MigrationGetFeatureUpgradeStatusQuery with from_json(
+pub impl FromJson for MigrationGetFeatureUpgradeStatusQuery with fn from_json(
   json,
   path,
 ) {
@@ -48057,7 +48313,7 @@ pub(all) struct MigrationGetFeatureUpgradeStatusResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MigrationGetFeatureUpgradeStatusResponse with to_json(
+pub impl ToJson for MigrationGetFeatureUpgradeStatusResponse with fn to_json(
   self : MigrationGetFeatureUpgradeStatusResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -48067,7 +48323,7 @@ pub impl ToJson for MigrationGetFeatureUpgradeStatusResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MigrationGetFeatureUpgradeStatusResponse with from_json(
+pub impl FromJson for MigrationGetFeatureUpgradeStatusResponse with fn from_json(
   json,
   path,
 ) {
@@ -48118,7 +48374,7 @@ pub async fn Client::migration_get_feature_upgrade_status(
 pub(all) struct MigrationPostFeatureUpgradeQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MigrationPostFeatureUpgradeQuery with to_json(
+pub impl ToJson for MigrationPostFeatureUpgradeQuery with fn to_json(
   _self : MigrationPostFeatureUpgradeQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -48126,7 +48382,7 @@ pub impl ToJson for MigrationPostFeatureUpgradeQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MigrationPostFeatureUpgradeQuery with from_json(
+pub impl FromJson for MigrationPostFeatureUpgradeQuery with fn from_json(
   json,
   path,
 ) {
@@ -48159,7 +48415,7 @@ pub(all) struct MigrationPostFeatureUpgradeResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MigrationPostFeatureUpgradeResponse with to_json(
+pub impl ToJson for MigrationPostFeatureUpgradeResponse with fn to_json(
   self : MigrationPostFeatureUpgradeResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -48176,7 +48432,7 @@ pub impl ToJson for MigrationPostFeatureUpgradeResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MigrationPostFeatureUpgradeResponse with from_json(
+pub impl FromJson for MigrationPostFeatureUpgradeResponse with fn from_json(
   json,
   path,
 ) {
@@ -48233,7 +48489,7 @@ pub async fn Client::migration_post_feature_upgrade(
 pub(all) struct MlClearTrainedModelDeploymentCacheQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlClearTrainedModelDeploymentCacheQuery with to_json(
+pub impl ToJson for MlClearTrainedModelDeploymentCacheQuery with fn to_json(
   _self : MlClearTrainedModelDeploymentCacheQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -48241,7 +48497,7 @@ pub impl ToJson for MlClearTrainedModelDeploymentCacheQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlClearTrainedModelDeploymentCacheQuery with from_json(
+pub impl FromJson for MlClearTrainedModelDeploymentCacheQuery with fn from_json(
   json,
   path,
 ) {
@@ -48275,7 +48531,7 @@ pub(all) struct MlClearTrainedModelDeploymentCacheResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlClearTrainedModelDeploymentCacheResponse with to_json(
+pub impl ToJson for MlClearTrainedModelDeploymentCacheResponse with fn to_json(
   self : MlClearTrainedModelDeploymentCacheResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -48284,7 +48540,7 @@ pub impl ToJson for MlClearTrainedModelDeploymentCacheResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlClearTrainedModelDeploymentCacheResponse with from_json(
+pub impl FromJson for MlClearTrainedModelDeploymentCacheResponse with fn from_json(
   json,
   path,
 ) {
@@ -48349,7 +48605,7 @@ pub(all) struct MlCloseJobQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlCloseJobQuery with to_json(self : MlCloseJobQuery) -> Json {
+pub impl ToJson for MlCloseJobQuery with fn to_json(self : MlCloseJobQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
@@ -48367,7 +48623,7 @@ pub impl ToJson for MlCloseJobQuery with to_json(self : MlCloseJobQuery) -> Json
 }
 
 ///|
-pub impl FromJson for MlCloseJobQuery with from_json(json, path) {
+pub impl FromJson for MlCloseJobQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlCloseJobQuery: expected object"))
   }
@@ -48428,7 +48684,7 @@ pub(all) struct MlCloseJobBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlCloseJobBody with to_json(self : MlCloseJobBody) -> Json {
+pub impl ToJson for MlCloseJobBody with fn to_json(self : MlCloseJobBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
@@ -48446,7 +48702,7 @@ pub impl ToJson for MlCloseJobBody with to_json(self : MlCloseJobBody) -> Json {
 }
 
 ///|
-pub impl FromJson for MlCloseJobBody with from_json(json, path) {
+pub impl FromJson for MlCloseJobBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlCloseJobBody: expected object"))
   }
@@ -48485,14 +48741,16 @@ pub(all) struct MlCloseJobResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlCloseJobResponse with to_json(self : MlCloseJobResponse) -> Json {
+pub impl ToJson for MlCloseJobResponse with fn to_json(
+  self : MlCloseJobResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["closed"] = self.closed.to_json()
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for MlCloseJobResponse with from_json(json, path) {
+pub impl FromJson for MlCloseJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlCloseJobResponse: expected object"))
   }
@@ -48543,7 +48801,7 @@ pub async fn Client::ml_close_job(
 pub(all) struct MlDeleteCalendarQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteCalendarQuery with to_json(
+pub impl ToJson for MlDeleteCalendarQuery with fn to_json(
   _self : MlDeleteCalendarQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -48551,7 +48809,7 @@ pub impl ToJson for MlDeleteCalendarQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlDeleteCalendarQuery with from_json(json, path) {
+pub impl FromJson for MlDeleteCalendarQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "MlDeleteCalendarQuery: expected object"),
@@ -48609,7 +48867,7 @@ pub async fn Client::ml_delete_calendar(
 pub(all) struct MlDeleteCalendarEventQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteCalendarEventQuery with to_json(
+pub impl ToJson for MlDeleteCalendarEventQuery with fn to_json(
   _self : MlDeleteCalendarEventQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -48617,7 +48875,7 @@ pub impl ToJson for MlDeleteCalendarEventQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlDeleteCalendarEventQuery with from_json(json, path) {
+pub impl FromJson for MlDeleteCalendarEventQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "MlDeleteCalendarEventQuery: expected object"),
@@ -48682,7 +48940,7 @@ pub async fn Client::ml_delete_calendar_event(
 pub(all) struct MlDeleteCalendarJobQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteCalendarJobQuery with to_json(
+pub impl ToJson for MlDeleteCalendarJobQuery with fn to_json(
   _self : MlDeleteCalendarJobQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -48690,7 +48948,7 @@ pub impl ToJson for MlDeleteCalendarJobQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlDeleteCalendarJobQuery with from_json(json, path) {
+pub impl FromJson for MlDeleteCalendarJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "MlDeleteCalendarJobQuery: expected object"),
@@ -48720,7 +48978,7 @@ pub(all) struct MlDeleteCalendarJobResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteCalendarJobResponse with to_json(
+pub impl ToJson for MlDeleteCalendarJobResponse with fn to_json(
   self : MlDeleteCalendarJobResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -48734,7 +48992,7 @@ pub impl ToJson for MlDeleteCalendarJobResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlDeleteCalendarJobResponse with from_json(json, path) {
+pub impl FromJson for MlDeleteCalendarJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlDeleteCalendarJobResponse: expected object"),
@@ -48801,7 +49059,7 @@ pub(all) struct MlDeleteDataFrameAnalyticsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteDataFrameAnalyticsQuery with to_json(
+pub impl ToJson for MlDeleteDataFrameAnalyticsQuery with fn to_json(
   self : MlDeleteDataFrameAnalyticsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -48817,7 +49075,10 @@ pub impl ToJson for MlDeleteDataFrameAnalyticsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlDeleteDataFrameAnalyticsQuery with from_json(json, path) {
+pub impl FromJson for MlDeleteDataFrameAnalyticsQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlDeleteDataFrameAnalyticsQuery: expected object"),
@@ -48899,7 +49160,7 @@ pub(all) struct MlDeleteDatafeedQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteDatafeedQuery with to_json(
+pub impl ToJson for MlDeleteDatafeedQuery with fn to_json(
   self : MlDeleteDatafeedQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -48911,7 +49172,7 @@ pub impl ToJson for MlDeleteDatafeedQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlDeleteDatafeedQuery with from_json(json, path) {
+pub impl FromJson for MlDeleteDatafeedQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlDeleteDatafeedQuery: expected object"),
@@ -48982,7 +49243,7 @@ pub(all) struct MlDeleteExpiredDataQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteExpiredDataQuery with to_json(
+pub impl ToJson for MlDeleteExpiredDataQuery with fn to_json(
   self : MlDeleteExpiredDataQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -48998,7 +49259,7 @@ pub impl ToJson for MlDeleteExpiredDataQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlDeleteExpiredDataQuery with from_json(json, path) {
+pub impl FromJson for MlDeleteExpiredDataQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlDeleteExpiredDataQuery: expected object"),
@@ -49051,7 +49312,7 @@ pub(all) struct MlDeleteExpiredDataBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteExpiredDataBody with to_json(
+pub impl ToJson for MlDeleteExpiredDataBody with fn to_json(
   self : MlDeleteExpiredDataBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -49067,7 +49328,7 @@ pub impl ToJson for MlDeleteExpiredDataBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlDeleteExpiredDataBody with from_json(json, path) {
+pub impl FromJson for MlDeleteExpiredDataBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlDeleteExpiredDataBody: expected object"),
@@ -49102,7 +49363,7 @@ pub(all) struct MlDeleteExpiredDataResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteExpiredDataResponse with to_json(
+pub impl ToJson for MlDeleteExpiredDataResponse with fn to_json(
   self : MlDeleteExpiredDataResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -49111,7 +49372,7 @@ pub impl ToJson for MlDeleteExpiredDataResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlDeleteExpiredDataResponse with from_json(json, path) {
+pub impl FromJson for MlDeleteExpiredDataResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlDeleteExpiredDataResponse: expected object"),
@@ -49170,7 +49431,7 @@ pub async fn Client::ml_delete_expired_data(
 pub(all) struct MlDeleteFilterQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteFilterQuery with to_json(
+pub impl ToJson for MlDeleteFilterQuery with fn to_json(
   _self : MlDeleteFilterQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -49178,7 +49439,7 @@ pub impl ToJson for MlDeleteFilterQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlDeleteFilterQuery with from_json(json, path) {
+pub impl FromJson for MlDeleteFilterQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "MlDeleteFilterQuery: expected object"))
   }
@@ -49237,7 +49498,7 @@ pub(all) struct MlDeleteForecastQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteForecastQuery with to_json(
+pub impl ToJson for MlDeleteForecastQuery with fn to_json(
   self : MlDeleteForecastQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -49253,7 +49514,7 @@ pub impl ToJson for MlDeleteForecastQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlDeleteForecastQuery with from_json(json, path) {
+pub impl FromJson for MlDeleteForecastQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlDeleteForecastQuery: expected object"),
@@ -49350,7 +49611,7 @@ pub(all) struct MlDeleteJobQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteJobQuery with to_json(self : MlDeleteJobQuery) -> Json {
+pub impl ToJson for MlDeleteJobQuery with fn to_json(self : MlDeleteJobQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.force {
     Some(value) => obj["force"] = value.to_json()
@@ -49368,7 +49629,7 @@ pub impl ToJson for MlDeleteJobQuery with to_json(self : MlDeleteJobQuery) -> Js
 }
 
 ///|
-pub impl FromJson for MlDeleteJobQuery with from_json(json, path) {
+pub impl FromJson for MlDeleteJobQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlDeleteJobQuery: expected object"))
   }
@@ -49462,7 +49723,7 @@ pub async fn Client::ml_delete_job(
 pub(all) struct MlDeleteModelSnapshotQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteModelSnapshotQuery with to_json(
+pub impl ToJson for MlDeleteModelSnapshotQuery with fn to_json(
   _self : MlDeleteModelSnapshotQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -49470,7 +49731,7 @@ pub impl ToJson for MlDeleteModelSnapshotQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlDeleteModelSnapshotQuery with from_json(json, path) {
+pub impl FromJson for MlDeleteModelSnapshotQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "MlDeleteModelSnapshotQuery: expected object"),
@@ -49539,7 +49800,7 @@ pub(all) struct MlDeleteTrainedModelQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteTrainedModelQuery with to_json(
+pub impl ToJson for MlDeleteTrainedModelQuery with fn to_json(
   self : MlDeleteTrainedModelQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -49555,7 +49816,7 @@ pub impl ToJson for MlDeleteTrainedModelQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlDeleteTrainedModelQuery with from_json(json, path) {
+pub impl FromJson for MlDeleteTrainedModelQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlDeleteTrainedModelQuery: expected object"),
@@ -49635,7 +49896,7 @@ pub async fn Client::ml_delete_trained_model(
 pub(all) struct MlDeleteTrainedModelAliasQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlDeleteTrainedModelAliasQuery with to_json(
+pub impl ToJson for MlDeleteTrainedModelAliasQuery with fn to_json(
   _self : MlDeleteTrainedModelAliasQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -49643,7 +49904,10 @@ pub impl ToJson for MlDeleteTrainedModelAliasQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlDeleteTrainedModelAliasQuery with from_json(json, path) {
+pub impl FromJson for MlDeleteTrainedModelAliasQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "MlDeleteTrainedModelAliasQuery: expected object"),
@@ -49718,7 +49982,7 @@ pub async fn Client::ml_delete_trained_model_alias(
 pub(all) struct MlEstimateModelMemoryQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlEstimateModelMemoryQuery with to_json(
+pub impl ToJson for MlEstimateModelMemoryQuery with fn to_json(
   _self : MlEstimateModelMemoryQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -49726,7 +49990,7 @@ pub impl ToJson for MlEstimateModelMemoryQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlEstimateModelMemoryQuery with from_json(json, path) {
+pub impl FromJson for MlEstimateModelMemoryQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "MlEstimateModelMemoryQuery: expected object"),
@@ -49756,7 +50020,7 @@ pub(all) struct MlEstimateModelMemoryBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlEstimateModelMemoryBody with to_json(
+pub impl ToJson for MlEstimateModelMemoryBody with fn to_json(
   self : MlEstimateModelMemoryBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -49776,7 +50040,7 @@ pub impl ToJson for MlEstimateModelMemoryBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlEstimateModelMemoryBody with from_json(json, path) {
+pub impl FromJson for MlEstimateModelMemoryBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlEstimateModelMemoryBody: expected object"),
@@ -49821,7 +50085,7 @@ pub(all) struct MlEstimateModelMemoryResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlEstimateModelMemoryResponse with to_json(
+pub impl ToJson for MlEstimateModelMemoryResponse with fn to_json(
   self : MlEstimateModelMemoryResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -49830,7 +50094,10 @@ pub impl ToJson for MlEstimateModelMemoryResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlEstimateModelMemoryResponse with from_json(json, path) {
+pub impl FromJson for MlEstimateModelMemoryResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlEstimateModelMemoryResponse: expected object"),
@@ -49877,7 +50144,7 @@ pub async fn Client::ml_estimate_model_memory(
 pub(all) struct MlEvaluateDataFrameQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlEvaluateDataFrameQuery with to_json(
+pub impl ToJson for MlEvaluateDataFrameQuery with fn to_json(
   _self : MlEvaluateDataFrameQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -49885,7 +50152,7 @@ pub impl ToJson for MlEvaluateDataFrameQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlEvaluateDataFrameQuery with from_json(json, path) {
+pub impl FromJson for MlEvaluateDataFrameQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "MlEvaluateDataFrameQuery: expected object"),
@@ -49915,7 +50182,7 @@ pub(all) struct MlEvaluateDataFrameBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlEvaluateDataFrameBody with to_json(
+pub impl ToJson for MlEvaluateDataFrameBody with fn to_json(
   self : MlEvaluateDataFrameBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -49929,7 +50196,7 @@ pub impl ToJson for MlEvaluateDataFrameBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlEvaluateDataFrameBody with from_json(json, path) {
+pub impl FromJson for MlEvaluateDataFrameBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlEvaluateDataFrameBody: expected object"),
@@ -49969,7 +50236,7 @@ pub(all) struct MlEvaluateDataFrameResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlEvaluateDataFrameResponse with to_json(
+pub impl ToJson for MlEvaluateDataFrameResponse with fn to_json(
   self : MlEvaluateDataFrameResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -49989,7 +50256,7 @@ pub impl ToJson for MlEvaluateDataFrameResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlEvaluateDataFrameResponse with from_json(json, path) {
+pub impl FromJson for MlEvaluateDataFrameResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlEvaluateDataFrameResponse: expected object"),
@@ -50050,7 +50317,7 @@ pub async fn Client::ml_evaluate_data_frame(
 pub(all) struct MlExplainDataFrameAnalyticsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlExplainDataFrameAnalyticsQuery with to_json(
+pub impl ToJson for MlExplainDataFrameAnalyticsQuery with fn to_json(
   _self : MlExplainDataFrameAnalyticsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -50058,7 +50325,7 @@ pub impl ToJson for MlExplainDataFrameAnalyticsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlExplainDataFrameAnalyticsQuery with from_json(
+pub impl FromJson for MlExplainDataFrameAnalyticsQuery with fn from_json(
   json,
   path,
 ) {
@@ -50096,7 +50363,7 @@ pub(all) struct MlExplainDataFrameAnalyticsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlExplainDataFrameAnalyticsBody with to_json(
+pub impl ToJson for MlExplainDataFrameAnalyticsBody with fn to_json(
   self : MlExplainDataFrameAnalyticsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -50136,7 +50403,10 @@ pub impl ToJson for MlExplainDataFrameAnalyticsBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlExplainDataFrameAnalyticsBody with from_json(json, path) {
+pub impl FromJson for MlExplainDataFrameAnalyticsBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlExplainDataFrameAnalyticsBody: expected object"),
@@ -50221,7 +50491,7 @@ pub(all) struct MlExplainDataFrameAnalyticsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlExplainDataFrameAnalyticsResponse with to_json(
+pub impl ToJson for MlExplainDataFrameAnalyticsResponse with fn to_json(
   self : MlExplainDataFrameAnalyticsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -50231,7 +50501,7 @@ pub impl ToJson for MlExplainDataFrameAnalyticsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlExplainDataFrameAnalyticsResponse with from_json(
+pub impl FromJson for MlExplainDataFrameAnalyticsResponse with fn from_json(
   json,
   path,
 ) {
@@ -50303,7 +50573,7 @@ pub(all) struct MlFlushJobQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlFlushJobQuery with to_json(self : MlFlushJobQuery) -> Json {
+pub impl ToJson for MlFlushJobQuery with fn to_json(self : MlFlushJobQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.advance_time {
     Some(value) => obj["advance_time"] = value.to_json()
@@ -50329,7 +50599,7 @@ pub impl ToJson for MlFlushJobQuery with to_json(self : MlFlushJobQuery) -> Json
 }
 
 ///|
-pub impl FromJson for MlFlushJobQuery with from_json(json, path) {
+pub impl FromJson for MlFlushJobQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlFlushJobQuery: expected object"))
   }
@@ -50414,7 +50684,7 @@ pub(all) struct MlFlushJobBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlFlushJobBody with to_json(self : MlFlushJobBody) -> Json {
+pub impl ToJson for MlFlushJobBody with fn to_json(self : MlFlushJobBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.advance_time {
     Some(value) => obj["advance_time"] = value.to_json()
@@ -50440,7 +50710,7 @@ pub impl ToJson for MlFlushJobBody with to_json(self : MlFlushJobBody) -> Json {
 }
 
 ///|
-pub impl FromJson for MlFlushJobBody with from_json(json, path) {
+pub impl FromJson for MlFlushJobBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlFlushJobBody: expected object"))
   }
@@ -50494,7 +50764,9 @@ pub(all) struct MlFlushJobResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlFlushJobResponse with to_json(self : MlFlushJobResponse) -> Json {
+pub impl ToJson for MlFlushJobResponse with fn to_json(
+  self : MlFlushJobResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["flushed"] = self.flushed.to_json()
   match self.last_finalized_bucket_end {
@@ -50505,7 +50777,7 @@ pub impl ToJson for MlFlushJobResponse with to_json(self : MlFlushJobResponse) -
 }
 
 ///|
-pub impl FromJson for MlFlushJobResponse with from_json(json, path) {
+pub impl FromJson for MlFlushJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlFlushJobResponse: expected object"))
   }
@@ -50568,7 +50840,7 @@ pub(all) struct MlForecastQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlForecastQuery with to_json(self : MlForecastQuery) -> Json {
+pub impl ToJson for MlForecastQuery with fn to_json(self : MlForecastQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.duration {
     Some(value) => obj["duration"] = value.to_json()
@@ -50586,7 +50858,7 @@ pub impl ToJson for MlForecastQuery with to_json(self : MlForecastQuery) -> Json
 }
 
 ///|
-pub impl FromJson for MlForecastQuery with from_json(json, path) {
+pub impl FromJson for MlForecastQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlForecastQuery: expected object"))
   }
@@ -50648,7 +50920,7 @@ pub(all) struct MlForecastBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlForecastBody with to_json(self : MlForecastBody) -> Json {
+pub impl ToJson for MlForecastBody with fn to_json(self : MlForecastBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.duration {
     Some(value) => obj["duration"] = value.to_json()
@@ -50666,7 +50938,7 @@ pub impl ToJson for MlForecastBody with to_json(self : MlForecastBody) -> Json {
 }
 
 ///|
-pub impl FromJson for MlForecastBody with from_json(json, path) {
+pub impl FromJson for MlForecastBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlForecastBody: expected object"))
   }
@@ -50707,7 +50979,9 @@ pub(all) struct MlForecastResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlForecastResponse with to_json(self : MlForecastResponse) -> Json {
+pub impl ToJson for MlForecastResponse with fn to_json(
+  self : MlForecastResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["forecast_id"] = self.forecast_id.to_json()
@@ -50715,7 +50989,7 @@ pub impl ToJson for MlForecastResponse with to_json(self : MlForecastResponse) -
 }
 
 ///|
-pub impl FromJson for MlForecastResponse with from_json(json, path) {
+pub impl FromJson for MlForecastResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlForecastResponse: expected object"))
   }
@@ -50780,7 +51054,7 @@ pub(all) struct MlGetBucketsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetBucketsQuery with to_json(self : MlGetBucketsQuery) -> Json {
+pub impl ToJson for MlGetBucketsQuery with fn to_json(self : MlGetBucketsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.anomaly_score {
     Some(value) => obj["anomaly_score"] = value.to_json()
@@ -50822,7 +51096,7 @@ pub impl ToJson for MlGetBucketsQuery with to_json(self : MlGetBucketsQuery) -> 
 }
 
 ///|
-pub impl FromJson for MlGetBucketsQuery with from_json(json, path) {
+pub impl FromJson for MlGetBucketsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetBucketsQuery: expected object"))
   }
@@ -50949,7 +51223,7 @@ pub(all) struct MlGetBucketsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetBucketsBody with to_json(self : MlGetBucketsBody) -> Json {
+pub impl ToJson for MlGetBucketsBody with fn to_json(self : MlGetBucketsBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.anomaly_score {
     Some(value) => obj["anomaly_score"] = value.to_json()
@@ -50987,7 +51261,7 @@ pub impl ToJson for MlGetBucketsBody with to_json(self : MlGetBucketsBody) -> Js
 }
 
 ///|
-pub impl FromJson for MlGetBucketsBody with from_json(json, path) {
+pub impl FromJson for MlGetBucketsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetBucketsBody: expected object"))
   }
@@ -51058,7 +51332,7 @@ pub(all) struct MlGetBucketsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetBucketsResponse with to_json(
+pub impl ToJson for MlGetBucketsResponse with fn to_json(
   self : MlGetBucketsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -51068,7 +51342,7 @@ pub impl ToJson for MlGetBucketsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetBucketsResponse with from_json(json, path) {
+pub impl FromJson for MlGetBucketsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetBucketsResponse: expected object"))
   }
@@ -51143,7 +51417,7 @@ pub(all) struct MlGetCalendarEventsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetCalendarEventsQuery with to_json(
+pub impl ToJson for MlGetCalendarEventsQuery with fn to_json(
   self : MlGetCalendarEventsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -51171,7 +51445,7 @@ pub impl ToJson for MlGetCalendarEventsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetCalendarEventsQuery with from_json(json, path) {
+pub impl FromJson for MlGetCalendarEventsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetCalendarEventsQuery: expected object"),
@@ -51252,7 +51526,7 @@ pub(all) struct MlGetCalendarEventsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetCalendarEventsResponse with to_json(
+pub impl ToJson for MlGetCalendarEventsResponse with fn to_json(
   self : MlGetCalendarEventsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -51262,7 +51536,7 @@ pub impl ToJson for MlGetCalendarEventsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetCalendarEventsResponse with from_json(json, path) {
+pub impl FromJson for MlGetCalendarEventsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetCalendarEventsResponse: expected object"),
@@ -51316,7 +51590,9 @@ pub(all) struct MlGetCalendarsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetCalendarsQuery with to_json(self : MlGetCalendarsQuery) -> Json {
+pub impl ToJson for MlGetCalendarsQuery with fn to_json(
+  self : MlGetCalendarsQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.from {
     Some(value) => obj["from"] = value.to_json()
@@ -51330,7 +51606,7 @@ pub impl ToJson for MlGetCalendarsQuery with to_json(self : MlGetCalendarsQuery)
 }
 
 ///|
-pub impl FromJson for MlGetCalendarsQuery with from_json(json, path) {
+pub impl FromJson for MlGetCalendarsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetCalendarsQuery: expected object"))
   }
@@ -51378,7 +51654,9 @@ pub(all) struct MlGetCalendarsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetCalendarsBody with to_json(self : MlGetCalendarsBody) -> Json {
+pub impl ToJson for MlGetCalendarsBody with fn to_json(
+  self : MlGetCalendarsBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.page {
     Some(value) => obj["page"] = value.to_json()
@@ -51388,7 +51666,7 @@ pub impl ToJson for MlGetCalendarsBody with to_json(self : MlGetCalendarsBody) -
 }
 
 ///|
-pub impl FromJson for MlGetCalendarsBody with from_json(json, path) {
+pub impl FromJson for MlGetCalendarsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetCalendarsBody: expected object"))
   }
@@ -51413,7 +51691,7 @@ pub(all) struct MlGetCalendarsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetCalendarsResponse with to_json(
+pub impl ToJson for MlGetCalendarsResponse with fn to_json(
   self : MlGetCalendarsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -51423,7 +51701,7 @@ pub impl ToJson for MlGetCalendarsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetCalendarsResponse with from_json(json, path) {
+pub impl FromJson for MlGetCalendarsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetCalendarsResponse: expected object"),
@@ -51490,7 +51768,7 @@ pub(all) struct MlGetCategoriesQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetCategoriesQuery with to_json(
+pub impl ToJson for MlGetCategoriesQuery with fn to_json(
   self : MlGetCategoriesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -51510,7 +51788,7 @@ pub impl ToJson for MlGetCategoriesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetCategoriesQuery with from_json(json, path) {
+pub impl FromJson for MlGetCategoriesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetCategoriesQuery: expected object"))
   }
@@ -51570,7 +51848,9 @@ pub(all) struct MlGetCategoriesBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetCategoriesBody with to_json(self : MlGetCategoriesBody) -> Json {
+pub impl ToJson for MlGetCategoriesBody with fn to_json(
+  self : MlGetCategoriesBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.page {
     Some(value) => obj["page"] = value.to_json()
@@ -51580,7 +51860,7 @@ pub impl ToJson for MlGetCategoriesBody with to_json(self : MlGetCategoriesBody)
 }
 
 ///|
-pub impl FromJson for MlGetCategoriesBody with from_json(json, path) {
+pub impl FromJson for MlGetCategoriesBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetCategoriesBody: expected object"))
   }
@@ -51605,7 +51885,7 @@ pub(all) struct MlGetCategoriesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetCategoriesResponse with to_json(
+pub impl ToJson for MlGetCategoriesResponse with fn to_json(
   self : MlGetCategoriesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -51615,7 +51895,7 @@ pub impl ToJson for MlGetCategoriesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetCategoriesResponse with from_json(json, path) {
+pub impl FromJson for MlGetCategoriesResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetCategoriesResponse: expected object"),
@@ -51691,7 +51971,7 @@ pub(all) struct MlGetDataFrameAnalyticsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetDataFrameAnalyticsQuery with to_json(
+pub impl ToJson for MlGetDataFrameAnalyticsQuery with fn to_json(
   self : MlGetDataFrameAnalyticsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -51715,7 +51995,7 @@ pub impl ToJson for MlGetDataFrameAnalyticsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetDataFrameAnalyticsQuery with from_json(json, path) {
+pub impl FromJson for MlGetDataFrameAnalyticsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetDataFrameAnalyticsQuery: expected object"),
@@ -51788,7 +52068,7 @@ pub(all) struct MlGetDataFrameAnalyticsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetDataFrameAnalyticsResponse with to_json(
+pub impl ToJson for MlGetDataFrameAnalyticsResponse with fn to_json(
   self : MlGetDataFrameAnalyticsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -51798,7 +52078,10 @@ pub impl ToJson for MlGetDataFrameAnalyticsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetDataFrameAnalyticsResponse with from_json(json, path) {
+pub impl FromJson for MlGetDataFrameAnalyticsResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetDataFrameAnalyticsResponse: expected object"),
@@ -51860,7 +52143,7 @@ pub(all) struct MlGetDataFrameAnalyticsStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetDataFrameAnalyticsStatsQuery with to_json(
+pub impl ToJson for MlGetDataFrameAnalyticsStatsQuery with fn to_json(
   self : MlGetDataFrameAnalyticsStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -51884,7 +52167,7 @@ pub impl ToJson for MlGetDataFrameAnalyticsStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetDataFrameAnalyticsStatsQuery with from_json(
+pub impl FromJson for MlGetDataFrameAnalyticsStatsQuery with fn from_json(
   json,
   path,
 ) {
@@ -51959,7 +52242,7 @@ pub(all) struct MlGetDataFrameAnalyticsStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetDataFrameAnalyticsStatsResponse with to_json(
+pub impl ToJson for MlGetDataFrameAnalyticsStatsResponse with fn to_json(
   self : MlGetDataFrameAnalyticsStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -51969,7 +52252,7 @@ pub impl ToJson for MlGetDataFrameAnalyticsStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetDataFrameAnalyticsStatsResponse with from_json(
+pub impl FromJson for MlGetDataFrameAnalyticsStatsResponse with fn from_json(
   json,
   path,
 ) {
@@ -52031,7 +52314,7 @@ pub(all) struct MlGetDatafeedStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetDatafeedStatsQuery with to_json(
+pub impl ToJson for MlGetDatafeedStatsQuery with fn to_json(
   self : MlGetDatafeedStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -52043,7 +52326,7 @@ pub impl ToJson for MlGetDatafeedStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetDatafeedStatsQuery with from_json(json, path) {
+pub impl FromJson for MlGetDatafeedStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetDatafeedStatsQuery: expected object"),
@@ -52085,7 +52368,7 @@ pub(all) struct MlGetDatafeedStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetDatafeedStatsResponse with to_json(
+pub impl ToJson for MlGetDatafeedStatsResponse with fn to_json(
   self : MlGetDatafeedStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -52095,7 +52378,7 @@ pub impl ToJson for MlGetDatafeedStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetDatafeedStatsResponse with from_json(json, path) {
+pub impl FromJson for MlGetDatafeedStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetDatafeedStatsResponse: expected object"),
@@ -52155,7 +52438,9 @@ pub(all) struct MlGetDatafeedsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetDatafeedsQuery with to_json(self : MlGetDatafeedsQuery) -> Json {
+pub impl ToJson for MlGetDatafeedsQuery with fn to_json(
+  self : MlGetDatafeedsQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
@@ -52169,7 +52454,7 @@ pub impl ToJson for MlGetDatafeedsQuery with to_json(self : MlGetDatafeedsQuery)
 }
 
 ///|
-pub impl FromJson for MlGetDatafeedsQuery with from_json(json, path) {
+pub impl FromJson for MlGetDatafeedsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetDatafeedsQuery: expected object"))
   }
@@ -52220,7 +52505,7 @@ pub(all) struct MlGetDatafeedsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetDatafeedsResponse with to_json(
+pub impl ToJson for MlGetDatafeedsResponse with fn to_json(
   self : MlGetDatafeedsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -52230,7 +52515,7 @@ pub impl ToJson for MlGetDatafeedsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetDatafeedsResponse with from_json(json, path) {
+pub impl FromJson for MlGetDatafeedsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetDatafeedsResponse: expected object"),
@@ -52290,7 +52575,7 @@ pub(all) struct MlGetFiltersQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetFiltersQuery with to_json(self : MlGetFiltersQuery) -> Json {
+pub impl ToJson for MlGetFiltersQuery with fn to_json(self : MlGetFiltersQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.from {
     Some(value) => obj["from"] = value.to_json()
@@ -52304,7 +52589,7 @@ pub impl ToJson for MlGetFiltersQuery with to_json(self : MlGetFiltersQuery) -> 
 }
 
 ///|
-pub impl FromJson for MlGetFiltersQuery with from_json(json, path) {
+pub impl FromJson for MlGetFiltersQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetFiltersQuery: expected object"))
   }
@@ -52350,7 +52635,7 @@ pub(all) struct MlGetFiltersResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetFiltersResponse with to_json(
+pub impl ToJson for MlGetFiltersResponse with fn to_json(
   self : MlGetFiltersResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -52360,7 +52645,7 @@ pub impl ToJson for MlGetFiltersResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetFiltersResponse with from_json(json, path) {
+pub impl FromJson for MlGetFiltersResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetFiltersResponse: expected object"))
   }
@@ -52424,7 +52709,7 @@ pub(all) struct MlGetInfluencersQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetInfluencersQuery with to_json(
+pub impl ToJson for MlGetInfluencersQuery with fn to_json(
   self : MlGetInfluencersQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -52464,7 +52749,7 @@ pub impl ToJson for MlGetInfluencersQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetInfluencersQuery with from_json(json, path) {
+pub impl FromJson for MlGetInfluencersQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetInfluencersQuery: expected object"),
@@ -52576,7 +52861,7 @@ pub(all) struct MlGetInfluencersBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetInfluencersBody with to_json(
+pub impl ToJson for MlGetInfluencersBody with fn to_json(
   self : MlGetInfluencersBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -52588,7 +52873,7 @@ pub impl ToJson for MlGetInfluencersBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetInfluencersBody with from_json(json, path) {
+pub impl FromJson for MlGetInfluencersBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetInfluencersBody: expected object"))
   }
@@ -52613,7 +52898,7 @@ pub(all) struct MlGetInfluencersResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetInfluencersResponse with to_json(
+pub impl ToJson for MlGetInfluencersResponse with fn to_json(
   self : MlGetInfluencersResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -52623,7 +52908,7 @@ pub impl ToJson for MlGetInfluencersResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetInfluencersResponse with from_json(json, path) {
+pub impl FromJson for MlGetInfluencersResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetInfluencersResponse: expected object"),
@@ -52686,7 +52971,9 @@ pub(all) struct MlGetJobStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetJobStatsQuery with to_json(self : MlGetJobStatsQuery) -> Json {
+pub impl ToJson for MlGetJobStatsQuery with fn to_json(
+  self : MlGetJobStatsQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
@@ -52696,7 +52983,7 @@ pub impl ToJson for MlGetJobStatsQuery with to_json(self : MlGetJobStatsQuery) -
 }
 
 ///|
-pub impl FromJson for MlGetJobStatsQuery with from_json(json, path) {
+pub impl FromJson for MlGetJobStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetJobStatsQuery: expected object"))
   }
@@ -52734,7 +53021,7 @@ pub(all) struct MlGetJobStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetJobStatsResponse with to_json(
+pub impl ToJson for MlGetJobStatsResponse with fn to_json(
   self : MlGetJobStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -52744,7 +53031,7 @@ pub impl ToJson for MlGetJobStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetJobStatsResponse with from_json(json, path) {
+pub impl FromJson for MlGetJobStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetJobStatsResponse: expected object"),
@@ -52804,7 +53091,7 @@ pub(all) struct MlGetJobsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetJobsQuery with to_json(self : MlGetJobsQuery) -> Json {
+pub impl ToJson for MlGetJobsQuery with fn to_json(self : MlGetJobsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
@@ -52818,7 +53105,7 @@ pub impl ToJson for MlGetJobsQuery with to_json(self : MlGetJobsQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for MlGetJobsQuery with from_json(json, path) {
+pub impl FromJson for MlGetJobsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetJobsQuery: expected object"))
   }
@@ -52869,7 +53156,7 @@ pub(all) struct MlGetJobsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetJobsResponse with to_json(self : MlGetJobsResponse) -> Json {
+pub impl ToJson for MlGetJobsResponse with fn to_json(self : MlGetJobsResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["count"] = self.count.to_json()
   obj["jobs"] = self.jobs.to_json()
@@ -52877,7 +53164,7 @@ pub impl ToJson for MlGetJobsResponse with to_json(self : MlGetJobsResponse) -> 
 }
 
 ///|
-pub impl FromJson for MlGetJobsResponse with from_json(json, path) {
+pub impl FromJson for MlGetJobsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetJobsResponse: expected object"))
   }
@@ -52935,7 +53222,7 @@ pub(all) struct MlGetMemoryStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetMemoryStatsQuery with to_json(
+pub impl ToJson for MlGetMemoryStatsQuery with fn to_json(
   self : MlGetMemoryStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -52951,7 +53238,7 @@ pub impl ToJson for MlGetMemoryStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetMemoryStatsQuery with from_json(json, path) {
+pub impl FromJson for MlGetMemoryStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetMemoryStatsQuery: expected object"),
@@ -53004,7 +53291,7 @@ pub(all) struct MlGetMemoryStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetMemoryStatsResponse with to_json(
+pub impl ToJson for MlGetMemoryStatsResponse with fn to_json(
   self : MlGetMemoryStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -53015,7 +53302,7 @@ pub impl ToJson for MlGetMemoryStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetMemoryStatsResponse with from_json(json, path) {
+pub impl FromJson for MlGetMemoryStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetMemoryStatsResponse: expected object"),
@@ -53078,7 +53365,7 @@ pub(all) struct MlGetModelSnapshotUpgradeStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetModelSnapshotUpgradeStatsQuery with to_json(
+pub impl ToJson for MlGetModelSnapshotUpgradeStatsQuery with fn to_json(
   self : MlGetModelSnapshotUpgradeStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -53090,7 +53377,7 @@ pub impl ToJson for MlGetModelSnapshotUpgradeStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetModelSnapshotUpgradeStatsQuery with from_json(
+pub impl FromJson for MlGetModelSnapshotUpgradeStatsQuery with fn from_json(
   json,
   path,
 ) {
@@ -53135,7 +53422,7 @@ pub(all) struct MlGetModelSnapshotUpgradeStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetModelSnapshotUpgradeStatsResponse with to_json(
+pub impl ToJson for MlGetModelSnapshotUpgradeStatsResponse with fn to_json(
   self : MlGetModelSnapshotUpgradeStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -53145,7 +53432,7 @@ pub impl ToJson for MlGetModelSnapshotUpgradeStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetModelSnapshotUpgradeStatsResponse with from_json(
+pub impl FromJson for MlGetModelSnapshotUpgradeStatsResponse with fn from_json(
   json,
   path,
 ) {
@@ -53214,7 +53501,7 @@ pub(all) struct MlGetModelSnapshotsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetModelSnapshotsQuery with to_json(
+pub impl ToJson for MlGetModelSnapshotsQuery with fn to_json(
   self : MlGetModelSnapshotsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -53246,7 +53533,7 @@ pub impl ToJson for MlGetModelSnapshotsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetModelSnapshotsQuery with from_json(json, path) {
+pub impl FromJson for MlGetModelSnapshotsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetModelSnapshotsQuery: expected object"),
@@ -53340,7 +53627,7 @@ pub(all) struct MlGetModelSnapshotsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetModelSnapshotsBody with to_json(
+pub impl ToJson for MlGetModelSnapshotsBody with fn to_json(
   self : MlGetModelSnapshotsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -53368,7 +53655,7 @@ pub impl ToJson for MlGetModelSnapshotsBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetModelSnapshotsBody with from_json(json, path) {
+pub impl FromJson for MlGetModelSnapshotsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetModelSnapshotsBody: expected object"),
@@ -53421,7 +53708,7 @@ pub(all) struct MlGetModelSnapshotsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetModelSnapshotsResponse with to_json(
+pub impl ToJson for MlGetModelSnapshotsResponse with fn to_json(
   self : MlGetModelSnapshotsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -53431,7 +53718,7 @@ pub impl ToJson for MlGetModelSnapshotsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetModelSnapshotsResponse with from_json(json, path) {
+pub impl FromJson for MlGetModelSnapshotsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetModelSnapshotsResponse: expected object"),
@@ -53510,7 +53797,7 @@ pub(all) struct MlGetOverallBucketsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetOverallBucketsQuery with to_json(
+pub impl ToJson for MlGetOverallBucketsQuery with fn to_json(
   self : MlGetOverallBucketsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -53546,7 +53833,7 @@ pub impl ToJson for MlGetOverallBucketsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetOverallBucketsQuery with from_json(json, path) {
+pub impl FromJson for MlGetOverallBucketsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetOverallBucketsQuery: expected object"),
@@ -53664,7 +53951,7 @@ pub(all) struct MlGetOverallBucketsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetOverallBucketsBody with to_json(
+pub impl ToJson for MlGetOverallBucketsBody with fn to_json(
   self : MlGetOverallBucketsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -53700,7 +53987,7 @@ pub impl ToJson for MlGetOverallBucketsBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetOverallBucketsBody with from_json(json, path) {
+pub impl FromJson for MlGetOverallBucketsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetOverallBucketsBody: expected object"),
@@ -53777,7 +54064,7 @@ pub(all) struct MlGetOverallBucketsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetOverallBucketsResponse with to_json(
+pub impl ToJson for MlGetOverallBucketsResponse with fn to_json(
   self : MlGetOverallBucketsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -53787,7 +54074,7 @@ pub impl ToJson for MlGetOverallBucketsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetOverallBucketsResponse with from_json(json, path) {
+pub impl FromJson for MlGetOverallBucketsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetOverallBucketsResponse: expected object"),
@@ -53858,7 +54145,7 @@ pub(all) struct MlGetRecordsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetRecordsQuery with to_json(self : MlGetRecordsQuery) -> Json {
+pub impl ToJson for MlGetRecordsQuery with fn to_json(self : MlGetRecordsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.desc {
     Some(value) => obj["desc"] = value.to_json()
@@ -53896,7 +54183,7 @@ pub impl ToJson for MlGetRecordsQuery with to_json(self : MlGetRecordsQuery) -> 
 }
 
 ///|
-pub impl FromJson for MlGetRecordsQuery with from_json(json, path) {
+pub impl FromJson for MlGetRecordsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetRecordsQuery: expected object"))
   }
@@ -54012,7 +54299,7 @@ pub(all) struct MlGetRecordsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetRecordsBody with to_json(self : MlGetRecordsBody) -> Json {
+pub impl ToJson for MlGetRecordsBody with fn to_json(self : MlGetRecordsBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.desc {
     Some(value) => obj["desc"] = value.to_json()
@@ -54046,7 +54333,7 @@ pub impl ToJson for MlGetRecordsBody with to_json(self : MlGetRecordsBody) -> Js
 }
 
 ///|
-pub impl FromJson for MlGetRecordsBody with from_json(json, path) {
+pub impl FromJson for MlGetRecordsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetRecordsBody: expected object"))
   }
@@ -54111,7 +54398,7 @@ pub(all) struct MlGetRecordsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetRecordsResponse with to_json(
+pub impl ToJson for MlGetRecordsResponse with fn to_json(
   self : MlGetRecordsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -54121,7 +54408,7 @@ pub impl ToJson for MlGetRecordsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetRecordsResponse with from_json(json, path) {
+pub impl FromJson for MlGetRecordsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlGetRecordsResponse: expected object"))
   }
@@ -54188,7 +54475,7 @@ pub(all) struct MlGetTrainedModelsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetTrainedModelsQuery with to_json(
+pub impl ToJson for MlGetTrainedModelsQuery with fn to_json(
   self : MlGetTrainedModelsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -54224,7 +54511,7 @@ pub impl ToJson for MlGetTrainedModelsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetTrainedModelsQuery with from_json(json, path) {
+pub impl FromJson for MlGetTrainedModelsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetTrainedModelsQuery: expected object"),
@@ -54337,7 +54624,7 @@ pub(all) struct MlGetTrainedModelsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetTrainedModelsResponse with to_json(
+pub impl ToJson for MlGetTrainedModelsResponse with fn to_json(
   self : MlGetTrainedModelsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -54347,7 +54634,7 @@ pub impl ToJson for MlGetTrainedModelsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetTrainedModelsResponse with from_json(json, path) {
+pub impl FromJson for MlGetTrainedModelsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetTrainedModelsResponse: expected object"),
@@ -54408,7 +54695,7 @@ pub(all) struct MlGetTrainedModelsStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetTrainedModelsStatsQuery with to_json(
+pub impl ToJson for MlGetTrainedModelsStatsQuery with fn to_json(
   self : MlGetTrainedModelsStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -54428,7 +54715,7 @@ pub impl ToJson for MlGetTrainedModelsStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetTrainedModelsStatsQuery with from_json(json, path) {
+pub impl FromJson for MlGetTrainedModelsStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetTrainedModelsStatsQuery: expected object"),
@@ -54490,7 +54777,7 @@ pub(all) struct MlGetTrainedModelsStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlGetTrainedModelsStatsResponse with to_json(
+pub impl ToJson for MlGetTrainedModelsStatsResponse with fn to_json(
   self : MlGetTrainedModelsStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -54500,7 +54787,10 @@ pub impl ToJson for MlGetTrainedModelsStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlGetTrainedModelsStatsResponse with from_json(json, path) {
+pub impl FromJson for MlGetTrainedModelsStatsResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlGetTrainedModelsStatsResponse: expected object"),
@@ -54559,7 +54849,7 @@ pub(all) struct MlInferTrainedModelQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlInferTrainedModelQuery with to_json(
+pub impl ToJson for MlInferTrainedModelQuery with fn to_json(
   self : MlInferTrainedModelQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -54571,7 +54861,7 @@ pub impl ToJson for MlInferTrainedModelQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlInferTrainedModelQuery with from_json(json, path) {
+pub impl FromJson for MlInferTrainedModelQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlInferTrainedModelQuery: expected object"),
@@ -54612,7 +54902,7 @@ pub(all) struct MlInferTrainedModelBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlInferTrainedModelBody with to_json(
+pub impl ToJson for MlInferTrainedModelBody with fn to_json(
   self : MlInferTrainedModelBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -54625,7 +54915,7 @@ pub impl ToJson for MlInferTrainedModelBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlInferTrainedModelBody with from_json(json, path) {
+pub impl FromJson for MlInferTrainedModelBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlInferTrainedModelBody: expected object"),
@@ -54659,7 +54949,7 @@ pub(all) struct MlInferTrainedModelResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlInferTrainedModelResponse with to_json(
+pub impl ToJson for MlInferTrainedModelResponse with fn to_json(
   self : MlInferTrainedModelResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -54668,7 +54958,7 @@ pub impl ToJson for MlInferTrainedModelResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlInferTrainedModelResponse with from_json(json, path) {
+pub impl FromJson for MlInferTrainedModelResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlInferTrainedModelResponse: expected object"),
@@ -54718,13 +55008,13 @@ pub async fn Client::ml_infer_trained_model(
 pub(all) struct MlInfoQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlInfoQuery with to_json(_self : MlInfoQuery) -> Json {
+pub impl ToJson for MlInfoQuery with fn to_json(_self : MlInfoQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for MlInfoQuery with from_json(json, path) {
+pub impl FromJson for MlInfoQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "MlInfoQuery: expected object"))
   }
@@ -54751,7 +55041,7 @@ pub(all) struct MlInfoResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlInfoResponse with to_json(self : MlInfoResponse) -> Json {
+pub impl ToJson for MlInfoResponse with fn to_json(self : MlInfoResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["defaults"] = self.defaults.to_json()
   obj["limits"] = self.limits.to_json()
@@ -54761,7 +55051,7 @@ pub impl ToJson for MlInfoResponse with to_json(self : MlInfoResponse) -> Json {
 }
 
 ///|
-pub impl FromJson for MlInfoResponse with from_json(json, path) {
+pub impl FromJson for MlInfoResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlInfoResponse: expected object"))
   }
@@ -54814,7 +55104,7 @@ pub(all) struct MlOpenJobQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlOpenJobQuery with to_json(self : MlOpenJobQuery) -> Json {
+pub impl ToJson for MlOpenJobQuery with fn to_json(self : MlOpenJobQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
@@ -54824,7 +55114,7 @@ pub impl ToJson for MlOpenJobQuery with to_json(self : MlOpenJobQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for MlOpenJobQuery with from_json(json, path) {
+pub impl FromJson for MlOpenJobQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlOpenJobQuery: expected object"))
   }
@@ -54860,7 +55150,7 @@ pub(all) struct MlOpenJobBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlOpenJobBody with to_json(self : MlOpenJobBody) -> Json {
+pub impl ToJson for MlOpenJobBody with fn to_json(self : MlOpenJobBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
@@ -54870,7 +55160,7 @@ pub impl ToJson for MlOpenJobBody with to_json(self : MlOpenJobBody) -> Json {
 }
 
 ///|
-pub impl FromJson for MlOpenJobBody with from_json(json, path) {
+pub impl FromJson for MlOpenJobBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlOpenJobBody: expected object"))
   }
@@ -54895,7 +55185,7 @@ pub(all) struct MlOpenJobResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlOpenJobResponse with to_json(self : MlOpenJobResponse) -> Json {
+pub impl ToJson for MlOpenJobResponse with fn to_json(self : MlOpenJobResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["opened"] = self.opened.to_json()
   obj["node"] = self.node.to_json()
@@ -54903,7 +55193,7 @@ pub impl ToJson for MlOpenJobResponse with to_json(self : MlOpenJobResponse) -> 
 }
 
 ///|
-pub impl FromJson for MlOpenJobResponse with from_json(json, path) {
+pub impl FromJson for MlOpenJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlOpenJobResponse: expected object"))
   }
@@ -54958,7 +55248,7 @@ pub async fn Client::ml_open_job(
 pub(all) struct MlPostCalendarEventsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPostCalendarEventsQuery with to_json(
+pub impl ToJson for MlPostCalendarEventsQuery with fn to_json(
   _self : MlPostCalendarEventsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -54966,7 +55256,7 @@ pub impl ToJson for MlPostCalendarEventsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlPostCalendarEventsQuery with from_json(json, path) {
+pub impl FromJson for MlPostCalendarEventsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "MlPostCalendarEventsQuery: expected object"),
@@ -54994,7 +55284,7 @@ pub(all) struct MlPostCalendarEventsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPostCalendarEventsBody with to_json(
+pub impl ToJson for MlPostCalendarEventsBody with fn to_json(
   self : MlPostCalendarEventsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -55003,7 +55293,7 @@ pub impl ToJson for MlPostCalendarEventsBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlPostCalendarEventsBody with from_json(json, path) {
+pub impl FromJson for MlPostCalendarEventsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlPostCalendarEventsBody: expected object"),
@@ -55030,7 +55320,7 @@ pub(all) struct MlPostCalendarEventsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPostCalendarEventsResponse with to_json(
+pub impl ToJson for MlPostCalendarEventsResponse with fn to_json(
   self : MlPostCalendarEventsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -55039,7 +55329,7 @@ pub impl ToJson for MlPostCalendarEventsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlPostCalendarEventsResponse with from_json(json, path) {
+pub impl FromJson for MlPostCalendarEventsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlPostCalendarEventsResponse: expected object"),
@@ -55092,7 +55382,7 @@ pub(all) struct MlPostDataQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPostDataQuery with to_json(self : MlPostDataQuery) -> Json {
+pub impl ToJson for MlPostDataQuery with fn to_json(self : MlPostDataQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.reset_end {
     Some(value) => obj["reset_end"] = value.to_json()
@@ -55106,7 +55396,7 @@ pub impl ToJson for MlPostDataQuery with to_json(self : MlPostDataQuery) -> Json
 }
 
 ///|
-pub impl FromJson for MlPostDataQuery with from_json(json, path) {
+pub impl FromJson for MlPostDataQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlPostDataQuery: expected object"))
   }
@@ -55176,7 +55466,9 @@ pub(all) struct MlPostDataResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPostDataResponse with to_json(self : MlPostDataResponse) -> Json {
+pub impl ToJson for MlPostDataResponse with fn to_json(
+  self : MlPostDataResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["job_id"] = self.job_id.to_json()
   obj["processed_record_count"] = self.processed_record_count.to_json()
@@ -55218,7 +55510,7 @@ pub impl ToJson for MlPostDataResponse with to_json(self : MlPostDataResponse) -
 }
 
 ///|
-pub impl FromJson for MlPostDataResponse with from_json(json, path) {
+pub impl FromJson for MlPostDataResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlPostDataResponse: expected object"))
   }
@@ -55361,7 +55653,7 @@ pub async fn Client::ml_post_data(
 pub(all) struct MlPreviewDataFrameAnalyticsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPreviewDataFrameAnalyticsQuery with to_json(
+pub impl ToJson for MlPreviewDataFrameAnalyticsQuery with fn to_json(
   _self : MlPreviewDataFrameAnalyticsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -55369,7 +55661,7 @@ pub impl ToJson for MlPreviewDataFrameAnalyticsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlPreviewDataFrameAnalyticsQuery with from_json(
+pub impl FromJson for MlPreviewDataFrameAnalyticsQuery with fn from_json(
   json,
   path,
 ) {
@@ -55400,7 +55692,7 @@ pub(all) struct MlPreviewDataFrameAnalyticsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPreviewDataFrameAnalyticsBody with to_json(
+pub impl ToJson for MlPreviewDataFrameAnalyticsBody with fn to_json(
   self : MlPreviewDataFrameAnalyticsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -55412,7 +55704,10 @@ pub impl ToJson for MlPreviewDataFrameAnalyticsBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlPreviewDataFrameAnalyticsBody with from_json(json, path) {
+pub impl FromJson for MlPreviewDataFrameAnalyticsBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlPreviewDataFrameAnalyticsBody: expected object"),
@@ -55440,7 +55735,7 @@ pub(all) struct MlPreviewDataFrameAnalyticsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPreviewDataFrameAnalyticsResponse with to_json(
+pub impl ToJson for MlPreviewDataFrameAnalyticsResponse with fn to_json(
   self : MlPreviewDataFrameAnalyticsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -55449,7 +55744,7 @@ pub impl ToJson for MlPreviewDataFrameAnalyticsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlPreviewDataFrameAnalyticsResponse with from_json(
+pub impl FromJson for MlPreviewDataFrameAnalyticsResponse with fn from_json(
   json,
   path,
 ) {
@@ -55514,7 +55809,7 @@ pub(all) struct MlPreviewDatafeedQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPreviewDatafeedQuery with to_json(
+pub impl ToJson for MlPreviewDatafeedQuery with fn to_json(
   self : MlPreviewDatafeedQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -55530,7 +55825,7 @@ pub impl ToJson for MlPreviewDatafeedQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlPreviewDatafeedQuery with from_json(json, path) {
+pub impl FromJson for MlPreviewDatafeedQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlPreviewDatafeedQuery: expected object"),
@@ -55581,7 +55876,7 @@ pub(all) struct MlPreviewDatafeedBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPreviewDatafeedBody with to_json(
+pub impl ToJson for MlPreviewDatafeedBody with fn to_json(
   self : MlPreviewDatafeedBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -55597,7 +55892,7 @@ pub impl ToJson for MlPreviewDatafeedBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlPreviewDatafeedBody with from_json(json, path) {
+pub impl FromJson for MlPreviewDatafeedBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlPreviewDatafeedBody: expected object"),
@@ -55675,13 +55970,15 @@ pub async fn Client::ml_preview_datafeed(
 pub(all) struct MlPutCalendarQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutCalendarQuery with to_json(_self : MlPutCalendarQuery) -> Json {
+pub impl ToJson for MlPutCalendarQuery with fn to_json(
+  _self : MlPutCalendarQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for MlPutCalendarQuery with from_json(json, path) {
+pub impl FromJson for MlPutCalendarQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "MlPutCalendarQuery: expected object"))
   }
@@ -55708,7 +56005,7 @@ pub(all) struct MlPutCalendarBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutCalendarBody with to_json(self : MlPutCalendarBody) -> Json {
+pub impl ToJson for MlPutCalendarBody with fn to_json(self : MlPutCalendarBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.job_ids {
     Some(value) => obj["job_ids"] = value.to_json()
@@ -55722,7 +56019,7 @@ pub impl ToJson for MlPutCalendarBody with to_json(self : MlPutCalendarBody) -> 
 }
 
 ///|
-pub impl FromJson for MlPutCalendarBody with from_json(json, path) {
+pub impl FromJson for MlPutCalendarBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlPutCalendarBody: expected object"))
   }
@@ -55757,7 +56054,7 @@ pub(all) struct MlPutCalendarResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutCalendarResponse with to_json(
+pub impl ToJson for MlPutCalendarResponse with fn to_json(
   self : MlPutCalendarResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -55771,7 +56068,7 @@ pub impl ToJson for MlPutCalendarResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlPutCalendarResponse with from_json(json, path) {
+pub impl FromJson for MlPutCalendarResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlPutCalendarResponse: expected object"),
@@ -55834,7 +56131,7 @@ pub async fn Client::ml_put_calendar(
 pub(all) struct MlPutCalendarJobQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutCalendarJobQuery with to_json(
+pub impl ToJson for MlPutCalendarJobQuery with fn to_json(
   _self : MlPutCalendarJobQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -55842,7 +56139,7 @@ pub impl ToJson for MlPutCalendarJobQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlPutCalendarJobQuery with from_json(json, path) {
+pub impl FromJson for MlPutCalendarJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "MlPutCalendarJobQuery: expected object"),
@@ -55872,7 +56169,7 @@ pub(all) struct MlPutCalendarJobResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutCalendarJobResponse with to_json(
+pub impl ToJson for MlPutCalendarJobResponse with fn to_json(
   self : MlPutCalendarJobResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -55886,7 +56183,7 @@ pub impl ToJson for MlPutCalendarJobResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlPutCalendarJobResponse with from_json(json, path) {
+pub impl FromJson for MlPutCalendarJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlPutCalendarJobResponse: expected object"),
@@ -55950,7 +56247,7 @@ pub async fn Client::ml_put_calendar_job(
 pub(all) struct MlPutDataFrameAnalyticsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutDataFrameAnalyticsQuery with to_json(
+pub impl ToJson for MlPutDataFrameAnalyticsQuery with fn to_json(
   _self : MlPutDataFrameAnalyticsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -55958,7 +56255,7 @@ pub impl ToJson for MlPutDataFrameAnalyticsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlPutDataFrameAnalyticsQuery with from_json(json, path) {
+pub impl FromJson for MlPutDataFrameAnalyticsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "MlPutDataFrameAnalyticsQuery: expected object"),
@@ -55996,7 +56293,7 @@ pub(all) struct MlPutDataFrameAnalyticsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutDataFrameAnalyticsBody with to_json(
+pub impl ToJson for MlPutDataFrameAnalyticsBody with fn to_json(
   self : MlPutDataFrameAnalyticsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -56039,7 +56336,7 @@ pub impl ToJson for MlPutDataFrameAnalyticsBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlPutDataFrameAnalyticsBody with from_json(json, path) {
+pub impl FromJson for MlPutDataFrameAnalyticsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlPutDataFrameAnalyticsBody: expected object"),
@@ -56153,7 +56450,7 @@ pub(all) struct MlPutDataFrameAnalyticsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutDataFrameAnalyticsResponse with to_json(
+pub impl ToJson for MlPutDataFrameAnalyticsResponse with fn to_json(
   self : MlPutDataFrameAnalyticsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -56186,7 +56483,10 @@ pub impl ToJson for MlPutDataFrameAnalyticsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlPutDataFrameAnalyticsResponse with from_json(json, path) {
+pub impl FromJson for MlPutDataFrameAnalyticsResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlPutDataFrameAnalyticsResponse: expected object"),
@@ -56296,7 +56596,9 @@ pub(all) struct MlPutDatafeedQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutDatafeedQuery with to_json(self : MlPutDatafeedQuery) -> Json {
+pub impl ToJson for MlPutDatafeedQuery with fn to_json(
+  self : MlPutDatafeedQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -56318,7 +56620,7 @@ pub impl ToJson for MlPutDatafeedQuery with to_json(self : MlPutDatafeedQuery) -
 }
 
 ///|
-pub impl FromJson for MlPutDatafeedQuery with from_json(json, path) {
+pub impl FromJson for MlPutDatafeedQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlPutDatafeedQuery: expected object"))
   }
@@ -56403,7 +56705,7 @@ pub(all) struct MlPutDatafeedBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutDatafeedBody with to_json(self : MlPutDatafeedBody) -> Json {
+pub impl ToJson for MlPutDatafeedBody with fn to_json(self : MlPutDatafeedBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.aggregations {
     Some(value) => obj["aggregations"] = value.to_json()
@@ -56465,7 +56767,7 @@ pub impl ToJson for MlPutDatafeedBody with to_json(self : MlPutDatafeedBody) -> 
 }
 
 ///|
-pub impl FromJson for MlPutDatafeedBody with from_json(json, path) {
+pub impl FromJson for MlPutDatafeedBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlPutDatafeedBody: expected object"))
   }
@@ -56610,7 +56912,7 @@ pub(all) struct MlPutDatafeedResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutDatafeedResponse with to_json(
+pub impl ToJson for MlPutDatafeedResponse with fn to_json(
   self : MlPutDatafeedResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -56657,7 +56959,7 @@ pub impl ToJson for MlPutDatafeedResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlPutDatafeedResponse with from_json(json, path) {
+pub impl FromJson for MlPutDatafeedResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlPutDatafeedResponse: expected object"),
@@ -56781,13 +57083,13 @@ pub async fn Client::ml_put_datafeed(
 pub(all) struct MlPutFilterQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutFilterQuery with to_json(_self : MlPutFilterQuery) -> Json {
+pub impl ToJson for MlPutFilterQuery with fn to_json(_self : MlPutFilterQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for MlPutFilterQuery with from_json(json, path) {
+pub impl FromJson for MlPutFilterQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "MlPutFilterQuery: expected object"))
   }
@@ -56814,7 +57116,7 @@ pub(all) struct MlPutFilterBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutFilterBody with to_json(self : MlPutFilterBody) -> Json {
+pub impl ToJson for MlPutFilterBody with fn to_json(self : MlPutFilterBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.description {
     Some(value) => obj["description"] = value.to_json()
@@ -56828,7 +57130,7 @@ pub impl ToJson for MlPutFilterBody with to_json(self : MlPutFilterBody) -> Json
 }
 
 ///|
-pub impl FromJson for MlPutFilterBody with from_json(json, path) {
+pub impl FromJson for MlPutFilterBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlPutFilterBody: expected object"))
   }
@@ -56863,7 +57165,9 @@ pub(all) struct MlPutFilterResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutFilterResponse with to_json(self : MlPutFilterResponse) -> Json {
+pub impl ToJson for MlPutFilterResponse with fn to_json(
+  self : MlPutFilterResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["description"] = self.description.to_json()
   obj["filter_id"] = self.filter_id.to_json()
@@ -56872,7 +57176,7 @@ pub impl ToJson for MlPutFilterResponse with to_json(self : MlPutFilterResponse)
 }
 
 ///|
-pub impl FromJson for MlPutFilterResponse with from_json(json, path) {
+pub impl FromJson for MlPutFilterResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlPutFilterResponse: expected object"))
   }
@@ -56933,7 +57237,7 @@ pub(all) struct MlPutJobQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutJobQuery with to_json(self : MlPutJobQuery) -> Json {
+pub impl ToJson for MlPutJobQuery with fn to_json(self : MlPutJobQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -56955,7 +57259,7 @@ pub impl ToJson for MlPutJobQuery with to_json(self : MlPutJobQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for MlPutJobQuery with from_json(json, path) {
+pub impl FromJson for MlPutJobQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlPutJobQuery: expected object"))
   }
@@ -57040,7 +57344,7 @@ pub(all) struct MlPutJobBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutJobBody with to_json(self : MlPutJobBody) -> Json {
+pub impl ToJson for MlPutJobBody with fn to_json(self : MlPutJobBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_lazy_open {
     Some(value) => obj["allow_lazy_open"] = value.to_json()
@@ -57105,7 +57409,7 @@ pub impl ToJson for MlPutJobBody with to_json(self : MlPutJobBody) -> Json {
 }
 
 ///|
-pub impl FromJson for MlPutJobBody with from_json(json, path) {
+pub impl FromJson for MlPutJobBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlPutJobBody: expected object"))
   }
@@ -57291,7 +57595,7 @@ pub(all) struct MlPutJobResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutJobResponse with to_json(self : MlPutJobResponse) -> Json {
+pub impl ToJson for MlPutJobResponse with fn to_json(self : MlPutJobResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["allow_lazy_open"] = self.allow_lazy_open.to_json()
   obj["analysis_config"] = self.analysis_config.to_json()
@@ -57344,7 +57648,7 @@ pub impl ToJson for MlPutJobResponse with to_json(self : MlPutJobResponse) -> Js
 }
 
 ///|
-pub impl FromJson for MlPutJobResponse with from_json(json, path) {
+pub impl FromJson for MlPutJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlPutJobResponse: expected object"))
   }
@@ -57502,7 +57806,7 @@ pub(all) struct MlPutTrainedModelQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutTrainedModelQuery with to_json(
+pub impl ToJson for MlPutTrainedModelQuery with fn to_json(
   self : MlPutTrainedModelQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -57518,7 +57822,7 @@ pub impl ToJson for MlPutTrainedModelQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlPutTrainedModelQuery with from_json(json, path) {
+pub impl FromJson for MlPutTrainedModelQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlPutTrainedModelQuery: expected object"),
@@ -57588,7 +57892,7 @@ pub(all) struct MlPutTrainedModelBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutTrainedModelBody with to_json(
+pub impl ToJson for MlPutTrainedModelBody with fn to_json(
   self : MlPutTrainedModelBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -57640,7 +57944,7 @@ pub impl ToJson for MlPutTrainedModelBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlPutTrainedModelBody with from_json(json, path) {
+pub impl FromJson for MlPutTrainedModelBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlPutTrainedModelBody: expected object"),
@@ -57783,7 +58087,7 @@ pub(all) struct MlPutTrainedModelAliasQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutTrainedModelAliasQuery with to_json(
+pub impl ToJson for MlPutTrainedModelAliasQuery with fn to_json(
   self : MlPutTrainedModelAliasQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -57795,7 +58099,7 @@ pub impl ToJson for MlPutTrainedModelAliasQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlPutTrainedModelAliasQuery with from_json(json, path) {
+pub impl FromJson for MlPutTrainedModelAliasQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlPutTrainedModelAliasQuery: expected object"),
@@ -57882,7 +58186,7 @@ pub async fn Client::ml_put_trained_model_alias(
 pub(all) struct MlPutTrainedModelDefinitionPartQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutTrainedModelDefinitionPartQuery with to_json(
+pub impl ToJson for MlPutTrainedModelDefinitionPartQuery with fn to_json(
   _self : MlPutTrainedModelDefinitionPartQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -57890,7 +58194,7 @@ pub impl ToJson for MlPutTrainedModelDefinitionPartQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlPutTrainedModelDefinitionPartQuery with from_json(
+pub impl FromJson for MlPutTrainedModelDefinitionPartQuery with fn from_json(
   json,
   path,
 ) {
@@ -57923,7 +58227,7 @@ pub(all) struct MlPutTrainedModelDefinitionPartBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutTrainedModelDefinitionPartBody with to_json(
+pub impl ToJson for MlPutTrainedModelDefinitionPartBody with fn to_json(
   self : MlPutTrainedModelDefinitionPartBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -57934,7 +58238,7 @@ pub impl ToJson for MlPutTrainedModelDefinitionPartBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlPutTrainedModelDefinitionPartBody with from_json(
+pub impl FromJson for MlPutTrainedModelDefinitionPartBody with fn from_json(
   json,
   path,
 ) {
@@ -58014,7 +58318,7 @@ pub async fn Client::ml_put_trained_model_definition_part(
 pub(all) struct MlPutTrainedModelVocabularyQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutTrainedModelVocabularyQuery with to_json(
+pub impl ToJson for MlPutTrainedModelVocabularyQuery with fn to_json(
   _self : MlPutTrainedModelVocabularyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -58022,7 +58326,7 @@ pub impl ToJson for MlPutTrainedModelVocabularyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlPutTrainedModelVocabularyQuery with from_json(
+pub impl FromJson for MlPutTrainedModelVocabularyQuery with fn from_json(
   json,
   path,
 ) {
@@ -58055,7 +58359,7 @@ pub(all) struct MlPutTrainedModelVocabularyBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlPutTrainedModelVocabularyBody with to_json(
+pub impl ToJson for MlPutTrainedModelVocabularyBody with fn to_json(
   self : MlPutTrainedModelVocabularyBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -58072,7 +58376,10 @@ pub impl ToJson for MlPutTrainedModelVocabularyBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlPutTrainedModelVocabularyBody with from_json(json, path) {
+pub impl FromJson for MlPutTrainedModelVocabularyBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlPutTrainedModelVocabularyBody: expected object"),
@@ -58149,7 +58456,7 @@ pub(all) struct MlResetJobQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlResetJobQuery with to_json(self : MlResetJobQuery) -> Json {
+pub impl ToJson for MlResetJobQuery with fn to_json(self : MlResetJobQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.wait_for_completion {
     Some(value) => obj["wait_for_completion"] = value.to_json()
@@ -58163,7 +58470,7 @@ pub impl ToJson for MlResetJobQuery with to_json(self : MlResetJobQuery) -> Json
 }
 
 ///|
-pub impl FromJson for MlResetJobQuery with from_json(json, path) {
+pub impl FromJson for MlResetJobQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlResetJobQuery: expected object"))
   }
@@ -58249,7 +58556,7 @@ pub(all) struct MlRevertModelSnapshotQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlRevertModelSnapshotQuery with to_json(
+pub impl ToJson for MlRevertModelSnapshotQuery with fn to_json(
   self : MlRevertModelSnapshotQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -58261,7 +58568,7 @@ pub impl ToJson for MlRevertModelSnapshotQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlRevertModelSnapshotQuery with from_json(json, path) {
+pub impl FromJson for MlRevertModelSnapshotQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlRevertModelSnapshotQuery: expected object"),
@@ -58308,7 +58615,7 @@ pub(all) struct MlRevertModelSnapshotBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlRevertModelSnapshotBody with to_json(
+pub impl ToJson for MlRevertModelSnapshotBody with fn to_json(
   self : MlRevertModelSnapshotBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -58320,7 +58627,7 @@ pub impl ToJson for MlRevertModelSnapshotBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlRevertModelSnapshotBody with from_json(json, path) {
+pub impl FromJson for MlRevertModelSnapshotBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlRevertModelSnapshotBody: expected object"),
@@ -58354,7 +58661,7 @@ pub(all) struct MlRevertModelSnapshotResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlRevertModelSnapshotResponse with to_json(
+pub impl ToJson for MlRevertModelSnapshotResponse with fn to_json(
   self : MlRevertModelSnapshotResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -58363,7 +58670,10 @@ pub impl ToJson for MlRevertModelSnapshotResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlRevertModelSnapshotResponse with from_json(json, path) {
+pub impl FromJson for MlRevertModelSnapshotResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlRevertModelSnapshotResponse: expected object"),
@@ -58427,7 +58737,7 @@ pub(all) struct MlSetUpgradeModeQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlSetUpgradeModeQuery with to_json(
+pub impl ToJson for MlSetUpgradeModeQuery with fn to_json(
   self : MlSetUpgradeModeQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -58443,7 +58753,7 @@ pub impl ToJson for MlSetUpgradeModeQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlSetUpgradeModeQuery with from_json(json, path) {
+pub impl FromJson for MlSetUpgradeModeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlSetUpgradeModeQuery: expected object"),
@@ -58522,7 +58832,7 @@ pub(all) struct MlStartDataFrameAnalyticsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStartDataFrameAnalyticsQuery with to_json(
+pub impl ToJson for MlStartDataFrameAnalyticsQuery with fn to_json(
   self : MlStartDataFrameAnalyticsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -58534,7 +58844,10 @@ pub impl ToJson for MlStartDataFrameAnalyticsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlStartDataFrameAnalyticsQuery with from_json(json, path) {
+pub impl FromJson for MlStartDataFrameAnalyticsQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlStartDataFrameAnalyticsQuery: expected object"),
@@ -58575,7 +58888,7 @@ pub(all) struct MlStartDataFrameAnalyticsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStartDataFrameAnalyticsBody with to_json(
+pub impl ToJson for MlStartDataFrameAnalyticsBody with fn to_json(
   self : MlStartDataFrameAnalyticsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -58591,7 +58904,10 @@ pub impl ToJson for MlStartDataFrameAnalyticsBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlStartDataFrameAnalyticsBody with from_json(json, path) {
+pub impl FromJson for MlStartDataFrameAnalyticsBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlStartDataFrameAnalyticsBody: expected object"),
@@ -58626,7 +58942,7 @@ pub(all) struct MlStartDataFrameAnalyticsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStartDataFrameAnalyticsResponse with to_json(
+pub impl ToJson for MlStartDataFrameAnalyticsResponse with fn to_json(
   self : MlStartDataFrameAnalyticsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -58636,7 +58952,7 @@ pub impl ToJson for MlStartDataFrameAnalyticsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlStartDataFrameAnalyticsResponse with from_json(
+pub impl FromJson for MlStartDataFrameAnalyticsResponse with fn from_json(
   json,
   path,
 ) {
@@ -58700,7 +59016,7 @@ pub(all) struct MlStartDatafeedQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStartDatafeedQuery with to_json(
+pub impl ToJson for MlStartDatafeedQuery with fn to_json(
   self : MlStartDatafeedQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -58720,7 +59036,7 @@ pub impl ToJson for MlStartDatafeedQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlStartDatafeedQuery with from_json(json, path) {
+pub impl FromJson for MlStartDatafeedQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlStartDatafeedQuery: expected object"))
   }
@@ -58780,7 +59096,9 @@ pub(all) struct MlStartDatafeedBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStartDatafeedBody with to_json(self : MlStartDatafeedBody) -> Json {
+pub impl ToJson for MlStartDatafeedBody with fn to_json(
+  self : MlStartDatafeedBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.end {
     Some(value) => obj["end"] = value.to_json()
@@ -58798,7 +59116,7 @@ pub impl ToJson for MlStartDatafeedBody with to_json(self : MlStartDatafeedBody)
 }
 
 ///|
-pub impl FromJson for MlStartDatafeedBody with from_json(json, path) {
+pub impl FromJson for MlStartDatafeedBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlStartDatafeedBody: expected object"))
   }
@@ -58837,7 +59155,7 @@ pub(all) struct MlStartDatafeedResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStartDatafeedResponse with to_json(
+pub impl ToJson for MlStartDatafeedResponse with fn to_json(
   self : MlStartDatafeedResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -58847,7 +59165,7 @@ pub impl ToJson for MlStartDatafeedResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlStartDatafeedResponse with from_json(json, path) {
+pub impl FromJson for MlStartDatafeedResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlStartDatafeedResponse: expected object"),
@@ -58913,7 +59231,7 @@ pub(all) struct MlStartTrainedModelDeploymentQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStartTrainedModelDeploymentQuery with to_json(
+pub impl ToJson for MlStartTrainedModelDeploymentQuery with fn to_json(
   self : MlStartTrainedModelDeploymentQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -58953,7 +59271,7 @@ pub impl ToJson for MlStartTrainedModelDeploymentQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlStartTrainedModelDeploymentQuery with from_json(
+pub impl FromJson for MlStartTrainedModelDeploymentQuery with fn from_json(
   json,
   path,
 ) {
@@ -59084,7 +59402,7 @@ pub(all) struct MlStartTrainedModelDeploymentBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStartTrainedModelDeploymentBody with to_json(
+pub impl ToJson for MlStartTrainedModelDeploymentBody with fn to_json(
   self : MlStartTrainedModelDeploymentBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -59096,7 +59414,7 @@ pub impl ToJson for MlStartTrainedModelDeploymentBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlStartTrainedModelDeploymentBody with from_json(
+pub impl FromJson for MlStartTrainedModelDeploymentBody with fn from_json(
   json,
   path,
 ) {
@@ -59128,7 +59446,7 @@ pub(all) struct MlStartTrainedModelDeploymentResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStartTrainedModelDeploymentResponse with to_json(
+pub impl ToJson for MlStartTrainedModelDeploymentResponse with fn to_json(
   self : MlStartTrainedModelDeploymentResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -59137,7 +59455,7 @@ pub impl ToJson for MlStartTrainedModelDeploymentResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlStartTrainedModelDeploymentResponse with from_json(
+pub impl FromJson for MlStartTrainedModelDeploymentResponse with fn from_json(
   json,
   path,
 ) {
@@ -59201,7 +59519,7 @@ pub(all) struct MlStopDataFrameAnalyticsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStopDataFrameAnalyticsQuery with to_json(
+pub impl ToJson for MlStopDataFrameAnalyticsQuery with fn to_json(
   self : MlStopDataFrameAnalyticsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -59221,7 +59539,10 @@ pub impl ToJson for MlStopDataFrameAnalyticsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlStopDataFrameAnalyticsQuery with from_json(json, path) {
+pub impl FromJson for MlStopDataFrameAnalyticsQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlStopDataFrameAnalyticsQuery: expected object"),
@@ -59285,7 +59606,7 @@ pub(all) struct MlStopDataFrameAnalyticsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStopDataFrameAnalyticsBody with to_json(
+pub impl ToJson for MlStopDataFrameAnalyticsBody with fn to_json(
   self : MlStopDataFrameAnalyticsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -59309,7 +59630,7 @@ pub impl ToJson for MlStopDataFrameAnalyticsBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlStopDataFrameAnalyticsBody with from_json(json, path) {
+pub impl FromJson for MlStopDataFrameAnalyticsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlStopDataFrameAnalyticsBody: expected object"),
@@ -59356,7 +59677,7 @@ pub(all) struct MlStopDataFrameAnalyticsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStopDataFrameAnalyticsResponse with to_json(
+pub impl ToJson for MlStopDataFrameAnalyticsResponse with fn to_json(
   self : MlStopDataFrameAnalyticsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -59365,7 +59686,7 @@ pub impl ToJson for MlStopDataFrameAnalyticsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlStopDataFrameAnalyticsResponse with from_json(
+pub impl FromJson for MlStopDataFrameAnalyticsResponse with fn from_json(
   json,
   path,
 ) {
@@ -59426,7 +59747,9 @@ pub(all) struct MlStopDatafeedQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStopDatafeedQuery with to_json(self : MlStopDatafeedQuery) -> Json {
+pub impl ToJson for MlStopDatafeedQuery with fn to_json(
+  self : MlStopDatafeedQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
@@ -59448,7 +59771,7 @@ pub impl ToJson for MlStopDatafeedQuery with to_json(self : MlStopDatafeedQuery)
 }
 
 ///|
-pub impl FromJson for MlStopDatafeedQuery with from_json(json, path) {
+pub impl FromJson for MlStopDatafeedQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlStopDatafeedQuery: expected object"))
   }
@@ -59521,7 +59844,9 @@ pub(all) struct MlStopDatafeedBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStopDatafeedBody with to_json(self : MlStopDatafeedBody) -> Json {
+pub impl ToJson for MlStopDatafeedBody with fn to_json(
+  self : MlStopDatafeedBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
@@ -59543,7 +59868,7 @@ pub impl ToJson for MlStopDatafeedBody with to_json(self : MlStopDatafeedBody) -
 }
 
 ///|
-pub impl FromJson for MlStopDatafeedBody with from_json(json, path) {
+pub impl FromJson for MlStopDatafeedBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlStopDatafeedBody: expected object"))
   }
@@ -59589,7 +59914,7 @@ pub(all) struct MlStopDatafeedResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStopDatafeedResponse with to_json(
+pub impl ToJson for MlStopDatafeedResponse with fn to_json(
   self : MlStopDatafeedResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -59598,7 +59923,7 @@ pub impl ToJson for MlStopDatafeedResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlStopDatafeedResponse with from_json(json, path) {
+pub impl FromJson for MlStopDatafeedResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlStopDatafeedResponse: expected object"),
@@ -59654,7 +59979,7 @@ pub(all) struct MlStopTrainedModelDeploymentQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStopTrainedModelDeploymentQuery with to_json(
+pub impl ToJson for MlStopTrainedModelDeploymentQuery with fn to_json(
   self : MlStopTrainedModelDeploymentQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -59670,7 +59995,7 @@ pub impl ToJson for MlStopTrainedModelDeploymentQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlStopTrainedModelDeploymentQuery with from_json(
+pub impl FromJson for MlStopTrainedModelDeploymentQuery with fn from_json(
   json,
   path,
 ) {
@@ -59726,7 +60051,7 @@ pub(all) struct MlStopTrainedModelDeploymentBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStopTrainedModelDeploymentBody with to_json(
+pub impl ToJson for MlStopTrainedModelDeploymentBody with fn to_json(
   self : MlStopTrainedModelDeploymentBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -59746,7 +60071,7 @@ pub impl ToJson for MlStopTrainedModelDeploymentBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlStopTrainedModelDeploymentBody with from_json(
+pub impl FromJson for MlStopTrainedModelDeploymentBody with fn from_json(
   json,
   path,
 ) {
@@ -59790,7 +60115,7 @@ pub(all) struct MlStopTrainedModelDeploymentResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlStopTrainedModelDeploymentResponse with to_json(
+pub impl ToJson for MlStopTrainedModelDeploymentResponse with fn to_json(
   self : MlStopTrainedModelDeploymentResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -59799,7 +60124,7 @@ pub impl ToJson for MlStopTrainedModelDeploymentResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlStopTrainedModelDeploymentResponse with from_json(
+pub impl FromJson for MlStopTrainedModelDeploymentResponse with fn from_json(
   json,
   path,
 ) {
@@ -59859,7 +60184,7 @@ pub async fn Client::ml_stop_trained_model_deployment(
 pub(all) struct MlUpdateDataFrameAnalyticsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateDataFrameAnalyticsQuery with to_json(
+pub impl ToJson for MlUpdateDataFrameAnalyticsQuery with fn to_json(
   _self : MlUpdateDataFrameAnalyticsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -59867,7 +60192,10 @@ pub impl ToJson for MlUpdateDataFrameAnalyticsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpdateDataFrameAnalyticsQuery with from_json(json, path) {
+pub impl FromJson for MlUpdateDataFrameAnalyticsQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "MlUpdateDataFrameAnalyticsQuery: expected object"),
@@ -59898,7 +60226,7 @@ pub(all) struct MlUpdateDataFrameAnalyticsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateDataFrameAnalyticsBody with to_json(
+pub impl ToJson for MlUpdateDataFrameAnalyticsBody with fn to_json(
   self : MlUpdateDataFrameAnalyticsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -59922,7 +60250,10 @@ pub impl ToJson for MlUpdateDataFrameAnalyticsBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpdateDataFrameAnalyticsBody with from_json(json, path) {
+pub impl FromJson for MlUpdateDataFrameAnalyticsBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlUpdateDataFrameAnalyticsBody: expected object"),
@@ -59983,7 +60314,7 @@ pub(all) struct MlUpdateDataFrameAnalyticsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateDataFrameAnalyticsResponse with to_json(
+pub impl ToJson for MlUpdateDataFrameAnalyticsResponse with fn to_json(
   self : MlUpdateDataFrameAnalyticsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -60012,7 +60343,7 @@ pub impl ToJson for MlUpdateDataFrameAnalyticsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpdateDataFrameAnalyticsResponse with from_json(
+pub impl FromJson for MlUpdateDataFrameAnalyticsResponse with fn from_json(
   json,
   path,
 ) {
@@ -60120,7 +60451,7 @@ pub(all) struct MlUpdateDatafeedQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateDatafeedQuery with to_json(
+pub impl ToJson for MlUpdateDatafeedQuery with fn to_json(
   self : MlUpdateDatafeedQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -60144,7 +60475,7 @@ pub impl ToJson for MlUpdateDatafeedQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpdateDatafeedQuery with from_json(json, path) {
+pub impl FromJson for MlUpdateDatafeedQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlUpdateDatafeedQuery: expected object"),
@@ -60230,7 +60561,7 @@ pub(all) struct MlUpdateDatafeedBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateDatafeedBody with to_json(
+pub impl ToJson for MlUpdateDatafeedBody with fn to_json(
   self : MlUpdateDatafeedBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -60290,7 +60621,7 @@ pub impl ToJson for MlUpdateDatafeedBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpdateDatafeedBody with from_json(json, path) {
+pub impl FromJson for MlUpdateDatafeedBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlUpdateDatafeedBody: expected object"))
   }
@@ -60428,7 +60759,7 @@ pub(all) struct MlUpdateDatafeedResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateDatafeedResponse with to_json(
+pub impl ToJson for MlUpdateDatafeedResponse with fn to_json(
   self : MlUpdateDatafeedResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -60475,7 +60806,7 @@ pub impl ToJson for MlUpdateDatafeedResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpdateDatafeedResponse with from_json(json, path) {
+pub impl FromJson for MlUpdateDatafeedResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlUpdateDatafeedResponse: expected object"),
@@ -60599,7 +60930,7 @@ pub async fn Client::ml_update_datafeed(
 pub(all) struct MlUpdateFilterQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateFilterQuery with to_json(
+pub impl ToJson for MlUpdateFilterQuery with fn to_json(
   _self : MlUpdateFilterQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -60607,7 +60938,7 @@ pub impl ToJson for MlUpdateFilterQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpdateFilterQuery with from_json(json, path) {
+pub impl FromJson for MlUpdateFilterQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "MlUpdateFilterQuery: expected object"))
   }
@@ -60635,7 +60966,9 @@ pub(all) struct MlUpdateFilterBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateFilterBody with to_json(self : MlUpdateFilterBody) -> Json {
+pub impl ToJson for MlUpdateFilterBody with fn to_json(
+  self : MlUpdateFilterBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.add_items {
     Some(value) => obj["add_items"] = value.to_json()
@@ -60653,7 +60986,7 @@ pub impl ToJson for MlUpdateFilterBody with to_json(self : MlUpdateFilterBody) -
 }
 
 ///|
-pub impl FromJson for MlUpdateFilterBody with from_json(json, path) {
+pub impl FromJson for MlUpdateFilterBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlUpdateFilterBody: expected object"))
   }
@@ -60696,7 +61029,7 @@ pub(all) struct MlUpdateFilterResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateFilterResponse with to_json(
+pub impl ToJson for MlUpdateFilterResponse with fn to_json(
   self : MlUpdateFilterResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -60707,7 +61040,7 @@ pub impl ToJson for MlUpdateFilterResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpdateFilterResponse with from_json(json, path) {
+pub impl FromJson for MlUpdateFilterResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlUpdateFilterResponse: expected object"),
@@ -60765,13 +61098,13 @@ pub async fn Client::ml_update_filter(
 pub(all) struct MlUpdateJobQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateJobQuery with to_json(_self : MlUpdateJobQuery) -> Json {
+pub impl ToJson for MlUpdateJobQuery with fn to_json(_self : MlUpdateJobQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for MlUpdateJobQuery with from_json(json, path) {
+pub impl FromJson for MlUpdateJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "MlUpdateJobQuery: expected object"))
   }
@@ -60811,7 +61144,7 @@ pub(all) struct MlUpdateJobBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateJobBody with to_json(self : MlUpdateJobBody) -> Json {
+pub impl ToJson for MlUpdateJobBody with fn to_json(self : MlUpdateJobBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_lazy_open {
     Some(value) => obj["allow_lazy_open"] = value.to_json()
@@ -60878,7 +61211,7 @@ pub impl ToJson for MlUpdateJobBody with to_json(self : MlUpdateJobBody) -> Json
 }
 
 ///|
-pub impl FromJson for MlUpdateJobBody with from_json(json, path) {
+pub impl FromJson for MlUpdateJobBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlUpdateJobBody: expected object"))
   }
@@ -61070,7 +61403,9 @@ pub(all) struct MlUpdateJobResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateJobResponse with to_json(self : MlUpdateJobResponse) -> Json {
+pub impl ToJson for MlUpdateJobResponse with fn to_json(
+  self : MlUpdateJobResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["allow_lazy_open"] = self.allow_lazy_open.to_json()
   obj["analysis_config"] = self.analysis_config.to_json()
@@ -61127,7 +61462,7 @@ pub impl ToJson for MlUpdateJobResponse with to_json(self : MlUpdateJobResponse)
 }
 
 ///|
-pub impl FromJson for MlUpdateJobResponse with from_json(json, path) {
+pub impl FromJson for MlUpdateJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlUpdateJobResponse: expected object"))
   }
@@ -61288,7 +61623,7 @@ pub async fn Client::ml_update_job(
 pub(all) struct MlUpdateModelSnapshotQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateModelSnapshotQuery with to_json(
+pub impl ToJson for MlUpdateModelSnapshotQuery with fn to_json(
   _self : MlUpdateModelSnapshotQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -61296,7 +61631,7 @@ pub impl ToJson for MlUpdateModelSnapshotQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpdateModelSnapshotQuery with from_json(json, path) {
+pub impl FromJson for MlUpdateModelSnapshotQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "MlUpdateModelSnapshotQuery: expected object"),
@@ -61325,7 +61660,7 @@ pub(all) struct MlUpdateModelSnapshotBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateModelSnapshotBody with to_json(
+pub impl ToJson for MlUpdateModelSnapshotBody with fn to_json(
   self : MlUpdateModelSnapshotBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -61341,7 +61676,7 @@ pub impl ToJson for MlUpdateModelSnapshotBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpdateModelSnapshotBody with from_json(json, path) {
+pub impl FromJson for MlUpdateModelSnapshotBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlUpdateModelSnapshotBody: expected object"),
@@ -61377,7 +61712,7 @@ pub(all) struct MlUpdateModelSnapshotResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateModelSnapshotResponse with to_json(
+pub impl ToJson for MlUpdateModelSnapshotResponse with fn to_json(
   self : MlUpdateModelSnapshotResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -61387,7 +61722,10 @@ pub impl ToJson for MlUpdateModelSnapshotResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpdateModelSnapshotResponse with from_json(json, path) {
+pub impl FromJson for MlUpdateModelSnapshotResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlUpdateModelSnapshotResponse: expected object"),
@@ -61451,7 +61789,7 @@ pub(all) struct MlUpdateTrainedModelDeploymentQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateTrainedModelDeploymentQuery with to_json(
+pub impl ToJson for MlUpdateTrainedModelDeploymentQuery with fn to_json(
   self : MlUpdateTrainedModelDeploymentQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -61463,7 +61801,7 @@ pub impl ToJson for MlUpdateTrainedModelDeploymentQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpdateTrainedModelDeploymentQuery with from_json(
+pub impl FromJson for MlUpdateTrainedModelDeploymentQuery with fn from_json(
   json,
   path,
 ) {
@@ -61509,7 +61847,7 @@ pub(all) struct MlUpdateTrainedModelDeploymentBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateTrainedModelDeploymentBody with to_json(
+pub impl ToJson for MlUpdateTrainedModelDeploymentBody with fn to_json(
   self : MlUpdateTrainedModelDeploymentBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -61525,7 +61863,7 @@ pub impl ToJson for MlUpdateTrainedModelDeploymentBody with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpdateTrainedModelDeploymentBody with from_json(
+pub impl FromJson for MlUpdateTrainedModelDeploymentBody with fn from_json(
   json,
   path,
 ) {
@@ -61564,7 +61902,7 @@ pub(all) struct MlUpdateTrainedModelDeploymentResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpdateTrainedModelDeploymentResponse with to_json(
+pub impl ToJson for MlUpdateTrainedModelDeploymentResponse with fn to_json(
   self : MlUpdateTrainedModelDeploymentResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -61573,7 +61911,7 @@ pub impl ToJson for MlUpdateTrainedModelDeploymentResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpdateTrainedModelDeploymentResponse with from_json(
+pub impl FromJson for MlUpdateTrainedModelDeploymentResponse with fn from_json(
   json,
   path,
 ) {
@@ -61636,7 +61974,7 @@ pub(all) struct MlUpgradeJobSnapshotQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpgradeJobSnapshotQuery with to_json(
+pub impl ToJson for MlUpgradeJobSnapshotQuery with fn to_json(
   self : MlUpgradeJobSnapshotQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -61652,7 +61990,7 @@ pub impl ToJson for MlUpgradeJobSnapshotQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpgradeJobSnapshotQuery with from_json(json, path) {
+pub impl FromJson for MlUpgradeJobSnapshotQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlUpgradeJobSnapshotQuery: expected object"),
@@ -61705,7 +62043,7 @@ pub(all) struct MlUpgradeJobSnapshotResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlUpgradeJobSnapshotResponse with to_json(
+pub impl ToJson for MlUpgradeJobSnapshotResponse with fn to_json(
   self : MlUpgradeJobSnapshotResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -61715,7 +62053,7 @@ pub impl ToJson for MlUpgradeJobSnapshotResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MlUpgradeJobSnapshotResponse with from_json(json, path) {
+pub impl FromJson for MlUpgradeJobSnapshotResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MlUpgradeJobSnapshotResponse: expected object"),
@@ -61774,13 +62112,13 @@ pub async fn Client::ml_upgrade_job_snapshot(
 pub(all) struct MlValidateQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlValidateQuery with to_json(_self : MlValidateQuery) -> Json {
+pub impl ToJson for MlValidateQuery with fn to_json(_self : MlValidateQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for MlValidateQuery with from_json(json, path) {
+pub impl FromJson for MlValidateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "MlValidateQuery: expected object"))
   }
@@ -61814,7 +62152,7 @@ pub(all) struct MlValidateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlValidateBody with to_json(self : MlValidateBody) -> Json {
+pub impl ToJson for MlValidateBody with fn to_json(self : MlValidateBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.job_id {
     Some(value) => obj["job_id"] = value.to_json()
@@ -61856,7 +62194,7 @@ pub impl ToJson for MlValidateBody with to_json(self : MlValidateBody) -> Json {
 }
 
 ///|
-pub impl FromJson for MlValidateBody with from_json(json, path) {
+pub impl FromJson for MlValidateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MlValidateBody: expected object"))
   }
@@ -61984,7 +62322,7 @@ pub async fn Client::ml_validate(
 pub(all) struct MlValidateDetectorQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MlValidateDetectorQuery with to_json(
+pub impl ToJson for MlValidateDetectorQuery with fn to_json(
   _self : MlValidateDetectorQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -61992,7 +62330,7 @@ pub impl ToJson for MlValidateDetectorQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MlValidateDetectorQuery with from_json(json, path) {
+pub impl FromJson for MlValidateDetectorQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "MlValidateDetectorQuery: expected object"),
@@ -62057,7 +62395,9 @@ pub(all) struct MonitoringBulkQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MonitoringBulkQuery with to_json(self : MonitoringBulkQuery) -> Json {
+pub impl ToJson for MonitoringBulkQuery with fn to_json(
+  self : MonitoringBulkQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["system_id"] = self.system_id.to_json()
   obj["system_api_version"] = self.system_api_version.to_json()
@@ -62066,7 +62406,7 @@ pub impl ToJson for MonitoringBulkQuery with to_json(self : MonitoringBulkQuery)
 }
 
 ///|
-pub impl FromJson for MonitoringBulkQuery with from_json(json, path) {
+pub impl FromJson for MonitoringBulkQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MonitoringBulkQuery: expected object"))
   }
@@ -62122,7 +62462,7 @@ pub(all) struct MonitoringBulkResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MonitoringBulkResponse with to_json(
+pub impl ToJson for MonitoringBulkResponse with fn to_json(
   self : MonitoringBulkResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -62137,7 +62477,7 @@ pub impl ToJson for MonitoringBulkResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MonitoringBulkResponse with from_json(json, path) {
+pub impl FromJson for MonitoringBulkResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "MonitoringBulkResponse: expected object"),
@@ -62210,7 +62550,7 @@ pub(all) struct MsearchQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MsearchQuery with to_json(self : MsearchQuery) -> Json {
+pub impl ToJson for MsearchQuery with fn to_json(self : MsearchQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -62276,7 +62616,7 @@ pub impl ToJson for MsearchQuery with to_json(self : MsearchQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for MsearchQuery with from_json(json, path) {
+pub impl FromJson for MsearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MsearchQuery: expected object"))
   }
@@ -62553,7 +62893,7 @@ pub(all) struct MsearchTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MsearchTemplateQuery with to_json(
+pub impl ToJson for MsearchTemplateQuery with fn to_json(
   self : MsearchTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -62585,7 +62925,7 @@ pub impl ToJson for MsearchTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for MsearchTemplateQuery with from_json(json, path) {
+pub impl FromJson for MsearchTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MsearchTemplateQuery: expected object"))
   }
@@ -62750,7 +63090,7 @@ pub(all) struct MtermvectorsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MtermvectorsQuery with to_json(self : MtermvectorsQuery) -> Json {
+pub impl ToJson for MtermvectorsQuery with fn to_json(self : MtermvectorsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.ids {
     Some(value) => obj["ids"] = value.to_json()
@@ -62804,7 +63144,7 @@ pub impl ToJson for MtermvectorsQuery with to_json(self : MtermvectorsQuery) -> 
 }
 
 ///|
-pub impl FromJson for MtermvectorsQuery with from_json(json, path) {
+pub impl FromJson for MtermvectorsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MtermvectorsQuery: expected object"))
   }
@@ -62971,7 +63311,7 @@ pub(all) struct MtermvectorsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MtermvectorsBody with to_json(self : MtermvectorsBody) -> Json {
+pub impl ToJson for MtermvectorsBody with fn to_json(self : MtermvectorsBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.docs {
     Some(value) => obj["docs"] = value.to_json()
@@ -62985,7 +63325,7 @@ pub impl ToJson for MtermvectorsBody with to_json(self : MtermvectorsBody) -> Js
 }
 
 ///|
-pub impl FromJson for MtermvectorsBody with from_json(json, path) {
+pub impl FromJson for MtermvectorsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MtermvectorsBody: expected object"))
   }
@@ -63017,7 +63357,7 @@ pub(all) struct MtermvectorsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for MtermvectorsResponse with to_json(
+pub impl ToJson for MtermvectorsResponse with fn to_json(
   self : MtermvectorsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -63026,7 +63366,7 @@ pub impl ToJson for MtermvectorsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for MtermvectorsResponse with from_json(json, path) {
+pub impl FromJson for MtermvectorsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "MtermvectorsResponse: expected object"))
   }
@@ -63083,7 +63423,7 @@ pub async fn Client::mtermvectors(
 pub(all) struct NodesClearRepositoriesMeteringArchiveQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for NodesClearRepositoriesMeteringArchiveQuery with to_json(
+pub impl ToJson for NodesClearRepositoriesMeteringArchiveQuery with fn to_json(
   _self : NodesClearRepositoriesMeteringArchiveQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -63091,7 +63431,7 @@ pub impl ToJson for NodesClearRepositoriesMeteringArchiveQuery with to_json(
 }
 
 ///|
-pub impl FromJson for NodesClearRepositoriesMeteringArchiveQuery with from_json(
+pub impl FromJson for NodesClearRepositoriesMeteringArchiveQuery with fn from_json(
   json,
   path,
 ) {
@@ -63160,7 +63500,7 @@ pub async fn Client::nodes_clear_repositories_metering_archive(
 pub(all) struct NodesGetRepositoriesMeteringInfoQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for NodesGetRepositoriesMeteringInfoQuery with to_json(
+pub impl ToJson for NodesGetRepositoriesMeteringInfoQuery with fn to_json(
   _self : NodesGetRepositoriesMeteringInfoQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -63168,7 +63508,7 @@ pub impl ToJson for NodesGetRepositoriesMeteringInfoQuery with to_json(
 }
 
 ///|
-pub impl FromJson for NodesGetRepositoriesMeteringInfoQuery with from_json(
+pub impl FromJson for NodesGetRepositoriesMeteringInfoQuery with fn from_json(
   json,
   path,
 ) {
@@ -63237,7 +63577,7 @@ pub(all) struct NodesHotThreadsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for NodesHotThreadsQuery with to_json(
+pub impl ToJson for NodesHotThreadsQuery with fn to_json(
   self : NodesHotThreadsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -63273,7 +63613,7 @@ pub impl ToJson for NodesHotThreadsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for NodesHotThreadsQuery with from_json(json, path) {
+pub impl FromJson for NodesHotThreadsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "NodesHotThreadsQuery: expected object"))
   }
@@ -63413,7 +63753,7 @@ pub(all) struct NodesInfoQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for NodesInfoQuery with to_json(self : NodesInfoQuery) -> Json {
+pub impl ToJson for NodesInfoQuery with fn to_json(self : NodesInfoQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.flat_settings {
     Some(value) => obj["flat_settings"] = value.to_json()
@@ -63427,7 +63767,7 @@ pub impl ToJson for NodesInfoQuery with to_json(self : NodesInfoQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for NodesInfoQuery with from_json(json, path) {
+pub impl FromJson for NodesInfoQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "NodesInfoQuery: expected object"))
   }
@@ -63522,7 +63862,7 @@ pub(all) struct NodesReloadSecureSettingsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for NodesReloadSecureSettingsQuery with to_json(
+pub impl ToJson for NodesReloadSecureSettingsQuery with fn to_json(
   self : NodesReloadSecureSettingsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -63534,7 +63874,10 @@ pub impl ToJson for NodesReloadSecureSettingsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for NodesReloadSecureSettingsQuery with from_json(json, path) {
+pub impl FromJson for NodesReloadSecureSettingsQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "NodesReloadSecureSettingsQuery: expected object"),
@@ -63574,7 +63917,7 @@ pub(all) struct NodesReloadSecureSettingsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for NodesReloadSecureSettingsBody with to_json(
+pub impl ToJson for NodesReloadSecureSettingsBody with fn to_json(
   self : NodesReloadSecureSettingsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -63586,7 +63929,10 @@ pub impl ToJson for NodesReloadSecureSettingsBody with to_json(
 }
 
 ///|
-pub impl FromJson for NodesReloadSecureSettingsBody with from_json(json, path) {
+pub impl FromJson for NodesReloadSecureSettingsBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "NodesReloadSecureSettingsBody: expected object"),
@@ -63669,7 +64015,7 @@ pub(all) struct NodesStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for NodesStatsQuery with to_json(self : NodesStatsQuery) -> Json {
+pub impl ToJson for NodesStatsQuery with fn to_json(self : NodesStatsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.completion_fields {
     Some(value) => obj["completion_fields"] = value.to_json()
@@ -63711,7 +64057,7 @@ pub impl ToJson for NodesStatsQuery with to_json(self : NodesStatsQuery) -> Json
 }
 
 ///|
-pub impl FromJson for NodesStatsQuery with from_json(json, path) {
+pub impl FromJson for NodesStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "NodesStatsQuery: expected object"))
   }
@@ -63910,7 +64256,7 @@ pub(all) struct NodesUsageQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for NodesUsageQuery with to_json(self : NodesUsageQuery) -> Json {
+pub impl ToJson for NodesUsageQuery with fn to_json(self : NodesUsageQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
@@ -63920,7 +64266,7 @@ pub impl ToJson for NodesUsageQuery with to_json(self : NodesUsageQuery) -> Json
 }
 
 ///|
-pub impl FromJson for NodesUsageQuery with from_json(json, path) {
+pub impl FromJson for NodesUsageQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "NodesUsageQuery: expected object"))
   }
@@ -64008,7 +64354,7 @@ pub(all) struct OpenPointInTimeQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for OpenPointInTimeQuery with to_json(
+pub impl ToJson for OpenPointInTimeQuery with fn to_json(
   self : OpenPointInTimeQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -64041,7 +64387,7 @@ pub impl ToJson for OpenPointInTimeQuery with to_json(
 }
 
 ///|
-pub impl FromJson for OpenPointInTimeQuery with from_json(json, path) {
+pub impl FromJson for OpenPointInTimeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "OpenPointInTimeQuery: expected object"))
   }
@@ -64163,7 +64509,9 @@ pub(all) struct OpenPointInTimeBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for OpenPointInTimeBody with to_json(self : OpenPointInTimeBody) -> Json {
+pub impl ToJson for OpenPointInTimeBody with fn to_json(
+  self : OpenPointInTimeBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.index_filter {
     Some(value) => obj["index_filter"] = value.to_json()
@@ -64177,7 +64525,7 @@ pub impl ToJson for OpenPointInTimeBody with to_json(self : OpenPointInTimeBody)
 }
 
 ///|
-pub impl FromJson for OpenPointInTimeBody with from_json(json, path) {
+pub impl FromJson for OpenPointInTimeBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "OpenPointInTimeBody: expected object"))
   }
@@ -64212,7 +64560,7 @@ pub(all) struct OpenPointInTimeResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for OpenPointInTimeResponse with to_json(
+pub impl ToJson for OpenPointInTimeResponse with fn to_json(
   self : OpenPointInTimeResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -64222,7 +64570,7 @@ pub impl ToJson for OpenPointInTimeResponse with to_json(
 }
 
 ///|
-pub impl FromJson for OpenPointInTimeResponse with from_json(json, path) {
+pub impl FromJson for OpenPointInTimeResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "OpenPointInTimeResponse: expected object"),
@@ -64276,13 +64624,13 @@ pub async fn Client::open_point_in_time(
 pub(all) struct PingQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for PingQuery with to_json(_self : PingQuery) -> Json {
+pub impl ToJson for PingQuery with fn to_json(_self : PingQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for PingQuery with from_json(json, path) {
+pub impl FromJson for PingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "PingQuery: expected object"))
   }
@@ -64328,7 +64676,7 @@ pub async fn Client::ping(
 pub(all) struct ProfilingFlamegraphQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ProfilingFlamegraphQuery with to_json(
+pub impl ToJson for ProfilingFlamegraphQuery with fn to_json(
   _self : ProfilingFlamegraphQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -64336,7 +64684,7 @@ pub impl ToJson for ProfilingFlamegraphQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ProfilingFlamegraphQuery with from_json(json, path) {
+pub impl FromJson for ProfilingFlamegraphQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ProfilingFlamegraphQuery: expected object"),
@@ -64397,7 +64745,7 @@ pub async fn Client::profiling_flamegraph(
 pub(all) struct ProfilingStacktracesQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ProfilingStacktracesQuery with to_json(
+pub impl ToJson for ProfilingStacktracesQuery with fn to_json(
   _self : ProfilingStacktracesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -64405,7 +64753,7 @@ pub impl ToJson for ProfilingStacktracesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ProfilingStacktracesQuery with from_json(json, path) {
+pub impl FromJson for ProfilingStacktracesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ProfilingStacktracesQuery: expected object"),
@@ -64470,7 +64818,7 @@ pub(all) struct ProfilingStatusQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ProfilingStatusQuery with to_json(
+pub impl ToJson for ProfilingStatusQuery with fn to_json(
   self : ProfilingStatusQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -64490,7 +64838,7 @@ pub impl ToJson for ProfilingStatusQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ProfilingStatusQuery with from_json(json, path) {
+pub impl FromJson for ProfilingStatusQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ProfilingStatusQuery: expected object"))
   }
@@ -64556,7 +64904,7 @@ pub(all) struct ProfilingStatusResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ProfilingStatusResponse with to_json(
+pub impl ToJson for ProfilingStatusResponse with fn to_json(
   self : ProfilingStatusResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -64565,7 +64913,7 @@ pub impl ToJson for ProfilingStatusResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ProfilingStatusResponse with from_json(json, path) {
+pub impl FromJson for ProfilingStatusResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ProfilingStatusResponse: expected object"),
@@ -64606,7 +64954,7 @@ pub async fn Client::profiling_status(
 pub(all) struct ProfilingTopnFunctionsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ProfilingTopnFunctionsQuery with to_json(
+pub impl ToJson for ProfilingTopnFunctionsQuery with fn to_json(
   _self : ProfilingTopnFunctionsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -64614,7 +64962,7 @@ pub impl ToJson for ProfilingTopnFunctionsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ProfilingTopnFunctionsQuery with from_json(json, path) {
+pub impl FromJson for ProfilingTopnFunctionsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ProfilingTopnFunctionsQuery: expected object"),
@@ -64675,7 +65023,7 @@ pub async fn Client::profiling_topn_functions(
 pub(all) struct ProjectCreateManyRoutingQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ProjectCreateManyRoutingQuery with to_json(
+pub impl ToJson for ProjectCreateManyRoutingQuery with fn to_json(
   _self : ProjectCreateManyRoutingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -64683,7 +65031,10 @@ pub impl ToJson for ProjectCreateManyRoutingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ProjectCreateManyRoutingQuery with from_json(json, path) {
+pub impl FromJson for ProjectCreateManyRoutingQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ProjectCreateManyRoutingQuery: expected object"),
@@ -64741,7 +65092,7 @@ pub async fn Client::project_create_many_routing(
 pub(all) struct ProjectCreateRoutingQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ProjectCreateRoutingQuery with to_json(
+pub impl ToJson for ProjectCreateRoutingQuery with fn to_json(
   _self : ProjectCreateRoutingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -64749,7 +65100,7 @@ pub impl ToJson for ProjectCreateRoutingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ProjectCreateRoutingQuery with from_json(json, path) {
+pub impl FromJson for ProjectCreateRoutingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ProjectCreateRoutingQuery: expected object"),
@@ -64813,7 +65164,7 @@ pub async fn Client::project_create_routing(
 pub(all) struct ProjectDeleteRoutingQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ProjectDeleteRoutingQuery with to_json(
+pub impl ToJson for ProjectDeleteRoutingQuery with fn to_json(
   _self : ProjectDeleteRoutingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -64821,7 +65172,7 @@ pub impl ToJson for ProjectDeleteRoutingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ProjectDeleteRoutingQuery with from_json(json, path) {
+pub impl FromJson for ProjectDeleteRoutingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ProjectDeleteRoutingQuery: expected object"),
@@ -64879,7 +65230,7 @@ pub async fn Client::project_delete_routing(
 pub(all) struct ProjectGetManyRoutingQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ProjectGetManyRoutingQuery with to_json(
+pub impl ToJson for ProjectGetManyRoutingQuery with fn to_json(
   _self : ProjectGetManyRoutingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -64887,7 +65238,7 @@ pub impl ToJson for ProjectGetManyRoutingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ProjectGetManyRoutingQuery with from_json(json, path) {
+pub impl FromJson for ProjectGetManyRoutingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ProjectGetManyRoutingQuery: expected object"),
@@ -64939,7 +65290,7 @@ pub async fn Client::project_get_many_routing(
 pub(all) struct ProjectGetRoutingQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ProjectGetRoutingQuery with to_json(
+pub impl ToJson for ProjectGetRoutingQuery with fn to_json(
   _self : ProjectGetRoutingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -64947,7 +65298,7 @@ pub impl ToJson for ProjectGetRoutingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ProjectGetRoutingQuery with from_json(json, path) {
+pub impl FromJson for ProjectGetRoutingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ProjectGetRoutingQuery: expected object"),
@@ -65005,13 +65356,13 @@ pub async fn Client::project_get_routing(
 pub(all) struct ProjectTagsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ProjectTagsQuery with to_json(_self : ProjectTagsQuery) -> Json {
+pub impl ToJson for ProjectTagsQuery with fn to_json(_self : ProjectTagsQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for ProjectTagsQuery with from_json(json, path) {
+pub impl FromJson for ProjectTagsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "ProjectTagsQuery: expected object"))
   }
@@ -65065,7 +65416,7 @@ pub(all) struct PutScriptQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for PutScriptQuery with to_json(self : PutScriptQuery) -> Json {
+pub impl ToJson for PutScriptQuery with fn to_json(self : PutScriptQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.context {
     Some(value) => obj["context"] = value.to_json()
@@ -65083,7 +65434,7 @@ pub impl ToJson for PutScriptQuery with to_json(self : PutScriptQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for PutScriptQuery with from_json(json, path) {
+pub impl FromJson for PutScriptQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "PutScriptQuery: expected object"))
   }
@@ -65142,14 +65493,14 @@ pub(all) struct PutScriptBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for PutScriptBody with to_json(self : PutScriptBody) -> Json {
+pub impl ToJson for PutScriptBody with fn to_json(self : PutScriptBody) -> Json {
   let obj : Map[String, Json] = {}
   obj["script"] = self.script.to_json()
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for PutScriptBody with from_json(json, path) {
+pub impl FromJson for PutScriptBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "PutScriptBody: expected object"))
   }
@@ -65214,7 +65565,7 @@ pub async fn Client::put_script(
 pub(all) struct QueryRulesDeleteRuleQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesDeleteRuleQuery with to_json(
+pub impl ToJson for QueryRulesDeleteRuleQuery with fn to_json(
   _self : QueryRulesDeleteRuleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -65222,7 +65573,7 @@ pub impl ToJson for QueryRulesDeleteRuleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for QueryRulesDeleteRuleQuery with from_json(json, path) {
+pub impl FromJson for QueryRulesDeleteRuleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "QueryRulesDeleteRuleQuery: expected object"),
@@ -65287,7 +65638,7 @@ pub async fn Client::query_rules_delete_rule(
 pub(all) struct QueryRulesDeleteRulesetQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesDeleteRulesetQuery with to_json(
+pub impl ToJson for QueryRulesDeleteRulesetQuery with fn to_json(
   _self : QueryRulesDeleteRulesetQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -65295,7 +65646,7 @@ pub impl ToJson for QueryRulesDeleteRulesetQuery with to_json(
 }
 
 ///|
-pub impl FromJson for QueryRulesDeleteRulesetQuery with from_json(json, path) {
+pub impl FromJson for QueryRulesDeleteRulesetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "QueryRulesDeleteRulesetQuery: expected object"),
@@ -65353,7 +65704,7 @@ pub async fn Client::query_rules_delete_ruleset(
 pub(all) struct QueryRulesGetRuleQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesGetRuleQuery with to_json(
+pub impl ToJson for QueryRulesGetRuleQuery with fn to_json(
   _self : QueryRulesGetRuleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -65361,7 +65712,7 @@ pub impl ToJson for QueryRulesGetRuleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for QueryRulesGetRuleQuery with from_json(json, path) {
+pub impl FromJson for QueryRulesGetRuleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "QueryRulesGetRuleQuery: expected object"),
@@ -65426,7 +65777,7 @@ pub async fn Client::query_rules_get_rule(
 pub(all) struct QueryRulesGetRulesetQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesGetRulesetQuery with to_json(
+pub impl ToJson for QueryRulesGetRulesetQuery with fn to_json(
   _self : QueryRulesGetRulesetQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -65434,7 +65785,7 @@ pub impl ToJson for QueryRulesGetRulesetQuery with to_json(
 }
 
 ///|
-pub impl FromJson for QueryRulesGetRulesetQuery with from_json(json, path) {
+pub impl FromJson for QueryRulesGetRulesetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "QueryRulesGetRulesetQuery: expected object"),
@@ -65495,7 +65846,7 @@ pub(all) struct QueryRulesListRulesetsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesListRulesetsQuery with to_json(
+pub impl ToJson for QueryRulesListRulesetsQuery with fn to_json(
   self : QueryRulesListRulesetsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -65511,7 +65862,7 @@ pub impl ToJson for QueryRulesListRulesetsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for QueryRulesListRulesetsQuery with from_json(json, path) {
+pub impl FromJson for QueryRulesListRulesetsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "QueryRulesListRulesetsQuery: expected object"),
@@ -65562,7 +65913,7 @@ pub(all) struct QueryRulesListRulesetsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesListRulesetsResponse with to_json(
+pub impl ToJson for QueryRulesListRulesetsResponse with fn to_json(
   self : QueryRulesListRulesetsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -65572,7 +65923,10 @@ pub impl ToJson for QueryRulesListRulesetsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for QueryRulesListRulesetsResponse with from_json(json, path) {
+pub impl FromJson for QueryRulesListRulesetsResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "QueryRulesListRulesetsResponse: expected object"),
@@ -65617,7 +65971,7 @@ pub async fn Client::query_rules_list_rulesets(
 pub(all) struct QueryRulesPutRuleQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesPutRuleQuery with to_json(
+pub impl ToJson for QueryRulesPutRuleQuery with fn to_json(
   _self : QueryRulesPutRuleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -65625,7 +65979,7 @@ pub impl ToJson for QueryRulesPutRuleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for QueryRulesPutRuleQuery with from_json(json, path) {
+pub impl FromJson for QueryRulesPutRuleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "QueryRulesPutRuleQuery: expected object"),
@@ -65656,7 +66010,7 @@ pub(all) struct QueryRulesPutRuleBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesPutRuleBody with to_json(
+pub impl ToJson for QueryRulesPutRuleBody with fn to_json(
   self : QueryRulesPutRuleBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -65671,7 +66025,7 @@ pub impl ToJson for QueryRulesPutRuleBody with to_json(
 }
 
 ///|
-pub impl FromJson for QueryRulesPutRuleBody with from_json(json, path) {
+pub impl FromJson for QueryRulesPutRuleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "QueryRulesPutRuleBody: expected object"),
@@ -65714,7 +66068,7 @@ pub(all) struct QueryRulesPutRuleResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesPutRuleResponse with to_json(
+pub impl ToJson for QueryRulesPutRuleResponse with fn to_json(
   self : QueryRulesPutRuleResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -65723,7 +66077,7 @@ pub impl ToJson for QueryRulesPutRuleResponse with to_json(
 }
 
 ///|
-pub impl FromJson for QueryRulesPutRuleResponse with from_json(json, path) {
+pub impl FromJson for QueryRulesPutRuleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "QueryRulesPutRuleResponse: expected object"),
@@ -65780,7 +66134,7 @@ pub async fn Client::query_rules_put_rule(
 pub(all) struct QueryRulesPutRulesetQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesPutRulesetQuery with to_json(
+pub impl ToJson for QueryRulesPutRulesetQuery with fn to_json(
   _self : QueryRulesPutRulesetQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -65788,7 +66142,7 @@ pub impl ToJson for QueryRulesPutRulesetQuery with to_json(
 }
 
 ///|
-pub impl FromJson for QueryRulesPutRulesetQuery with from_json(json, path) {
+pub impl FromJson for QueryRulesPutRulesetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "QueryRulesPutRulesetQuery: expected object"),
@@ -65816,7 +66170,7 @@ pub(all) struct QueryRulesPutRulesetBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesPutRulesetBody with to_json(
+pub impl ToJson for QueryRulesPutRulesetBody with fn to_json(
   self : QueryRulesPutRulesetBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -65825,7 +66179,7 @@ pub impl ToJson for QueryRulesPutRulesetBody with to_json(
 }
 
 ///|
-pub impl FromJson for QueryRulesPutRulesetBody with from_json(json, path) {
+pub impl FromJson for QueryRulesPutRulesetBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "QueryRulesPutRulesetBody: expected object"),
@@ -65850,7 +66204,7 @@ pub(all) struct QueryRulesPutRulesetResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesPutRulesetResponse with to_json(
+pub impl ToJson for QueryRulesPutRulesetResponse with fn to_json(
   self : QueryRulesPutRulesetResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -65859,7 +66213,7 @@ pub impl ToJson for QueryRulesPutRulesetResponse with to_json(
 }
 
 ///|
-pub impl FromJson for QueryRulesPutRulesetResponse with from_json(json, path) {
+pub impl FromJson for QueryRulesPutRulesetResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "QueryRulesPutRulesetResponse: expected object"),
@@ -65909,7 +66263,7 @@ pub async fn Client::query_rules_put_ruleset(
 pub(all) struct QueryRulesTestQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesTestQuery with to_json(
+pub impl ToJson for QueryRulesTestQuery with fn to_json(
   _self : QueryRulesTestQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -65917,7 +66271,7 @@ pub impl ToJson for QueryRulesTestQuery with to_json(
 }
 
 ///|
-pub impl FromJson for QueryRulesTestQuery with from_json(json, path) {
+pub impl FromJson for QueryRulesTestQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "QueryRulesTestQuery: expected object"))
   }
@@ -65943,14 +66297,16 @@ pub(all) struct QueryRulesTestBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesTestBody with to_json(self : QueryRulesTestBody) -> Json {
+pub impl ToJson for QueryRulesTestBody with fn to_json(
+  self : QueryRulesTestBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["match_criteria"] = self.match_criteria.to_json()
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for QueryRulesTestBody with from_json(json, path) {
+pub impl FromJson for QueryRulesTestBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "QueryRulesTestBody: expected object"))
   }
@@ -65976,7 +66332,7 @@ pub(all) struct QueryRulesTestResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for QueryRulesTestResponse with to_json(
+pub impl ToJson for QueryRulesTestResponse with fn to_json(
   self : QueryRulesTestResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -65986,7 +66342,7 @@ pub impl ToJson for QueryRulesTestResponse with to_json(
 }
 
 ///|
-pub impl FromJson for QueryRulesTestResponse with from_json(json, path) {
+pub impl FromJson for QueryRulesTestResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "QueryRulesTestResponse: expected object"),
@@ -66045,7 +66401,7 @@ pub(all) struct RankEvalQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RankEvalQuery with to_json(self : RankEvalQuery) -> Json {
+pub impl ToJson for RankEvalQuery with fn to_json(self : RankEvalQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -66067,7 +66423,7 @@ pub impl ToJson for RankEvalQuery with to_json(self : RankEvalQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for RankEvalQuery with from_json(json, path) {
+pub impl FromJson for RankEvalQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "RankEvalQuery: expected object"))
   }
@@ -66138,7 +66494,7 @@ pub(all) struct RankEvalBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RankEvalBody with to_json(self : RankEvalBody) -> Json {
+pub impl ToJson for RankEvalBody with fn to_json(self : RankEvalBody) -> Json {
   let obj : Map[String, Json] = {}
   obj["requests"] = self.requests.to_json()
   match self.metric {
@@ -66149,7 +66505,7 @@ pub impl ToJson for RankEvalBody with to_json(self : RankEvalBody) -> Json {
 }
 
 ///|
-pub impl FromJson for RankEvalBody with from_json(json, path) {
+pub impl FromJson for RankEvalBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "RankEvalBody: expected object"))
   }
@@ -66182,7 +66538,7 @@ pub(all) struct RankEvalResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RankEvalResponse with to_json(self : RankEvalResponse) -> Json {
+pub impl ToJson for RankEvalResponse with fn to_json(self : RankEvalResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["metric_score"] = self.metric_score.to_json()
   obj["details"] = self.details.to_json()
@@ -66191,7 +66547,7 @@ pub impl ToJson for RankEvalResponse with to_json(self : RankEvalResponse) -> Js
 }
 
 ///|
-pub impl FromJson for RankEvalResponse with from_json(json, path) {
+pub impl FromJson for RankEvalResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "RankEvalResponse: expected object"))
   }
@@ -66263,7 +66619,7 @@ pub(all) struct ReindexQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ReindexQuery with to_json(self : ReindexQuery) -> Json {
+pub impl ToJson for ReindexQuery with fn to_json(self : ReindexQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
@@ -66305,7 +66661,7 @@ pub impl ToJson for ReindexQuery with to_json(self : ReindexQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for ReindexQuery with from_json(json, path) {
+pub impl FromJson for ReindexQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ReindexQuery: expected object"))
   }
@@ -66444,7 +66800,7 @@ pub(all) struct ReindexBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ReindexBody with to_json(self : ReindexBody) -> Json {
+pub impl ToJson for ReindexBody with fn to_json(self : ReindexBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.conflicts {
     Some(value) => obj["conflicts"] = value.to_json()
@@ -66464,7 +66820,7 @@ pub impl ToJson for ReindexBody with to_json(self : ReindexBody) -> Json {
 }
 
 ///|
-pub impl FromJson for ReindexBody with from_json(json, path) {
+pub impl FromJson for ReindexBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ReindexBody: expected object"))
   }
@@ -66529,7 +66885,7 @@ pub(all) struct ReindexResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ReindexResponse with to_json(self : ReindexResponse) -> Json {
+pub impl ToJson for ReindexResponse with fn to_json(self : ReindexResponse) -> Json {
   let obj : Map[String, Json] = {}
   match self.batches {
     Some(value) => obj["batches"] = value.to_json()
@@ -66603,7 +66959,7 @@ pub impl ToJson for ReindexResponse with to_json(self : ReindexResponse) -> Json
 }
 
 ///|
-pub impl FromJson for ReindexResponse with from_json(json, path) {
+pub impl FromJson for ReindexResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ReindexResponse: expected object"))
   }
@@ -66736,7 +67092,7 @@ pub(all) struct ReindexRethrottleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ReindexRethrottleQuery with to_json(
+pub impl ToJson for ReindexRethrottleQuery with fn to_json(
   self : ReindexRethrottleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -66749,7 +67105,7 @@ pub impl ToJson for ReindexRethrottleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ReindexRethrottleQuery with from_json(json, path) {
+pub impl FromJson for ReindexRethrottleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ReindexRethrottleQuery: expected object"),
@@ -66802,7 +67158,7 @@ pub(all) struct ReindexRethrottleResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ReindexRethrottleResponse with to_json(
+pub impl ToJson for ReindexRethrottleResponse with fn to_json(
   self : ReindexRethrottleResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -66826,7 +67182,7 @@ pub impl ToJson for ReindexRethrottleResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ReindexRethrottleResponse with from_json(json, path) {
+pub impl FromJson for ReindexRethrottleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ReindexRethrottleResponse: expected object"),
@@ -66891,7 +67247,7 @@ pub async fn Client::reindex_rethrottle(
 pub(all) struct RenderSearchTemplateQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RenderSearchTemplateQuery with to_json(
+pub impl ToJson for RenderSearchTemplateQuery with fn to_json(
   _self : RenderSearchTemplateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -66899,7 +67255,7 @@ pub impl ToJson for RenderSearchTemplateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for RenderSearchTemplateQuery with from_json(json, path) {
+pub impl FromJson for RenderSearchTemplateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "RenderSearchTemplateQuery: expected object"),
@@ -66930,7 +67286,7 @@ pub(all) struct RenderSearchTemplateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RenderSearchTemplateBody with to_json(
+pub impl ToJson for RenderSearchTemplateBody with fn to_json(
   self : RenderSearchTemplateBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -66954,7 +67310,7 @@ pub impl ToJson for RenderSearchTemplateBody with to_json(
 }
 
 ///|
-pub impl FromJson for RenderSearchTemplateBody with from_json(json, path) {
+pub impl FromJson for RenderSearchTemplateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "RenderSearchTemplateBody: expected object"),
@@ -67000,7 +67356,7 @@ pub(all) struct RenderSearchTemplateResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RenderSearchTemplateResponse with to_json(
+pub impl ToJson for RenderSearchTemplateResponse with fn to_json(
   self : RenderSearchTemplateResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -67009,7 +67365,7 @@ pub impl ToJson for RenderSearchTemplateResponse with to_json(
 }
 
 ///|
-pub impl FromJson for RenderSearchTemplateResponse with from_json(json, path) {
+pub impl FromJson for RenderSearchTemplateResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "RenderSearchTemplateResponse: expected object"),
@@ -67065,7 +67421,7 @@ pub async fn Client::render_search_template(
 pub(all) struct RollupDeleteJobQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupDeleteJobQuery with to_json(
+pub impl ToJson for RollupDeleteJobQuery with fn to_json(
   _self : RollupDeleteJobQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -67073,7 +67429,7 @@ pub impl ToJson for RollupDeleteJobQuery with to_json(
 }
 
 ///|
-pub impl FromJson for RollupDeleteJobQuery with from_json(json, path) {
+pub impl FromJson for RollupDeleteJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "RollupDeleteJobQuery: expected object"))
   }
@@ -67100,7 +67456,7 @@ pub(all) struct RollupDeleteJobResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupDeleteJobResponse with to_json(
+pub impl ToJson for RollupDeleteJobResponse with fn to_json(
   self : RollupDeleteJobResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -67113,7 +67469,7 @@ pub impl ToJson for RollupDeleteJobResponse with to_json(
 }
 
 ///|
-pub impl FromJson for RollupDeleteJobResponse with from_json(json, path) {
+pub impl FromJson for RollupDeleteJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "RollupDeleteJobResponse: expected object"),
@@ -67166,13 +67522,15 @@ pub async fn Client::rollup_delete_job(
 pub(all) struct RollupGetJobsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupGetJobsQuery with to_json(_self : RollupGetJobsQuery) -> Json {
+pub impl ToJson for RollupGetJobsQuery with fn to_json(
+  _self : RollupGetJobsQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for RollupGetJobsQuery with from_json(json, path) {
+pub impl FromJson for RollupGetJobsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "RollupGetJobsQuery: expected object"))
   }
@@ -67198,7 +67556,7 @@ pub(all) struct RollupGetJobsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupGetJobsResponse with to_json(
+pub impl ToJson for RollupGetJobsResponse with fn to_json(
   self : RollupGetJobsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -67207,7 +67565,7 @@ pub impl ToJson for RollupGetJobsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for RollupGetJobsResponse with from_json(json, path) {
+pub impl FromJson for RollupGetJobsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "RollupGetJobsResponse: expected object"),
@@ -67260,7 +67618,7 @@ pub async fn Client::rollup_get_jobs(
 pub(all) struct RollupGetRollupCapsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupGetRollupCapsQuery with to_json(
+pub impl ToJson for RollupGetRollupCapsQuery with fn to_json(
   _self : RollupGetRollupCapsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -67268,7 +67626,7 @@ pub impl ToJson for RollupGetRollupCapsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for RollupGetRollupCapsQuery with from_json(json, path) {
+pub impl FromJson for RollupGetRollupCapsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "RollupGetRollupCapsQuery: expected object"),
@@ -67332,7 +67690,7 @@ pub async fn Client::rollup_get_rollup_caps(
 pub(all) struct RollupGetRollupIndexCapsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupGetRollupIndexCapsQuery with to_json(
+pub impl ToJson for RollupGetRollupIndexCapsQuery with fn to_json(
   _self : RollupGetRollupIndexCapsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -67340,7 +67698,10 @@ pub impl ToJson for RollupGetRollupIndexCapsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for RollupGetRollupIndexCapsQuery with from_json(json, path) {
+pub impl FromJson for RollupGetRollupIndexCapsQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "RollupGetRollupIndexCapsQuery: expected object"),
@@ -67398,13 +67759,13 @@ pub async fn Client::rollup_get_rollup_index_caps(
 pub(all) struct RollupPutJobQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupPutJobQuery with to_json(_self : RollupPutJobQuery) -> Json {
+pub impl ToJson for RollupPutJobQuery with fn to_json(_self : RollupPutJobQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for RollupPutJobQuery with from_json(json, path) {
+pub impl FromJson for RollupPutJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "RollupPutJobQuery: expected object"))
   }
@@ -67437,7 +67798,7 @@ pub(all) struct RollupPutJobBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupPutJobBody with to_json(self : RollupPutJobBody) -> Json {
+pub impl ToJson for RollupPutJobBody with fn to_json(self : RollupPutJobBody) -> Json {
   let obj : Map[String, Json] = {}
   obj["cron"] = self.cron.to_json()
   obj["groups"] = self.groups.to_json()
@@ -67460,7 +67821,7 @@ pub impl ToJson for RollupPutJobBody with to_json(self : RollupPutJobBody) -> Js
 }
 
 ///|
-pub impl FromJson for RollupPutJobBody with from_json(json, path) {
+pub impl FromJson for RollupPutJobBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "RollupPutJobBody: expected object"))
   }
@@ -67568,7 +67929,7 @@ pub(all) struct RollupRollupSearchQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupRollupSearchQuery with to_json(
+pub impl ToJson for RollupRollupSearchQuery with fn to_json(
   self : RollupRollupSearchQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -67584,7 +67945,7 @@ pub impl ToJson for RollupRollupSearchQuery with to_json(
 }
 
 ///|
-pub impl FromJson for RollupRollupSearchQuery with from_json(json, path) {
+pub impl FromJson for RollupRollupSearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "RollupRollupSearchQuery: expected object"),
@@ -67641,7 +68002,7 @@ pub(all) struct RollupRollupSearchBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupRollupSearchBody with to_json(
+pub impl ToJson for RollupRollupSearchBody with fn to_json(
   self : RollupRollupSearchBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -67661,7 +68022,7 @@ pub impl ToJson for RollupRollupSearchBody with to_json(
 }
 
 ///|
-pub impl FromJson for RollupRollupSearchBody with from_json(json, path) {
+pub impl FromJson for RollupRollupSearchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "RollupRollupSearchBody: expected object"),
@@ -67707,7 +68068,7 @@ pub(all) struct RollupRollupSearchResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupRollupSearchResponse with to_json(
+pub impl ToJson for RollupRollupSearchResponse with fn to_json(
   self : RollupRollupSearchResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -67727,7 +68088,7 @@ pub impl ToJson for RollupRollupSearchResponse with to_json(
 }
 
 ///|
-pub impl FromJson for RollupRollupSearchResponse with from_json(json, path) {
+pub impl FromJson for RollupRollupSearchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "RollupRollupSearchResponse: expected object"),
@@ -67801,7 +68162,7 @@ pub async fn Client::rollup_rollup_search(
 pub(all) struct RollupStartJobQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupStartJobQuery with to_json(
+pub impl ToJson for RollupStartJobQuery with fn to_json(
   _self : RollupStartJobQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -67809,7 +68170,7 @@ pub impl ToJson for RollupStartJobQuery with to_json(
 }
 
 ///|
-pub impl FromJson for RollupStartJobQuery with from_json(json, path) {
+pub impl FromJson for RollupStartJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "RollupStartJobQuery: expected object"))
   }
@@ -67835,7 +68196,7 @@ pub(all) struct RollupStartJobResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupStartJobResponse with to_json(
+pub impl ToJson for RollupStartJobResponse with fn to_json(
   self : RollupStartJobResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -67844,7 +68205,7 @@ pub impl ToJson for RollupStartJobResponse with to_json(
 }
 
 ///|
-pub impl FromJson for RollupStartJobResponse with from_json(json, path) {
+pub impl FromJson for RollupStartJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "RollupStartJobResponse: expected object"),
@@ -67894,7 +68255,9 @@ pub(all) struct RollupStopJobQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupStopJobQuery with to_json(self : RollupStopJobQuery) -> Json {
+pub impl ToJson for RollupStopJobQuery with fn to_json(
+  self : RollupStopJobQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
@@ -67908,7 +68271,7 @@ pub impl ToJson for RollupStopJobQuery with to_json(self : RollupStopJobQuery) -
 }
 
 ///|
-pub impl FromJson for RollupStopJobQuery with from_json(json, path) {
+pub impl FromJson for RollupStopJobQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "RollupStopJobQuery: expected object"))
   }
@@ -67958,7 +68321,7 @@ pub(all) struct RollupStopJobResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for RollupStopJobResponse with to_json(
+pub impl ToJson for RollupStopJobResponse with fn to_json(
   self : RollupStopJobResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -67967,7 +68330,7 @@ pub impl ToJson for RollupStopJobResponse with to_json(
 }
 
 ///|
-pub impl FromJson for RollupStopJobResponse with from_json(json, path) {
+pub impl FromJson for RollupStopJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "RollupStopJobResponse: expected object"),
@@ -68014,7 +68377,7 @@ pub async fn Client::rollup_stop_job(
 pub(all) struct ScriptsPainlessExecuteQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ScriptsPainlessExecuteQuery with to_json(
+pub impl ToJson for ScriptsPainlessExecuteQuery with fn to_json(
   _self : ScriptsPainlessExecuteQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -68022,7 +68385,7 @@ pub impl ToJson for ScriptsPainlessExecuteQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ScriptsPainlessExecuteQuery with from_json(json, path) {
+pub impl FromJson for ScriptsPainlessExecuteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "ScriptsPainlessExecuteQuery: expected object"),
@@ -68052,7 +68415,7 @@ pub(all) struct ScriptsPainlessExecuteBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ScriptsPainlessExecuteBody with to_json(
+pub impl ToJson for ScriptsPainlessExecuteBody with fn to_json(
   self : ScriptsPainlessExecuteBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -68072,7 +68435,7 @@ pub impl ToJson for ScriptsPainlessExecuteBody with to_json(
 }
 
 ///|
-pub impl FromJson for ScriptsPainlessExecuteBody with from_json(json, path) {
+pub impl FromJson for ScriptsPainlessExecuteBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ScriptsPainlessExecuteBody: expected object"),
@@ -68113,7 +68476,7 @@ pub(all) struct ScriptsPainlessExecuteResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ScriptsPainlessExecuteResponse with to_json(
+pub impl ToJson for ScriptsPainlessExecuteResponse with fn to_json(
   self : ScriptsPainlessExecuteResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -68122,7 +68485,10 @@ pub impl ToJson for ScriptsPainlessExecuteResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ScriptsPainlessExecuteResponse with from_json(json, path) {
+pub impl FromJson for ScriptsPainlessExecuteResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ScriptsPainlessExecuteResponse: expected object"),
@@ -68173,7 +68539,7 @@ pub(all) struct ScrollQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ScrollQuery with to_json(self : ScrollQuery) -> Json {
+pub impl ToJson for ScrollQuery with fn to_json(self : ScrollQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.scroll {
     Some(value) => obj["scroll"] = value.to_json()
@@ -68191,7 +68557,7 @@ pub impl ToJson for ScrollQuery with to_json(self : ScrollQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for ScrollQuery with from_json(json, path) {
+pub impl FromJson for ScrollQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ScrollQuery: expected object"))
   }
@@ -68253,7 +68619,7 @@ pub(all) struct ScrollBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ScrollBody with to_json(self : ScrollBody) -> Json {
+pub impl ToJson for ScrollBody with fn to_json(self : ScrollBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.scroll {
     Some(value) => obj["scroll"] = value.to_json()
@@ -68264,7 +68630,7 @@ pub impl ToJson for ScrollBody with to_json(self : ScrollBody) -> Json {
 }
 
 ///|
-pub impl FromJson for ScrollBody with from_json(json, path) {
+pub impl FromJson for ScrollBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ScrollBody: expected object"))
   }
@@ -68380,7 +68746,7 @@ pub(all) struct SearchQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchQuery with to_json(self : SearchQuery) -> Json {
+pub impl ToJson for SearchQuery with fn to_json(self : SearchQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -68566,7 +68932,7 @@ pub impl ToJson for SearchQuery with to_json(self : SearchQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for SearchQuery with from_json(json, path) {
+pub impl FromJson for SearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SearchQuery: expected object"))
   }
@@ -69188,7 +69554,7 @@ pub(all) struct SearchBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchBody with to_json(self : SearchBody) -> Json {
+pub impl ToJson for SearchBody with fn to_json(self : SearchBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.aggregations {
     Some(value) => obj["aggregations"] = value.to_json()
@@ -69334,7 +69700,7 @@ pub impl ToJson for SearchBody with to_json(self : SearchBody) -> Json {
 }
 
 ///|
-pub impl FromJson for SearchBody with from_json(json, path) {
+pub impl FromJson for SearchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SearchBody: expected object"))
   }
@@ -69658,7 +70024,7 @@ pub async fn Client::search(
 pub(all) struct SearchApplicationDeleteQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchApplicationDeleteQuery with to_json(
+pub impl ToJson for SearchApplicationDeleteQuery with fn to_json(
   _self : SearchApplicationDeleteQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -69666,7 +70032,7 @@ pub impl ToJson for SearchApplicationDeleteQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SearchApplicationDeleteQuery with from_json(json, path) {
+pub impl FromJson for SearchApplicationDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SearchApplicationDeleteQuery: expected object"),
@@ -69727,7 +70093,7 @@ pub(all) struct SearchApplicationDeleteBehavioralAnalyticsQuery {} derive (
 )
 
 ///|
-pub impl ToJson for SearchApplicationDeleteBehavioralAnalyticsQuery with to_json(
+pub impl ToJson for SearchApplicationDeleteBehavioralAnalyticsQuery with fn to_json(
   _self : SearchApplicationDeleteBehavioralAnalyticsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -69735,7 +70101,7 @@ pub impl ToJson for SearchApplicationDeleteBehavioralAnalyticsQuery with to_json
 }
 
 ///|
-pub impl FromJson for SearchApplicationDeleteBehavioralAnalyticsQuery with from_json(
+pub impl FromJson for SearchApplicationDeleteBehavioralAnalyticsQuery with fn from_json(
   json,
   path,
 ) {
@@ -69796,7 +70162,7 @@ pub async fn Client::search_application_delete_behavioral_analytics(
 pub(all) struct SearchApplicationGetQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchApplicationGetQuery with to_json(
+pub impl ToJson for SearchApplicationGetQuery with fn to_json(
   _self : SearchApplicationGetQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -69804,7 +70170,7 @@ pub impl ToJson for SearchApplicationGetQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SearchApplicationGetQuery with from_json(json, path) {
+pub impl FromJson for SearchApplicationGetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SearchApplicationGetQuery: expected object"),
@@ -69862,7 +70228,7 @@ pub async fn Client::search_application_get(
 pub(all) struct SearchApplicationGetBehavioralAnalyticsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchApplicationGetBehavioralAnalyticsQuery with to_json(
+pub impl ToJson for SearchApplicationGetBehavioralAnalyticsQuery with fn to_json(
   _self : SearchApplicationGetBehavioralAnalyticsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -69870,7 +70236,7 @@ pub impl ToJson for SearchApplicationGetBehavioralAnalyticsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SearchApplicationGetBehavioralAnalyticsQuery with from_json(
+pub impl FromJson for SearchApplicationGetBehavioralAnalyticsQuery with fn from_json(
   json,
   path,
 ) {
@@ -69941,7 +70307,7 @@ pub(all) struct SearchApplicationListQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchApplicationListQuery with to_json(
+pub impl ToJson for SearchApplicationListQuery with fn to_json(
   self : SearchApplicationListQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -69961,7 +70327,7 @@ pub impl ToJson for SearchApplicationListQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SearchApplicationListQuery with from_json(json, path) {
+pub impl FromJson for SearchApplicationListQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SearchApplicationListQuery: expected object"),
@@ -70022,7 +70388,7 @@ pub(all) struct SearchApplicationListResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchApplicationListResponse with to_json(
+pub impl ToJson for SearchApplicationListResponse with fn to_json(
   self : SearchApplicationListResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -70032,7 +70398,10 @@ pub impl ToJson for SearchApplicationListResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SearchApplicationListResponse with from_json(json, path) {
+pub impl FromJson for SearchApplicationListResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SearchApplicationListResponse: expected object"),
@@ -70082,7 +70451,7 @@ pub(all) struct SearchApplicationPostBehavioralAnalyticsEventQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchApplicationPostBehavioralAnalyticsEventQuery with to_json(
+pub impl ToJson for SearchApplicationPostBehavioralAnalyticsEventQuery with fn to_json(
   self : SearchApplicationPostBehavioralAnalyticsEventQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -70094,7 +70463,7 @@ pub impl ToJson for SearchApplicationPostBehavioralAnalyticsEventQuery with to_j
 }
 
 ///|
-pub impl FromJson for SearchApplicationPostBehavioralAnalyticsEventQuery with from_json(
+pub impl FromJson for SearchApplicationPostBehavioralAnalyticsEventQuery with fn from_json(
   json,
   path,
 ) {
@@ -70143,7 +70512,7 @@ pub(all) struct SearchApplicationPostBehavioralAnalyticsEventResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchApplicationPostBehavioralAnalyticsEventResponse with to_json(
+pub impl ToJson for SearchApplicationPostBehavioralAnalyticsEventResponse with fn to_json(
   self : SearchApplicationPostBehavioralAnalyticsEventResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -70156,7 +70525,7 @@ pub impl ToJson for SearchApplicationPostBehavioralAnalyticsEventResponse with t
 }
 
 ///|
-pub impl FromJson for SearchApplicationPostBehavioralAnalyticsEventResponse with from_json(
+pub impl FromJson for SearchApplicationPostBehavioralAnalyticsEventResponse with fn from_json(
   json,
   path,
 ) {
@@ -70226,7 +70595,7 @@ pub(all) struct SearchApplicationPutQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchApplicationPutQuery with to_json(
+pub impl ToJson for SearchApplicationPutQuery with fn to_json(
   self : SearchApplicationPutQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -70238,7 +70607,7 @@ pub impl ToJson for SearchApplicationPutQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SearchApplicationPutQuery with from_json(json, path) {
+pub impl FromJson for SearchApplicationPutQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SearchApplicationPutQuery: expected object"),
@@ -70281,7 +70650,7 @@ pub(all) struct SearchApplicationPutResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchApplicationPutResponse with to_json(
+pub impl ToJson for SearchApplicationPutResponse with fn to_json(
   self : SearchApplicationPutResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -70290,7 +70659,7 @@ pub impl ToJson for SearchApplicationPutResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SearchApplicationPutResponse with from_json(json, path) {
+pub impl FromJson for SearchApplicationPutResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SearchApplicationPutResponse: expected object"),
@@ -70340,7 +70709,7 @@ pub async fn Client::search_application_put(
 pub(all) struct SearchApplicationPutBehavioralAnalyticsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchApplicationPutBehavioralAnalyticsQuery with to_json(
+pub impl ToJson for SearchApplicationPutBehavioralAnalyticsQuery with fn to_json(
   _self : SearchApplicationPutBehavioralAnalyticsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -70348,7 +70717,7 @@ pub impl ToJson for SearchApplicationPutBehavioralAnalyticsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SearchApplicationPutBehavioralAnalyticsQuery with from_json(
+pub impl FromJson for SearchApplicationPutBehavioralAnalyticsQuery with fn from_json(
   json,
   path,
 ) {
@@ -70409,7 +70778,7 @@ pub async fn Client::search_application_put_behavioral_analytics(
 pub(all) struct SearchApplicationRenderQueryQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchApplicationRenderQueryQuery with to_json(
+pub impl ToJson for SearchApplicationRenderQueryQuery with fn to_json(
   _self : SearchApplicationRenderQueryQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -70417,7 +70786,7 @@ pub impl ToJson for SearchApplicationRenderQueryQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SearchApplicationRenderQueryQuery with from_json(
+pub impl FromJson for SearchApplicationRenderQueryQuery with fn from_json(
   json,
   path,
 ) {
@@ -70448,7 +70817,7 @@ pub(all) struct SearchApplicationRenderQueryBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchApplicationRenderQueryBody with to_json(
+pub impl ToJson for SearchApplicationRenderQueryBody with fn to_json(
   self : SearchApplicationRenderQueryBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -70460,7 +70829,7 @@ pub impl ToJson for SearchApplicationRenderQueryBody with to_json(
 }
 
 ///|
-pub impl FromJson for SearchApplicationRenderQueryBody with from_json(
+pub impl FromJson for SearchApplicationRenderQueryBody with fn from_json(
   json,
   path,
 ) {
@@ -70534,7 +70903,7 @@ pub(all) struct SearchApplicationSearchQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchApplicationSearchQuery with to_json(
+pub impl ToJson for SearchApplicationSearchQuery with fn to_json(
   self : SearchApplicationSearchQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -70546,7 +70915,7 @@ pub impl ToJson for SearchApplicationSearchQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SearchApplicationSearchQuery with from_json(json, path) {
+pub impl FromJson for SearchApplicationSearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SearchApplicationSearchQuery: expected object"),
@@ -70587,7 +70956,7 @@ pub(all) struct SearchApplicationSearchBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchApplicationSearchBody with to_json(
+pub impl ToJson for SearchApplicationSearchBody with fn to_json(
   self : SearchApplicationSearchBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -70599,7 +70968,7 @@ pub impl ToJson for SearchApplicationSearchBody with to_json(
 }
 
 ///|
-pub impl FromJson for SearchApplicationSearchBody with from_json(json, path) {
+pub impl FromJson for SearchApplicationSearchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SearchApplicationSearchBody: expected object"),
@@ -70676,7 +71045,7 @@ pub(all) struct SearchMvtQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchMvtQuery with to_json(self : SearchMvtQuery) -> Json {
+pub impl ToJson for SearchMvtQuery with fn to_json(self : SearchMvtQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.exact_bounds {
     Some(value) => obj["exact_bounds"] = value.to_json()
@@ -70714,7 +71083,7 @@ pub impl ToJson for SearchMvtQuery with to_json(self : SearchMvtQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for SearchMvtQuery with from_json(json, path) {
+pub impl FromJson for SearchMvtQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SearchMvtQuery: expected object"))
   }
@@ -70850,7 +71219,7 @@ pub(all) struct SearchMvtBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchMvtBody with to_json(self : SearchMvtBody) -> Json {
+pub impl ToJson for SearchMvtBody with fn to_json(self : SearchMvtBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.aggs {
     Some(value) => obj["aggs"] = value.to_json()
@@ -70916,7 +71285,7 @@ pub impl ToJson for SearchMvtBody with to_json(self : SearchMvtBody) -> Json {
 }
 
 ///|
-pub impl FromJson for SearchMvtBody with from_json(json, path) {
+pub impl FromJson for SearchMvtBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SearchMvtBody: expected object"))
   }
@@ -71109,7 +71478,7 @@ pub(all) struct SearchShardsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchShardsQuery with to_json(self : SearchShardsQuery) -> Json {
+pub impl ToJson for SearchShardsQuery with fn to_json(self : SearchShardsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -71143,7 +71512,7 @@ pub impl ToJson for SearchShardsQuery with to_json(self : SearchShardsQuery) -> 
 }
 
 ///|
-pub impl FromJson for SearchShardsQuery with from_json(json, path) {
+pub impl FromJson for SearchShardsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SearchShardsQuery: expected object"))
   }
@@ -71256,7 +71625,7 @@ pub(all) struct SearchShardsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchShardsResponse with to_json(
+pub impl ToJson for SearchShardsResponse with fn to_json(
   self : SearchShardsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -71267,7 +71636,7 @@ pub impl ToJson for SearchShardsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SearchShardsResponse with from_json(json, path) {
+pub impl FromJson for SearchShardsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SearchShardsResponse: expected object"))
   }
@@ -71340,7 +71709,9 @@ pub(all) struct SearchTemplateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchTemplateQuery with to_json(self : SearchTemplateQuery) -> Json {
+pub impl ToJson for SearchTemplateQuery with fn to_json(
+  self : SearchTemplateQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -71398,7 +71769,7 @@ pub impl ToJson for SearchTemplateQuery with to_json(self : SearchTemplateQuery)
 }
 
 ///|
-pub impl FromJson for SearchTemplateQuery with from_json(json, path) {
+pub impl FromJson for SearchTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SearchTemplateQuery: expected object"))
   }
@@ -71590,7 +71961,9 @@ pub(all) struct SearchTemplateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchTemplateBody with to_json(self : SearchTemplateBody) -> Json {
+pub impl ToJson for SearchTemplateBody with fn to_json(
+  self : SearchTemplateBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.explain {
     Some(value) => obj["explain"] = value.to_json()
@@ -71620,7 +71993,7 @@ pub impl ToJson for SearchTemplateBody with to_json(self : SearchTemplateBody) -
 }
 
 ///|
-pub impl FromJson for SearchTemplateBody with from_json(json, path) {
+pub impl FromJson for SearchTemplateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SearchTemplateBody: expected object"))
   }
@@ -71690,7 +72063,7 @@ pub(all) struct SearchTemplateResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchTemplateResponse with to_json(
+pub impl ToJson for SearchTemplateResponse with fn to_json(
   self : SearchTemplateResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -71742,7 +72115,7 @@ pub impl ToJson for SearchTemplateResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SearchTemplateResponse with from_json(json, path) {
+pub impl FromJson for SearchTemplateResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SearchTemplateResponse: expected object"),
@@ -71866,7 +72239,7 @@ pub async fn Client::search_template(
 pub(all) struct SearchableSnapshotsCacheStatsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchableSnapshotsCacheStatsQuery with to_json(
+pub impl ToJson for SearchableSnapshotsCacheStatsQuery with fn to_json(
   _self : SearchableSnapshotsCacheStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -71874,7 +72247,7 @@ pub impl ToJson for SearchableSnapshotsCacheStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SearchableSnapshotsCacheStatsQuery with from_json(
+pub impl FromJson for SearchableSnapshotsCacheStatsQuery with fn from_json(
   json,
   path,
 ) {
@@ -71905,7 +72278,7 @@ pub(all) struct SearchableSnapshotsCacheStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchableSnapshotsCacheStatsResponse with to_json(
+pub impl ToJson for SearchableSnapshotsCacheStatsResponse with fn to_json(
   self : SearchableSnapshotsCacheStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -71914,7 +72287,7 @@ pub impl ToJson for SearchableSnapshotsCacheStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SearchableSnapshotsCacheStatsResponse with from_json(
+pub impl FromJson for SearchableSnapshotsCacheStatsResponse with fn from_json(
   json,
   path,
 ) {
@@ -71976,7 +72349,7 @@ pub(all) struct SearchableSnapshotsClearCacheQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchableSnapshotsClearCacheQuery with to_json(
+pub impl ToJson for SearchableSnapshotsClearCacheQuery with fn to_json(
   self : SearchableSnapshotsClearCacheQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -71996,7 +72369,7 @@ pub impl ToJson for SearchableSnapshotsClearCacheQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SearchableSnapshotsClearCacheQuery with from_json(
+pub impl FromJson for SearchableSnapshotsClearCacheQuery with fn from_json(
   json,
   path,
 ) {
@@ -72102,7 +72475,7 @@ pub(all) struct SearchableSnapshotsMountQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchableSnapshotsMountQuery with to_json(
+pub impl ToJson for SearchableSnapshotsMountQuery with fn to_json(
   self : SearchableSnapshotsMountQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -72122,7 +72495,10 @@ pub impl ToJson for SearchableSnapshotsMountQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SearchableSnapshotsMountQuery with from_json(json, path) {
+pub impl FromJson for SearchableSnapshotsMountQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SearchableSnapshotsMountQuery: expected object"),
@@ -72188,7 +72564,7 @@ pub(all) struct SearchableSnapshotsMountBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchableSnapshotsMountBody with to_json(
+pub impl ToJson for SearchableSnapshotsMountBody with fn to_json(
   self : SearchableSnapshotsMountBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -72209,7 +72585,7 @@ pub impl ToJson for SearchableSnapshotsMountBody with to_json(
 }
 
 ///|
-pub impl FromJson for SearchableSnapshotsMountBody with from_json(json, path) {
+pub impl FromJson for SearchableSnapshotsMountBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SearchableSnapshotsMountBody: expected object"),
@@ -72257,7 +72633,7 @@ pub(all) struct SearchableSnapshotsMountResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchableSnapshotsMountResponse with to_json(
+pub impl ToJson for SearchableSnapshotsMountResponse with fn to_json(
   self : SearchableSnapshotsMountResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -72266,7 +72642,7 @@ pub impl ToJson for SearchableSnapshotsMountResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SearchableSnapshotsMountResponse with from_json(
+pub impl FromJson for SearchableSnapshotsMountResponse with fn from_json(
   json,
   path,
 ) {
@@ -72328,7 +72704,7 @@ pub(all) struct SearchableSnapshotsStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchableSnapshotsStatsQuery with to_json(
+pub impl ToJson for SearchableSnapshotsStatsQuery with fn to_json(
   self : SearchableSnapshotsStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -72340,7 +72716,10 @@ pub impl ToJson for SearchableSnapshotsStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SearchableSnapshotsStatsQuery with from_json(json, path) {
+pub impl FromJson for SearchableSnapshotsStatsQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SearchableSnapshotsStatsQuery: expected object"),
@@ -72381,7 +72760,7 @@ pub(all) struct SearchableSnapshotsStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SearchableSnapshotsStatsResponse with to_json(
+pub impl ToJson for SearchableSnapshotsStatsResponse with fn to_json(
   self : SearchableSnapshotsStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -72391,7 +72770,7 @@ pub impl ToJson for SearchableSnapshotsStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SearchableSnapshotsStatsResponse with from_json(
+pub impl FromJson for SearchableSnapshotsStatsResponse with fn from_json(
   json,
   path,
 ) {
@@ -72451,7 +72830,7 @@ pub async fn Client::searchable_snapshots_stats(
 pub(all) struct SecurityActivateUserProfileQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityActivateUserProfileQuery with to_json(
+pub impl ToJson for SecurityActivateUserProfileQuery with fn to_json(
   _self : SecurityActivateUserProfileQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -72459,7 +72838,7 @@ pub impl ToJson for SecurityActivateUserProfileQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityActivateUserProfileQuery with from_json(
+pub impl FromJson for SecurityActivateUserProfileQuery with fn from_json(
   json,
   path,
 ) {
@@ -72493,7 +72872,7 @@ pub(all) struct SecurityActivateUserProfileBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityActivateUserProfileBody with to_json(
+pub impl ToJson for SecurityActivateUserProfileBody with fn to_json(
   self : SecurityActivateUserProfileBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -72514,7 +72893,10 @@ pub impl ToJson for SecurityActivateUserProfileBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityActivateUserProfileBody with from_json(json, path) {
+pub impl FromJson for SecurityActivateUserProfileBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityActivateUserProfileBody: expected object"),
@@ -72590,7 +72972,7 @@ pub async fn Client::security_activate_user_profile(
 pub(all) struct SecurityAuthenticateQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityAuthenticateQuery with to_json(
+pub impl ToJson for SecurityAuthenticateQuery with fn to_json(
   _self : SecurityAuthenticateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -72598,7 +72980,7 @@ pub impl ToJson for SecurityAuthenticateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityAuthenticateQuery with from_json(json, path) {
+pub impl FromJson for SecurityAuthenticateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityAuthenticateQuery: expected object"),
@@ -72636,7 +73018,7 @@ pub(all) struct SecurityAuthenticateResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityAuthenticateResponse with to_json(
+pub impl ToJson for SecurityAuthenticateResponse with fn to_json(
   self : SecurityAuthenticateResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -72667,7 +73049,7 @@ pub impl ToJson for SecurityAuthenticateResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityAuthenticateResponse with from_json(json, path) {
+pub impl FromJson for SecurityAuthenticateResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityAuthenticateResponse: expected object"),
@@ -72758,7 +73140,7 @@ pub(all) struct SecurityBulkDeleteRoleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityBulkDeleteRoleQuery with to_json(
+pub impl ToJson for SecurityBulkDeleteRoleQuery with fn to_json(
   self : SecurityBulkDeleteRoleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -72770,7 +73152,7 @@ pub impl ToJson for SecurityBulkDeleteRoleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityBulkDeleteRoleQuery with from_json(json, path) {
+pub impl FromJson for SecurityBulkDeleteRoleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityBulkDeleteRoleQuery: expected object"),
@@ -72810,7 +73192,7 @@ pub(all) struct SecurityBulkDeleteRoleBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityBulkDeleteRoleBody with to_json(
+pub impl ToJson for SecurityBulkDeleteRoleBody with fn to_json(
   self : SecurityBulkDeleteRoleBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -72819,7 +73201,7 @@ pub impl ToJson for SecurityBulkDeleteRoleBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityBulkDeleteRoleBody with from_json(json, path) {
+pub impl FromJson for SecurityBulkDeleteRoleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityBulkDeleteRoleBody: expected object"),
@@ -72848,7 +73230,7 @@ pub(all) struct SecurityBulkDeleteRoleResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityBulkDeleteRoleResponse with to_json(
+pub impl ToJson for SecurityBulkDeleteRoleResponse with fn to_json(
   self : SecurityBulkDeleteRoleResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -72868,7 +73250,10 @@ pub impl ToJson for SecurityBulkDeleteRoleResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityBulkDeleteRoleResponse with from_json(json, path) {
+pub impl FromJson for SecurityBulkDeleteRoleResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityBulkDeleteRoleResponse: expected object"),
@@ -72926,7 +73311,7 @@ pub(all) struct SecurityBulkPutRoleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityBulkPutRoleQuery with to_json(
+pub impl ToJson for SecurityBulkPutRoleQuery with fn to_json(
   self : SecurityBulkPutRoleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -72938,7 +73323,7 @@ pub impl ToJson for SecurityBulkPutRoleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityBulkPutRoleQuery with from_json(json, path) {
+pub impl FromJson for SecurityBulkPutRoleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityBulkPutRoleQuery: expected object"),
@@ -72978,7 +73363,7 @@ pub(all) struct SecurityBulkPutRoleBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityBulkPutRoleBody with to_json(
+pub impl ToJson for SecurityBulkPutRoleBody with fn to_json(
   self : SecurityBulkPutRoleBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -72987,7 +73372,7 @@ pub impl ToJson for SecurityBulkPutRoleBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityBulkPutRoleBody with from_json(json, path) {
+pub impl FromJson for SecurityBulkPutRoleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityBulkPutRoleBody: expected object"),
@@ -73017,7 +73402,7 @@ pub(all) struct SecurityBulkPutRoleResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityBulkPutRoleResponse with to_json(
+pub impl ToJson for SecurityBulkPutRoleResponse with fn to_json(
   self : SecurityBulkPutRoleResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73041,7 +73426,7 @@ pub impl ToJson for SecurityBulkPutRoleResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityBulkPutRoleResponse with from_json(json, path) {
+pub impl FromJson for SecurityBulkPutRoleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityBulkPutRoleResponse: expected object"),
@@ -73101,7 +73486,7 @@ pub async fn Client::security_bulk_put_role(
 pub(all) struct SecurityBulkUpdateApiKeysQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityBulkUpdateApiKeysQuery with to_json(
+pub impl ToJson for SecurityBulkUpdateApiKeysQuery with fn to_json(
   _self : SecurityBulkUpdateApiKeysQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73109,7 +73494,10 @@ pub impl ToJson for SecurityBulkUpdateApiKeysQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityBulkUpdateApiKeysQuery with from_json(json, path) {
+pub impl FromJson for SecurityBulkUpdateApiKeysQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityBulkUpdateApiKeysQuery: expected object"),
@@ -73140,7 +73528,7 @@ pub(all) struct SecurityBulkUpdateApiKeysBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityBulkUpdateApiKeysBody with to_json(
+pub impl ToJson for SecurityBulkUpdateApiKeysBody with fn to_json(
   self : SecurityBulkUpdateApiKeysBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73161,7 +73549,10 @@ pub impl ToJson for SecurityBulkUpdateApiKeysBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityBulkUpdateApiKeysBody with from_json(json, path) {
+pub impl FromJson for SecurityBulkUpdateApiKeysBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityBulkUpdateApiKeysBody: expected object"),
@@ -73210,7 +73601,7 @@ pub(all) struct SecurityBulkUpdateApiKeysResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityBulkUpdateApiKeysResponse with to_json(
+pub impl ToJson for SecurityBulkUpdateApiKeysResponse with fn to_json(
   self : SecurityBulkUpdateApiKeysResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73224,7 +73615,7 @@ pub impl ToJson for SecurityBulkUpdateApiKeysResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityBulkUpdateApiKeysResponse with from_json(
+pub impl FromJson for SecurityBulkUpdateApiKeysResponse with fn from_json(
   json,
   path,
 ) {
@@ -73285,7 +73676,7 @@ pub(all) struct SecurityChangePasswordQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityChangePasswordQuery with to_json(
+pub impl ToJson for SecurityChangePasswordQuery with fn to_json(
   self : SecurityChangePasswordQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73297,7 +73688,7 @@ pub impl ToJson for SecurityChangePasswordQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityChangePasswordQuery with from_json(json, path) {
+pub impl FromJson for SecurityChangePasswordQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityChangePasswordQuery: expected object"),
@@ -73338,7 +73729,7 @@ pub(all) struct SecurityChangePasswordBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityChangePasswordBody with to_json(
+pub impl ToJson for SecurityChangePasswordBody with fn to_json(
   self : SecurityChangePasswordBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73354,7 +73745,7 @@ pub impl ToJson for SecurityChangePasswordBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityChangePasswordBody with from_json(json, path) {
+pub impl FromJson for SecurityChangePasswordBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityChangePasswordBody: expected object"),
@@ -73428,7 +73819,7 @@ pub async fn Client::security_change_password(
 pub(all) struct SecurityClearApiKeyCacheQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityClearApiKeyCacheQuery with to_json(
+pub impl ToJson for SecurityClearApiKeyCacheQuery with fn to_json(
   _self : SecurityClearApiKeyCacheQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73436,7 +73827,10 @@ pub impl ToJson for SecurityClearApiKeyCacheQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityClearApiKeyCacheQuery with from_json(json, path) {
+pub impl FromJson for SecurityClearApiKeyCacheQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityClearApiKeyCacheQuery: expected object"),
@@ -73466,7 +73860,7 @@ pub(all) struct SecurityClearApiKeyCacheResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityClearApiKeyCacheResponse with to_json(
+pub impl ToJson for SecurityClearApiKeyCacheResponse with fn to_json(
   self : SecurityClearApiKeyCacheResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73477,7 +73871,7 @@ pub impl ToJson for SecurityClearApiKeyCacheResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityClearApiKeyCacheResponse with from_json(
+pub impl FromJson for SecurityClearApiKeyCacheResponse with fn from_json(
   json,
   path,
 ) {
@@ -73535,7 +73929,7 @@ pub async fn Client::security_clear_api_key_cache(
 pub(all) struct SecurityClearCachedPrivilegesQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityClearCachedPrivilegesQuery with to_json(
+pub impl ToJson for SecurityClearCachedPrivilegesQuery with fn to_json(
   _self : SecurityClearCachedPrivilegesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73543,7 +73937,7 @@ pub impl ToJson for SecurityClearCachedPrivilegesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityClearCachedPrivilegesQuery with from_json(
+pub impl FromJson for SecurityClearCachedPrivilegesQuery with fn from_json(
   json,
   path,
 ) {
@@ -73576,7 +73970,7 @@ pub(all) struct SecurityClearCachedPrivilegesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityClearCachedPrivilegesResponse with to_json(
+pub impl ToJson for SecurityClearCachedPrivilegesResponse with fn to_json(
   self : SecurityClearCachedPrivilegesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73587,7 +73981,7 @@ pub impl ToJson for SecurityClearCachedPrivilegesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityClearCachedPrivilegesResponse with from_json(
+pub impl FromJson for SecurityClearCachedPrivilegesResponse with fn from_json(
   json,
   path,
 ) {
@@ -73651,7 +74045,7 @@ pub(all) struct SecurityClearCachedRealmsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityClearCachedRealmsQuery with to_json(
+pub impl ToJson for SecurityClearCachedRealmsQuery with fn to_json(
   self : SecurityClearCachedRealmsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73663,7 +74057,10 @@ pub impl ToJson for SecurityClearCachedRealmsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityClearCachedRealmsQuery with from_json(json, path) {
+pub impl FromJson for SecurityClearCachedRealmsQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityClearCachedRealmsQuery: expected object"),
@@ -73706,7 +74103,7 @@ pub(all) struct SecurityClearCachedRealmsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityClearCachedRealmsResponse with to_json(
+pub impl ToJson for SecurityClearCachedRealmsResponse with fn to_json(
   self : SecurityClearCachedRealmsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73717,7 +74114,7 @@ pub impl ToJson for SecurityClearCachedRealmsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityClearCachedRealmsResponse with from_json(
+pub impl FromJson for SecurityClearCachedRealmsResponse with fn from_json(
   json,
   path,
 ) {
@@ -73775,7 +74172,7 @@ pub async fn Client::security_clear_cached_realms(
 pub(all) struct SecurityClearCachedRolesQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityClearCachedRolesQuery with to_json(
+pub impl ToJson for SecurityClearCachedRolesQuery with fn to_json(
   _self : SecurityClearCachedRolesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73783,7 +74180,10 @@ pub impl ToJson for SecurityClearCachedRolesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityClearCachedRolesQuery with from_json(json, path) {
+pub impl FromJson for SecurityClearCachedRolesQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityClearCachedRolesQuery: expected object"),
@@ -73813,7 +74213,7 @@ pub(all) struct SecurityClearCachedRolesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityClearCachedRolesResponse with to_json(
+pub impl ToJson for SecurityClearCachedRolesResponse with fn to_json(
   self : SecurityClearCachedRolesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73824,7 +74224,7 @@ pub impl ToJson for SecurityClearCachedRolesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityClearCachedRolesResponse with from_json(
+pub impl FromJson for SecurityClearCachedRolesResponse with fn from_json(
   json,
   path,
 ) {
@@ -73882,7 +74282,7 @@ pub async fn Client::security_clear_cached_roles(
 pub(all) struct SecurityClearCachedServiceTokensQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityClearCachedServiceTokensQuery with to_json(
+pub impl ToJson for SecurityClearCachedServiceTokensQuery with fn to_json(
   _self : SecurityClearCachedServiceTokensQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73890,7 +74290,7 @@ pub impl ToJson for SecurityClearCachedServiceTokensQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityClearCachedServiceTokensQuery with from_json(
+pub impl FromJson for SecurityClearCachedServiceTokensQuery with fn from_json(
   json,
   path,
 ) {
@@ -73923,7 +74323,7 @@ pub(all) struct SecurityClearCachedServiceTokensResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityClearCachedServiceTokensResponse with to_json(
+pub impl ToJson for SecurityClearCachedServiceTokensResponse with fn to_json(
   self : SecurityClearCachedServiceTokensResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -73934,7 +74334,7 @@ pub impl ToJson for SecurityClearCachedServiceTokensResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityClearCachedServiceTokensResponse with from_json(
+pub impl FromJson for SecurityClearCachedServiceTokensResponse with fn from_json(
   json,
   path,
 ) {
@@ -74005,7 +74405,7 @@ pub(all) struct SecurityCloneApiKeyQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityCloneApiKeyQuery with to_json(
+pub impl ToJson for SecurityCloneApiKeyQuery with fn to_json(
   self : SecurityCloneApiKeyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74017,7 +74417,7 @@ pub impl ToJson for SecurityCloneApiKeyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityCloneApiKeyQuery with from_json(json, path) {
+pub impl FromJson for SecurityCloneApiKeyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityCloneApiKeyQuery: expected object"),
@@ -74060,7 +74460,7 @@ pub(all) struct SecurityCloneApiKeyBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityCloneApiKeyBody with to_json(
+pub impl ToJson for SecurityCloneApiKeyBody with fn to_json(
   self : SecurityCloneApiKeyBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74081,7 +74481,7 @@ pub impl ToJson for SecurityCloneApiKeyBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityCloneApiKeyBody with from_json(json, path) {
+pub impl FromJson for SecurityCloneApiKeyBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityCloneApiKeyBody: expected object"),
@@ -74131,7 +74531,7 @@ pub(all) struct SecurityCloneApiKeyResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityCloneApiKeyResponse with to_json(
+pub impl ToJson for SecurityCloneApiKeyResponse with fn to_json(
   self : SecurityCloneApiKeyResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74147,7 +74547,7 @@ pub impl ToJson for SecurityCloneApiKeyResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityCloneApiKeyResponse with from_json(json, path) {
+pub impl FromJson for SecurityCloneApiKeyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityCloneApiKeyResponse: expected object"),
@@ -74214,7 +74614,7 @@ pub(all) struct SecurityCreateApiKeyQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityCreateApiKeyQuery with to_json(
+pub impl ToJson for SecurityCreateApiKeyQuery with fn to_json(
   self : SecurityCreateApiKeyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74226,7 +74626,7 @@ pub impl ToJson for SecurityCreateApiKeyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityCreateApiKeyQuery with from_json(json, path) {
+pub impl FromJson for SecurityCreateApiKeyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityCreateApiKeyQuery: expected object"),
@@ -74269,7 +74669,7 @@ pub(all) struct SecurityCreateApiKeyBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityCreateApiKeyBody with to_json(
+pub impl ToJson for SecurityCreateApiKeyBody with fn to_json(
   self : SecurityCreateApiKeyBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74293,7 +74693,7 @@ pub impl ToJson for SecurityCreateApiKeyBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityCreateApiKeyBody with from_json(json, path) {
+pub impl FromJson for SecurityCreateApiKeyBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityCreateApiKeyBody: expected object"),
@@ -74345,7 +74745,7 @@ pub(all) struct SecurityCreateApiKeyResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityCreateApiKeyResponse with to_json(
+pub impl ToJson for SecurityCreateApiKeyResponse with fn to_json(
   self : SecurityCreateApiKeyResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74361,7 +74761,7 @@ pub impl ToJson for SecurityCreateApiKeyResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityCreateApiKeyResponse with from_json(json, path) {
+pub impl FromJson for SecurityCreateApiKeyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityCreateApiKeyResponse: expected object"),
@@ -74423,7 +74823,7 @@ pub async fn Client::security_create_api_key(
 pub(all) struct SecurityCreateCrossClusterApiKeyQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityCreateCrossClusterApiKeyQuery with to_json(
+pub impl ToJson for SecurityCreateCrossClusterApiKeyQuery with fn to_json(
   _self : SecurityCreateCrossClusterApiKeyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74431,7 +74831,7 @@ pub impl ToJson for SecurityCreateCrossClusterApiKeyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityCreateCrossClusterApiKeyQuery with from_json(
+pub impl FromJson for SecurityCreateCrossClusterApiKeyQuery with fn from_json(
   json,
   path,
 ) {
@@ -74466,7 +74866,7 @@ pub(all) struct SecurityCreateCrossClusterApiKeyBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityCreateCrossClusterApiKeyBody with to_json(
+pub impl ToJson for SecurityCreateCrossClusterApiKeyBody with fn to_json(
   self : SecurityCreateCrossClusterApiKeyBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74488,7 +74888,7 @@ pub impl ToJson for SecurityCreateCrossClusterApiKeyBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityCreateCrossClusterApiKeyBody with from_json(
+pub impl FromJson for SecurityCreateCrossClusterApiKeyBody with fn from_json(
   json,
   path,
 ) {
@@ -74547,7 +74947,7 @@ pub(all) struct SecurityCreateCrossClusterApiKeyResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityCreateCrossClusterApiKeyResponse with to_json(
+pub impl ToJson for SecurityCreateCrossClusterApiKeyResponse with fn to_json(
   self : SecurityCreateCrossClusterApiKeyResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74563,7 +74963,7 @@ pub impl ToJson for SecurityCreateCrossClusterApiKeyResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityCreateCrossClusterApiKeyResponse with from_json(
+pub impl FromJson for SecurityCreateCrossClusterApiKeyResponse with fn from_json(
   json,
   path,
 ) {
@@ -74633,7 +75033,7 @@ pub(all) struct SecurityCreateServiceTokenQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityCreateServiceTokenQuery with to_json(
+pub impl ToJson for SecurityCreateServiceTokenQuery with fn to_json(
   self : SecurityCreateServiceTokenQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74645,7 +75045,10 @@ pub impl ToJson for SecurityCreateServiceTokenQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityCreateServiceTokenQuery with from_json(json, path) {
+pub impl FromJson for SecurityCreateServiceTokenQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityCreateServiceTokenQuery: expected object"),
@@ -74686,7 +75089,7 @@ pub(all) struct SecurityCreateServiceTokenResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityCreateServiceTokenResponse with to_json(
+pub impl ToJson for SecurityCreateServiceTokenResponse with fn to_json(
   self : SecurityCreateServiceTokenResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74696,7 +75099,7 @@ pub impl ToJson for SecurityCreateServiceTokenResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityCreateServiceTokenResponse with from_json(
+pub impl FromJson for SecurityCreateServiceTokenResponse with fn from_json(
   json,
   path,
 ) {
@@ -74768,7 +75171,7 @@ pub async fn Client::security_create_service_token(
 pub(all) struct SecurityDelegatePkiQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityDelegatePkiQuery with to_json(
+pub impl ToJson for SecurityDelegatePkiQuery with fn to_json(
   _self : SecurityDelegatePkiQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74776,7 +75179,7 @@ pub impl ToJson for SecurityDelegatePkiQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityDelegatePkiQuery with from_json(json, path) {
+pub impl FromJson for SecurityDelegatePkiQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityDelegatePkiQuery: expected object"),
@@ -74807,7 +75210,7 @@ pub(all) struct SecurityDelegatePkiResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityDelegatePkiResponse with to_json(
+pub impl ToJson for SecurityDelegatePkiResponse with fn to_json(
   self : SecurityDelegatePkiResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74822,7 +75225,7 @@ pub impl ToJson for SecurityDelegatePkiResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityDelegatePkiResponse with from_json(json, path) {
+pub impl FromJson for SecurityDelegatePkiResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityDelegatePkiResponse: expected object"),
@@ -74882,7 +75285,7 @@ pub(all) struct SecurityDeletePrivilegesQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityDeletePrivilegesQuery with to_json(
+pub impl ToJson for SecurityDeletePrivilegesQuery with fn to_json(
   self : SecurityDeletePrivilegesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74894,7 +75297,10 @@ pub impl ToJson for SecurityDeletePrivilegesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityDeletePrivilegesQuery with from_json(json, path) {
+pub impl FromJson for SecurityDeletePrivilegesQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityDeletePrivilegesQuery: expected object"),
@@ -74973,7 +75379,7 @@ pub(all) struct SecurityDeleteRoleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityDeleteRoleQuery with to_json(
+pub impl ToJson for SecurityDeleteRoleQuery with fn to_json(
   self : SecurityDeleteRoleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -74985,7 +75391,7 @@ pub impl ToJson for SecurityDeleteRoleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityDeleteRoleQuery with from_json(json, path) {
+pub impl FromJson for SecurityDeleteRoleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityDeleteRoleQuery: expected object"),
@@ -75025,7 +75431,7 @@ pub(all) struct SecurityDeleteRoleResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityDeleteRoleResponse with to_json(
+pub impl ToJson for SecurityDeleteRoleResponse with fn to_json(
   self : SecurityDeleteRoleResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75034,7 +75440,7 @@ pub impl ToJson for SecurityDeleteRoleResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityDeleteRoleResponse with from_json(json, path) {
+pub impl FromJson for SecurityDeleteRoleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityDeleteRoleResponse: expected object"),
@@ -75083,7 +75489,7 @@ pub(all) struct SecurityDeleteRoleMappingQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityDeleteRoleMappingQuery with to_json(
+pub impl ToJson for SecurityDeleteRoleMappingQuery with fn to_json(
   self : SecurityDeleteRoleMappingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75095,7 +75501,10 @@ pub impl ToJson for SecurityDeleteRoleMappingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityDeleteRoleMappingQuery with from_json(json, path) {
+pub impl FromJson for SecurityDeleteRoleMappingQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityDeleteRoleMappingQuery: expected object"),
@@ -75135,7 +75544,7 @@ pub(all) struct SecurityDeleteRoleMappingResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityDeleteRoleMappingResponse with to_json(
+pub impl ToJson for SecurityDeleteRoleMappingResponse with fn to_json(
   self : SecurityDeleteRoleMappingResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75144,7 +75553,7 @@ pub impl ToJson for SecurityDeleteRoleMappingResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityDeleteRoleMappingResponse with from_json(
+pub impl FromJson for SecurityDeleteRoleMappingResponse with fn from_json(
   json,
   path,
 ) {
@@ -75196,7 +75605,7 @@ pub(all) struct SecurityDeleteServiceTokenQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityDeleteServiceTokenQuery with to_json(
+pub impl ToJson for SecurityDeleteServiceTokenQuery with fn to_json(
   self : SecurityDeleteServiceTokenQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75208,7 +75617,10 @@ pub impl ToJson for SecurityDeleteServiceTokenQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityDeleteServiceTokenQuery with from_json(json, path) {
+pub impl FromJson for SecurityDeleteServiceTokenQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityDeleteServiceTokenQuery: expected object"),
@@ -75248,7 +75660,7 @@ pub(all) struct SecurityDeleteServiceTokenResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityDeleteServiceTokenResponse with to_json(
+pub impl ToJson for SecurityDeleteServiceTokenResponse with fn to_json(
   self : SecurityDeleteServiceTokenResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75257,7 +75669,7 @@ pub impl ToJson for SecurityDeleteServiceTokenResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityDeleteServiceTokenResponse with from_json(
+pub impl FromJson for SecurityDeleteServiceTokenResponse with fn from_json(
   json,
   path,
 ) {
@@ -75320,7 +75732,7 @@ pub(all) struct SecurityDeleteUserQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityDeleteUserQuery with to_json(
+pub impl ToJson for SecurityDeleteUserQuery with fn to_json(
   self : SecurityDeleteUserQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75332,7 +75744,7 @@ pub impl ToJson for SecurityDeleteUserQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityDeleteUserQuery with from_json(json, path) {
+pub impl FromJson for SecurityDeleteUserQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityDeleteUserQuery: expected object"),
@@ -75372,7 +75784,7 @@ pub(all) struct SecurityDeleteUserResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityDeleteUserResponse with to_json(
+pub impl ToJson for SecurityDeleteUserResponse with fn to_json(
   self : SecurityDeleteUserResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75381,7 +75793,7 @@ pub impl ToJson for SecurityDeleteUserResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityDeleteUserResponse with from_json(json, path) {
+pub impl FromJson for SecurityDeleteUserResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityDeleteUserResponse: expected object"),
@@ -75430,7 +75842,7 @@ pub(all) struct SecurityDisableUserQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityDisableUserQuery with to_json(
+pub impl ToJson for SecurityDisableUserQuery with fn to_json(
   self : SecurityDisableUserQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75442,7 +75854,7 @@ pub impl ToJson for SecurityDisableUserQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityDisableUserQuery with from_json(json, path) {
+pub impl FromJson for SecurityDisableUserQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityDisableUserQuery: expected object"),
@@ -75514,7 +75926,7 @@ pub(all) struct SecurityDisableUserProfileQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityDisableUserProfileQuery with to_json(
+pub impl ToJson for SecurityDisableUserProfileQuery with fn to_json(
   self : SecurityDisableUserProfileQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75526,7 +75938,10 @@ pub impl ToJson for SecurityDisableUserProfileQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityDisableUserProfileQuery with from_json(json, path) {
+pub impl FromJson for SecurityDisableUserProfileQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityDisableUserProfileQuery: expected object"),
@@ -75598,7 +76013,7 @@ pub(all) struct SecurityEnableUserQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityEnableUserQuery with to_json(
+pub impl ToJson for SecurityEnableUserQuery with fn to_json(
   self : SecurityEnableUserQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75610,7 +76025,7 @@ pub impl ToJson for SecurityEnableUserQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityEnableUserQuery with from_json(json, path) {
+pub impl FromJson for SecurityEnableUserQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityEnableUserQuery: expected object"),
@@ -75682,7 +76097,7 @@ pub(all) struct SecurityEnableUserProfileQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityEnableUserProfileQuery with to_json(
+pub impl ToJson for SecurityEnableUserProfileQuery with fn to_json(
   self : SecurityEnableUserProfileQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75694,7 +76109,10 @@ pub impl ToJson for SecurityEnableUserProfileQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityEnableUserProfileQuery with from_json(json, path) {
+pub impl FromJson for SecurityEnableUserProfileQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityEnableUserProfileQuery: expected object"),
@@ -75764,7 +76182,7 @@ pub async fn Client::security_enable_user_profile(
 pub(all) struct SecurityEnrollKibanaQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityEnrollKibanaQuery with to_json(
+pub impl ToJson for SecurityEnrollKibanaQuery with fn to_json(
   _self : SecurityEnrollKibanaQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75772,7 +76190,7 @@ pub impl ToJson for SecurityEnrollKibanaQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityEnrollKibanaQuery with from_json(json, path) {
+pub impl FromJson for SecurityEnrollKibanaQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityEnrollKibanaQuery: expected object"),
@@ -75804,7 +76222,7 @@ pub(all) struct SecurityEnrollKibanaResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityEnrollKibanaResponse with to_json(
+pub impl ToJson for SecurityEnrollKibanaResponse with fn to_json(
   self : SecurityEnrollKibanaResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75814,7 +76232,7 @@ pub impl ToJson for SecurityEnrollKibanaResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityEnrollKibanaResponse with from_json(json, path) {
+pub impl FromJson for SecurityEnrollKibanaResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityEnrollKibanaResponse: expected object"),
@@ -75868,7 +76286,7 @@ pub async fn Client::security_enroll_kibana(
 pub(all) struct SecurityEnrollNodeQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityEnrollNodeQuery with to_json(
+pub impl ToJson for SecurityEnrollNodeQuery with fn to_json(
   _self : SecurityEnrollNodeQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75876,7 +76294,7 @@ pub impl ToJson for SecurityEnrollNodeQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityEnrollNodeQuery with from_json(json, path) {
+pub impl FromJson for SecurityEnrollNodeQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityEnrollNodeQuery: expected object"),
@@ -75912,7 +76330,7 @@ pub(all) struct SecurityEnrollNodeResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityEnrollNodeResponse with to_json(
+pub impl ToJson for SecurityEnrollNodeResponse with fn to_json(
   self : SecurityEnrollNodeResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -75926,7 +76344,7 @@ pub impl ToJson for SecurityEnrollNodeResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityEnrollNodeResponse with from_json(json, path) {
+pub impl FromJson for SecurityEnrollNodeResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityEnrollNodeResponse: expected object"),
@@ -76005,7 +76423,7 @@ pub(all) struct SecurityGetApiKeyQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetApiKeyQuery with to_json(
+pub impl ToJson for SecurityGetApiKeyQuery with fn to_json(
   self : SecurityGetApiKeyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76045,7 +76463,7 @@ pub impl ToJson for SecurityGetApiKeyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetApiKeyQuery with from_json(json, path) {
+pub impl FromJson for SecurityGetApiKeyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityGetApiKeyQuery: expected object"),
@@ -76168,7 +76586,7 @@ pub(all) struct SecurityGetApiKeyResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetApiKeyResponse with to_json(
+pub impl ToJson for SecurityGetApiKeyResponse with fn to_json(
   self : SecurityGetApiKeyResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76177,7 +76595,7 @@ pub impl ToJson for SecurityGetApiKeyResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetApiKeyResponse with from_json(json, path) {
+pub impl FromJson for SecurityGetApiKeyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityGetApiKeyResponse: expected object"),
@@ -76218,7 +76636,7 @@ pub async fn Client::security_get_api_key(
 pub(all) struct SecurityGetBuiltinPrivilegesQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetBuiltinPrivilegesQuery with to_json(
+pub impl ToJson for SecurityGetBuiltinPrivilegesQuery with fn to_json(
   _self : SecurityGetBuiltinPrivilegesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76226,7 +76644,7 @@ pub impl ToJson for SecurityGetBuiltinPrivilegesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetBuiltinPrivilegesQuery with from_json(
+pub impl FromJson for SecurityGetBuiltinPrivilegesQuery with fn from_json(
   json,
   path,
 ) {
@@ -76259,7 +76677,7 @@ pub(all) struct SecurityGetBuiltinPrivilegesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetBuiltinPrivilegesResponse with to_json(
+pub impl ToJson for SecurityGetBuiltinPrivilegesResponse with fn to_json(
   self : SecurityGetBuiltinPrivilegesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76270,7 +76688,7 @@ pub impl ToJson for SecurityGetBuiltinPrivilegesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetBuiltinPrivilegesResponse with from_json(
+pub impl FromJson for SecurityGetBuiltinPrivilegesResponse with fn from_json(
   json,
   path,
 ) {
@@ -76325,7 +76743,7 @@ pub async fn Client::security_get_builtin_privileges(
 pub(all) struct SecurityGetPrivilegesQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetPrivilegesQuery with to_json(
+pub impl ToJson for SecurityGetPrivilegesQuery with fn to_json(
   _self : SecurityGetPrivilegesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76333,7 +76751,7 @@ pub impl ToJson for SecurityGetPrivilegesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetPrivilegesQuery with from_json(json, path) {
+pub impl FromJson for SecurityGetPrivilegesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityGetPrivilegesQuery: expected object"),
@@ -76406,7 +76824,7 @@ pub async fn Client::security_get_privileges(
 pub(all) struct SecurityGetRoleQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetRoleQuery with to_json(
+pub impl ToJson for SecurityGetRoleQuery with fn to_json(
   _self : SecurityGetRoleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76414,7 +76832,7 @@ pub impl ToJson for SecurityGetRoleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetRoleQuery with from_json(json, path) {
+pub impl FromJson for SecurityGetRoleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "SecurityGetRoleQuery: expected object"))
   }
@@ -76476,7 +76894,7 @@ pub async fn Client::security_get_role(
 pub(all) struct SecurityGetRoleMappingQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetRoleMappingQuery with to_json(
+pub impl ToJson for SecurityGetRoleMappingQuery with fn to_json(
   _self : SecurityGetRoleMappingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76484,7 +76902,7 @@ pub impl ToJson for SecurityGetRoleMappingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetRoleMappingQuery with from_json(json, path) {
+pub impl FromJson for SecurityGetRoleMappingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityGetRoleMappingQuery: expected object"),
@@ -76548,7 +76966,7 @@ pub async fn Client::security_get_role_mapping(
 pub(all) struct SecurityGetServiceAccountsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetServiceAccountsQuery with to_json(
+pub impl ToJson for SecurityGetServiceAccountsQuery with fn to_json(
   _self : SecurityGetServiceAccountsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76556,7 +76974,10 @@ pub impl ToJson for SecurityGetServiceAccountsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetServiceAccountsQuery with from_json(json, path) {
+pub impl FromJson for SecurityGetServiceAccountsQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityGetServiceAccountsQuery: expected object"),
@@ -76629,7 +77050,7 @@ pub async fn Client::security_get_service_accounts(
 pub(all) struct SecurityGetServiceCredentialsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetServiceCredentialsQuery with to_json(
+pub impl ToJson for SecurityGetServiceCredentialsQuery with fn to_json(
   _self : SecurityGetServiceCredentialsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76637,7 +77058,7 @@ pub impl ToJson for SecurityGetServiceCredentialsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetServiceCredentialsQuery with from_json(
+pub impl FromJson for SecurityGetServiceCredentialsQuery with fn from_json(
   json,
   path,
 ) {
@@ -76671,7 +77092,7 @@ pub(all) struct SecurityGetServiceCredentialsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetServiceCredentialsResponse with to_json(
+pub impl ToJson for SecurityGetServiceCredentialsResponse with fn to_json(
   self : SecurityGetServiceCredentialsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76683,7 +77104,7 @@ pub impl ToJson for SecurityGetServiceCredentialsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetServiceCredentialsResponse with from_json(
+pub impl FromJson for SecurityGetServiceCredentialsResponse with fn from_json(
   json,
   path,
 ) {
@@ -76754,7 +77175,7 @@ pub(all) struct SecurityGetSettingsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetSettingsQuery with to_json(
+pub impl ToJson for SecurityGetSettingsQuery with fn to_json(
   self : SecurityGetSettingsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76766,7 +77187,7 @@ pub impl ToJson for SecurityGetSettingsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetSettingsQuery with from_json(json, path) {
+pub impl FromJson for SecurityGetSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityGetSettingsQuery: expected object"),
@@ -76812,7 +77233,7 @@ pub(all) struct SecurityGetSettingsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetSettingsResponse with to_json(
+pub impl ToJson for SecurityGetSettingsResponse with fn to_json(
   self : SecurityGetSettingsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76823,7 +77244,7 @@ pub impl ToJson for SecurityGetSettingsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetSettingsResponse with from_json(json, path) {
+pub impl FromJson for SecurityGetSettingsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityGetSettingsResponse: expected object"),
@@ -76878,7 +77299,7 @@ pub async fn Client::security_get_settings(
 pub(all) struct SecurityGetStatsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetStatsQuery with to_json(
+pub impl ToJson for SecurityGetStatsQuery with fn to_json(
   _self : SecurityGetStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76886,7 +77307,7 @@ pub impl ToJson for SecurityGetStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetStatsQuery with from_json(json, path) {
+pub impl FromJson for SecurityGetStatsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityGetStatsQuery: expected object"),
@@ -76917,7 +77338,7 @@ pub(all) struct SecurityGetStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetStatsResponse with to_json(
+pub impl ToJson for SecurityGetStatsResponse with fn to_json(
   self : SecurityGetStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76926,7 +77347,7 @@ pub impl ToJson for SecurityGetStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetStatsResponse with from_json(json, path) {
+pub impl FromJson for SecurityGetStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityGetStatsResponse: expected object"),
@@ -76973,7 +77394,7 @@ pub async fn Client::security_get_stats(
 pub(all) struct SecurityGetTokenQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetTokenQuery with to_json(
+pub impl ToJson for SecurityGetTokenQuery with fn to_json(
   _self : SecurityGetTokenQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -76981,7 +77402,7 @@ pub impl ToJson for SecurityGetTokenQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetTokenQuery with from_json(json, path) {
+pub impl FromJson for SecurityGetTokenQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityGetTokenQuery: expected object"),
@@ -77014,7 +77435,7 @@ pub(all) struct SecurityGetTokenBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetTokenBody with to_json(
+pub impl ToJson for SecurityGetTokenBody with fn to_json(
   self : SecurityGetTokenBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -77046,7 +77467,7 @@ pub impl ToJson for SecurityGetTokenBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetTokenBody with from_json(json, path) {
+pub impl FromJson for SecurityGetTokenBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SecurityGetTokenBody: expected object"))
   }
@@ -77111,7 +77532,7 @@ pub(all) struct SecurityGetTokenResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetTokenResponse with to_json(
+pub impl ToJson for SecurityGetTokenResponse with fn to_json(
   self : SecurityGetTokenResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -77136,7 +77557,7 @@ pub impl ToJson for SecurityGetTokenResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetTokenResponse with from_json(json, path) {
+pub impl FromJson for SecurityGetTokenResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityGetTokenResponse: expected object"),
@@ -77220,7 +77641,7 @@ pub(all) struct SecurityGetUserQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetUserQuery with to_json(
+pub impl ToJson for SecurityGetUserQuery with fn to_json(
   self : SecurityGetUserQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -77232,7 +77653,7 @@ pub impl ToJson for SecurityGetUserQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetUserQuery with from_json(json, path) {
+pub impl FromJson for SecurityGetUserQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SecurityGetUserQuery: expected object"))
   }
@@ -77307,7 +77728,7 @@ pub async fn Client::security_get_user(
 pub(all) struct SecurityGetUserPrivilegesQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetUserPrivilegesQuery with to_json(
+pub impl ToJson for SecurityGetUserPrivilegesQuery with fn to_json(
   _self : SecurityGetUserPrivilegesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -77315,7 +77736,10 @@ pub impl ToJson for SecurityGetUserPrivilegesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetUserPrivilegesQuery with from_json(json, path) {
+pub impl FromJson for SecurityGetUserPrivilegesQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityGetUserPrivilegesQuery: expected object"),
@@ -77349,7 +77773,7 @@ pub(all) struct SecurityGetUserPrivilegesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetUserPrivilegesResponse with to_json(
+pub impl ToJson for SecurityGetUserPrivilegesResponse with fn to_json(
   self : SecurityGetUserPrivilegesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -77370,7 +77794,7 @@ pub impl ToJson for SecurityGetUserPrivilegesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetUserPrivilegesResponse with from_json(
+pub impl FromJson for SecurityGetUserPrivilegesResponse with fn from_json(
   json,
   path,
 ) {
@@ -77447,7 +77871,7 @@ pub(all) struct SecurityGetUserProfileQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetUserProfileQuery with to_json(
+pub impl ToJson for SecurityGetUserProfileQuery with fn to_json(
   self : SecurityGetUserProfileQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -77459,7 +77883,7 @@ pub impl ToJson for SecurityGetUserProfileQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetUserProfileQuery with from_json(json, path) {
+pub impl FromJson for SecurityGetUserProfileQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityGetUserProfileQuery: expected object"),
@@ -77500,7 +77924,7 @@ pub(all) struct SecurityGetUserProfileResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGetUserProfileResponse with to_json(
+pub impl ToJson for SecurityGetUserProfileResponse with fn to_json(
   self : SecurityGetUserProfileResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -77513,7 +77937,10 @@ pub impl ToJson for SecurityGetUserProfileResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGetUserProfileResponse with from_json(json, path) {
+pub impl FromJson for SecurityGetUserProfileResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityGetUserProfileResponse: expected object"),
@@ -77567,7 +77994,7 @@ pub(all) struct SecurityGrantApiKeyQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGrantApiKeyQuery with to_json(
+pub impl ToJson for SecurityGrantApiKeyQuery with fn to_json(
   self : SecurityGrantApiKeyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -77579,7 +78006,7 @@ pub impl ToJson for SecurityGrantApiKeyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGrantApiKeyQuery with from_json(json, path) {
+pub impl FromJson for SecurityGrantApiKeyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityGrantApiKeyQuery: expected object"),
@@ -77624,7 +78051,7 @@ pub(all) struct SecurityGrantApiKeyBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGrantApiKeyBody with to_json(
+pub impl ToJson for SecurityGrantApiKeyBody with fn to_json(
   self : SecurityGrantApiKeyBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -77650,7 +78077,7 @@ pub impl ToJson for SecurityGrantApiKeyBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGrantApiKeyBody with from_json(json, path) {
+pub impl FromJson for SecurityGrantApiKeyBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityGrantApiKeyBody: expected object"),
@@ -77711,7 +78138,7 @@ pub(all) struct SecurityGrantApiKeyResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityGrantApiKeyResponse with to_json(
+pub impl ToJson for SecurityGrantApiKeyResponse with fn to_json(
   self : SecurityGrantApiKeyResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -77727,7 +78154,7 @@ pub impl ToJson for SecurityGrantApiKeyResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityGrantApiKeyResponse with from_json(json, path) {
+pub impl FromJson for SecurityGrantApiKeyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityGrantApiKeyResponse: expected object"),
@@ -77792,7 +78219,7 @@ pub async fn Client::security_grant_api_key(
 pub(all) struct SecurityHasPrivilegesQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityHasPrivilegesQuery with to_json(
+pub impl ToJson for SecurityHasPrivilegesQuery with fn to_json(
   _self : SecurityHasPrivilegesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -77800,7 +78227,7 @@ pub impl ToJson for SecurityHasPrivilegesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityHasPrivilegesQuery with from_json(json, path) {
+pub impl FromJson for SecurityHasPrivilegesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityHasPrivilegesQuery: expected object"),
@@ -77830,7 +78257,7 @@ pub(all) struct SecurityHasPrivilegesBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityHasPrivilegesBody with to_json(
+pub impl ToJson for SecurityHasPrivilegesBody with fn to_json(
   self : SecurityHasPrivilegesBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -77850,7 +78277,7 @@ pub impl ToJson for SecurityHasPrivilegesBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityHasPrivilegesBody with from_json(json, path) {
+pub impl FromJson for SecurityHasPrivilegesBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityHasPrivilegesBody: expected object"),
@@ -77895,7 +78322,7 @@ pub(all) struct SecurityHasPrivilegesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityHasPrivilegesResponse with to_json(
+pub impl ToJson for SecurityHasPrivilegesResponse with fn to_json(
   self : SecurityHasPrivilegesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -77908,7 +78335,10 @@ pub impl ToJson for SecurityHasPrivilegesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityHasPrivilegesResponse with from_json(json, path) {
+pub impl FromJson for SecurityHasPrivilegesResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityHasPrivilegesResponse: expected object"),
@@ -77980,7 +78410,7 @@ pub async fn Client::security_has_privileges(
 pub(all) struct SecurityHasPrivilegesUserProfileQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityHasPrivilegesUserProfileQuery with to_json(
+pub impl ToJson for SecurityHasPrivilegesUserProfileQuery with fn to_json(
   _self : SecurityHasPrivilegesUserProfileQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -77988,7 +78418,7 @@ pub impl ToJson for SecurityHasPrivilegesUserProfileQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityHasPrivilegesUserProfileQuery with from_json(
+pub impl FromJson for SecurityHasPrivilegesUserProfileQuery with fn from_json(
   json,
   path,
 ) {
@@ -78020,7 +78450,7 @@ pub(all) struct SecurityHasPrivilegesUserProfileBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityHasPrivilegesUserProfileBody with to_json(
+pub impl ToJson for SecurityHasPrivilegesUserProfileBody with fn to_json(
   self : SecurityHasPrivilegesUserProfileBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78030,7 +78460,7 @@ pub impl ToJson for SecurityHasPrivilegesUserProfileBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityHasPrivilegesUserProfileBody with from_json(
+pub impl FromJson for SecurityHasPrivilegesUserProfileBody with fn from_json(
   json,
   path,
 ) {
@@ -78066,7 +78496,7 @@ pub(all) struct SecurityHasPrivilegesUserProfileResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityHasPrivilegesUserProfileResponse with to_json(
+pub impl ToJson for SecurityHasPrivilegesUserProfileResponse with fn to_json(
   self : SecurityHasPrivilegesUserProfileResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78079,7 +78509,7 @@ pub impl ToJson for SecurityHasPrivilegesUserProfileResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityHasPrivilegesUserProfileResponse with from_json(
+pub impl FromJson for SecurityHasPrivilegesUserProfileResponse with fn from_json(
   json,
   path,
 ) {
@@ -78134,7 +78564,7 @@ pub async fn Client::security_has_privileges_user_profile(
 pub(all) struct SecurityInvalidateApiKeyQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityInvalidateApiKeyQuery with to_json(
+pub impl ToJson for SecurityInvalidateApiKeyQuery with fn to_json(
   _self : SecurityInvalidateApiKeyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78142,7 +78572,10 @@ pub impl ToJson for SecurityInvalidateApiKeyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityInvalidateApiKeyQuery with from_json(json, path) {
+pub impl FromJson for SecurityInvalidateApiKeyQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityInvalidateApiKeyQuery: expected object"),
@@ -78175,7 +78608,7 @@ pub(all) struct SecurityInvalidateApiKeyBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityInvalidateApiKeyBody with to_json(
+pub impl ToJson for SecurityInvalidateApiKeyBody with fn to_json(
   self : SecurityInvalidateApiKeyBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78207,7 +78640,7 @@ pub impl ToJson for SecurityInvalidateApiKeyBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityInvalidateApiKeyBody with from_json(json, path) {
+pub impl FromJson for SecurityInvalidateApiKeyBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityInvalidateApiKeyBody: expected object"),
@@ -78269,7 +78702,7 @@ pub(all) struct SecurityInvalidateApiKeyResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityInvalidateApiKeyResponse with to_json(
+pub impl ToJson for SecurityInvalidateApiKeyResponse with fn to_json(
   self : SecurityInvalidateApiKeyResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78284,7 +78717,7 @@ pub impl ToJson for SecurityInvalidateApiKeyResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityInvalidateApiKeyResponse with from_json(
+pub impl FromJson for SecurityInvalidateApiKeyResponse with fn from_json(
   json,
   path,
 ) {
@@ -78345,7 +78778,7 @@ pub async fn Client::security_invalidate_api_key(
 pub(all) struct SecurityInvalidateTokenQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityInvalidateTokenQuery with to_json(
+pub impl ToJson for SecurityInvalidateTokenQuery with fn to_json(
   _self : SecurityInvalidateTokenQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78353,7 +78786,7 @@ pub impl ToJson for SecurityInvalidateTokenQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityInvalidateTokenQuery with from_json(json, path) {
+pub impl FromJson for SecurityInvalidateTokenQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityInvalidateTokenQuery: expected object"),
@@ -78384,7 +78817,7 @@ pub(all) struct SecurityInvalidateTokenBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityInvalidateTokenBody with to_json(
+pub impl ToJson for SecurityInvalidateTokenBody with fn to_json(
   self : SecurityInvalidateTokenBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78408,7 +78841,7 @@ pub impl ToJson for SecurityInvalidateTokenBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityInvalidateTokenBody with from_json(json, path) {
+pub impl FromJson for SecurityInvalidateTokenBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityInvalidateTokenBody: expected object"),
@@ -78459,7 +78892,7 @@ pub(all) struct SecurityInvalidateTokenResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityInvalidateTokenResponse with to_json(
+pub impl ToJson for SecurityInvalidateTokenResponse with fn to_json(
   self : SecurityInvalidateTokenResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78474,7 +78907,10 @@ pub impl ToJson for SecurityInvalidateTokenResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityInvalidateTokenResponse with from_json(json, path) {
+pub impl FromJson for SecurityInvalidateTokenResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityInvalidateTokenResponse: expected object"),
@@ -78535,7 +78971,7 @@ pub async fn Client::security_invalidate_token(
 pub(all) struct SecurityOidcAuthenticateQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityOidcAuthenticateQuery with to_json(
+pub impl ToJson for SecurityOidcAuthenticateQuery with fn to_json(
   _self : SecurityOidcAuthenticateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78543,7 +78979,10 @@ pub impl ToJson for SecurityOidcAuthenticateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityOidcAuthenticateQuery with from_json(json, path) {
+pub impl FromJson for SecurityOidcAuthenticateQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityOidcAuthenticateQuery: expected object"),
@@ -78574,7 +79013,7 @@ pub(all) struct SecurityOidcAuthenticateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityOidcAuthenticateBody with to_json(
+pub impl ToJson for SecurityOidcAuthenticateBody with fn to_json(
   self : SecurityOidcAuthenticateBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78589,7 +79028,7 @@ pub impl ToJson for SecurityOidcAuthenticateBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityOidcAuthenticateBody with from_json(json, path) {
+pub impl FromJson for SecurityOidcAuthenticateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityOidcAuthenticateBody: expected object"),
@@ -78635,7 +79074,7 @@ pub(all) struct SecurityOidcAuthenticateResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityOidcAuthenticateResponse with to_json(
+pub impl ToJson for SecurityOidcAuthenticateResponse with fn to_json(
   self : SecurityOidcAuthenticateResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78647,7 +79086,7 @@ pub impl ToJson for SecurityOidcAuthenticateResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityOidcAuthenticateResponse with from_json(
+pub impl FromJson for SecurityOidcAuthenticateResponse with fn from_json(
   json,
   path,
 ) {
@@ -78709,7 +79148,7 @@ pub async fn Client::security_oidc_authenticate(
 pub(all) struct SecurityOidcLogoutQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityOidcLogoutQuery with to_json(
+pub impl ToJson for SecurityOidcLogoutQuery with fn to_json(
   _self : SecurityOidcLogoutQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78717,7 +79156,7 @@ pub impl ToJson for SecurityOidcLogoutQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityOidcLogoutQuery with from_json(json, path) {
+pub impl FromJson for SecurityOidcLogoutQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityOidcLogoutQuery: expected object"),
@@ -78746,7 +79185,7 @@ pub(all) struct SecurityOidcLogoutBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityOidcLogoutBody with to_json(
+pub impl ToJson for SecurityOidcLogoutBody with fn to_json(
   self : SecurityOidcLogoutBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78759,7 +79198,7 @@ pub impl ToJson for SecurityOidcLogoutBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityOidcLogoutBody with from_json(json, path) {
+pub impl FromJson for SecurityOidcLogoutBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityOidcLogoutBody: expected object"),
@@ -78793,7 +79232,7 @@ pub(all) struct SecurityOidcLogoutResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityOidcLogoutResponse with to_json(
+pub impl ToJson for SecurityOidcLogoutResponse with fn to_json(
   self : SecurityOidcLogoutResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78802,7 +79241,7 @@ pub impl ToJson for SecurityOidcLogoutResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityOidcLogoutResponse with from_json(json, path) {
+pub impl FromJson for SecurityOidcLogoutResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityOidcLogoutResponse: expected object"),
@@ -78849,7 +79288,7 @@ pub async fn Client::security_oidc_logout(
 pub(all) struct SecurityOidcPrepareAuthenticationQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityOidcPrepareAuthenticationQuery with to_json(
+pub impl ToJson for SecurityOidcPrepareAuthenticationQuery with fn to_json(
   _self : SecurityOidcPrepareAuthenticationQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78857,7 +79296,7 @@ pub impl ToJson for SecurityOidcPrepareAuthenticationQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityOidcPrepareAuthenticationQuery with from_json(
+pub impl FromJson for SecurityOidcPrepareAuthenticationQuery with fn from_json(
   json,
   path,
 ) {
@@ -78892,7 +79331,7 @@ pub(all) struct SecurityOidcPrepareAuthenticationBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityOidcPrepareAuthenticationBody with to_json(
+pub impl ToJson for SecurityOidcPrepareAuthenticationBody with fn to_json(
   self : SecurityOidcPrepareAuthenticationBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78920,7 +79359,7 @@ pub impl ToJson for SecurityOidcPrepareAuthenticationBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityOidcPrepareAuthenticationBody with from_json(
+pub impl FromJson for SecurityOidcPrepareAuthenticationBody with fn from_json(
   json,
   path,
 ) {
@@ -78979,7 +79418,7 @@ pub(all) struct SecurityOidcPrepareAuthenticationResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityOidcPrepareAuthenticationResponse with to_json(
+pub impl ToJson for SecurityOidcPrepareAuthenticationResponse with fn to_json(
   self : SecurityOidcPrepareAuthenticationResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -78991,7 +79430,7 @@ pub impl ToJson for SecurityOidcPrepareAuthenticationResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityOidcPrepareAuthenticationResponse with from_json(
+pub impl FromJson for SecurityOidcPrepareAuthenticationResponse with fn from_json(
   json,
   path,
 ) {
@@ -79055,7 +79494,7 @@ pub(all) struct SecurityPutPrivilegesQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityPutPrivilegesQuery with to_json(
+pub impl ToJson for SecurityPutPrivilegesQuery with fn to_json(
   self : SecurityPutPrivilegesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -79067,7 +79506,7 @@ pub impl ToJson for SecurityPutPrivilegesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityPutPrivilegesQuery with from_json(json, path) {
+pub impl FromJson for SecurityPutPrivilegesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityPutPrivilegesQuery: expected object"),
@@ -79139,7 +79578,7 @@ pub(all) struct SecurityPutRoleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityPutRoleQuery with to_json(
+pub impl ToJson for SecurityPutRoleQuery with fn to_json(
   self : SecurityPutRoleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -79151,7 +79590,7 @@ pub impl ToJson for SecurityPutRoleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityPutRoleQuery with from_json(json, path) {
+pub impl FromJson for SecurityPutRoleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SecurityPutRoleQuery: expected object"))
   }
@@ -79196,7 +79635,9 @@ pub(all) struct SecurityPutRoleBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityPutRoleBody with to_json(self : SecurityPutRoleBody) -> Json {
+pub impl ToJson for SecurityPutRoleBody with fn to_json(
+  self : SecurityPutRoleBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.applications {
     Some(value) => obj["applications"] = value.to_json()
@@ -79242,7 +79683,7 @@ pub impl ToJson for SecurityPutRoleBody with to_json(self : SecurityPutRoleBody)
 }
 
 ///|
-pub impl FromJson for SecurityPutRoleBody with from_json(json, path) {
+pub impl FromJson for SecurityPutRoleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SecurityPutRoleBody: expected object"))
   }
@@ -79338,7 +79779,7 @@ pub(all) struct SecurityPutRoleResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityPutRoleResponse with to_json(
+pub impl ToJson for SecurityPutRoleResponse with fn to_json(
   self : SecurityPutRoleResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -79347,7 +79788,7 @@ pub impl ToJson for SecurityPutRoleResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityPutRoleResponse with from_json(json, path) {
+pub impl FromJson for SecurityPutRoleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityPutRoleResponse: expected object"),
@@ -79399,7 +79840,7 @@ pub(all) struct SecurityPutRoleMappingQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityPutRoleMappingQuery with to_json(
+pub impl ToJson for SecurityPutRoleMappingQuery with fn to_json(
   self : SecurityPutRoleMappingQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -79411,7 +79852,7 @@ pub impl ToJson for SecurityPutRoleMappingQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityPutRoleMappingQuery with from_json(json, path) {
+pub impl FromJson for SecurityPutRoleMappingQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityPutRoleMappingQuery: expected object"),
@@ -79456,7 +79897,7 @@ pub(all) struct SecurityPutRoleMappingBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityPutRoleMappingBody with to_json(
+pub impl ToJson for SecurityPutRoleMappingBody with fn to_json(
   self : SecurityPutRoleMappingBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -79488,7 +79929,7 @@ pub impl ToJson for SecurityPutRoleMappingBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityPutRoleMappingBody with from_json(json, path) {
+pub impl FromJson for SecurityPutRoleMappingBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityPutRoleMappingBody: expected object"),
@@ -79548,7 +79989,7 @@ pub(all) struct SecurityPutRoleMappingResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityPutRoleMappingResponse with to_json(
+pub impl ToJson for SecurityPutRoleMappingResponse with fn to_json(
   self : SecurityPutRoleMappingResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -79561,7 +80002,10 @@ pub impl ToJson for SecurityPutRoleMappingResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityPutRoleMappingResponse with from_json(json, path) {
+pub impl FromJson for SecurityPutRoleMappingResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityPutRoleMappingResponse: expected object"),
@@ -79618,7 +80062,7 @@ pub(all) struct SecurityPutUserQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityPutUserQuery with to_json(
+pub impl ToJson for SecurityPutUserQuery with fn to_json(
   self : SecurityPutUserQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -79630,7 +80074,7 @@ pub impl ToJson for SecurityPutUserQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityPutUserQuery with from_json(json, path) {
+pub impl FromJson for SecurityPutUserQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SecurityPutUserQuery: expected object"))
   }
@@ -79673,7 +80117,9 @@ pub(all) struct SecurityPutUserBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityPutUserBody with to_json(self : SecurityPutUserBody) -> Json {
+pub impl ToJson for SecurityPutUserBody with fn to_json(
+  self : SecurityPutUserBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.username {
     Some(value) => obj["username"] = value.to_json()
@@ -79711,7 +80157,7 @@ pub impl ToJson for SecurityPutUserBody with to_json(self : SecurityPutUserBody)
 }
 
 ///|
-pub impl FromJson for SecurityPutUserBody with from_json(json, path) {
+pub impl FromJson for SecurityPutUserBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SecurityPutUserBody: expected object"))
   }
@@ -79790,7 +80236,7 @@ pub(all) struct SecurityPutUserResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityPutUserResponse with to_json(
+pub impl ToJson for SecurityPutUserResponse with fn to_json(
   self : SecurityPutUserResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -79799,7 +80245,7 @@ pub impl ToJson for SecurityPutUserResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityPutUserResponse with from_json(json, path) {
+pub impl FromJson for SecurityPutUserResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityPutUserResponse: expected object"),
@@ -79853,7 +80299,7 @@ pub(all) struct SecurityQueryApiKeysQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityQueryApiKeysQuery with to_json(
+pub impl ToJson for SecurityQueryApiKeysQuery with fn to_json(
   self : SecurityQueryApiKeysQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -79873,7 +80319,7 @@ pub impl ToJson for SecurityQueryApiKeysQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityQueryApiKeysQuery with from_json(json, path) {
+pub impl FromJson for SecurityQueryApiKeysQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityQueryApiKeysQuery: expected object"),
@@ -79941,7 +80387,7 @@ pub(all) struct SecurityQueryApiKeysBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityQueryApiKeysBody with to_json(
+pub impl ToJson for SecurityQueryApiKeysBody with fn to_json(
   self : SecurityQueryApiKeysBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -79973,7 +80419,7 @@ pub impl ToJson for SecurityQueryApiKeysBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityQueryApiKeysBody with from_json(json, path) {
+pub impl FromJson for SecurityQueryApiKeysBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityQueryApiKeysBody: expected object"),
@@ -80036,7 +80482,7 @@ pub(all) struct SecurityQueryApiKeysResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityQueryApiKeysResponse with to_json(
+pub impl ToJson for SecurityQueryApiKeysResponse with fn to_json(
   self : SecurityQueryApiKeysResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80051,7 +80497,7 @@ pub impl ToJson for SecurityQueryApiKeysResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityQueryApiKeysResponse with from_json(json, path) {
+pub impl FromJson for SecurityQueryApiKeysResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityQueryApiKeysResponse: expected object"),
@@ -80115,7 +80561,7 @@ pub async fn Client::security_query_api_keys(
 pub(all) struct SecurityQueryRoleQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityQueryRoleQuery with to_json(
+pub impl ToJson for SecurityQueryRoleQuery with fn to_json(
   _self : SecurityQueryRoleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80123,7 +80569,7 @@ pub impl ToJson for SecurityQueryRoleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityQueryRoleQuery with from_json(json, path) {
+pub impl FromJson for SecurityQueryRoleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityQueryRoleQuery: expected object"),
@@ -80155,7 +80601,7 @@ pub(all) struct SecurityQueryRoleBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityQueryRoleBody with to_json(
+pub impl ToJson for SecurityQueryRoleBody with fn to_json(
   self : SecurityQueryRoleBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80183,7 +80629,7 @@ pub impl ToJson for SecurityQueryRoleBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityQueryRoleBody with from_json(json, path) {
+pub impl FromJson for SecurityQueryRoleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityQueryRoleBody: expected object"),
@@ -80238,7 +80684,7 @@ pub(all) struct SecurityQueryRoleResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityQueryRoleResponse with to_json(
+pub impl ToJson for SecurityQueryRoleResponse with fn to_json(
   self : SecurityQueryRoleResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80249,7 +80695,7 @@ pub impl ToJson for SecurityQueryRoleResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityQueryRoleResponse with from_json(json, path) {
+pub impl FromJson for SecurityQueryRoleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityQueryRoleResponse: expected object"),
@@ -80309,7 +80755,7 @@ pub(all) struct SecurityQueryUserQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityQueryUserQuery with to_json(
+pub impl ToJson for SecurityQueryUserQuery with fn to_json(
   self : SecurityQueryUserQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80321,7 +80767,7 @@ pub impl ToJson for SecurityQueryUserQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityQueryUserQuery with from_json(json, path) {
+pub impl FromJson for SecurityQueryUserQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityQueryUserQuery: expected object"),
@@ -80366,7 +80812,7 @@ pub(all) struct SecurityQueryUserBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityQueryUserBody with to_json(
+pub impl ToJson for SecurityQueryUserBody with fn to_json(
   self : SecurityQueryUserBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80394,7 +80840,7 @@ pub impl ToJson for SecurityQueryUserBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityQueryUserBody with from_json(json, path) {
+pub impl FromJson for SecurityQueryUserBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityQueryUserBody: expected object"),
@@ -80449,7 +80895,7 @@ pub(all) struct SecurityQueryUserResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityQueryUserResponse with to_json(
+pub impl ToJson for SecurityQueryUserResponse with fn to_json(
   self : SecurityQueryUserResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80460,7 +80906,7 @@ pub impl ToJson for SecurityQueryUserResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityQueryUserResponse with from_json(json, path) {
+pub impl FromJson for SecurityQueryUserResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityQueryUserResponse: expected object"),
@@ -80518,7 +80964,7 @@ pub async fn Client::security_query_user(
 pub(all) struct SecuritySamlAuthenticateQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlAuthenticateQuery with to_json(
+pub impl ToJson for SecuritySamlAuthenticateQuery with fn to_json(
   _self : SecuritySamlAuthenticateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80526,7 +80972,10 @@ pub impl ToJson for SecuritySamlAuthenticateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlAuthenticateQuery with from_json(json, path) {
+pub impl FromJson for SecuritySamlAuthenticateQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecuritySamlAuthenticateQuery: expected object"),
@@ -80556,7 +81005,7 @@ pub(all) struct SecuritySamlAuthenticateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlAuthenticateBody with to_json(
+pub impl ToJson for SecuritySamlAuthenticateBody with fn to_json(
   self : SecuritySamlAuthenticateBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80570,7 +81019,7 @@ pub impl ToJson for SecuritySamlAuthenticateBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlAuthenticateBody with from_json(json, path) {
+pub impl FromJson for SecuritySamlAuthenticateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecuritySamlAuthenticateBody: expected object"),
@@ -80613,7 +81062,7 @@ pub(all) struct SecuritySamlAuthenticateResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlAuthenticateResponse with to_json(
+pub impl ToJson for SecuritySamlAuthenticateResponse with fn to_json(
   self : SecuritySamlAuthenticateResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80630,7 +81079,7 @@ pub impl ToJson for SecuritySamlAuthenticateResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlAuthenticateResponse with from_json(
+pub impl FromJson for SecuritySamlAuthenticateResponse with fn from_json(
   json,
   path,
 ) {
@@ -80702,7 +81151,7 @@ pub async fn Client::security_saml_authenticate(
 pub(all) struct SecuritySamlCompleteLogoutQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlCompleteLogoutQuery with to_json(
+pub impl ToJson for SecuritySamlCompleteLogoutQuery with fn to_json(
   _self : SecuritySamlCompleteLogoutQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80710,7 +81159,10 @@ pub impl ToJson for SecuritySamlCompleteLogoutQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlCompleteLogoutQuery with from_json(json, path) {
+pub impl FromJson for SecuritySamlCompleteLogoutQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecuritySamlCompleteLogoutQuery: expected object"),
@@ -80741,7 +81193,7 @@ pub(all) struct SecuritySamlCompleteLogoutBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlCompleteLogoutBody with to_json(
+pub impl ToJson for SecuritySamlCompleteLogoutBody with fn to_json(
   self : SecuritySamlCompleteLogoutBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80759,7 +81211,10 @@ pub impl ToJson for SecuritySamlCompleteLogoutBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlCompleteLogoutBody with from_json(json, path) {
+pub impl FromJson for SecuritySamlCompleteLogoutBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecuritySamlCompleteLogoutBody: expected object"),
@@ -80834,7 +81289,7 @@ pub async fn Client::security_saml_complete_logout(
 pub(all) struct SecuritySamlInvalidateQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlInvalidateQuery with to_json(
+pub impl ToJson for SecuritySamlInvalidateQuery with fn to_json(
   _self : SecuritySamlInvalidateQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80842,7 +81297,7 @@ pub impl ToJson for SecuritySamlInvalidateQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlInvalidateQuery with from_json(json, path) {
+pub impl FromJson for SecuritySamlInvalidateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecuritySamlInvalidateQuery: expected object"),
@@ -80872,7 +81327,7 @@ pub(all) struct SecuritySamlInvalidateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlInvalidateBody with to_json(
+pub impl ToJson for SecuritySamlInvalidateBody with fn to_json(
   self : SecuritySamlInvalidateBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80889,7 +81344,7 @@ pub impl ToJson for SecuritySamlInvalidateBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlInvalidateBody with from_json(json, path) {
+pub impl FromJson for SecuritySamlInvalidateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecuritySamlInvalidateBody: expected object"),
@@ -80930,7 +81385,7 @@ pub(all) struct SecuritySamlInvalidateResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlInvalidateResponse with to_json(
+pub impl ToJson for SecuritySamlInvalidateResponse with fn to_json(
   self : SecuritySamlInvalidateResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -80941,7 +81396,10 @@ pub impl ToJson for SecuritySamlInvalidateResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlInvalidateResponse with from_json(json, path) {
+pub impl FromJson for SecuritySamlInvalidateResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecuritySamlInvalidateResponse: expected object"),
@@ -80996,7 +81454,7 @@ pub async fn Client::security_saml_invalidate(
 pub(all) struct SecuritySamlLogoutQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlLogoutQuery with to_json(
+pub impl ToJson for SecuritySamlLogoutQuery with fn to_json(
   _self : SecuritySamlLogoutQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81004,7 +81462,7 @@ pub impl ToJson for SecuritySamlLogoutQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlLogoutQuery with from_json(json, path) {
+pub impl FromJson for SecuritySamlLogoutQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecuritySamlLogoutQuery: expected object"),
@@ -81033,7 +81491,7 @@ pub(all) struct SecuritySamlLogoutBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlLogoutBody with to_json(
+pub impl ToJson for SecuritySamlLogoutBody with fn to_json(
   self : SecuritySamlLogoutBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81046,7 +81504,7 @@ pub impl ToJson for SecuritySamlLogoutBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlLogoutBody with from_json(json, path) {
+pub impl FromJson for SecuritySamlLogoutBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecuritySamlLogoutBody: expected object"),
@@ -81080,7 +81538,7 @@ pub(all) struct SecuritySamlLogoutResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlLogoutResponse with to_json(
+pub impl ToJson for SecuritySamlLogoutResponse with fn to_json(
   self : SecuritySamlLogoutResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81089,7 +81547,7 @@ pub impl ToJson for SecuritySamlLogoutResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlLogoutResponse with from_json(json, path) {
+pub impl FromJson for SecuritySamlLogoutResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecuritySamlLogoutResponse: expected object"),
@@ -81136,7 +81594,7 @@ pub async fn Client::security_saml_logout(
 pub(all) struct SecuritySamlPrepareAuthenticationQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlPrepareAuthenticationQuery with to_json(
+pub impl ToJson for SecuritySamlPrepareAuthenticationQuery with fn to_json(
   _self : SecuritySamlPrepareAuthenticationQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81144,7 +81602,7 @@ pub impl ToJson for SecuritySamlPrepareAuthenticationQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlPrepareAuthenticationQuery with from_json(
+pub impl FromJson for SecuritySamlPrepareAuthenticationQuery with fn from_json(
   json,
   path,
 ) {
@@ -81177,7 +81635,7 @@ pub(all) struct SecuritySamlPrepareAuthenticationBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlPrepareAuthenticationBody with to_json(
+pub impl ToJson for SecuritySamlPrepareAuthenticationBody with fn to_json(
   self : SecuritySamlPrepareAuthenticationBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81197,7 +81655,7 @@ pub impl ToJson for SecuritySamlPrepareAuthenticationBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlPrepareAuthenticationBody with from_json(
+pub impl FromJson for SecuritySamlPrepareAuthenticationBody with fn from_json(
   json,
   path,
 ) {
@@ -81243,7 +81701,7 @@ pub(all) struct SecuritySamlPrepareAuthenticationResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlPrepareAuthenticationResponse with to_json(
+pub impl ToJson for SecuritySamlPrepareAuthenticationResponse with fn to_json(
   self : SecuritySamlPrepareAuthenticationResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81254,7 +81712,7 @@ pub impl ToJson for SecuritySamlPrepareAuthenticationResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlPrepareAuthenticationResponse with from_json(
+pub impl FromJson for SecuritySamlPrepareAuthenticationResponse with fn from_json(
   json,
   path,
 ) {
@@ -81312,7 +81770,7 @@ pub async fn Client::security_saml_prepare_authentication(
 pub(all) struct SecuritySamlServiceProviderMetadataQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlServiceProviderMetadataQuery with to_json(
+pub impl ToJson for SecuritySamlServiceProviderMetadataQuery with fn to_json(
   _self : SecuritySamlServiceProviderMetadataQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81320,7 +81778,7 @@ pub impl ToJson for SecuritySamlServiceProviderMetadataQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlServiceProviderMetadataQuery with from_json(
+pub impl FromJson for SecuritySamlServiceProviderMetadataQuery with fn from_json(
   json,
   path,
 ) {
@@ -81354,7 +81812,7 @@ pub(all) struct SecuritySamlServiceProviderMetadataResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySamlServiceProviderMetadataResponse with to_json(
+pub impl ToJson for SecuritySamlServiceProviderMetadataResponse with fn to_json(
   self : SecuritySamlServiceProviderMetadataResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81363,7 +81821,7 @@ pub impl ToJson for SecuritySamlServiceProviderMetadataResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySamlServiceProviderMetadataResponse with from_json(
+pub impl FromJson for SecuritySamlServiceProviderMetadataResponse with fn from_json(
   json,
   path,
 ) {
@@ -81421,7 +81879,7 @@ pub(all) struct SecuritySuggestUserProfilesQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySuggestUserProfilesQuery with to_json(
+pub impl ToJson for SecuritySuggestUserProfilesQuery with fn to_json(
   self : SecuritySuggestUserProfilesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81433,7 +81891,7 @@ pub impl ToJson for SecuritySuggestUserProfilesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySuggestUserProfilesQuery with from_json(
+pub impl FromJson for SecuritySuggestUserProfilesQuery with fn from_json(
   json,
   path,
 ) {
@@ -81479,7 +81937,7 @@ pub(all) struct SecuritySuggestUserProfilesBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySuggestUserProfilesBody with to_json(
+pub impl ToJson for SecuritySuggestUserProfilesBody with fn to_json(
   self : SecuritySuggestUserProfilesBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81503,7 +81961,10 @@ pub impl ToJson for SecuritySuggestUserProfilesBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySuggestUserProfilesBody with from_json(json, path) {
+pub impl FromJson for SecuritySuggestUserProfilesBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecuritySuggestUserProfilesBody: expected object"),
@@ -81551,7 +82012,7 @@ pub(all) struct SecuritySuggestUserProfilesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecuritySuggestUserProfilesResponse with to_json(
+pub impl ToJson for SecuritySuggestUserProfilesResponse with fn to_json(
   self : SecuritySuggestUserProfilesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81562,7 +82023,7 @@ pub impl ToJson for SecuritySuggestUserProfilesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecuritySuggestUserProfilesResponse with from_json(
+pub impl FromJson for SecuritySuggestUserProfilesResponse with fn from_json(
   json,
   path,
 ) {
@@ -81623,7 +82084,7 @@ pub async fn Client::security_suggest_user_profiles(
 pub(all) struct SecurityUpdateApiKeyQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityUpdateApiKeyQuery with to_json(
+pub impl ToJson for SecurityUpdateApiKeyQuery with fn to_json(
   _self : SecurityUpdateApiKeyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81631,7 +82092,7 @@ pub impl ToJson for SecurityUpdateApiKeyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityUpdateApiKeyQuery with from_json(json, path) {
+pub impl FromJson for SecurityUpdateApiKeyQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SecurityUpdateApiKeyQuery: expected object"),
@@ -81661,7 +82122,7 @@ pub(all) struct SecurityUpdateApiKeyBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityUpdateApiKeyBody with to_json(
+pub impl ToJson for SecurityUpdateApiKeyBody with fn to_json(
   self : SecurityUpdateApiKeyBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81681,7 +82142,7 @@ pub impl ToJson for SecurityUpdateApiKeyBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityUpdateApiKeyBody with from_json(json, path) {
+pub impl FromJson for SecurityUpdateApiKeyBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityUpdateApiKeyBody: expected object"),
@@ -81723,7 +82184,7 @@ pub(all) struct SecurityUpdateApiKeyResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityUpdateApiKeyResponse with to_json(
+pub impl ToJson for SecurityUpdateApiKeyResponse with fn to_json(
   self : SecurityUpdateApiKeyResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81732,7 +82193,7 @@ pub impl ToJson for SecurityUpdateApiKeyResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityUpdateApiKeyResponse with from_json(json, path) {
+pub impl FromJson for SecurityUpdateApiKeyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityUpdateApiKeyResponse: expected object"),
@@ -81785,7 +82246,7 @@ pub async fn Client::security_update_api_key(
 pub(all) struct SecurityUpdateCrossClusterApiKeyQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityUpdateCrossClusterApiKeyQuery with to_json(
+pub impl ToJson for SecurityUpdateCrossClusterApiKeyQuery with fn to_json(
   _self : SecurityUpdateCrossClusterApiKeyQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81793,7 +82254,7 @@ pub impl ToJson for SecurityUpdateCrossClusterApiKeyQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityUpdateCrossClusterApiKeyQuery with from_json(
+pub impl FromJson for SecurityUpdateCrossClusterApiKeyQuery with fn from_json(
   json,
   path,
 ) {
@@ -81827,7 +82288,7 @@ pub(all) struct SecurityUpdateCrossClusterApiKeyBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityUpdateCrossClusterApiKeyBody with to_json(
+pub impl ToJson for SecurityUpdateCrossClusterApiKeyBody with fn to_json(
   self : SecurityUpdateCrossClusterApiKeyBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81848,7 +82309,7 @@ pub impl ToJson for SecurityUpdateCrossClusterApiKeyBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityUpdateCrossClusterApiKeyBody with from_json(
+pub impl FromJson for SecurityUpdateCrossClusterApiKeyBody with fn from_json(
   json,
   path,
 ) {
@@ -81898,7 +82359,7 @@ pub(all) struct SecurityUpdateCrossClusterApiKeyResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityUpdateCrossClusterApiKeyResponse with to_json(
+pub impl ToJson for SecurityUpdateCrossClusterApiKeyResponse with fn to_json(
   self : SecurityUpdateCrossClusterApiKeyResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81907,7 +82368,7 @@ pub impl ToJson for SecurityUpdateCrossClusterApiKeyResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityUpdateCrossClusterApiKeyResponse with from_json(
+pub impl FromJson for SecurityUpdateCrossClusterApiKeyResponse with fn from_json(
   json,
   path,
 ) {
@@ -81963,7 +82424,7 @@ pub(all) struct SecurityUpdateSettingsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityUpdateSettingsQuery with to_json(
+pub impl ToJson for SecurityUpdateSettingsQuery with fn to_json(
   self : SecurityUpdateSettingsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -81979,7 +82440,7 @@ pub impl ToJson for SecurityUpdateSettingsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityUpdateSettingsQuery with from_json(json, path) {
+pub impl FromJson for SecurityUpdateSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityUpdateSettingsQuery: expected object"),
@@ -82032,7 +82493,7 @@ pub(all) struct SecurityUpdateSettingsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityUpdateSettingsBody with to_json(
+pub impl ToJson for SecurityUpdateSettingsBody with fn to_json(
   self : SecurityUpdateSettingsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -82052,7 +82513,7 @@ pub impl ToJson for SecurityUpdateSettingsBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityUpdateSettingsBody with from_json(json, path) {
+pub impl FromJson for SecurityUpdateSettingsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityUpdateSettingsBody: expected object"),
@@ -82094,7 +82555,7 @@ pub(all) struct SecurityUpdateSettingsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityUpdateSettingsResponse with to_json(
+pub impl ToJson for SecurityUpdateSettingsResponse with fn to_json(
   self : SecurityUpdateSettingsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -82103,7 +82564,10 @@ pub impl ToJson for SecurityUpdateSettingsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityUpdateSettingsResponse with from_json(json, path) {
+pub impl FromJson for SecurityUpdateSettingsResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SecurityUpdateSettingsResponse: expected object"),
@@ -82151,7 +82615,7 @@ pub(all) struct SecurityUpdateUserProfileDataQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityUpdateUserProfileDataQuery with to_json(
+pub impl ToJson for SecurityUpdateUserProfileDataQuery with fn to_json(
   self : SecurityUpdateUserProfileDataQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -82171,7 +82635,7 @@ pub impl ToJson for SecurityUpdateUserProfileDataQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityUpdateUserProfileDataQuery with from_json(
+pub impl FromJson for SecurityUpdateUserProfileDataQuery with fn from_json(
   json,
   path,
 ) {
@@ -82237,7 +82701,7 @@ pub(all) struct SecurityUpdateUserProfileDataBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SecurityUpdateUserProfileDataBody with to_json(
+pub impl ToJson for SecurityUpdateUserProfileDataBody with fn to_json(
   self : SecurityUpdateUserProfileDataBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -82253,7 +82717,7 @@ pub impl ToJson for SecurityUpdateUserProfileDataBody with to_json(
 }
 
 ///|
-pub impl FromJson for SecurityUpdateUserProfileDataBody with from_json(
+pub impl FromJson for SecurityUpdateUserProfileDataBody with fn from_json(
   json,
   path,
 ) {
@@ -82326,7 +82790,7 @@ pub(all) struct ShutdownDeleteNodeQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ShutdownDeleteNodeQuery with to_json(
+pub impl ToJson for ShutdownDeleteNodeQuery with fn to_json(
   self : ShutdownDeleteNodeQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -82342,7 +82806,7 @@ pub impl ToJson for ShutdownDeleteNodeQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ShutdownDeleteNodeQuery with from_json(json, path) {
+pub impl FromJson for ShutdownDeleteNodeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ShutdownDeleteNodeQuery: expected object"),
@@ -82434,7 +82898,7 @@ pub(all) struct ShutdownGetNodeQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ShutdownGetNodeQuery with to_json(
+pub impl ToJson for ShutdownGetNodeQuery with fn to_json(
   self : ShutdownGetNodeQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -82446,7 +82910,7 @@ pub impl ToJson for ShutdownGetNodeQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ShutdownGetNodeQuery with from_json(json, path) {
+pub impl FromJson for ShutdownGetNodeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ShutdownGetNodeQuery: expected object"))
   }
@@ -82488,7 +82952,7 @@ pub(all) struct ShutdownGetNodeResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ShutdownGetNodeResponse with to_json(
+pub impl ToJson for ShutdownGetNodeResponse with fn to_json(
   self : ShutdownGetNodeResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -82497,7 +82961,7 @@ pub impl ToJson for ShutdownGetNodeResponse with to_json(
 }
 
 ///|
-pub impl FromJson for ShutdownGetNodeResponse with from_json(json, path) {
+pub impl FromJson for ShutdownGetNodeResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "ShutdownGetNodeResponse: expected object"),
@@ -82559,7 +83023,7 @@ pub(all) struct ShutdownPutNodeQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ShutdownPutNodeQuery with to_json(
+pub impl ToJson for ShutdownPutNodeQuery with fn to_json(
   self : ShutdownPutNodeQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -82575,7 +83039,7 @@ pub impl ToJson for ShutdownPutNodeQuery with to_json(
 }
 
 ///|
-pub impl FromJson for ShutdownPutNodeQuery with from_json(json, path) {
+pub impl FromJson for ShutdownPutNodeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ShutdownPutNodeQuery: expected object"))
   }
@@ -82627,7 +83091,9 @@ pub(all) struct ShutdownPutNodeBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for ShutdownPutNodeBody with to_json(self : ShutdownPutNodeBody) -> Json {
+pub impl ToJson for ShutdownPutNodeBody with fn to_json(
+  self : ShutdownPutNodeBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["type"] = self.type_.to_json()
   obj["reason"] = self.reason.to_json()
@@ -82643,7 +83109,7 @@ pub impl ToJson for ShutdownPutNodeBody with to_json(self : ShutdownPutNodeBody)
 }
 
 ///|
-pub impl FromJson for ShutdownPutNodeBody with from_json(json, path) {
+pub impl FromJson for ShutdownPutNodeBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "ShutdownPutNodeBody: expected object"))
   }
@@ -82723,7 +83189,9 @@ pub(all) struct SimulateIngestQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SimulateIngestQuery with to_json(self : SimulateIngestQuery) -> Json {
+pub impl ToJson for SimulateIngestQuery with fn to_json(
+  self : SimulateIngestQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.pipeline {
     Some(value) => obj["pipeline"] = value.to_json()
@@ -82737,7 +83205,7 @@ pub impl ToJson for SimulateIngestQuery with to_json(self : SimulateIngestQuery)
 }
 
 ///|
-pub impl FromJson for SimulateIngestQuery with from_json(json, path) {
+pub impl FromJson for SimulateIngestQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SimulateIngestQuery: expected object"))
   }
@@ -82790,7 +83258,9 @@ pub(all) struct SimulateIngestBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SimulateIngestBody with to_json(self : SimulateIngestBody) -> Json {
+pub impl ToJson for SimulateIngestBody with fn to_json(
+  self : SimulateIngestBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["docs"] = self.docs.to_json()
   match self.component_template_substitutions {
@@ -82813,7 +83283,7 @@ pub impl ToJson for SimulateIngestBody with to_json(self : SimulateIngestBody) -
 }
 
 ///|
-pub impl FromJson for SimulateIngestBody with from_json(json, path) {
+pub impl FromJson for SimulateIngestBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SimulateIngestBody: expected object"))
   }
@@ -82886,7 +83356,7 @@ pub(all) struct SimulateIngestResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SimulateIngestResponse with to_json(
+pub impl ToJson for SimulateIngestResponse with fn to_json(
   self : SimulateIngestResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -82895,7 +83365,7 @@ pub impl ToJson for SimulateIngestResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SimulateIngestResponse with from_json(json, path) {
+pub impl FromJson for SimulateIngestResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SimulateIngestResponse: expected object"),
@@ -82954,7 +83424,7 @@ pub(all) struct SlmDeleteLifecycleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SlmDeleteLifecycleQuery with to_json(
+pub impl ToJson for SlmDeleteLifecycleQuery with fn to_json(
   self : SlmDeleteLifecycleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -82970,7 +83440,7 @@ pub impl ToJson for SlmDeleteLifecycleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SlmDeleteLifecycleQuery with from_json(json, path) {
+pub impl FromJson for SlmDeleteLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SlmDeleteLifecycleQuery: expected object"),
@@ -83054,7 +83524,7 @@ pub(all) struct SlmExecuteLifecycleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SlmExecuteLifecycleQuery with to_json(
+pub impl ToJson for SlmExecuteLifecycleQuery with fn to_json(
   self : SlmExecuteLifecycleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -83070,7 +83540,7 @@ pub impl ToJson for SlmExecuteLifecycleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SlmExecuteLifecycleQuery with from_json(json, path) {
+pub impl FromJson for SlmExecuteLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SlmExecuteLifecycleQuery: expected object"),
@@ -83121,7 +83591,7 @@ pub(all) struct SlmExecuteLifecycleResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SlmExecuteLifecycleResponse with to_json(
+pub impl ToJson for SlmExecuteLifecycleResponse with fn to_json(
   self : SlmExecuteLifecycleResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -83130,7 +83600,7 @@ pub impl ToJson for SlmExecuteLifecycleResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SlmExecuteLifecycleResponse with from_json(json, path) {
+pub impl FromJson for SlmExecuteLifecycleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SlmExecuteLifecycleResponse: expected object"),
@@ -83180,7 +83650,7 @@ pub(all) struct SlmExecuteRetentionQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SlmExecuteRetentionQuery with to_json(
+pub impl ToJson for SlmExecuteRetentionQuery with fn to_json(
   self : SlmExecuteRetentionQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -83196,7 +83666,7 @@ pub impl ToJson for SlmExecuteRetentionQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SlmExecuteRetentionQuery with from_json(json, path) {
+pub impl FromJson for SlmExecuteRetentionQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SlmExecuteRetentionQuery: expected object"),
@@ -83277,7 +83747,7 @@ pub(all) struct SlmGetLifecycleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SlmGetLifecycleQuery with to_json(
+pub impl ToJson for SlmGetLifecycleQuery with fn to_json(
   self : SlmGetLifecycleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -83293,7 +83763,7 @@ pub impl ToJson for SlmGetLifecycleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SlmGetLifecycleQuery with from_json(json, path) {
+pub impl FromJson for SlmGetLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SlmGetLifecycleQuery: expected object"))
   }
@@ -83381,7 +83851,7 @@ pub(all) struct SlmGetStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SlmGetStatsQuery with to_json(self : SlmGetStatsQuery) -> Json {
+pub impl ToJson for SlmGetStatsQuery with fn to_json(self : SlmGetStatsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -83395,7 +83865,7 @@ pub impl ToJson for SlmGetStatsQuery with to_json(self : SlmGetStatsQuery) -> Js
 }
 
 ///|
-pub impl FromJson for SlmGetStatsQuery with from_json(json, path) {
+pub impl FromJson for SlmGetStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SlmGetStatsQuery: expected object"))
   }
@@ -83453,7 +83923,9 @@ pub(all) struct SlmGetStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SlmGetStatsResponse with to_json(self : SlmGetStatsResponse) -> Json {
+pub impl ToJson for SlmGetStatsResponse with fn to_json(
+  self : SlmGetStatsResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["retention_deletion_time"] = self.retention_deletion_time.to_json()
   obj["retention_deletion_time_millis"] = self.retention_deletion_time_millis.to_json()
@@ -83469,7 +83941,7 @@ pub impl ToJson for SlmGetStatsResponse with to_json(self : SlmGetStatsResponse)
 }
 
 ///|
-pub impl FromJson for SlmGetStatsResponse with from_json(json, path) {
+pub impl FromJson for SlmGetStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SlmGetStatsResponse: expected object"))
   }
@@ -83547,7 +84019,7 @@ pub(all) struct SlmGetStatusQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SlmGetStatusQuery with to_json(self : SlmGetStatusQuery) -> Json {
+pub impl ToJson for SlmGetStatusQuery with fn to_json(self : SlmGetStatusQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -83561,7 +84033,7 @@ pub impl ToJson for SlmGetStatusQuery with to_json(self : SlmGetStatusQuery) -> 
 }
 
 ///|
-pub impl FromJson for SlmGetStatusQuery with from_json(json, path) {
+pub impl FromJson for SlmGetStatusQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SlmGetStatusQuery: expected object"))
   }
@@ -83610,7 +84082,7 @@ pub(all) struct SlmGetStatusResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SlmGetStatusResponse with to_json(
+pub impl ToJson for SlmGetStatusResponse with fn to_json(
   self : SlmGetStatusResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -83619,7 +84091,7 @@ pub impl ToJson for SlmGetStatusResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SlmGetStatusResponse with from_json(json, path) {
+pub impl FromJson for SlmGetStatusResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SlmGetStatusResponse: expected object"))
   }
@@ -83661,7 +84133,7 @@ pub(all) struct SlmPutLifecycleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SlmPutLifecycleQuery with to_json(
+pub impl ToJson for SlmPutLifecycleQuery with fn to_json(
   self : SlmPutLifecycleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -83677,7 +84149,7 @@ pub impl ToJson for SlmPutLifecycleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SlmPutLifecycleQuery with from_json(json, path) {
+pub impl FromJson for SlmPutLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SlmPutLifecycleQuery: expected object"))
   }
@@ -83730,7 +84202,9 @@ pub(all) struct SlmPutLifecycleBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SlmPutLifecycleBody with to_json(self : SlmPutLifecycleBody) -> Json {
+pub impl ToJson for SlmPutLifecycleBody with fn to_json(
+  self : SlmPutLifecycleBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.config {
     Some(value) => obj["config"] = value.to_json()
@@ -83756,7 +84230,7 @@ pub impl ToJson for SlmPutLifecycleBody with to_json(self : SlmPutLifecycleBody)
 }
 
 ///|
-pub impl FromJson for SlmPutLifecycleBody with from_json(json, path) {
+pub impl FromJson for SlmPutLifecycleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SlmPutLifecycleBody: expected object"))
   }
@@ -83844,7 +84318,7 @@ pub(all) struct SlmStartQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SlmStartQuery with to_json(self : SlmStartQuery) -> Json {
+pub impl ToJson for SlmStartQuery with fn to_json(self : SlmStartQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -83858,7 +84332,7 @@ pub impl ToJson for SlmStartQuery with to_json(self : SlmStartQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for SlmStartQuery with from_json(json, path) {
+pub impl FromJson for SlmStartQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SlmStartQuery: expected object"))
   }
@@ -83932,7 +84406,7 @@ pub(all) struct SlmStopQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SlmStopQuery with to_json(self : SlmStopQuery) -> Json {
+pub impl ToJson for SlmStopQuery with fn to_json(self : SlmStopQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -83946,7 +84420,7 @@ pub impl ToJson for SlmStopQuery with to_json(self : SlmStopQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for SlmStopQuery with from_json(json, path) {
+pub impl FromJson for SlmStopQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SlmStopQuery: expected object"))
   }
@@ -84020,7 +84494,7 @@ pub(all) struct SnapshotCleanupRepositoryQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotCleanupRepositoryQuery with to_json(
+pub impl ToJson for SnapshotCleanupRepositoryQuery with fn to_json(
   self : SnapshotCleanupRepositoryQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -84036,7 +84510,10 @@ pub impl ToJson for SnapshotCleanupRepositoryQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SnapshotCleanupRepositoryQuery with from_json(json, path) {
+pub impl FromJson for SnapshotCleanupRepositoryQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SnapshotCleanupRepositoryQuery: expected object"),
@@ -84087,7 +84564,7 @@ pub(all) struct SnapshotCleanupRepositoryResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotCleanupRepositoryResponse with to_json(
+pub impl ToJson for SnapshotCleanupRepositoryResponse with fn to_json(
   self : SnapshotCleanupRepositoryResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -84096,7 +84573,7 @@ pub impl ToJson for SnapshotCleanupRepositoryResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SnapshotCleanupRepositoryResponse with from_json(
+pub impl FromJson for SnapshotCleanupRepositoryResponse with fn from_json(
   json,
   path,
 ) {
@@ -84148,7 +84625,9 @@ pub(all) struct SnapshotCloneQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotCloneQuery with to_json(self : SnapshotCloneQuery) -> Json {
+pub impl ToJson for SnapshotCloneQuery with fn to_json(
+  self : SnapshotCloneQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -84158,7 +84637,7 @@ pub impl ToJson for SnapshotCloneQuery with to_json(self : SnapshotCloneQuery) -
 }
 
 ///|
-pub impl FromJson for SnapshotCloneQuery with from_json(json, path) {
+pub impl FromJson for SnapshotCloneQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SnapshotCloneQuery: expected object"))
   }
@@ -84195,14 +84674,14 @@ pub(all) struct SnapshotCloneBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotCloneBody with to_json(self : SnapshotCloneBody) -> Json {
+pub impl ToJson for SnapshotCloneBody with fn to_json(self : SnapshotCloneBody) -> Json {
   let obj : Map[String, Json] = {}
   obj["indices"] = self.indices.to_json()
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for SnapshotCloneBody with from_json(json, path) {
+pub impl FromJson for SnapshotCloneBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SnapshotCloneBody: expected object"))
   }
@@ -84272,7 +84751,9 @@ pub(all) struct SnapshotCreateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotCreateQuery with to_json(self : SnapshotCreateQuery) -> Json {
+pub impl ToJson for SnapshotCreateQuery with fn to_json(
+  self : SnapshotCreateQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -84286,7 +84767,7 @@ pub impl ToJson for SnapshotCreateQuery with to_json(self : SnapshotCreateQuery)
 }
 
 ///|
-pub impl FromJson for SnapshotCreateQuery with from_json(json, path) {
+pub impl FromJson for SnapshotCreateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SnapshotCreateQuery: expected object"))
   }
@@ -84343,7 +84824,9 @@ pub(all) struct SnapshotCreateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotCreateBody with to_json(self : SnapshotCreateBody) -> Json {
+pub impl ToJson for SnapshotCreateBody with fn to_json(
+  self : SnapshotCreateBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
@@ -84377,7 +84860,7 @@ pub impl ToJson for SnapshotCreateBody with to_json(self : SnapshotCreateBody) -
 }
 
 ///|
-pub impl FromJson for SnapshotCreateBody with from_json(json, path) {
+pub impl FromJson for SnapshotCreateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SnapshotCreateBody: expected object"))
   }
@@ -84452,7 +84935,7 @@ pub(all) struct SnapshotCreateResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotCreateResponse with to_json(
+pub impl ToJson for SnapshotCreateResponse with fn to_json(
   self : SnapshotCreateResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -84468,7 +84951,7 @@ pub impl ToJson for SnapshotCreateResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SnapshotCreateResponse with from_json(json, path) {
+pub impl FromJson for SnapshotCreateResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SnapshotCreateResponse: expected object"),
@@ -84538,7 +85021,7 @@ pub(all) struct SnapshotCreateRepositoryQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotCreateRepositoryQuery with to_json(
+pub impl ToJson for SnapshotCreateRepositoryQuery with fn to_json(
   self : SnapshotCreateRepositoryQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -84558,7 +85041,10 @@ pub impl ToJson for SnapshotCreateRepositoryQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SnapshotCreateRepositoryQuery with from_json(json, path) {
+pub impl FromJson for SnapshotCreateRepositoryQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SnapshotCreateRepositoryQuery: expected object"),
@@ -84658,7 +85144,9 @@ pub(all) struct SnapshotDeleteQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotDeleteQuery with to_json(self : SnapshotDeleteQuery) -> Json {
+pub impl ToJson for SnapshotDeleteQuery with fn to_json(
+  self : SnapshotDeleteQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -84672,7 +85160,7 @@ pub impl ToJson for SnapshotDeleteQuery with to_json(self : SnapshotDeleteQuery)
 }
 
 ///|
-pub impl FromJson for SnapshotDeleteQuery with from_json(json, path) {
+pub impl FromJson for SnapshotDeleteQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SnapshotDeleteQuery: expected object"))
   }
@@ -84763,7 +85251,7 @@ pub(all) struct SnapshotDeleteRepositoryQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotDeleteRepositoryQuery with to_json(
+pub impl ToJson for SnapshotDeleteRepositoryQuery with fn to_json(
   self : SnapshotDeleteRepositoryQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -84779,7 +85267,10 @@ pub impl ToJson for SnapshotDeleteRepositoryQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SnapshotDeleteRepositoryQuery with from_json(json, path) {
+pub impl FromJson for SnapshotDeleteRepositoryQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SnapshotDeleteRepositoryQuery: expected object"),
@@ -84875,7 +85366,7 @@ pub(all) struct SnapshotGetQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotGetQuery with to_json(self : SnapshotGetQuery) -> Json {
+pub impl ToJson for SnapshotGetQuery with fn to_json(self : SnapshotGetQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.after {
     Some(value) => obj["after"] = value.to_json()
@@ -84937,7 +85428,7 @@ pub impl ToJson for SnapshotGetQuery with to_json(self : SnapshotGetQuery) -> Js
 }
 
 ///|
-pub impl FromJson for SnapshotGetQuery with from_json(json, path) {
+pub impl FromJson for SnapshotGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SnapshotGetQuery: expected object"))
   }
@@ -85131,7 +85622,9 @@ pub(all) struct SnapshotGetResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotGetResponse with to_json(self : SnapshotGetResponse) -> Json {
+pub impl ToJson for SnapshotGetResponse with fn to_json(
+  self : SnapshotGetResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["remaining"] = self.remaining.to_json()
   obj["total"] = self.total.to_json()
@@ -85151,7 +85644,7 @@ pub impl ToJson for SnapshotGetResponse with to_json(self : SnapshotGetResponse)
 }
 
 ///|
-pub impl FromJson for SnapshotGetResponse with from_json(json, path) {
+pub impl FromJson for SnapshotGetResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SnapshotGetResponse: expected object"))
   }
@@ -85227,7 +85720,7 @@ pub(all) struct SnapshotGetRepositoryQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotGetRepositoryQuery with to_json(
+pub impl ToJson for SnapshotGetRepositoryQuery with fn to_json(
   self : SnapshotGetRepositoryQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -85243,7 +85736,7 @@ pub impl ToJson for SnapshotGetRepositoryQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SnapshotGetRepositoryQuery with from_json(json, path) {
+pub impl FromJson for SnapshotGetRepositoryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SnapshotGetRepositoryQuery: expected object"),
@@ -85344,7 +85837,7 @@ pub(all) struct SnapshotRepositoryAnalyzeQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotRepositoryAnalyzeQuery with to_json(
+pub impl ToJson for SnapshotRepositoryAnalyzeQuery with fn to_json(
   self : SnapshotRepositoryAnalyzeQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -85404,7 +85897,10 @@ pub impl ToJson for SnapshotRepositoryAnalyzeQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SnapshotRepositoryAnalyzeQuery with from_json(json, path) {
+pub impl FromJson for SnapshotRepositoryAnalyzeQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SnapshotRepositoryAnalyzeQuery: expected object"),
@@ -85622,7 +86118,7 @@ pub(all) struct SnapshotRepositoryAnalyzeResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotRepositoryAnalyzeResponse with to_json(
+pub impl ToJson for SnapshotRepositoryAnalyzeResponse with fn to_json(
   self : SnapshotRepositoryAnalyzeResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -85650,7 +86146,7 @@ pub impl ToJson for SnapshotRepositoryAnalyzeResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SnapshotRepositoryAnalyzeResponse with from_json(
+pub impl FromJson for SnapshotRepositoryAnalyzeResponse with fn from_json(
   json,
   path,
 ) {
@@ -85785,7 +86281,7 @@ pub(all) struct SnapshotRepositoryVerifyIntegrityQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotRepositoryVerifyIntegrityQuery with to_json(
+pub impl ToJson for SnapshotRepositoryVerifyIntegrityQuery with fn to_json(
   self : SnapshotRepositoryVerifyIntegrityQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -85826,7 +86322,7 @@ pub impl ToJson for SnapshotRepositoryVerifyIntegrityQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SnapshotRepositoryVerifyIntegrityQuery with from_json(
+pub impl FromJson for SnapshotRepositoryVerifyIntegrityQuery with fn from_json(
   json,
   path,
 ) {
@@ -86043,7 +86539,7 @@ pub(all) struct SnapshotRestoreQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotRestoreQuery with to_json(
+pub impl ToJson for SnapshotRestoreQuery with fn to_json(
   self : SnapshotRestoreQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -86059,7 +86555,7 @@ pub impl ToJson for SnapshotRestoreQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SnapshotRestoreQuery with from_json(json, path) {
+pub impl FromJson for SnapshotRestoreQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SnapshotRestoreQuery: expected object"))
   }
@@ -86119,7 +86615,9 @@ pub(all) struct SnapshotRestoreBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotRestoreBody with to_json(self : SnapshotRestoreBody) -> Json {
+pub impl ToJson for SnapshotRestoreBody with fn to_json(
+  self : SnapshotRestoreBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.feature_states {
     Some(value) => obj["feature_states"] = value.to_json()
@@ -86165,7 +86663,7 @@ pub impl ToJson for SnapshotRestoreBody with to_json(self : SnapshotRestoreBody)
 }
 
 ///|
-pub impl FromJson for SnapshotRestoreBody with from_json(json, path) {
+pub impl FromJson for SnapshotRestoreBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SnapshotRestoreBody: expected object"))
   }
@@ -86265,7 +86763,7 @@ pub(all) struct SnapshotRestoreResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotRestoreResponse with to_json(
+pub impl ToJson for SnapshotRestoreResponse with fn to_json(
   self : SnapshotRestoreResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -86281,7 +86779,7 @@ pub impl ToJson for SnapshotRestoreResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SnapshotRestoreResponse with from_json(json, path) {
+pub impl FromJson for SnapshotRestoreResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SnapshotRestoreResponse: expected object"),
@@ -86350,7 +86848,9 @@ pub(all) struct SnapshotStatusQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotStatusQuery with to_json(self : SnapshotStatusQuery) -> Json {
+pub impl ToJson for SnapshotStatusQuery with fn to_json(
+  self : SnapshotStatusQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.ignore_unavailable {
     Some(value) => obj["ignore_unavailable"] = value.to_json()
@@ -86364,7 +86864,7 @@ pub impl ToJson for SnapshotStatusQuery with to_json(self : SnapshotStatusQuery)
 }
 
 ///|
-pub impl FromJson for SnapshotStatusQuery with from_json(json, path) {
+pub impl FromJson for SnapshotStatusQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SnapshotStatusQuery: expected object"))
   }
@@ -86414,7 +86914,7 @@ pub(all) struct SnapshotStatusResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotStatusResponse with to_json(
+pub impl ToJson for SnapshotStatusResponse with fn to_json(
   self : SnapshotStatusResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -86423,7 +86923,7 @@ pub impl ToJson for SnapshotStatusResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SnapshotStatusResponse with from_json(json, path) {
+pub impl FromJson for SnapshotStatusResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SnapshotStatusResponse: expected object"),
@@ -86488,7 +86988,7 @@ pub(all) struct SnapshotVerifyRepositoryQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotVerifyRepositoryQuery with to_json(
+pub impl ToJson for SnapshotVerifyRepositoryQuery with fn to_json(
   self : SnapshotVerifyRepositoryQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -86504,7 +87004,10 @@ pub impl ToJson for SnapshotVerifyRepositoryQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SnapshotVerifyRepositoryQuery with from_json(json, path) {
+pub impl FromJson for SnapshotVerifyRepositoryQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SnapshotVerifyRepositoryQuery: expected object"),
@@ -86555,7 +87058,7 @@ pub(all) struct SnapshotVerifyRepositoryResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SnapshotVerifyRepositoryResponse with to_json(
+pub impl ToJson for SnapshotVerifyRepositoryResponse with fn to_json(
   self : SnapshotVerifyRepositoryResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -86564,7 +87067,7 @@ pub impl ToJson for SnapshotVerifyRepositoryResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SnapshotVerifyRepositoryResponse with from_json(
+pub impl FromJson for SnapshotVerifyRepositoryResponse with fn from_json(
   json,
   path,
 ) {
@@ -86614,7 +87117,7 @@ pub async fn Client::snapshot_verify_repository(
 pub(all) struct SqlClearCursorQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SqlClearCursorQuery with to_json(
+pub impl ToJson for SqlClearCursorQuery with fn to_json(
   _self : SqlClearCursorQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -86622,7 +87125,7 @@ pub impl ToJson for SqlClearCursorQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SqlClearCursorQuery with from_json(json, path) {
+pub impl FromJson for SqlClearCursorQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "SqlClearCursorQuery: expected object"))
   }
@@ -86648,14 +87151,16 @@ pub(all) struct SqlClearCursorBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SqlClearCursorBody with to_json(self : SqlClearCursorBody) -> Json {
+pub impl ToJson for SqlClearCursorBody with fn to_json(
+  self : SqlClearCursorBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["cursor"] = self.cursor.to_json()
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for SqlClearCursorBody with from_json(json, path) {
+pub impl FromJson for SqlClearCursorBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SqlClearCursorBody: expected object"))
   }
@@ -86678,7 +87183,7 @@ pub(all) struct SqlClearCursorResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SqlClearCursorResponse with to_json(
+pub impl ToJson for SqlClearCursorResponse with fn to_json(
   self : SqlClearCursorResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -86687,7 +87192,7 @@ pub impl ToJson for SqlClearCursorResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SqlClearCursorResponse with from_json(json, path) {
+pub impl FromJson for SqlClearCursorResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SqlClearCursorResponse: expected object"),
@@ -86731,7 +87236,7 @@ pub async fn Client::sql_clear_cursor(
 pub(all) struct SqlDeleteAsyncQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SqlDeleteAsyncQuery with to_json(
+pub impl ToJson for SqlDeleteAsyncQuery with fn to_json(
   _self : SqlDeleteAsyncQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -86739,7 +87244,7 @@ pub impl ToJson for SqlDeleteAsyncQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SqlDeleteAsyncQuery with from_json(json, path) {
+pub impl FromJson for SqlDeleteAsyncQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "SqlDeleteAsyncQuery: expected object"))
   }
@@ -86800,7 +87305,7 @@ pub(all) struct SqlGetAsyncQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SqlGetAsyncQuery with to_json(self : SqlGetAsyncQuery) -> Json {
+pub impl ToJson for SqlGetAsyncQuery with fn to_json(self : SqlGetAsyncQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.delimiter {
     Some(value) => obj["delimiter"] = value.to_json()
@@ -86822,7 +87327,7 @@ pub impl ToJson for SqlGetAsyncQuery with to_json(self : SqlGetAsyncQuery) -> Js
 }
 
 ///|
-pub impl FromJson for SqlGetAsyncQuery with from_json(json, path) {
+pub impl FromJson for SqlGetAsyncQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SqlGetAsyncQuery: expected object"))
   }
@@ -86904,7 +87409,9 @@ pub(all) struct SqlGetAsyncResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SqlGetAsyncResponse with to_json(self : SqlGetAsyncResponse) -> Json {
+pub impl ToJson for SqlGetAsyncResponse with fn to_json(
+  self : SqlGetAsyncResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["id"] = self.id.to_json()
   obj["is_running"] = self.is_running.to_json()
@@ -86922,7 +87429,7 @@ pub impl ToJson for SqlGetAsyncResponse with to_json(self : SqlGetAsyncResponse)
 }
 
 ///|
-pub impl FromJson for SqlGetAsyncResponse with from_json(json, path) {
+pub impl FromJson for SqlGetAsyncResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SqlGetAsyncResponse: expected object"))
   }
@@ -86986,7 +87493,7 @@ pub async fn Client::sql_get_async(
 pub(all) struct SqlGetAsyncStatusQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SqlGetAsyncStatusQuery with to_json(
+pub impl ToJson for SqlGetAsyncStatusQuery with fn to_json(
   _self : SqlGetAsyncStatusQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -86994,7 +87501,7 @@ pub impl ToJson for SqlGetAsyncStatusQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SqlGetAsyncStatusQuery with from_json(json, path) {
+pub impl FromJson for SqlGetAsyncStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SqlGetAsyncStatusQuery: expected object"),
@@ -87027,7 +87534,7 @@ pub(all) struct SqlGetAsyncStatusResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SqlGetAsyncStatusResponse with to_json(
+pub impl ToJson for SqlGetAsyncStatusResponse with fn to_json(
   self : SqlGetAsyncStatusResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -87044,7 +87551,7 @@ pub impl ToJson for SqlGetAsyncStatusResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SqlGetAsyncStatusResponse with from_json(json, path) {
+pub impl FromJson for SqlGetAsyncStatusResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SqlGetAsyncStatusResponse: expected object"),
@@ -87115,7 +87622,7 @@ pub(all) struct SqlQueryQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SqlQueryQuery with to_json(self : SqlQueryQuery) -> Json {
+pub impl ToJson for SqlQueryQuery with fn to_json(self : SqlQueryQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.format {
     Some(value) => obj["format"] = value.to_json()
@@ -87125,7 +87632,7 @@ pub impl ToJson for SqlQueryQuery with to_json(self : SqlQueryQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for SqlQueryQuery with from_json(json, path) {
+pub impl FromJson for SqlQueryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SqlQueryQuery: expected object"))
   }
@@ -87176,7 +87683,7 @@ pub(all) struct SqlQueryBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SqlQueryBody with to_json(self : SqlQueryBody) -> Json {
+pub impl ToJson for SqlQueryBody with fn to_json(self : SqlQueryBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_partial_search_results {
     Some(value) => obj["allow_partial_search_results"] = value.to_json()
@@ -87254,7 +87761,7 @@ pub impl ToJson for SqlQueryBody with to_json(self : SqlQueryBody) -> Json {
 }
 
 ///|
-pub impl FromJson for SqlQueryBody with from_json(json, path) {
+pub impl FromJson for SqlQueryBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SqlQueryBody: expected object"))
   }
@@ -87434,7 +87941,7 @@ pub(all) struct SqlQueryResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SqlQueryResponse with to_json(self : SqlQueryResponse) -> Json {
+pub impl ToJson for SqlQueryResponse with fn to_json(self : SqlQueryResponse) -> Json {
   let obj : Map[String, Json] = {}
   match self.columns {
     Some(value) => obj["columns"] = value.to_json()
@@ -87461,7 +87968,7 @@ pub impl ToJson for SqlQueryResponse with to_json(self : SqlQueryResponse) -> Js
 }
 
 ///|
-pub impl FromJson for SqlQueryResponse with from_json(json, path) {
+pub impl FromJson for SqlQueryResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SqlQueryResponse: expected object"))
   }
@@ -87530,13 +88037,13 @@ pub async fn Client::sql_query(
 pub(all) struct SqlTranslateQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SqlTranslateQuery with to_json(_self : SqlTranslateQuery) -> Json {
+pub impl ToJson for SqlTranslateQuery with fn to_json(_self : SqlTranslateQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for SqlTranslateQuery with from_json(json, path) {
+pub impl FromJson for SqlTranslateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "SqlTranslateQuery: expected object"))
   }
@@ -87565,7 +88072,7 @@ pub(all) struct SqlTranslateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SqlTranslateBody with to_json(self : SqlTranslateBody) -> Json {
+pub impl ToJson for SqlTranslateBody with fn to_json(self : SqlTranslateBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.fetch_size {
     Some(value) => obj["fetch_size"] = value.to_json()
@@ -87584,7 +88091,7 @@ pub impl ToJson for SqlTranslateBody with to_json(self : SqlTranslateBody) -> Js
 }
 
 ///|
-pub impl FromJson for SqlTranslateBody with from_json(json, path) {
+pub impl FromJson for SqlTranslateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SqlTranslateBody: expected object"))
   }
@@ -87635,7 +88142,7 @@ pub(all) struct SqlTranslateResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SqlTranslateResponse with to_json(
+pub impl ToJson for SqlTranslateResponse with fn to_json(
   self : SqlTranslateResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -87671,7 +88178,7 @@ pub impl ToJson for SqlTranslateResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SqlTranslateResponse with from_json(json, path) {
+pub impl FromJson for SqlTranslateResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "SqlTranslateResponse: expected object"))
   }
@@ -87746,7 +88253,7 @@ pub async fn Client::sql_translate(
 pub(all) struct SslCertificatesQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SslCertificatesQuery with to_json(
+pub impl ToJson for SslCertificatesQuery with fn to_json(
   _self : SslCertificatesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -87754,7 +88261,7 @@ pub impl ToJson for SslCertificatesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SslCertificatesQuery with from_json(json, path) {
+pub impl FromJson for SslCertificatesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "SslCertificatesQuery: expected object"))
   }
@@ -87807,7 +88314,7 @@ pub(all) struct StreamsLogsDisableQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for StreamsLogsDisableQuery with to_json(
+pub impl ToJson for StreamsLogsDisableQuery with fn to_json(
   self : StreamsLogsDisableQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -87823,7 +88330,7 @@ pub impl ToJson for StreamsLogsDisableQuery with to_json(
 }
 
 ///|
-pub impl FromJson for StreamsLogsDisableQuery with from_json(json, path) {
+pub impl FromJson for StreamsLogsDisableQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "StreamsLogsDisableQuery: expected object"),
@@ -87907,7 +88414,7 @@ pub(all) struct StreamsLogsEnableQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for StreamsLogsEnableQuery with to_json(
+pub impl ToJson for StreamsLogsEnableQuery with fn to_json(
   self : StreamsLogsEnableQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -87923,7 +88430,7 @@ pub impl ToJson for StreamsLogsEnableQuery with to_json(
 }
 
 ///|
-pub impl FromJson for StreamsLogsEnableQuery with from_json(json, path) {
+pub impl FromJson for StreamsLogsEnableQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "StreamsLogsEnableQuery: expected object"),
@@ -88006,7 +88513,9 @@ pub(all) struct StreamsStatusQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for StreamsStatusQuery with to_json(self : StreamsStatusQuery) -> Json {
+pub impl ToJson for StreamsStatusQuery with fn to_json(
+  self : StreamsStatusQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -88016,7 +88525,7 @@ pub impl ToJson for StreamsStatusQuery with to_json(self : StreamsStatusQuery) -
 }
 
 ///|
-pub impl FromJson for StreamsStatusQuery with from_json(json, path) {
+pub impl FromJson for StreamsStatusQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "StreamsStatusQuery: expected object"))
   }
@@ -88055,7 +88564,7 @@ pub(all) struct StreamsStatusResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for StreamsStatusResponse with to_json(
+pub impl ToJson for StreamsStatusResponse with fn to_json(
   self : StreamsStatusResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -88066,7 +88575,7 @@ pub impl ToJson for StreamsStatusResponse with to_json(
 }
 
 ///|
-pub impl FromJson for StreamsStatusResponse with from_json(json, path) {
+pub impl FromJson for StreamsStatusResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "StreamsStatusResponse: expected object"),
@@ -88115,7 +88624,7 @@ pub async fn Client::streams_status(
 pub(all) struct SynonymsDeleteSynonymQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SynonymsDeleteSynonymQuery with to_json(
+pub impl ToJson for SynonymsDeleteSynonymQuery with fn to_json(
   _self : SynonymsDeleteSynonymQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -88123,7 +88632,7 @@ pub impl ToJson for SynonymsDeleteSynonymQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SynonymsDeleteSynonymQuery with from_json(json, path) {
+pub impl FromJson for SynonymsDeleteSynonymQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SynonymsDeleteSynonymQuery: expected object"),
@@ -88180,7 +88689,7 @@ pub(all) struct SynonymsDeleteSynonymRuleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SynonymsDeleteSynonymRuleQuery with to_json(
+pub impl ToJson for SynonymsDeleteSynonymRuleQuery with fn to_json(
   self : SynonymsDeleteSynonymRuleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -88192,7 +88701,10 @@ pub impl ToJson for SynonymsDeleteSynonymRuleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SynonymsDeleteSynonymRuleQuery with from_json(json, path) {
+pub impl FromJson for SynonymsDeleteSynonymRuleQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SynonymsDeleteSynonymRuleQuery: expected object"),
@@ -88277,7 +88789,7 @@ pub(all) struct SynonymsGetSynonymQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SynonymsGetSynonymQuery with to_json(
+pub impl ToJson for SynonymsGetSynonymQuery with fn to_json(
   self : SynonymsGetSynonymQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -88293,7 +88805,7 @@ pub impl ToJson for SynonymsGetSynonymQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SynonymsGetSynonymQuery with from_json(json, path) {
+pub impl FromJson for SynonymsGetSynonymQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SynonymsGetSynonymQuery: expected object"),
@@ -88344,7 +88856,7 @@ pub(all) struct SynonymsGetSynonymResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SynonymsGetSynonymResponse with to_json(
+pub impl ToJson for SynonymsGetSynonymResponse with fn to_json(
   self : SynonymsGetSynonymResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -88354,7 +88866,7 @@ pub impl ToJson for SynonymsGetSynonymResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SynonymsGetSynonymResponse with from_json(json, path) {
+pub impl FromJson for SynonymsGetSynonymResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SynonymsGetSynonymResponse: expected object"),
@@ -88402,7 +88914,7 @@ pub async fn Client::synonyms_get_synonym(
 pub(all) struct SynonymsGetSynonymRuleQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SynonymsGetSynonymRuleQuery with to_json(
+pub impl ToJson for SynonymsGetSynonymRuleQuery with fn to_json(
   _self : SynonymsGetSynonymRuleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -88410,7 +88922,7 @@ pub impl ToJson for SynonymsGetSynonymRuleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SynonymsGetSynonymRuleQuery with from_json(json, path) {
+pub impl FromJson for SynonymsGetSynonymRuleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "SynonymsGetSynonymRuleQuery: expected object"),
@@ -88483,7 +88995,7 @@ pub(all) struct SynonymsGetSynonymsSetsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SynonymsGetSynonymsSetsQuery with to_json(
+pub impl ToJson for SynonymsGetSynonymsSetsQuery with fn to_json(
   self : SynonymsGetSynonymsSetsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -88499,7 +89011,7 @@ pub impl ToJson for SynonymsGetSynonymsSetsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SynonymsGetSynonymsSetsQuery with from_json(json, path) {
+pub impl FromJson for SynonymsGetSynonymsSetsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SynonymsGetSynonymsSetsQuery: expected object"),
@@ -88550,7 +89062,7 @@ pub(all) struct SynonymsGetSynonymsSetsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SynonymsGetSynonymsSetsResponse with to_json(
+pub impl ToJson for SynonymsGetSynonymsSetsResponse with fn to_json(
   self : SynonymsGetSynonymsSetsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -88560,7 +89072,10 @@ pub impl ToJson for SynonymsGetSynonymsSetsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SynonymsGetSynonymsSetsResponse with from_json(json, path) {
+pub impl FromJson for SynonymsGetSynonymsSetsResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SynonymsGetSynonymsSetsResponse: expected object"),
@@ -88607,7 +89122,7 @@ pub(all) struct SynonymsPutSynonymQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SynonymsPutSynonymQuery with to_json(
+pub impl ToJson for SynonymsPutSynonymQuery with fn to_json(
   self : SynonymsPutSynonymQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -88619,7 +89134,7 @@ pub impl ToJson for SynonymsPutSynonymQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SynonymsPutSynonymQuery with from_json(json, path) {
+pub impl FromJson for SynonymsPutSynonymQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SynonymsPutSynonymQuery: expected object"),
@@ -88657,7 +89172,7 @@ pub(all) struct SynonymsPutSynonymBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SynonymsPutSynonymBody with to_json(
+pub impl ToJson for SynonymsPutSynonymBody with fn to_json(
   self : SynonymsPutSynonymBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -88666,7 +89181,7 @@ pub impl ToJson for SynonymsPutSynonymBody with to_json(
 }
 
 ///|
-pub impl FromJson for SynonymsPutSynonymBody with from_json(json, path) {
+pub impl FromJson for SynonymsPutSynonymBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SynonymsPutSynonymBody: expected object"),
@@ -88694,7 +89209,7 @@ pub(all) struct SynonymsPutSynonymResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SynonymsPutSynonymResponse with to_json(
+pub impl ToJson for SynonymsPutSynonymResponse with fn to_json(
   self : SynonymsPutSynonymResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -88707,7 +89222,7 @@ pub impl ToJson for SynonymsPutSynonymResponse with to_json(
 }
 
 ///|
-pub impl FromJson for SynonymsPutSynonymResponse with from_json(json, path) {
+pub impl FromJson for SynonymsPutSynonymResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SynonymsPutSynonymResponse: expected object"),
@@ -88764,7 +89279,7 @@ pub(all) struct SynonymsPutSynonymRuleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SynonymsPutSynonymRuleQuery with to_json(
+pub impl ToJson for SynonymsPutSynonymRuleQuery with fn to_json(
   self : SynonymsPutSynonymRuleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -88776,7 +89291,7 @@ pub impl ToJson for SynonymsPutSynonymRuleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for SynonymsPutSynonymRuleQuery with from_json(json, path) {
+pub impl FromJson for SynonymsPutSynonymRuleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SynonymsPutSynonymRuleQuery: expected object"),
@@ -88816,7 +89331,7 @@ pub(all) struct SynonymsPutSynonymRuleBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for SynonymsPutSynonymRuleBody with to_json(
+pub impl ToJson for SynonymsPutSynonymRuleBody with fn to_json(
   self : SynonymsPutSynonymRuleBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -88825,7 +89340,7 @@ pub impl ToJson for SynonymsPutSynonymRuleBody with to_json(
 }
 
 ///|
-pub impl FromJson for SynonymsPutSynonymRuleBody with from_json(json, path) {
+pub impl FromJson for SynonymsPutSynonymRuleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "SynonymsPutSynonymRuleBody: expected object"),
@@ -88893,7 +89408,7 @@ pub(all) struct TasksCancelQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TasksCancelQuery with to_json(self : TasksCancelQuery) -> Json {
+pub impl ToJson for TasksCancelQuery with fn to_json(self : TasksCancelQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.actions {
     Some(value) => obj["actions"] = value.to_json()
@@ -88915,7 +89430,7 @@ pub impl ToJson for TasksCancelQuery with to_json(self : TasksCancelQuery) -> Js
 }
 
 ///|
-pub impl FromJson for TasksCancelQuery with from_json(json, path) {
+pub impl FromJson for TasksCancelQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "TasksCancelQuery: expected object"))
   }
@@ -89026,7 +89541,7 @@ pub(all) struct TasksGetQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TasksGetQuery with to_json(self : TasksGetQuery) -> Json {
+pub impl ToJson for TasksGetQuery with fn to_json(self : TasksGetQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
@@ -89044,7 +89559,7 @@ pub impl ToJson for TasksGetQuery with to_json(self : TasksGetQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for TasksGetQuery with from_json(json, path) {
+pub impl FromJson for TasksGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "TasksGetQuery: expected object"))
   }
@@ -89106,7 +89621,7 @@ pub(all) struct TasksGetResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TasksGetResponse with to_json(self : TasksGetResponse) -> Json {
+pub impl ToJson for TasksGetResponse with fn to_json(self : TasksGetResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["completed"] = self.completed.to_json()
   obj["task"] = self.task.to_json()
@@ -89122,7 +89637,7 @@ pub impl ToJson for TasksGetResponse with to_json(self : TasksGetResponse) -> Js
 }
 
 ///|
-pub impl FromJson for TasksGetResponse with from_json(json, path) {
+pub impl FromJson for TasksGetResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "TasksGetResponse: expected object"))
   }
@@ -89189,7 +89704,7 @@ pub(all) struct TasksListQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TasksListQuery with to_json(self : TasksListQuery) -> Json {
+pub impl ToJson for TasksListQuery with fn to_json(self : TasksListQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.actions {
     Some(value) => obj["actions"] = value.to_json()
@@ -89223,7 +89738,7 @@ pub impl ToJson for TasksListQuery with to_json(self : TasksListQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for TasksListQuery with from_json(json, path) {
+pub impl FromJson for TasksListQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "TasksListQuery: expected object"))
   }
@@ -89356,13 +89871,13 @@ pub async fn Client::tasks_list(
 pub(all) struct TermsEnumQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TermsEnumQuery with to_json(_self : TermsEnumQuery) -> Json {
+pub impl ToJson for TermsEnumQuery with fn to_json(_self : TermsEnumQuery) -> Json {
   let obj : Map[String, Json] = {}
   Json::object(obj)
 }
 
 ///|
-pub impl FromJson for TermsEnumQuery with from_json(json, path) {
+pub impl FromJson for TermsEnumQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "TermsEnumQuery: expected object"))
   }
@@ -89394,7 +89909,7 @@ pub(all) struct TermsEnumBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TermsEnumBody with to_json(self : TermsEnumBody) -> Json {
+pub impl ToJson for TermsEnumBody with fn to_json(self : TermsEnumBody) -> Json {
   let obj : Map[String, Json] = {}
   obj["field"] = self.field.to_json()
   match self.size {
@@ -89425,7 +89940,7 @@ pub impl ToJson for TermsEnumBody with to_json(self : TermsEnumBody) -> Json {
 }
 
 ///|
-pub impl FromJson for TermsEnumBody with from_json(json, path) {
+pub impl FromJson for TermsEnumBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "TermsEnumBody: expected object"))
   }
@@ -89491,7 +90006,7 @@ pub(all) struct TermsEnumResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TermsEnumResponse with to_json(self : TermsEnumResponse) -> Json {
+pub impl ToJson for TermsEnumResponse with fn to_json(self : TermsEnumResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["_shards"] = self._shards.to_json()
   obj["terms"] = self.terms.to_json()
@@ -89500,7 +90015,7 @@ pub impl ToJson for TermsEnumResponse with to_json(self : TermsEnumResponse) -> 
 }
 
 ///|
-pub impl FromJson for TermsEnumResponse with from_json(json, path) {
+pub impl FromJson for TermsEnumResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "TermsEnumResponse: expected object"))
   }
@@ -89568,7 +90083,7 @@ pub(all) struct TermvectorsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TermvectorsQuery with to_json(self : TermvectorsQuery) -> Json {
+pub impl ToJson for TermvectorsQuery with fn to_json(self : TermvectorsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.fields {
     Some(value) => obj["fields"] = value.to_json()
@@ -89618,7 +90133,7 @@ pub impl ToJson for TermvectorsQuery with to_json(self : TermvectorsQuery) -> Js
 }
 
 ///|
-pub impl FromJson for TermvectorsQuery with from_json(json, path) {
+pub impl FromJson for TermvectorsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "TermvectorsQuery: expected object"))
   }
@@ -89784,7 +90299,7 @@ pub(all) struct TermvectorsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TermvectorsBody with to_json(self : TermvectorsBody) -> Json {
+pub impl ToJson for TermvectorsBody with fn to_json(self : TermvectorsBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.doc {
     Some(value) => obj["doc"] = value.to_json()
@@ -89838,7 +90353,7 @@ pub impl ToJson for TermvectorsBody with to_json(self : TermvectorsBody) -> Json
 }
 
 ///|
-pub impl FromJson for TermvectorsBody with from_json(json, path) {
+pub impl FromJson for TermvectorsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "TermvectorsBody: expected object"))
   }
@@ -89953,7 +90468,9 @@ pub(all) struct TermvectorsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TermvectorsResponse with to_json(self : TermvectorsResponse) -> Json {
+pub impl ToJson for TermvectorsResponse with fn to_json(
+  self : TermvectorsResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["found"] = self.found.to_json()
   match self._id {
@@ -89971,7 +90488,7 @@ pub impl ToJson for TermvectorsResponse with to_json(self : TermvectorsResponse)
 }
 
 ///|
-pub impl FromJson for TermvectorsResponse with from_json(json, path) {
+pub impl FromJson for TermvectorsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "TermvectorsResponse: expected object"))
   }
@@ -90070,7 +90587,7 @@ pub(all) struct TextStructureFindFieldStructureQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TextStructureFindFieldStructureQuery with to_json(
+pub impl ToJson for TextStructureFindFieldStructureQuery with fn to_json(
   self : TextStructureFindFieldStructureQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -90132,7 +90649,7 @@ pub impl ToJson for TextStructureFindFieldStructureQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TextStructureFindFieldStructureQuery with from_json(
+pub impl FromJson for TextStructureFindFieldStructureQuery with fn from_json(
   json,
   path,
 ) {
@@ -90350,7 +90867,7 @@ pub(all) struct TextStructureFindFieldStructureResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TextStructureFindFieldStructureResponse with to_json(
+pub impl ToJson for TextStructureFindFieldStructureResponse with fn to_json(
   self : TextStructureFindFieldStructureResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -90391,7 +90908,7 @@ pub impl ToJson for TextStructureFindFieldStructureResponse with to_json(
 }
 
 ///|
-pub impl FromJson for TextStructureFindFieldStructureResponse with from_json(
+pub impl FromJson for TextStructureFindFieldStructureResponse with fn from_json(
   json,
   path,
 ) {
@@ -90525,7 +91042,7 @@ pub(all) struct TextStructureFindMessageStructureQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TextStructureFindMessageStructureQuery with to_json(
+pub impl ToJson for TextStructureFindMessageStructureQuery with fn to_json(
   self : TextStructureFindMessageStructureQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -90581,7 +91098,7 @@ pub impl ToJson for TextStructureFindMessageStructureQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TextStructureFindMessageStructureQuery with from_json(
+pub impl FromJson for TextStructureFindMessageStructureQuery with fn from_json(
   json,
   path,
 ) {
@@ -90758,7 +91275,7 @@ pub(all) struct TextStructureFindMessageStructureBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TextStructureFindMessageStructureBody with to_json(
+pub impl ToJson for TextStructureFindMessageStructureBody with fn to_json(
   self : TextStructureFindMessageStructureBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -90767,7 +91284,7 @@ pub impl ToJson for TextStructureFindMessageStructureBody with to_json(
 }
 
 ///|
-pub impl FromJson for TextStructureFindMessageStructureBody with from_json(
+pub impl FromJson for TextStructureFindMessageStructureBody with fn from_json(
   json,
   path,
 ) {
@@ -90811,7 +91328,7 @@ pub(all) struct TextStructureFindMessageStructureResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TextStructureFindMessageStructureResponse with to_json(
+pub impl ToJson for TextStructureFindMessageStructureResponse with fn to_json(
   self : TextStructureFindMessageStructureResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -90852,7 +91369,7 @@ pub impl ToJson for TextStructureFindMessageStructureResponse with to_json(
 }
 
 ///|
-pub impl FromJson for TextStructureFindMessageStructureResponse with from_json(
+pub impl FromJson for TextStructureFindMessageStructureResponse with fn from_json(
   json,
   path,
 ) {
@@ -90993,7 +91510,7 @@ pub(all) struct TextStructureFindStructureQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TextStructureFindStructureQuery with to_json(
+pub impl ToJson for TextStructureFindStructureQuery with fn to_json(
   self : TextStructureFindStructureQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -91065,7 +91582,10 @@ pub impl ToJson for TextStructureFindStructureQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TextStructureFindStructureQuery with from_json(json, path) {
+pub impl FromJson for TextStructureFindStructureQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TextStructureFindStructureQuery: expected object"),
@@ -91311,7 +91831,7 @@ pub(all) struct TextStructureFindStructureResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TextStructureFindStructureResponse with to_json(
+pub impl ToJson for TextStructureFindStructureResponse with fn to_json(
   self : TextStructureFindStructureResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -91377,7 +91897,7 @@ pub impl ToJson for TextStructureFindStructureResponse with to_json(
 }
 
 ///|
-pub impl FromJson for TextStructureFindStructureResponse with from_json(
+pub impl FromJson for TextStructureFindStructureResponse with fn from_json(
   json,
   path,
 ) {
@@ -91542,7 +92062,7 @@ pub(all) struct TextStructureTestGrokPatternQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TextStructureTestGrokPatternQuery with to_json(
+pub impl ToJson for TextStructureTestGrokPatternQuery with fn to_json(
   self : TextStructureTestGrokPatternQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -91554,7 +92074,7 @@ pub impl ToJson for TextStructureTestGrokPatternQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TextStructureTestGrokPatternQuery with from_json(
+pub impl FromJson for TextStructureTestGrokPatternQuery with fn from_json(
   json,
   path,
 ) {
@@ -91599,7 +92119,7 @@ pub(all) struct TextStructureTestGrokPatternBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TextStructureTestGrokPatternBody with to_json(
+pub impl ToJson for TextStructureTestGrokPatternBody with fn to_json(
   self : TextStructureTestGrokPatternBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -91609,7 +92129,7 @@ pub impl ToJson for TextStructureTestGrokPatternBody with to_json(
 }
 
 ///|
-pub impl FromJson for TextStructureTestGrokPatternBody with from_json(
+pub impl FromJson for TextStructureTestGrokPatternBody with fn from_json(
   json,
   path,
 ) {
@@ -91644,7 +92164,7 @@ pub(all) struct TextStructureTestGrokPatternResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TextStructureTestGrokPatternResponse with to_json(
+pub impl ToJson for TextStructureTestGrokPatternResponse with fn to_json(
   self : TextStructureTestGrokPatternResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -91653,7 +92173,7 @@ pub impl ToJson for TextStructureTestGrokPatternResponse with to_json(
 }
 
 ///|
-pub impl FromJson for TextStructureTestGrokPatternResponse with from_json(
+pub impl FromJson for TextStructureTestGrokPatternResponse with fn from_json(
   json,
   path,
 ) {
@@ -91707,7 +92227,7 @@ pub(all) struct TransformDeleteTransformQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformDeleteTransformQuery with to_json(
+pub impl ToJson for TransformDeleteTransformQuery with fn to_json(
   self : TransformDeleteTransformQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -91727,7 +92247,10 @@ pub impl ToJson for TransformDeleteTransformQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TransformDeleteTransformQuery with from_json(json, path) {
+pub impl FromJson for TransformDeleteTransformQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformDeleteTransformQuery: expected object"),
@@ -91818,7 +92341,7 @@ pub async fn Client::transform_delete_transform(
 pub(all) struct TransformGetNodeStatsQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformGetNodeStatsQuery with to_json(
+pub impl ToJson for TransformGetNodeStatsQuery with fn to_json(
   _self : TransformGetNodeStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -91826,7 +92349,7 @@ pub impl ToJson for TransformGetNodeStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TransformGetNodeStatsQuery with from_json(json, path) {
+pub impl FromJson for TransformGetNodeStatsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "TransformGetNodeStatsQuery: expected object"),
@@ -91886,7 +92409,7 @@ pub(all) struct TransformGetTransformQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformGetTransformQuery with to_json(
+pub impl ToJson for TransformGetTransformQuery with fn to_json(
   self : TransformGetTransformQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -91910,7 +92433,7 @@ pub impl ToJson for TransformGetTransformQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TransformGetTransformQuery with from_json(json, path) {
+pub impl FromJson for TransformGetTransformQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformGetTransformQuery: expected object"),
@@ -91983,7 +92506,7 @@ pub(all) struct TransformGetTransformResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformGetTransformResponse with to_json(
+pub impl ToJson for TransformGetTransformResponse with fn to_json(
   self : TransformGetTransformResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -91993,7 +92516,10 @@ pub impl ToJson for TransformGetTransformResponse with to_json(
 }
 
 ///|
-pub impl FromJson for TransformGetTransformResponse with from_json(json, path) {
+pub impl FromJson for TransformGetTransformResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformGetTransformResponse: expected object"),
@@ -92055,7 +92581,7 @@ pub(all) struct TransformGetTransformStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformGetTransformStatsQuery with to_json(
+pub impl ToJson for TransformGetTransformStatsQuery with fn to_json(
   self : TransformGetTransformStatsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -92079,7 +92605,10 @@ pub impl ToJson for TransformGetTransformStatsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TransformGetTransformStatsQuery with from_json(json, path) {
+pub impl FromJson for TransformGetTransformStatsQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformGetTransformStatsQuery: expected object"),
@@ -92151,7 +92680,7 @@ pub(all) struct TransformGetTransformStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformGetTransformStatsResponse with to_json(
+pub impl ToJson for TransformGetTransformStatsResponse with fn to_json(
   self : TransformGetTransformStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -92161,7 +92690,7 @@ pub impl ToJson for TransformGetTransformStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for TransformGetTransformStatsResponse with from_json(
+pub impl FromJson for TransformGetTransformStatsResponse with fn from_json(
   json,
   path,
 ) {
@@ -92217,7 +92746,7 @@ pub(all) struct TransformPreviewTransformQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformPreviewTransformQuery with to_json(
+pub impl ToJson for TransformPreviewTransformQuery with fn to_json(
   self : TransformPreviewTransformQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -92229,7 +92758,10 @@ pub impl ToJson for TransformPreviewTransformQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TransformPreviewTransformQuery with from_json(json, path) {
+pub impl FromJson for TransformPreviewTransformQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformPreviewTransformQuery: expected object"),
@@ -92277,7 +92809,7 @@ pub(all) struct TransformPreviewTransformBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformPreviewTransformBody with to_json(
+pub impl ToJson for TransformPreviewTransformBody with fn to_json(
   self : TransformPreviewTransformBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -92321,7 +92853,10 @@ pub impl ToJson for TransformPreviewTransformBody with to_json(
 }
 
 ///|
-pub impl FromJson for TransformPreviewTransformBody with from_json(json, path) {
+pub impl FromJson for TransformPreviewTransformBody with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformPreviewTransformBody: expected object"),
@@ -92411,7 +92946,7 @@ pub(all) struct TransformPreviewTransformResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformPreviewTransformResponse with to_json(
+pub impl ToJson for TransformPreviewTransformResponse with fn to_json(
   self : TransformPreviewTransformResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -92421,7 +92956,7 @@ pub impl ToJson for TransformPreviewTransformResponse with to_json(
 }
 
 ///|
-pub impl FromJson for TransformPreviewTransformResponse with from_json(
+pub impl FromJson for TransformPreviewTransformResponse with fn from_json(
   json,
   path,
 ) {
@@ -92490,7 +93025,7 @@ pub(all) struct TransformPutTransformQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformPutTransformQuery with to_json(
+pub impl ToJson for TransformPutTransformQuery with fn to_json(
   self : TransformPutTransformQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -92506,7 +93041,7 @@ pub impl ToJson for TransformPutTransformQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TransformPutTransformQuery with from_json(json, path) {
+pub impl FromJson for TransformPutTransformQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformPutTransformQuery: expected object"),
@@ -92566,7 +93101,7 @@ pub(all) struct TransformPutTransformBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformPutTransformBody with to_json(
+pub impl ToJson for TransformPutTransformBody with fn to_json(
   self : TransformPutTransformBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -92608,7 +93143,7 @@ pub impl ToJson for TransformPutTransformBody with to_json(
 }
 
 ///|
-pub impl FromJson for TransformPutTransformBody with from_json(json, path) {
+pub impl FromJson for TransformPutTransformBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformPutTransformBody: expected object"),
@@ -92738,7 +93273,7 @@ pub(all) struct TransformResetTransformQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformResetTransformQuery with to_json(
+pub impl ToJson for TransformResetTransformQuery with fn to_json(
   self : TransformResetTransformQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -92754,7 +93289,7 @@ pub impl ToJson for TransformResetTransformQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TransformResetTransformQuery with from_json(json, path) {
+pub impl FromJson for TransformResetTransformQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformResetTransformQuery: expected object"),
@@ -92837,7 +93372,7 @@ pub(all) struct TransformScheduleNowTransformQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformScheduleNowTransformQuery with to_json(
+pub impl ToJson for TransformScheduleNowTransformQuery with fn to_json(
   self : TransformScheduleNowTransformQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -92853,7 +93388,7 @@ pub impl ToJson for TransformScheduleNowTransformQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TransformScheduleNowTransformQuery with from_json(
+pub impl FromJson for TransformScheduleNowTransformQuery with fn from_json(
   json,
   path,
 ) {
@@ -92952,7 +93487,7 @@ pub(all) struct TransformSetUpgradeModeQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformSetUpgradeModeQuery with to_json(
+pub impl ToJson for TransformSetUpgradeModeQuery with fn to_json(
   self : TransformSetUpgradeModeQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -92968,7 +93503,7 @@ pub impl ToJson for TransformSetUpgradeModeQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TransformSetUpgradeModeQuery with from_json(json, path) {
+pub impl FromJson for TransformSetUpgradeModeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformSetUpgradeModeQuery: expected object"),
@@ -93048,7 +93583,7 @@ pub(all) struct TransformStartTransformQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformStartTransformQuery with to_json(
+pub impl ToJson for TransformStartTransformQuery with fn to_json(
   self : TransformStartTransformQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -93064,7 +93599,7 @@ pub impl ToJson for TransformStartTransformQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TransformStartTransformQuery with from_json(json, path) {
+pub impl FromJson for TransformStartTransformQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformStartTransformQuery: expected object"),
@@ -93150,7 +93685,7 @@ pub(all) struct TransformStopTransformQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformStopTransformQuery with to_json(
+pub impl ToJson for TransformStopTransformQuery with fn to_json(
   self : TransformStopTransformQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -93178,7 +93713,7 @@ pub impl ToJson for TransformStopTransformQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TransformStopTransformQuery with from_json(json, path) {
+pub impl FromJson for TransformStopTransformQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformStopTransformQuery: expected object"),
@@ -93296,7 +93831,7 @@ pub(all) struct TransformUpdateTransformQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformUpdateTransformQuery with to_json(
+pub impl ToJson for TransformUpdateTransformQuery with fn to_json(
   self : TransformUpdateTransformQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -93312,7 +93847,10 @@ pub impl ToJson for TransformUpdateTransformQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TransformUpdateTransformQuery with from_json(json, path) {
+pub impl FromJson for TransformUpdateTransformQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformUpdateTransformQuery: expected object"),
@@ -93370,7 +93908,7 @@ pub(all) struct TransformUpdateTransformBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformUpdateTransformBody with to_json(
+pub impl ToJson for TransformUpdateTransformBody with fn to_json(
   self : TransformUpdateTransformBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -93410,7 +93948,7 @@ pub impl ToJson for TransformUpdateTransformBody with to_json(
 }
 
 ///|
-pub impl FromJson for TransformUpdateTransformBody with from_json(json, path) {
+pub impl FromJson for TransformUpdateTransformBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformUpdateTransformBody: expected object"),
@@ -93505,7 +94043,7 @@ pub(all) struct TransformUpdateTransformResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformUpdateTransformResponse with to_json(
+pub impl ToJson for TransformUpdateTransformResponse with fn to_json(
   self : TransformUpdateTransformResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -93548,7 +94086,7 @@ pub impl ToJson for TransformUpdateTransformResponse with to_json(
 }
 
 ///|
-pub impl FromJson for TransformUpdateTransformResponse with from_json(
+pub impl FromJson for TransformUpdateTransformResponse with fn from_json(
   json,
   path,
 ) {
@@ -93666,7 +94204,7 @@ pub(all) struct TransformUpgradeTransformsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformUpgradeTransformsQuery with to_json(
+pub impl ToJson for TransformUpgradeTransformsQuery with fn to_json(
   self : TransformUpgradeTransformsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -93682,7 +94220,10 @@ pub impl ToJson for TransformUpgradeTransformsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for TransformUpgradeTransformsQuery with from_json(json, path) {
+pub impl FromJson for TransformUpgradeTransformsQuery with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "TransformUpgradeTransformsQuery: expected object"),
@@ -93737,7 +94278,7 @@ pub(all) struct TransformUpgradeTransformsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for TransformUpgradeTransformsResponse with to_json(
+pub impl ToJson for TransformUpgradeTransformsResponse with fn to_json(
   self : TransformUpgradeTransformsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -93748,7 +94289,7 @@ pub impl ToJson for TransformUpgradeTransformsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for TransformUpgradeTransformsResponse with from_json(
+pub impl FromJson for TransformUpgradeTransformsResponse with fn from_json(
   json,
   path,
 ) {
@@ -93820,7 +94361,7 @@ pub(all) struct UpdateQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for UpdateQuery with to_json(self : UpdateQuery) -> Json {
+pub impl ToJson for UpdateQuery with fn to_json(self : UpdateQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.if_primary_term {
     Some(value) => obj["if_primary_term"] = value.to_json()
@@ -93878,7 +94419,7 @@ pub impl ToJson for UpdateQuery with to_json(self : UpdateQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for UpdateQuery with from_json(json, path) {
+pub impl FromJson for UpdateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "UpdateQuery: expected object"))
   }
@@ -94068,7 +94609,7 @@ pub(all) struct UpdateBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for UpdateBody with to_json(self : UpdateBody) -> Json {
+pub impl ToJson for UpdateBody with fn to_json(self : UpdateBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.detect_noop {
     Some(value) => obj["detect_noop"] = value.to_json()
@@ -94102,7 +94643,7 @@ pub impl ToJson for UpdateBody with to_json(self : UpdateBody) -> Json {
 }
 
 ///|
-pub impl FromJson for UpdateBody with from_json(json, path) {
+pub impl FromJson for UpdateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "UpdateBody: expected object"))
   }
@@ -94235,7 +94776,9 @@ pub(all) struct UpdateByQueryQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for UpdateByQueryQuery with to_json(self : UpdateByQueryQuery) -> Json {
+pub impl ToJson for UpdateByQueryQuery with fn to_json(
+  self : UpdateByQueryQuery,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
@@ -94365,7 +94908,7 @@ pub impl ToJson for UpdateByQueryQuery with to_json(self : UpdateByQueryQuery) -
 }
 
 ///|
-pub impl FromJson for UpdateByQueryQuery with from_json(json, path) {
+pub impl FromJson for UpdateByQueryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "UpdateByQueryQuery: expected object"))
   }
@@ -94760,7 +95303,7 @@ pub(all) struct UpdateByQueryBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for UpdateByQueryBody with to_json(self : UpdateByQueryBody) -> Json {
+pub impl ToJson for UpdateByQueryBody with fn to_json(self : UpdateByQueryBody) -> Json {
   let obj : Map[String, Json] = {}
   match self.max_docs {
     Some(value) => obj["max_docs"] = value.to_json()
@@ -94786,7 +95329,7 @@ pub impl ToJson for UpdateByQueryBody with to_json(self : UpdateByQueryBody) -> 
 }
 
 ///|
-pub impl FromJson for UpdateByQueryBody with from_json(json, path) {
+pub impl FromJson for UpdateByQueryBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "UpdateByQueryBody: expected object"))
   }
@@ -94853,7 +95396,7 @@ pub(all) struct UpdateByQueryResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for UpdateByQueryResponse with to_json(
+pub impl ToJson for UpdateByQueryResponse with fn to_json(
   self : UpdateByQueryResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -94929,7 +95472,7 @@ pub impl ToJson for UpdateByQueryResponse with to_json(
 }
 
 ///|
-pub impl FromJson for UpdateByQueryResponse with from_json(json, path) {
+pub impl FromJson for UpdateByQueryResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "UpdateByQueryResponse: expected object"),
@@ -95074,7 +95617,7 @@ pub(all) struct UpdateByQueryRethrottleQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for UpdateByQueryRethrottleQuery with to_json(
+pub impl ToJson for UpdateByQueryRethrottleQuery with fn to_json(
   self : UpdateByQueryRethrottleQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95083,7 +95626,7 @@ pub impl ToJson for UpdateByQueryRethrottleQuery with to_json(
 }
 
 ///|
-pub impl FromJson for UpdateByQueryRethrottleQuery with from_json(json, path) {
+pub impl FromJson for UpdateByQueryRethrottleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "UpdateByQueryRethrottleQuery: expected object"),
@@ -95123,7 +95666,7 @@ pub(all) struct UpdateByQueryRethrottleResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for UpdateByQueryRethrottleResponse with to_json(
+pub impl ToJson for UpdateByQueryRethrottleResponse with fn to_json(
   self : UpdateByQueryRethrottleResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95132,7 +95675,10 @@ pub impl ToJson for UpdateByQueryRethrottleResponse with to_json(
 }
 
 ///|
-pub impl FromJson for UpdateByQueryRethrottleResponse with from_json(json, path) {
+pub impl FromJson for UpdateByQueryRethrottleResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "UpdateByQueryRethrottleResponse: expected object"),
@@ -95179,7 +95725,7 @@ pub async fn Client::update_by_query_rethrottle(
 pub(all) struct WatcherAckWatchQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherAckWatchQuery with to_json(
+pub impl ToJson for WatcherAckWatchQuery with fn to_json(
   _self : WatcherAckWatchQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95187,7 +95733,7 @@ pub impl ToJson for WatcherAckWatchQuery with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherAckWatchQuery with from_json(json, path) {
+pub impl FromJson for WatcherAckWatchQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "WatcherAckWatchQuery: expected object"))
   }
@@ -95213,7 +95759,7 @@ pub(all) struct WatcherAckWatchResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherAckWatchResponse with to_json(
+pub impl ToJson for WatcherAckWatchResponse with fn to_json(
   self : WatcherAckWatchResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95222,7 +95768,7 @@ pub impl ToJson for WatcherAckWatchResponse with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherAckWatchResponse with from_json(json, path) {
+pub impl FromJson for WatcherAckWatchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherAckWatchResponse: expected object"),
@@ -95280,7 +95826,7 @@ pub async fn Client::watcher_ack_watch(
 pub(all) struct WatcherActivateWatchQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherActivateWatchQuery with to_json(
+pub impl ToJson for WatcherActivateWatchQuery with fn to_json(
   _self : WatcherActivateWatchQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95288,7 +95834,7 @@ pub impl ToJson for WatcherActivateWatchQuery with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherActivateWatchQuery with from_json(json, path) {
+pub impl FromJson for WatcherActivateWatchQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "WatcherActivateWatchQuery: expected object"),
@@ -95316,7 +95862,7 @@ pub(all) struct WatcherActivateWatchResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherActivateWatchResponse with to_json(
+pub impl ToJson for WatcherActivateWatchResponse with fn to_json(
   self : WatcherActivateWatchResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95325,7 +95871,7 @@ pub impl ToJson for WatcherActivateWatchResponse with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherActivateWatchResponse with from_json(json, path) {
+pub impl FromJson for WatcherActivateWatchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherActivateWatchResponse: expected object"),
@@ -95372,7 +95918,7 @@ pub async fn Client::watcher_activate_watch(
 pub(all) struct WatcherDeactivateWatchQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherDeactivateWatchQuery with to_json(
+pub impl ToJson for WatcherDeactivateWatchQuery with fn to_json(
   _self : WatcherDeactivateWatchQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95380,7 +95926,7 @@ pub impl ToJson for WatcherDeactivateWatchQuery with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherDeactivateWatchQuery with from_json(json, path) {
+pub impl FromJson for WatcherDeactivateWatchQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "WatcherDeactivateWatchQuery: expected object"),
@@ -95408,7 +95954,7 @@ pub(all) struct WatcherDeactivateWatchResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherDeactivateWatchResponse with to_json(
+pub impl ToJson for WatcherDeactivateWatchResponse with fn to_json(
   self : WatcherDeactivateWatchResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95417,7 +95963,10 @@ pub impl ToJson for WatcherDeactivateWatchResponse with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherDeactivateWatchResponse with from_json(json, path) {
+pub impl FromJson for WatcherDeactivateWatchResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherDeactivateWatchResponse: expected object"),
@@ -95464,7 +96013,7 @@ pub async fn Client::watcher_deactivate_watch(
 pub(all) struct WatcherDeleteWatchQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherDeleteWatchQuery with to_json(
+pub impl ToJson for WatcherDeleteWatchQuery with fn to_json(
   _self : WatcherDeleteWatchQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95472,7 +96021,7 @@ pub impl ToJson for WatcherDeleteWatchQuery with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherDeleteWatchQuery with from_json(json, path) {
+pub impl FromJson for WatcherDeleteWatchQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "WatcherDeleteWatchQuery: expected object"),
@@ -95502,7 +96051,7 @@ pub(all) struct WatcherDeleteWatchResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherDeleteWatchResponse with to_json(
+pub impl ToJson for WatcherDeleteWatchResponse with fn to_json(
   self : WatcherDeleteWatchResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95513,7 +96062,7 @@ pub impl ToJson for WatcherDeleteWatchResponse with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherDeleteWatchResponse with from_json(json, path) {
+pub impl FromJson for WatcherDeleteWatchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherDeleteWatchResponse: expected object"),
@@ -95570,7 +96119,7 @@ pub(all) struct WatcherExecuteWatchQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherExecuteWatchQuery with to_json(
+pub impl ToJson for WatcherExecuteWatchQuery with fn to_json(
   self : WatcherExecuteWatchQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95582,7 +96131,7 @@ pub impl ToJson for WatcherExecuteWatchQuery with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherExecuteWatchQuery with from_json(json, path) {
+pub impl FromJson for WatcherExecuteWatchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherExecuteWatchQuery: expected object"),
@@ -95626,7 +96175,7 @@ pub(all) struct WatcherExecuteWatchBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherExecuteWatchBody with to_json(
+pub impl ToJson for WatcherExecuteWatchBody with fn to_json(
   self : WatcherExecuteWatchBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95662,7 +96211,7 @@ pub impl ToJson for WatcherExecuteWatchBody with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherExecuteWatchBody with from_json(json, path) {
+pub impl FromJson for WatcherExecuteWatchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherExecuteWatchBody: expected object"),
@@ -95741,7 +96290,7 @@ pub(all) struct WatcherExecuteWatchResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherExecuteWatchResponse with to_json(
+pub impl ToJson for WatcherExecuteWatchResponse with fn to_json(
   self : WatcherExecuteWatchResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95751,7 +96300,7 @@ pub impl ToJson for WatcherExecuteWatchResponse with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherExecuteWatchResponse with from_json(json, path) {
+pub impl FromJson for WatcherExecuteWatchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherExecuteWatchResponse: expected object"),
@@ -95816,7 +96365,7 @@ pub(all) struct WatcherGetSettingsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherGetSettingsQuery with to_json(
+pub impl ToJson for WatcherGetSettingsQuery with fn to_json(
   self : WatcherGetSettingsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95828,7 +96377,7 @@ pub impl ToJson for WatcherGetSettingsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherGetSettingsQuery with from_json(json, path) {
+pub impl FromJson for WatcherGetSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherGetSettingsQuery: expected object"),
@@ -95872,7 +96421,7 @@ pub(all) struct WatcherGetSettingsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherGetSettingsResponse with to_json(
+pub impl ToJson for WatcherGetSettingsResponse with fn to_json(
   self : WatcherGetSettingsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95881,7 +96430,7 @@ pub impl ToJson for WatcherGetSettingsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherGetSettingsResponse with from_json(json, path) {
+pub impl FromJson for WatcherGetSettingsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherGetSettingsResponse: expected object"),
@@ -95928,7 +96477,7 @@ pub async fn Client::watcher_get_settings(
 pub(all) struct WatcherGetWatchQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherGetWatchQuery with to_json(
+pub impl ToJson for WatcherGetWatchQuery with fn to_json(
   _self : WatcherGetWatchQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95936,7 +96485,7 @@ pub impl ToJson for WatcherGetWatchQuery with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherGetWatchQuery with from_json(json, path) {
+pub impl FromJson for WatcherGetWatchQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError((path, "WatcherGetWatchQuery: expected object"))
   }
@@ -95968,7 +96517,7 @@ pub(all) struct WatcherGetWatchResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherGetWatchResponse with to_json(
+pub impl ToJson for WatcherGetWatchResponse with fn to_json(
   self : WatcherGetWatchResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -95998,7 +96547,7 @@ pub impl ToJson for WatcherGetWatchResponse with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherGetWatchResponse with from_json(json, path) {
+pub impl FromJson for WatcherGetWatchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherGetWatchResponse: expected object"),
@@ -96080,7 +96629,7 @@ pub(all) struct WatcherPutWatchQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherPutWatchQuery with to_json(
+pub impl ToJson for WatcherPutWatchQuery with fn to_json(
   self : WatcherPutWatchQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -96104,7 +96653,7 @@ pub impl ToJson for WatcherPutWatchQuery with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherPutWatchQuery with from_json(json, path) {
+pub impl FromJson for WatcherPutWatchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "WatcherPutWatchQuery: expected object"))
   }
@@ -96181,7 +96730,9 @@ pub(all) struct WatcherPutWatchBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherPutWatchBody with to_json(self : WatcherPutWatchBody) -> Json {
+pub impl ToJson for WatcherPutWatchBody with fn to_json(
+  self : WatcherPutWatchBody,
+) -> Json {
   let obj : Map[String, Json] = {}
   match self.actions {
     Some(value) => obj["actions"] = value.to_json()
@@ -96219,7 +96770,7 @@ pub impl ToJson for WatcherPutWatchBody with to_json(self : WatcherPutWatchBody)
 }
 
 ///|
-pub impl FromJson for WatcherPutWatchBody with from_json(json, path) {
+pub impl FromJson for WatcherPutWatchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "WatcherPutWatchBody: expected object"))
   }
@@ -96306,7 +96857,7 @@ pub(all) struct WatcherPutWatchResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherPutWatchResponse with to_json(
+pub impl ToJson for WatcherPutWatchResponse with fn to_json(
   self : WatcherPutWatchResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -96319,7 +96870,7 @@ pub impl ToJson for WatcherPutWatchResponse with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherPutWatchResponse with from_json(json, path) {
+pub impl FromJson for WatcherPutWatchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherPutWatchResponse: expected object"),
@@ -96385,7 +96936,7 @@ pub async fn Client::watcher_put_watch(
 pub(all) struct WatcherQueryWatchesQuery {} derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherQueryWatchesQuery with to_json(
+pub impl ToJson for WatcherQueryWatchesQuery with fn to_json(
   _self : WatcherQueryWatchesQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -96393,7 +96944,7 @@ pub impl ToJson for WatcherQueryWatchesQuery with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherQueryWatchesQuery with from_json(json, path) {
+pub impl FromJson for WatcherQueryWatchesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise @json.JsonDecodeError(
       (path, "WatcherQueryWatchesQuery: expected object"),
@@ -96425,7 +96976,7 @@ pub(all) struct WatcherQueryWatchesBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherQueryWatchesBody with to_json(
+pub impl ToJson for WatcherQueryWatchesBody with fn to_json(
   self : WatcherQueryWatchesBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -96453,7 +97004,7 @@ pub impl ToJson for WatcherQueryWatchesBody with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherQueryWatchesBody with from_json(json, path) {
+pub impl FromJson for WatcherQueryWatchesBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherQueryWatchesBody: expected object"),
@@ -96507,7 +97058,7 @@ pub(all) struct WatcherQueryWatchesResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherQueryWatchesResponse with to_json(
+pub impl ToJson for WatcherQueryWatchesResponse with fn to_json(
   self : WatcherQueryWatchesResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -96517,7 +97068,7 @@ pub impl ToJson for WatcherQueryWatchesResponse with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherQueryWatchesResponse with from_json(json, path) {
+pub impl FromJson for WatcherQueryWatchesResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherQueryWatchesResponse: expected object"),
@@ -96573,7 +97124,7 @@ pub(all) struct WatcherStartQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherStartQuery with to_json(self : WatcherStartQuery) -> Json {
+pub impl ToJson for WatcherStartQuery with fn to_json(self : WatcherStartQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -96583,7 +97134,7 @@ pub impl ToJson for WatcherStartQuery with to_json(self : WatcherStartQuery) -> 
 }
 
 ///|
-pub impl FromJson for WatcherStartQuery with from_json(json, path) {
+pub impl FromJson for WatcherStartQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "WatcherStartQuery: expected object"))
   }
@@ -96647,7 +97198,7 @@ pub(all) struct WatcherStatsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherStatsQuery with to_json(self : WatcherStatsQuery) -> Json {
+pub impl ToJson for WatcherStatsQuery with fn to_json(self : WatcherStatsQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.emit_stacktraces {
     Some(value) => obj["emit_stacktraces"] = value.to_json()
@@ -96661,7 +97212,7 @@ pub impl ToJson for WatcherStatsQuery with to_json(self : WatcherStatsQuery) -> 
 }
 
 ///|
-pub impl FromJson for WatcherStatsQuery with from_json(json, path) {
+pub impl FromJson for WatcherStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "WatcherStatsQuery: expected object"))
   }
@@ -96713,7 +97264,7 @@ pub(all) struct WatcherStatsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherStatsResponse with to_json(
+pub impl ToJson for WatcherStatsResponse with fn to_json(
   self : WatcherStatsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -96725,7 +97276,7 @@ pub impl ToJson for WatcherStatsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherStatsResponse with from_json(json, path) {
+pub impl FromJson for WatcherStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "WatcherStatsResponse: expected object"))
   }
@@ -96790,7 +97341,7 @@ pub(all) struct WatcherStopQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherStopQuery with to_json(self : WatcherStopQuery) -> Json {
+pub impl ToJson for WatcherStopQuery with fn to_json(self : WatcherStopQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -96800,7 +97351,7 @@ pub impl ToJson for WatcherStopQuery with to_json(self : WatcherStopQuery) -> Js
 }
 
 ///|
-pub impl FromJson for WatcherStopQuery with from_json(json, path) {
+pub impl FromJson for WatcherStopQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "WatcherStopQuery: expected object"))
   }
@@ -96864,7 +97415,7 @@ pub(all) struct WatcherUpdateSettingsQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherUpdateSettingsQuery with to_json(
+pub impl ToJson for WatcherUpdateSettingsQuery with fn to_json(
   self : WatcherUpdateSettingsQuery,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -96880,7 +97431,7 @@ pub impl ToJson for WatcherUpdateSettingsQuery with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherUpdateSettingsQuery with from_json(json, path) {
+pub impl FromJson for WatcherUpdateSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherUpdateSettingsQuery: expected object"),
@@ -96932,7 +97483,7 @@ pub(all) struct WatcherUpdateSettingsBody {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherUpdateSettingsBody with to_json(
+pub impl ToJson for WatcherUpdateSettingsBody with fn to_json(
   self : WatcherUpdateSettingsBody,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -96948,7 +97499,7 @@ pub impl ToJson for WatcherUpdateSettingsBody with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherUpdateSettingsBody with from_json(json, path) {
+pub impl FromJson for WatcherUpdateSettingsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherUpdateSettingsBody: expected object"),
@@ -96991,7 +97542,7 @@ pub(all) struct WatcherUpdateSettingsResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for WatcherUpdateSettingsResponse with to_json(
+pub impl ToJson for WatcherUpdateSettingsResponse with fn to_json(
   self : WatcherUpdateSettingsResponse,
 ) -> Json {
   let obj : Map[String, Json] = {}
@@ -97000,7 +97551,10 @@ pub impl ToJson for WatcherUpdateSettingsResponse with to_json(
 }
 
 ///|
-pub impl FromJson for WatcherUpdateSettingsResponse with from_json(json, path) {
+pub impl FromJson for WatcherUpdateSettingsResponse with fn from_json(
+  json,
+  path,
+) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError(
       (path, "WatcherUpdateSettingsResponse: expected object"),
@@ -97048,7 +97602,7 @@ pub(all) struct XpackInfoQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for XpackInfoQuery with to_json(self : XpackInfoQuery) -> Json {
+pub impl ToJson for XpackInfoQuery with fn to_json(self : XpackInfoQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.categories {
     Some(value) => obj["categories"] = value.to_json()
@@ -97066,7 +97620,7 @@ pub impl ToJson for XpackInfoQuery with to_json(self : XpackInfoQuery) -> Json {
 }
 
 ///|
-pub impl FromJson for XpackInfoQuery with from_json(json, path) {
+pub impl FromJson for XpackInfoQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "XpackInfoQuery: expected object"))
   }
@@ -97129,7 +97683,7 @@ pub(all) struct XpackInfoResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for XpackInfoResponse with to_json(self : XpackInfoResponse) -> Json {
+pub impl ToJson for XpackInfoResponse with fn to_json(self : XpackInfoResponse) -> Json {
   let obj : Map[String, Json] = {}
   obj["build"] = self.build.to_json()
   obj["features"] = self.features.to_json()
@@ -97139,7 +97693,7 @@ pub impl ToJson for XpackInfoResponse with to_json(self : XpackInfoResponse) -> 
 }
 
 ///|
-pub impl FromJson for XpackInfoResponse with from_json(json, path) {
+pub impl FromJson for XpackInfoResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "XpackInfoResponse: expected object"))
   }
@@ -97192,7 +97746,7 @@ pub(all) struct XpackUsageQuery {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for XpackUsageQuery with to_json(self : XpackUsageQuery) -> Json {
+pub impl ToJson for XpackUsageQuery with fn to_json(self : XpackUsageQuery) -> Json {
   let obj : Map[String, Json] = {}
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
@@ -97202,7 +97756,7 @@ pub impl ToJson for XpackUsageQuery with to_json(self : XpackUsageQuery) -> Json
 }
 
 ///|
-pub impl FromJson for XpackUsageQuery with from_json(json, path) {
+pub impl FromJson for XpackUsageQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "XpackUsageQuery: expected object"))
   }
@@ -97267,7 +97821,9 @@ pub(all) struct XpackUsageResponse {
 } derive(Eq, Debug)
 
 ///|
-pub impl ToJson for XpackUsageResponse with to_json(self : XpackUsageResponse) -> Json {
+pub impl ToJson for XpackUsageResponse with fn to_json(
+  self : XpackUsageResponse,
+) -> Json {
   let obj : Map[String, Json] = {}
   obj["aggregate_metric"] = self.aggregate_metric.to_json()
   obj["analytics"] = self.analytics.to_json()
@@ -97329,7 +97885,7 @@ pub impl ToJson for XpackUsageResponse with to_json(self : XpackUsageResponse) -
 }
 
 ///|
-pub impl FromJson for XpackUsageResponse with from_json(json, path) {
+pub impl FromJson for XpackUsageResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
     raise @json.JsonDecodeError((path, "XpackUsageResponse: expected object"))
   }
