@@ -118,7 +118,7 @@ pub fn render_path_template(
     rendered = rendered.replace_all(old="{\{key}}", new=percent_encode(value))
   }
   if rendered.contains("{") || rendered.contains("}") {
-    raise EsError::Request("unbound path parameter in `\{template}`")
+    raise Request("unbound path parameter in `\{template}`")
   }
   rendered
 }
@@ -136,6 +136,6 @@ pub fn select_path(
   }
   match selected {
     Some(variant) => render_path_template(variant.template, params)
-    None => raise EsError::Request("no matching path variant")
+    None => raise Request("no matching path variant")
   }
 }
