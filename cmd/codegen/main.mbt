@@ -55,46 +55,77 @@ let default_root_output : String = "generated_endpoints.mbt"
 let default_v9_output : String = "v9/generated.mbt"
 
 ///|
-fn usage() -> String {
-  (
-    #|Usage: moon run cmd/codegen --target native -- [--check] [--input FILE] [--root-output FILE] [--v9-output FILE]
-    #|
-    #|Generate root Client endpoint methods and v9 package wrappers from the vendored Elasticsearch schema.
+fn codegen_command() -> @argparse.Command {
+  @argparse.Command::new(
+    "codegen",
+    flags=[
+      @argparse.FlagArg::new(
+        "check",
+        about="Check that generated files are up to date without writing them.",
+        action=SetTrue,
+      ),
+    ],
+    options=[
+      @argparse.OptionArg::new(
+        "input",
+        about="Elasticsearch schema JSON to read.",
+        action=Append,
+        default_values=[default_input],
+      ),
+      @argparse.OptionArg::new(
+        "root-output",
+        about="Root package generated endpoint file to write.",
+        action=Append,
+        default_values=[default_root_output],
+      ),
+      @argparse.OptionArg::new(
+        "v9-output",
+        about="v9 package generated wrapper file to write.",
+        action=Append,
+        default_values=[default_v9_output],
+      ),
+    ],
+    about="Generate root Client endpoint methods and v9 package wrappers from the vendored Elasticsearch schema.",
   )
 }
 
 ///|
-fn parse_args_go(
-  args : Array[String],
-  check : Bool,
-  input : String,
-  root_output : String,
-  v9_output : String,
-) -> (Bool, String, String, String) raise {
-  match args {
-    ["--check", .. rest] =>
-      parse_args_go(rest.to_owned(), true, input, root_output, v9_output)
-    ["--input", file, .. rest] =>
-      parse_args_go(rest.to_owned(), check, file, root_output, v9_output)
-    ["--root-output", file, .. rest] =>
-      parse_args_go(rest.to_owned(), check, input, file, v9_output)
-    ["--v9-output", file, .. rest] =>
-      parse_args_go(rest.to_owned(), check, input, root_output, file)
-    ["--output", file, .. rest] =>
-      parse_args_go(rest.to_owned(), check, input, root_output, file)
-    ["-h" | "--help", ..] => {
-      println(usage())
-      (check, input, root_output, v9_output)
+fn normalize_codegen_args(args : ArrayView[String]) -> Array[String] {
+  let normalized : Array[String] = []
+  for arg in args {
+    match arg.strip_prefix("--output=") {
+      Some(output) => normalized.push("--v9-output=" + output.to_owned())
+      None =>
+        if arg == "--output" {
+          normalized.push("--v9-output")
+        } else {
+          normalized.push(arg)
+        }
     }
-    [unknown, ..] => fail("unknown codegen option `\{unknown}`")
-    [] => (check, input, root_output, v9_output)
+  }
+  normalized
+}
+
+///|
+fn parsed_option(matches : @argparse.Matches, name : String) -> String raise {
+  match matches.values.get(name) {
+    Some(values) =>
+      match values.last() {
+        Some(value) => value
+        None => fail("missing parsed value for codegen option `--\{name}`")
+      }
+    None => fail("missing parsed value for codegen option `--\{name}`")
   }
 }
 
 ///|
 fn parse_args(args : Array[String]) -> (Bool, String, String, String) raise {
-  parse_args_go(
-    args, false, default_input, default_root_output, default_v9_output,
+  let matches = codegen_command().parse(argv=normalize_codegen_args(args))
+  (
+    matches.flags.get("check").unwrap_or(false),
+    parsed_option(matches, "input"),
+    parsed_option(matches, "root-output"),
+    parsed_option(matches, "v9-output"),
   )
 }
 
@@ -708,17 +739,20 @@ fn write_json_from_json_impl(
 ) -> Unit {
   let error_message = mbt_string(type_name + ": expected object")
   out.write_string("///|\n")
+  if fields.length() == 0 {
+    out.write_string("#warnings(\"-unnecessary_annotation\")\n")
+  }
   out.write_string(
     "pub impl FromJson for \{type_name} with fn from_json(json, path) {\n",
   )
   if fields.length() == 0 {
     out.write_string(
-      "  guard json is Object(_) || json is Null else {\n    raise @json.JsonDecodeError((path, \{error_message}))\n  }\n",
+      "  guard json is Object(_) || json is Null else {\n    raise JsonDecodeError((path, \{error_message}))\n  }\n",
     )
     out.write_string("  \{type_name}::{}\n")
   } else {
     out.write_string(
-      "  guard json is Object(obj) else {\n    raise @json.JsonDecodeError((path, \{error_message}))\n  }\n",
+      "  guard json is Object(obj) else {\n    raise JsonDecodeError((path, \{error_message}))\n  }\n",
     )
     out.write_string("  {\n")
     for field in fields {
@@ -745,6 +779,9 @@ fn write_value_constructor(
   fields : ArrayView[FieldSpec],
 ) -> Unit {
   out.write_string("///|\n")
+  if fields.length() == 0 {
+    out.write_string("#warnings(\"-unnecessary_annotation\")\n")
+  }
   out.write_string("pub fn \{type_name}::new(\n")
   for field in fields {
     if field.required {
@@ -1165,7 +1202,17 @@ async fn main {
     check_file(root_output, root_generated)
     check_file(v9_output, v9_generated)
   } else {
-    @fs.write_file(root_output, root_generated, create=0o644, truncate=true)
-    @fs.write_file(v9_output, v9_generated, create=0o644, truncate=true)
+    @fs.write_file(
+      root_output,
+      root_generated,
+      create_mode=CreateOrTruncate,
+      permission=0o644,
+    )
+    @fs.write_file(
+      v9_output,
+      v9_generated,
+      create_mode=CreateOrTruncate,
+      permission=0o644,
+    )
   }
 }

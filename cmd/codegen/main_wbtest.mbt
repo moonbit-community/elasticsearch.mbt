@@ -1,4 +1,16 @@
 ///|
+test "parse codegen args with argparse option forms" {
+  let (check, input, root_output, v9_output) = parse_args([
+    "--check", "--input=custom-schema.json", "--root-output", "custom-root.mbt",
+    "--v9-output=first-v9.mbt", "--output", "compat-v9.mbt",
+  ])
+  assert_eq(check, true)
+  assert_eq(input, "custom-schema.json")
+  assert_eq(root_output, "custom-root.mbt")
+  assert_eq(v9_output, "compat-v9.mbt")
+}
+
+///|
 test "generate fixture endpoints from official schema shape" {
   let json = @json.parse(
     (

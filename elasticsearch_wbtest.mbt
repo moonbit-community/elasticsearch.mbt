@@ -88,9 +88,13 @@ async test "perform_json handles fake server success empty and error responses" 
     let empty = client.perform_json(EsRequest::new(Get, "/empty"))
     assert_eq(empty.status, 204)
     assert_true(empty.body == Json::null())
-    let failure : Result[EsResponse[Json], Error] = try? client.perform_json(
-      EsRequest::new(Get, "/error"),
-    )
+    let failure : Result[EsResponse[Json], Error] = try
+      client.perform_json(EsRequest::new(Get, "/error"))
+    catch {
+      err => Err(err)
+    } noraise {
+      val => Ok(val)
+    }
     guard failure is Err(EsError::Http(status~, reason~, body~)) else {
       fail("expected Elasticsearch HTTP error")
     }

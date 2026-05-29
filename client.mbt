@@ -22,12 +22,12 @@ fn Auth::authorization_header(self : Auth) -> String? {
 ///|
 fn HttpMethod::to_http_method(self : HttpMethod) -> @http.RequestMethod {
   match self {
-    Get => @http.RequestMethod::Get
-    Head => @http.RequestMethod::Head
-    Post => @http.RequestMethod::Post
-    Put => @http.RequestMethod::Put
-    Delete => @http.RequestMethod::Delete
-    Patch => @http.RequestMethod::Patch
+    Get => Get
+    Head => Head
+    Post => Post
+    Put => Put
+    Delete => Delete
+    Patch => Patch
   }
 }
 
@@ -77,7 +77,7 @@ async fn write_request_body(client : @http.Client, body : RequestBody) -> Unit {
 
 ///|
 fn parse_response_json(data : &@io.Data) -> Json raise EsError {
-  let text = data.text() catch { err => raise EsError::Decode(err.to_string()) }
+  let text = data.text() catch { err => raise Decode(err.to_string()) }
   if text.is_empty() {
     Json::null()
   } else {
@@ -89,7 +89,7 @@ fn parse_response_json(data : &@io.Data) -> Json raise EsError {
 
 ///|
 pub async fn Client::new(config : ClientConfig) -> Client {
-  let inner = @http.Client::new(config.base_url, headers={})
+  let inner = @http.Client::Client(config.base_url, headers={})
   { config, inner: Some(inner) }
 }
 
@@ -131,7 +131,7 @@ pub async fn Client::perform_json(
 ) -> EsResponse[Json] {
   let inner = match self.inner {
     Some(inner) => inner
-    None => raise EsError::ClosedClient
+    None => raise ClosedClient
   }
   let target = append_query(request.path, request.query)
   let headers = self.config.request_headers(request)
@@ -142,7 +142,7 @@ pub async fn Client::perform_json(
   if response.code >= 200 && response.code < 300 {
     { status: response.code, headers: response.headers, body }
   } else {
-    raise EsError::Http(status=response.code, reason=response.reason, body~)
+    raise Http(status=response.code, reason=response.reason, body~)
   }
 }
 
@@ -153,7 +153,7 @@ pub async fn[T : FromJson] Client::perform(
 ) -> EsResponse[T] {
   let response = self.perform_json(request)
   let body : T = @json.from_json(response.body) catch {
-    err => raise EsError::Decode(err.to_string())
+    err => raise Decode(err.to_string())
   }
   { status: response.status, headers: response.headers, body }
 }

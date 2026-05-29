@@ -4,6 +4,10 @@
 Elasticsearch v9. It provides a small hand-written HTTP client core plus
 generated request, response, and endpoint wrappers derived from the vendored
 official Elasticsearch v9 schema.
+`moonbit-community/elasticsearch` is a native-only MoonBit client for
+Elasticsearch v9. It provides a small hand-written HTTP client core plus
+generated request, response, and endpoint wrappers derived from the vendored
+official Elasticsearch v9 schema.
 
 The package is designed for MoonBit programs that run on the `native` target and
 need typed access to Elasticsearch APIs while still keeping a JSON escape hatch
@@ -12,7 +16,6 @@ precisely.
 
 ## Status
 
-- Package version: `0.1.0`
 - Supported target: `native`
 - Elasticsearch schema baseline: v9.3.3
 - License: Apache-2.0
@@ -20,9 +23,6 @@ precisely.
 - Main generated sources:
   - `generated_endpoints.mbt`
   - `v9/generated.mbt`
-
-This is an early client. The public API is useful, but consumers should expect
-schema-driven type refinements as the generator improves.
 
 ## Package Layout
 
@@ -45,9 +45,6 @@ schema-driven type refinements as the generator improves.
     |-- dangling-types.csv
     `-- fixture.json
 ```
-
-`README.md` is a symlink to `README.mbt.md`, which is the module readme declared
-in `moon.mod`.
 
 ## Installation
 
@@ -310,76 +307,6 @@ The root package also exposes helpers used by generated endpoints:
 
 These are public so tests, custom endpoints, and advanced integrations can share
 the exact same behavior as generated endpoints.
-
-## Code Generation
-
-The generator reads `spec/elasticsearch/v9/schema.json` and writes:
-
-- `generated_endpoints.mbt`: root-package request, response, and `Client`
-  endpoint method definitions.
-- `v9/generated.mbt`: aliases and function wrappers for the versioned package.
-
-Regenerate sources:
-
-```bash
-moon run cmd/codegen --target native
-```
-
-Check whether committed generated files are stale:
-
-```bash
-moon run cmd/codegen --target native -- --check
-```
-
-Useful generator options:
-
-```text
---check              Compare generated output with existing files.
---input FILE         Read a different schema file.
---root-output FILE   Write root generated endpoints to FILE.
---v9-output FILE     Write v9 wrappers to FILE.
---help               Print generator usage.
-```
-
-Do not edit `generated_endpoints.mbt` or `v9/generated.mbt` by hand. Change the
-generator or schema input, regenerate, and review the diff.
-
-## Testing
-
-Run the main validation loop:
-
-```bash
-moon check --target native
-moon test --target native
-```
-
-Before handing off changes, update generated interface files and format:
-
-```bash
-moon info
-moon fmt
-```
-
-Integration tests include local fake HTTP servers. There is also an optional
-live Elasticsearch smoke test guarded by environment variables:
-
-```bash
-ES_TEST_URL=http://localhost:9200 ES_API_KEY=... moon test --target native
-```
-
-The live test is skipped when either environment variable is absent.
-
-## Development Notes
-
-- Keep hand-written client behavior in `client.mbt`, `types.mbt`, and
-  `encoding.mbt`.
-- Keep generated behavior in the generator under `cmd/codegen`.
-- Keep vendored schema metadata in `spec/elasticsearch/v9/METADATA.md` current
-  when replacing the upstream schema.
-- Prefer focused tests for hand-written behavior and generator fixtures for
-  schema translation rules.
-- Run `moon run cmd/codegen --target native -- --check` in CI or before release
-  to catch stale generated sources.
 
 ## Current Boundaries
 

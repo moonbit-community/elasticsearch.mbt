@@ -12,16 +12,16 @@ pub impl ToJson for AsyncSearchDeleteQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for AsyncSearchDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "AsyncSearchDeleteQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "AsyncSearchDeleteQuery: expected object"))
   }
   AsyncSearchDeleteQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn AsyncSearchDeleteQuery::new() -> AsyncSearchDeleteQuery {
   AsyncSearchDeleteQuery::{  }
 }
@@ -101,7 +101,7 @@ pub impl ToJson for AsyncSearchGetQuery with fn to_json(
 ///|
 pub impl FromJson for AsyncSearchGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "AsyncSearchGetQuery: expected object"))
+    raise JsonDecodeError((path, "AsyncSearchGetQuery: expected object"))
   }
   {
     keep_alive: match obj.get("keep_alive") {
@@ -234,9 +234,7 @@ pub impl ToJson for AsyncSearchStatusQuery with fn to_json(
 ///|
 pub impl FromJson for AsyncSearchStatusQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "AsyncSearchStatusQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "AsyncSearchStatusQuery: expected object"))
   }
   {
     keep_alive: match obj.get("keep_alive") {
@@ -529,9 +527,7 @@ pub impl ToJson for AsyncSearchSubmitQuery with fn to_json(
 ///|
 pub impl FromJson for AsyncSearchSubmitQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "AsyncSearchSubmitQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "AsyncSearchSubmitQuery: expected object"))
   }
   {
     wait_for_completion_timeout: match obj.get("wait_for_completion_timeout") {
@@ -1263,9 +1259,7 @@ pub impl ToJson for AsyncSearchSubmitBody with fn to_json(
 ///|
 pub impl FromJson for AsyncSearchSubmitBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "AsyncSearchSubmitBody: expected object"),
-    )
+    raise JsonDecodeError((path, "AsyncSearchSubmitBody: expected object"))
   }
   {
     aggregations: match obj.get("aggregations") {
@@ -1596,7 +1590,7 @@ pub impl FromJson for AutoscalingDeleteAutoscalingPolicyQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "AutoscalingDeleteAutoscalingPolicyQuery: expected object"),
     )
   }
@@ -1694,7 +1688,7 @@ pub impl FromJson for AutoscalingGetAutoscalingCapacityQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "AutoscalingGetAutoscalingCapacityQuery: expected object"),
     )
   }
@@ -1747,7 +1741,7 @@ pub impl FromJson for AutoscalingGetAutoscalingCapacityResponse with fn from_jso
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "AutoscalingGetAutoscalingCapacityResponse: expected object"),
     )
   }
@@ -1808,7 +1802,7 @@ pub impl FromJson for AutoscalingGetAutoscalingPolicyQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "AutoscalingGetAutoscalingPolicyQuery: expected object"),
     )
   }
@@ -1901,7 +1895,7 @@ pub impl FromJson for AutoscalingPutAutoscalingPolicyQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "AutoscalingPutAutoscalingPolicyQuery: expected object"),
     )
   }
@@ -2055,7 +2049,7 @@ pub impl ToJson for BulkQuery with fn to_json(self : BulkQuery) -> Json {
 ///|
 pub impl FromJson for BulkQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "BulkQuery: expected object"))
+    raise JsonDecodeError((path, "BulkQuery: expected object"))
   }
   {
     include_source_on_error: match obj.get("include_source_on_error") {
@@ -2250,7 +2244,7 @@ pub impl ToJson for BulkResponse with fn to_json(self : BulkResponse) -> Json {
 ///|
 pub impl FromJson for BulkResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "BulkResponse: expected object"))
+    raise JsonDecodeError((path, "BulkResponse: expected object"))
   }
   {
     errors: @json.from_json(
@@ -2332,7 +2326,7 @@ pub impl ToJson for CancelReindexQuery with fn to_json(
 ///|
 pub impl FromJson for CancelReindexQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CancelReindexQuery: expected object"))
+    raise JsonDecodeError((path, "CancelReindexQuery: expected object"))
   }
   {
     wait_for_completion: match obj.get("wait_for_completion") {
@@ -2439,9 +2433,7 @@ pub impl ToJson for CancelReindexResponse with fn to_json(
 ///|
 pub impl FromJson for CancelReindexResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "CancelReindexResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "CancelReindexResponse: expected object"))
   }
   {
     acknowledged: match obj.get("acknowledged") {
@@ -2587,7 +2579,7 @@ pub impl ToJson for CapabilitiesQuery with fn to_json(self : CapabilitiesQuery) 
 ///|
 pub impl FromJson for CapabilitiesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CapabilitiesQuery: expected object"))
+    raise JsonDecodeError((path, "CapabilitiesQuery: expected object"))
   }
   {
     method_: match obj.get("method") {
@@ -2696,7 +2688,7 @@ pub impl ToJson for CapabilitiesResponse with fn to_json(
 ///|
 pub impl FromJson for CapabilitiesResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CapabilitiesResponse: expected object"))
+    raise JsonDecodeError((path, "CapabilitiesResponse: expected object"))
   }
   {
     _nodes: @json.from_json(
@@ -2775,7 +2767,7 @@ pub impl ToJson for CatAliasesQuery with fn to_json(self : CatAliasesQuery) -> J
 ///|
 pub impl FromJson for CatAliasesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatAliasesQuery: expected object"))
+    raise JsonDecodeError((path, "CatAliasesQuery: expected object"))
   }
   {
     h: match obj.get("h") {
@@ -2910,7 +2902,7 @@ pub impl ToJson for CatAllocationQuery with fn to_json(
 ///|
 pub impl FromJson for CatAllocationQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatAllocationQuery: expected object"))
+    raise JsonDecodeError((path, "CatAllocationQuery: expected object"))
   }
   {
     h: match obj.get("h") {
@@ -3044,9 +3036,7 @@ pub impl ToJson for CatCircuitBreakerQuery with fn to_json(
 ///|
 pub impl FromJson for CatCircuitBreakerQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "CatCircuitBreakerQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "CatCircuitBreakerQuery: expected object"))
   }
   {
     h: match obj.get("h") {
@@ -3182,9 +3172,7 @@ pub impl ToJson for CatComponentTemplatesQuery with fn to_json(
 ///|
 pub impl FromJson for CatComponentTemplatesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "CatComponentTemplatesQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "CatComponentTemplatesQuery: expected object"))
   }
   {
     h: match obj.get("h") {
@@ -3306,7 +3294,7 @@ pub impl ToJson for CatCountQuery with fn to_json(self : CatCountQuery) -> Json 
 ///|
 pub impl FromJson for CatCountQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatCountQuery: expected object"))
+    raise JsonDecodeError((path, "CatCountQuery: expected object"))
   }
   {
     h: match obj.get("h") {
@@ -3407,7 +3395,7 @@ pub impl ToJson for CatFielddataQuery with fn to_json(self : CatFielddataQuery) 
 ///|
 pub impl FromJson for CatFielddataQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatFielddataQuery: expected object"))
+    raise JsonDecodeError((path, "CatFielddataQuery: expected object"))
   }
   {
     fields: match obj.get("fields") {
@@ -3523,7 +3511,7 @@ pub impl ToJson for CatHealthQuery with fn to_json(self : CatHealthQuery) -> Jso
 ///|
 pub impl FromJson for CatHealthQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatHealthQuery: expected object"))
+    raise JsonDecodeError((path, "CatHealthQuery: expected object"))
   }
   {
     ts: match obj.get("ts") {
@@ -3609,14 +3597,16 @@ pub impl ToJson for CatHelpQuery with fn to_json(_self : CatHelpQuery) -> Json {
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for CatHelpQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "CatHelpQuery: expected object"))
+    raise JsonDecodeError((path, "CatHelpQuery: expected object"))
   }
   CatHelpQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn CatHelpQuery::new() -> CatHelpQuery {
   CatHelpQuery::{  }
 }
@@ -3701,7 +3691,7 @@ pub impl ToJson for CatIndicesQuery with fn to_json(self : CatIndicesQuery) -> J
 ///|
 pub impl FromJson for CatIndicesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatIndicesQuery: expected object"))
+    raise JsonDecodeError((path, "CatIndicesQuery: expected object"))
   }
   {
     expand_wildcards: match obj.get("expand_wildcards") {
@@ -3876,7 +3866,7 @@ pub impl ToJson for CatMasterQuery with fn to_json(self : CatMasterQuery) -> Jso
 ///|
 pub impl FromJson for CatMasterQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatMasterQuery: expected object"))
+    raise JsonDecodeError((path, "CatMasterQuery: expected object"))
   }
   {
     h: match obj.get("h") {
@@ -3993,7 +3983,7 @@ pub impl ToJson for CatMlDataFrameAnalyticsQuery with fn to_json(
 ///|
 pub impl FromJson for CatMlDataFrameAnalyticsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "CatMlDataFrameAnalyticsQuery: expected object"),
     )
   }
@@ -4114,7 +4104,7 @@ pub impl ToJson for CatMlDatafeedsQuery with fn to_json(
 ///|
 pub impl FromJson for CatMlDatafeedsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatMlDatafeedsQuery: expected object"))
+    raise JsonDecodeError((path, "CatMlDatafeedsQuery: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -4231,7 +4221,7 @@ pub impl ToJson for CatMlJobsQuery with fn to_json(self : CatMlJobsQuery) -> Jso
 ///|
 pub impl FromJson for CatMlJobsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatMlJobsQuery: expected object"))
+    raise JsonDecodeError((path, "CatMlJobsQuery: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -4360,9 +4350,7 @@ pub impl ToJson for CatMlTrainedModelsQuery with fn to_json(
 ///|
 pub impl FromJson for CatMlTrainedModelsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "CatMlTrainedModelsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "CatMlTrainedModelsQuery: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -4504,7 +4492,7 @@ pub impl ToJson for CatNodeattrsQuery with fn to_json(self : CatNodeattrsQuery) 
 ///|
 pub impl FromJson for CatNodeattrsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatNodeattrsQuery: expected object"))
+    raise JsonDecodeError((path, "CatNodeattrsQuery: expected object"))
   }
   {
     h: match obj.get("h") {
@@ -4629,7 +4617,7 @@ pub impl ToJson for CatNodesQuery with fn to_json(self : CatNodesQuery) -> Json 
 ///|
 pub impl FromJson for CatNodesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatNodesQuery: expected object"))
+    raise JsonDecodeError((path, "CatNodesQuery: expected object"))
   }
   {
     full_id: match obj.get("full_id") {
@@ -4763,7 +4751,7 @@ pub impl ToJson for CatPendingTasksQuery with fn to_json(
 ///|
 pub impl FromJson for CatPendingTasksQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatPendingTasksQuery: expected object"))
+    raise JsonDecodeError((path, "CatPendingTasksQuery: expected object"))
   }
   {
     h: match obj.get("h") {
@@ -4888,7 +4876,7 @@ pub impl ToJson for CatPluginsQuery with fn to_json(self : CatPluginsQuery) -> J
 ///|
 pub impl FromJson for CatPluginsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatPluginsQuery: expected object"))
+    raise JsonDecodeError((path, "CatPluginsQuery: expected object"))
   }
   {
     h: match obj.get("h") {
@@ -5024,7 +5012,7 @@ pub impl ToJson for CatRecoveryQuery with fn to_json(self : CatRecoveryQuery) ->
 ///|
 pub impl FromJson for CatRecoveryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatRecoveryQuery: expected object"))
+    raise JsonDecodeError((path, "CatRecoveryQuery: expected object"))
   }
   {
     active_only: match obj.get("active_only") {
@@ -5168,7 +5156,7 @@ pub impl ToJson for CatRepositoriesQuery with fn to_json(
 ///|
 pub impl FromJson for CatRepositoriesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatRepositoriesQuery: expected object"))
+    raise JsonDecodeError((path, "CatRepositoriesQuery: expected object"))
   }
   {
     h: match obj.get("h") {
@@ -5313,7 +5301,7 @@ pub impl ToJson for CatSegmentsQuery with fn to_json(self : CatSegmentsQuery) ->
 ///|
 pub impl FromJson for CatSegmentsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatSegmentsQuery: expected object"))
+    raise JsonDecodeError((path, "CatSegmentsQuery: expected object"))
   }
   {
     h: match obj.get("h") {
@@ -5505,7 +5493,7 @@ pub impl ToJson for CatShardsQuery with fn to_json(self : CatShardsQuery) -> Jso
 ///|
 pub impl FromJson for CatShardsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatShardsQuery: expected object"))
+    raise JsonDecodeError((path, "CatShardsQuery: expected object"))
   }
   {
     h: match obj.get("h") {
@@ -5627,7 +5615,7 @@ pub impl ToJson for CatSnapshotsQuery with fn to_json(self : CatSnapshotsQuery) 
 ///|
 pub impl FromJson for CatSnapshotsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatSnapshotsQuery: expected object"))
+    raise JsonDecodeError((path, "CatSnapshotsQuery: expected object"))
   }
   {
     ignore_unavailable: match obj.get("ignore_unavailable") {
@@ -5780,7 +5768,7 @@ pub impl ToJson for CatTasksQuery with fn to_json(self : CatTasksQuery) -> Json 
 ///|
 pub impl FromJson for CatTasksQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatTasksQuery: expected object"))
+    raise JsonDecodeError((path, "CatTasksQuery: expected object"))
   }
   {
     actions: match obj.get("actions") {
@@ -5949,7 +5937,7 @@ pub impl ToJson for CatTemplatesQuery with fn to_json(self : CatTemplatesQuery) 
 ///|
 pub impl FromJson for CatTemplatesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatTemplatesQuery: expected object"))
+    raise JsonDecodeError((path, "CatTemplatesQuery: expected object"))
   }
   {
     h: match obj.get("h") {
@@ -6083,7 +6071,7 @@ pub impl ToJson for CatThreadPoolQuery with fn to_json(
 ///|
 pub impl FromJson for CatThreadPoolQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatThreadPoolQuery: expected object"))
+    raise JsonDecodeError((path, "CatThreadPoolQuery: expected object"))
   }
   {
     h: match obj.get("h") {
@@ -6224,7 +6212,7 @@ pub impl ToJson for CatTransformsQuery with fn to_json(
 ///|
 pub impl FromJson for CatTransformsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CatTransformsQuery: expected object"))
+    raise JsonDecodeError((path, "CatTransformsQuery: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -6356,7 +6344,7 @@ pub impl FromJson for CcrDeleteAutoFollowPatternQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "CcrDeleteAutoFollowPatternQuery: expected object"),
     )
   }
@@ -6444,7 +6432,7 @@ pub impl ToJson for CcrFollowQuery with fn to_json(self : CcrFollowQuery) -> Jso
 ///|
 pub impl FromJson for CcrFollowQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CcrFollowQuery: expected object"))
+    raise JsonDecodeError((path, "CcrFollowQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -6566,7 +6554,7 @@ pub impl ToJson for CcrFollowBody with fn to_json(self : CcrFollowBody) -> Json 
 ///|
 pub impl FromJson for CcrFollowBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CcrFollowBody: expected object"))
+    raise JsonDecodeError((path, "CcrFollowBody: expected object"))
   }
   {
     data_stream_name: match obj.get("data_stream_name") {
@@ -6733,7 +6721,7 @@ pub impl ToJson for CcrFollowResponse with fn to_json(self : CcrFollowResponse) 
 ///|
 pub impl FromJson for CcrFollowResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CcrFollowResponse: expected object"))
+    raise JsonDecodeError((path, "CcrFollowResponse: expected object"))
   }
   {
     follow_index_created: @json.from_json(
@@ -6803,7 +6791,7 @@ pub impl ToJson for CcrFollowInfoQuery with fn to_json(
 ///|
 pub impl FromJson for CcrFollowInfoQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CcrFollowInfoQuery: expected object"))
+    raise JsonDecodeError((path, "CcrFollowInfoQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -6849,9 +6837,7 @@ pub impl ToJson for CcrFollowInfoResponse with fn to_json(
 ///|
 pub impl FromJson for CcrFollowInfoResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "CcrFollowInfoResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "CcrFollowInfoResponse: expected object"))
   }
   {
     follower_indices: @json.from_json(
@@ -6910,7 +6896,7 @@ pub impl ToJson for CcrFollowStatsQuery with fn to_json(
 ///|
 pub impl FromJson for CcrFollowStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CcrFollowStatsQuery: expected object"))
+    raise JsonDecodeError((path, "CcrFollowStatsQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -6955,9 +6941,7 @@ pub impl ToJson for CcrFollowStatsResponse with fn to_json(
 ///|
 pub impl FromJson for CcrFollowStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "CcrFollowStatsResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "CcrFollowStatsResponse: expected object"))
   }
   {
     indices: @json.from_json(
@@ -7016,9 +7000,7 @@ pub impl ToJson for CcrForgetFollowerQuery with fn to_json(
 ///|
 pub impl FromJson for CcrForgetFollowerQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "CcrForgetFollowerQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "CcrForgetFollowerQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -7081,9 +7063,7 @@ pub impl ToJson for CcrForgetFollowerBody with fn to_json(
 ///|
 pub impl FromJson for CcrForgetFollowerBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "CcrForgetFollowerBody: expected object"),
-    )
+    raise JsonDecodeError((path, "CcrForgetFollowerBody: expected object"))
   }
   {
     follower_cluster: match obj.get("follower_cluster") {
@@ -7145,9 +7125,7 @@ pub impl ToJson for CcrForgetFollowerResponse with fn to_json(
 ///|
 pub impl FromJson for CcrForgetFollowerResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "CcrForgetFollowerResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "CcrForgetFollowerResponse: expected object"))
   }
   {
     _shards: @json.from_json(
@@ -7209,7 +7187,7 @@ pub impl ToJson for CcrGetAutoFollowPatternQuery with fn to_json(
 ///|
 pub impl FromJson for CcrGetAutoFollowPatternQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "CcrGetAutoFollowPatternQuery: expected object"),
     )
   }
@@ -7262,7 +7240,7 @@ pub impl FromJson for CcrGetAutoFollowPatternResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "CcrGetAutoFollowPatternResponse: expected object"),
     )
   }
@@ -7332,7 +7310,7 @@ pub impl FromJson for CcrPauseAutoFollowPatternQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "CcrPauseAutoFollowPatternQuery: expected object"),
     )
   }
@@ -7417,7 +7395,7 @@ pub impl ToJson for CcrPauseFollowQuery with fn to_json(
 ///|
 pub impl FromJson for CcrPauseFollowQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CcrPauseFollowQuery: expected object"))
+    raise JsonDecodeError((path, "CcrPauseFollowQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -7500,7 +7478,7 @@ pub impl ToJson for CcrPutAutoFollowPatternQuery with fn to_json(
 ///|
 pub impl FromJson for CcrPutAutoFollowPatternQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "CcrPutAutoFollowPatternQuery: expected object"),
     )
   }
@@ -7620,7 +7598,7 @@ pub impl ToJson for CcrPutAutoFollowPatternBody with fn to_json(
 ///|
 pub impl FromJson for CcrPutAutoFollowPatternBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "CcrPutAutoFollowPatternBody: expected object"),
     )
   }
@@ -7844,7 +7822,7 @@ pub impl FromJson for CcrResumeAutoFollowPatternQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "CcrResumeAutoFollowPatternQuery: expected object"),
     )
   }
@@ -7929,7 +7907,7 @@ pub impl ToJson for CcrResumeFollowQuery with fn to_json(
 ///|
 pub impl FromJson for CcrResumeFollowQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CcrResumeFollowQuery: expected object"))
+    raise JsonDecodeError((path, "CcrResumeFollowQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -8025,7 +8003,7 @@ pub impl ToJson for CcrResumeFollowBody with fn to_json(
 ///|
 pub impl FromJson for CcrResumeFollowBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CcrResumeFollowBody: expected object"))
+    raise JsonDecodeError((path, "CcrResumeFollowBody: expected object"))
   }
   {
     max_outstanding_read_requests: match
@@ -8207,7 +8185,7 @@ pub impl ToJson for CcrStatsQuery with fn to_json(self : CcrStatsQuery) -> Json 
 ///|
 pub impl FromJson for CcrStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CcrStatsQuery: expected object"))
+    raise JsonDecodeError((path, "CcrStatsQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -8263,7 +8241,7 @@ pub impl ToJson for CcrStatsResponse with fn to_json(self : CcrStatsResponse) ->
 ///|
 pub impl FromJson for CcrStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CcrStatsResponse: expected object"))
+    raise JsonDecodeError((path, "CcrStatsResponse: expected object"))
   }
   {
     auto_follow_stats: @json.from_json(
@@ -8318,7 +8296,7 @@ pub impl ToJson for CcrUnfollowQuery with fn to_json(self : CcrUnfollowQuery) ->
 ///|
 pub impl FromJson for CcrUnfollowQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CcrUnfollowQuery: expected object"))
+    raise JsonDecodeError((path, "CcrUnfollowQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -8389,14 +8367,16 @@ pub impl ToJson for ClearScrollQuery with fn to_json(_self : ClearScrollQuery) -
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ClearScrollQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "ClearScrollQuery: expected object"))
+    raise JsonDecodeError((path, "ClearScrollQuery: expected object"))
   }
   ClearScrollQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ClearScrollQuery::new() -> ClearScrollQuery {
   ClearScrollQuery::{  }
 }
@@ -8431,7 +8411,7 @@ pub impl ToJson for ClearScrollResponse with fn to_json(
 ///|
 pub impl FromJson for ClearScrollResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ClearScrollResponse: expected object"))
+    raise JsonDecodeError((path, "ClearScrollResponse: expected object"))
   }
   {
     succeeded: @json.from_json(
@@ -8498,16 +8478,16 @@ pub impl ToJson for ClosePointInTimeQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ClosePointInTimeQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ClosePointInTimeQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ClosePointInTimeQuery: expected object"))
   }
   ClosePointInTimeQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ClosePointInTimeQuery::new() -> ClosePointInTimeQuery {
   ClosePointInTimeQuery::{  }
 }
@@ -8537,7 +8517,7 @@ pub impl ToJson for ClosePointInTimeBody with fn to_json(
 ///|
 pub impl FromJson for ClosePointInTimeBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ClosePointInTimeBody: expected object"))
+    raise JsonDecodeError((path, "ClosePointInTimeBody: expected object"))
   }
   {
     id: @json.from_json(
@@ -8571,9 +8551,7 @@ pub impl ToJson for ClosePointInTimeResponse with fn to_json(
 ///|
 pub impl FromJson for ClosePointInTimeResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ClosePointInTimeResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "ClosePointInTimeResponse: expected object"))
   }
   {
     succeeded: @json.from_json(
@@ -8666,7 +8644,7 @@ pub impl FromJson for ClusterAllocationExplainQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ClusterAllocationExplainQuery: expected object"),
     )
   }
@@ -8806,7 +8784,7 @@ pub impl ToJson for ClusterAllocationExplainBody with fn to_json(
 ///|
 pub impl FromJson for ClusterAllocationExplainBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ClusterAllocationExplainBody: expected object"),
     )
   }
@@ -8976,7 +8954,7 @@ pub impl FromJson for ClusterAllocationExplainResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ClusterAllocationExplainResponse: expected object"),
     )
   }
@@ -9217,7 +9195,7 @@ pub impl FromJson for ClusterDeleteComponentTemplateQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ClusterDeleteComponentTemplateQuery: expected object"),
     )
   }
@@ -9320,7 +9298,7 @@ pub impl FromJson for ClusterDeleteVotingConfigExclusionsQuery with fn from_json
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ClusterDeleteVotingConfigExclusionsQuery: expected object"),
     )
   }
@@ -9421,7 +9399,7 @@ pub impl FromJson for ClusterExistsComponentTemplateQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ClusterExistsComponentTemplateQuery: expected object"),
     )
   }
@@ -9539,7 +9517,7 @@ pub impl FromJson for ClusterGetComponentTemplateQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ClusterGetComponentTemplateQuery: expected object"),
     )
   }
@@ -9635,7 +9613,7 @@ pub impl FromJson for ClusterGetComponentTemplateResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ClusterGetComponentTemplateResponse: expected object"),
     )
   }
@@ -9717,9 +9695,7 @@ pub impl ToJson for ClusterGetSettingsQuery with fn to_json(
 ///|
 pub impl FromJson for ClusterGetSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ClusterGetSettingsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ClusterGetSettingsQuery: expected object"))
   }
   {
     flat_settings: match obj.get("flat_settings") {
@@ -9806,9 +9782,7 @@ pub impl ToJson for ClusterGetSettingsResponse with fn to_json(
 ///|
 pub impl FromJson for ClusterGetSettingsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ClusterGetSettingsResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "ClusterGetSettingsResponse: expected object"))
   }
   {
     persistent: @json.from_json(
@@ -9920,7 +9894,7 @@ pub impl ToJson for ClusterHealthQuery with fn to_json(
 ///|
 pub impl FromJson for ClusterHealthQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ClusterHealthQuery: expected object"))
+    raise JsonDecodeError((path, "ClusterHealthQuery: expected object"))
   }
   {
     expand_wildcards: match obj.get("expand_wildcards") {
@@ -10135,14 +10109,16 @@ pub impl ToJson for ClusterInfoQuery with fn to_json(_self : ClusterInfoQuery) -
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ClusterInfoQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "ClusterInfoQuery: expected object"))
+    raise JsonDecodeError((path, "ClusterInfoQuery: expected object"))
   }
   ClusterInfoQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ClusterInfoQuery::new() -> ClusterInfoQuery {
   ClusterInfoQuery::{  }
 }
@@ -10192,7 +10168,7 @@ pub impl ToJson for ClusterInfoResponse with fn to_json(
 ///|
 pub impl FromJson for ClusterInfoResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ClusterInfoResponse: expected object"))
+    raise JsonDecodeError((path, "ClusterInfoResponse: expected object"))
   }
   {
     cluster_name: @json.from_json(
@@ -10277,9 +10253,7 @@ pub impl ToJson for ClusterPendingTasksQuery with fn to_json(
 ///|
 pub impl FromJson for ClusterPendingTasksQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ClusterPendingTasksQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ClusterPendingTasksQuery: expected object"))
   }
   {
     local_: match obj.get("local") {
@@ -10337,7 +10311,7 @@ pub impl ToJson for ClusterPendingTasksResponse with fn to_json(
 ///|
 pub impl FromJson for ClusterPendingTasksResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ClusterPendingTasksResponse: expected object"),
     )
   }
@@ -10413,7 +10387,7 @@ pub impl FromJson for ClusterPostVotingConfigExclusionsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ClusterPostVotingConfigExclusionsQuery: expected object"),
     )
   }
@@ -10539,7 +10513,7 @@ pub impl FromJson for ClusterPutComponentTemplateQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ClusterPutComponentTemplateQuery: expected object"),
     )
   }
@@ -10627,7 +10601,7 @@ pub impl FromJson for ClusterPutComponentTemplateBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ClusterPutComponentTemplateBody: expected object"),
     )
   }
@@ -10730,9 +10704,7 @@ pub impl ToJson for ClusterPutSettingsQuery with fn to_json(
 ///|
 pub impl FromJson for ClusterPutSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ClusterPutSettingsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ClusterPutSettingsQuery: expected object"))
   }
   {
     flat_settings: match obj.get("flat_settings") {
@@ -10809,9 +10781,7 @@ pub impl ToJson for ClusterPutSettingsBody with fn to_json(
 ///|
 pub impl FromJson for ClusterPutSettingsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ClusterPutSettingsBody: expected object"),
-    )
+    raise JsonDecodeError((path, "ClusterPutSettingsBody: expected object"))
   }
   {
     persistent: match obj.get("persistent") {
@@ -10858,9 +10828,7 @@ pub impl ToJson for ClusterPutSettingsResponse with fn to_json(
 ///|
 pub impl FromJson for ClusterPutSettingsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ClusterPutSettingsResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "ClusterPutSettingsResponse: expected object"))
   }
   {
     acknowledged: @json.from_json(
@@ -10916,16 +10884,16 @@ pub impl ToJson for ClusterRemoteInfoQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ClusterRemoteInfoQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ClusterRemoteInfoQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ClusterRemoteInfoQuery: expected object"))
   }
   ClusterRemoteInfoQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ClusterRemoteInfoQuery::new() -> ClusterRemoteInfoQuery {
   ClusterRemoteInfoQuery::{  }
 }
@@ -11009,7 +10977,7 @@ pub impl ToJson for ClusterRerouteQuery with fn to_json(
 ///|
 pub impl FromJson for ClusterRerouteQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ClusterRerouteQuery: expected object"))
+    raise JsonDecodeError((path, "ClusterRerouteQuery: expected object"))
   }
   {
     dry_run: match obj.get("dry_run") {
@@ -11111,7 +11079,7 @@ pub impl ToJson for ClusterRerouteBody with fn to_json(
 ///|
 pub impl FromJson for ClusterRerouteBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ClusterRerouteBody: expected object"))
+    raise JsonDecodeError((path, "ClusterRerouteBody: expected object"))
   }
   {
     commands: match obj.get("commands") {
@@ -11154,9 +11122,7 @@ pub impl ToJson for ClusterRerouteResponse with fn to_json(
 ///|
 pub impl FromJson for ClusterRerouteResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ClusterRerouteResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "ClusterRerouteResponse: expected object"))
   }
   {
     acknowledged: @json.from_json(
@@ -11259,7 +11225,7 @@ pub impl ToJson for ClusterStateQuery with fn to_json(self : ClusterStateQuery) 
 ///|
 pub impl FromJson for ClusterStateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ClusterStateQuery: expected object"))
+    raise JsonDecodeError((path, "ClusterStateQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -11446,7 +11412,7 @@ pub impl ToJson for ClusterStatsQuery with fn to_json(self : ClusterStatsQuery) 
 ///|
 pub impl FromJson for ClusterStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ClusterStatsQuery: expected object"))
+    raise JsonDecodeError((path, "ClusterStatsQuery: expected object"))
   }
   {
     include_remotes: match obj.get("include_remotes") {
@@ -11537,16 +11503,16 @@ pub impl ToJson for ConnectorCheckInQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorCheckInQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorCheckInQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorCheckInQuery: expected object"))
   }
   ConnectorCheckInQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorCheckInQuery::new() -> ConnectorCheckInQuery {
   ConnectorCheckInQuery::{  }
 }
@@ -11576,9 +11542,7 @@ pub impl ToJson for ConnectorCheckInResponse with fn to_json(
 ///|
 pub impl FromJson for ConnectorCheckInResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorCheckInResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorCheckInResponse: expected object"))
   }
   {
     result: @json.from_json(
@@ -11642,7 +11606,7 @@ pub impl ToJson for ConnectorDeleteQuery with fn to_json(
 ///|
 pub impl FromJson for ConnectorDeleteQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ConnectorDeleteQuery: expected object"))
+    raise JsonDecodeError((path, "ConnectorDeleteQuery: expected object"))
   }
   {
     delete_sync_jobs: match obj.get("delete_sync_jobs") {
@@ -11733,7 +11697,7 @@ pub impl ToJson for ConnectorGetQuery with fn to_json(self : ConnectorGetQuery) 
 ///|
 pub impl FromJson for ConnectorGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ConnectorGetQuery: expected object"))
+    raise JsonDecodeError((path, "ConnectorGetQuery: expected object"))
   }
   {
     include_deleted: match obj.get("include_deleted") {
@@ -11806,16 +11770,16 @@ pub impl ToJson for ConnectorLastSyncQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorLastSyncQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorLastSyncQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorLastSyncQuery: expected object"))
   }
   ConnectorLastSyncQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorLastSyncQuery::new() -> ConnectorLastSyncQuery {
   ConnectorLastSyncQuery::{  }
 }
@@ -11904,9 +11868,7 @@ pub impl ToJson for ConnectorLastSyncBody with fn to_json(
 ///|
 pub impl FromJson for ConnectorLastSyncBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorLastSyncBody: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorLastSyncBody: expected object"))
   }
   {
     last_access_control_sync_error: match
@@ -12068,9 +12030,7 @@ pub impl ToJson for ConnectorLastSyncResponse with fn to_json(
 ///|
 pub impl FromJson for ConnectorLastSyncResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorLastSyncResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorLastSyncResponse: expected object"))
   }
   {
     result: @json.from_json(
@@ -12164,7 +12124,7 @@ pub impl ToJson for ConnectorListQuery with fn to_json(
 ///|
 pub impl FromJson for ConnectorListQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ConnectorListQuery: expected object"))
+    raise JsonDecodeError((path, "ConnectorListQuery: expected object"))
   }
   {
     from: match obj.get("from") {
@@ -12285,9 +12245,7 @@ pub impl ToJson for ConnectorListResponse with fn to_json(
 ///|
 pub impl FromJson for ConnectorListResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorListResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorListResponse: expected object"))
   }
   {
     count: @json.from_json(
@@ -12336,14 +12294,16 @@ pub impl ToJson for ConnectorPostQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorPostQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "ConnectorPostQuery: expected object"))
+    raise JsonDecodeError((path, "ConnectorPostQuery: expected object"))
   }
   ConnectorPostQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorPostQuery::new() -> ConnectorPostQuery {
   ConnectorPostQuery::{  }
 }
@@ -12399,7 +12359,7 @@ pub impl ToJson for ConnectorPostBody with fn to_json(self : ConnectorPostBody) 
 ///|
 pub impl FromJson for ConnectorPostBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ConnectorPostBody: expected object"))
+    raise JsonDecodeError((path, "ConnectorPostBody: expected object"))
   }
   {
     description: match obj.get("description") {
@@ -12470,9 +12430,7 @@ pub impl ToJson for ConnectorPostResponse with fn to_json(
 ///|
 pub impl FromJson for ConnectorPostResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorPostResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorPostResponse: expected object"))
   }
   {
     result: @json.from_json(
@@ -12525,14 +12483,16 @@ pub impl ToJson for ConnectorPutQuery with fn to_json(_self : ConnectorPutQuery)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorPutQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "ConnectorPutQuery: expected object"))
+    raise JsonDecodeError((path, "ConnectorPutQuery: expected object"))
   }
   ConnectorPutQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorPutQuery::new() -> ConnectorPutQuery {
   ConnectorPutQuery::{  }
 }
@@ -12588,7 +12548,7 @@ pub impl ToJson for ConnectorPutBody with fn to_json(self : ConnectorPutBody) ->
 ///|
 pub impl FromJson for ConnectorPutBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ConnectorPutBody: expected object"))
+    raise JsonDecodeError((path, "ConnectorPutBody: expected object"))
   }
   {
     description: match obj.get("description") {
@@ -12659,7 +12619,7 @@ pub impl ToJson for ConnectorPutResponse with fn to_json(
 ///|
 pub impl FromJson for ConnectorPutResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ConnectorPutResponse: expected object"))
+    raise JsonDecodeError((path, "ConnectorPutResponse: expected object"))
   }
   {
     result: @json.from_json(
@@ -12726,16 +12686,16 @@ pub impl ToJson for ConnectorSecretDeleteQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorSecretDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorSecretDeleteQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorSecretDeleteQuery: expected object"))
   }
   ConnectorSecretDeleteQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorSecretDeleteQuery::new() -> ConnectorSecretDeleteQuery {
   ConnectorSecretDeleteQuery::{  }
 }
@@ -12768,7 +12728,7 @@ pub impl FromJson for ConnectorSecretDeleteResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorSecretDeleteResponse: expected object"),
     )
   }
@@ -12821,16 +12781,16 @@ pub impl ToJson for ConnectorSecretGetQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorSecretGetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorSecretGetQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorSecretGetQuery: expected object"))
   }
   ConnectorSecretGetQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorSecretGetQuery::new() -> ConnectorSecretGetQuery {
   ConnectorSecretGetQuery::{  }
 }
@@ -12862,9 +12822,7 @@ pub impl ToJson for ConnectorSecretGetResponse with fn to_json(
 ///|
 pub impl FromJson for ConnectorSecretGetResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorSecretGetResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorSecretGetResponse: expected object"))
   }
   {
     id: @json.from_json(
@@ -12919,16 +12877,16 @@ pub impl ToJson for ConnectorSecretPostQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorSecretPostQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorSecretPostQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorSecretPostQuery: expected object"))
   }
   ConnectorSecretPostQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorSecretPostQuery::new() -> ConnectorSecretPostQuery {
   ConnectorSecretPostQuery::{  }
 }
@@ -12958,7 +12916,7 @@ pub impl ToJson for ConnectorSecretPostResponse with fn to_json(
 ///|
 pub impl FromJson for ConnectorSecretPostResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorSecretPostResponse: expected object"),
     )
   }
@@ -13005,16 +12963,16 @@ pub impl ToJson for ConnectorSecretPutQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorSecretPutQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorSecretPutQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorSecretPutQuery: expected object"))
   }
   ConnectorSecretPutQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorSecretPutQuery::new() -> ConnectorSecretPutQuery {
   ConnectorSecretPutQuery::{  }
 }
@@ -13044,9 +13002,7 @@ pub impl ToJson for ConnectorSecretPutResponse with fn to_json(
 ///|
 pub impl FromJson for ConnectorSecretPutResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorSecretPutResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorSecretPutResponse: expected object"))
   }
   {
     result: @json.from_json(
@@ -13097,9 +13053,10 @@ pub impl ToJson for ConnectorSyncJobCancelQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorSyncJobCancelQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorSyncJobCancelQuery: expected object"),
     )
   }
@@ -13107,6 +13064,7 @@ pub impl FromJson for ConnectorSyncJobCancelQuery with fn from_json(json, path) 
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobCancelQuery::new() -> ConnectorSyncJobCancelQuery {
   ConnectorSyncJobCancelQuery::{  }
 }
@@ -13139,7 +13097,7 @@ pub impl FromJson for ConnectorSyncJobCancelResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorSyncJobCancelResponse: expected object"),
     )
   }
@@ -13197,9 +13155,10 @@ pub impl ToJson for ConnectorSyncJobCheckInQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorSyncJobCheckInQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorSyncJobCheckInQuery: expected object"),
     )
   }
@@ -13207,6 +13166,7 @@ pub impl FromJson for ConnectorSyncJobCheckInQuery with fn from_json(json, path)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobCheckInQuery::new() -> ConnectorSyncJobCheckInQuery {
   ConnectorSyncJobCheckInQuery::{  }
 }
@@ -13268,16 +13228,16 @@ pub impl ToJson for ConnectorSyncJobClaimQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorSyncJobClaimQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorSyncJobClaimQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorSyncJobClaimQuery: expected object"))
   }
   ConnectorSyncJobClaimQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobClaimQuery::new() -> ConnectorSyncJobClaimQuery {
   ConnectorSyncJobClaimQuery::{  }
 }
@@ -13312,9 +13272,7 @@ pub impl ToJson for ConnectorSyncJobClaimBody with fn to_json(
 ///|
 pub impl FromJson for ConnectorSyncJobClaimBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorSyncJobClaimBody: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorSyncJobClaimBody: expected object"))
   }
   {
     sync_cursor: match obj.get("sync_cursor") {
@@ -13389,9 +13347,10 @@ pub impl ToJson for ConnectorSyncJobDeleteQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorSyncJobDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorSyncJobDeleteQuery: expected object"),
     )
   }
@@ -13399,6 +13358,7 @@ pub impl FromJson for ConnectorSyncJobDeleteQuery with fn from_json(json, path) 
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobDeleteQuery::new() -> ConnectorSyncJobDeleteQuery {
   ConnectorSyncJobDeleteQuery::{  }
 }
@@ -13459,16 +13419,16 @@ pub impl ToJson for ConnectorSyncJobErrorQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorSyncJobErrorQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorSyncJobErrorQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorSyncJobErrorQuery: expected object"))
   }
   ConnectorSyncJobErrorQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobErrorQuery::new() -> ConnectorSyncJobErrorQuery {
   ConnectorSyncJobErrorQuery::{  }
 }
@@ -13498,9 +13458,7 @@ pub impl ToJson for ConnectorSyncJobErrorBody with fn to_json(
 ///|
 pub impl FromJson for ConnectorSyncJobErrorBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorSyncJobErrorBody: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorSyncJobErrorBody: expected object"))
   }
   {
     error: @json.from_json(
@@ -13568,16 +13526,16 @@ pub impl ToJson for ConnectorSyncJobGetQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorSyncJobGetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorSyncJobGetQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorSyncJobGetQuery: expected object"))
   }
   ConnectorSyncJobGetQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobGetQuery::new() -> ConnectorSyncJobGetQuery {
   ConnectorSyncJobGetQuery::{  }
 }
@@ -13666,9 +13624,7 @@ pub impl ToJson for ConnectorSyncJobListQuery with fn to_json(
 ///|
 pub impl FromJson for ConnectorSyncJobListQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorSyncJobListQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorSyncJobListQuery: expected object"))
   }
   {
     from: match obj.get("from") {
@@ -13758,7 +13714,7 @@ pub impl ToJson for ConnectorSyncJobListResponse with fn to_json(
 ///|
 pub impl FromJson for ConnectorSyncJobListResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorSyncJobListResponse: expected object"),
     )
   }
@@ -13812,16 +13768,16 @@ pub impl ToJson for ConnectorSyncJobPostQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorSyncJobPostQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorSyncJobPostQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorSyncJobPostQuery: expected object"))
   }
   ConnectorSyncJobPostQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobPostQuery::new() -> ConnectorSyncJobPostQuery {
   ConnectorSyncJobPostQuery::{  }
 }
@@ -13861,9 +13817,7 @@ pub impl ToJson for ConnectorSyncJobPostBody with fn to_json(
 ///|
 pub impl FromJson for ConnectorSyncJobPostBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorSyncJobPostBody: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorSyncJobPostBody: expected object"))
   }
   {
     id: @json.from_json(
@@ -13910,7 +13864,7 @@ pub impl ToJson for ConnectorSyncJobPostResponse with fn to_json(
 ///|
 pub impl FromJson for ConnectorSyncJobPostResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorSyncJobPostResponse: expected object"),
     )
   }
@@ -13963,12 +13917,13 @@ pub impl ToJson for ConnectorSyncJobUpdateStatsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorSyncJobUpdateStatsQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorSyncJobUpdateStatsQuery: expected object"),
     )
   }
@@ -13976,6 +13931,7 @@ pub impl FromJson for ConnectorSyncJobUpdateStatsQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobUpdateStatsQuery::new() -> ConnectorSyncJobUpdateStatsQuery {
   ConnectorSyncJobUpdateStatsQuery::{  }
 }
@@ -14027,7 +13983,7 @@ pub impl FromJson for ConnectorSyncJobUpdateStatsBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorSyncJobUpdateStatsBody: expected object"),
     )
   }
@@ -14134,12 +14090,13 @@ pub impl ToJson for ConnectorUpdateActiveFilteringQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorUpdateActiveFilteringQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateActiveFilteringQuery: expected object"),
     )
   }
@@ -14147,6 +14104,7 @@ pub impl FromJson for ConnectorUpdateActiveFilteringQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateActiveFilteringQuery::new() -> ConnectorUpdateActiveFilteringQuery {
   ConnectorUpdateActiveFilteringQuery::{  }
 }
@@ -14182,7 +14140,7 @@ pub impl FromJson for ConnectorUpdateActiveFilteringResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateActiveFilteringResponse: expected object"),
     )
   }
@@ -14245,9 +14203,10 @@ pub impl ToJson for ConnectorUpdateApiKeyIdQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorUpdateApiKeyIdQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateApiKeyIdQuery: expected object"),
     )
   }
@@ -14255,6 +14214,7 @@ pub impl FromJson for ConnectorUpdateApiKeyIdQuery with fn from_json(json, path)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateApiKeyIdQuery::new() -> ConnectorUpdateApiKeyIdQuery {
   ConnectorUpdateApiKeyIdQuery::{  }
 }
@@ -14292,7 +14252,7 @@ pub impl ToJson for ConnectorUpdateApiKeyIdBody with fn to_json(
 ///|
 pub impl FromJson for ConnectorUpdateApiKeyIdBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateApiKeyIdBody: expected object"),
     )
   }
@@ -14340,7 +14300,7 @@ pub impl FromJson for ConnectorUpdateApiKeyIdResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateApiKeyIdResponse: expected object"),
     )
   }
@@ -14400,12 +14360,13 @@ pub impl ToJson for ConnectorUpdateConfigurationQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorUpdateConfigurationQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateConfigurationQuery: expected object"),
     )
   }
@@ -14413,6 +14374,7 @@ pub impl FromJson for ConnectorUpdateConfigurationQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateConfigurationQuery::new() -> ConnectorUpdateConfigurationQuery {
   ConnectorUpdateConfigurationQuery::{  }
 }
@@ -14453,7 +14415,7 @@ pub impl FromJson for ConnectorUpdateConfigurationBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateConfigurationBody: expected object"),
     )
   }
@@ -14500,7 +14462,7 @@ pub impl FromJson for ConnectorUpdateConfigurationResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateConfigurationResponse: expected object"),
     )
   }
@@ -14560,16 +14522,16 @@ pub impl ToJson for ConnectorUpdateErrorQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorUpdateErrorQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorUpdateErrorQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorUpdateErrorQuery: expected object"))
   }
   ConnectorUpdateErrorQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateErrorQuery::new() -> ConnectorUpdateErrorQuery {
   ConnectorUpdateErrorQuery::{  }
 }
@@ -14599,9 +14561,7 @@ pub impl ToJson for ConnectorUpdateErrorBody with fn to_json(
 ///|
 pub impl FromJson for ConnectorUpdateErrorBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorUpdateErrorBody: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorUpdateErrorBody: expected object"))
   }
   {
     error: @json.from_json(
@@ -14633,7 +14593,7 @@ pub impl ToJson for ConnectorUpdateErrorResponse with fn to_json(
 ///|
 pub impl FromJson for ConnectorUpdateErrorResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateErrorResponse: expected object"),
     )
   }
@@ -14689,9 +14649,10 @@ pub impl ToJson for ConnectorUpdateFeaturesQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorUpdateFeaturesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateFeaturesQuery: expected object"),
     )
   }
@@ -14699,6 +14660,7 @@ pub impl FromJson for ConnectorUpdateFeaturesQuery with fn from_json(json, path)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateFeaturesQuery::new() -> ConnectorUpdateFeaturesQuery {
   ConnectorUpdateFeaturesQuery::{  }
 }
@@ -14728,7 +14690,7 @@ pub impl ToJson for ConnectorUpdateFeaturesBody with fn to_json(
 ///|
 pub impl FromJson for ConnectorUpdateFeaturesBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateFeaturesBody: expected object"),
     )
   }
@@ -14767,7 +14729,7 @@ pub impl FromJson for ConnectorUpdateFeaturesResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateFeaturesResponse: expected object"),
     )
   }
@@ -14823,12 +14785,13 @@ pub impl ToJson for ConnectorUpdateFilteringQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorUpdateFilteringQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateFilteringQuery: expected object"),
     )
   }
@@ -14836,6 +14799,7 @@ pub impl FromJson for ConnectorUpdateFilteringQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateFilteringQuery::new() -> ConnectorUpdateFilteringQuery {
   ConnectorUpdateFilteringQuery::{  }
 }
@@ -14878,7 +14842,7 @@ pub impl ToJson for ConnectorUpdateFilteringBody with fn to_json(
 ///|
 pub impl FromJson for ConnectorUpdateFilteringBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateFilteringBody: expected object"),
     )
   }
@@ -14932,7 +14896,7 @@ pub impl FromJson for ConnectorUpdateFilteringResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateFilteringResponse: expected object"),
     )
   }
@@ -14990,12 +14954,13 @@ pub impl ToJson for ConnectorUpdateFilteringValidationQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorUpdateFilteringValidationQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateFilteringValidationQuery: expected object"),
     )
   }
@@ -15003,6 +14968,7 @@ pub impl FromJson for ConnectorUpdateFilteringValidationQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateFilteringValidationQuery::new() -> ConnectorUpdateFilteringValidationQuery {
   ConnectorUpdateFilteringValidationQuery::{  }
 }
@@ -15035,7 +15001,7 @@ pub impl FromJson for ConnectorUpdateFilteringValidationBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateFilteringValidationBody: expected object"),
     )
   }
@@ -15074,7 +15040,7 @@ pub impl FromJson for ConnectorUpdateFilteringValidationResponse with fn from_js
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateFilteringValidationResponse: expected object"),
     )
   }
@@ -15134,12 +15100,13 @@ pub impl ToJson for ConnectorUpdateIndexNameQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorUpdateIndexNameQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateIndexNameQuery: expected object"),
     )
   }
@@ -15147,6 +15114,7 @@ pub impl FromJson for ConnectorUpdateIndexNameQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateIndexNameQuery::new() -> ConnectorUpdateIndexNameQuery {
   ConnectorUpdateIndexNameQuery::{  }
 }
@@ -15176,7 +15144,7 @@ pub impl ToJson for ConnectorUpdateIndexNameBody with fn to_json(
 ///|
 pub impl FromJson for ConnectorUpdateIndexNameBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateIndexNameBody: expected object"),
     )
   }
@@ -15215,7 +15183,7 @@ pub impl FromJson for ConnectorUpdateIndexNameResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateIndexNameResponse: expected object"),
     )
   }
@@ -15275,16 +15243,16 @@ pub impl ToJson for ConnectorUpdateNameQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorUpdateNameQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorUpdateNameQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorUpdateNameQuery: expected object"))
   }
   ConnectorUpdateNameQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateNameQuery::new() -> ConnectorUpdateNameQuery {
   ConnectorUpdateNameQuery::{  }
 }
@@ -15322,9 +15290,7 @@ pub impl ToJson for ConnectorUpdateNameBody with fn to_json(
 ///|
 pub impl FromJson for ConnectorUpdateNameBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorUpdateNameBody: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorUpdateNameBody: expected object"))
   }
   {
     name: match obj.get("name") {
@@ -15366,7 +15332,7 @@ pub impl ToJson for ConnectorUpdateNameResponse with fn to_json(
 ///|
 pub impl FromJson for ConnectorUpdateNameResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateNameResponse: expected object"),
     )
   }
@@ -15422,16 +15388,16 @@ pub impl ToJson for ConnectorUpdateNativeQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorUpdateNativeQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorUpdateNativeQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorUpdateNativeQuery: expected object"))
   }
   ConnectorUpdateNativeQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateNativeQuery::new() -> ConnectorUpdateNativeQuery {
   ConnectorUpdateNativeQuery::{  }
 }
@@ -15461,9 +15427,7 @@ pub impl ToJson for ConnectorUpdateNativeBody with fn to_json(
 ///|
 pub impl FromJson for ConnectorUpdateNativeBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorUpdateNativeBody: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorUpdateNativeBody: expected object"))
   }
   {
     is_native: @json.from_json(
@@ -15500,7 +15464,7 @@ pub impl FromJson for ConnectorUpdateNativeResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateNativeResponse: expected object"),
     )
   }
@@ -15556,9 +15520,10 @@ pub impl ToJson for ConnectorUpdatePipelineQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorUpdatePipelineQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdatePipelineQuery: expected object"),
     )
   }
@@ -15566,6 +15531,7 @@ pub impl FromJson for ConnectorUpdatePipelineQuery with fn from_json(json, path)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorUpdatePipelineQuery::new() -> ConnectorUpdatePipelineQuery {
   ConnectorUpdatePipelineQuery::{  }
 }
@@ -15595,7 +15561,7 @@ pub impl ToJson for ConnectorUpdatePipelineBody with fn to_json(
 ///|
 pub impl FromJson for ConnectorUpdatePipelineBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdatePipelineBody: expected object"),
     )
   }
@@ -15634,7 +15600,7 @@ pub impl FromJson for ConnectorUpdatePipelineResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdatePipelineResponse: expected object"),
     )
   }
@@ -15690,12 +15656,13 @@ pub impl ToJson for ConnectorUpdateSchedulingQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorUpdateSchedulingQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateSchedulingQuery: expected object"),
     )
   }
@@ -15703,6 +15670,7 @@ pub impl FromJson for ConnectorUpdateSchedulingQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateSchedulingQuery::new() -> ConnectorUpdateSchedulingQuery {
   ConnectorUpdateSchedulingQuery::{  }
 }
@@ -15735,7 +15703,7 @@ pub impl FromJson for ConnectorUpdateSchedulingBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateSchedulingBody: expected object"),
     )
   }
@@ -15774,7 +15742,7 @@ pub impl FromJson for ConnectorUpdateSchedulingResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateSchedulingResponse: expected object"),
     )
   }
@@ -15834,12 +15802,13 @@ pub impl ToJson for ConnectorUpdateServiceTypeQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorUpdateServiceTypeQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateServiceTypeQuery: expected object"),
     )
   }
@@ -15847,6 +15816,7 @@ pub impl FromJson for ConnectorUpdateServiceTypeQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateServiceTypeQuery::new() -> ConnectorUpdateServiceTypeQuery {
   ConnectorUpdateServiceTypeQuery::{  }
 }
@@ -15879,7 +15849,7 @@ pub impl FromJson for ConnectorUpdateServiceTypeBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateServiceTypeBody: expected object"),
     )
   }
@@ -15918,7 +15888,7 @@ pub impl FromJson for ConnectorUpdateServiceTypeResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateServiceTypeResponse: expected object"),
     )
   }
@@ -15978,16 +15948,16 @@ pub impl ToJson for ConnectorUpdateStatusQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ConnectorUpdateStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorUpdateStatusQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorUpdateStatusQuery: expected object"))
   }
   ConnectorUpdateStatusQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateStatusQuery::new() -> ConnectorUpdateStatusQuery {
   ConnectorUpdateStatusQuery::{  }
 }
@@ -16017,9 +15987,7 @@ pub impl ToJson for ConnectorUpdateStatusBody with fn to_json(
 ///|
 pub impl FromJson for ConnectorUpdateStatusBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ConnectorUpdateStatusBody: expected object"),
-    )
+    raise JsonDecodeError((path, "ConnectorUpdateStatusBody: expected object"))
   }
   {
     status: @json.from_json(
@@ -16056,7 +16024,7 @@ pub impl FromJson for ConnectorUpdateStatusResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ConnectorUpdateStatusResponse: expected object"),
     )
   }
@@ -16183,7 +16151,7 @@ pub impl ToJson for CountQuery with fn to_json(self : CountQuery) -> Json {
 ///|
 pub impl FromJson for CountQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CountQuery: expected object"))
+    raise JsonDecodeError((path, "CountQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -16388,7 +16356,7 @@ pub impl ToJson for CountBody with fn to_json(self : CountBody) -> Json {
 ///|
 pub impl FromJson for CountBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CountBody: expected object"))
+    raise JsonDecodeError((path, "CountBody: expected object"))
   }
   {
     query: match obj.get("query") {
@@ -16427,7 +16395,7 @@ pub impl ToJson for CountResponse with fn to_json(self : CountResponse) -> Json 
 ///|
 pub impl FromJson for CountResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CountResponse: expected object"))
+    raise JsonDecodeError((path, "CountResponse: expected object"))
   }
   {
     count: @json.from_json(
@@ -16545,7 +16513,7 @@ pub impl ToJson for CreateQuery with fn to_json(self : CreateQuery) -> Json {
 ///|
 pub impl FromJson for CreateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "CreateQuery: expected object"))
+    raise JsonDecodeError((path, "CreateQuery: expected object"))
   }
   {
     include_source_on_error: match obj.get("include_source_on_error") {
@@ -16760,7 +16728,7 @@ pub impl FromJson for DanglingIndicesDeleteDanglingIndexQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "DanglingIndicesDeleteDanglingIndexQuery: expected object"),
     )
   }
@@ -16879,7 +16847,7 @@ pub impl FromJson for DanglingIndicesImportDanglingIndexQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "DanglingIndicesImportDanglingIndexQuery: expected object"),
     )
   }
@@ -16977,12 +16945,13 @@ pub impl ToJson for DanglingIndicesListDanglingIndicesQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for DanglingIndicesListDanglingIndicesQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "DanglingIndicesListDanglingIndicesQuery: expected object"),
     )
   }
@@ -16990,6 +16959,7 @@ pub impl FromJson for DanglingIndicesListDanglingIndicesQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn DanglingIndicesListDanglingIndicesQuery::new() -> DanglingIndicesListDanglingIndicesQuery {
   DanglingIndicesListDanglingIndicesQuery::{  }
 }
@@ -17022,7 +16992,7 @@ pub impl FromJson for DanglingIndicesListDanglingIndicesResponse with fn from_js
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "DanglingIndicesListDanglingIndicesResponse: expected object"),
     )
   }
@@ -17110,7 +17080,7 @@ pub impl ToJson for DeleteQuery with fn to_json(self : DeleteQuery) -> Json {
 ///|
 pub impl FromJson for DeleteQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "DeleteQuery: expected object"))
+    raise JsonDecodeError((path, "DeleteQuery: expected object"))
   }
   {
     if_primary_term: match obj.get("if_primary_term") {
@@ -17419,7 +17389,7 @@ pub impl ToJson for DeleteByQueryQuery with fn to_json(
 ///|
 pub impl FromJson for DeleteByQueryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "DeleteByQueryQuery: expected object"))
+    raise JsonDecodeError((path, "DeleteByQueryQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -17812,7 +17782,7 @@ pub impl ToJson for DeleteByQueryBody with fn to_json(self : DeleteByQueryBody) 
 ///|
 pub impl FromJson for DeleteByQueryBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "DeleteByQueryBody: expected object"))
+    raise JsonDecodeError((path, "DeleteByQueryBody: expected object"))
   }
   {
     max_docs: match obj.get("max_docs") {
@@ -17948,9 +17918,7 @@ pub impl ToJson for DeleteByQueryResponse with fn to_json(
 ///|
 pub impl FromJson for DeleteByQueryResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "DeleteByQueryResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "DeleteByQueryResponse: expected object"))
   }
   {
     batches: match obj.get("batches") {
@@ -18099,7 +18067,7 @@ pub impl ToJson for DeleteByQueryRethrottleQuery with fn to_json(
 ///|
 pub impl FromJson for DeleteByQueryRethrottleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "DeleteByQueryRethrottleQuery: expected object"),
     )
   }
@@ -18186,7 +18154,7 @@ pub impl ToJson for DeleteScriptQuery with fn to_json(self : DeleteScriptQuery) 
 ///|
 pub impl FromJson for DeleteScriptQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "DeleteScriptQuery: expected object"))
+    raise JsonDecodeError((path, "DeleteScriptQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -18276,9 +18244,7 @@ pub impl ToJson for EnrichDeletePolicyQuery with fn to_json(
 ///|
 pub impl FromJson for EnrichDeletePolicyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "EnrichDeletePolicyQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "EnrichDeletePolicyQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -18366,9 +18332,7 @@ pub impl ToJson for EnrichExecutePolicyQuery with fn to_json(
 ///|
 pub impl FromJson for EnrichExecutePolicyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "EnrichExecutePolicyQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "EnrichExecutePolicyQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -18436,7 +18400,7 @@ pub impl ToJson for EnrichExecutePolicyResponse with fn to_json(
 ///|
 pub impl FromJson for EnrichExecutePolicyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "EnrichExecutePolicyResponse: expected object"),
     )
   }
@@ -18503,7 +18467,7 @@ pub impl ToJson for EnrichGetPolicyQuery with fn to_json(
 ///|
 pub impl FromJson for EnrichGetPolicyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EnrichGetPolicyQuery: expected object"))
+    raise JsonDecodeError((path, "EnrichGetPolicyQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -18551,9 +18515,7 @@ pub impl ToJson for EnrichGetPolicyResponse with fn to_json(
 ///|
 pub impl FromJson for EnrichGetPolicyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "EnrichGetPolicyResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "EnrichGetPolicyResponse: expected object"))
   }
   {
     policies: @json.from_json(
@@ -18618,7 +18580,7 @@ pub impl ToJson for EnrichPutPolicyQuery with fn to_json(
 ///|
 pub impl FromJson for EnrichPutPolicyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EnrichPutPolicyQuery: expected object"))
+    raise JsonDecodeError((path, "EnrichPutPolicyQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -18679,7 +18641,7 @@ pub impl ToJson for EnrichPutPolicyBody with fn to_json(
 ///|
 pub impl FromJson for EnrichPutPolicyBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EnrichPutPolicyBody: expected object"))
+    raise JsonDecodeError((path, "EnrichPutPolicyBody: expected object"))
   }
   {
     geo_match: match obj.get("geo_match") {
@@ -18763,7 +18725,7 @@ pub impl ToJson for EnrichStatsQuery with fn to_json(self : EnrichStatsQuery) ->
 ///|
 pub impl FromJson for EnrichStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EnrichStatsQuery: expected object"))
+    raise JsonDecodeError((path, "EnrichStatsQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -18816,7 +18778,7 @@ pub impl ToJson for EnrichStatsResponse with fn to_json(
 ///|
 pub impl FromJson for EnrichStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EnrichStatsResponse: expected object"))
+    raise JsonDecodeError((path, "EnrichStatsResponse: expected object"))
   }
   {
     coordinator_stats: @json.from_json(
@@ -18869,14 +18831,16 @@ pub impl ToJson for EqlDeleteQuery with fn to_json(_self : EqlDeleteQuery) -> Js
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for EqlDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "EqlDeleteQuery: expected object"))
+    raise JsonDecodeError((path, "EqlDeleteQuery: expected object"))
   }
   EqlDeleteQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn EqlDeleteQuery::new() -> EqlDeleteQuery {
   EqlDeleteQuery::{  }
 }
@@ -18944,7 +18908,7 @@ pub impl ToJson for EqlGetQuery with fn to_json(self : EqlGetQuery) -> Json {
 ///|
 pub impl FromJson for EqlGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EqlGetQuery: expected object"))
+    raise JsonDecodeError((path, "EqlGetQuery: expected object"))
   }
   {
     keep_alive: match obj.get("keep_alive") {
@@ -19032,14 +18996,16 @@ pub impl ToJson for EqlGetStatusQuery with fn to_json(_self : EqlGetStatusQuery)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for EqlGetStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "EqlGetStatusQuery: expected object"))
+    raise JsonDecodeError((path, "EqlGetStatusQuery: expected object"))
   }
   EqlGetStatusQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn EqlGetStatusQuery::new() -> EqlGetStatusQuery {
   EqlGetStatusQuery::{  }
 }
@@ -19088,7 +19054,7 @@ pub impl ToJson for EqlGetStatusResponse with fn to_json(
 ///|
 pub impl FromJson for EqlGetStatusResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EqlGetStatusResponse: expected object"))
+    raise JsonDecodeError((path, "EqlGetStatusResponse: expected object"))
   }
   {
     id: @json.from_json(
@@ -19213,7 +19179,7 @@ pub impl ToJson for EqlSearchQuery with fn to_json(self : EqlSearchQuery) -> Jso
 ///|
 pub impl FromJson for EqlSearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EqlSearchQuery: expected object"))
+    raise JsonDecodeError((path, "EqlSearchQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -19465,7 +19431,7 @@ pub impl ToJson for EqlSearchBody with fn to_json(self : EqlSearchBody) -> Json 
 ///|
 pub impl FromJson for EqlSearchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EqlSearchBody: expected object"))
+    raise JsonDecodeError((path, "EqlSearchBody: expected object"))
   }
   {
     project_routing: match obj.get("project_routing") {
@@ -19704,7 +19670,7 @@ pub impl ToJson for EsqlAsyncQueryQuery with fn to_json(
 ///|
 pub impl FromJson for EsqlAsyncQueryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EsqlAsyncQueryQuery: expected object"))
+    raise JsonDecodeError((path, "EsqlAsyncQueryQuery: expected object"))
   }
   {
     allow_partial_results: match obj.get("allow_partial_results") {
@@ -19850,7 +19816,7 @@ pub impl ToJson for EsqlAsyncQueryBody with fn to_json(
 ///|
 pub impl FromJson for EsqlAsyncQueryBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EsqlAsyncQueryBody: expected object"))
+    raise JsonDecodeError((path, "EsqlAsyncQueryBody: expected object"))
   }
   {
     columnar: match obj.get("columnar") {
@@ -20018,16 +19984,16 @@ pub impl ToJson for EsqlAsyncQueryDeleteQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for EsqlAsyncQueryDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "EsqlAsyncQueryDeleteQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "EsqlAsyncQueryDeleteQuery: expected object"))
   }
   EsqlAsyncQueryDeleteQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn EsqlAsyncQueryDeleteQuery::new() -> EsqlAsyncQueryDeleteQuery {
   EsqlAsyncQueryDeleteQuery::{  }
 }
@@ -20107,9 +20073,7 @@ pub impl ToJson for EsqlAsyncQueryGetQuery with fn to_json(
 ///|
 pub impl FromJson for EsqlAsyncQueryGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "EsqlAsyncQueryGetQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "EsqlAsyncQueryGetQuery: expected object"))
   }
   {
     drop_null_columns: match obj.get("drop_null_columns") {
@@ -20230,9 +20194,7 @@ pub impl ToJson for EsqlAsyncQueryStopQuery with fn to_json(
 ///|
 pub impl FromJson for EsqlAsyncQueryStopQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "EsqlAsyncQueryStopQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "EsqlAsyncQueryStopQuery: expected object"))
   }
   {
     drop_null_columns: match obj.get("drop_null_columns") {
@@ -20307,14 +20269,16 @@ pub impl ToJson for EsqlDeleteViewQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for EsqlDeleteViewQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "EsqlDeleteViewQuery: expected object"))
+    raise JsonDecodeError((path, "EsqlDeleteViewQuery: expected object"))
   }
   EsqlDeleteViewQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn EsqlDeleteViewQuery::new() -> EsqlDeleteViewQuery {
   EsqlDeleteViewQuery::{  }
 }
@@ -20378,14 +20342,16 @@ pub impl ToJson for EsqlGetQueryQuery with fn to_json(_self : EsqlGetQueryQuery)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for EsqlGetQueryQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "EsqlGetQueryQuery: expected object"))
+    raise JsonDecodeError((path, "EsqlGetQueryQuery: expected object"))
   }
   EsqlGetQueryQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn EsqlGetQueryQuery::new() -> EsqlGetQueryQuery {
   EsqlGetQueryQuery::{  }
 }
@@ -20430,7 +20396,7 @@ pub impl ToJson for EsqlGetQueryResponse with fn to_json(
 ///|
 pub impl FromJson for EsqlGetQueryResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EsqlGetQueryResponse: expected object"))
+    raise JsonDecodeError((path, "EsqlGetQueryResponse: expected object"))
   }
   {
     id: @json.from_json(
@@ -20509,14 +20475,16 @@ pub impl ToJson for EsqlGetViewQuery with fn to_json(_self : EsqlGetViewQuery) -
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for EsqlGetViewQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "EsqlGetViewQuery: expected object"))
+    raise JsonDecodeError((path, "EsqlGetViewQuery: expected object"))
   }
   EsqlGetViewQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn EsqlGetViewQuery::new() -> EsqlGetViewQuery {
   EsqlGetViewQuery::{  }
 }
@@ -20549,7 +20517,7 @@ pub impl ToJson for EsqlGetViewResponse with fn to_json(
 ///|
 pub impl FromJson for EsqlGetViewResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EsqlGetViewResponse: expected object"))
+    raise JsonDecodeError((path, "EsqlGetViewResponse: expected object"))
   }
   {
     views: @json.from_json(
@@ -20612,14 +20580,16 @@ pub impl ToJson for EsqlListQueriesQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for EsqlListQueriesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "EsqlListQueriesQuery: expected object"))
+    raise JsonDecodeError((path, "EsqlListQueriesQuery: expected object"))
   }
   EsqlListQueriesQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn EsqlListQueriesQuery::new() -> EsqlListQueriesQuery {
   EsqlListQueriesQuery::{  }
 }
@@ -20652,9 +20622,7 @@ pub impl ToJson for EsqlListQueriesResponse with fn to_json(
 ///|
 pub impl FromJson for EsqlListQueriesResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "EsqlListQueriesResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "EsqlListQueriesResponse: expected object"))
   }
   {
     queries: @json.from_json(
@@ -20703,14 +20671,16 @@ pub impl ToJson for EsqlPutViewQuery with fn to_json(_self : EsqlPutViewQuery) -
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for EsqlPutViewQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "EsqlPutViewQuery: expected object"))
+    raise JsonDecodeError((path, "EsqlPutViewQuery: expected object"))
   }
   EsqlPutViewQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn EsqlPutViewQuery::new() -> EsqlPutViewQuery {
   EsqlPutViewQuery::{  }
 }
@@ -20738,7 +20708,7 @@ pub impl ToJson for EsqlPutViewBody with fn to_json(self : EsqlPutViewBody) -> J
 ///|
 pub impl FromJson for EsqlPutViewBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EsqlPutViewBody: expected object"))
+    raise JsonDecodeError((path, "EsqlPutViewBody: expected object"))
   }
   {
     query: @json.from_json(
@@ -20821,7 +20791,7 @@ pub impl ToJson for EsqlQueryQuery with fn to_json(self : EsqlQueryQuery) -> Jso
 ///|
 pub impl FromJson for EsqlQueryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EsqlQueryQuery: expected object"))
+    raise JsonDecodeError((path, "EsqlQueryQuery: expected object"))
   }
   {
     format: match obj.get("format") {
@@ -20950,7 +20920,7 @@ pub impl ToJson for EsqlQueryBody with fn to_json(self : EsqlQueryBody) -> Json 
 ///|
 pub impl FromJson for EsqlQueryBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "EsqlQueryBody: expected object"))
+    raise JsonDecodeError((path, "EsqlQueryBody: expected object"))
   }
   {
     columnar: match obj.get("columnar") {
@@ -21140,7 +21110,7 @@ pub impl ToJson for ExistsQuery with fn to_json(self : ExistsQuery) -> Json {
 ///|
 pub impl FromJson for ExistsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ExistsQuery: expected object"))
+    raise JsonDecodeError((path, "ExistsQuery: expected object"))
   }
   {
     preference: match obj.get("preference") {
@@ -21367,7 +21337,7 @@ pub impl ToJson for ExistsSourceQuery with fn to_json(self : ExistsSourceQuery) 
 ///|
 pub impl FromJson for ExistsSourceQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ExistsSourceQuery: expected object"))
+    raise JsonDecodeError((path, "ExistsSourceQuery: expected object"))
   }
   {
     preference: match obj.get("preference") {
@@ -21599,7 +21569,7 @@ pub impl ToJson for ExplainQuery with fn to_json(self : ExplainQuery) -> Json {
 ///|
 pub impl FromJson for ExplainQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ExplainQuery: expected object"))
+    raise JsonDecodeError((path, "ExplainQuery: expected object"))
   }
   {
     analyzer: match obj.get("analyzer") {
@@ -21774,7 +21744,7 @@ pub impl ToJson for ExplainBody with fn to_json(self : ExplainBody) -> Json {
 ///|
 pub impl FromJson for ExplainBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ExplainBody: expected object"))
+    raise JsonDecodeError((path, "ExplainBody: expected object"))
   }
   {
     query: match obj.get("query") {
@@ -21819,7 +21789,7 @@ pub impl ToJson for ExplainResponse with fn to_json(self : ExplainResponse) -> J
 ///|
 pub impl FromJson for ExplainResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ExplainResponse: expected object"))
+    raise JsonDecodeError((path, "ExplainResponse: expected object"))
   }
   {
     _index: @json.from_json(
@@ -21906,9 +21876,7 @@ pub impl ToJson for FeaturesGetFeaturesQuery with fn to_json(
 ///|
 pub impl FromJson for FeaturesGetFeaturesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "FeaturesGetFeaturesQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "FeaturesGetFeaturesQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -21956,7 +21924,7 @@ pub impl ToJson for FeaturesGetFeaturesResponse with fn to_json(
 ///|
 pub impl FromJson for FeaturesGetFeaturesResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "FeaturesGetFeaturesResponse: expected object"),
     )
   }
@@ -22011,9 +21979,7 @@ pub impl ToJson for FeaturesResetFeaturesQuery with fn to_json(
 ///|
 pub impl FromJson for FeaturesResetFeaturesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "FeaturesResetFeaturesQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "FeaturesResetFeaturesQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -22064,7 +22030,7 @@ pub impl FromJson for FeaturesResetFeaturesResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "FeaturesResetFeaturesResponse: expected object"),
     )
   }
@@ -22152,7 +22118,7 @@ pub impl ToJson for FieldCapsQuery with fn to_json(self : FieldCapsQuery) -> Jso
 ///|
 pub impl FromJson for FieldCapsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "FieldCapsQuery: expected object"))
+    raise JsonDecodeError((path, "FieldCapsQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -22300,7 +22266,7 @@ pub impl ToJson for FieldCapsBody with fn to_json(self : FieldCapsBody) -> Json 
 ///|
 pub impl FromJson for FieldCapsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "FieldCapsBody: expected object"))
+    raise JsonDecodeError((path, "FieldCapsBody: expected object"))
   }
   {
     fields: match obj.get("fields") {
@@ -22356,7 +22322,7 @@ pub impl ToJson for FieldCapsResponse with fn to_json(self : FieldCapsResponse) 
 ///|
 pub impl FromJson for FieldCapsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "FieldCapsResponse: expected object"))
+    raise JsonDecodeError((path, "FieldCapsResponse: expected object"))
   }
   {
     indices: @json.from_json(
@@ -22423,16 +22389,16 @@ pub impl ToJson for FleetDeleteSecretQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for FleetDeleteSecretQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "FleetDeleteSecretQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "FleetDeleteSecretQuery: expected object"))
   }
   FleetDeleteSecretQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn FleetDeleteSecretQuery::new() -> FleetDeleteSecretQuery {
   FleetDeleteSecretQuery::{  }
 }
@@ -22462,9 +22428,7 @@ pub impl ToJson for FleetDeleteSecretResponse with fn to_json(
 ///|
 pub impl FromJson for FleetDeleteSecretResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "FleetDeleteSecretResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "FleetDeleteSecretResponse: expected object"))
   }
   {
     deleted: @json.from_json(
@@ -22515,14 +22479,16 @@ pub impl ToJson for FleetGetSecretQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for FleetGetSecretQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "FleetGetSecretQuery: expected object"))
+    raise JsonDecodeError((path, "FleetGetSecretQuery: expected object"))
   }
   FleetGetSecretQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn FleetGetSecretQuery::new() -> FleetGetSecretQuery {
   FleetGetSecretQuery::{  }
 }
@@ -22554,9 +22520,7 @@ pub impl ToJson for FleetGetSecretResponse with fn to_json(
 ///|
 pub impl FromJson for FleetGetSecretResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "FleetGetSecretResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "FleetGetSecretResponse: expected object"))
   }
   {
     id: @json.from_json(
@@ -22634,7 +22598,7 @@ pub impl ToJson for FleetGlobalCheckpointsQuery with fn to_json(
 ///|
 pub impl FromJson for FleetGlobalCheckpointsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "FleetGlobalCheckpointsQuery: expected object"),
     )
   }
@@ -22724,7 +22688,7 @@ pub impl FromJson for FleetGlobalCheckpointsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "FleetGlobalCheckpointsResponse: expected object"),
     )
   }
@@ -22853,7 +22817,7 @@ pub impl ToJson for FleetMsearchQuery with fn to_json(self : FleetMsearchQuery) 
 ///|
 pub impl FromJson for FleetMsearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "FleetMsearchQuery: expected object"))
+    raise JsonDecodeError((path, "FleetMsearchQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -23075,7 +23039,7 @@ pub impl ToJson for FleetMsearchResponse with fn to_json(
 ///|
 pub impl FromJson for FleetMsearchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "FleetMsearchResponse: expected object"))
+    raise JsonDecodeError((path, "FleetMsearchResponse: expected object"))
   }
   {
     docs: @json.from_json(
@@ -23135,14 +23099,16 @@ pub impl ToJson for FleetPostSecretQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for FleetPostSecretQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "FleetPostSecretQuery: expected object"))
+    raise JsonDecodeError((path, "FleetPostSecretQuery: expected object"))
   }
   FleetPostSecretQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn FleetPostSecretQuery::new() -> FleetPostSecretQuery {
   FleetPostSecretQuery::{  }
 }
@@ -23172,9 +23138,7 @@ pub impl ToJson for FleetPostSecretResponse with fn to_json(
 ///|
 pub impl FromJson for FleetPostSecretResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "FleetPostSecretResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "FleetPostSecretResponse: expected object"))
   }
   {
     id: @json.from_json(
@@ -23435,7 +23399,7 @@ pub impl ToJson for FleetSearchQuery with fn to_json(self : FleetSearchQuery) ->
 ///|
 pub impl FromJson for FleetSearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "FleetSearchQuery: expected object"))
+    raise JsonDecodeError((path, "FleetSearchQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -24150,7 +24114,7 @@ pub impl ToJson for FleetSearchBody with fn to_json(self : FleetSearchBody) -> J
 ///|
 pub impl FromJson for FleetSearchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "FleetSearchBody: expected object"))
+    raise JsonDecodeError((path, "FleetSearchBody: expected object"))
   }
   {
     aggregations: match obj.get("aggregations") {
@@ -24467,7 +24431,7 @@ pub impl ToJson for FleetSearchResponse with fn to_json(
 ///|
 pub impl FromJson for FleetSearchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "FleetSearchResponse: expected object"))
+    raise JsonDecodeError((path, "FleetSearchResponse: expected object"))
   }
   {
     took: @json.from_json(
@@ -24650,7 +24614,7 @@ pub impl ToJson for GetQuery with fn to_json(self : GetQuery) -> Json {
 ///|
 pub impl FromJson for GetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "GetQuery: expected object"))
+    raise JsonDecodeError((path, "GetQuery: expected object"))
   }
   {
     force_synthetic_source: match obj.get("force_synthetic_source") {
@@ -24872,7 +24836,7 @@ pub impl ToJson for GetReindexQuery with fn to_json(self : GetReindexQuery) -> J
 ///|
 pub impl FromJson for GetReindexQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "GetReindexQuery: expected object"))
+    raise JsonDecodeError((path, "GetReindexQuery: expected object"))
   }
   {
     wait_for_completion: match obj.get("wait_for_completion") {
@@ -24969,7 +24933,7 @@ pub impl ToJson for GetReindexResponse with fn to_json(
 ///|
 pub impl FromJson for GetReindexResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "GetReindexResponse: expected object"))
+    raise JsonDecodeError((path, "GetReindexResponse: expected object"))
   }
   {
     completed: @json.from_json(
@@ -25075,7 +25039,7 @@ pub impl ToJson for GetScriptQuery with fn to_json(self : GetScriptQuery) -> Jso
 ///|
 pub impl FromJson for GetScriptQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "GetScriptQuery: expected object"))
+    raise JsonDecodeError((path, "GetScriptQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -25126,7 +25090,7 @@ pub impl ToJson for GetScriptResponse with fn to_json(self : GetScriptResponse) 
 ///|
 pub impl FromJson for GetScriptResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "GetScriptResponse: expected object"))
+    raise JsonDecodeError((path, "GetScriptResponse: expected object"))
   }
   {
     _id: @json.from_json(
@@ -25183,16 +25147,16 @@ pub impl ToJson for GetScriptContextQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for GetScriptContextQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "GetScriptContextQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "GetScriptContextQuery: expected object"))
   }
   GetScriptContextQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn GetScriptContextQuery::new() -> GetScriptContextQuery {
   GetScriptContextQuery::{  }
 }
@@ -25222,9 +25186,7 @@ pub impl ToJson for GetScriptContextResponse with fn to_json(
 ///|
 pub impl FromJson for GetScriptContextResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "GetScriptContextResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "GetScriptContextResponse: expected object"))
   }
   {
     contexts: @json.from_json(
@@ -25269,16 +25231,16 @@ pub impl ToJson for GetScriptLanguagesQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for GetScriptLanguagesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "GetScriptLanguagesQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "GetScriptLanguagesQuery: expected object"))
   }
   GetScriptLanguagesQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn GetScriptLanguagesQuery::new() -> GetScriptLanguagesQuery {
   GetScriptLanguagesQuery::{  }
 }
@@ -25310,9 +25272,7 @@ pub impl ToJson for GetScriptLanguagesResponse with fn to_json(
 ///|
 pub impl FromJson for GetScriptLanguagesResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "GetScriptLanguagesResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "GetScriptLanguagesResponse: expected object"))
   }
   {
     language_contexts: @json.from_json(
@@ -25407,7 +25367,7 @@ pub impl ToJson for GetSourceQuery with fn to_json(self : GetSourceQuery) -> Jso
 ///|
 pub impl FromJson for GetSourceQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "GetSourceQuery: expected object"))
+    raise JsonDecodeError((path, "GetSourceQuery: expected object"))
   }
   {
     preference: match obj.get("preference") {
@@ -25589,7 +25549,7 @@ pub impl ToJson for GraphExploreQuery with fn to_json(self : GraphExploreQuery) 
 ///|
 pub impl FromJson for GraphExploreQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "GraphExploreQuery: expected object"))
+    raise JsonDecodeError((path, "GraphExploreQuery: expected object"))
   }
   {
     routing: match obj.get("routing") {
@@ -25662,7 +25622,7 @@ pub impl ToJson for GraphExploreBody with fn to_json(self : GraphExploreBody) ->
 ///|
 pub impl FromJson for GraphExploreBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "GraphExploreBody: expected object"))
+    raise JsonDecodeError((path, "GraphExploreBody: expected object"))
   }
   {
     connections: match obj.get("connections") {
@@ -25724,7 +25684,7 @@ pub impl ToJson for GraphExploreResponse with fn to_json(
 ///|
 pub impl FromJson for GraphExploreResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "GraphExploreResponse: expected object"))
+    raise JsonDecodeError((path, "GraphExploreResponse: expected object"))
   }
   {
     connections: @json.from_json(
@@ -25810,7 +25770,7 @@ pub impl ToJson for HealthReportQuery with fn to_json(self : HealthReportQuery) 
 ///|
 pub impl FromJson for HealthReportQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "HealthReportQuery: expected object"))
+    raise JsonDecodeError((path, "HealthReportQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -25884,7 +25844,7 @@ pub impl ToJson for HealthReportResponse with fn to_json(
 ///|
 pub impl FromJson for HealthReportResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "HealthReportResponse: expected object"))
+    raise JsonDecodeError((path, "HealthReportResponse: expected object"))
   }
   {
     cluster_name: @json.from_json(
@@ -25963,9 +25923,7 @@ pub impl ToJson for IlmDeleteLifecycleQuery with fn to_json(
 ///|
 pub impl FromJson for IlmDeleteLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IlmDeleteLifecycleQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IlmDeleteLifecycleQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -26068,9 +26026,7 @@ pub impl ToJson for IlmExplainLifecycleQuery with fn to_json(
 ///|
 pub impl FromJson for IlmExplainLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IlmExplainLifecycleQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IlmExplainLifecycleQuery: expected object"))
   }
   {
     only_errors: match obj.get("only_errors") {
@@ -26140,7 +26096,7 @@ pub impl ToJson for IlmExplainLifecycleResponse with fn to_json(
 ///|
 pub impl FromJson for IlmExplainLifecycleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IlmExplainLifecycleResponse: expected object"),
     )
   }
@@ -26206,7 +26162,7 @@ pub impl ToJson for IlmGetLifecycleQuery with fn to_json(
 ///|
 pub impl FromJson for IlmGetLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IlmGetLifecycleQuery: expected object"))
+    raise JsonDecodeError((path, "IlmGetLifecycleQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -26295,14 +26251,16 @@ pub impl ToJson for IlmGetStatusQuery with fn to_json(_self : IlmGetStatusQuery)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IlmGetStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "IlmGetStatusQuery: expected object"))
+    raise JsonDecodeError((path, "IlmGetStatusQuery: expected object"))
   }
   IlmGetStatusQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IlmGetStatusQuery::new() -> IlmGetStatusQuery {
   IlmGetStatusQuery::{  }
 }
@@ -26332,7 +26290,7 @@ pub impl ToJson for IlmGetStatusResponse with fn to_json(
 ///|
 pub impl FromJson for IlmGetStatusResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IlmGetStatusResponse: expected object"))
+    raise JsonDecodeError((path, "IlmGetStatusResponse: expected object"))
   }
   {
     operation_mode: @json.from_json(
@@ -26390,9 +26348,7 @@ pub impl ToJson for IlmMigrateToDataTiersQuery with fn to_json(
 ///|
 pub impl FromJson for IlmMigrateToDataTiersQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IlmMigrateToDataTiersQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IlmMigrateToDataTiersQuery: expected object"))
   }
   {
     dry_run: match obj.get("dry_run") {
@@ -26458,9 +26414,7 @@ pub impl ToJson for IlmMigrateToDataTiersBody with fn to_json(
 ///|
 pub impl FromJson for IlmMigrateToDataTiersBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IlmMigrateToDataTiersBody: expected object"),
-    )
+    raise JsonDecodeError((path, "IlmMigrateToDataTiersBody: expected object"))
   }
   {
     legacy_template_to_delete: match obj.get("legacy_template_to_delete") {
@@ -26520,7 +26474,7 @@ pub impl FromJson for IlmMigrateToDataTiersResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IlmMigrateToDataTiersResponse: expected object"),
     )
   }
@@ -26600,14 +26554,16 @@ pub impl ToJson for IlmMoveToStepQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IlmMoveToStepQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "IlmMoveToStepQuery: expected object"))
+    raise JsonDecodeError((path, "IlmMoveToStepQuery: expected object"))
   }
   IlmMoveToStepQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IlmMoveToStepQuery::new() -> IlmMoveToStepQuery {
   IlmMoveToStepQuery::{  }
 }
@@ -26637,7 +26593,7 @@ pub impl ToJson for IlmMoveToStepBody with fn to_json(self : IlmMoveToStepBody) 
 ///|
 pub impl FromJson for IlmMoveToStepBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IlmMoveToStepBody: expected object"))
+    raise JsonDecodeError((path, "IlmMoveToStepBody: expected object"))
   }
   {
     current_step: @json.from_json(
@@ -26719,7 +26675,7 @@ pub impl ToJson for IlmPutLifecycleQuery with fn to_json(
 ///|
 pub impl FromJson for IlmPutLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IlmPutLifecycleQuery: expected object"))
+    raise JsonDecodeError((path, "IlmPutLifecycleQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -26780,7 +26736,7 @@ pub impl ToJson for IlmPutLifecycleBody with fn to_json(
 ///|
 pub impl FromJson for IlmPutLifecycleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IlmPutLifecycleBody: expected object"))
+    raise JsonDecodeError((path, "IlmPutLifecycleBody: expected object"))
   }
   {
     policy: match obj.get("policy") {
@@ -26843,14 +26799,16 @@ pub impl ToJson for IlmRemovePolicyQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IlmRemovePolicyQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "IlmRemovePolicyQuery: expected object"))
+    raise JsonDecodeError((path, "IlmRemovePolicyQuery: expected object"))
   }
   IlmRemovePolicyQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IlmRemovePolicyQuery::new() -> IlmRemovePolicyQuery {
   IlmRemovePolicyQuery::{  }
 }
@@ -26882,9 +26840,7 @@ pub impl ToJson for IlmRemovePolicyResponse with fn to_json(
 ///|
 pub impl FromJson for IlmRemovePolicyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IlmRemovePolicyResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "IlmRemovePolicyResponse: expected object"))
   }
   {
     failed_indexes: @json.from_json(
@@ -26937,14 +26893,16 @@ pub impl ToJson for IlmRetryQuery with fn to_json(_self : IlmRetryQuery) -> Json
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IlmRetryQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "IlmRetryQuery: expected object"))
+    raise JsonDecodeError((path, "IlmRetryQuery: expected object"))
   }
   IlmRetryQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IlmRetryQuery::new() -> IlmRetryQuery {
   IlmRetryQuery::{  }
 }
@@ -27012,7 +26970,7 @@ pub impl ToJson for IlmStartQuery with fn to_json(self : IlmStartQuery) -> Json 
 ///|
 pub impl FromJson for IlmStartQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IlmStartQuery: expected object"))
+    raise JsonDecodeError((path, "IlmStartQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -27100,7 +27058,7 @@ pub impl ToJson for IlmStopQuery with fn to_json(self : IlmStopQuery) -> Json {
 ///|
 pub impl FromJson for IlmStopQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IlmStopQuery: expected object"))
+    raise JsonDecodeError((path, "IlmStopQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -27243,7 +27201,7 @@ pub impl ToJson for IndexQuery with fn to_json(self : IndexQuery) -> Json {
 ///|
 pub impl FromJson for IndexQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndexQuery: expected object"))
+    raise JsonDecodeError((path, "IndexQuery: expected object"))
   }
   {
     if_primary_term: match obj.get("if_primary_term") {
@@ -27506,7 +27464,7 @@ pub impl ToJson for IndicesAddBlockQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesAddBlockQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesAddBlockQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesAddBlockQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -27607,9 +27565,7 @@ pub impl ToJson for IndicesAddBlockResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesAddBlockResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesAddBlockResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesAddBlockResponse: expected object"))
   }
   {
     acknowledged: @json.from_json(
@@ -27679,7 +27635,7 @@ pub impl ToJson for IndicesAnalyzeQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesAnalyzeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesAnalyzeQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesAnalyzeQuery: expected object"))
   }
   {
     index: match obj.get("index") {
@@ -27767,7 +27723,7 @@ pub impl ToJson for IndicesAnalyzeBody with fn to_json(
 ///|
 pub impl FromJson for IndicesAnalyzeBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesAnalyzeBody: expected object"))
+    raise JsonDecodeError((path, "IndicesAnalyzeBody: expected object"))
   }
   {
     analyzer: match obj.get("analyzer") {
@@ -27872,9 +27828,7 @@ pub impl ToJson for IndicesAnalyzeResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesAnalyzeResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesAnalyzeResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesAnalyzeResponse: expected object"))
   }
   {
     detail: match obj.get("detail") {
@@ -27940,12 +27894,13 @@ pub impl ToJson for IndicesCancelMigrateReindexQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IndicesCancelMigrateReindexQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesCancelMigrateReindexQuery: expected object"),
     )
   }
@@ -27953,6 +27908,7 @@ pub impl FromJson for IndicesCancelMigrateReindexQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IndicesCancelMigrateReindexQuery::new() -> IndicesCancelMigrateReindexQuery {
   IndicesCancelMigrateReindexQuery::{  }
 }
@@ -28061,9 +28017,7 @@ pub impl ToJson for IndicesClearCacheQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesClearCacheQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesClearCacheQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesClearCacheQuery: expected object"))
   }
   {
     index: match obj.get("index") {
@@ -28242,7 +28196,7 @@ pub impl ToJson for IndicesCloneQuery with fn to_json(self : IndicesCloneQuery) 
 ///|
 pub impl FromJson for IndicesCloneQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesCloneQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesCloneQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -28320,7 +28274,7 @@ pub impl ToJson for IndicesCloneBody with fn to_json(self : IndicesCloneBody) ->
 ///|
 pub impl FromJson for IndicesCloneBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesCloneBody: expected object"))
+    raise JsonDecodeError((path, "IndicesCloneBody: expected object"))
   }
   {
     aliases: match obj.get("aliases") {
@@ -28365,7 +28319,7 @@ pub impl ToJson for IndicesCloneResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesCloneResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesCloneResponse: expected object"))
+    raise JsonDecodeError((path, "IndicesCloneResponse: expected object"))
   }
   {
     acknowledged: @json.from_json(
@@ -28464,7 +28418,7 @@ pub impl ToJson for IndicesCloseQuery with fn to_json(self : IndicesCloseQuery) 
 ///|
 pub impl FromJson for IndicesCloseQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesCloseQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesCloseQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -28580,7 +28534,7 @@ pub impl ToJson for IndicesCloseResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesCloseResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesCloseResponse: expected object"))
+    raise JsonDecodeError((path, "IndicesCloseResponse: expected object"))
   }
   {
     acknowledged: @json.from_json(
@@ -28657,7 +28611,7 @@ pub impl ToJson for IndicesCreateQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesCreateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesCreateQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesCreateQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -28740,7 +28694,7 @@ pub impl ToJson for IndicesCreateBody with fn to_json(self : IndicesCreateBody) 
 ///|
 pub impl FromJson for IndicesCreateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesCreateBody: expected object"))
+    raise JsonDecodeError((path, "IndicesCreateBody: expected object"))
   }
   {
     aliases: match obj.get("aliases") {
@@ -28791,9 +28745,7 @@ pub impl ToJson for IndicesCreateResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesCreateResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesCreateResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesCreateResponse: expected object"))
   }
   {
     index: @json.from_json(
@@ -28868,7 +28820,7 @@ pub impl ToJson for IndicesCreateDataStreamQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesCreateDataStreamQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesCreateDataStreamQuery: expected object"),
     )
   }
@@ -28955,16 +28907,16 @@ pub impl ToJson for IndicesCreateFromQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IndicesCreateFromQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesCreateFromQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesCreateFromQuery: expected object"))
   }
   IndicesCreateFromQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IndicesCreateFromQuery::new() -> IndicesCreateFromQuery {
   IndicesCreateFromQuery::{  }
 }
@@ -29001,9 +28953,7 @@ pub impl ToJson for IndicesCreateFromResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesCreateFromResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesCreateFromResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesCreateFromResponse: expected object"))
   }
   {
     acknowledged: @json.from_json(
@@ -29079,7 +29029,7 @@ pub impl ToJson for IndicesDataStreamsStatsQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesDataStreamsStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesDataStreamsStatsQuery: expected object"),
     )
   }
@@ -29145,7 +29095,7 @@ pub impl FromJson for IndicesDataStreamsStatsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesDataStreamsStatsResponse: expected object"),
     )
   }
@@ -29254,7 +29204,7 @@ pub impl ToJson for IndicesDeleteQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesDeleteQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesDeleteQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesDeleteQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -29388,9 +29338,7 @@ pub impl ToJson for IndicesDeleteAliasQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesDeleteAliasQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesDeleteAliasQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesDeleteAliasQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -29502,7 +29450,7 @@ pub impl FromJson for IndicesDeleteDataLifecycleQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesDeleteDataLifecycleQuery: expected object"),
     )
   }
@@ -29613,7 +29561,7 @@ pub impl ToJson for IndicesDeleteDataStreamQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesDeleteDataStreamQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesDeleteDataStreamQuery: expected object"),
     )
   }
@@ -29722,7 +29670,7 @@ pub impl FromJson for IndicesDeleteDataStreamOptionsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesDeleteDataStreamOptionsQuery: expected object"),
     )
   }
@@ -29836,7 +29784,7 @@ pub impl FromJson for IndicesDeleteIndexTemplateQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesDeleteIndexTemplateQuery: expected object"),
     )
   }
@@ -29936,9 +29884,7 @@ pub impl ToJson for IndicesDeleteTemplateQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesDeleteTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesDeleteTemplateQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesDeleteTemplateQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -30051,9 +29997,7 @@ pub impl ToJson for IndicesDiskUsageQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesDiskUsageQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesDiskUsageQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesDiskUsageQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -30178,16 +30122,16 @@ pub impl ToJson for IndicesDownsampleQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IndicesDownsampleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesDownsampleQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesDownsampleQuery: expected object"))
   }
   IndicesDownsampleQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IndicesDownsampleQuery::new() -> IndicesDownsampleQuery {
   IndicesDownsampleQuery::{  }
 }
@@ -30290,7 +30234,7 @@ pub impl ToJson for IndicesExistsQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesExistsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesExistsQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesExistsQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -30446,9 +30390,7 @@ pub impl ToJson for IndicesExistsAliasQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesExistsAliasQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesExistsAliasQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesExistsAliasQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -30586,7 +30528,7 @@ pub impl FromJson for IndicesExistsIndexTemplateQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesExistsIndexTemplateQuery: expected object"),
     )
   }
@@ -30702,9 +30644,7 @@ pub impl ToJson for IndicesExistsTemplateQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesExistsTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesExistsTemplateQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesExistsTemplateQuery: expected object"))
   }
   {
     flat_settings: match obj.get("flat_settings") {
@@ -30816,7 +30756,7 @@ pub impl FromJson for IndicesExplainDataLifecycleQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesExplainDataLifecycleQuery: expected object"),
     )
   }
@@ -30880,7 +30820,7 @@ pub impl FromJson for IndicesExplainDataLifecycleResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesExplainDataLifecycleResponse: expected object"),
     )
   }
@@ -30956,7 +30896,7 @@ pub impl ToJson for IndicesFieldUsageStatsQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesFieldUsageStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesFieldUsageStatsQuery: expected object"),
     )
   }
@@ -31091,7 +31031,7 @@ pub impl ToJson for IndicesFlushQuery with fn to_json(self : IndicesFlushQuery) 
 ///|
 pub impl FromJson for IndicesFlushQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesFlushQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesFlushQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -31259,9 +31199,7 @@ pub impl ToJson for IndicesForcemergeQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesForcemergeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesForcemergeQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesForcemergeQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -31458,7 +31396,7 @@ pub impl ToJson for IndicesGetQuery with fn to_json(self : IndicesGetQuery) -> J
 ///|
 pub impl FromJson for IndicesGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesGetQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesGetQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -31637,7 +31575,7 @@ pub impl ToJson for IndicesGetAliasQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesGetAliasQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesGetAliasQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesGetAliasQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -31777,7 +31715,7 @@ pub impl ToJson for IndicesGetDataLifecycleQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesGetDataLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetDataLifecycleQuery: expected object"),
     )
   }
@@ -31852,7 +31790,7 @@ pub impl FromJson for IndicesGetDataLifecycleResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetDataLifecycleResponse: expected object"),
     )
   }
@@ -31905,12 +31843,13 @@ pub impl ToJson for IndicesGetDataLifecycleStatsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IndicesGetDataLifecycleStatsQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetDataLifecycleStatsQuery: expected object"),
     )
   }
@@ -31918,6 +31857,7 @@ pub impl FromJson for IndicesGetDataLifecycleStatsQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IndicesGetDataLifecycleStatsQuery::new() -> IndicesGetDataLifecycleStatsQuery {
   IndicesGetDataLifecycleStatsQuery::{  }
 }
@@ -31962,7 +31902,7 @@ pub impl FromJson for IndicesGetDataLifecycleStatsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetDataLifecycleStatsResponse: expected object"),
     )
   }
@@ -32059,9 +31999,7 @@ pub impl ToJson for IndicesGetDataStreamQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesGetDataStreamQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesGetDataStreamQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesGetDataStreamQuery: expected object"))
   }
   {
     expand_wildcards: match obj.get("expand_wildcards") {
@@ -32141,7 +32079,7 @@ pub impl ToJson for IndicesGetDataStreamResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesGetDataStreamResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetDataStreamResponse: expected object"),
     )
   }
@@ -32211,7 +32149,7 @@ pub impl FromJson for IndicesGetDataStreamMappingsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetDataStreamMappingsQuery: expected object"),
     )
   }
@@ -32264,7 +32202,7 @@ pub impl FromJson for IndicesGetDataStreamMappingsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetDataStreamMappingsResponse: expected object"),
     )
   }
@@ -32333,7 +32271,7 @@ pub impl FromJson for IndicesGetDataStreamOptionsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetDataStreamOptionsQuery: expected object"),
     )
   }
@@ -32397,7 +32335,7 @@ pub impl FromJson for IndicesGetDataStreamOptionsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetDataStreamOptionsResponse: expected object"),
     )
   }
@@ -32461,7 +32399,7 @@ pub impl FromJson for IndicesGetDataStreamSettingsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetDataStreamSettingsQuery: expected object"),
     )
   }
@@ -32514,7 +32452,7 @@ pub impl FromJson for IndicesGetDataStreamSettingsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetDataStreamSettingsResponse: expected object"),
     )
   }
@@ -32590,7 +32528,7 @@ pub impl ToJson for IndicesGetFieldMappingQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesGetFieldMappingQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetFieldMappingQuery: expected object"),
     )
   }
@@ -32732,7 +32670,7 @@ pub impl ToJson for IndicesGetIndexTemplateQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesGetIndexTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetIndexTemplateQuery: expected object"),
     )
   }
@@ -32817,7 +32755,7 @@ pub impl FromJson for IndicesGetIndexTemplateResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetIndexTemplateResponse: expected object"),
     )
   }
@@ -32904,9 +32842,7 @@ pub impl ToJson for IndicesGetMappingQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesGetMappingQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesGetMappingQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesGetMappingQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -33036,12 +32972,13 @@ pub impl ToJson for IndicesGetMigrateReindexStatusQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IndicesGetMigrateReindexStatusQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetMigrateReindexStatusQuery: expected object"),
     )
   }
@@ -33049,6 +32986,7 @@ pub impl FromJson for IndicesGetMigrateReindexStatusQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IndicesGetMigrateReindexStatusQuery::new() -> IndicesGetMigrateReindexStatusQuery {
   IndicesGetMigrateReindexStatusQuery::{  }
 }
@@ -33108,7 +33046,7 @@ pub impl FromJson for IndicesGetMigrateReindexStatusResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesGetMigrateReindexStatusResponse: expected object"),
     )
   }
@@ -33245,9 +33183,7 @@ pub impl ToJson for IndicesGetSettingsQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesGetSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesGetSettingsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesGetSettingsQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -33427,9 +33363,7 @@ pub impl ToJson for IndicesGetTemplateQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesGetTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesGetTemplateQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesGetTemplateQuery: expected object"))
   }
   {
     flat_settings: match obj.get("flat_settings") {
@@ -33531,16 +33465,16 @@ pub impl ToJson for IndicesMigrateReindexQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IndicesMigrateReindexQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesMigrateReindexQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesMigrateReindexQuery: expected object"))
   }
   IndicesMigrateReindexQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IndicesMigrateReindexQuery::new() -> IndicesMigrateReindexQuery {
   IndicesMigrateReindexQuery::{  }
 }
@@ -33613,7 +33547,7 @@ pub impl FromJson for IndicesMigrateToDataStreamQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesMigrateToDataStreamQuery: expected object"),
     )
   }
@@ -33700,9 +33634,10 @@ pub impl ToJson for IndicesModifyDataStreamQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IndicesModifyDataStreamQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesModifyDataStreamQuery: expected object"),
     )
   }
@@ -33710,6 +33645,7 @@ pub impl FromJson for IndicesModifyDataStreamQuery with fn from_json(json, path)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IndicesModifyDataStreamQuery::new() -> IndicesModifyDataStreamQuery {
   IndicesModifyDataStreamQuery::{  }
 }
@@ -33739,7 +33675,7 @@ pub impl ToJson for IndicesModifyDataStreamBody with fn to_json(
 ///|
 pub impl FromJson for IndicesModifyDataStreamBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesModifyDataStreamBody: expected object"),
     )
   }
@@ -33833,7 +33769,7 @@ pub impl ToJson for IndicesOpenQuery with fn to_json(self : IndicesOpenQuery) ->
 ///|
 pub impl FromJson for IndicesOpenQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesOpenQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesOpenQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -33947,7 +33883,7 @@ pub impl ToJson for IndicesOpenResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesOpenResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesOpenResponse: expected object"))
+    raise JsonDecodeError((path, "IndicesOpenResponse: expected object"))
   }
   {
     acknowledged: @json.from_json(
@@ -34013,7 +33949,7 @@ pub impl FromJson for IndicesPromoteDataStreamQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesPromoteDataStreamQuery: expected object"),
     )
   }
@@ -34103,7 +34039,7 @@ pub impl ToJson for IndicesPutAliasQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesPutAliasQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesPutAliasQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesPutAliasQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -34184,7 +34120,7 @@ pub impl ToJson for IndicesPutAliasBody with fn to_json(
 ///|
 pub impl FromJson for IndicesPutAliasBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesPutAliasBody: expected object"))
+    raise JsonDecodeError((path, "IndicesPutAliasBody: expected object"))
   }
   {
     filter: match obj.get("filter") {
@@ -34303,7 +34239,7 @@ pub impl ToJson for IndicesPutDataLifecycleQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesPutDataLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesPutDataLifecycleQuery: expected object"),
     )
   }
@@ -34392,7 +34328,7 @@ pub impl ToJson for IndicesPutDataLifecycleBody with fn to_json(
 ///|
 pub impl FromJson for IndicesPutDataLifecycleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesPutDataLifecycleBody: expected object"),
     )
   }
@@ -34501,7 +34437,7 @@ pub impl FromJson for IndicesPutDataStreamMappingsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesPutDataStreamMappingsQuery: expected object"),
     )
   }
@@ -34574,7 +34510,7 @@ pub impl FromJson for IndicesPutDataStreamMappingsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesPutDataStreamMappingsResponse: expected object"),
     )
   }
@@ -34648,7 +34584,7 @@ pub impl FromJson for IndicesPutDataStreamOptionsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesPutDataStreamOptionsQuery: expected object"),
     )
   }
@@ -34725,7 +34661,7 @@ pub impl FromJson for IndicesPutDataStreamOptionsBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesPutDataStreamOptionsBody: expected object"),
     )
   }
@@ -34814,7 +34750,7 @@ pub impl FromJson for IndicesPutDataStreamSettingsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesPutDataStreamSettingsQuery: expected object"),
     )
   }
@@ -34887,7 +34823,7 @@ pub impl FromJson for IndicesPutDataStreamSettingsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesPutDataStreamSettingsResponse: expected object"),
     )
   }
@@ -34958,7 +34894,7 @@ pub impl ToJson for IndicesPutIndexTemplateQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesPutIndexTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesPutIndexTemplateQuery: expected object"),
     )
   }
@@ -35076,7 +35012,7 @@ pub impl ToJson for IndicesPutIndexTemplateBody with fn to_json(
 ///|
 pub impl FromJson for IndicesPutIndexTemplateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesPutIndexTemplateBody: expected object"),
     )
   }
@@ -35253,9 +35189,7 @@ pub impl ToJson for IndicesPutMappingQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesPutMappingQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesPutMappingQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesPutMappingQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -35417,9 +35351,7 @@ pub impl ToJson for IndicesPutMappingBody with fn to_json(
 ///|
 pub impl FromJson for IndicesPutMappingBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesPutMappingBody: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesPutMappingBody: expected object"))
   }
   {
     date_detection: match obj.get("date_detection") {
@@ -35605,9 +35537,7 @@ pub impl ToJson for IndicesPutSettingsQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesPutSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesPutSettingsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesPutSettingsQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -35801,9 +35731,7 @@ pub impl ToJson for IndicesPutTemplateQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesPutTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesPutTemplateQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesPutTemplateQuery: expected object"))
   }
   {
     create: match obj.get("create") {
@@ -35909,9 +35837,7 @@ pub impl ToJson for IndicesPutTemplateBody with fn to_json(
 ///|
 pub impl FromJson for IndicesPutTemplateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesPutTemplateBody: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesPutTemplateBody: expected object"))
   }
   {
     aliases: match obj.get("aliases") {
@@ -36035,7 +35961,7 @@ pub impl ToJson for IndicesRecoveryQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesRecoveryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesRecoveryQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesRecoveryQuery: expected object"))
   }
   {
     active_only: match obj.get("active_only") {
@@ -36183,7 +36109,7 @@ pub impl ToJson for IndicesRefreshQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesRefreshQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesRefreshQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesRefreshQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -36312,7 +36238,7 @@ pub impl FromJson for IndicesReloadSearchAnalyzersQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesReloadSearchAnalyzersQuery: expected object"),
     )
   }
@@ -36449,9 +36375,7 @@ pub impl ToJson for IndicesRemoveBlockQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesRemoveBlockQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesRemoveBlockQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesRemoveBlockQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -36550,9 +36474,7 @@ pub impl ToJson for IndicesRemoveBlockResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesRemoveBlockResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesRemoveBlockResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesRemoveBlockResponse: expected object"))
   }
   {
     acknowledged: @json.from_json(
@@ -36638,9 +36560,7 @@ pub impl ToJson for IndicesResolveClusterQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesResolveClusterQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesResolveClusterQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesResolveClusterQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -36793,9 +36713,7 @@ pub impl ToJson for IndicesResolveIndexQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesResolveIndexQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesResolveIndexQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesResolveIndexQuery: expected object"))
   }
   {
     expand_wildcards: match obj.get("expand_wildcards") {
@@ -36879,7 +36797,7 @@ pub impl ToJson for IndicesResolveIndexResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesResolveIndexResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesResolveIndexResponse: expected object"),
     )
   }
@@ -36968,7 +36886,7 @@ pub impl ToJson for IndicesRolloverQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesRolloverQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesRolloverQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesRolloverQuery: expected object"))
   }
   {
     dry_run: match obj.get("dry_run") {
@@ -37078,7 +36996,7 @@ pub impl ToJson for IndicesRolloverBody with fn to_json(
 ///|
 pub impl FromJson for IndicesRolloverBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesRolloverBody: expected object"))
+    raise JsonDecodeError((path, "IndicesRolloverBody: expected object"))
   }
   {
     aliases: match obj.get("aliases") {
@@ -37144,9 +37062,7 @@ pub impl ToJson for IndicesRolloverResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesRolloverResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesRolloverResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesRolloverResponse: expected object"))
   }
   {
     acknowledged: @json.from_json(
@@ -37254,7 +37170,7 @@ pub impl ToJson for IndicesSegmentsQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesSegmentsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesSegmentsQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesSegmentsQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -37326,9 +37242,7 @@ pub impl ToJson for IndicesSegmentsResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesSegmentsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesSegmentsResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesSegmentsResponse: expected object"))
   }
   {
     indices: @json.from_json(
@@ -37412,9 +37326,7 @@ pub impl ToJson for IndicesShardStoresQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesShardStoresQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesShardStoresQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesShardStoresQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -37494,9 +37406,7 @@ pub impl ToJson for IndicesShardStoresResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesShardStoresResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesShardStoresResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesShardStoresResponse: expected object"))
   }
   {
     indices: @json.from_json(
@@ -37571,7 +37481,7 @@ pub impl ToJson for IndicesShrinkQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesShrinkQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesShrinkQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesShrinkQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -37649,7 +37559,7 @@ pub impl ToJson for IndicesShrinkBody with fn to_json(self : IndicesShrinkBody) 
 ///|
 pub impl FromJson for IndicesShrinkBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesShrinkBody: expected object"))
+    raise JsonDecodeError((path, "IndicesShrinkBody: expected object"))
   }
   {
     aliases: match obj.get("aliases") {
@@ -37694,9 +37604,7 @@ pub impl ToJson for IndicesShrinkResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesShrinkResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesShrinkResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesShrinkResponse: expected object"))
   }
   {
     acknowledged: @json.from_json(
@@ -37787,7 +37695,7 @@ pub impl FromJson for IndicesSimulateIndexTemplateQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesSimulateIndexTemplateQuery: expected object"),
     )
   }
@@ -37879,7 +37787,7 @@ pub impl FromJson for IndicesSimulateIndexTemplateResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesSimulateIndexTemplateResponse: expected object"),
     )
   }
@@ -37967,7 +37875,7 @@ pub impl ToJson for IndicesSimulateTemplateQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesSimulateTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesSimulateTemplateQuery: expected object"),
     )
   }
@@ -38096,7 +38004,7 @@ pub impl ToJson for IndicesSimulateTemplateBody with fn to_json(
 ///|
 pub impl FromJson for IndicesSimulateTemplateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesSimulateTemplateBody: expected object"),
     )
   }
@@ -38218,7 +38126,7 @@ pub impl FromJson for IndicesSimulateTemplateResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesSimulateTemplateResponse: expected object"),
     )
   }
@@ -38305,7 +38213,7 @@ pub impl ToJson for IndicesSplitQuery with fn to_json(self : IndicesSplitQuery) 
 ///|
 pub impl FromJson for IndicesSplitQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesSplitQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesSplitQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -38383,7 +38291,7 @@ pub impl ToJson for IndicesSplitBody with fn to_json(self : IndicesSplitBody) ->
 ///|
 pub impl FromJson for IndicesSplitBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesSplitBody: expected object"))
+    raise JsonDecodeError((path, "IndicesSplitBody: expected object"))
   }
   {
     aliases: match obj.get("aliases") {
@@ -38428,7 +38336,7 @@ pub impl ToJson for IndicesSplitResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesSplitResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesSplitResponse: expected object"))
+    raise JsonDecodeError((path, "IndicesSplitResponse: expected object"))
   }
   {
     acknowledged: @json.from_json(
@@ -38539,7 +38447,7 @@ pub impl ToJson for IndicesStatsQuery with fn to_json(self : IndicesStatsQuery) 
 ///|
 pub impl FromJson for IndicesStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesStatsQuery: expected object"))
+    raise JsonDecodeError((path, "IndicesStatsQuery: expected object"))
   }
   {
     completion_fields: match obj.get("completion_fields") {
@@ -38699,7 +38607,7 @@ pub impl ToJson for IndicesStatsResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IndicesStatsResponse: expected object"))
+    raise JsonDecodeError((path, "IndicesStatsResponse: expected object"))
   }
   {
     indices: match obj.get("indices") {
@@ -38786,9 +38694,7 @@ pub impl ToJson for IndicesUpdateAliasesQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesUpdateAliasesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesUpdateAliasesQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesUpdateAliasesQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -38849,9 +38755,7 @@ pub impl ToJson for IndicesUpdateAliasesBody with fn to_json(
 ///|
 pub impl FromJson for IndicesUpdateAliasesBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesUpdateAliasesBody: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesUpdateAliasesBody: expected object"))
   }
   {
     actions: match obj.get("actions") {
@@ -38973,9 +38877,7 @@ pub impl ToJson for IndicesValidateQueryQuery with fn to_json(
 ///|
 pub impl FromJson for IndicesValidateQueryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesValidateQueryQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesValidateQueryQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -39154,9 +39056,7 @@ pub impl ToJson for IndicesValidateQueryBody with fn to_json(
 ///|
 pub impl FromJson for IndicesValidateQueryBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IndicesValidateQueryBody: expected object"),
-    )
+    raise JsonDecodeError((path, "IndicesValidateQueryBody: expected object"))
   }
   {
     query: match obj.get("query") {
@@ -39204,7 +39104,7 @@ pub impl ToJson for IndicesValidateQueryResponse with fn to_json(
 ///|
 pub impl FromJson for IndicesValidateQueryResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IndicesValidateQueryResponse: expected object"),
     )
   }
@@ -39296,7 +39196,7 @@ pub impl FromJson for InferenceChatCompletionUnifiedQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferenceChatCompletionUnifiedQuery: expected object"),
     )
   }
@@ -39390,9 +39290,7 @@ pub impl ToJson for InferenceCompletionQuery with fn to_json(
 ///|
 pub impl FromJson for InferenceCompletionQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferenceCompletionQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferenceCompletionQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -39444,9 +39342,7 @@ pub impl ToJson for InferenceCompletionBody with fn to_json(
 ///|
 pub impl FromJson for InferenceCompletionBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferenceCompletionBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferenceCompletionBody: expected object"))
   }
   {
     input: @json.from_json(
@@ -39532,7 +39428,7 @@ pub impl ToJson for InferenceDeleteQuery with fn to_json(
 ///|
 pub impl FromJson for InferenceDeleteQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "InferenceDeleteQuery: expected object"))
+    raise JsonDecodeError((path, "InferenceDeleteQuery: expected object"))
   }
   {
     dry_run: match obj.get("dry_run") {
@@ -39635,9 +39531,7 @@ pub impl ToJson for InferenceEmbeddingQuery with fn to_json(
 ///|
 pub impl FromJson for InferenceEmbeddingQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferenceEmbeddingQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferenceEmbeddingQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -39715,14 +39609,16 @@ pub impl ToJson for InferenceGetQuery with fn to_json(_self : InferenceGetQuery)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for InferenceGetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "InferenceGetQuery: expected object"))
+    raise JsonDecodeError((path, "InferenceGetQuery: expected object"))
   }
   InferenceGetQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn InferenceGetQuery::new() -> InferenceGetQuery {
   InferenceGetQuery::{  }
 }
@@ -39752,7 +39648,7 @@ pub impl ToJson for InferenceGetResponse with fn to_json(
 ///|
 pub impl FromJson for InferenceGetResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "InferenceGetResponse: expected object"))
+    raise JsonDecodeError((path, "InferenceGetResponse: expected object"))
   }
   {
     endpoints: @json.from_json(
@@ -39827,9 +39723,7 @@ pub impl ToJson for InferenceInferenceQuery with fn to_json(
 ///|
 pub impl FromJson for InferenceInferenceQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferenceInferenceQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferenceInferenceQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -39891,9 +39785,7 @@ pub impl ToJson for InferenceInferenceBody with fn to_json(
 ///|
 pub impl FromJson for InferenceInferenceBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferenceInferenceBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferenceInferenceBody: expected object"))
   }
   {
     query: match obj.get("query") {
@@ -39994,7 +39886,7 @@ pub impl ToJson for InferencePutQuery with fn to_json(self : InferencePutQuery) 
 ///|
 pub impl FromJson for InferencePutQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "InferencePutQuery: expected object"))
+    raise JsonDecodeError((path, "InferencePutQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -40091,9 +39983,7 @@ pub impl ToJson for InferencePutAi21Query with fn to_json(
 ///|
 pub impl FromJson for InferencePutAi21Query with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutAi21Query: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutAi21Query: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -40140,7 +40030,7 @@ pub impl ToJson for InferencePutAi21Body with fn to_json(
 ///|
 pub impl FromJson for InferencePutAi21Body with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "InferencePutAi21Body: expected object"))
+    raise JsonDecodeError((path, "InferencePutAi21Body: expected object"))
   }
   {
     service: @json.from_json(
@@ -40227,7 +40117,7 @@ pub impl FromJson for InferencePutAlibabacloudQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutAlibabacloudQuery: expected object"),
     )
   }
@@ -40288,7 +40178,7 @@ pub impl ToJson for InferencePutAlibabacloudBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutAlibabacloudBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutAlibabacloudBody: expected object"),
     )
   }
@@ -40391,7 +40281,7 @@ pub impl FromJson for InferencePutAmazonbedrockQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutAmazonbedrockQuery: expected object"),
     )
   }
@@ -40455,7 +40345,7 @@ pub impl FromJson for InferencePutAmazonbedrockBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutAmazonbedrockBody: expected object"),
     )
   }
@@ -40558,7 +40448,7 @@ pub impl FromJson for InferencePutAmazonsagemakerQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutAmazonsagemakerQuery: expected object"),
     )
   }
@@ -40622,7 +40512,7 @@ pub impl FromJson for InferencePutAmazonsagemakerBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutAmazonsagemakerBody: expected object"),
     )
   }
@@ -40723,9 +40613,7 @@ pub impl ToJson for InferencePutAnthropicQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutAnthropicQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutAnthropicQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutAnthropicQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -40779,9 +40667,7 @@ pub impl ToJson for InferencePutAnthropicBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutAnthropicBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutAnthropicBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutAnthropicBody: expected object"))
   }
   {
     service: @json.from_json(
@@ -40875,7 +40761,7 @@ pub impl FromJson for InferencePutAzureaistudioQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutAzureaistudioQuery: expected object"),
     )
   }
@@ -40939,7 +40825,7 @@ pub impl FromJson for InferencePutAzureaistudioBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutAzureaistudioBody: expected object"),
     )
   }
@@ -41039,7 +40925,7 @@ pub impl ToJson for InferencePutAzureopenaiQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutAzureopenaiQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutAzureopenaiQuery: expected object"),
     )
   }
@@ -41100,7 +40986,7 @@ pub impl ToJson for InferencePutAzureopenaiBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutAzureopenaiBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutAzureopenaiBody: expected object"),
     )
   }
@@ -41200,9 +41086,7 @@ pub impl ToJson for InferencePutCohereQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutCohereQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutCohereQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutCohereQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -41261,9 +41145,7 @@ pub impl ToJson for InferencePutCohereBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutCohereBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutCohereBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutCohereBody: expected object"))
   }
   {
     chunking_settings: match obj.get("chunking_settings") {
@@ -41364,7 +41246,7 @@ pub impl FromJson for InferencePutContextualaiQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutContextualaiQuery: expected object"),
     )
   }
@@ -41420,7 +41302,7 @@ pub impl ToJson for InferencePutContextualaiBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutContextualaiBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutContextualaiBody: expected object"),
     )
   }
@@ -41505,16 +41387,16 @@ pub impl ToJson for InferencePutCustomQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for InferencePutCustomQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutCustomQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutCustomQuery: expected object"))
   }
   InferencePutCustomQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn InferencePutCustomQuery::new() -> InferencePutCustomQuery {
   InferencePutCustomQuery::{  }
 }
@@ -41556,9 +41438,7 @@ pub impl ToJson for InferencePutCustomBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutCustomBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutCustomBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutCustomBody: expected object"))
   }
   {
     chunking_settings: match obj.get("chunking_settings") {
@@ -41656,9 +41536,7 @@ pub impl ToJson for InferencePutDeepseekQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutDeepseekQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutDeepseekQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutDeepseekQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -41707,9 +41585,7 @@ pub impl ToJson for InferencePutDeepseekBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutDeepseekBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutDeepseekBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutDeepseekBody: expected object"))
   }
   {
     service: @json.from_json(
@@ -41796,7 +41672,7 @@ pub impl FromJson for InferencePutElasticsearchQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutElasticsearchQuery: expected object"),
     )
   }
@@ -41860,7 +41736,7 @@ pub impl FromJson for InferencePutElasticsearchBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutElasticsearchBody: expected object"),
     )
   }
@@ -41960,9 +41836,7 @@ pub impl ToJson for InferencePutElserQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutElserQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutElserQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutElserQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -42014,9 +41888,7 @@ pub impl ToJson for InferencePutElserBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutElserBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutElserBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutElserBody: expected object"))
   }
   {
     chunking_settings: match obj.get("chunking_settings") {
@@ -42107,7 +41979,7 @@ pub impl ToJson for InferencePutFireworksaiQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutFireworksaiQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutFireworksaiQuery: expected object"),
     )
   }
@@ -42168,7 +42040,7 @@ pub impl ToJson for InferencePutFireworksaiBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutFireworksaiBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutFireworksaiBody: expected object"),
     )
   }
@@ -42271,7 +42143,7 @@ pub impl FromJson for InferencePutGoogleaistudioQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutGoogleaistudioQuery: expected object"),
     )
   }
@@ -42330,7 +42202,7 @@ pub impl FromJson for InferencePutGoogleaistudioBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutGoogleaistudioBody: expected object"),
     )
   }
@@ -42427,7 +42299,7 @@ pub impl FromJson for InferencePutGooglevertexaiQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutGooglevertexaiQuery: expected object"),
     )
   }
@@ -42491,7 +42363,7 @@ pub impl FromJson for InferencePutGooglevertexaiBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutGooglevertexaiBody: expected object"),
     )
   }
@@ -42592,9 +42464,7 @@ pub impl ToJson for InferencePutGroqQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutGroqQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutGroqQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutGroqQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -42641,7 +42511,7 @@ pub impl ToJson for InferencePutGroqBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutGroqBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "InferencePutGroqBody: expected object"))
+    raise JsonDecodeError((path, "InferencePutGroqBody: expected object"))
   }
   {
     service: @json.from_json(
@@ -42725,7 +42595,7 @@ pub impl ToJson for InferencePutHuggingFaceQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutHuggingFaceQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutHuggingFaceQuery: expected object"),
     )
   }
@@ -42786,7 +42656,7 @@ pub impl ToJson for InferencePutHuggingFaceBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutHuggingFaceBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutHuggingFaceBody: expected object"),
     )
   }
@@ -42886,9 +42756,7 @@ pub impl ToJson for InferencePutJinaaiQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutJinaaiQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutJinaaiQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutJinaaiQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -42947,9 +42815,7 @@ pub impl ToJson for InferencePutJinaaiBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutJinaaiBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutJinaaiBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutJinaaiBody: expected object"))
   }
   {
     chunking_settings: match obj.get("chunking_settings") {
@@ -43047,9 +42913,7 @@ pub impl ToJson for InferencePutLlamaQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutLlamaQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutLlamaQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutLlamaQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -43101,9 +42965,7 @@ pub impl ToJson for InferencePutLlamaBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutLlamaBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutLlamaBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutLlamaBody: expected object"))
   }
   {
     chunking_settings: match obj.get("chunking_settings") {
@@ -43194,9 +43056,7 @@ pub impl ToJson for InferencePutMistralQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutMistralQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutMistralQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutMistralQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -43250,9 +43110,7 @@ pub impl ToJson for InferencePutMistralBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutMistralBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutMistralBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutMistralBody: expected object"))
   }
   {
     chunking_settings: match obj.get("chunking_settings") {
@@ -43343,9 +43201,7 @@ pub impl ToJson for InferencePutNvidiaQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutNvidiaQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutNvidiaQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutNvidiaQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -43404,9 +43260,7 @@ pub impl ToJson for InferencePutNvidiaBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutNvidiaBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutNvidiaBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutNvidiaBody: expected object"))
   }
   {
     chunking_settings: match obj.get("chunking_settings") {
@@ -43504,9 +43358,7 @@ pub impl ToJson for InferencePutOpenaiQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutOpenaiQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutOpenaiQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutOpenaiQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -43565,9 +43417,7 @@ pub impl ToJson for InferencePutOpenaiBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutOpenaiBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutOpenaiBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutOpenaiBody: expected object"))
   }
   {
     chunking_settings: match obj.get("chunking_settings") {
@@ -43665,7 +43515,7 @@ pub impl ToJson for InferencePutOpenshiftAiQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutOpenshiftAiQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutOpenshiftAiQuery: expected object"),
     )
   }
@@ -43726,7 +43576,7 @@ pub impl ToJson for InferencePutOpenshiftAiBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutOpenshiftAiBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferencePutOpenshiftAiBody: expected object"),
     )
   }
@@ -43826,9 +43676,7 @@ pub impl ToJson for InferencePutVoyageaiQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutVoyageaiQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutVoyageaiQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutVoyageaiQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -43887,9 +43735,7 @@ pub impl ToJson for InferencePutVoyageaiBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutVoyageaiBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutVoyageaiBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutVoyageaiBody: expected object"))
   }
   {
     chunking_settings: match obj.get("chunking_settings") {
@@ -43987,9 +43833,7 @@ pub impl ToJson for InferencePutWatsonxQuery with fn to_json(
 ///|
 pub impl FromJson for InferencePutWatsonxQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutWatsonxQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutWatsonxQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -44043,9 +43887,7 @@ pub impl ToJson for InferencePutWatsonxBody with fn to_json(
 ///|
 pub impl FromJson for InferencePutWatsonxBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferencePutWatsonxBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferencePutWatsonxBody: expected object"))
   }
   {
     chunking_settings: match obj.get("chunking_settings") {
@@ -44136,7 +43978,7 @@ pub impl ToJson for InferenceRerankQuery with fn to_json(
 ///|
 pub impl FromJson for InferenceRerankQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "InferenceRerankQuery: expected object"))
+    raise JsonDecodeError((path, "InferenceRerankQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -44198,7 +44040,7 @@ pub impl ToJson for InferenceRerankBody with fn to_json(
 ///|
 pub impl FromJson for InferenceRerankBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "InferenceRerankBody: expected object"))
+    raise JsonDecodeError((path, "InferenceRerankBody: expected object"))
   }
   {
     query: @json.from_json(
@@ -44298,7 +44140,7 @@ pub impl FromJson for InferenceSparseEmbeddingQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferenceSparseEmbeddingQuery: expected object"),
     )
   }
@@ -44352,7 +44194,7 @@ pub impl ToJson for InferenceSparseEmbeddingBody with fn to_json(
 ///|
 pub impl FromJson for InferenceSparseEmbeddingBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferenceSparseEmbeddingBody: expected object"),
     )
   }
@@ -44440,7 +44282,7 @@ pub impl FromJson for InferenceStreamCompletionQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferenceStreamCompletionQuery: expected object"),
     )
   }
@@ -44497,7 +44339,7 @@ pub impl FromJson for InferenceStreamCompletionBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferenceStreamCompletionBody: expected object"),
     )
   }
@@ -44582,7 +44424,7 @@ pub impl ToJson for InferenceTextEmbeddingQuery with fn to_json(
 ///|
 pub impl FromJson for InferenceTextEmbeddingQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "InferenceTextEmbeddingQuery: expected object"),
     )
   }
@@ -44641,9 +44483,7 @@ pub impl ToJson for InferenceTextEmbeddingBody with fn to_json(
 ///|
 pub impl FromJson for InferenceTextEmbeddingBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "InferenceTextEmbeddingBody: expected object"),
-    )
+    raise JsonDecodeError((path, "InferenceTextEmbeddingBody: expected object"))
   }
   {
     input: @json.from_json(
@@ -44725,14 +44565,16 @@ pub impl ToJson for InferenceUpdateQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for InferenceUpdateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "InferenceUpdateQuery: expected object"))
+    raise JsonDecodeError((path, "InferenceUpdateQuery: expected object"))
   }
   InferenceUpdateQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn InferenceUpdateQuery::new() -> InferenceUpdateQuery {
   InferenceUpdateQuery::{  }
 }
@@ -44804,14 +44646,16 @@ pub impl ToJson for InfoQuery with fn to_json(_self : InfoQuery) -> Json {
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for InfoQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "InfoQuery: expected object"))
+    raise JsonDecodeError((path, "InfoQuery: expected object"))
   }
   InfoQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn InfoQuery::new() -> InfoQuery {
   InfoQuery::{  }
 }
@@ -44845,7 +44689,7 @@ pub impl ToJson for InfoResponse with fn to_json(self : InfoResponse) -> Json {
 ///|
 pub impl FromJson for InfoResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "InfoResponse: expected object"))
+    raise JsonDecodeError((path, "InfoResponse: expected object"))
   }
   {
     cluster_name: @json.from_json(
@@ -44920,7 +44764,7 @@ pub impl FromJson for IngestDeleteGeoipDatabaseQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IngestDeleteGeoipDatabaseQuery: expected object"),
     )
   }
@@ -45023,7 +44867,7 @@ pub impl FromJson for IngestDeleteIpLocationDatabaseQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IngestDeleteIpLocationDatabaseQuery: expected object"),
     )
   }
@@ -45123,9 +44967,7 @@ pub impl ToJson for IngestDeletePipelineQuery with fn to_json(
 ///|
 pub impl FromJson for IngestDeletePipelineQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IngestDeletePipelineQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IngestDeletePipelineQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -45210,16 +45052,16 @@ pub impl ToJson for IngestGeoIpStatsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IngestGeoIpStatsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "IngestGeoIpStatsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IngestGeoIpStatsQuery: expected object"))
   }
   IngestGeoIpStatsQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IngestGeoIpStatsQuery::new() -> IngestGeoIpStatsQuery {
   IngestGeoIpStatsQuery::{  }
 }
@@ -45251,9 +45093,7 @@ pub impl ToJson for IngestGeoIpStatsResponse with fn to_json(
 ///|
 pub impl FromJson for IngestGeoIpStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IngestGeoIpStatsResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "IngestGeoIpStatsResponse: expected object"))
   }
   {
     stats: @json.from_json(
@@ -45302,9 +45142,10 @@ pub impl ToJson for IngestGetGeoipDatabaseQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IngestGetGeoipDatabaseQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IngestGetGeoipDatabaseQuery: expected object"),
     )
   }
@@ -45312,6 +45153,7 @@ pub impl FromJson for IngestGetGeoipDatabaseQuery with fn from_json(json, path) 
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IngestGetGeoipDatabaseQuery::new() -> IngestGetGeoipDatabaseQuery {
   IngestGetGeoipDatabaseQuery::{  }
 }
@@ -45344,7 +45186,7 @@ pub impl FromJson for IngestGetGeoipDatabaseResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IngestGetGeoipDatabaseResponse: expected object"),
     )
   }
@@ -45403,12 +45245,13 @@ pub impl ToJson for IngestGetIpLocationDatabaseQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IngestGetIpLocationDatabaseQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IngestGetIpLocationDatabaseQuery: expected object"),
     )
   }
@@ -45416,6 +45259,7 @@ pub impl FromJson for IngestGetIpLocationDatabaseQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IngestGetIpLocationDatabaseQuery::new() -> IngestGetIpLocationDatabaseQuery {
   IngestGetIpLocationDatabaseQuery::{  }
 }
@@ -45448,7 +45292,7 @@ pub impl FromJson for IngestGetIpLocationDatabaseResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IngestGetIpLocationDatabaseResponse: expected object"),
     )
   }
@@ -45520,9 +45364,7 @@ pub impl ToJson for IngestGetPipelineQuery with fn to_json(
 ///|
 pub impl FromJson for IngestGetPipelineQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IngestGetPipelineQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IngestGetPipelineQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -45613,16 +45455,16 @@ pub impl ToJson for IngestProcessorGrokQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for IngestProcessorGrokQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "IngestProcessorGrokQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IngestProcessorGrokQuery: expected object"))
   }
   IngestProcessorGrokQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn IngestProcessorGrokQuery::new() -> IngestProcessorGrokQuery {
   IngestProcessorGrokQuery::{  }
 }
@@ -45652,7 +45494,7 @@ pub impl ToJson for IngestProcessorGrokResponse with fn to_json(
 ///|
 pub impl FromJson for IngestProcessorGrokResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IngestProcessorGrokResponse: expected object"),
     )
   }
@@ -45715,7 +45557,7 @@ pub impl ToJson for IngestPutGeoipDatabaseQuery with fn to_json(
 ///|
 pub impl FromJson for IngestPutGeoipDatabaseQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IngestPutGeoipDatabaseQuery: expected object"),
     )
   }
@@ -45777,9 +45619,7 @@ pub impl ToJson for IngestPutGeoipDatabaseBody with fn to_json(
 ///|
 pub impl FromJson for IngestPutGeoipDatabaseBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IngestPutGeoipDatabaseBody: expected object"),
-    )
+    raise JsonDecodeError((path, "IngestPutGeoipDatabaseBody: expected object"))
   }
   {
     name: @json.from_json(
@@ -45864,7 +45704,7 @@ pub impl FromJson for IngestPutIpLocationDatabaseQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "IngestPutIpLocationDatabaseQuery: expected object"),
     )
   }
@@ -45975,9 +45815,7 @@ pub impl ToJson for IngestPutPipelineQuery with fn to_json(
 ///|
 pub impl FromJson for IngestPutPipelineQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IngestPutPipelineQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "IngestPutPipelineQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -46079,9 +45917,7 @@ pub impl ToJson for IngestPutPipelineBody with fn to_json(
 ///|
 pub impl FromJson for IngestPutPipelineBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IngestPutPipelineBody: expected object"),
-    )
+    raise JsonDecodeError((path, "IngestPutPipelineBody: expected object"))
   }
   {
     _meta: match obj.get("_meta") {
@@ -46203,7 +46039,7 @@ pub impl ToJson for IngestSimulateQuery with fn to_json(
 ///|
 pub impl FromJson for IngestSimulateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IngestSimulateQuery: expected object"))
+    raise JsonDecodeError((path, "IngestSimulateQuery: expected object"))
   }
   {
     verbose: match obj.get("verbose") {
@@ -46253,7 +46089,7 @@ pub impl ToJson for IngestSimulateBody with fn to_json(
 ///|
 pub impl FromJson for IngestSimulateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "IngestSimulateBody: expected object"))
+    raise JsonDecodeError((path, "IngestSimulateBody: expected object"))
   }
   {
     docs: @json.from_json(
@@ -46293,9 +46129,7 @@ pub impl ToJson for IngestSimulateResponse with fn to_json(
 ///|
 pub impl FromJson for IngestSimulateResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "IngestSimulateResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "IngestSimulateResponse: expected object"))
   }
   {
     docs: @json.from_json(
@@ -46361,7 +46195,7 @@ pub impl ToJson for KnnSearchQuery with fn to_json(self : KnnSearchQuery) -> Jso
 ///|
 pub impl FromJson for KnnSearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "KnnSearchQuery: expected object"))
+    raise JsonDecodeError((path, "KnnSearchQuery: expected object"))
   }
   {
     routing: match obj.get("routing") {
@@ -46429,7 +46263,7 @@ pub impl ToJson for KnnSearchBody with fn to_json(self : KnnSearchBody) -> Json 
 ///|
 pub impl FromJson for KnnSearchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "KnnSearchBody: expected object"))
+    raise JsonDecodeError((path, "KnnSearchBody: expected object"))
   }
   {
     _source: match obj.get("_source") {
@@ -46509,7 +46343,7 @@ pub impl ToJson for KnnSearchResponse with fn to_json(self : KnnSearchResponse) 
 ///|
 pub impl FromJson for KnnSearchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "KnnSearchResponse: expected object"))
+    raise JsonDecodeError((path, "KnnSearchResponse: expected object"))
   }
   {
     took: @json.from_json(
@@ -46599,7 +46433,7 @@ pub impl ToJson for LicenseDeleteQuery with fn to_json(
 ///|
 pub impl FromJson for LicenseDeleteQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "LicenseDeleteQuery: expected object"))
+    raise JsonDecodeError((path, "LicenseDeleteQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -46689,7 +46523,7 @@ pub impl ToJson for LicenseGetQuery with fn to_json(self : LicenseGetQuery) -> J
 ///|
 pub impl FromJson for LicenseGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "LicenseGetQuery: expected object"))
+    raise JsonDecodeError((path, "LicenseGetQuery: expected object"))
   }
   {
     accept_enterprise: match obj.get("accept_enterprise") {
@@ -46747,7 +46581,7 @@ pub impl ToJson for LicenseGetResponse with fn to_json(
 ///|
 pub impl FromJson for LicenseGetResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "LicenseGetResponse: expected object"))
+    raise JsonDecodeError((path, "LicenseGetResponse: expected object"))
   }
   {
     license: @json.from_json(
@@ -46792,16 +46626,16 @@ pub impl ToJson for LicenseGetBasicStatusQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for LicenseGetBasicStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "LicenseGetBasicStatusQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "LicenseGetBasicStatusQuery: expected object"))
   }
   LicenseGetBasicStatusQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn LicenseGetBasicStatusQuery::new() -> LicenseGetBasicStatusQuery {
   LicenseGetBasicStatusQuery::{  }
 }
@@ -46834,7 +46668,7 @@ pub impl FromJson for LicenseGetBasicStatusResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "LicenseGetBasicStatusResponse: expected object"),
     )
   }
@@ -46884,16 +46718,16 @@ pub impl ToJson for LicenseGetTrialStatusQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for LicenseGetTrialStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "LicenseGetTrialStatusQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "LicenseGetTrialStatusQuery: expected object"))
   }
   LicenseGetTrialStatusQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn LicenseGetTrialStatusQuery::new() -> LicenseGetTrialStatusQuery {
   LicenseGetTrialStatusQuery::{  }
 }
@@ -46926,7 +46760,7 @@ pub impl FromJson for LicenseGetTrialStatusResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "LicenseGetTrialStatusResponse: expected object"),
     )
   }
@@ -46992,7 +46826,7 @@ pub impl ToJson for LicensePostQuery with fn to_json(self : LicensePostQuery) ->
 ///|
 pub impl FromJson for LicensePostQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "LicensePostQuery: expected object"))
+    raise JsonDecodeError((path, "LicensePostQuery: expected object"))
   }
   {
     acknowledge: match obj.get("acknowledge") {
@@ -47067,7 +46901,7 @@ pub impl ToJson for LicensePostBody with fn to_json(self : LicensePostBody) -> J
 ///|
 pub impl FromJson for LicensePostBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "LicensePostBody: expected object"))
+    raise JsonDecodeError((path, "LicensePostBody: expected object"))
   }
   {
     license: match obj.get("license") {
@@ -47115,7 +46949,7 @@ pub impl ToJson for LicensePostResponse with fn to_json(
 ///|
 pub impl FromJson for LicensePostResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "LicensePostResponse: expected object"))
+    raise JsonDecodeError((path, "LicensePostResponse: expected object"))
   }
   {
     acknowledge: match obj.get("acknowledge") {
@@ -47194,9 +47028,7 @@ pub impl ToJson for LicensePostStartBasicQuery with fn to_json(
 ///|
 pub impl FromJson for LicensePostStartBasicQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "LicensePostStartBasicQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "LicensePostStartBasicQuery: expected object"))
   }
   {
     acknowledge: match obj.get("acknowledge") {
@@ -47285,7 +47117,7 @@ pub impl FromJson for LicensePostStartBasicResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "LicensePostStartBasicResponse: expected object"),
     )
   }
@@ -47374,9 +47206,7 @@ pub impl ToJson for LicensePostStartTrialQuery with fn to_json(
 ///|
 pub impl FromJson for LicensePostStartTrialQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "LicensePostStartTrialQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "LicensePostStartTrialQuery: expected object"))
   }
   {
     acknowledge: match obj.get("acknowledge") {
@@ -47460,7 +47290,7 @@ pub impl FromJson for LicensePostStartTrialResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "LicensePostStartTrialResponse: expected object"),
     )
   }
@@ -47531,7 +47361,7 @@ pub impl ToJson for ListReindexQuery with fn to_json(self : ListReindexQuery) ->
 ///|
 pub impl FromJson for ListReindexQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ListReindexQuery: expected object"))
+    raise JsonDecodeError((path, "ListReindexQuery: expected object"))
   }
   {
     detailed: match obj.get("detailed") {
@@ -47586,7 +47416,7 @@ pub impl ToJson for ListReindexResponse with fn to_json(
 ///|
 pub impl FromJson for ListReindexResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ListReindexResponse: expected object"))
+    raise JsonDecodeError((path, "ListReindexResponse: expected object"))
   }
   {
     reindex: @json.from_json(
@@ -47643,9 +47473,10 @@ pub impl ToJson for LogstashDeletePipelineQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for LogstashDeletePipelineQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "LogstashDeletePipelineQuery: expected object"),
     )
   }
@@ -47653,6 +47484,7 @@ pub impl FromJson for LogstashDeletePipelineQuery with fn from_json(json, path) 
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn LogstashDeletePipelineQuery::new() -> LogstashDeletePipelineQuery {
   LogstashDeletePipelineQuery::{  }
 }
@@ -47709,16 +47541,16 @@ pub impl ToJson for LogstashGetPipelineQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for LogstashGetPipelineQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "LogstashGetPipelineQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "LogstashGetPipelineQuery: expected object"))
   }
   LogstashGetPipelineQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn LogstashGetPipelineQuery::new() -> LogstashGetPipelineQuery {
   LogstashGetPipelineQuery::{  }
 }
@@ -47781,16 +47613,16 @@ pub impl ToJson for LogstashPutPipelineQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for LogstashPutPipelineQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "LogstashPutPipelineQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "LogstashPutPipelineQuery: expected object"))
   }
   LogstashPutPipelineQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn LogstashPutPipelineQuery::new() -> LogstashPutPipelineQuery {
   LogstashPutPipelineQuery::{  }
 }
@@ -47899,7 +47731,7 @@ pub impl ToJson for MgetQuery with fn to_json(self : MgetQuery) -> Json {
 ///|
 pub impl FromJson for MgetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MgetQuery: expected object"))
+    raise JsonDecodeError((path, "MgetQuery: expected object"))
   }
   {
     force_synthetic_source: match obj.get("force_synthetic_source") {
@@ -48048,7 +47880,7 @@ pub impl ToJson for MgetBody with fn to_json(self : MgetBody) -> Json {
 ///|
 pub impl FromJson for MgetBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MgetBody: expected object"))
+    raise JsonDecodeError((path, "MgetBody: expected object"))
   }
   {
     docs: match obj.get("docs") {
@@ -48084,7 +47916,7 @@ pub impl ToJson for MgetResponse with fn to_json(self : MgetResponse) -> Json {
 ///|
 pub impl FromJson for MgetResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MgetResponse: expected object"))
+    raise JsonDecodeError((path, "MgetResponse: expected object"))
   }
   {
     docs: @json.from_json(
@@ -48144,16 +47976,16 @@ pub impl ToJson for MigrationDeprecationsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MigrationDeprecationsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "MigrationDeprecationsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MigrationDeprecationsQuery: expected object"))
   }
   MigrationDeprecationsQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MigrationDeprecationsQuery::new() -> MigrationDeprecationsQuery {
   MigrationDeprecationsQuery::{  }
 }
@@ -48198,7 +48030,7 @@ pub impl FromJson for MigrationDeprecationsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MigrationDeprecationsResponse: expected object"),
     )
   }
@@ -48281,12 +48113,13 @@ pub impl ToJson for MigrationGetFeatureUpgradeStatusQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MigrationGetFeatureUpgradeStatusQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MigrationGetFeatureUpgradeStatusQuery: expected object"),
     )
   }
@@ -48294,6 +48127,7 @@ pub impl FromJson for MigrationGetFeatureUpgradeStatusQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MigrationGetFeatureUpgradeStatusQuery::new() -> MigrationGetFeatureUpgradeStatusQuery {
   MigrationGetFeatureUpgradeStatusQuery::{  }
 }
@@ -48328,7 +48162,7 @@ pub impl FromJson for MigrationGetFeatureUpgradeStatusResponse with fn from_json
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MigrationGetFeatureUpgradeStatusResponse: expected object"),
     )
   }
@@ -48382,12 +48216,13 @@ pub impl ToJson for MigrationPostFeatureUpgradeQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MigrationPostFeatureUpgradeQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MigrationPostFeatureUpgradeQuery: expected object"),
     )
   }
@@ -48395,6 +48230,7 @@ pub impl FromJson for MigrationPostFeatureUpgradeQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MigrationPostFeatureUpgradeQuery::new() -> MigrationPostFeatureUpgradeQuery {
   MigrationPostFeatureUpgradeQuery::{  }
 }
@@ -48437,7 +48273,7 @@ pub impl FromJson for MigrationPostFeatureUpgradeResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MigrationPostFeatureUpgradeResponse: expected object"),
     )
   }
@@ -48497,12 +48333,13 @@ pub impl ToJson for MlClearTrainedModelDeploymentCacheQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlClearTrainedModelDeploymentCacheQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlClearTrainedModelDeploymentCacheQuery: expected object"),
     )
   }
@@ -48510,6 +48347,7 @@ pub impl FromJson for MlClearTrainedModelDeploymentCacheQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlClearTrainedModelDeploymentCacheQuery::new() -> MlClearTrainedModelDeploymentCacheQuery {
   MlClearTrainedModelDeploymentCacheQuery::{  }
 }
@@ -48545,7 +48383,7 @@ pub impl FromJson for MlClearTrainedModelDeploymentCacheResponse with fn from_js
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlClearTrainedModelDeploymentCacheResponse: expected object"),
     )
   }
@@ -48625,7 +48463,7 @@ pub impl ToJson for MlCloseJobQuery with fn to_json(self : MlCloseJobQuery) -> J
 ///|
 pub impl FromJson for MlCloseJobQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlCloseJobQuery: expected object"))
+    raise JsonDecodeError((path, "MlCloseJobQuery: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -48704,7 +48542,7 @@ pub impl ToJson for MlCloseJobBody with fn to_json(self : MlCloseJobBody) -> Jso
 ///|
 pub impl FromJson for MlCloseJobBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlCloseJobBody: expected object"))
+    raise JsonDecodeError((path, "MlCloseJobBody: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -48752,7 +48590,7 @@ pub impl ToJson for MlCloseJobResponse with fn to_json(
 ///|
 pub impl FromJson for MlCloseJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlCloseJobResponse: expected object"))
+    raise JsonDecodeError((path, "MlCloseJobResponse: expected object"))
   }
   {
     closed: @json.from_json(
@@ -48809,16 +48647,16 @@ pub impl ToJson for MlDeleteCalendarQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlDeleteCalendarQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "MlDeleteCalendarQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlDeleteCalendarQuery: expected object"))
   }
   MlDeleteCalendarQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlDeleteCalendarQuery::new() -> MlDeleteCalendarQuery {
   MlDeleteCalendarQuery::{  }
 }
@@ -48875,16 +48713,16 @@ pub impl ToJson for MlDeleteCalendarEventQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlDeleteCalendarEventQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "MlDeleteCalendarEventQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlDeleteCalendarEventQuery: expected object"))
   }
   MlDeleteCalendarEventQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlDeleteCalendarEventQuery::new() -> MlDeleteCalendarEventQuery {
   MlDeleteCalendarEventQuery::{  }
 }
@@ -48948,16 +48786,16 @@ pub impl ToJson for MlDeleteCalendarJobQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlDeleteCalendarJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "MlDeleteCalendarJobQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlDeleteCalendarJobQuery: expected object"))
   }
   MlDeleteCalendarJobQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlDeleteCalendarJobQuery::new() -> MlDeleteCalendarJobQuery {
   MlDeleteCalendarJobQuery::{  }
 }
@@ -48994,7 +48832,7 @@ pub impl ToJson for MlDeleteCalendarJobResponse with fn to_json(
 ///|
 pub impl FromJson for MlDeleteCalendarJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlDeleteCalendarJobResponse: expected object"),
     )
   }
@@ -49080,7 +48918,7 @@ pub impl FromJson for MlDeleteDataFrameAnalyticsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlDeleteDataFrameAnalyticsQuery: expected object"),
     )
   }
@@ -49174,9 +49012,7 @@ pub impl ToJson for MlDeleteDatafeedQuery with fn to_json(
 ///|
 pub impl FromJson for MlDeleteDatafeedQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlDeleteDatafeedQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlDeleteDatafeedQuery: expected object"))
   }
   {
     force: match obj.get("force") {
@@ -49261,9 +49097,7 @@ pub impl ToJson for MlDeleteExpiredDataQuery with fn to_json(
 ///|
 pub impl FromJson for MlDeleteExpiredDataQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlDeleteExpiredDataQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlDeleteExpiredDataQuery: expected object"))
   }
   {
     requests_per_second: match obj.get("requests_per_second") {
@@ -49330,9 +49164,7 @@ pub impl ToJson for MlDeleteExpiredDataBody with fn to_json(
 ///|
 pub impl FromJson for MlDeleteExpiredDataBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlDeleteExpiredDataBody: expected object"),
-    )
+    raise JsonDecodeError((path, "MlDeleteExpiredDataBody: expected object"))
   }
   {
     requests_per_second: match obj.get("requests_per_second") {
@@ -49374,7 +49206,7 @@ pub impl ToJson for MlDeleteExpiredDataResponse with fn to_json(
 ///|
 pub impl FromJson for MlDeleteExpiredDataResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlDeleteExpiredDataResponse: expected object"),
     )
   }
@@ -49439,14 +49271,16 @@ pub impl ToJson for MlDeleteFilterQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlDeleteFilterQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "MlDeleteFilterQuery: expected object"))
+    raise JsonDecodeError((path, "MlDeleteFilterQuery: expected object"))
   }
   MlDeleteFilterQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlDeleteFilterQuery::new() -> MlDeleteFilterQuery {
   MlDeleteFilterQuery::{  }
 }
@@ -49516,9 +49350,7 @@ pub impl ToJson for MlDeleteForecastQuery with fn to_json(
 ///|
 pub impl FromJson for MlDeleteForecastQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlDeleteForecastQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlDeleteForecastQuery: expected object"))
   }
   {
     allow_no_forecasts: match obj.get("allow_no_forecasts") {
@@ -49631,7 +49463,7 @@ pub impl ToJson for MlDeleteJobQuery with fn to_json(self : MlDeleteJobQuery) ->
 ///|
 pub impl FromJson for MlDeleteJobQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlDeleteJobQuery: expected object"))
+    raise JsonDecodeError((path, "MlDeleteJobQuery: expected object"))
   }
   {
     force: match obj.get("force") {
@@ -49731,16 +49563,16 @@ pub impl ToJson for MlDeleteModelSnapshotQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlDeleteModelSnapshotQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "MlDeleteModelSnapshotQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlDeleteModelSnapshotQuery: expected object"))
   }
   MlDeleteModelSnapshotQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlDeleteModelSnapshotQuery::new() -> MlDeleteModelSnapshotQuery {
   MlDeleteModelSnapshotQuery::{  }
 }
@@ -49818,9 +49650,7 @@ pub impl ToJson for MlDeleteTrainedModelQuery with fn to_json(
 ///|
 pub impl FromJson for MlDeleteTrainedModelQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlDeleteTrainedModelQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlDeleteTrainedModelQuery: expected object"))
   }
   {
     force: match obj.get("force") {
@@ -49904,12 +49734,13 @@ pub impl ToJson for MlDeleteTrainedModelAliasQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlDeleteTrainedModelAliasQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlDeleteTrainedModelAliasQuery: expected object"),
     )
   }
@@ -49917,6 +49748,7 @@ pub impl FromJson for MlDeleteTrainedModelAliasQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlDeleteTrainedModelAliasQuery::new() -> MlDeleteTrainedModelAliasQuery {
   MlDeleteTrainedModelAliasQuery::{  }
 }
@@ -49990,16 +49822,16 @@ pub impl ToJson for MlEstimateModelMemoryQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlEstimateModelMemoryQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "MlEstimateModelMemoryQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlEstimateModelMemoryQuery: expected object"))
   }
   MlEstimateModelMemoryQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlEstimateModelMemoryQuery::new() -> MlEstimateModelMemoryQuery {
   MlEstimateModelMemoryQuery::{  }
 }
@@ -50042,9 +49874,7 @@ pub impl ToJson for MlEstimateModelMemoryBody with fn to_json(
 ///|
 pub impl FromJson for MlEstimateModelMemoryBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlEstimateModelMemoryBody: expected object"),
-    )
+    raise JsonDecodeError((path, "MlEstimateModelMemoryBody: expected object"))
   }
   {
     analysis_config: match obj.get("analysis_config") {
@@ -50099,7 +49929,7 @@ pub impl FromJson for MlEstimateModelMemoryResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlEstimateModelMemoryResponse: expected object"),
     )
   }
@@ -50152,16 +49982,16 @@ pub impl ToJson for MlEvaluateDataFrameQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlEvaluateDataFrameQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "MlEvaluateDataFrameQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlEvaluateDataFrameQuery: expected object"))
   }
   MlEvaluateDataFrameQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlEvaluateDataFrameQuery::new() -> MlEvaluateDataFrameQuery {
   MlEvaluateDataFrameQuery::{  }
 }
@@ -50198,9 +50028,7 @@ pub impl ToJson for MlEvaluateDataFrameBody with fn to_json(
 ///|
 pub impl FromJson for MlEvaluateDataFrameBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlEvaluateDataFrameBody: expected object"),
-    )
+    raise JsonDecodeError((path, "MlEvaluateDataFrameBody: expected object"))
   }
   {
     evaluation: @json.from_json(
@@ -50258,7 +50086,7 @@ pub impl ToJson for MlEvaluateDataFrameResponse with fn to_json(
 ///|
 pub impl FromJson for MlEvaluateDataFrameResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlEvaluateDataFrameResponse: expected object"),
     )
   }
@@ -50325,12 +50153,13 @@ pub impl ToJson for MlExplainDataFrameAnalyticsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlExplainDataFrameAnalyticsQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlExplainDataFrameAnalyticsQuery: expected object"),
     )
   }
@@ -50338,6 +50167,7 @@ pub impl FromJson for MlExplainDataFrameAnalyticsQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlExplainDataFrameAnalyticsQuery::new() -> MlExplainDataFrameAnalyticsQuery {
   MlExplainDataFrameAnalyticsQuery::{  }
 }
@@ -50408,7 +50238,7 @@ pub impl FromJson for MlExplainDataFrameAnalyticsBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlExplainDataFrameAnalyticsBody: expected object"),
     )
   }
@@ -50506,7 +50336,7 @@ pub impl FromJson for MlExplainDataFrameAnalyticsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlExplainDataFrameAnalyticsResponse: expected object"),
     )
   }
@@ -50601,7 +50431,7 @@ pub impl ToJson for MlFlushJobQuery with fn to_json(self : MlFlushJobQuery) -> J
 ///|
 pub impl FromJson for MlFlushJobQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlFlushJobQuery: expected object"))
+    raise JsonDecodeError((path, "MlFlushJobQuery: expected object"))
   }
   {
     advance_time: match obj.get("advance_time") {
@@ -50712,7 +50542,7 @@ pub impl ToJson for MlFlushJobBody with fn to_json(self : MlFlushJobBody) -> Jso
 ///|
 pub impl FromJson for MlFlushJobBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlFlushJobBody: expected object"))
+    raise JsonDecodeError((path, "MlFlushJobBody: expected object"))
   }
   {
     advance_time: match obj.get("advance_time") {
@@ -50779,7 +50609,7 @@ pub impl ToJson for MlFlushJobResponse with fn to_json(
 ///|
 pub impl FromJson for MlFlushJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlFlushJobResponse: expected object"))
+    raise JsonDecodeError((path, "MlFlushJobResponse: expected object"))
   }
   {
     flushed: @json.from_json(
@@ -50860,7 +50690,7 @@ pub impl ToJson for MlForecastQuery with fn to_json(self : MlForecastQuery) -> J
 ///|
 pub impl FromJson for MlForecastQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlForecastQuery: expected object"))
+    raise JsonDecodeError((path, "MlForecastQuery: expected object"))
   }
   {
     duration: match obj.get("duration") {
@@ -50940,7 +50770,7 @@ pub impl ToJson for MlForecastBody with fn to_json(self : MlForecastBody) -> Jso
 ///|
 pub impl FromJson for MlForecastBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlForecastBody: expected object"))
+    raise JsonDecodeError((path, "MlForecastBody: expected object"))
   }
   {
     duration: match obj.get("duration") {
@@ -50991,7 +50821,7 @@ pub impl ToJson for MlForecastResponse with fn to_json(
 ///|
 pub impl FromJson for MlForecastResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlForecastResponse: expected object"))
+    raise JsonDecodeError((path, "MlForecastResponse: expected object"))
   }
   {
     acknowledged: @json.from_json(
@@ -51098,7 +50928,7 @@ pub impl ToJson for MlGetBucketsQuery with fn to_json(self : MlGetBucketsQuery) 
 ///|
 pub impl FromJson for MlGetBucketsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetBucketsQuery: expected object"))
+    raise JsonDecodeError((path, "MlGetBucketsQuery: expected object"))
   }
   {
     anomaly_score: match obj.get("anomaly_score") {
@@ -51263,7 +51093,7 @@ pub impl ToJson for MlGetBucketsBody with fn to_json(self : MlGetBucketsBody) ->
 ///|
 pub impl FromJson for MlGetBucketsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetBucketsBody: expected object"))
+    raise JsonDecodeError((path, "MlGetBucketsBody: expected object"))
   }
   {
     anomaly_score: match obj.get("anomaly_score") {
@@ -51344,7 +51174,7 @@ pub impl ToJson for MlGetBucketsResponse with fn to_json(
 ///|
 pub impl FromJson for MlGetBucketsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetBucketsResponse: expected object"))
+    raise JsonDecodeError((path, "MlGetBucketsResponse: expected object"))
   }
   {
     buckets: @json.from_json(
@@ -51447,9 +51277,7 @@ pub impl ToJson for MlGetCalendarEventsQuery with fn to_json(
 ///|
 pub impl FromJson for MlGetCalendarEventsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetCalendarEventsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetCalendarEventsQuery: expected object"))
   }
   {
     end: match obj.get("end") {
@@ -51538,7 +51366,7 @@ pub impl ToJson for MlGetCalendarEventsResponse with fn to_json(
 ///|
 pub impl FromJson for MlGetCalendarEventsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlGetCalendarEventsResponse: expected object"),
     )
   }
@@ -51608,7 +51436,7 @@ pub impl ToJson for MlGetCalendarsQuery with fn to_json(
 ///|
 pub impl FromJson for MlGetCalendarsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetCalendarsQuery: expected object"))
+    raise JsonDecodeError((path, "MlGetCalendarsQuery: expected object"))
   }
   {
     from: match obj.get("from") {
@@ -51668,7 +51496,7 @@ pub impl ToJson for MlGetCalendarsBody with fn to_json(
 ///|
 pub impl FromJson for MlGetCalendarsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetCalendarsBody: expected object"))
+    raise JsonDecodeError((path, "MlGetCalendarsBody: expected object"))
   }
   {
     page: match obj.get("page") {
@@ -51703,9 +51531,7 @@ pub impl ToJson for MlGetCalendarsResponse with fn to_json(
 ///|
 pub impl FromJson for MlGetCalendarsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetCalendarsResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetCalendarsResponse: expected object"))
   }
   {
     calendars: @json.from_json(
@@ -51790,7 +51616,7 @@ pub impl ToJson for MlGetCategoriesQuery with fn to_json(
 ///|
 pub impl FromJson for MlGetCategoriesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetCategoriesQuery: expected object"))
+    raise JsonDecodeError((path, "MlGetCategoriesQuery: expected object"))
   }
   {
     from: match obj.get("from") {
@@ -51862,7 +51688,7 @@ pub impl ToJson for MlGetCategoriesBody with fn to_json(
 ///|
 pub impl FromJson for MlGetCategoriesBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetCategoriesBody: expected object"))
+    raise JsonDecodeError((path, "MlGetCategoriesBody: expected object"))
   }
   {
     page: match obj.get("page") {
@@ -51897,9 +51723,7 @@ pub impl ToJson for MlGetCategoriesResponse with fn to_json(
 ///|
 pub impl FromJson for MlGetCategoriesResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetCategoriesResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetCategoriesResponse: expected object"))
   }
   {
     categories: @json.from_json(
@@ -51997,7 +51821,7 @@ pub impl ToJson for MlGetDataFrameAnalyticsQuery with fn to_json(
 ///|
 pub impl FromJson for MlGetDataFrameAnalyticsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlGetDataFrameAnalyticsQuery: expected object"),
     )
   }
@@ -52083,7 +51907,7 @@ pub impl FromJson for MlGetDataFrameAnalyticsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlGetDataFrameAnalyticsResponse: expected object"),
     )
   }
@@ -52172,7 +51996,7 @@ pub impl FromJson for MlGetDataFrameAnalyticsStatsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlGetDataFrameAnalyticsStatsQuery: expected object"),
     )
   }
@@ -52257,7 +52081,7 @@ pub impl FromJson for MlGetDataFrameAnalyticsStatsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlGetDataFrameAnalyticsStatsResponse: expected object"),
     )
   }
@@ -52328,9 +52152,7 @@ pub impl ToJson for MlGetDatafeedStatsQuery with fn to_json(
 ///|
 pub impl FromJson for MlGetDatafeedStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetDatafeedStatsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetDatafeedStatsQuery: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -52380,9 +52202,7 @@ pub impl ToJson for MlGetDatafeedStatsResponse with fn to_json(
 ///|
 pub impl FromJson for MlGetDatafeedStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetDatafeedStatsResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetDatafeedStatsResponse: expected object"))
   }
   {
     count: @json.from_json(
@@ -52456,7 +52276,7 @@ pub impl ToJson for MlGetDatafeedsQuery with fn to_json(
 ///|
 pub impl FromJson for MlGetDatafeedsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetDatafeedsQuery: expected object"))
+    raise JsonDecodeError((path, "MlGetDatafeedsQuery: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -52517,9 +52337,7 @@ pub impl ToJson for MlGetDatafeedsResponse with fn to_json(
 ///|
 pub impl FromJson for MlGetDatafeedsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetDatafeedsResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetDatafeedsResponse: expected object"))
   }
   {
     count: @json.from_json(
@@ -52591,7 +52409,7 @@ pub impl ToJson for MlGetFiltersQuery with fn to_json(self : MlGetFiltersQuery) 
 ///|
 pub impl FromJson for MlGetFiltersQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetFiltersQuery: expected object"))
+    raise JsonDecodeError((path, "MlGetFiltersQuery: expected object"))
   }
   {
     from: match obj.get("from") {
@@ -52647,7 +52465,7 @@ pub impl ToJson for MlGetFiltersResponse with fn to_json(
 ///|
 pub impl FromJson for MlGetFiltersResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetFiltersResponse: expected object"))
+    raise JsonDecodeError((path, "MlGetFiltersResponse: expected object"))
   }
   {
     count: @json.from_json(
@@ -52751,9 +52569,7 @@ pub impl ToJson for MlGetInfluencersQuery with fn to_json(
 ///|
 pub impl FromJson for MlGetInfluencersQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetInfluencersQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetInfluencersQuery: expected object"))
   }
   {
     desc: match obj.get("desc") {
@@ -52875,7 +52691,7 @@ pub impl ToJson for MlGetInfluencersBody with fn to_json(
 ///|
 pub impl FromJson for MlGetInfluencersBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetInfluencersBody: expected object"))
+    raise JsonDecodeError((path, "MlGetInfluencersBody: expected object"))
   }
   {
     page: match obj.get("page") {
@@ -52910,9 +52726,7 @@ pub impl ToJson for MlGetInfluencersResponse with fn to_json(
 ///|
 pub impl FromJson for MlGetInfluencersResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetInfluencersResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetInfluencersResponse: expected object"))
   }
   {
     count: @json.from_json(
@@ -52985,7 +52799,7 @@ pub impl ToJson for MlGetJobStatsQuery with fn to_json(
 ///|
 pub impl FromJson for MlGetJobStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetJobStatsQuery: expected object"))
+    raise JsonDecodeError((path, "MlGetJobStatsQuery: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -53033,9 +52847,7 @@ pub impl ToJson for MlGetJobStatsResponse with fn to_json(
 ///|
 pub impl FromJson for MlGetJobStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetJobStatsResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetJobStatsResponse: expected object"))
   }
   {
     count: @json.from_json(
@@ -53107,7 +52919,7 @@ pub impl ToJson for MlGetJobsQuery with fn to_json(self : MlGetJobsQuery) -> Jso
 ///|
 pub impl FromJson for MlGetJobsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetJobsQuery: expected object"))
+    raise JsonDecodeError((path, "MlGetJobsQuery: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -53166,7 +52978,7 @@ pub impl ToJson for MlGetJobsResponse with fn to_json(self : MlGetJobsResponse) 
 ///|
 pub impl FromJson for MlGetJobsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetJobsResponse: expected object"))
+    raise JsonDecodeError((path, "MlGetJobsResponse: expected object"))
   }
   {
     count: @json.from_json(
@@ -53240,9 +53052,7 @@ pub impl ToJson for MlGetMemoryStatsQuery with fn to_json(
 ///|
 pub impl FromJson for MlGetMemoryStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetMemoryStatsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetMemoryStatsQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -53304,9 +53114,7 @@ pub impl ToJson for MlGetMemoryStatsResponse with fn to_json(
 ///|
 pub impl FromJson for MlGetMemoryStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetMemoryStatsResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetMemoryStatsResponse: expected object"))
   }
   {
     _nodes: @json.from_json(
@@ -53382,7 +53190,7 @@ pub impl FromJson for MlGetModelSnapshotUpgradeStatsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlGetModelSnapshotUpgradeStatsQuery: expected object"),
     )
   }
@@ -53437,7 +53245,7 @@ pub impl FromJson for MlGetModelSnapshotUpgradeStatsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlGetModelSnapshotUpgradeStatsResponse: expected object"),
     )
   }
@@ -53535,9 +53343,7 @@ pub impl ToJson for MlGetModelSnapshotsQuery with fn to_json(
 ///|
 pub impl FromJson for MlGetModelSnapshotsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetModelSnapshotsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetModelSnapshotsQuery: expected object"))
   }
   {
     desc: match obj.get("desc") {
@@ -53657,9 +53463,7 @@ pub impl ToJson for MlGetModelSnapshotsBody with fn to_json(
 ///|
 pub impl FromJson for MlGetModelSnapshotsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetModelSnapshotsBody: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetModelSnapshotsBody: expected object"))
   }
   {
     desc: match obj.get("desc") {
@@ -53720,7 +53524,7 @@ pub impl ToJson for MlGetModelSnapshotsResponse with fn to_json(
 ///|
 pub impl FromJson for MlGetModelSnapshotsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlGetModelSnapshotsResponse: expected object"),
     )
   }
@@ -53835,9 +53639,7 @@ pub impl ToJson for MlGetOverallBucketsQuery with fn to_json(
 ///|
 pub impl FromJson for MlGetOverallBucketsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetOverallBucketsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetOverallBucketsQuery: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -53989,9 +53791,7 @@ pub impl ToJson for MlGetOverallBucketsBody with fn to_json(
 ///|
 pub impl FromJson for MlGetOverallBucketsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetOverallBucketsBody: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetOverallBucketsBody: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -54076,7 +53876,7 @@ pub impl ToJson for MlGetOverallBucketsResponse with fn to_json(
 ///|
 pub impl FromJson for MlGetOverallBucketsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlGetOverallBucketsResponse: expected object"),
     )
   }
@@ -54185,7 +53985,7 @@ pub impl ToJson for MlGetRecordsQuery with fn to_json(self : MlGetRecordsQuery) 
 ///|
 pub impl FromJson for MlGetRecordsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetRecordsQuery: expected object"))
+    raise JsonDecodeError((path, "MlGetRecordsQuery: expected object"))
   }
   {
     desc: match obj.get("desc") {
@@ -54335,7 +54135,7 @@ pub impl ToJson for MlGetRecordsBody with fn to_json(self : MlGetRecordsBody) ->
 ///|
 pub impl FromJson for MlGetRecordsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetRecordsBody: expected object"))
+    raise JsonDecodeError((path, "MlGetRecordsBody: expected object"))
   }
   {
     desc: match obj.get("desc") {
@@ -54410,7 +54210,7 @@ pub impl ToJson for MlGetRecordsResponse with fn to_json(
 ///|
 pub impl FromJson for MlGetRecordsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlGetRecordsResponse: expected object"))
+    raise JsonDecodeError((path, "MlGetRecordsResponse: expected object"))
   }
   {
     count: @json.from_json(
@@ -54513,9 +54313,7 @@ pub impl ToJson for MlGetTrainedModelsQuery with fn to_json(
 ///|
 pub impl FromJson for MlGetTrainedModelsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetTrainedModelsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetTrainedModelsQuery: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -54636,9 +54434,7 @@ pub impl ToJson for MlGetTrainedModelsResponse with fn to_json(
 ///|
 pub impl FromJson for MlGetTrainedModelsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlGetTrainedModelsResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlGetTrainedModelsResponse: expected object"))
   }
   {
     count: @json.from_json(
@@ -54717,7 +54513,7 @@ pub impl ToJson for MlGetTrainedModelsStatsQuery with fn to_json(
 ///|
 pub impl FromJson for MlGetTrainedModelsStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlGetTrainedModelsStatsQuery: expected object"),
     )
   }
@@ -54792,7 +54588,7 @@ pub impl FromJson for MlGetTrainedModelsStatsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlGetTrainedModelsStatsResponse: expected object"),
     )
   }
@@ -54863,9 +54659,7 @@ pub impl ToJson for MlInferTrainedModelQuery with fn to_json(
 ///|
 pub impl FromJson for MlInferTrainedModelQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlInferTrainedModelQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlInferTrainedModelQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -54917,9 +54711,7 @@ pub impl ToJson for MlInferTrainedModelBody with fn to_json(
 ///|
 pub impl FromJson for MlInferTrainedModelBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlInferTrainedModelBody: expected object"),
-    )
+    raise JsonDecodeError((path, "MlInferTrainedModelBody: expected object"))
   }
   {
     docs: @json.from_json(
@@ -54960,7 +54752,7 @@ pub impl ToJson for MlInferTrainedModelResponse with fn to_json(
 ///|
 pub impl FromJson for MlInferTrainedModelResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlInferTrainedModelResponse: expected object"),
     )
   }
@@ -55014,14 +54806,16 @@ pub impl ToJson for MlInfoQuery with fn to_json(_self : MlInfoQuery) -> Json {
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlInfoQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "MlInfoQuery: expected object"))
+    raise JsonDecodeError((path, "MlInfoQuery: expected object"))
   }
   MlInfoQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlInfoQuery::new() -> MlInfoQuery {
   MlInfoQuery::{  }
 }
@@ -55053,7 +54847,7 @@ pub impl ToJson for MlInfoResponse with fn to_json(self : MlInfoResponse) -> Jso
 ///|
 pub impl FromJson for MlInfoResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlInfoResponse: expected object"))
+    raise JsonDecodeError((path, "MlInfoResponse: expected object"))
   }
   {
     defaults: @json.from_json(
@@ -55116,7 +54910,7 @@ pub impl ToJson for MlOpenJobQuery with fn to_json(self : MlOpenJobQuery) -> Jso
 ///|
 pub impl FromJson for MlOpenJobQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlOpenJobQuery: expected object"))
+    raise JsonDecodeError((path, "MlOpenJobQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -55162,7 +54956,7 @@ pub impl ToJson for MlOpenJobBody with fn to_json(self : MlOpenJobBody) -> Json 
 ///|
 pub impl FromJson for MlOpenJobBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlOpenJobBody: expected object"))
+    raise JsonDecodeError((path, "MlOpenJobBody: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -55195,7 +54989,7 @@ pub impl ToJson for MlOpenJobResponse with fn to_json(self : MlOpenJobResponse) 
 ///|
 pub impl FromJson for MlOpenJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlOpenJobResponse: expected object"))
+    raise JsonDecodeError((path, "MlOpenJobResponse: expected object"))
   }
   {
     opened: @json.from_json(
@@ -55256,16 +55050,16 @@ pub impl ToJson for MlPostCalendarEventsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlPostCalendarEventsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "MlPostCalendarEventsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlPostCalendarEventsQuery: expected object"))
   }
   MlPostCalendarEventsQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlPostCalendarEventsQuery::new() -> MlPostCalendarEventsQuery {
   MlPostCalendarEventsQuery::{  }
 }
@@ -55295,9 +55089,7 @@ pub impl ToJson for MlPostCalendarEventsBody with fn to_json(
 ///|
 pub impl FromJson for MlPostCalendarEventsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlPostCalendarEventsBody: expected object"),
-    )
+    raise JsonDecodeError((path, "MlPostCalendarEventsBody: expected object"))
   }
   {
     events: @json.from_json(
@@ -55331,7 +55123,7 @@ pub impl ToJson for MlPostCalendarEventsResponse with fn to_json(
 ///|
 pub impl FromJson for MlPostCalendarEventsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlPostCalendarEventsResponse: expected object"),
     )
   }
@@ -55398,7 +55190,7 @@ pub impl ToJson for MlPostDataQuery with fn to_json(self : MlPostDataQuery) -> J
 ///|
 pub impl FromJson for MlPostDataQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlPostDataQuery: expected object"))
+    raise JsonDecodeError((path, "MlPostDataQuery: expected object"))
   }
   {
     reset_end: match obj.get("reset_end") {
@@ -55512,7 +55304,7 @@ pub impl ToJson for MlPostDataResponse with fn to_json(
 ///|
 pub impl FromJson for MlPostDataResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlPostDataResponse: expected object"))
+    raise JsonDecodeError((path, "MlPostDataResponse: expected object"))
   }
   {
     job_id: @json.from_json(
@@ -55661,12 +55453,13 @@ pub impl ToJson for MlPreviewDataFrameAnalyticsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlPreviewDataFrameAnalyticsQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlPreviewDataFrameAnalyticsQuery: expected object"),
     )
   }
@@ -55674,6 +55467,7 @@ pub impl FromJson for MlPreviewDataFrameAnalyticsQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlPreviewDataFrameAnalyticsQuery::new() -> MlPreviewDataFrameAnalyticsQuery {
   MlPreviewDataFrameAnalyticsQuery::{  }
 }
@@ -55709,7 +55503,7 @@ pub impl FromJson for MlPreviewDataFrameAnalyticsBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlPreviewDataFrameAnalyticsBody: expected object"),
     )
   }
@@ -55749,7 +55543,7 @@ pub impl FromJson for MlPreviewDataFrameAnalyticsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlPreviewDataFrameAnalyticsResponse: expected object"),
     )
   }
@@ -55827,9 +55621,7 @@ pub impl ToJson for MlPreviewDatafeedQuery with fn to_json(
 ///|
 pub impl FromJson for MlPreviewDatafeedQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlPreviewDatafeedQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlPreviewDatafeedQuery: expected object"))
   }
   {
     start: match obj.get("start") {
@@ -55894,9 +55686,7 @@ pub impl ToJson for MlPreviewDatafeedBody with fn to_json(
 ///|
 pub impl FromJson for MlPreviewDatafeedBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlPreviewDatafeedBody: expected object"),
-    )
+    raise JsonDecodeError((path, "MlPreviewDatafeedBody: expected object"))
   }
   {
     datafeed_config: match obj.get("datafeed_config") {
@@ -55978,14 +55768,16 @@ pub impl ToJson for MlPutCalendarQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlPutCalendarQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "MlPutCalendarQuery: expected object"))
+    raise JsonDecodeError((path, "MlPutCalendarQuery: expected object"))
   }
   MlPutCalendarQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlPutCalendarQuery::new() -> MlPutCalendarQuery {
   MlPutCalendarQuery::{  }
 }
@@ -56021,7 +55813,7 @@ pub impl ToJson for MlPutCalendarBody with fn to_json(self : MlPutCalendarBody) 
 ///|
 pub impl FromJson for MlPutCalendarBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlPutCalendarBody: expected object"))
+    raise JsonDecodeError((path, "MlPutCalendarBody: expected object"))
   }
   {
     job_ids: match obj.get("job_ids") {
@@ -56070,9 +55862,7 @@ pub impl ToJson for MlPutCalendarResponse with fn to_json(
 ///|
 pub impl FromJson for MlPutCalendarResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlPutCalendarResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlPutCalendarResponse: expected object"))
   }
   {
     calendar_id: @json.from_json(
@@ -56139,16 +55929,16 @@ pub impl ToJson for MlPutCalendarJobQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlPutCalendarJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "MlPutCalendarJobQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlPutCalendarJobQuery: expected object"))
   }
   MlPutCalendarJobQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlPutCalendarJobQuery::new() -> MlPutCalendarJobQuery {
   MlPutCalendarJobQuery::{  }
 }
@@ -56185,9 +55975,7 @@ pub impl ToJson for MlPutCalendarJobResponse with fn to_json(
 ///|
 pub impl FromJson for MlPutCalendarJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlPutCalendarJobResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlPutCalendarJobResponse: expected object"))
   }
   {
     calendar_id: @json.from_json(
@@ -56255,9 +56043,10 @@ pub impl ToJson for MlPutDataFrameAnalyticsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlPutDataFrameAnalyticsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlPutDataFrameAnalyticsQuery: expected object"),
     )
   }
@@ -56265,6 +56054,7 @@ pub impl FromJson for MlPutDataFrameAnalyticsQuery with fn from_json(json, path)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlPutDataFrameAnalyticsQuery::new() -> MlPutDataFrameAnalyticsQuery {
   MlPutDataFrameAnalyticsQuery::{  }
 }
@@ -56338,7 +56128,7 @@ pub impl ToJson for MlPutDataFrameAnalyticsBody with fn to_json(
 ///|
 pub impl FromJson for MlPutDataFrameAnalyticsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlPutDataFrameAnalyticsBody: expected object"),
     )
   }
@@ -56488,7 +56278,7 @@ pub impl FromJson for MlPutDataFrameAnalyticsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlPutDataFrameAnalyticsResponse: expected object"),
     )
   }
@@ -56622,7 +56412,7 @@ pub impl ToJson for MlPutDatafeedQuery with fn to_json(
 ///|
 pub impl FromJson for MlPutDatafeedQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlPutDatafeedQuery: expected object"))
+    raise JsonDecodeError((path, "MlPutDatafeedQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -56769,7 +56559,7 @@ pub impl ToJson for MlPutDatafeedBody with fn to_json(self : MlPutDatafeedBody) 
 ///|
 pub impl FromJson for MlPutDatafeedBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlPutDatafeedBody: expected object"))
+    raise JsonDecodeError((path, "MlPutDatafeedBody: expected object"))
   }
   {
     aggregations: match obj.get("aggregations") {
@@ -56961,9 +56751,7 @@ pub impl ToJson for MlPutDatafeedResponse with fn to_json(
 ///|
 pub impl FromJson for MlPutDatafeedResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlPutDatafeedResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlPutDatafeedResponse: expected object"))
   }
   {
     aggregations: match obj.get("aggregations") {
@@ -57089,14 +56877,16 @@ pub impl ToJson for MlPutFilterQuery with fn to_json(_self : MlPutFilterQuery) -
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlPutFilterQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "MlPutFilterQuery: expected object"))
+    raise JsonDecodeError((path, "MlPutFilterQuery: expected object"))
   }
   MlPutFilterQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlPutFilterQuery::new() -> MlPutFilterQuery {
   MlPutFilterQuery::{  }
 }
@@ -57132,7 +56922,7 @@ pub impl ToJson for MlPutFilterBody with fn to_json(self : MlPutFilterBody) -> J
 ///|
 pub impl FromJson for MlPutFilterBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlPutFilterBody: expected object"))
+    raise JsonDecodeError((path, "MlPutFilterBody: expected object"))
   }
   {
     description: match obj.get("description") {
@@ -57178,7 +56968,7 @@ pub impl ToJson for MlPutFilterResponse with fn to_json(
 ///|
 pub impl FromJson for MlPutFilterResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlPutFilterResponse: expected object"))
+    raise JsonDecodeError((path, "MlPutFilterResponse: expected object"))
   }
   {
     description: @json.from_json(
@@ -57261,7 +57051,7 @@ pub impl ToJson for MlPutJobQuery with fn to_json(self : MlPutJobQuery) -> Json 
 ///|
 pub impl FromJson for MlPutJobQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlPutJobQuery: expected object"))
+    raise JsonDecodeError((path, "MlPutJobQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -57411,7 +57201,7 @@ pub impl ToJson for MlPutJobBody with fn to_json(self : MlPutJobBody) -> Json {
 ///|
 pub impl FromJson for MlPutJobBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlPutJobBody: expected object"))
+    raise JsonDecodeError((path, "MlPutJobBody: expected object"))
   }
   {
     allow_lazy_open: match obj.get("allow_lazy_open") {
@@ -57650,7 +57440,7 @@ pub impl ToJson for MlPutJobResponse with fn to_json(self : MlPutJobResponse) ->
 ///|
 pub impl FromJson for MlPutJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlPutJobResponse: expected object"))
+    raise JsonDecodeError((path, "MlPutJobResponse: expected object"))
   }
   {
     allow_lazy_open: @json.from_json(
@@ -57824,9 +57614,7 @@ pub impl ToJson for MlPutTrainedModelQuery with fn to_json(
 ///|
 pub impl FromJson for MlPutTrainedModelQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlPutTrainedModelQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlPutTrainedModelQuery: expected object"))
   }
   {
     defer_definition_decompression: match
@@ -57946,9 +57734,7 @@ pub impl ToJson for MlPutTrainedModelBody with fn to_json(
 ///|
 pub impl FromJson for MlPutTrainedModelBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlPutTrainedModelBody: expected object"),
-    )
+    raise JsonDecodeError((path, "MlPutTrainedModelBody: expected object"))
   }
   {
     compressed_definition: match obj.get("compressed_definition") {
@@ -58101,7 +57887,7 @@ pub impl ToJson for MlPutTrainedModelAliasQuery with fn to_json(
 ///|
 pub impl FromJson for MlPutTrainedModelAliasQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlPutTrainedModelAliasQuery: expected object"),
     )
   }
@@ -58194,12 +57980,13 @@ pub impl ToJson for MlPutTrainedModelDefinitionPartQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlPutTrainedModelDefinitionPartQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlPutTrainedModelDefinitionPartQuery: expected object"),
     )
   }
@@ -58207,6 +57994,7 @@ pub impl FromJson for MlPutTrainedModelDefinitionPartQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlPutTrainedModelDefinitionPartQuery::new() -> MlPutTrainedModelDefinitionPartQuery {
   MlPutTrainedModelDefinitionPartQuery::{  }
 }
@@ -58243,7 +58031,7 @@ pub impl FromJson for MlPutTrainedModelDefinitionPartBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlPutTrainedModelDefinitionPartBody: expected object"),
     )
   }
@@ -58326,12 +58114,13 @@ pub impl ToJson for MlPutTrainedModelVocabularyQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlPutTrainedModelVocabularyQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlPutTrainedModelVocabularyQuery: expected object"),
     )
   }
@@ -58339,6 +58128,7 @@ pub impl FromJson for MlPutTrainedModelVocabularyQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlPutTrainedModelVocabularyQuery::new() -> MlPutTrainedModelVocabularyQuery {
   MlPutTrainedModelVocabularyQuery::{  }
 }
@@ -58381,7 +58171,7 @@ pub impl FromJson for MlPutTrainedModelVocabularyBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlPutTrainedModelVocabularyBody: expected object"),
     )
   }
@@ -58472,7 +58262,7 @@ pub impl ToJson for MlResetJobQuery with fn to_json(self : MlResetJobQuery) -> J
 ///|
 pub impl FromJson for MlResetJobQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlResetJobQuery: expected object"))
+    raise JsonDecodeError((path, "MlResetJobQuery: expected object"))
   }
   {
     wait_for_completion: match obj.get("wait_for_completion") {
@@ -58570,9 +58360,7 @@ pub impl ToJson for MlRevertModelSnapshotQuery with fn to_json(
 ///|
 pub impl FromJson for MlRevertModelSnapshotQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlRevertModelSnapshotQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlRevertModelSnapshotQuery: expected object"))
   }
   {
     delete_intervening_results: match obj.get("delete_intervening_results") {
@@ -58629,9 +58417,7 @@ pub impl ToJson for MlRevertModelSnapshotBody with fn to_json(
 ///|
 pub impl FromJson for MlRevertModelSnapshotBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlRevertModelSnapshotBody: expected object"),
-    )
+    raise JsonDecodeError((path, "MlRevertModelSnapshotBody: expected object"))
   }
   {
     delete_intervening_results: match obj.get("delete_intervening_results") {
@@ -58675,7 +58461,7 @@ pub impl FromJson for MlRevertModelSnapshotResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlRevertModelSnapshotResponse: expected object"),
     )
   }
@@ -58755,9 +58541,7 @@ pub impl ToJson for MlSetUpgradeModeQuery with fn to_json(
 ///|
 pub impl FromJson for MlSetUpgradeModeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlSetUpgradeModeQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlSetUpgradeModeQuery: expected object"))
   }
   {
     enabled: match obj.get("enabled") {
@@ -58849,7 +58633,7 @@ pub impl FromJson for MlStartDataFrameAnalyticsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlStartDataFrameAnalyticsQuery: expected object"),
     )
   }
@@ -58909,7 +58693,7 @@ pub impl FromJson for MlStartDataFrameAnalyticsBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlStartDataFrameAnalyticsBody: expected object"),
     )
   }
@@ -58957,7 +58741,7 @@ pub impl FromJson for MlStartDataFrameAnalyticsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlStartDataFrameAnalyticsResponse: expected object"),
     )
   }
@@ -59038,7 +58822,7 @@ pub impl ToJson for MlStartDatafeedQuery with fn to_json(
 ///|
 pub impl FromJson for MlStartDatafeedQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlStartDatafeedQuery: expected object"))
+    raise JsonDecodeError((path, "MlStartDatafeedQuery: expected object"))
   }
   {
     end: match obj.get("end") {
@@ -59118,7 +58902,7 @@ pub impl ToJson for MlStartDatafeedBody with fn to_json(
 ///|
 pub impl FromJson for MlStartDatafeedBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlStartDatafeedBody: expected object"))
+    raise JsonDecodeError((path, "MlStartDatafeedBody: expected object"))
   }
   {
     end: match obj.get("end") {
@@ -59167,9 +58951,7 @@ pub impl ToJson for MlStartDatafeedResponse with fn to_json(
 ///|
 pub impl FromJson for MlStartDatafeedResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlStartDatafeedResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlStartDatafeedResponse: expected object"))
   }
   {
     node: @json.from_json(
@@ -59276,7 +59058,7 @@ pub impl FromJson for MlStartTrainedModelDeploymentQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlStartTrainedModelDeploymentQuery: expected object"),
     )
   }
@@ -59419,7 +59201,7 @@ pub impl FromJson for MlStartTrainedModelDeploymentBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlStartTrainedModelDeploymentBody: expected object"),
     )
   }
@@ -59460,7 +59242,7 @@ pub impl FromJson for MlStartTrainedModelDeploymentResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlStartTrainedModelDeploymentResponse: expected object"),
     )
   }
@@ -59544,7 +59326,7 @@ pub impl FromJson for MlStopDataFrameAnalyticsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlStopDataFrameAnalyticsQuery: expected object"),
     )
   }
@@ -59632,7 +59414,7 @@ pub impl ToJson for MlStopDataFrameAnalyticsBody with fn to_json(
 ///|
 pub impl FromJson for MlStopDataFrameAnalyticsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlStopDataFrameAnalyticsBody: expected object"),
     )
   }
@@ -59691,7 +59473,7 @@ pub impl FromJson for MlStopDataFrameAnalyticsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlStopDataFrameAnalyticsResponse: expected object"),
     )
   }
@@ -59773,7 +59555,7 @@ pub impl ToJson for MlStopDatafeedQuery with fn to_json(
 ///|
 pub impl FromJson for MlStopDatafeedQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlStopDatafeedQuery: expected object"))
+    raise JsonDecodeError((path, "MlStopDatafeedQuery: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -59870,7 +59652,7 @@ pub impl ToJson for MlStopDatafeedBody with fn to_json(
 ///|
 pub impl FromJson for MlStopDatafeedBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlStopDatafeedBody: expected object"))
+    raise JsonDecodeError((path, "MlStopDatafeedBody: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -59925,9 +59707,7 @@ pub impl ToJson for MlStopDatafeedResponse with fn to_json(
 ///|
 pub impl FromJson for MlStopDatafeedResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlStopDatafeedResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlStopDatafeedResponse: expected object"))
   }
   {
     stopped: @json.from_json(
@@ -60000,7 +59780,7 @@ pub impl FromJson for MlStopTrainedModelDeploymentQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlStopTrainedModelDeploymentQuery: expected object"),
     )
   }
@@ -60076,7 +59856,7 @@ pub impl FromJson for MlStopTrainedModelDeploymentBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlStopTrainedModelDeploymentBody: expected object"),
     )
   }
@@ -60129,7 +59909,7 @@ pub impl FromJson for MlStopTrainedModelDeploymentResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlStopTrainedModelDeploymentResponse: expected object"),
     )
   }
@@ -60192,12 +59972,13 @@ pub impl ToJson for MlUpdateDataFrameAnalyticsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlUpdateDataFrameAnalyticsQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlUpdateDataFrameAnalyticsQuery: expected object"),
     )
   }
@@ -60205,6 +59986,7 @@ pub impl FromJson for MlUpdateDataFrameAnalyticsQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlUpdateDataFrameAnalyticsQuery::new() -> MlUpdateDataFrameAnalyticsQuery {
   MlUpdateDataFrameAnalyticsQuery::{  }
 }
@@ -60255,7 +60037,7 @@ pub impl FromJson for MlUpdateDataFrameAnalyticsBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlUpdateDataFrameAnalyticsBody: expected object"),
     )
   }
@@ -60348,7 +60130,7 @@ pub impl FromJson for MlUpdateDataFrameAnalyticsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlUpdateDataFrameAnalyticsResponse: expected object"),
     )
   }
@@ -60477,9 +60259,7 @@ pub impl ToJson for MlUpdateDatafeedQuery with fn to_json(
 ///|
 pub impl FromJson for MlUpdateDatafeedQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlUpdateDatafeedQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlUpdateDatafeedQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -60623,7 +60403,7 @@ pub impl ToJson for MlUpdateDatafeedBody with fn to_json(
 ///|
 pub impl FromJson for MlUpdateDatafeedBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlUpdateDatafeedBody: expected object"))
+    raise JsonDecodeError((path, "MlUpdateDatafeedBody: expected object"))
   }
   {
     aggregations: match obj.get("aggregations") {
@@ -60808,9 +60588,7 @@ pub impl ToJson for MlUpdateDatafeedResponse with fn to_json(
 ///|
 pub impl FromJson for MlUpdateDatafeedResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlUpdateDatafeedResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlUpdateDatafeedResponse: expected object"))
   }
   {
     authorization: match obj.get("authorization") {
@@ -60938,14 +60716,16 @@ pub impl ToJson for MlUpdateFilterQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlUpdateFilterQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "MlUpdateFilterQuery: expected object"))
+    raise JsonDecodeError((path, "MlUpdateFilterQuery: expected object"))
   }
   MlUpdateFilterQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlUpdateFilterQuery::new() -> MlUpdateFilterQuery {
   MlUpdateFilterQuery::{  }
 }
@@ -60988,7 +60768,7 @@ pub impl ToJson for MlUpdateFilterBody with fn to_json(
 ///|
 pub impl FromJson for MlUpdateFilterBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlUpdateFilterBody: expected object"))
+    raise JsonDecodeError((path, "MlUpdateFilterBody: expected object"))
   }
   {
     add_items: match obj.get("add_items") {
@@ -61042,9 +60822,7 @@ pub impl ToJson for MlUpdateFilterResponse with fn to_json(
 ///|
 pub impl FromJson for MlUpdateFilterResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlUpdateFilterResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MlUpdateFilterResponse: expected object"))
   }
   {
     description: @json.from_json(
@@ -61104,14 +60882,16 @@ pub impl ToJson for MlUpdateJobQuery with fn to_json(_self : MlUpdateJobQuery) -
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlUpdateJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "MlUpdateJobQuery: expected object"))
+    raise JsonDecodeError((path, "MlUpdateJobQuery: expected object"))
   }
   MlUpdateJobQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlUpdateJobQuery::new() -> MlUpdateJobQuery {
   MlUpdateJobQuery::{  }
 }
@@ -61213,7 +60993,7 @@ pub impl ToJson for MlUpdateJobBody with fn to_json(self : MlUpdateJobBody) -> J
 ///|
 pub impl FromJson for MlUpdateJobBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlUpdateJobBody: expected object"))
+    raise JsonDecodeError((path, "MlUpdateJobBody: expected object"))
   }
   {
     allow_lazy_open: match obj.get("allow_lazy_open") {
@@ -61464,7 +61244,7 @@ pub impl ToJson for MlUpdateJobResponse with fn to_json(
 ///|
 pub impl FromJson for MlUpdateJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlUpdateJobResponse: expected object"))
+    raise JsonDecodeError((path, "MlUpdateJobResponse: expected object"))
   }
   {
     allow_lazy_open: @json.from_json(
@@ -61631,16 +61411,16 @@ pub impl ToJson for MlUpdateModelSnapshotQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlUpdateModelSnapshotQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "MlUpdateModelSnapshotQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlUpdateModelSnapshotQuery: expected object"))
   }
   MlUpdateModelSnapshotQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlUpdateModelSnapshotQuery::new() -> MlUpdateModelSnapshotQuery {
   MlUpdateModelSnapshotQuery::{  }
 }
@@ -61678,9 +61458,7 @@ pub impl ToJson for MlUpdateModelSnapshotBody with fn to_json(
 ///|
 pub impl FromJson for MlUpdateModelSnapshotBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlUpdateModelSnapshotBody: expected object"),
-    )
+    raise JsonDecodeError((path, "MlUpdateModelSnapshotBody: expected object"))
   }
   {
     description: match obj.get("description") {
@@ -61727,7 +61505,7 @@ pub impl FromJson for MlUpdateModelSnapshotResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlUpdateModelSnapshotResponse: expected object"),
     )
   }
@@ -61806,7 +61584,7 @@ pub impl FromJson for MlUpdateTrainedModelDeploymentQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlUpdateTrainedModelDeploymentQuery: expected object"),
     )
   }
@@ -61868,7 +61646,7 @@ pub impl FromJson for MlUpdateTrainedModelDeploymentBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlUpdateTrainedModelDeploymentBody: expected object"),
     )
   }
@@ -61916,7 +61694,7 @@ pub impl FromJson for MlUpdateTrainedModelDeploymentResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlUpdateTrainedModelDeploymentResponse: expected object"),
     )
   }
@@ -61992,9 +61770,7 @@ pub impl ToJson for MlUpgradeJobSnapshotQuery with fn to_json(
 ///|
 pub impl FromJson for MlUpgradeJobSnapshotQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MlUpgradeJobSnapshotQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlUpgradeJobSnapshotQuery: expected object"))
   }
   {
     wait_for_completion: match obj.get("wait_for_completion") {
@@ -62055,7 +61831,7 @@ pub impl ToJson for MlUpgradeJobSnapshotResponse with fn to_json(
 ///|
 pub impl FromJson for MlUpgradeJobSnapshotResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "MlUpgradeJobSnapshotResponse: expected object"),
     )
   }
@@ -62118,14 +61894,16 @@ pub impl ToJson for MlValidateQuery with fn to_json(_self : MlValidateQuery) -> 
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlValidateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "MlValidateQuery: expected object"))
+    raise JsonDecodeError((path, "MlValidateQuery: expected object"))
   }
   MlValidateQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlValidateQuery::new() -> MlValidateQuery {
   MlValidateQuery::{  }
 }
@@ -62196,7 +61974,7 @@ pub impl ToJson for MlValidateBody with fn to_json(self : MlValidateBody) -> Jso
 ///|
 pub impl FromJson for MlValidateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MlValidateBody: expected object"))
+    raise JsonDecodeError((path, "MlValidateBody: expected object"))
   }
   {
     job_id: match obj.get("job_id") {
@@ -62330,16 +62108,16 @@ pub impl ToJson for MlValidateDetectorQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for MlValidateDetectorQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "MlValidateDetectorQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "MlValidateDetectorQuery: expected object"))
   }
   MlValidateDetectorQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn MlValidateDetectorQuery::new() -> MlValidateDetectorQuery {
   MlValidateDetectorQuery::{  }
 }
@@ -62408,7 +62186,7 @@ pub impl ToJson for MonitoringBulkQuery with fn to_json(
 ///|
 pub impl FromJson for MonitoringBulkQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MonitoringBulkQuery: expected object"))
+    raise JsonDecodeError((path, "MonitoringBulkQuery: expected object"))
   }
   {
     system_id: @json.from_json(
@@ -62479,9 +62257,7 @@ pub impl ToJson for MonitoringBulkResponse with fn to_json(
 ///|
 pub impl FromJson for MonitoringBulkResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "MonitoringBulkResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "MonitoringBulkResponse: expected object"))
   }
   {
     error: match obj.get("error") {
@@ -62618,7 +62394,7 @@ pub impl ToJson for MsearchQuery with fn to_json(self : MsearchQuery) -> Json {
 ///|
 pub impl FromJson for MsearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MsearchQuery: expected object"))
+    raise JsonDecodeError((path, "MsearchQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -62927,7 +62703,7 @@ pub impl ToJson for MsearchTemplateQuery with fn to_json(
 ///|
 pub impl FromJson for MsearchTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MsearchTemplateQuery: expected object"))
+    raise JsonDecodeError((path, "MsearchTemplateQuery: expected object"))
   }
   {
     ccs_minimize_roundtrips: match obj.get("ccs_minimize_roundtrips") {
@@ -63146,7 +62922,7 @@ pub impl ToJson for MtermvectorsQuery with fn to_json(self : MtermvectorsQuery) 
 ///|
 pub impl FromJson for MtermvectorsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MtermvectorsQuery: expected object"))
+    raise JsonDecodeError((path, "MtermvectorsQuery: expected object"))
   }
   {
     ids: match obj.get("ids") {
@@ -63327,7 +63103,7 @@ pub impl ToJson for MtermvectorsBody with fn to_json(self : MtermvectorsBody) ->
 ///|
 pub impl FromJson for MtermvectorsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MtermvectorsBody: expected object"))
+    raise JsonDecodeError((path, "MtermvectorsBody: expected object"))
   }
   {
     docs: match obj.get("docs") {
@@ -63368,7 +63144,7 @@ pub impl ToJson for MtermvectorsResponse with fn to_json(
 ///|
 pub impl FromJson for MtermvectorsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "MtermvectorsResponse: expected object"))
+    raise JsonDecodeError((path, "MtermvectorsResponse: expected object"))
   }
   {
     docs: @json.from_json(
@@ -63431,12 +63207,13 @@ pub impl ToJson for NodesClearRepositoriesMeteringArchiveQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for NodesClearRepositoriesMeteringArchiveQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "NodesClearRepositoriesMeteringArchiveQuery: expected object"),
     )
   }
@@ -63444,6 +63221,7 @@ pub impl FromJson for NodesClearRepositoriesMeteringArchiveQuery with fn from_js
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn NodesClearRepositoriesMeteringArchiveQuery::new() -> NodesClearRepositoriesMeteringArchiveQuery {
   NodesClearRepositoriesMeteringArchiveQuery::{  }
 }
@@ -63508,12 +63286,13 @@ pub impl ToJson for NodesGetRepositoriesMeteringInfoQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for NodesGetRepositoriesMeteringInfoQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "NodesGetRepositoriesMeteringInfoQuery: expected object"),
     )
   }
@@ -63521,6 +63300,7 @@ pub impl FromJson for NodesGetRepositoriesMeteringInfoQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn NodesGetRepositoriesMeteringInfoQuery::new() -> NodesGetRepositoriesMeteringInfoQuery {
   NodesGetRepositoriesMeteringInfoQuery::{  }
 }
@@ -63615,7 +63395,7 @@ pub impl ToJson for NodesHotThreadsQuery with fn to_json(
 ///|
 pub impl FromJson for NodesHotThreadsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "NodesHotThreadsQuery: expected object"))
+    raise JsonDecodeError((path, "NodesHotThreadsQuery: expected object"))
   }
   {
     ignore_idle_threads: match obj.get("ignore_idle_threads") {
@@ -63769,7 +63549,7 @@ pub impl ToJson for NodesInfoQuery with fn to_json(self : NodesInfoQuery) -> Jso
 ///|
 pub impl FromJson for NodesInfoQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "NodesInfoQuery: expected object"))
+    raise JsonDecodeError((path, "NodesInfoQuery: expected object"))
   }
   {
     flat_settings: match obj.get("flat_settings") {
@@ -63879,7 +63659,7 @@ pub impl FromJson for NodesReloadSecureSettingsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "NodesReloadSecureSettingsQuery: expected object"),
     )
   }
@@ -63934,7 +63714,7 @@ pub impl FromJson for NodesReloadSecureSettingsBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "NodesReloadSecureSettingsBody: expected object"),
     )
   }
@@ -64059,7 +63839,7 @@ pub impl ToJson for NodesStatsQuery with fn to_json(self : NodesStatsQuery) -> J
 ///|
 pub impl FromJson for NodesStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "NodesStatsQuery: expected object"))
+    raise JsonDecodeError((path, "NodesStatsQuery: expected object"))
   }
   {
     completion_fields: match obj.get("completion_fields") {
@@ -64268,7 +64048,7 @@ pub impl ToJson for NodesUsageQuery with fn to_json(self : NodesUsageQuery) -> J
 ///|
 pub impl FromJson for NodesUsageQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "NodesUsageQuery: expected object"))
+    raise JsonDecodeError((path, "NodesUsageQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -64389,7 +64169,7 @@ pub impl ToJson for OpenPointInTimeQuery with fn to_json(
 ///|
 pub impl FromJson for OpenPointInTimeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "OpenPointInTimeQuery: expected object"))
+    raise JsonDecodeError((path, "OpenPointInTimeQuery: expected object"))
   }
   {
     keep_alive: @json.from_json(
@@ -64527,7 +64307,7 @@ pub impl ToJson for OpenPointInTimeBody with fn to_json(
 ///|
 pub impl FromJson for OpenPointInTimeBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "OpenPointInTimeBody: expected object"))
+    raise JsonDecodeError((path, "OpenPointInTimeBody: expected object"))
   }
   {
     index_filter: match obj.get("index_filter") {
@@ -64572,9 +64352,7 @@ pub impl ToJson for OpenPointInTimeResponse with fn to_json(
 ///|
 pub impl FromJson for OpenPointInTimeResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "OpenPointInTimeResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "OpenPointInTimeResponse: expected object"))
   }
   {
     _shards: @json.from_json(
@@ -64630,14 +64408,16 @@ pub impl ToJson for PingQuery with fn to_json(_self : PingQuery) -> Json {
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for PingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "PingQuery: expected object"))
+    raise JsonDecodeError((path, "PingQuery: expected object"))
   }
   PingQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn PingQuery::new() -> PingQuery {
   PingQuery::{  }
 }
@@ -64684,16 +64464,16 @@ pub impl ToJson for ProfilingFlamegraphQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ProfilingFlamegraphQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ProfilingFlamegraphQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ProfilingFlamegraphQuery: expected object"))
   }
   ProfilingFlamegraphQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ProfilingFlamegraphQuery::new() -> ProfilingFlamegraphQuery {
   ProfilingFlamegraphQuery::{  }
 }
@@ -64753,16 +64533,16 @@ pub impl ToJson for ProfilingStacktracesQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ProfilingStacktracesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ProfilingStacktracesQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ProfilingStacktracesQuery: expected object"))
   }
   ProfilingStacktracesQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ProfilingStacktracesQuery::new() -> ProfilingStacktracesQuery {
   ProfilingStacktracesQuery::{  }
 }
@@ -64840,7 +64620,7 @@ pub impl ToJson for ProfilingStatusQuery with fn to_json(
 ///|
 pub impl FromJson for ProfilingStatusQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ProfilingStatusQuery: expected object"))
+    raise JsonDecodeError((path, "ProfilingStatusQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -64915,9 +64695,7 @@ pub impl ToJson for ProfilingStatusResponse with fn to_json(
 ///|
 pub impl FromJson for ProfilingStatusResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ProfilingStatusResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "ProfilingStatusResponse: expected object"))
   }
   {
     operation_mode: @json.from_json(
@@ -64962,9 +64740,10 @@ pub impl ToJson for ProfilingTopnFunctionsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ProfilingTopnFunctionsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ProfilingTopnFunctionsQuery: expected object"),
     )
   }
@@ -64972,6 +64751,7 @@ pub impl FromJson for ProfilingTopnFunctionsQuery with fn from_json(json, path) 
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ProfilingTopnFunctionsQuery::new() -> ProfilingTopnFunctionsQuery {
   ProfilingTopnFunctionsQuery::{  }
 }
@@ -65031,12 +64811,13 @@ pub impl ToJson for ProjectCreateManyRoutingQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ProjectCreateManyRoutingQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ProjectCreateManyRoutingQuery: expected object"),
     )
   }
@@ -65044,6 +64825,7 @@ pub impl FromJson for ProjectCreateManyRoutingQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ProjectCreateManyRoutingQuery::new() -> ProjectCreateManyRoutingQuery {
   ProjectCreateManyRoutingQuery::{  }
 }
@@ -65100,16 +64882,16 @@ pub impl ToJson for ProjectCreateRoutingQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ProjectCreateRoutingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ProjectCreateRoutingQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ProjectCreateRoutingQuery: expected object"))
   }
   ProjectCreateRoutingQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ProjectCreateRoutingQuery::new() -> ProjectCreateRoutingQuery {
   ProjectCreateRoutingQuery::{  }
 }
@@ -65172,16 +64954,16 @@ pub impl ToJson for ProjectDeleteRoutingQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ProjectDeleteRoutingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ProjectDeleteRoutingQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ProjectDeleteRoutingQuery: expected object"))
   }
   ProjectDeleteRoutingQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ProjectDeleteRoutingQuery::new() -> ProjectDeleteRoutingQuery {
   ProjectDeleteRoutingQuery::{  }
 }
@@ -65238,16 +65020,16 @@ pub impl ToJson for ProjectGetManyRoutingQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ProjectGetManyRoutingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ProjectGetManyRoutingQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ProjectGetManyRoutingQuery: expected object"))
   }
   ProjectGetManyRoutingQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ProjectGetManyRoutingQuery::new() -> ProjectGetManyRoutingQuery {
   ProjectGetManyRoutingQuery::{  }
 }
@@ -65298,16 +65080,16 @@ pub impl ToJson for ProjectGetRoutingQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ProjectGetRoutingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "ProjectGetRoutingQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ProjectGetRoutingQuery: expected object"))
   }
   ProjectGetRoutingQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ProjectGetRoutingQuery::new() -> ProjectGetRoutingQuery {
   ProjectGetRoutingQuery::{  }
 }
@@ -65362,14 +65144,16 @@ pub impl ToJson for ProjectTagsQuery with fn to_json(_self : ProjectTagsQuery) -
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ProjectTagsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "ProjectTagsQuery: expected object"))
+    raise JsonDecodeError((path, "ProjectTagsQuery: expected object"))
   }
   ProjectTagsQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ProjectTagsQuery::new() -> ProjectTagsQuery {
   ProjectTagsQuery::{  }
 }
@@ -65436,7 +65220,7 @@ pub impl ToJson for PutScriptQuery with fn to_json(self : PutScriptQuery) -> Jso
 ///|
 pub impl FromJson for PutScriptQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "PutScriptQuery: expected object"))
+    raise JsonDecodeError((path, "PutScriptQuery: expected object"))
   }
   {
     context: match obj.get("context") {
@@ -65502,7 +65286,7 @@ pub impl ToJson for PutScriptBody with fn to_json(self : PutScriptBody) -> Json 
 ///|
 pub impl FromJson for PutScriptBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "PutScriptBody: expected object"))
+    raise JsonDecodeError((path, "PutScriptBody: expected object"))
   }
   {
     script: @json.from_json(
@@ -65573,16 +65357,16 @@ pub impl ToJson for QueryRulesDeleteRuleQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for QueryRulesDeleteRuleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "QueryRulesDeleteRuleQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "QueryRulesDeleteRuleQuery: expected object"))
   }
   QueryRulesDeleteRuleQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn QueryRulesDeleteRuleQuery::new() -> QueryRulesDeleteRuleQuery {
   QueryRulesDeleteRuleQuery::{  }
 }
@@ -65646,9 +65430,10 @@ pub impl ToJson for QueryRulesDeleteRulesetQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for QueryRulesDeleteRulesetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "QueryRulesDeleteRulesetQuery: expected object"),
     )
   }
@@ -65656,6 +65441,7 @@ pub impl FromJson for QueryRulesDeleteRulesetQuery with fn from_json(json, path)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn QueryRulesDeleteRulesetQuery::new() -> QueryRulesDeleteRulesetQuery {
   QueryRulesDeleteRulesetQuery::{  }
 }
@@ -65712,16 +65498,16 @@ pub impl ToJson for QueryRulesGetRuleQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for QueryRulesGetRuleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "QueryRulesGetRuleQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "QueryRulesGetRuleQuery: expected object"))
   }
   QueryRulesGetRuleQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn QueryRulesGetRuleQuery::new() -> QueryRulesGetRuleQuery {
   QueryRulesGetRuleQuery::{  }
 }
@@ -65785,16 +65571,16 @@ pub impl ToJson for QueryRulesGetRulesetQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for QueryRulesGetRulesetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "QueryRulesGetRulesetQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "QueryRulesGetRulesetQuery: expected object"))
   }
   QueryRulesGetRulesetQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn QueryRulesGetRulesetQuery::new() -> QueryRulesGetRulesetQuery {
   QueryRulesGetRulesetQuery::{  }
 }
@@ -65864,7 +65650,7 @@ pub impl ToJson for QueryRulesListRulesetsQuery with fn to_json(
 ///|
 pub impl FromJson for QueryRulesListRulesetsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "QueryRulesListRulesetsQuery: expected object"),
     )
   }
@@ -65928,7 +65714,7 @@ pub impl FromJson for QueryRulesListRulesetsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "QueryRulesListRulesetsResponse: expected object"),
     )
   }
@@ -65979,16 +65765,16 @@ pub impl ToJson for QueryRulesPutRuleQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for QueryRulesPutRuleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "QueryRulesPutRuleQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "QueryRulesPutRuleQuery: expected object"))
   }
   QueryRulesPutRuleQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn QueryRulesPutRuleQuery::new() -> QueryRulesPutRuleQuery {
   QueryRulesPutRuleQuery::{  }
 }
@@ -66027,9 +65813,7 @@ pub impl ToJson for QueryRulesPutRuleBody with fn to_json(
 ///|
 pub impl FromJson for QueryRulesPutRuleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "QueryRulesPutRuleBody: expected object"),
-    )
+    raise JsonDecodeError((path, "QueryRulesPutRuleBody: expected object"))
   }
   {
     type_: @json.from_json(
@@ -66079,9 +65863,7 @@ pub impl ToJson for QueryRulesPutRuleResponse with fn to_json(
 ///|
 pub impl FromJson for QueryRulesPutRuleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "QueryRulesPutRuleResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "QueryRulesPutRuleResponse: expected object"))
   }
   {
     result: @json.from_json(
@@ -66142,16 +65924,16 @@ pub impl ToJson for QueryRulesPutRulesetQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for QueryRulesPutRulesetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "QueryRulesPutRulesetQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "QueryRulesPutRulesetQuery: expected object"))
   }
   QueryRulesPutRulesetQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn QueryRulesPutRulesetQuery::new() -> QueryRulesPutRulesetQuery {
   QueryRulesPutRulesetQuery::{  }
 }
@@ -66181,9 +65963,7 @@ pub impl ToJson for QueryRulesPutRulesetBody with fn to_json(
 ///|
 pub impl FromJson for QueryRulesPutRulesetBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "QueryRulesPutRulesetBody: expected object"),
-    )
+    raise JsonDecodeError((path, "QueryRulesPutRulesetBody: expected object"))
   }
   {
     rules: @json.from_json(
@@ -66215,7 +65995,7 @@ pub impl ToJson for QueryRulesPutRulesetResponse with fn to_json(
 ///|
 pub impl FromJson for QueryRulesPutRulesetResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "QueryRulesPutRulesetResponse: expected object"),
     )
   }
@@ -66271,14 +66051,16 @@ pub impl ToJson for QueryRulesTestQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for QueryRulesTestQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "QueryRulesTestQuery: expected object"))
+    raise JsonDecodeError((path, "QueryRulesTestQuery: expected object"))
   }
   QueryRulesTestQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn QueryRulesTestQuery::new() -> QueryRulesTestQuery {
   QueryRulesTestQuery::{  }
 }
@@ -66308,7 +66090,7 @@ pub impl ToJson for QueryRulesTestBody with fn to_json(
 ///|
 pub impl FromJson for QueryRulesTestBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "QueryRulesTestBody: expected object"))
+    raise JsonDecodeError((path, "QueryRulesTestBody: expected object"))
   }
   {
     match_criteria: @json.from_json(
@@ -66344,9 +66126,7 @@ pub impl ToJson for QueryRulesTestResponse with fn to_json(
 ///|
 pub impl FromJson for QueryRulesTestResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "QueryRulesTestResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "QueryRulesTestResponse: expected object"))
   }
   {
     total_matched_rules: @json.from_json(
@@ -66425,7 +66205,7 @@ pub impl ToJson for RankEvalQuery with fn to_json(self : RankEvalQuery) -> Json 
 ///|
 pub impl FromJson for RankEvalQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "RankEvalQuery: expected object"))
+    raise JsonDecodeError((path, "RankEvalQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -66507,7 +66287,7 @@ pub impl ToJson for RankEvalBody with fn to_json(self : RankEvalBody) -> Json {
 ///|
 pub impl FromJson for RankEvalBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "RankEvalBody: expected object"))
+    raise JsonDecodeError((path, "RankEvalBody: expected object"))
   }
   {
     requests: @json.from_json(
@@ -66549,7 +66329,7 @@ pub impl ToJson for RankEvalResponse with fn to_json(self : RankEvalResponse) ->
 ///|
 pub impl FromJson for RankEvalResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "RankEvalResponse: expected object"))
+    raise JsonDecodeError((path, "RankEvalResponse: expected object"))
   }
   {
     metric_score: @json.from_json(
@@ -66663,7 +66443,7 @@ pub impl ToJson for ReindexQuery with fn to_json(self : ReindexQuery) -> Json {
 ///|
 pub impl FromJson for ReindexQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ReindexQuery: expected object"))
+    raise JsonDecodeError((path, "ReindexQuery: expected object"))
   }
   {
     refresh: match obj.get("refresh") {
@@ -66822,7 +66602,7 @@ pub impl ToJson for ReindexBody with fn to_json(self : ReindexBody) -> Json {
 ///|
 pub impl FromJson for ReindexBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ReindexBody: expected object"))
+    raise JsonDecodeError((path, "ReindexBody: expected object"))
   }
   {
     conflicts: match obj.get("conflicts") {
@@ -66961,7 +66741,7 @@ pub impl ToJson for ReindexResponse with fn to_json(self : ReindexResponse) -> J
 ///|
 pub impl FromJson for ReindexResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ReindexResponse: expected object"))
+    raise JsonDecodeError((path, "ReindexResponse: expected object"))
   }
   {
     batches: match obj.get("batches") {
@@ -67107,9 +66887,7 @@ pub impl ToJson for ReindexRethrottleQuery with fn to_json(
 ///|
 pub impl FromJson for ReindexRethrottleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ReindexRethrottleQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ReindexRethrottleQuery: expected object"))
   }
   {
     requests_per_second: @json.from_json(
@@ -67184,9 +66962,7 @@ pub impl ToJson for ReindexRethrottleResponse with fn to_json(
 ///|
 pub impl FromJson for ReindexRethrottleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ReindexRethrottleResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "ReindexRethrottleResponse: expected object"))
   }
   {
     node_failures: match obj.get("node_failures") {
@@ -67255,16 +67031,16 @@ pub impl ToJson for RenderSearchTemplateQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for RenderSearchTemplateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "RenderSearchTemplateQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "RenderSearchTemplateQuery: expected object"))
   }
   RenderSearchTemplateQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn RenderSearchTemplateQuery::new() -> RenderSearchTemplateQuery {
   RenderSearchTemplateQuery::{  }
 }
@@ -67312,9 +67088,7 @@ pub impl ToJson for RenderSearchTemplateBody with fn to_json(
 ///|
 pub impl FromJson for RenderSearchTemplateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "RenderSearchTemplateBody: expected object"),
-    )
+    raise JsonDecodeError((path, "RenderSearchTemplateBody: expected object"))
   }
   {
     id: match obj.get("id") {
@@ -67367,7 +67141,7 @@ pub impl ToJson for RenderSearchTemplateResponse with fn to_json(
 ///|
 pub impl FromJson for RenderSearchTemplateResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "RenderSearchTemplateResponse: expected object"),
     )
   }
@@ -67429,14 +67203,16 @@ pub impl ToJson for RollupDeleteJobQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for RollupDeleteJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "RollupDeleteJobQuery: expected object"))
+    raise JsonDecodeError((path, "RollupDeleteJobQuery: expected object"))
   }
   RollupDeleteJobQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn RollupDeleteJobQuery::new() -> RollupDeleteJobQuery {
   RollupDeleteJobQuery::{  }
 }
@@ -67471,9 +67247,7 @@ pub impl ToJson for RollupDeleteJobResponse with fn to_json(
 ///|
 pub impl FromJson for RollupDeleteJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "RollupDeleteJobResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "RollupDeleteJobResponse: expected object"))
   }
   {
     acknowledged: @json.from_json(
@@ -67530,14 +67304,16 @@ pub impl ToJson for RollupGetJobsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for RollupGetJobsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "RollupGetJobsQuery: expected object"))
+    raise JsonDecodeError((path, "RollupGetJobsQuery: expected object"))
   }
   RollupGetJobsQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn RollupGetJobsQuery::new() -> RollupGetJobsQuery {
   RollupGetJobsQuery::{  }
 }
@@ -67567,9 +67343,7 @@ pub impl ToJson for RollupGetJobsResponse with fn to_json(
 ///|
 pub impl FromJson for RollupGetJobsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "RollupGetJobsResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "RollupGetJobsResponse: expected object"))
   }
   {
     jobs: @json.from_json(
@@ -67626,16 +67400,16 @@ pub impl ToJson for RollupGetRollupCapsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for RollupGetRollupCapsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "RollupGetRollupCapsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "RollupGetRollupCapsQuery: expected object"))
   }
   RollupGetRollupCapsQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn RollupGetRollupCapsQuery::new() -> RollupGetRollupCapsQuery {
   RollupGetRollupCapsQuery::{  }
 }
@@ -67698,12 +67472,13 @@ pub impl ToJson for RollupGetRollupIndexCapsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for RollupGetRollupIndexCapsQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "RollupGetRollupIndexCapsQuery: expected object"),
     )
   }
@@ -67711,6 +67486,7 @@ pub impl FromJson for RollupGetRollupIndexCapsQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn RollupGetRollupIndexCapsQuery::new() -> RollupGetRollupIndexCapsQuery {
   RollupGetRollupIndexCapsQuery::{  }
 }
@@ -67765,14 +67541,16 @@ pub impl ToJson for RollupPutJobQuery with fn to_json(_self : RollupPutJobQuery)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for RollupPutJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "RollupPutJobQuery: expected object"))
+    raise JsonDecodeError((path, "RollupPutJobQuery: expected object"))
   }
   RollupPutJobQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn RollupPutJobQuery::new() -> RollupPutJobQuery {
   RollupPutJobQuery::{  }
 }
@@ -67823,7 +67601,7 @@ pub impl ToJson for RollupPutJobBody with fn to_json(self : RollupPutJobBody) ->
 ///|
 pub impl FromJson for RollupPutJobBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "RollupPutJobBody: expected object"))
+    raise JsonDecodeError((path, "RollupPutJobBody: expected object"))
   }
   {
     cron: @json.from_json(
@@ -67947,9 +67725,7 @@ pub impl ToJson for RollupRollupSearchQuery with fn to_json(
 ///|
 pub impl FromJson for RollupRollupSearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "RollupRollupSearchQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "RollupRollupSearchQuery: expected object"))
   }
   {
     rest_total_hits_as_int: match obj.get("rest_total_hits_as_int") {
@@ -68024,9 +67800,7 @@ pub impl ToJson for RollupRollupSearchBody with fn to_json(
 ///|
 pub impl FromJson for RollupRollupSearchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "RollupRollupSearchBody: expected object"),
-    )
+    raise JsonDecodeError((path, "RollupRollupSearchBody: expected object"))
   }
   {
     aggregations: match obj.get("aggregations") {
@@ -68090,9 +67864,7 @@ pub impl ToJson for RollupRollupSearchResponse with fn to_json(
 ///|
 pub impl FromJson for RollupRollupSearchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "RollupRollupSearchResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "RollupRollupSearchResponse: expected object"))
   }
   {
     took: @json.from_json(
@@ -68170,14 +67942,16 @@ pub impl ToJson for RollupStartJobQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for RollupStartJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "RollupStartJobQuery: expected object"))
+    raise JsonDecodeError((path, "RollupStartJobQuery: expected object"))
   }
   RollupStartJobQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn RollupStartJobQuery::new() -> RollupStartJobQuery {
   RollupStartJobQuery::{  }
 }
@@ -68207,9 +67981,7 @@ pub impl ToJson for RollupStartJobResponse with fn to_json(
 ///|
 pub impl FromJson for RollupStartJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "RollupStartJobResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "RollupStartJobResponse: expected object"))
   }
   {
     started: @json.from_json(
@@ -68273,7 +68045,7 @@ pub impl ToJson for RollupStopJobQuery with fn to_json(
 ///|
 pub impl FromJson for RollupStopJobQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "RollupStopJobQuery: expected object"))
+    raise JsonDecodeError((path, "RollupStopJobQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -68332,9 +68104,7 @@ pub impl ToJson for RollupStopJobResponse with fn to_json(
 ///|
 pub impl FromJson for RollupStopJobResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "RollupStopJobResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "RollupStopJobResponse: expected object"))
   }
   {
     stopped: @json.from_json(
@@ -68385,9 +68155,10 @@ pub impl ToJson for ScriptsPainlessExecuteQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for ScriptsPainlessExecuteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ScriptsPainlessExecuteQuery: expected object"),
     )
   }
@@ -68395,6 +68166,7 @@ pub impl FromJson for ScriptsPainlessExecuteQuery with fn from_json(json, path) 
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn ScriptsPainlessExecuteQuery::new() -> ScriptsPainlessExecuteQuery {
   ScriptsPainlessExecuteQuery::{  }
 }
@@ -68437,9 +68209,7 @@ pub impl ToJson for ScriptsPainlessExecuteBody with fn to_json(
 ///|
 pub impl FromJson for ScriptsPainlessExecuteBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ScriptsPainlessExecuteBody: expected object"),
-    )
+    raise JsonDecodeError((path, "ScriptsPainlessExecuteBody: expected object"))
   }
   {
     context: match obj.get("context") {
@@ -68490,7 +68260,7 @@ pub impl FromJson for ScriptsPainlessExecuteResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "ScriptsPainlessExecuteResponse: expected object"),
     )
   }
@@ -68559,7 +68329,7 @@ pub impl ToJson for ScrollQuery with fn to_json(self : ScrollQuery) -> Json {
 ///|
 pub impl FromJson for ScrollQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ScrollQuery: expected object"))
+    raise JsonDecodeError((path, "ScrollQuery: expected object"))
   }
   {
     scroll: match obj.get("scroll") {
@@ -68632,7 +68402,7 @@ pub impl ToJson for ScrollBody with fn to_json(self : ScrollBody) -> Json {
 ///|
 pub impl FromJson for ScrollBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ScrollBody: expected object"))
+    raise JsonDecodeError((path, "ScrollBody: expected object"))
   }
   {
     scroll: match obj.get("scroll") {
@@ -68934,7 +68704,7 @@ pub impl ToJson for SearchQuery with fn to_json(self : SearchQuery) -> Json {
 ///|
 pub impl FromJson for SearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SearchQuery: expected object"))
+    raise JsonDecodeError((path, "SearchQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -69702,7 +69472,7 @@ pub impl ToJson for SearchBody with fn to_json(self : SearchBody) -> Json {
 ///|
 pub impl FromJson for SearchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SearchBody: expected object"))
+    raise JsonDecodeError((path, "SearchBody: expected object"))
   }
   {
     aggregations: match obj.get("aggregations") {
@@ -70032,9 +69802,10 @@ pub impl ToJson for SearchApplicationDeleteQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SearchApplicationDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchApplicationDeleteQuery: expected object"),
     )
   }
@@ -70042,6 +69813,7 @@ pub impl FromJson for SearchApplicationDeleteQuery with fn from_json(json, path)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SearchApplicationDeleteQuery::new() -> SearchApplicationDeleteQuery {
   SearchApplicationDeleteQuery::{  }
 }
@@ -70101,12 +69873,13 @@ pub impl ToJson for SearchApplicationDeleteBehavioralAnalyticsQuery with fn to_j
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SearchApplicationDeleteBehavioralAnalyticsQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchApplicationDeleteBehavioralAnalyticsQuery: expected object"),
     )
   }
@@ -70114,6 +69887,7 @@ pub impl FromJson for SearchApplicationDeleteBehavioralAnalyticsQuery with fn fr
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SearchApplicationDeleteBehavioralAnalyticsQuery::new() -> SearchApplicationDeleteBehavioralAnalyticsQuery {
   SearchApplicationDeleteBehavioralAnalyticsQuery::{  }
 }
@@ -70170,16 +69944,16 @@ pub impl ToJson for SearchApplicationGetQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SearchApplicationGetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SearchApplicationGetQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SearchApplicationGetQuery: expected object"))
   }
   SearchApplicationGetQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SearchApplicationGetQuery::new() -> SearchApplicationGetQuery {
   SearchApplicationGetQuery::{  }
 }
@@ -70236,12 +70010,13 @@ pub impl ToJson for SearchApplicationGetBehavioralAnalyticsQuery with fn to_json
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SearchApplicationGetBehavioralAnalyticsQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchApplicationGetBehavioralAnalyticsQuery: expected object"),
     )
   }
@@ -70249,6 +70024,7 @@ pub impl FromJson for SearchApplicationGetBehavioralAnalyticsQuery with fn from_
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SearchApplicationGetBehavioralAnalyticsQuery::new() -> SearchApplicationGetBehavioralAnalyticsQuery {
   SearchApplicationGetBehavioralAnalyticsQuery::{  }
 }
@@ -70329,9 +70105,7 @@ pub impl ToJson for SearchApplicationListQuery with fn to_json(
 ///|
 pub impl FromJson for SearchApplicationListQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SearchApplicationListQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SearchApplicationListQuery: expected object"))
   }
   {
     q: match obj.get("q") {
@@ -70403,7 +70177,7 @@ pub impl FromJson for SearchApplicationListResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchApplicationListResponse: expected object"),
     )
   }
@@ -70468,7 +70242,7 @@ pub impl FromJson for SearchApplicationPostBehavioralAnalyticsEventQuery with fn
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (
         path, "SearchApplicationPostBehavioralAnalyticsEventQuery: expected object",
       ),
@@ -70530,7 +70304,7 @@ pub impl FromJson for SearchApplicationPostBehavioralAnalyticsEventResponse with
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (
         path, "SearchApplicationPostBehavioralAnalyticsEventResponse: expected object",
       ),
@@ -70609,9 +70383,7 @@ pub impl ToJson for SearchApplicationPutQuery with fn to_json(
 ///|
 pub impl FromJson for SearchApplicationPutQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SearchApplicationPutQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SearchApplicationPutQuery: expected object"))
   }
   {
     create: match obj.get("create") {
@@ -70661,7 +70433,7 @@ pub impl ToJson for SearchApplicationPutResponse with fn to_json(
 ///|
 pub impl FromJson for SearchApplicationPutResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchApplicationPutResponse: expected object"),
     )
   }
@@ -70717,12 +70489,13 @@ pub impl ToJson for SearchApplicationPutBehavioralAnalyticsQuery with fn to_json
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SearchApplicationPutBehavioralAnalyticsQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchApplicationPutBehavioralAnalyticsQuery: expected object"),
     )
   }
@@ -70730,6 +70503,7 @@ pub impl FromJson for SearchApplicationPutBehavioralAnalyticsQuery with fn from_
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SearchApplicationPutBehavioralAnalyticsQuery::new() -> SearchApplicationPutBehavioralAnalyticsQuery {
   SearchApplicationPutBehavioralAnalyticsQuery::{  }
 }
@@ -70786,12 +70560,13 @@ pub impl ToJson for SearchApplicationRenderQueryQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SearchApplicationRenderQueryQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchApplicationRenderQueryQuery: expected object"),
     )
   }
@@ -70799,6 +70574,7 @@ pub impl FromJson for SearchApplicationRenderQueryQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SearchApplicationRenderQueryQuery::new() -> SearchApplicationRenderQueryQuery {
   SearchApplicationRenderQueryQuery::{  }
 }
@@ -70834,7 +70610,7 @@ pub impl FromJson for SearchApplicationRenderQueryBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchApplicationRenderQueryBody: expected object"),
     )
   }
@@ -70917,7 +70693,7 @@ pub impl ToJson for SearchApplicationSearchQuery with fn to_json(
 ///|
 pub impl FromJson for SearchApplicationSearchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchApplicationSearchQuery: expected object"),
     )
   }
@@ -70970,7 +70746,7 @@ pub impl ToJson for SearchApplicationSearchBody with fn to_json(
 ///|
 pub impl FromJson for SearchApplicationSearchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchApplicationSearchBody: expected object"),
     )
   }
@@ -71085,7 +70861,7 @@ pub impl ToJson for SearchMvtQuery with fn to_json(self : SearchMvtQuery) -> Jso
 ///|
 pub impl FromJson for SearchMvtQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SearchMvtQuery: expected object"))
+    raise JsonDecodeError((path, "SearchMvtQuery: expected object"))
   }
   {
     exact_bounds: match obj.get("exact_bounds") {
@@ -71287,7 +71063,7 @@ pub impl ToJson for SearchMvtBody with fn to_json(self : SearchMvtBody) -> Json 
 ///|
 pub impl FromJson for SearchMvtBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SearchMvtBody: expected object"))
+    raise JsonDecodeError((path, "SearchMvtBody: expected object"))
   }
   {
     aggs: match obj.get("aggs") {
@@ -71514,7 +71290,7 @@ pub impl ToJson for SearchShardsQuery with fn to_json(self : SearchShardsQuery) 
 ///|
 pub impl FromJson for SearchShardsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SearchShardsQuery: expected object"))
+    raise JsonDecodeError((path, "SearchShardsQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -71638,7 +71414,7 @@ pub impl ToJson for SearchShardsResponse with fn to_json(
 ///|
 pub impl FromJson for SearchShardsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SearchShardsResponse: expected object"))
+    raise JsonDecodeError((path, "SearchShardsResponse: expected object"))
   }
   {
     nodes: @json.from_json(
@@ -71771,7 +71547,7 @@ pub impl ToJson for SearchTemplateQuery with fn to_json(
 ///|
 pub impl FromJson for SearchTemplateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SearchTemplateQuery: expected object"))
+    raise JsonDecodeError((path, "SearchTemplateQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -71995,7 +71771,7 @@ pub impl ToJson for SearchTemplateBody with fn to_json(
 ///|
 pub impl FromJson for SearchTemplateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SearchTemplateBody: expected object"))
+    raise JsonDecodeError((path, "SearchTemplateBody: expected object"))
   }
   {
     explain: match obj.get("explain") {
@@ -72117,9 +71893,7 @@ pub impl ToJson for SearchTemplateResponse with fn to_json(
 ///|
 pub impl FromJson for SearchTemplateResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SearchTemplateResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SearchTemplateResponse: expected object"))
   }
   {
     took: @json.from_json(
@@ -72247,12 +72021,13 @@ pub impl ToJson for SearchableSnapshotsCacheStatsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SearchableSnapshotsCacheStatsQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchableSnapshotsCacheStatsQuery: expected object"),
     )
   }
@@ -72260,6 +72035,7 @@ pub impl FromJson for SearchableSnapshotsCacheStatsQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SearchableSnapshotsCacheStatsQuery::new() -> SearchableSnapshotsCacheStatsQuery {
   SearchableSnapshotsCacheStatsQuery::{  }
 }
@@ -72292,7 +72068,7 @@ pub impl FromJson for SearchableSnapshotsCacheStatsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchableSnapshotsCacheStatsResponse: expected object"),
     )
   }
@@ -72374,7 +72150,7 @@ pub impl FromJson for SearchableSnapshotsClearCacheQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchableSnapshotsClearCacheQuery: expected object"),
     )
   }
@@ -72500,7 +72276,7 @@ pub impl FromJson for SearchableSnapshotsMountQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchableSnapshotsMountQuery: expected object"),
     )
   }
@@ -72587,7 +72363,7 @@ pub impl ToJson for SearchableSnapshotsMountBody with fn to_json(
 ///|
 pub impl FromJson for SearchableSnapshotsMountBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchableSnapshotsMountBody: expected object"),
     )
   }
@@ -72647,7 +72423,7 @@ pub impl FromJson for SearchableSnapshotsMountResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchableSnapshotsMountResponse: expected object"),
     )
   }
@@ -72721,7 +72497,7 @@ pub impl FromJson for SearchableSnapshotsStatsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchableSnapshotsStatsQuery: expected object"),
     )
   }
@@ -72775,7 +72551,7 @@ pub impl FromJson for SearchableSnapshotsStatsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SearchableSnapshotsStatsResponse: expected object"),
     )
   }
@@ -72838,12 +72614,13 @@ pub impl ToJson for SecurityActivateUserProfileQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityActivateUserProfileQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityActivateUserProfileQuery: expected object"),
     )
   }
@@ -72851,6 +72628,7 @@ pub impl FromJson for SecurityActivateUserProfileQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityActivateUserProfileQuery::new() -> SecurityActivateUserProfileQuery {
   SecurityActivateUserProfileQuery::{  }
 }
@@ -72898,7 +72676,7 @@ pub impl FromJson for SecurityActivateUserProfileBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityActivateUserProfileBody: expected object"),
     )
   }
@@ -72980,16 +72758,16 @@ pub impl ToJson for SecurityAuthenticateQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityAuthenticateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityAuthenticateQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityAuthenticateQuery: expected object"))
   }
   SecurityAuthenticateQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityAuthenticateQuery::new() -> SecurityAuthenticateQuery {
   SecurityAuthenticateQuery::{  }
 }
@@ -73051,7 +72829,7 @@ pub impl ToJson for SecurityAuthenticateResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityAuthenticateResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityAuthenticateResponse: expected object"),
     )
   }
@@ -73154,7 +72932,7 @@ pub impl ToJson for SecurityBulkDeleteRoleQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityBulkDeleteRoleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityBulkDeleteRoleQuery: expected object"),
     )
   }
@@ -73203,9 +72981,7 @@ pub impl ToJson for SecurityBulkDeleteRoleBody with fn to_json(
 ///|
 pub impl FromJson for SecurityBulkDeleteRoleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityBulkDeleteRoleBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityBulkDeleteRoleBody: expected object"))
   }
   {
     names: @json.from_json(
@@ -73255,7 +73031,7 @@ pub impl FromJson for SecurityBulkDeleteRoleResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityBulkDeleteRoleResponse: expected object"),
     )
   }
@@ -73325,9 +73101,7 @@ pub impl ToJson for SecurityBulkPutRoleQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityBulkPutRoleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityBulkPutRoleQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityBulkPutRoleQuery: expected object"))
   }
   {
     refresh: match obj.get("refresh") {
@@ -73374,9 +73148,7 @@ pub impl ToJson for SecurityBulkPutRoleBody with fn to_json(
 ///|
 pub impl FromJson for SecurityBulkPutRoleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityBulkPutRoleBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityBulkPutRoleBody: expected object"))
   }
   {
     roles: @json.from_json(
@@ -73428,7 +73200,7 @@ pub impl ToJson for SecurityBulkPutRoleResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityBulkPutRoleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityBulkPutRoleResponse: expected object"),
     )
   }
@@ -73494,12 +73266,13 @@ pub impl ToJson for SecurityBulkUpdateApiKeysQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityBulkUpdateApiKeysQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityBulkUpdateApiKeysQuery: expected object"),
     )
   }
@@ -73507,6 +73280,7 @@ pub impl FromJson for SecurityBulkUpdateApiKeysQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityBulkUpdateApiKeysQuery::new() -> SecurityBulkUpdateApiKeysQuery {
   SecurityBulkUpdateApiKeysQuery::{  }
 }
@@ -73554,7 +73328,7 @@ pub impl FromJson for SecurityBulkUpdateApiKeysBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityBulkUpdateApiKeysBody: expected object"),
     )
   }
@@ -73620,7 +73394,7 @@ pub impl FromJson for SecurityBulkUpdateApiKeysResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityBulkUpdateApiKeysResponse: expected object"),
     )
   }
@@ -73690,7 +73464,7 @@ pub impl ToJson for SecurityChangePasswordQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityChangePasswordQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityChangePasswordQuery: expected object"),
     )
   }
@@ -73747,9 +73521,7 @@ pub impl ToJson for SecurityChangePasswordBody with fn to_json(
 ///|
 pub impl FromJson for SecurityChangePasswordBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityChangePasswordBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityChangePasswordBody: expected object"))
   }
   {
     password: match obj.get("password") {
@@ -73827,12 +73599,13 @@ pub impl ToJson for SecurityClearApiKeyCacheQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityClearApiKeyCacheQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityClearApiKeyCacheQuery: expected object"),
     )
   }
@@ -73840,6 +73613,7 @@ pub impl FromJson for SecurityClearApiKeyCacheQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityClearApiKeyCacheQuery::new() -> SecurityClearApiKeyCacheQuery {
   SecurityClearApiKeyCacheQuery::{  }
 }
@@ -73876,7 +73650,7 @@ pub impl FromJson for SecurityClearApiKeyCacheResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityClearApiKeyCacheResponse: expected object"),
     )
   }
@@ -73937,12 +73711,13 @@ pub impl ToJson for SecurityClearCachedPrivilegesQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityClearCachedPrivilegesQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityClearCachedPrivilegesQuery: expected object"),
     )
   }
@@ -73950,6 +73725,7 @@ pub impl FromJson for SecurityClearCachedPrivilegesQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityClearCachedPrivilegesQuery::new() -> SecurityClearCachedPrivilegesQuery {
   SecurityClearCachedPrivilegesQuery::{  }
 }
@@ -73986,7 +73762,7 @@ pub impl FromJson for SecurityClearCachedPrivilegesResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityClearCachedPrivilegesResponse: expected object"),
     )
   }
@@ -74062,7 +73838,7 @@ pub impl FromJson for SecurityClearCachedRealmsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityClearCachedRealmsQuery: expected object"),
     )
   }
@@ -74119,7 +73895,7 @@ pub impl FromJson for SecurityClearCachedRealmsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityClearCachedRealmsResponse: expected object"),
     )
   }
@@ -74180,12 +73956,13 @@ pub impl ToJson for SecurityClearCachedRolesQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityClearCachedRolesQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityClearCachedRolesQuery: expected object"),
     )
   }
@@ -74193,6 +73970,7 @@ pub impl FromJson for SecurityClearCachedRolesQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityClearCachedRolesQuery::new() -> SecurityClearCachedRolesQuery {
   SecurityClearCachedRolesQuery::{  }
 }
@@ -74229,7 +74007,7 @@ pub impl FromJson for SecurityClearCachedRolesResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityClearCachedRolesResponse: expected object"),
     )
   }
@@ -74290,12 +74068,13 @@ pub impl ToJson for SecurityClearCachedServiceTokensQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityClearCachedServiceTokensQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityClearCachedServiceTokensQuery: expected object"),
     )
   }
@@ -74303,6 +74082,7 @@ pub impl FromJson for SecurityClearCachedServiceTokensQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityClearCachedServiceTokensQuery::new() -> SecurityClearCachedServiceTokensQuery {
   SecurityClearCachedServiceTokensQuery::{  }
 }
@@ -74339,7 +74119,7 @@ pub impl FromJson for SecurityClearCachedServiceTokensResponse with fn from_json
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityClearCachedServiceTokensResponse: expected object"),
     )
   }
@@ -74419,9 +74199,7 @@ pub impl ToJson for SecurityCloneApiKeyQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityCloneApiKeyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityCloneApiKeyQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityCloneApiKeyQuery: expected object"))
   }
   {
     refresh: match obj.get("refresh") {
@@ -74483,9 +74261,7 @@ pub impl ToJson for SecurityCloneApiKeyBody with fn to_json(
 ///|
 pub impl FromJson for SecurityCloneApiKeyBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityCloneApiKeyBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityCloneApiKeyBody: expected object"))
   }
   {
     api_key: @json.from_json(
@@ -74549,7 +74325,7 @@ pub impl ToJson for SecurityCloneApiKeyResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityCloneApiKeyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityCloneApiKeyResponse: expected object"),
     )
   }
@@ -74628,9 +74404,7 @@ pub impl ToJson for SecurityCreateApiKeyQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityCreateApiKeyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityCreateApiKeyQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityCreateApiKeyQuery: expected object"))
   }
   {
     refresh: match obj.get("refresh") {
@@ -74695,9 +74469,7 @@ pub impl ToJson for SecurityCreateApiKeyBody with fn to_json(
 ///|
 pub impl FromJson for SecurityCreateApiKeyBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityCreateApiKeyBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityCreateApiKeyBody: expected object"))
   }
   {
     expiration: match obj.get("expiration") {
@@ -74763,7 +74535,7 @@ pub impl ToJson for SecurityCreateApiKeyResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityCreateApiKeyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityCreateApiKeyResponse: expected object"),
     )
   }
@@ -74831,12 +74603,13 @@ pub impl ToJson for SecurityCreateCrossClusterApiKeyQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityCreateCrossClusterApiKeyQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityCreateCrossClusterApiKeyQuery: expected object"),
     )
   }
@@ -74844,6 +74617,7 @@ pub impl FromJson for SecurityCreateCrossClusterApiKeyQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityCreateCrossClusterApiKeyQuery::new() -> SecurityCreateCrossClusterApiKeyQuery {
   SecurityCreateCrossClusterApiKeyQuery::{  }
 }
@@ -74893,7 +74667,7 @@ pub impl FromJson for SecurityCreateCrossClusterApiKeyBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityCreateCrossClusterApiKeyBody: expected object"),
     )
   }
@@ -74968,7 +74742,7 @@ pub impl FromJson for SecurityCreateCrossClusterApiKeyResponse with fn from_json
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityCreateCrossClusterApiKeyResponse: expected object"),
     )
   }
@@ -75050,7 +74824,7 @@ pub impl FromJson for SecurityCreateServiceTokenQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityCreateServiceTokenQuery: expected object"),
     )
   }
@@ -75104,7 +74878,7 @@ pub impl FromJson for SecurityCreateServiceTokenResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityCreateServiceTokenResponse: expected object"),
     )
   }
@@ -75179,16 +74953,16 @@ pub impl ToJson for SecurityDelegatePkiQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityDelegatePkiQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityDelegatePkiQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityDelegatePkiQuery: expected object"))
   }
   SecurityDelegatePkiQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityDelegatePkiQuery::new() -> SecurityDelegatePkiQuery {
   SecurityDelegatePkiQuery::{  }
 }
@@ -75227,7 +75001,7 @@ pub impl ToJson for SecurityDelegatePkiResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityDelegatePkiResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityDelegatePkiResponse: expected object"),
     )
   }
@@ -75302,7 +75076,7 @@ pub impl FromJson for SecurityDeletePrivilegesQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityDeletePrivilegesQuery: expected object"),
     )
   }
@@ -75393,9 +75167,7 @@ pub impl ToJson for SecurityDeleteRoleQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityDeleteRoleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityDeleteRoleQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityDeleteRoleQuery: expected object"))
   }
   {
     refresh: match obj.get("refresh") {
@@ -75442,9 +75214,7 @@ pub impl ToJson for SecurityDeleteRoleResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityDeleteRoleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityDeleteRoleResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityDeleteRoleResponse: expected object"))
   }
   {
     found: @json.from_json(
@@ -75506,7 +75276,7 @@ pub impl FromJson for SecurityDeleteRoleMappingQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityDeleteRoleMappingQuery: expected object"),
     )
   }
@@ -75558,7 +75328,7 @@ pub impl FromJson for SecurityDeleteRoleMappingResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityDeleteRoleMappingResponse: expected object"),
     )
   }
@@ -75622,7 +75392,7 @@ pub impl FromJson for SecurityDeleteServiceTokenQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityDeleteServiceTokenQuery: expected object"),
     )
   }
@@ -75674,7 +75444,7 @@ pub impl FromJson for SecurityDeleteServiceTokenResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityDeleteServiceTokenResponse: expected object"),
     )
   }
@@ -75746,9 +75516,7 @@ pub impl ToJson for SecurityDeleteUserQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityDeleteUserQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityDeleteUserQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityDeleteUserQuery: expected object"))
   }
   {
     refresh: match obj.get("refresh") {
@@ -75795,9 +75563,7 @@ pub impl ToJson for SecurityDeleteUserResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityDeleteUserResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityDeleteUserResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityDeleteUserResponse: expected object"))
   }
   {
     found: @json.from_json(
@@ -75856,9 +75622,7 @@ pub impl ToJson for SecurityDisableUserQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityDisableUserQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityDisableUserQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityDisableUserQuery: expected object"))
   }
   {
     refresh: match obj.get("refresh") {
@@ -75943,7 +75707,7 @@ pub impl FromJson for SecurityDisableUserProfileQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityDisableUserProfileQuery: expected object"),
     )
   }
@@ -76027,9 +75791,7 @@ pub impl ToJson for SecurityEnableUserQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityEnableUserQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityEnableUserQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityEnableUserQuery: expected object"))
   }
   {
     refresh: match obj.get("refresh") {
@@ -76114,7 +75876,7 @@ pub impl FromJson for SecurityEnableUserProfileQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityEnableUserProfileQuery: expected object"),
     )
   }
@@ -76190,16 +75952,16 @@ pub impl ToJson for SecurityEnrollKibanaQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityEnrollKibanaQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityEnrollKibanaQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityEnrollKibanaQuery: expected object"))
   }
   SecurityEnrollKibanaQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityEnrollKibanaQuery::new() -> SecurityEnrollKibanaQuery {
   SecurityEnrollKibanaQuery::{  }
 }
@@ -76234,7 +75996,7 @@ pub impl ToJson for SecurityEnrollKibanaResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityEnrollKibanaResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityEnrollKibanaResponse: expected object"),
     )
   }
@@ -76294,16 +76056,16 @@ pub impl ToJson for SecurityEnrollNodeQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityEnrollNodeQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityEnrollNodeQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityEnrollNodeQuery: expected object"))
   }
   SecurityEnrollNodeQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityEnrollNodeQuery::new() -> SecurityEnrollNodeQuery {
   SecurityEnrollNodeQuery::{  }
 }
@@ -76346,9 +76108,7 @@ pub impl ToJson for SecurityEnrollNodeResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityEnrollNodeResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityEnrollNodeResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityEnrollNodeResponse: expected object"))
   }
   {
     http_ca_key: @json.from_json(
@@ -76465,9 +76225,7 @@ pub impl ToJson for SecurityGetApiKeyQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityGetApiKeyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityGetApiKeyQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityGetApiKeyQuery: expected object"))
   }
   {
     id: match obj.get("id") {
@@ -76597,9 +76355,7 @@ pub impl ToJson for SecurityGetApiKeyResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityGetApiKeyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityGetApiKeyResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityGetApiKeyResponse: expected object"))
   }
   {
     api_keys: @json.from_json(
@@ -76644,12 +76400,13 @@ pub impl ToJson for SecurityGetBuiltinPrivilegesQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityGetBuiltinPrivilegesQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityGetBuiltinPrivilegesQuery: expected object"),
     )
   }
@@ -76657,6 +76414,7 @@ pub impl FromJson for SecurityGetBuiltinPrivilegesQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityGetBuiltinPrivilegesQuery::new() -> SecurityGetBuiltinPrivilegesQuery {
   SecurityGetBuiltinPrivilegesQuery::{  }
 }
@@ -76693,7 +76451,7 @@ pub impl FromJson for SecurityGetBuiltinPrivilegesResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityGetBuiltinPrivilegesResponse: expected object"),
     )
   }
@@ -76751,16 +76509,16 @@ pub impl ToJson for SecurityGetPrivilegesQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityGetPrivilegesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityGetPrivilegesQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityGetPrivilegesQuery: expected object"))
   }
   SecurityGetPrivilegesQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityGetPrivilegesQuery::new() -> SecurityGetPrivilegesQuery {
   SecurityGetPrivilegesQuery::{  }
 }
@@ -76832,14 +76590,16 @@ pub impl ToJson for SecurityGetRoleQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityGetRoleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "SecurityGetRoleQuery: expected object"))
+    raise JsonDecodeError((path, "SecurityGetRoleQuery: expected object"))
   }
   SecurityGetRoleQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityGetRoleQuery::new() -> SecurityGetRoleQuery {
   SecurityGetRoleQuery::{  }
 }
@@ -76902,9 +76662,10 @@ pub impl ToJson for SecurityGetRoleMappingQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityGetRoleMappingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityGetRoleMappingQuery: expected object"),
     )
   }
@@ -76912,6 +76673,7 @@ pub impl FromJson for SecurityGetRoleMappingQuery with fn from_json(json, path) 
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityGetRoleMappingQuery::new() -> SecurityGetRoleMappingQuery {
   SecurityGetRoleMappingQuery::{  }
 }
@@ -76974,12 +76736,13 @@ pub impl ToJson for SecurityGetServiceAccountsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityGetServiceAccountsQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityGetServiceAccountsQuery: expected object"),
     )
   }
@@ -76987,6 +76750,7 @@ pub impl FromJson for SecurityGetServiceAccountsQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityGetServiceAccountsQuery::new() -> SecurityGetServiceAccountsQuery {
   SecurityGetServiceAccountsQuery::{  }
 }
@@ -77058,12 +76822,13 @@ pub impl ToJson for SecurityGetServiceCredentialsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityGetServiceCredentialsQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityGetServiceCredentialsQuery: expected object"),
     )
   }
@@ -77071,6 +76836,7 @@ pub impl FromJson for SecurityGetServiceCredentialsQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityGetServiceCredentialsQuery::new() -> SecurityGetServiceCredentialsQuery {
   SecurityGetServiceCredentialsQuery::{  }
 }
@@ -77109,7 +76875,7 @@ pub impl FromJson for SecurityGetServiceCredentialsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityGetServiceCredentialsResponse: expected object"),
     )
   }
@@ -77189,9 +76955,7 @@ pub impl ToJson for SecurityGetSettingsQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityGetSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityGetSettingsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityGetSettingsQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -77246,7 +77010,7 @@ pub impl ToJson for SecurityGetSettingsResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityGetSettingsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityGetSettingsResponse: expected object"),
     )
   }
@@ -77307,16 +77071,16 @@ pub impl ToJson for SecurityGetStatsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityGetStatsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityGetStatsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityGetStatsQuery: expected object"))
   }
   SecurityGetStatsQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityGetStatsQuery::new() -> SecurityGetStatsQuery {
   SecurityGetStatsQuery::{  }
 }
@@ -77349,9 +77113,7 @@ pub impl ToJson for SecurityGetStatsResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityGetStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityGetStatsResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityGetStatsResponse: expected object"))
   }
   {
     nodes: @json.from_json(
@@ -77402,16 +77164,16 @@ pub impl ToJson for SecurityGetTokenQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityGetTokenQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityGetTokenQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityGetTokenQuery: expected object"))
   }
   SecurityGetTokenQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityGetTokenQuery::new() -> SecurityGetTokenQuery {
   SecurityGetTokenQuery::{  }
 }
@@ -77469,7 +77231,7 @@ pub impl ToJson for SecurityGetTokenBody with fn to_json(
 ///|
 pub impl FromJson for SecurityGetTokenBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SecurityGetTokenBody: expected object"))
+    raise JsonDecodeError((path, "SecurityGetTokenBody: expected object"))
   }
   {
     grant_type: match obj.get("grant_type") {
@@ -77559,9 +77321,7 @@ pub impl ToJson for SecurityGetTokenResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityGetTokenResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityGetTokenResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityGetTokenResponse: expected object"))
   }
   {
     access_token: @json.from_json(
@@ -77655,7 +77415,7 @@ pub impl ToJson for SecurityGetUserQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityGetUserQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SecurityGetUserQuery: expected object"))
+    raise JsonDecodeError((path, "SecurityGetUserQuery: expected object"))
   }
   {
     with_profile_uid: match obj.get("with_profile_uid") {
@@ -77736,12 +77496,13 @@ pub impl ToJson for SecurityGetUserPrivilegesQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityGetUserPrivilegesQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityGetUserPrivilegesQuery: expected object"),
     )
   }
@@ -77749,6 +77510,7 @@ pub impl FromJson for SecurityGetUserPrivilegesQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityGetUserPrivilegesQuery::new() -> SecurityGetUserPrivilegesQuery {
   SecurityGetUserPrivilegesQuery::{  }
 }
@@ -77799,7 +77561,7 @@ pub impl FromJson for SecurityGetUserPrivilegesResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityGetUserPrivilegesResponse: expected object"),
     )
   }
@@ -77885,7 +77647,7 @@ pub impl ToJson for SecurityGetUserProfileQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityGetUserProfileQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityGetUserProfileQuery: expected object"),
     )
   }
@@ -77942,7 +77704,7 @@ pub impl FromJson for SecurityGetUserProfileResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityGetUserProfileResponse: expected object"),
     )
   }
@@ -78008,9 +77770,7 @@ pub impl ToJson for SecurityGrantApiKeyQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityGrantApiKeyQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityGrantApiKeyQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityGrantApiKeyQuery: expected object"))
   }
   {
     refresh: match obj.get("refresh") {
@@ -78079,9 +77839,7 @@ pub impl ToJson for SecurityGrantApiKeyBody with fn to_json(
 ///|
 pub impl FromJson for SecurityGrantApiKeyBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityGrantApiKeyBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityGrantApiKeyBody: expected object"))
   }
   {
     api_key: @json.from_json(
@@ -78156,7 +77914,7 @@ pub impl ToJson for SecurityGrantApiKeyResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityGrantApiKeyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityGrantApiKeyResponse: expected object"),
     )
   }
@@ -78227,16 +77985,16 @@ pub impl ToJson for SecurityHasPrivilegesQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityHasPrivilegesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityHasPrivilegesQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityHasPrivilegesQuery: expected object"))
   }
   SecurityHasPrivilegesQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityHasPrivilegesQuery::new() -> SecurityHasPrivilegesQuery {
   SecurityHasPrivilegesQuery::{  }
 }
@@ -78279,9 +78037,7 @@ pub impl ToJson for SecurityHasPrivilegesBody with fn to_json(
 ///|
 pub impl FromJson for SecurityHasPrivilegesBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityHasPrivilegesBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityHasPrivilegesBody: expected object"))
   }
   {
     application: match obj.get("application") {
@@ -78340,7 +78096,7 @@ pub impl FromJson for SecurityHasPrivilegesResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityHasPrivilegesResponse: expected object"),
     )
   }
@@ -78418,12 +78174,13 @@ pub impl ToJson for SecurityHasPrivilegesUserProfileQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityHasPrivilegesUserProfileQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityHasPrivilegesUserProfileQuery: expected object"),
     )
   }
@@ -78431,6 +78188,7 @@ pub impl FromJson for SecurityHasPrivilegesUserProfileQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityHasPrivilegesUserProfileQuery::new() -> SecurityHasPrivilegesUserProfileQuery {
   SecurityHasPrivilegesUserProfileQuery::{  }
 }
@@ -78465,7 +78223,7 @@ pub impl FromJson for SecurityHasPrivilegesUserProfileBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityHasPrivilegesUserProfileBody: expected object"),
     )
   }
@@ -78514,7 +78272,7 @@ pub impl FromJson for SecurityHasPrivilegesUserProfileResponse with fn from_json
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityHasPrivilegesUserProfileResponse: expected object"),
     )
   }
@@ -78572,12 +78330,13 @@ pub impl ToJson for SecurityInvalidateApiKeyQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityInvalidateApiKeyQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityInvalidateApiKeyQuery: expected object"),
     )
   }
@@ -78585,6 +78344,7 @@ pub impl FromJson for SecurityInvalidateApiKeyQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityInvalidateApiKeyQuery::new() -> SecurityInvalidateApiKeyQuery {
   SecurityInvalidateApiKeyQuery::{  }
 }
@@ -78642,7 +78402,7 @@ pub impl ToJson for SecurityInvalidateApiKeyBody with fn to_json(
 ///|
 pub impl FromJson for SecurityInvalidateApiKeyBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityInvalidateApiKeyBody: expected object"),
     )
   }
@@ -78722,7 +78482,7 @@ pub impl FromJson for SecurityInvalidateApiKeyResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityInvalidateApiKeyResponse: expected object"),
     )
   }
@@ -78786,9 +78546,10 @@ pub impl ToJson for SecurityInvalidateTokenQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityInvalidateTokenQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityInvalidateTokenQuery: expected object"),
     )
   }
@@ -78796,6 +78557,7 @@ pub impl FromJson for SecurityInvalidateTokenQuery with fn from_json(json, path)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityInvalidateTokenQuery::new() -> SecurityInvalidateTokenQuery {
   SecurityInvalidateTokenQuery::{  }
 }
@@ -78843,7 +78605,7 @@ pub impl ToJson for SecurityInvalidateTokenBody with fn to_json(
 ///|
 pub impl FromJson for SecurityInvalidateTokenBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityInvalidateTokenBody: expected object"),
     )
   }
@@ -78912,7 +78674,7 @@ pub impl FromJson for SecurityInvalidateTokenResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityInvalidateTokenResponse: expected object"),
     )
   }
@@ -78979,12 +78741,13 @@ pub impl ToJson for SecurityOidcAuthenticateQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityOidcAuthenticateQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityOidcAuthenticateQuery: expected object"),
     )
   }
@@ -78992,6 +78755,7 @@ pub impl FromJson for SecurityOidcAuthenticateQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityOidcAuthenticateQuery::new() -> SecurityOidcAuthenticateQuery {
   SecurityOidcAuthenticateQuery::{  }
 }
@@ -79030,7 +78794,7 @@ pub impl ToJson for SecurityOidcAuthenticateBody with fn to_json(
 ///|
 pub impl FromJson for SecurityOidcAuthenticateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityOidcAuthenticateBody: expected object"),
     )
   }
@@ -79091,7 +78855,7 @@ pub impl FromJson for SecurityOidcAuthenticateResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityOidcAuthenticateResponse: expected object"),
     )
   }
@@ -79156,16 +78920,16 @@ pub impl ToJson for SecurityOidcLogoutQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityOidcLogoutQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityOidcLogoutQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityOidcLogoutQuery: expected object"))
   }
   SecurityOidcLogoutQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityOidcLogoutQuery::new() -> SecurityOidcLogoutQuery {
   SecurityOidcLogoutQuery::{  }
 }
@@ -79200,9 +78964,7 @@ pub impl ToJson for SecurityOidcLogoutBody with fn to_json(
 ///|
 pub impl FromJson for SecurityOidcLogoutBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityOidcLogoutBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityOidcLogoutBody: expected object"))
   }
   {
     token: @json.from_json(
@@ -79243,9 +79005,7 @@ pub impl ToJson for SecurityOidcLogoutResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityOidcLogoutResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityOidcLogoutResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityOidcLogoutResponse: expected object"))
   }
   {
     redirect: @json.from_json(
@@ -79296,12 +79056,13 @@ pub impl ToJson for SecurityOidcPrepareAuthenticationQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityOidcPrepareAuthenticationQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityOidcPrepareAuthenticationQuery: expected object"),
     )
   }
@@ -79309,6 +79070,7 @@ pub impl FromJson for SecurityOidcPrepareAuthenticationQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityOidcPrepareAuthenticationQuery::new() -> SecurityOidcPrepareAuthenticationQuery {
   SecurityOidcPrepareAuthenticationQuery::{  }
 }
@@ -79364,7 +79126,7 @@ pub impl FromJson for SecurityOidcPrepareAuthenticationBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityOidcPrepareAuthenticationBody: expected object"),
     )
   }
@@ -79435,7 +79197,7 @@ pub impl FromJson for SecurityOidcPrepareAuthenticationResponse with fn from_jso
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityOidcPrepareAuthenticationResponse: expected object"),
     )
   }
@@ -79508,9 +79270,7 @@ pub impl ToJson for SecurityPutPrivilegesQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityPutPrivilegesQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityPutPrivilegesQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityPutPrivilegesQuery: expected object"))
   }
   {
     refresh: match obj.get("refresh") {
@@ -79592,7 +79352,7 @@ pub impl ToJson for SecurityPutRoleQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityPutRoleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SecurityPutRoleQuery: expected object"))
+    raise JsonDecodeError((path, "SecurityPutRoleQuery: expected object"))
   }
   {
     refresh: match obj.get("refresh") {
@@ -79685,7 +79445,7 @@ pub impl ToJson for SecurityPutRoleBody with fn to_json(
 ///|
 pub impl FromJson for SecurityPutRoleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SecurityPutRoleBody: expected object"))
+    raise JsonDecodeError((path, "SecurityPutRoleBody: expected object"))
   }
   {
     applications: match obj.get("applications") {
@@ -79790,9 +79550,7 @@ pub impl ToJson for SecurityPutRoleResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityPutRoleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityPutRoleResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityPutRoleResponse: expected object"))
   }
   {
     role: @json.from_json(
@@ -79854,7 +79612,7 @@ pub impl ToJson for SecurityPutRoleMappingQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityPutRoleMappingQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityPutRoleMappingQuery: expected object"),
     )
   }
@@ -79931,9 +79689,7 @@ pub impl ToJson for SecurityPutRoleMappingBody with fn to_json(
 ///|
 pub impl FromJson for SecurityPutRoleMappingBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityPutRoleMappingBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityPutRoleMappingBody: expected object"))
   }
   {
     enabled: match obj.get("enabled") {
@@ -80007,7 +79763,7 @@ pub impl FromJson for SecurityPutRoleMappingResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityPutRoleMappingResponse: expected object"),
     )
   }
@@ -80076,7 +79832,7 @@ pub impl ToJson for SecurityPutUserQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityPutUserQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SecurityPutUserQuery: expected object"))
+    raise JsonDecodeError((path, "SecurityPutUserQuery: expected object"))
   }
   {
     refresh: match obj.get("refresh") {
@@ -80159,7 +79915,7 @@ pub impl ToJson for SecurityPutUserBody with fn to_json(
 ///|
 pub impl FromJson for SecurityPutUserBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SecurityPutUserBody: expected object"))
+    raise JsonDecodeError((path, "SecurityPutUserBody: expected object"))
   }
   {
     username: match obj.get("username") {
@@ -80247,9 +80003,7 @@ pub impl ToJson for SecurityPutUserResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityPutUserResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityPutUserResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityPutUserResponse: expected object"))
   }
   {
     created: @json.from_json(
@@ -80321,9 +80075,7 @@ pub impl ToJson for SecurityQueryApiKeysQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityQueryApiKeysQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityQueryApiKeysQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityQueryApiKeysQuery: expected object"))
   }
   {
     with_limited_by: match obj.get("with_limited_by") {
@@ -80421,9 +80173,7 @@ pub impl ToJson for SecurityQueryApiKeysBody with fn to_json(
 ///|
 pub impl FromJson for SecurityQueryApiKeysBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityQueryApiKeysBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityQueryApiKeysBody: expected object"))
   }
   {
     aggregations: match obj.get("aggregations") {
@@ -80499,7 +80249,7 @@ pub impl ToJson for SecurityQueryApiKeysResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityQueryApiKeysResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityQueryApiKeysResponse: expected object"),
     )
   }
@@ -80569,16 +80319,16 @@ pub impl ToJson for SecurityQueryRoleQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityQueryRoleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityQueryRoleQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityQueryRoleQuery: expected object"))
   }
   SecurityQueryRoleQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityQueryRoleQuery::new() -> SecurityQueryRoleQuery {
   SecurityQueryRoleQuery::{  }
 }
@@ -80631,9 +80381,7 @@ pub impl ToJson for SecurityQueryRoleBody with fn to_json(
 ///|
 pub impl FromJson for SecurityQueryRoleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityQueryRoleBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityQueryRoleBody: expected object"))
   }
   {
     query: match obj.get("query") {
@@ -80697,9 +80445,7 @@ pub impl ToJson for SecurityQueryRoleResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityQueryRoleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityQueryRoleResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityQueryRoleResponse: expected object"))
   }
   {
     total: @json.from_json(
@@ -80769,9 +80515,7 @@ pub impl ToJson for SecurityQueryUserQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityQueryUserQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityQueryUserQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityQueryUserQuery: expected object"))
   }
   {
     with_profile_uid: match obj.get("with_profile_uid") {
@@ -80842,9 +80586,7 @@ pub impl ToJson for SecurityQueryUserBody with fn to_json(
 ///|
 pub impl FromJson for SecurityQueryUserBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityQueryUserBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityQueryUserBody: expected object"))
   }
   {
     query: match obj.get("query") {
@@ -80908,9 +80650,7 @@ pub impl ToJson for SecurityQueryUserResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityQueryUserResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityQueryUserResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityQueryUserResponse: expected object"))
   }
   {
     total: @json.from_json(
@@ -80972,12 +80712,13 @@ pub impl ToJson for SecuritySamlAuthenticateQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecuritySamlAuthenticateQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySamlAuthenticateQuery: expected object"),
     )
   }
@@ -80985,6 +80726,7 @@ pub impl FromJson for SecuritySamlAuthenticateQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecuritySamlAuthenticateQuery::new() -> SecuritySamlAuthenticateQuery {
   SecuritySamlAuthenticateQuery::{  }
 }
@@ -81021,7 +80763,7 @@ pub impl ToJson for SecuritySamlAuthenticateBody with fn to_json(
 ///|
 pub impl FromJson for SecuritySamlAuthenticateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySamlAuthenticateBody: expected object"),
     )
   }
@@ -81084,7 +80826,7 @@ pub impl FromJson for SecuritySamlAuthenticateResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySamlAuthenticateResponse: expected object"),
     )
   }
@@ -81159,12 +80901,13 @@ pub impl ToJson for SecuritySamlCompleteLogoutQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecuritySamlCompleteLogoutQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySamlCompleteLogoutQuery: expected object"),
     )
   }
@@ -81172,6 +80915,7 @@ pub impl FromJson for SecuritySamlCompleteLogoutQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecuritySamlCompleteLogoutQuery::new() -> SecuritySamlCompleteLogoutQuery {
   SecuritySamlCompleteLogoutQuery::{  }
 }
@@ -81216,7 +80960,7 @@ pub impl FromJson for SecuritySamlCompleteLogoutBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySamlCompleteLogoutBody: expected object"),
     )
   }
@@ -81297,9 +81041,10 @@ pub impl ToJson for SecuritySamlInvalidateQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecuritySamlInvalidateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySamlInvalidateQuery: expected object"),
     )
   }
@@ -81307,6 +81052,7 @@ pub impl FromJson for SecuritySamlInvalidateQuery with fn from_json(json, path) 
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecuritySamlInvalidateQuery::new() -> SecuritySamlInvalidateQuery {
   SecuritySamlInvalidateQuery::{  }
 }
@@ -81346,9 +81092,7 @@ pub impl ToJson for SecuritySamlInvalidateBody with fn to_json(
 ///|
 pub impl FromJson for SecuritySamlInvalidateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecuritySamlInvalidateBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecuritySamlInvalidateBody: expected object"))
   }
   {
     acs: match obj.get("acs") {
@@ -81401,7 +81145,7 @@ pub impl FromJson for SecuritySamlInvalidateResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySamlInvalidateResponse: expected object"),
     )
   }
@@ -81462,16 +81206,16 @@ pub impl ToJson for SecuritySamlLogoutQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecuritySamlLogoutQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SecuritySamlLogoutQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecuritySamlLogoutQuery: expected object"))
   }
   SecuritySamlLogoutQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecuritySamlLogoutQuery::new() -> SecuritySamlLogoutQuery {
   SecuritySamlLogoutQuery::{  }
 }
@@ -81506,9 +81250,7 @@ pub impl ToJson for SecuritySamlLogoutBody with fn to_json(
 ///|
 pub impl FromJson for SecuritySamlLogoutBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecuritySamlLogoutBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecuritySamlLogoutBody: expected object"))
   }
   {
     token: @json.from_json(
@@ -81549,9 +81291,7 @@ pub impl ToJson for SecuritySamlLogoutResponse with fn to_json(
 ///|
 pub impl FromJson for SecuritySamlLogoutResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecuritySamlLogoutResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SecuritySamlLogoutResponse: expected object"))
   }
   {
     redirect: @json.from_json(
@@ -81602,12 +81342,13 @@ pub impl ToJson for SecuritySamlPrepareAuthenticationQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecuritySamlPrepareAuthenticationQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySamlPrepareAuthenticationQuery: expected object"),
     )
   }
@@ -81615,6 +81356,7 @@ pub impl FromJson for SecuritySamlPrepareAuthenticationQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecuritySamlPrepareAuthenticationQuery::new() -> SecuritySamlPrepareAuthenticationQuery {
   SecuritySamlPrepareAuthenticationQuery::{  }
 }
@@ -81660,7 +81402,7 @@ pub impl FromJson for SecuritySamlPrepareAuthenticationBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySamlPrepareAuthenticationBody: expected object"),
     )
   }
@@ -81717,7 +81459,7 @@ pub impl FromJson for SecuritySamlPrepareAuthenticationResponse with fn from_jso
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySamlPrepareAuthenticationResponse: expected object"),
     )
   }
@@ -81778,12 +81520,13 @@ pub impl ToJson for SecuritySamlServiceProviderMetadataQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecuritySamlServiceProviderMetadataQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySamlServiceProviderMetadataQuery: expected object"),
     )
   }
@@ -81791,6 +81534,7 @@ pub impl FromJson for SecuritySamlServiceProviderMetadataQuery with fn from_json
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecuritySamlServiceProviderMetadataQuery::new() -> SecuritySamlServiceProviderMetadataQuery {
   SecuritySamlServiceProviderMetadataQuery::{  }
 }
@@ -81826,7 +81570,7 @@ pub impl FromJson for SecuritySamlServiceProviderMetadataResponse with fn from_j
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySamlServiceProviderMetadataResponse: expected object"),
     )
   }
@@ -81896,7 +81640,7 @@ pub impl FromJson for SecuritySuggestUserProfilesQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySuggestUserProfilesQuery: expected object"),
     )
   }
@@ -81966,7 +81710,7 @@ pub impl FromJson for SecuritySuggestUserProfilesBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySuggestUserProfilesBody: expected object"),
     )
   }
@@ -82028,7 +81772,7 @@ pub impl FromJson for SecuritySuggestUserProfilesResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecuritySuggestUserProfilesResponse: expected object"),
     )
   }
@@ -82092,16 +81836,16 @@ pub impl ToJson for SecurityUpdateApiKeyQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityUpdateApiKeyQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityUpdateApiKeyQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityUpdateApiKeyQuery: expected object"))
   }
   SecurityUpdateApiKeyQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityUpdateApiKeyQuery::new() -> SecurityUpdateApiKeyQuery {
   SecurityUpdateApiKeyQuery::{  }
 }
@@ -82144,9 +81888,7 @@ pub impl ToJson for SecurityUpdateApiKeyBody with fn to_json(
 ///|
 pub impl FromJson for SecurityUpdateApiKeyBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityUpdateApiKeyBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityUpdateApiKeyBody: expected object"))
   }
   {
     role_descriptors: match obj.get("role_descriptors") {
@@ -82195,7 +81937,7 @@ pub impl ToJson for SecurityUpdateApiKeyResponse with fn to_json(
 ///|
 pub impl FromJson for SecurityUpdateApiKeyResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityUpdateApiKeyResponse: expected object"),
     )
   }
@@ -82254,12 +81996,13 @@ pub impl ToJson for SecurityUpdateCrossClusterApiKeyQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SecurityUpdateCrossClusterApiKeyQuery with fn from_json(
   json,
   path,
 ) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityUpdateCrossClusterApiKeyQuery: expected object"),
     )
   }
@@ -82267,6 +82010,7 @@ pub impl FromJson for SecurityUpdateCrossClusterApiKeyQuery with fn from_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SecurityUpdateCrossClusterApiKeyQuery::new() -> SecurityUpdateCrossClusterApiKeyQuery {
   SecurityUpdateCrossClusterApiKeyQuery::{  }
 }
@@ -82314,7 +82058,7 @@ pub impl FromJson for SecurityUpdateCrossClusterApiKeyBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityUpdateCrossClusterApiKeyBody: expected object"),
     )
   }
@@ -82373,7 +82117,7 @@ pub impl FromJson for SecurityUpdateCrossClusterApiKeyResponse with fn from_json
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityUpdateCrossClusterApiKeyResponse: expected object"),
     )
   }
@@ -82442,7 +82186,7 @@ pub impl ToJson for SecurityUpdateSettingsQuery with fn to_json(
 ///|
 pub impl FromJson for SecurityUpdateSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityUpdateSettingsQuery: expected object"),
     )
   }
@@ -82515,9 +82259,7 @@ pub impl ToJson for SecurityUpdateSettingsBody with fn to_json(
 ///|
 pub impl FromJson for SecurityUpdateSettingsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SecurityUpdateSettingsBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SecurityUpdateSettingsBody: expected object"))
   }
   {
     security: match obj.get("security") {
@@ -82569,7 +82311,7 @@ pub impl FromJson for SecurityUpdateSettingsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityUpdateSettingsResponse: expected object"),
     )
   }
@@ -82640,7 +82382,7 @@ pub impl FromJson for SecurityUpdateUserProfileDataQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityUpdateUserProfileDataQuery: expected object"),
     )
   }
@@ -82722,7 +82464,7 @@ pub impl FromJson for SecurityUpdateUserProfileDataBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SecurityUpdateUserProfileDataBody: expected object"),
     )
   }
@@ -82808,9 +82550,7 @@ pub impl ToJson for ShutdownDeleteNodeQuery with fn to_json(
 ///|
 pub impl FromJson for ShutdownDeleteNodeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ShutdownDeleteNodeQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "ShutdownDeleteNodeQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -82912,7 +82652,7 @@ pub impl ToJson for ShutdownGetNodeQuery with fn to_json(
 ///|
 pub impl FromJson for ShutdownGetNodeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ShutdownGetNodeQuery: expected object"))
+    raise JsonDecodeError((path, "ShutdownGetNodeQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -82963,9 +82703,7 @@ pub impl ToJson for ShutdownGetNodeResponse with fn to_json(
 ///|
 pub impl FromJson for ShutdownGetNodeResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "ShutdownGetNodeResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "ShutdownGetNodeResponse: expected object"))
   }
   {
     nodes: @json.from_json(
@@ -83041,7 +82779,7 @@ pub impl ToJson for ShutdownPutNodeQuery with fn to_json(
 ///|
 pub impl FromJson for ShutdownPutNodeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ShutdownPutNodeQuery: expected object"))
+    raise JsonDecodeError((path, "ShutdownPutNodeQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -83111,7 +82849,7 @@ pub impl ToJson for ShutdownPutNodeBody with fn to_json(
 ///|
 pub impl FromJson for ShutdownPutNodeBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "ShutdownPutNodeBody: expected object"))
+    raise JsonDecodeError((path, "ShutdownPutNodeBody: expected object"))
   }
   {
     type_: @json.from_json(
@@ -83207,7 +82945,7 @@ pub impl ToJson for SimulateIngestQuery with fn to_json(
 ///|
 pub impl FromJson for SimulateIngestQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SimulateIngestQuery: expected object"))
+    raise JsonDecodeError((path, "SimulateIngestQuery: expected object"))
   }
   {
     pipeline: match obj.get("pipeline") {
@@ -83285,7 +83023,7 @@ pub impl ToJson for SimulateIngestBody with fn to_json(
 ///|
 pub impl FromJson for SimulateIngestBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SimulateIngestBody: expected object"))
+    raise JsonDecodeError((path, "SimulateIngestBody: expected object"))
   }
   {
     docs: @json.from_json(
@@ -83367,9 +83105,7 @@ pub impl ToJson for SimulateIngestResponse with fn to_json(
 ///|
 pub impl FromJson for SimulateIngestResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SimulateIngestResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SimulateIngestResponse: expected object"))
   }
   {
     docs: @json.from_json(
@@ -83442,9 +83178,7 @@ pub impl ToJson for SlmDeleteLifecycleQuery with fn to_json(
 ///|
 pub impl FromJson for SlmDeleteLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SlmDeleteLifecycleQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SlmDeleteLifecycleQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -83542,9 +83276,7 @@ pub impl ToJson for SlmExecuteLifecycleQuery with fn to_json(
 ///|
 pub impl FromJson for SlmExecuteLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SlmExecuteLifecycleQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SlmExecuteLifecycleQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -83602,7 +83334,7 @@ pub impl ToJson for SlmExecuteLifecycleResponse with fn to_json(
 ///|
 pub impl FromJson for SlmExecuteLifecycleResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SlmExecuteLifecycleResponse: expected object"),
     )
   }
@@ -83668,9 +83400,7 @@ pub impl ToJson for SlmExecuteRetentionQuery with fn to_json(
 ///|
 pub impl FromJson for SlmExecuteRetentionQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SlmExecuteRetentionQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SlmExecuteRetentionQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -83765,7 +83495,7 @@ pub impl ToJson for SlmGetLifecycleQuery with fn to_json(
 ///|
 pub impl FromJson for SlmGetLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SlmGetLifecycleQuery: expected object"))
+    raise JsonDecodeError((path, "SlmGetLifecycleQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -83867,7 +83597,7 @@ pub impl ToJson for SlmGetStatsQuery with fn to_json(self : SlmGetStatsQuery) ->
 ///|
 pub impl FromJson for SlmGetStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SlmGetStatsQuery: expected object"))
+    raise JsonDecodeError((path, "SlmGetStatsQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -83943,7 +83673,7 @@ pub impl ToJson for SlmGetStatsResponse with fn to_json(
 ///|
 pub impl FromJson for SlmGetStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SlmGetStatsResponse: expected object"))
+    raise JsonDecodeError((path, "SlmGetStatsResponse: expected object"))
   }
   {
     retention_deletion_time: @json.from_json(
@@ -84035,7 +83765,7 @@ pub impl ToJson for SlmGetStatusQuery with fn to_json(self : SlmGetStatusQuery) 
 ///|
 pub impl FromJson for SlmGetStatusQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SlmGetStatusQuery: expected object"))
+    raise JsonDecodeError((path, "SlmGetStatusQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -84093,7 +83823,7 @@ pub impl ToJson for SlmGetStatusResponse with fn to_json(
 ///|
 pub impl FromJson for SlmGetStatusResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SlmGetStatusResponse: expected object"))
+    raise JsonDecodeError((path, "SlmGetStatusResponse: expected object"))
   }
   {
     operation_mode: @json.from_json(
@@ -84151,7 +83881,7 @@ pub impl ToJson for SlmPutLifecycleQuery with fn to_json(
 ///|
 pub impl FromJson for SlmPutLifecycleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SlmPutLifecycleQuery: expected object"))
+    raise JsonDecodeError((path, "SlmPutLifecycleQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -84232,7 +83962,7 @@ pub impl ToJson for SlmPutLifecycleBody with fn to_json(
 ///|
 pub impl FromJson for SlmPutLifecycleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SlmPutLifecycleBody: expected object"))
+    raise JsonDecodeError((path, "SlmPutLifecycleBody: expected object"))
   }
   {
     config: match obj.get("config") {
@@ -84334,7 +84064,7 @@ pub impl ToJson for SlmStartQuery with fn to_json(self : SlmStartQuery) -> Json 
 ///|
 pub impl FromJson for SlmStartQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SlmStartQuery: expected object"))
+    raise JsonDecodeError((path, "SlmStartQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -84422,7 +84152,7 @@ pub impl ToJson for SlmStopQuery with fn to_json(self : SlmStopQuery) -> Json {
 ///|
 pub impl FromJson for SlmStopQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SlmStopQuery: expected object"))
+    raise JsonDecodeError((path, "SlmStopQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -84515,7 +84245,7 @@ pub impl FromJson for SnapshotCleanupRepositoryQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SnapshotCleanupRepositoryQuery: expected object"),
     )
   }
@@ -84578,7 +84308,7 @@ pub impl FromJson for SnapshotCleanupRepositoryResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SnapshotCleanupRepositoryResponse: expected object"),
     )
   }
@@ -84639,7 +84369,7 @@ pub impl ToJson for SnapshotCloneQuery with fn to_json(
 ///|
 pub impl FromJson for SnapshotCloneQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SnapshotCloneQuery: expected object"))
+    raise JsonDecodeError((path, "SnapshotCloneQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -84683,7 +84413,7 @@ pub impl ToJson for SnapshotCloneBody with fn to_json(self : SnapshotCloneBody) 
 ///|
 pub impl FromJson for SnapshotCloneBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SnapshotCloneBody: expected object"))
+    raise JsonDecodeError((path, "SnapshotCloneBody: expected object"))
   }
   {
     indices: @json.from_json(
@@ -84769,7 +84499,7 @@ pub impl ToJson for SnapshotCreateQuery with fn to_json(
 ///|
 pub impl FromJson for SnapshotCreateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SnapshotCreateQuery: expected object"))
+    raise JsonDecodeError((path, "SnapshotCreateQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -84862,7 +84592,7 @@ pub impl ToJson for SnapshotCreateBody with fn to_json(
 ///|
 pub impl FromJson for SnapshotCreateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SnapshotCreateBody: expected object"))
+    raise JsonDecodeError((path, "SnapshotCreateBody: expected object"))
   }
   {
     expand_wildcards: match obj.get("expand_wildcards") {
@@ -84953,9 +84683,7 @@ pub impl ToJson for SnapshotCreateResponse with fn to_json(
 ///|
 pub impl FromJson for SnapshotCreateResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SnapshotCreateResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SnapshotCreateResponse: expected object"))
   }
   {
     accepted: match obj.get("accepted") {
@@ -85046,7 +84774,7 @@ pub impl FromJson for SnapshotCreateRepositoryQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SnapshotCreateRepositoryQuery: expected object"),
     )
   }
@@ -85162,7 +84890,7 @@ pub impl ToJson for SnapshotDeleteQuery with fn to_json(
 ///|
 pub impl FromJson for SnapshotDeleteQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SnapshotDeleteQuery: expected object"))
+    raise JsonDecodeError((path, "SnapshotDeleteQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -85272,7 +85000,7 @@ pub impl FromJson for SnapshotDeleteRepositoryQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SnapshotDeleteRepositoryQuery: expected object"),
     )
   }
@@ -85430,7 +85158,7 @@ pub impl ToJson for SnapshotGetQuery with fn to_json(self : SnapshotGetQuery) ->
 ///|
 pub impl FromJson for SnapshotGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SnapshotGetQuery: expected object"))
+    raise JsonDecodeError((path, "SnapshotGetQuery: expected object"))
   }
   {
     after: match obj.get("after") {
@@ -85646,7 +85374,7 @@ pub impl ToJson for SnapshotGetResponse with fn to_json(
 ///|
 pub impl FromJson for SnapshotGetResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SnapshotGetResponse: expected object"))
+    raise JsonDecodeError((path, "SnapshotGetResponse: expected object"))
   }
   {
     remaining: @json.from_json(
@@ -85738,9 +85466,7 @@ pub impl ToJson for SnapshotGetRepositoryQuery with fn to_json(
 ///|
 pub impl FromJson for SnapshotGetRepositoryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SnapshotGetRepositoryQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SnapshotGetRepositoryQuery: expected object"))
   }
   {
     local_: match obj.get("local") {
@@ -85902,7 +85628,7 @@ pub impl FromJson for SnapshotRepositoryAnalyzeQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SnapshotRepositoryAnalyzeQuery: expected object"),
     )
   }
@@ -86151,7 +85877,7 @@ pub impl FromJson for SnapshotRepositoryAnalyzeResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SnapshotRepositoryAnalyzeResponse: expected object"),
     )
   }
@@ -86327,7 +86053,7 @@ pub impl FromJson for SnapshotRepositoryVerifyIntegrityQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SnapshotRepositoryVerifyIntegrityQuery: expected object"),
     )
   }
@@ -86557,7 +86283,7 @@ pub impl ToJson for SnapshotRestoreQuery with fn to_json(
 ///|
 pub impl FromJson for SnapshotRestoreQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SnapshotRestoreQuery: expected object"))
+    raise JsonDecodeError((path, "SnapshotRestoreQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -86665,7 +86391,7 @@ pub impl ToJson for SnapshotRestoreBody with fn to_json(
 ///|
 pub impl FromJson for SnapshotRestoreBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SnapshotRestoreBody: expected object"))
+    raise JsonDecodeError((path, "SnapshotRestoreBody: expected object"))
   }
   {
     feature_states: match obj.get("feature_states") {
@@ -86781,9 +86507,7 @@ pub impl ToJson for SnapshotRestoreResponse with fn to_json(
 ///|
 pub impl FromJson for SnapshotRestoreResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SnapshotRestoreResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SnapshotRestoreResponse: expected object"))
   }
   {
     accepted: match obj.get("accepted") {
@@ -86866,7 +86590,7 @@ pub impl ToJson for SnapshotStatusQuery with fn to_json(
 ///|
 pub impl FromJson for SnapshotStatusQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SnapshotStatusQuery: expected object"))
+    raise JsonDecodeError((path, "SnapshotStatusQuery: expected object"))
   }
   {
     ignore_unavailable: match obj.get("ignore_unavailable") {
@@ -86925,9 +86649,7 @@ pub impl ToJson for SnapshotStatusResponse with fn to_json(
 ///|
 pub impl FromJson for SnapshotStatusResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SnapshotStatusResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SnapshotStatusResponse: expected object"))
   }
   {
     snapshots: @json.from_json(
@@ -87009,7 +86731,7 @@ pub impl FromJson for SnapshotVerifyRepositoryQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SnapshotVerifyRepositoryQuery: expected object"),
     )
   }
@@ -87072,7 +86794,7 @@ pub impl FromJson for SnapshotVerifyRepositoryResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SnapshotVerifyRepositoryResponse: expected object"),
     )
   }
@@ -87125,14 +86847,16 @@ pub impl ToJson for SqlClearCursorQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SqlClearCursorQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "SqlClearCursorQuery: expected object"))
+    raise JsonDecodeError((path, "SqlClearCursorQuery: expected object"))
   }
   SqlClearCursorQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SqlClearCursorQuery::new() -> SqlClearCursorQuery {
   SqlClearCursorQuery::{  }
 }
@@ -87162,7 +86886,7 @@ pub impl ToJson for SqlClearCursorBody with fn to_json(
 ///|
 pub impl FromJson for SqlClearCursorBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SqlClearCursorBody: expected object"))
+    raise JsonDecodeError((path, "SqlClearCursorBody: expected object"))
   }
   {
     cursor: @json.from_json(
@@ -87194,9 +86918,7 @@ pub impl ToJson for SqlClearCursorResponse with fn to_json(
 ///|
 pub impl FromJson for SqlClearCursorResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SqlClearCursorResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SqlClearCursorResponse: expected object"))
   }
   {
     succeeded: @json.from_json(
@@ -87244,14 +86966,16 @@ pub impl ToJson for SqlDeleteAsyncQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SqlDeleteAsyncQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "SqlDeleteAsyncQuery: expected object"))
+    raise JsonDecodeError((path, "SqlDeleteAsyncQuery: expected object"))
   }
   SqlDeleteAsyncQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SqlDeleteAsyncQuery::new() -> SqlDeleteAsyncQuery {
   SqlDeleteAsyncQuery::{  }
 }
@@ -87329,7 +87053,7 @@ pub impl ToJson for SqlGetAsyncQuery with fn to_json(self : SqlGetAsyncQuery) ->
 ///|
 pub impl FromJson for SqlGetAsyncQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SqlGetAsyncQuery: expected object"))
+    raise JsonDecodeError((path, "SqlGetAsyncQuery: expected object"))
   }
   {
     delimiter: match obj.get("delimiter") {
@@ -87431,7 +87155,7 @@ pub impl ToJson for SqlGetAsyncResponse with fn to_json(
 ///|
 pub impl FromJson for SqlGetAsyncResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SqlGetAsyncResponse: expected object"))
+    raise JsonDecodeError((path, "SqlGetAsyncResponse: expected object"))
   }
   {
     id: @json.from_json(
@@ -87501,16 +87225,16 @@ pub impl ToJson for SqlGetAsyncStatusQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SqlGetAsyncStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SqlGetAsyncStatusQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SqlGetAsyncStatusQuery: expected object"))
   }
   SqlGetAsyncStatusQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SqlGetAsyncStatusQuery::new() -> SqlGetAsyncStatusQuery {
   SqlGetAsyncStatusQuery::{  }
 }
@@ -87553,9 +87277,7 @@ pub impl ToJson for SqlGetAsyncStatusResponse with fn to_json(
 ///|
 pub impl FromJson for SqlGetAsyncStatusResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SqlGetAsyncStatusResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SqlGetAsyncStatusResponse: expected object"))
   }
   {
     expiration_time_in_millis: @json.from_json(
@@ -87634,7 +87356,7 @@ pub impl ToJson for SqlQueryQuery with fn to_json(self : SqlQueryQuery) -> Json 
 ///|
 pub impl FromJson for SqlQueryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SqlQueryQuery: expected object"))
+    raise JsonDecodeError((path, "SqlQueryQuery: expected object"))
   }
   {
     format: match obj.get("format") {
@@ -87763,7 +87485,7 @@ pub impl ToJson for SqlQueryBody with fn to_json(self : SqlQueryBody) -> Json {
 ///|
 pub impl FromJson for SqlQueryBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SqlQueryBody: expected object"))
+    raise JsonDecodeError((path, "SqlQueryBody: expected object"))
   }
   {
     allow_partial_search_results: match
@@ -87970,7 +87692,7 @@ pub impl ToJson for SqlQueryResponse with fn to_json(self : SqlQueryResponse) ->
 ///|
 pub impl FromJson for SqlQueryResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SqlQueryResponse: expected object"))
+    raise JsonDecodeError((path, "SqlQueryResponse: expected object"))
   }
   {
     columns: match obj.get("columns") {
@@ -88043,14 +87765,16 @@ pub impl ToJson for SqlTranslateQuery with fn to_json(_self : SqlTranslateQuery)
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SqlTranslateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "SqlTranslateQuery: expected object"))
+    raise JsonDecodeError((path, "SqlTranslateQuery: expected object"))
   }
   SqlTranslateQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SqlTranslateQuery::new() -> SqlTranslateQuery {
   SqlTranslateQuery::{  }
 }
@@ -88093,7 +87817,7 @@ pub impl ToJson for SqlTranslateBody with fn to_json(self : SqlTranslateBody) ->
 ///|
 pub impl FromJson for SqlTranslateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SqlTranslateBody: expected object"))
+    raise JsonDecodeError((path, "SqlTranslateBody: expected object"))
   }
   {
     fetch_size: match obj.get("fetch_size") {
@@ -88180,7 +87904,7 @@ pub impl ToJson for SqlTranslateResponse with fn to_json(
 ///|
 pub impl FromJson for SqlTranslateResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "SqlTranslateResponse: expected object"))
+    raise JsonDecodeError((path, "SqlTranslateResponse: expected object"))
   }
   {
     aggregations: match obj.get("aggregations") {
@@ -88261,14 +87985,16 @@ pub impl ToJson for SslCertificatesQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SslCertificatesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "SslCertificatesQuery: expected object"))
+    raise JsonDecodeError((path, "SslCertificatesQuery: expected object"))
   }
   SslCertificatesQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SslCertificatesQuery::new() -> SslCertificatesQuery {
   SslCertificatesQuery::{  }
 }
@@ -88332,9 +88058,7 @@ pub impl ToJson for StreamsLogsDisableQuery with fn to_json(
 ///|
 pub impl FromJson for StreamsLogsDisableQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "StreamsLogsDisableQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "StreamsLogsDisableQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -88432,9 +88156,7 @@ pub impl ToJson for StreamsLogsEnableQuery with fn to_json(
 ///|
 pub impl FromJson for StreamsLogsEnableQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "StreamsLogsEnableQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "StreamsLogsEnableQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -88527,7 +88249,7 @@ pub impl ToJson for StreamsStatusQuery with fn to_json(
 ///|
 pub impl FromJson for StreamsStatusQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "StreamsStatusQuery: expected object"))
+    raise JsonDecodeError((path, "StreamsStatusQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -88577,9 +88299,7 @@ pub impl ToJson for StreamsStatusResponse with fn to_json(
 ///|
 pub impl FromJson for StreamsStatusResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "StreamsStatusResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "StreamsStatusResponse: expected object"))
   }
   {
     logs: @json.from_json(
@@ -88632,16 +88352,16 @@ pub impl ToJson for SynonymsDeleteSynonymQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SynonymsDeleteSynonymQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "SynonymsDeleteSynonymQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SynonymsDeleteSynonymQuery: expected object"))
   }
   SynonymsDeleteSynonymQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SynonymsDeleteSynonymQuery::new() -> SynonymsDeleteSynonymQuery {
   SynonymsDeleteSynonymQuery::{  }
 }
@@ -88706,7 +88426,7 @@ pub impl FromJson for SynonymsDeleteSynonymRuleQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SynonymsDeleteSynonymRuleQuery: expected object"),
     )
   }
@@ -88807,9 +88527,7 @@ pub impl ToJson for SynonymsGetSynonymQuery with fn to_json(
 ///|
 pub impl FromJson for SynonymsGetSynonymQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SynonymsGetSynonymQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SynonymsGetSynonymQuery: expected object"))
   }
   {
     from: match obj.get("from") {
@@ -88868,9 +88586,7 @@ pub impl ToJson for SynonymsGetSynonymResponse with fn to_json(
 ///|
 pub impl FromJson for SynonymsGetSynonymResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SynonymsGetSynonymResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SynonymsGetSynonymResponse: expected object"))
   }
   {
     count: @json.from_json(
@@ -88922,9 +88638,10 @@ pub impl ToJson for SynonymsGetSynonymRuleQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for SynonymsGetSynonymRuleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SynonymsGetSynonymRuleQuery: expected object"),
     )
   }
@@ -88932,6 +88649,7 @@ pub impl FromJson for SynonymsGetSynonymRuleQuery with fn from_json(json, path) 
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn SynonymsGetSynonymRuleQuery::new() -> SynonymsGetSynonymRuleQuery {
   SynonymsGetSynonymRuleQuery::{  }
 }
@@ -89013,7 +88731,7 @@ pub impl ToJson for SynonymsGetSynonymsSetsQuery with fn to_json(
 ///|
 pub impl FromJson for SynonymsGetSynonymsSetsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SynonymsGetSynonymsSetsQuery: expected object"),
     )
   }
@@ -89077,7 +88795,7 @@ pub impl FromJson for SynonymsGetSynonymsSetsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SynonymsGetSynonymsSetsResponse: expected object"),
     )
   }
@@ -89136,9 +88854,7 @@ pub impl ToJson for SynonymsPutSynonymQuery with fn to_json(
 ///|
 pub impl FromJson for SynonymsPutSynonymQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SynonymsPutSynonymQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "SynonymsPutSynonymQuery: expected object"))
   }
   {
     refresh: match obj.get("refresh") {
@@ -89183,9 +88899,7 @@ pub impl ToJson for SynonymsPutSynonymBody with fn to_json(
 ///|
 pub impl FromJson for SynonymsPutSynonymBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SynonymsPutSynonymBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SynonymsPutSynonymBody: expected object"))
   }
   {
     synonyms_set: @json.from_json(
@@ -89224,9 +88938,7 @@ pub impl ToJson for SynonymsPutSynonymResponse with fn to_json(
 ///|
 pub impl FromJson for SynonymsPutSynonymResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SynonymsPutSynonymResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "SynonymsPutSynonymResponse: expected object"))
   }
   {
     result: @json.from_json(
@@ -89293,7 +89005,7 @@ pub impl ToJson for SynonymsPutSynonymRuleQuery with fn to_json(
 ///|
 pub impl FromJson for SynonymsPutSynonymRuleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "SynonymsPutSynonymRuleQuery: expected object"),
     )
   }
@@ -89342,9 +89054,7 @@ pub impl ToJson for SynonymsPutSynonymRuleBody with fn to_json(
 ///|
 pub impl FromJson for SynonymsPutSynonymRuleBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "SynonymsPutSynonymRuleBody: expected object"),
-    )
+    raise JsonDecodeError((path, "SynonymsPutSynonymRuleBody: expected object"))
   }
   {
     synonyms: @json.from_json(
@@ -89432,7 +89142,7 @@ pub impl ToJson for TasksCancelQuery with fn to_json(self : TasksCancelQuery) ->
 ///|
 pub impl FromJson for TasksCancelQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "TasksCancelQuery: expected object"))
+    raise JsonDecodeError((path, "TasksCancelQuery: expected object"))
   }
   {
     actions: match obj.get("actions") {
@@ -89561,7 +89271,7 @@ pub impl ToJson for TasksGetQuery with fn to_json(self : TasksGetQuery) -> Json 
 ///|
 pub impl FromJson for TasksGetQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "TasksGetQuery: expected object"))
+    raise JsonDecodeError((path, "TasksGetQuery: expected object"))
   }
   {
     timeout: match obj.get("timeout") {
@@ -89639,7 +89349,7 @@ pub impl ToJson for TasksGetResponse with fn to_json(self : TasksGetResponse) ->
 ///|
 pub impl FromJson for TasksGetResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "TasksGetResponse: expected object"))
+    raise JsonDecodeError((path, "TasksGetResponse: expected object"))
   }
   {
     completed: @json.from_json(
@@ -89740,7 +89450,7 @@ pub impl ToJson for TasksListQuery with fn to_json(self : TasksListQuery) -> Jso
 ///|
 pub impl FromJson for TasksListQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "TasksListQuery: expected object"))
+    raise JsonDecodeError((path, "TasksListQuery: expected object"))
   }
   {
     actions: match obj.get("actions") {
@@ -89877,14 +89587,16 @@ pub impl ToJson for TermsEnumQuery with fn to_json(_self : TermsEnumQuery) -> Js
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for TermsEnumQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "TermsEnumQuery: expected object"))
+    raise JsonDecodeError((path, "TermsEnumQuery: expected object"))
   }
   TermsEnumQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn TermsEnumQuery::new() -> TermsEnumQuery {
   TermsEnumQuery::{  }
 }
@@ -89942,7 +89654,7 @@ pub impl ToJson for TermsEnumBody with fn to_json(self : TermsEnumBody) -> Json 
 ///|
 pub impl FromJson for TermsEnumBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "TermsEnumBody: expected object"))
+    raise JsonDecodeError((path, "TermsEnumBody: expected object"))
   }
   {
     field: @json.from_json(
@@ -90017,7 +89729,7 @@ pub impl ToJson for TermsEnumResponse with fn to_json(self : TermsEnumResponse) 
 ///|
 pub impl FromJson for TermsEnumResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "TermsEnumResponse: expected object"))
+    raise JsonDecodeError((path, "TermsEnumResponse: expected object"))
   }
   {
     _shards: @json.from_json(
@@ -90135,7 +89847,7 @@ pub impl ToJson for TermvectorsQuery with fn to_json(self : TermvectorsQuery) ->
 ///|
 pub impl FromJson for TermvectorsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "TermvectorsQuery: expected object"))
+    raise JsonDecodeError((path, "TermvectorsQuery: expected object"))
   }
   {
     fields: match obj.get("fields") {
@@ -90355,7 +90067,7 @@ pub impl ToJson for TermvectorsBody with fn to_json(self : TermvectorsBody) -> J
 ///|
 pub impl FromJson for TermvectorsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "TermvectorsBody: expected object"))
+    raise JsonDecodeError((path, "TermvectorsBody: expected object"))
   }
   {
     doc: match obj.get("doc") {
@@ -90490,7 +90202,7 @@ pub impl ToJson for TermvectorsResponse with fn to_json(
 ///|
 pub impl FromJson for TermvectorsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "TermvectorsResponse: expected object"))
+    raise JsonDecodeError((path, "TermvectorsResponse: expected object"))
   }
   {
     found: @json.from_json(
@@ -90654,7 +90366,7 @@ pub impl FromJson for TextStructureFindFieldStructureQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TextStructureFindFieldStructureQuery: expected object"),
     )
   }
@@ -90913,7 +90625,7 @@ pub impl FromJson for TextStructureFindFieldStructureResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TextStructureFindFieldStructureResponse: expected object"),
     )
   }
@@ -91103,7 +90815,7 @@ pub impl FromJson for TextStructureFindMessageStructureQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TextStructureFindMessageStructureQuery: expected object"),
     )
   }
@@ -91289,7 +91001,7 @@ pub impl FromJson for TextStructureFindMessageStructureBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TextStructureFindMessageStructureBody: expected object"),
     )
   }
@@ -91374,7 +91086,7 @@ pub impl FromJson for TextStructureFindMessageStructureResponse with fn from_jso
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TextStructureFindMessageStructureResponse: expected object"),
     )
   }
@@ -91587,7 +91299,7 @@ pub impl FromJson for TextStructureFindStructureQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TextStructureFindStructureQuery: expected object"),
     )
   }
@@ -91902,7 +91614,7 @@ pub impl FromJson for TextStructureFindStructureResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TextStructureFindStructureResponse: expected object"),
     )
   }
@@ -92079,7 +91791,7 @@ pub impl FromJson for TextStructureTestGrokPatternQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TextStructureTestGrokPatternQuery: expected object"),
     )
   }
@@ -92134,7 +91846,7 @@ pub impl FromJson for TextStructureTestGrokPatternBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TextStructureTestGrokPatternBody: expected object"),
     )
   }
@@ -92178,7 +91890,7 @@ pub impl FromJson for TextStructureTestGrokPatternResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TextStructureTestGrokPatternResponse: expected object"),
     )
   }
@@ -92252,7 +91964,7 @@ pub impl FromJson for TransformDeleteTransformQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformDeleteTransformQuery: expected object"),
     )
   }
@@ -92349,16 +92061,16 @@ pub impl ToJson for TransformGetNodeStatsQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for TransformGetNodeStatsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "TransformGetNodeStatsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "TransformGetNodeStatsQuery: expected object"))
   }
   TransformGetNodeStatsQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn TransformGetNodeStatsQuery::new() -> TransformGetNodeStatsQuery {
   TransformGetNodeStatsQuery::{  }
 }
@@ -92435,9 +92147,7 @@ pub impl ToJson for TransformGetTransformQuery with fn to_json(
 ///|
 pub impl FromJson for TransformGetTransformQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "TransformGetTransformQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "TransformGetTransformQuery: expected object"))
   }
   {
     allow_no_match: match obj.get("allow_no_match") {
@@ -92521,7 +92231,7 @@ pub impl FromJson for TransformGetTransformResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformGetTransformResponse: expected object"),
     )
   }
@@ -92610,7 +92320,7 @@ pub impl FromJson for TransformGetTransformStatsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformGetTransformStatsQuery: expected object"),
     )
   }
@@ -92695,7 +92405,7 @@ pub impl FromJson for TransformGetTransformStatsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformGetTransformStatsResponse: expected object"),
     )
   }
@@ -92763,7 +92473,7 @@ pub impl FromJson for TransformPreviewTransformQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformPreviewTransformQuery: expected object"),
     )
   }
@@ -92858,7 +92568,7 @@ pub impl FromJson for TransformPreviewTransformBody with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformPreviewTransformBody: expected object"),
     )
   }
@@ -92961,7 +92671,7 @@ pub impl FromJson for TransformPreviewTransformResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformPreviewTransformResponse: expected object"),
     )
   }
@@ -93043,9 +92753,7 @@ pub impl ToJson for TransformPutTransformQuery with fn to_json(
 ///|
 pub impl FromJson for TransformPutTransformQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "TransformPutTransformQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "TransformPutTransformQuery: expected object"))
   }
   {
     defer_validation: match obj.get("defer_validation") {
@@ -93145,9 +92853,7 @@ pub impl ToJson for TransformPutTransformBody with fn to_json(
 ///|
 pub impl FromJson for TransformPutTransformBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "TransformPutTransformBody: expected object"),
-    )
+    raise JsonDecodeError((path, "TransformPutTransformBody: expected object"))
   }
   {
     dest: @json.from_json(
@@ -93291,7 +92997,7 @@ pub impl ToJson for TransformResetTransformQuery with fn to_json(
 ///|
 pub impl FromJson for TransformResetTransformQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformResetTransformQuery: expected object"),
     )
   }
@@ -93393,7 +93099,7 @@ pub impl FromJson for TransformScheduleNowTransformQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformScheduleNowTransformQuery: expected object"),
     )
   }
@@ -93505,7 +93211,7 @@ pub impl ToJson for TransformSetUpgradeModeQuery with fn to_json(
 ///|
 pub impl FromJson for TransformSetUpgradeModeQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformSetUpgradeModeQuery: expected object"),
     )
   }
@@ -93601,7 +93307,7 @@ pub impl ToJson for TransformStartTransformQuery with fn to_json(
 ///|
 pub impl FromJson for TransformStartTransformQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformStartTransformQuery: expected object"),
     )
   }
@@ -93715,7 +93421,7 @@ pub impl ToJson for TransformStopTransformQuery with fn to_json(
 ///|
 pub impl FromJson for TransformStopTransformQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformStopTransformQuery: expected object"),
     )
   }
@@ -93852,7 +93558,7 @@ pub impl FromJson for TransformUpdateTransformQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformUpdateTransformQuery: expected object"),
     )
   }
@@ -93950,7 +93656,7 @@ pub impl ToJson for TransformUpdateTransformBody with fn to_json(
 ///|
 pub impl FromJson for TransformUpdateTransformBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformUpdateTransformBody: expected object"),
     )
   }
@@ -94091,7 +93797,7 @@ pub impl FromJson for TransformUpdateTransformResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformUpdateTransformResponse: expected object"),
     )
   }
@@ -94225,7 +93931,7 @@ pub impl FromJson for TransformUpgradeTransformsQuery with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformUpgradeTransformsQuery: expected object"),
     )
   }
@@ -94294,7 +94000,7 @@ pub impl FromJson for TransformUpgradeTransformsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "TransformUpgradeTransformsResponse: expected object"),
     )
   }
@@ -94421,7 +94127,7 @@ pub impl ToJson for UpdateQuery with fn to_json(self : UpdateQuery) -> Json {
 ///|
 pub impl FromJson for UpdateQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "UpdateQuery: expected object"))
+    raise JsonDecodeError((path, "UpdateQuery: expected object"))
   }
   {
     if_primary_term: match obj.get("if_primary_term") {
@@ -94645,7 +94351,7 @@ pub impl ToJson for UpdateBody with fn to_json(self : UpdateBody) -> Json {
 ///|
 pub impl FromJson for UpdateBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "UpdateBody: expected object"))
+    raise JsonDecodeError((path, "UpdateBody: expected object"))
   }
   {
     detect_noop: match obj.get("detect_noop") {
@@ -94910,7 +94616,7 @@ pub impl ToJson for UpdateByQueryQuery with fn to_json(
 ///|
 pub impl FromJson for UpdateByQueryQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "UpdateByQueryQuery: expected object"))
+    raise JsonDecodeError((path, "UpdateByQueryQuery: expected object"))
   }
   {
     allow_no_indices: match obj.get("allow_no_indices") {
@@ -95331,7 +95037,7 @@ pub impl ToJson for UpdateByQueryBody with fn to_json(self : UpdateByQueryBody) 
 ///|
 pub impl FromJson for UpdateByQueryBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "UpdateByQueryBody: expected object"))
+    raise JsonDecodeError((path, "UpdateByQueryBody: expected object"))
   }
   {
     max_docs: match obj.get("max_docs") {
@@ -95474,9 +95180,7 @@ pub impl ToJson for UpdateByQueryResponse with fn to_json(
 ///|
 pub impl FromJson for UpdateByQueryResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "UpdateByQueryResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "UpdateByQueryResponse: expected object"))
   }
   {
     batches: match obj.get("batches") {
@@ -95628,7 +95332,7 @@ pub impl ToJson for UpdateByQueryRethrottleQuery with fn to_json(
 ///|
 pub impl FromJson for UpdateByQueryRethrottleQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "UpdateByQueryRethrottleQuery: expected object"),
     )
   }
@@ -95680,7 +95384,7 @@ pub impl FromJson for UpdateByQueryRethrottleResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "UpdateByQueryRethrottleResponse: expected object"),
     )
   }
@@ -95733,14 +95437,16 @@ pub impl ToJson for WatcherAckWatchQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for WatcherAckWatchQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "WatcherAckWatchQuery: expected object"))
+    raise JsonDecodeError((path, "WatcherAckWatchQuery: expected object"))
   }
   WatcherAckWatchQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn WatcherAckWatchQuery::new() -> WatcherAckWatchQuery {
   WatcherAckWatchQuery::{  }
 }
@@ -95770,9 +95476,7 @@ pub impl ToJson for WatcherAckWatchResponse with fn to_json(
 ///|
 pub impl FromJson for WatcherAckWatchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "WatcherAckWatchResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "WatcherAckWatchResponse: expected object"))
   }
   {
     status: @json.from_json(
@@ -95834,16 +95538,16 @@ pub impl ToJson for WatcherActivateWatchQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for WatcherActivateWatchQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "WatcherActivateWatchQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "WatcherActivateWatchQuery: expected object"))
   }
   WatcherActivateWatchQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn WatcherActivateWatchQuery::new() -> WatcherActivateWatchQuery {
   WatcherActivateWatchQuery::{  }
 }
@@ -95873,7 +95577,7 @@ pub impl ToJson for WatcherActivateWatchResponse with fn to_json(
 ///|
 pub impl FromJson for WatcherActivateWatchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "WatcherActivateWatchResponse: expected object"),
     )
   }
@@ -95926,9 +95630,10 @@ pub impl ToJson for WatcherDeactivateWatchQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for WatcherDeactivateWatchQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "WatcherDeactivateWatchQuery: expected object"),
     )
   }
@@ -95936,6 +95641,7 @@ pub impl FromJson for WatcherDeactivateWatchQuery with fn from_json(json, path) 
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn WatcherDeactivateWatchQuery::new() -> WatcherDeactivateWatchQuery {
   WatcherDeactivateWatchQuery::{  }
 }
@@ -95968,7 +95674,7 @@ pub impl FromJson for WatcherDeactivateWatchResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "WatcherDeactivateWatchResponse: expected object"),
     )
   }
@@ -96021,16 +95727,16 @@ pub impl ToJson for WatcherDeleteWatchQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for WatcherDeleteWatchQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "WatcherDeleteWatchQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "WatcherDeleteWatchQuery: expected object"))
   }
   WatcherDeleteWatchQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn WatcherDeleteWatchQuery::new() -> WatcherDeleteWatchQuery {
   WatcherDeleteWatchQuery::{  }
 }
@@ -96064,9 +95770,7 @@ pub impl ToJson for WatcherDeleteWatchResponse with fn to_json(
 ///|
 pub impl FromJson for WatcherDeleteWatchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "WatcherDeleteWatchResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "WatcherDeleteWatchResponse: expected object"))
   }
   {
     found: @json.from_json(
@@ -96133,9 +95837,7 @@ pub impl ToJson for WatcherExecuteWatchQuery with fn to_json(
 ///|
 pub impl FromJson for WatcherExecuteWatchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "WatcherExecuteWatchQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "WatcherExecuteWatchQuery: expected object"))
   }
   {
     debug: match obj.get("debug") {
@@ -96213,9 +95915,7 @@ pub impl ToJson for WatcherExecuteWatchBody with fn to_json(
 ///|
 pub impl FromJson for WatcherExecuteWatchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "WatcherExecuteWatchBody: expected object"),
-    )
+    raise JsonDecodeError((path, "WatcherExecuteWatchBody: expected object"))
   }
   {
     action_modes: match obj.get("action_modes") {
@@ -96302,7 +96002,7 @@ pub impl ToJson for WatcherExecuteWatchResponse with fn to_json(
 ///|
 pub impl FromJson for WatcherExecuteWatchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "WatcherExecuteWatchResponse: expected object"),
     )
   }
@@ -96379,9 +96079,7 @@ pub impl ToJson for WatcherGetSettingsQuery with fn to_json(
 ///|
 pub impl FromJson for WatcherGetSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "WatcherGetSettingsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "WatcherGetSettingsQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -96432,9 +96130,7 @@ pub impl ToJson for WatcherGetSettingsResponse with fn to_json(
 ///|
 pub impl FromJson for WatcherGetSettingsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "WatcherGetSettingsResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "WatcherGetSettingsResponse: expected object"))
   }
   {
     index: @json.from_json(
@@ -96485,14 +96181,16 @@ pub impl ToJson for WatcherGetWatchQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for WatcherGetWatchQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError((path, "WatcherGetWatchQuery: expected object"))
+    raise JsonDecodeError((path, "WatcherGetWatchQuery: expected object"))
   }
   WatcherGetWatchQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn WatcherGetWatchQuery::new() -> WatcherGetWatchQuery {
   WatcherGetWatchQuery::{  }
 }
@@ -96549,9 +96247,7 @@ pub impl ToJson for WatcherGetWatchResponse with fn to_json(
 ///|
 pub impl FromJson for WatcherGetWatchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "WatcherGetWatchResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "WatcherGetWatchResponse: expected object"))
   }
   {
     found: @json.from_json(
@@ -96655,7 +96351,7 @@ pub impl ToJson for WatcherPutWatchQuery with fn to_json(
 ///|
 pub impl FromJson for WatcherPutWatchQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "WatcherPutWatchQuery: expected object"))
+    raise JsonDecodeError((path, "WatcherPutWatchQuery: expected object"))
   }
   {
     active: match obj.get("active") {
@@ -96772,7 +96468,7 @@ pub impl ToJson for WatcherPutWatchBody with fn to_json(
 ///|
 pub impl FromJson for WatcherPutWatchBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "WatcherPutWatchBody: expected object"))
+    raise JsonDecodeError((path, "WatcherPutWatchBody: expected object"))
   }
   {
     actions: match obj.get("actions") {
@@ -96872,9 +96568,7 @@ pub impl ToJson for WatcherPutWatchResponse with fn to_json(
 ///|
 pub impl FromJson for WatcherPutWatchResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "WatcherPutWatchResponse: expected object"),
-    )
+    raise JsonDecodeError((path, "WatcherPutWatchResponse: expected object"))
   }
   {
     created: @json.from_json(
@@ -96944,16 +96638,16 @@ pub impl ToJson for WatcherQueryWatchesQuery with fn to_json(
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub impl FromJson for WatcherQueryWatchesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
-    raise @json.JsonDecodeError(
-      (path, "WatcherQueryWatchesQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "WatcherQueryWatchesQuery: expected object"))
   }
   WatcherQueryWatchesQuery::{  }
 }
 
 ///|
+#warnings("-unnecessary_annotation")
 pub fn WatcherQueryWatchesQuery::new() -> WatcherQueryWatchesQuery {
   WatcherQueryWatchesQuery::{  }
 }
@@ -97006,9 +96700,7 @@ pub impl ToJson for WatcherQueryWatchesBody with fn to_json(
 ///|
 pub impl FromJson for WatcherQueryWatchesBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "WatcherQueryWatchesBody: expected object"),
-    )
+    raise JsonDecodeError((path, "WatcherQueryWatchesBody: expected object"))
   }
   {
     from: match obj.get("from") {
@@ -97070,7 +96762,7 @@ pub impl ToJson for WatcherQueryWatchesResponse with fn to_json(
 ///|
 pub impl FromJson for WatcherQueryWatchesResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "WatcherQueryWatchesResponse: expected object"),
     )
   }
@@ -97136,7 +96828,7 @@ pub impl ToJson for WatcherStartQuery with fn to_json(self : WatcherStartQuery) 
 ///|
 pub impl FromJson for WatcherStartQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "WatcherStartQuery: expected object"))
+    raise JsonDecodeError((path, "WatcherStartQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -97214,7 +96906,7 @@ pub impl ToJson for WatcherStatsQuery with fn to_json(self : WatcherStatsQuery) 
 ///|
 pub impl FromJson for WatcherStatsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "WatcherStatsQuery: expected object"))
+    raise JsonDecodeError((path, "WatcherStatsQuery: expected object"))
   }
   {
     emit_stacktraces: match obj.get("emit_stacktraces") {
@@ -97278,7 +96970,7 @@ pub impl ToJson for WatcherStatsResponse with fn to_json(
 ///|
 pub impl FromJson for WatcherStatsResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "WatcherStatsResponse: expected object"))
+    raise JsonDecodeError((path, "WatcherStatsResponse: expected object"))
   }
   {
     _nodes: @json.from_json(
@@ -97353,7 +97045,7 @@ pub impl ToJson for WatcherStopQuery with fn to_json(self : WatcherStopQuery) ->
 ///|
 pub impl FromJson for WatcherStopQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "WatcherStopQuery: expected object"))
+    raise JsonDecodeError((path, "WatcherStopQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -97433,9 +97125,7 @@ pub impl ToJson for WatcherUpdateSettingsQuery with fn to_json(
 ///|
 pub impl FromJson for WatcherUpdateSettingsQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "WatcherUpdateSettingsQuery: expected object"),
-    )
+    raise JsonDecodeError((path, "WatcherUpdateSettingsQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -97501,9 +97191,7 @@ pub impl ToJson for WatcherUpdateSettingsBody with fn to_json(
 ///|
 pub impl FromJson for WatcherUpdateSettingsBody with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
-      (path, "WatcherUpdateSettingsBody: expected object"),
-    )
+    raise JsonDecodeError((path, "WatcherUpdateSettingsBody: expected object"))
   }
   {
     index_auto_expand_replicas: match obj.get("index.auto_expand_replicas") {
@@ -97556,7 +97244,7 @@ pub impl FromJson for WatcherUpdateSettingsResponse with fn from_json(
   path,
 ) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError(
+    raise JsonDecodeError(
       (path, "WatcherUpdateSettingsResponse: expected object"),
     )
   }
@@ -97622,7 +97310,7 @@ pub impl ToJson for XpackInfoQuery with fn to_json(self : XpackInfoQuery) -> Jso
 ///|
 pub impl FromJson for XpackInfoQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "XpackInfoQuery: expected object"))
+    raise JsonDecodeError((path, "XpackInfoQuery: expected object"))
   }
   {
     categories: match obj.get("categories") {
@@ -97695,7 +97383,7 @@ pub impl ToJson for XpackInfoResponse with fn to_json(self : XpackInfoResponse) 
 ///|
 pub impl FromJson for XpackInfoResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "XpackInfoResponse: expected object"))
+    raise JsonDecodeError((path, "XpackInfoResponse: expected object"))
   }
   {
     build: @json.from_json(
@@ -97758,7 +97446,7 @@ pub impl ToJson for XpackUsageQuery with fn to_json(self : XpackUsageQuery) -> J
 ///|
 pub impl FromJson for XpackUsageQuery with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "XpackUsageQuery: expected object"))
+    raise JsonDecodeError((path, "XpackUsageQuery: expected object"))
   }
   {
     master_timeout: match obj.get("master_timeout") {
@@ -97887,7 +97575,7 @@ pub impl ToJson for XpackUsageResponse with fn to_json(
 ///|
 pub impl FromJson for XpackUsageResponse with fn from_json(json, path) {
   guard json is Object(obj) else {
-    raise @json.JsonDecodeError((path, "XpackUsageResponse: expected object"))
+    raise JsonDecodeError((path, "XpackUsageResponse: expected object"))
   }
   {
     aggregate_metric: @json.from_json(

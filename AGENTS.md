@@ -49,3 +49,61 @@ You can browse and install extra skills here:
   behavior. For solid, well-defined results (e.g. scientific computations),
   prefer assertion tests. You can use `moon coverage analyze > uncovered.log` to
   see which parts of your code are not covered by tests.
+
+## Code Generation
+
+The generator reads `spec/elasticsearch/v9/schema.json` and writes:
+
+- `generated_endpoints.mbt`: root-package request, response, and `Client`
+  endpoint method definitions.
+- `v9/generated.mbt`: aliases and function wrappers for the versioned package.
+
+Regenerate sources:
+
+```bash
+moon run cmd/codegen --target native
+```
+
+Check whether committed generated files are stale:
+
+```bash
+moon run cmd/codegen --target native -- --check
+```
+
+Useful generator options:
+
+```text
+--check              Compare generated output with existing files.
+--input FILE         Read a different schema file.
+--root-output FILE   Write root generated endpoints to FILE.
+--v9-output FILE     Write v9 wrappers to FILE.
+--help               Print generator usage.
+```
+
+Do not edit `generated_endpoints.mbt` or `v9/generated.mbt` by hand. Change the
+generator or schema input, regenerate, and review the diff.
+
+## Testing
+
+Run the main validation loop:
+
+```bash
+moon check --target native
+moon test --target native
+```
+
+Before handing off changes, update generated interface files and format:
+
+```bash
+moon info
+moon fmt
+```
+
+Integration tests include local fake HTTP servers. There is also an optional
+live Elasticsearch smoke test guarded by environment variables:
+
+```bash
+ES_TEST_URL=http://localhost:9200 ES_API_KEY=... moon test --target native
+```
+
+The live test is skipped when either environment variable is absent.
