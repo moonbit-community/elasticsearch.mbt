@@ -92,7 +92,7 @@ async test "v9 wrappers integrate with root client endpoints" {
       SearchRequest::new(
         index="v9/logs",
         body=SearchBody::new(
-          query=Json::object({ "match_all": Json::object({}) }),
+          query=Json::object({ "match_all": Json::empty_object() }),
         ),
       ),
     )
@@ -105,7 +105,7 @@ async test "v9 wrappers integrate with root client endpoints" {
         [
           Json::object({ "index": Json::string("v9/logs") }),
           Json::object({
-            "query": Json::object({ "match_all": Json::object({}) }),
+            "query": Json::object({ "match_all": Json::empty_object() }),
           }),
         ],
         index="v9/logs",

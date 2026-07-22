@@ -30,7 +30,7 @@ test "headers include auth compatibility and body media type" {
   let request = EsRequest::new(
     Post,
     "/_search",
-    body=JsonBody(Json::object({})),
+    body=JsonBody(Json::empty_object()),
   )
   let headers = config.request_headers(request)
   assert_eq(headers["Authorization"], "Basic ZWxhc3RpYzpzZWNyZXQ=")

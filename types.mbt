@@ -55,7 +55,7 @@ pub fn ClientConfig::new(
   base_url : String,
   auth? : Auth = NoAuth,
   compatibility? : ApiCompatibility = Default,
-  headers? : Map[String, String] = {},
+  headers? : Map[String, String] = Map([]),
 ) -> ClientConfig {
   { base_url, auth, compatibility, default_headers: headers }
 }
@@ -80,7 +80,7 @@ pub fn EsRequest::new(
   meth : HttpMethod,
   path : String,
   query? : Array[(String, String)] = [],
-  headers? : Map[String, String] = {},
+  headers? : Map[String, String] = Map([]),
   body? : RequestBody = NoBody,
 ) -> EsRequest {
   { meth, path, query, headers, body }

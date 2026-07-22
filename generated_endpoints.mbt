@@ -7,7 +7,7 @@ pub(all) struct AsyncSearchDeleteQuery {} derive(Eq, Debug)
 pub impl ToJson for AsyncSearchDeleteQuery with fn to_json(
   _self : AsyncSearchDeleteQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -56,7 +56,7 @@ pub async fn Client::async_search_delete(
   self : Client,
   request : AsyncSearchDeleteRequest,
 ) -> EsResponse[AsyncSearchDeleteResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -78,7 +78,7 @@ pub(all) struct AsyncSearchGetQuery {
 pub impl ToJson for AsyncSearchGetQuery with fn to_json(
   self : AsyncSearchGetQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.keep_alive {
     Some(value) => obj["keep_alive"] = value.to_json()
     None => ()
@@ -204,7 +204,7 @@ pub async fn Client::async_search_get(
   self : Client,
   request : AsyncSearchGetRequest,
 ) -> EsResponse[AsyncSearchGetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -223,7 +223,7 @@ pub(all) struct AsyncSearchStatusQuery {
 pub impl ToJson for AsyncSearchStatusQuery with fn to_json(
   self : AsyncSearchStatusQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.keep_alive {
     Some(value) => obj["keep_alive"] = value.to_json()
     None => ()
@@ -287,7 +287,7 @@ pub async fn Client::async_search_status(
   self : Client,
   request : AsyncSearchStatusRequest,
 ) -> EsResponse[AsyncSearchStatusResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -348,7 +348,7 @@ pub(all) struct AsyncSearchSubmitQuery {
 pub impl ToJson for AsyncSearchSubmitQuery with fn to_json(
   self : AsyncSearchSubmitQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.wait_for_completion_timeout {
     Some(value) => obj["wait_for_completion_timeout"] = value.to_json()
     None => ()
@@ -1120,7 +1120,7 @@ pub(all) struct AsyncSearchSubmitBody {
 pub impl ToJson for AsyncSearchSubmitBody with fn to_json(
   self : AsyncSearchSubmitBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aggregations {
     Some(value) => obj["aggregations"] = value.to_json()
     None => ()
@@ -1542,7 +1542,7 @@ pub async fn Client::async_search_submit(
   self : Client,
   request : AsyncSearchSubmitRequest,
 ) -> EsResponse[AsyncSearchSubmitResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -1572,7 +1572,7 @@ pub(all) struct AutoscalingDeleteAutoscalingPolicyQuery {
 pub impl ToJson for AutoscalingDeleteAutoscalingPolicyQuery with fn to_json(
   self : AutoscalingDeleteAutoscalingPolicyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -1655,7 +1655,7 @@ pub async fn Client::autoscaling_delete_autoscaling_policy(
   self : Client,
   request : AutoscalingDeleteAutoscalingPolicyRequest,
 ) -> EsResponse[AutoscalingDeleteAutoscalingPolicyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -1674,7 +1674,7 @@ pub(all) struct AutoscalingGetAutoscalingCapacityQuery {
 pub impl ToJson for AutoscalingGetAutoscalingCapacityQuery with fn to_json(
   self : AutoscalingGetAutoscalingCapacityQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -1730,7 +1730,7 @@ pub(all) struct AutoscalingGetAutoscalingCapacityResponse {
 pub impl ToJson for AutoscalingGetAutoscalingCapacityResponse with fn to_json(
   self : AutoscalingGetAutoscalingCapacityResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["policies"] = self.policies.to_json()
   Json::object(obj)
 }
@@ -1770,7 +1770,7 @@ pub async fn Client::autoscaling_get_autoscaling_capacity(
   self : Client,
   request : AutoscalingGetAutoscalingCapacityRequest,
 ) -> EsResponse[AutoscalingGetAutoscalingCapacityResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_autoscaling/capacity", [])],
@@ -1788,7 +1788,7 @@ pub(all) struct AutoscalingGetAutoscalingPolicyQuery {
 pub impl ToJson for AutoscalingGetAutoscalingPolicyQuery with fn to_json(
   self : AutoscalingGetAutoscalingPolicyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -1857,7 +1857,7 @@ pub async fn Client::autoscaling_get_autoscaling_policy(
   self : Client,
   request : AutoscalingGetAutoscalingPolicyRequest,
 ) -> EsResponse[AutoscalingGetAutoscalingPolicyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -1877,7 +1877,7 @@ pub(all) struct AutoscalingPutAutoscalingPolicyQuery {
 pub impl ToJson for AutoscalingPutAutoscalingPolicyQuery with fn to_json(
   self : AutoscalingPutAutoscalingPolicyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -1965,7 +1965,7 @@ pub async fn Client::autoscaling_put_autoscaling_policy(
   self : Client,
   request : AutoscalingPutAutoscalingPolicyRequest,
 ) -> EsResponse[AutoscalingPutAutoscalingPolicyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -1994,7 +1994,7 @@ pub(all) struct BulkQuery {
 
 ///|
 pub impl ToJson for BulkQuery with fn to_json(self : BulkQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.include_source_on_error {
     Some(value) => obj["include_source_on_error"] = value.to_json()
     None => ()
@@ -2230,7 +2230,7 @@ pub(all) struct BulkResponse {
 
 ///|
 pub impl ToJson for BulkResponse with fn to_json(self : BulkResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["errors"] = self.errors.to_json()
   obj["items"] = self.items.to_json()
   obj["took"] = self.took.to_json()
@@ -2289,7 +2289,7 @@ pub async fn Client::bulk(
   self : Client,
   request : BulkRequest,
 ) -> EsResponse[BulkResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -2315,7 +2315,7 @@ pub(all) struct CancelReindexQuery {
 pub impl ToJson for CancelReindexQuery with fn to_json(
   self : CancelReindexQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.wait_for_completion {
     Some(value) => obj["wait_for_completion"] = value.to_json()
     None => ()
@@ -2378,7 +2378,7 @@ pub(all) struct CancelReindexResponse {
 pub impl ToJson for CancelReindexResponse with fn to_json(
   self : CancelReindexResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.acknowledged {
     Some(value) => obj["acknowledged"] = value.to_json()
     None => ()
@@ -2526,7 +2526,7 @@ pub async fn Client::cancel_reindex(
   self : Client,
   request : CancelReindexRequest,
 ) -> EsResponse[CancelReindexResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_id"] = request.task_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -2548,7 +2548,7 @@ pub(all) struct CapabilitiesQuery {
 
 ///|
 pub impl ToJson for CapabilitiesQuery with fn to_json(self : CapabilitiesQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.method_ {
     Some(value) => obj["method"] = value.to_json()
     None => ()
@@ -2674,7 +2674,7 @@ pub(all) struct CapabilitiesResponse {
 pub impl ToJson for CapabilitiesResponse with fn to_json(
   self : CapabilitiesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_nodes"] = self._nodes.to_json()
   obj["cluster_name"] = self.cluster_name.to_json()
   obj["supported"] = self.supported.to_json()
@@ -2728,7 +2728,7 @@ pub async fn Client::capabilities(
   self : Client,
   request : CapabilitiesRequest,
 ) -> EsResponse[CapabilitiesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_capabilities", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -2744,7 +2744,7 @@ pub(all) struct CatAliasesQuery {
 
 ///|
 pub impl ToJson for CatAliasesQuery with fn to_json(self : CatAliasesQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.h {
     Some(value) => obj["h"] = value.to_json()
     None => ()
@@ -2851,7 +2851,7 @@ pub async fn Client::cat_aliases(
   self : Client,
   request : CatAliasesRequest,
 ) -> EsResponse[CatAliasesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -2879,7 +2879,7 @@ pub(all) struct CatAllocationQuery {
 pub impl ToJson for CatAllocationQuery with fn to_json(
   self : CatAllocationQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.h {
     Some(value) => obj["h"] = value.to_json()
     None => ()
@@ -2985,7 +2985,7 @@ pub async fn Client::cat_allocation(
   self : Client,
   request : CatAllocationRequest,
 ) -> EsResponse[CatAllocationResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.node_id {
     Some(value) => params["node_id"] = value
     None => ()
@@ -3013,7 +3013,7 @@ pub(all) struct CatCircuitBreakerQuery {
 pub impl ToJson for CatCircuitBreakerQuery with fn to_json(
   self : CatCircuitBreakerQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.h {
     Some(value) => obj["h"] = value.to_json()
     None => ()
@@ -3119,7 +3119,7 @@ pub async fn Client::cat_circuit_breaker(
   self : Client,
   request : CatCircuitBreakerRequest,
 ) -> EsResponse[CatCircuitBreakerResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.circuit_breaker_patterns {
     Some(value) => params["circuit_breaker_patterns"] = value
     None => ()
@@ -3149,7 +3149,7 @@ pub(all) struct CatComponentTemplatesQuery {
 pub impl ToJson for CatComponentTemplatesQuery with fn to_json(
   self : CatComponentTemplatesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.h {
     Some(value) => obj["h"] = value.to_json()
     None => ()
@@ -3255,7 +3255,7 @@ pub async fn Client::cat_component_templates(
   self : Client,
   request : CatComponentTemplatesRequest,
 ) -> EsResponse[CatComponentTemplatesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -3279,7 +3279,7 @@ pub(all) struct CatCountQuery {
 
 ///|
 pub impl ToJson for CatCountQuery with fn to_json(self : CatCountQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.h {
     Some(value) => obj["h"] = value.to_json()
     None => ()
@@ -3351,7 +3351,7 @@ pub async fn Client::cat_count(
   self : Client,
   request : CatCountRequest,
 ) -> EsResponse[CatCountResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -3376,7 +3376,7 @@ pub(all) struct CatFielddataQuery {
 
 ///|
 pub impl ToJson for CatFielddataQuery with fn to_json(self : CatFielddataQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.fields {
     Some(value) => obj["fields"] = value.to_json()
     None => ()
@@ -3467,7 +3467,7 @@ pub async fn Client::cat_fielddata(
   self : Client,
   request : CatFielddataRequest,
 ) -> EsResponse[CatFielddataResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.fields {
     Some(value) => params["fields"] = value
     None => ()
@@ -3492,7 +3492,7 @@ pub(all) struct CatHealthQuery {
 
 ///|
 pub impl ToJson for CatHealthQuery with fn to_json(self : CatHealthQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.ts {
     Some(value) => obj["ts"] = value.to_json()
     None => ()
@@ -3581,7 +3581,7 @@ pub async fn Client::cat_health(
   self : Client,
   request : CatHealthRequest,
 ) -> EsResponse[CatHealthResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_cat/health", [])], params)
   self.perform_json(EsRequest::new(Get, path, query~))
@@ -3592,7 +3592,7 @@ pub(all) struct CatHelpQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for CatHelpQuery with fn to_json(_self : CatHelpQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -3637,7 +3637,7 @@ pub async fn Client::cat_help(
   self : Client,
   request : CatHelpRequest,
 ) -> EsResponse[CatHelpResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_cat", [])], params)
   self.perform_json(EsRequest::new(Get, path, query~))
@@ -3656,7 +3656,7 @@ pub(all) struct CatIndicesQuery {
 
 ///|
 pub impl ToJson for CatIndicesQuery with fn to_json(self : CatIndicesQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
     None => ()
@@ -3817,7 +3817,7 @@ pub async fn Client::cat_indices(
   self : Client,
   request : CatIndicesRequest,
 ) -> EsResponse[CatIndicesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -3843,7 +3843,7 @@ pub(all) struct CatMasterQuery {
 
 ///|
 pub impl ToJson for CatMasterQuery with fn to_json(self : CatMasterQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.h {
     Some(value) => obj["h"] = value.to_json()
     None => ()
@@ -3947,7 +3947,7 @@ pub async fn Client::cat_master(
   self : Client,
   request : CatMasterRequest,
 ) -> EsResponse[CatMasterResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_cat/master", [])], params)
   self.perform_json(EsRequest::new(Get, path, query~))
@@ -3964,7 +3964,7 @@ pub(all) struct CatMlDataFrameAnalyticsQuery {
 pub impl ToJson for CatMlDataFrameAnalyticsQuery with fn to_json(
   self : CatMlDataFrameAnalyticsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -4058,7 +4058,7 @@ pub async fn Client::cat_ml_data_frame_analytics(
   self : Client,
   request : CatMlDataFrameAnalyticsRequest,
 ) -> EsResponse[CatMlDataFrameAnalyticsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.id {
     Some(value) => params["id"] = value
     None => ()
@@ -4085,7 +4085,7 @@ pub(all) struct CatMlDatafeedsQuery {
 pub impl ToJson for CatMlDatafeedsQuery with fn to_json(
   self : CatMlDatafeedsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -4177,7 +4177,7 @@ pub async fn Client::cat_ml_datafeeds(
   self : Client,
   request : CatMlDatafeedsRequest,
 ) -> EsResponse[CatMlDatafeedsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.datafeed_id {
     Some(value) => params["datafeed_id"] = value
     None => ()
@@ -4202,7 +4202,7 @@ pub(all) struct CatMlJobsQuery {
 
 ///|
 pub impl ToJson for CatMlJobsQuery with fn to_json(self : CatMlJobsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -4294,7 +4294,7 @@ pub async fn Client::cat_ml_jobs(
   self : Client,
   request : CatMlJobsRequest,
 ) -> EsResponse[CatMlJobsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.job_id {
     Some(value) => params["job_id"] = value
     None => ()
@@ -4323,7 +4323,7 @@ pub(all) struct CatMlTrainedModelsQuery {
 pub impl ToJson for CatMlTrainedModelsQuery with fn to_json(
   self : CatMlTrainedModelsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -4443,7 +4443,7 @@ pub async fn Client::cat_ml_trained_models(
   self : Client,
   request : CatMlTrainedModelsRequest,
 ) -> EsResponse[CatMlTrainedModelsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.model_id {
     Some(value) => params["model_id"] = value
     None => ()
@@ -4469,7 +4469,7 @@ pub(all) struct CatNodeattrsQuery {
 
 ///|
 pub impl ToJson for CatNodeattrsQuery with fn to_json(self : CatNodeattrsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.h {
     Some(value) => obj["h"] = value.to_json()
     None => ()
@@ -4573,7 +4573,7 @@ pub async fn Client::cat_nodeattrs(
   self : Client,
   request : CatNodeattrsRequest,
 ) -> EsResponse[CatNodeattrsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_cat/nodeattrs", [])], params)
   self.perform_json(EsRequest::new(Get, path, query~))
@@ -4590,7 +4590,7 @@ pub(all) struct CatNodesQuery {
 
 ///|
 pub impl ToJson for CatNodesQuery with fn to_json(self : CatNodesQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.full_id {
     Some(value) => obj["full_id"] = value.to_json()
     None => ()
@@ -4710,7 +4710,7 @@ pub async fn Client::cat_nodes(
   self : Client,
   request : CatNodesRequest,
 ) -> EsResponse[CatNodesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_cat/nodes", [])], params)
   self.perform_json(EsRequest::new(Get, path, query~))
@@ -4728,7 +4728,7 @@ pub(all) struct CatPendingTasksQuery {
 pub impl ToJson for CatPendingTasksQuery with fn to_json(
   self : CatPendingTasksQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.h {
     Some(value) => obj["h"] = value.to_json()
     None => ()
@@ -4832,7 +4832,7 @@ pub async fn Client::cat_pending_tasks(
   self : Client,
   request : CatPendingTasksRequest,
 ) -> EsResponse[CatPendingTasksResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_cat/pending_tasks", [])], params)
   self.perform_json(EsRequest::new(Get, path, query~))
@@ -4849,7 +4849,7 @@ pub(all) struct CatPluginsQuery {
 
 ///|
 pub impl ToJson for CatPluginsQuery with fn to_json(self : CatPluginsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.h {
     Some(value) => obj["h"] = value.to_json()
     None => ()
@@ -4968,7 +4968,7 @@ pub async fn Client::cat_plugins(
   self : Client,
   request : CatPluginsRequest,
 ) -> EsResponse[CatPluginsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_cat/plugins", [])], params)
   self.perform_json(EsRequest::new(Get, path, query~))
@@ -4985,7 +4985,7 @@ pub(all) struct CatRecoveryQuery {
 
 ///|
 pub impl ToJson for CatRecoveryQuery with fn to_json(self : CatRecoveryQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.active_only {
     Some(value) => obj["active_only"] = value.to_json()
     None => ()
@@ -5105,7 +5105,7 @@ pub async fn Client::cat_recovery(
   self : Client,
   request : CatRecoveryRequest,
 ) -> EsResponse[CatRecoveryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -5133,7 +5133,7 @@ pub(all) struct CatRepositoriesQuery {
 pub impl ToJson for CatRepositoriesQuery with fn to_json(
   self : CatRepositoriesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.h {
     Some(value) => obj["h"] = value.to_json()
     None => ()
@@ -5237,7 +5237,7 @@ pub async fn Client::cat_repositories(
   self : Client,
   request : CatRepositoriesRequest,
 ) -> EsResponse[CatRepositoriesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_cat/repositories", [])], params)
   self.perform_json(EsRequest::new(Get, path, query~))
@@ -5258,7 +5258,7 @@ pub(all) struct CatSegmentsQuery {
 
 ///|
 pub impl ToJson for CatSegmentsQuery with fn to_json(self : CatSegmentsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.h {
     Some(value) => obj["h"] = value.to_json()
     None => ()
@@ -5449,7 +5449,7 @@ pub async fn Client::cat_segments(
   self : Client,
   request : CatSegmentsRequest,
 ) -> EsResponse[CatSegmentsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -5474,7 +5474,7 @@ pub(all) struct CatShardsQuery {
 
 ///|
 pub impl ToJson for CatShardsQuery with fn to_json(self : CatShardsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.h {
     Some(value) => obj["h"] = value.to_json()
     None => ()
@@ -5566,7 +5566,7 @@ pub async fn Client::cat_shards(
   self : Client,
   request : CatShardsRequest,
 ) -> EsResponse[CatShardsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -5592,7 +5592,7 @@ pub(all) struct CatSnapshotsQuery {
 
 ///|
 pub impl ToJson for CatSnapshotsQuery with fn to_json(self : CatSnapshotsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.ignore_unavailable {
     Some(value) => obj["ignore_unavailable"] = value.to_json()
     None => ()
@@ -5699,7 +5699,7 @@ pub async fn Client::cat_snapshots(
   self : Client,
   request : CatSnapshotsRequest,
 ) -> EsResponse[CatSnapshotsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.repository {
     Some(value) => params["repository"] = value
     None => ()
@@ -5729,7 +5729,7 @@ pub(all) struct CatTasksQuery {
 
 ///|
 pub impl ToJson for CatTasksQuery with fn to_json(self : CatTasksQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.actions {
     Some(value) => obj["actions"] = value.to_json()
     None => ()
@@ -5898,7 +5898,7 @@ pub async fn Client::cat_tasks(
   self : Client,
   request : CatTasksRequest,
 ) -> EsResponse[CatTasksResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_cat/tasks", [])], params)
   self.perform_json(EsRequest::new(Get, path, query~))
@@ -5914,7 +5914,7 @@ pub(all) struct CatTemplatesQuery {
 
 ///|
 pub impl ToJson for CatTemplatesQuery with fn to_json(self : CatTemplatesQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.h {
     Some(value) => obj["h"] = value.to_json()
     None => ()
@@ -6020,7 +6020,7 @@ pub async fn Client::cat_templates(
   self : Client,
   request : CatTemplatesRequest,
 ) -> EsResponse[CatTemplatesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -6048,7 +6048,7 @@ pub(all) struct CatThreadPoolQuery {
 pub impl ToJson for CatThreadPoolQuery with fn to_json(
   self : CatThreadPoolQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.h {
     Some(value) => obj["h"] = value.to_json()
     None => ()
@@ -6154,7 +6154,7 @@ pub async fn Client::cat_thread_pool(
   self : Client,
   request : CatThreadPoolRequest,
 ) -> EsResponse[CatThreadPoolResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.thread_pool_patterns {
     Some(value) => params["thread_pool_patterns"] = value
     None => ()
@@ -6185,7 +6185,7 @@ pub(all) struct CatTransformsQuery {
 pub impl ToJson for CatTransformsQuery with fn to_json(
   self : CatTransformsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -6305,7 +6305,7 @@ pub async fn Client::cat_transforms(
   self : Client,
   request : CatTransformsRequest,
 ) -> EsResponse[CatTransformsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.transform_id {
     Some(value) => params["transform_id"] = value
     None => ()
@@ -6330,7 +6330,7 @@ pub(all) struct CcrDeleteAutoFollowPatternQuery {
 pub impl ToJson for CcrDeleteAutoFollowPatternQuery with fn to_json(
   self : CcrDeleteAutoFollowPatternQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -6399,7 +6399,7 @@ pub async fn Client::ccr_delete_auto_follow_pattern(
   self : Client,
   request : CcrDeleteAutoFollowPatternRequest,
 ) -> EsResponse[CcrDeleteAutoFollowPatternResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -6417,7 +6417,7 @@ pub(all) struct CcrFollowQuery {
 
 ///|
 pub impl ToJson for CcrFollowQuery with fn to_json(self : CcrFollowQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -6497,7 +6497,7 @@ pub(all) struct CcrFollowBody {
 
 ///|
 pub impl ToJson for CcrFollowBody with fn to_json(self : CcrFollowBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.data_stream_name {
     Some(value) => obj["data_stream_name"] = value.to_json()
     None => ()
@@ -6711,7 +6711,7 @@ pub(all) struct CcrFollowResponse {
 
 ///|
 pub impl ToJson for CcrFollowResponse with fn to_json(self : CcrFollowResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["follow_index_created"] = self.follow_index_created.to_json()
   obj["follow_index_shards_acked"] = self.follow_index_shards_acked.to_json()
   obj["index_following_started"] = self.index_following_started.to_json()
@@ -6760,7 +6760,7 @@ pub async fn Client::ccr_follow(
   self : Client,
   request : CcrFollowRequest,
 ) -> EsResponse[CcrFollowResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -6780,7 +6780,7 @@ pub(all) struct CcrFollowInfoQuery {
 pub impl ToJson for CcrFollowInfoQuery with fn to_json(
   self : CcrFollowInfoQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -6829,7 +6829,7 @@ pub(all) struct CcrFollowInfoResponse {
 pub impl ToJson for CcrFollowInfoResponse with fn to_json(
   self : CcrFollowInfoResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["follower_indices"] = self.follower_indices.to_json()
   Json::object(obj)
 }
@@ -6866,7 +6866,7 @@ pub async fn Client::ccr_follow_info(
   self : Client,
   request : CcrFollowInfoRequest,
 ) -> EsResponse[CcrFollowInfoResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -6885,7 +6885,7 @@ pub(all) struct CcrFollowStatsQuery {
 pub impl ToJson for CcrFollowStatsQuery with fn to_json(
   self : CcrFollowStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -6933,7 +6933,7 @@ pub(all) struct CcrFollowStatsResponse {
 pub impl ToJson for CcrFollowStatsResponse with fn to_json(
   self : CcrFollowStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["indices"] = self.indices.to_json()
   Json::object(obj)
 }
@@ -6970,7 +6970,7 @@ pub async fn Client::ccr_follow_stats(
   self : Client,
   request : CcrFollowStatsRequest,
 ) -> EsResponse[CcrFollowStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -6989,7 +6989,7 @@ pub(all) struct CcrForgetFollowerQuery {
 pub impl ToJson for CcrForgetFollowerQuery with fn to_json(
   self : CcrForgetFollowerQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -7040,7 +7040,7 @@ pub(all) struct CcrForgetFollowerBody {
 pub impl ToJson for CcrForgetFollowerBody with fn to_json(
   self : CcrForgetFollowerBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.follower_cluster {
     Some(value) => obj["follower_cluster"] = value.to_json()
     None => ()
@@ -7117,7 +7117,7 @@ pub(all) struct CcrForgetFollowerResponse {
 pub impl ToJson for CcrForgetFollowerResponse with fn to_json(
   self : CcrForgetFollowerResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_shards"] = self._shards.to_json()
   Json::object(obj)
 }
@@ -7156,7 +7156,7 @@ pub async fn Client::ccr_forget_follower(
   self : Client,
   request : CcrForgetFollowerRequest,
 ) -> EsResponse[CcrForgetFollowerResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -7176,7 +7176,7 @@ pub(all) struct CcrGetAutoFollowPatternQuery {
 pub impl ToJson for CcrGetAutoFollowPatternQuery with fn to_json(
   self : CcrGetAutoFollowPatternQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -7229,7 +7229,7 @@ pub(all) struct CcrGetAutoFollowPatternResponse {
 pub impl ToJson for CcrGetAutoFollowPatternResponse with fn to_json(
   self : CcrGetAutoFollowPatternResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["patterns"] = self.patterns.to_json()
   Json::object(obj)
 }
@@ -7271,7 +7271,7 @@ pub async fn Client::ccr_get_auto_follow_pattern(
   self : Client,
   request : CcrGetAutoFollowPatternRequest,
 ) -> EsResponse[CcrGetAutoFollowPatternResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -7296,7 +7296,7 @@ pub(all) struct CcrPauseAutoFollowPatternQuery {
 pub impl ToJson for CcrPauseAutoFollowPatternQuery with fn to_json(
   self : CcrPauseAutoFollowPatternQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -7365,7 +7365,7 @@ pub async fn Client::ccr_pause_auto_follow_pattern(
   self : Client,
   request : CcrPauseAutoFollowPatternRequest,
 ) -> EsResponse[CcrPauseAutoFollowPatternResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -7384,7 +7384,7 @@ pub(all) struct CcrPauseFollowQuery {
 pub impl ToJson for CcrPauseFollowQuery with fn to_json(
   self : CcrPauseFollowQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -7448,7 +7448,7 @@ pub async fn Client::ccr_pause_follow(
   self : Client,
   request : CcrPauseFollowRequest,
 ) -> EsResponse[CcrPauseFollowResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -7467,7 +7467,7 @@ pub(all) struct CcrPutAutoFollowPatternQuery {
 pub impl ToJson for CcrPutAutoFollowPatternQuery with fn to_json(
   self : CcrPutAutoFollowPatternQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -7534,7 +7534,7 @@ pub(all) struct CcrPutAutoFollowPatternBody {
 pub impl ToJson for CcrPutAutoFollowPatternBody with fn to_json(
   self : CcrPutAutoFollowPatternBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["remote_cluster"] = self.remote_cluster.to_json()
   match self.follow_index_pattern {
     Some(value) => obj["follow_index_pattern"] = value.to_json()
@@ -7788,7 +7788,7 @@ pub async fn Client::ccr_put_auto_follow_pattern(
   self : Client,
   request : CcrPutAutoFollowPatternRequest,
 ) -> EsResponse[CcrPutAutoFollowPatternResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -7808,7 +7808,7 @@ pub(all) struct CcrResumeAutoFollowPatternQuery {
 pub impl ToJson for CcrResumeAutoFollowPatternQuery with fn to_json(
   self : CcrResumeAutoFollowPatternQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -7877,7 +7877,7 @@ pub async fn Client::ccr_resume_auto_follow_pattern(
   self : Client,
   request : CcrResumeAutoFollowPatternRequest,
 ) -> EsResponse[CcrResumeAutoFollowPatternResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -7896,7 +7896,7 @@ pub(all) struct CcrResumeFollowQuery {
 pub impl ToJson for CcrResumeFollowQuery with fn to_json(
   self : CcrResumeFollowQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -7956,7 +7956,7 @@ pub(all) struct CcrResumeFollowBody {
 pub impl ToJson for CcrResumeFollowBody with fn to_json(
   self : CcrResumeFollowBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.max_outstanding_read_requests {
     Some(value) => obj["max_outstanding_read_requests"] = value.to_json()
     None => ()
@@ -8148,7 +8148,7 @@ pub async fn Client::ccr_resume_follow(
   self : Client,
   request : CcrResumeFollowRequest,
 ) -> EsResponse[CcrResumeFollowResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -8170,7 +8170,7 @@ pub(all) struct CcrStatsQuery {
 
 ///|
 pub impl ToJson for CcrStatsQuery with fn to_json(self : CcrStatsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -8232,7 +8232,7 @@ pub(all) struct CcrStatsResponse {
 
 ///|
 pub impl ToJson for CcrStatsResponse with fn to_json(self : CcrStatsResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["auto_follow_stats"] = self.auto_follow_stats.to_json()
   obj["follow_stats"] = self.follow_stats.to_json()
   Json::object(obj)
@@ -8272,7 +8272,7 @@ pub async fn Client::ccr_stats(
   self : Client,
   request : CcrStatsRequest,
 ) -> EsResponse[CcrStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_ccr/stats", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -8285,7 +8285,7 @@ pub(all) struct CcrUnfollowQuery {
 
 ///|
 pub impl ToJson for CcrUnfollowQuery with fn to_json(self : CcrUnfollowQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -8347,7 +8347,7 @@ pub async fn Client::ccr_unfollow(
   self : Client,
   request : CcrUnfollowRequest,
 ) -> EsResponse[CcrUnfollowResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -8362,7 +8362,7 @@ pub(all) struct ClearScrollQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for ClearScrollQuery with fn to_json(_self : ClearScrollQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -8402,7 +8402,7 @@ pub(all) struct ClearScrollResponse {
 pub impl ToJson for ClearScrollResponse with fn to_json(
   self : ClearScrollResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["succeeded"] = self.succeeded.to_json()
   obj["num_freed"] = self.num_freed.to_json()
   Json::object(obj)
@@ -8446,7 +8446,7 @@ pub async fn Client::clear_scroll(
   self : Client,
   request : ClearScrollRequest,
 ) -> EsResponse[ClearScrollResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.scroll_id {
     Some(value) => params["scroll_id"] = value
     None => ()
@@ -8473,7 +8473,7 @@ pub(all) struct ClosePointInTimeQuery {} derive(Eq, Debug)
 pub impl ToJson for ClosePointInTimeQuery with fn to_json(
   _self : ClosePointInTimeQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -8509,7 +8509,7 @@ pub(all) struct ClosePointInTimeBody {
 pub impl ToJson for ClosePointInTimeBody with fn to_json(
   self : ClosePointInTimeBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["id"] = self.id.to_json()
   Json::object(obj)
 }
@@ -8542,7 +8542,7 @@ pub(all) struct ClosePointInTimeResponse {
 pub impl ToJson for ClosePointInTimeResponse with fn to_json(
   self : ClosePointInTimeResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["succeeded"] = self.succeeded.to_json()
   obj["num_freed"] = self.num_freed.to_json()
   Json::object(obj)
@@ -8584,7 +8584,7 @@ pub async fn Client::close_point_in_time(
   self : Client,
   request : ClosePointInTimeRequest,
 ) -> EsResponse[ClosePointInTimeResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_pit", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -8606,7 +8606,7 @@ pub(all) struct ClusterAllocationExplainQuery {
 pub impl ToJson for ClusterAllocationExplainQuery with fn to_json(
   self : ClusterAllocationExplainQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.index {
     Some(value) => obj["index"] = value.to_json()
     None => ()
@@ -8761,7 +8761,7 @@ pub(all) struct ClusterAllocationExplainBody {
 pub impl ToJson for ClusterAllocationExplainBody with fn to_json(
   self : ClusterAllocationExplainBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.index {
     Some(value) => obj["index"] = value.to_json()
     None => ()
@@ -8856,7 +8856,7 @@ pub(all) struct ClusterAllocationExplainResponse {
 pub impl ToJson for ClusterAllocationExplainResponse with fn to_json(
   self : ClusterAllocationExplainResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allocate_explanation {
     Some(value) => obj["allocate_explanation"] = value.to_json()
     None => ()
@@ -9154,7 +9154,7 @@ pub async fn Client::cluster_allocation_explain(
   self : Client,
   request : ClusterAllocationExplainRequest,
 ) -> EsResponse[ClusterAllocationExplainResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_cluster/allocation/explain", [])],
@@ -9177,7 +9177,7 @@ pub(all) struct ClusterDeleteComponentTemplateQuery {
 pub impl ToJson for ClusterDeleteComponentTemplateQuery with fn to_json(
   self : ClusterDeleteComponentTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -9260,7 +9260,7 @@ pub async fn Client::cluster_delete_component_template(
   self : Client,
   request : ClusterDeleteComponentTemplateRequest,
 ) -> EsResponse[ClusterDeleteComponentTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -9280,7 +9280,7 @@ pub(all) struct ClusterDeleteVotingConfigExclusionsQuery {
 pub impl ToJson for ClusterDeleteVotingConfigExclusionsQuery with fn to_json(
   self : ClusterDeleteVotingConfigExclusionsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -9362,7 +9362,7 @@ pub async fn Client::cluster_delete_voting_config_exclusions(
   self : Client,
   request : ClusterDeleteVotingConfigExclusionsRequest,
 ) -> EsResponse[ClusterDeleteVotingConfigExclusionsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_cluster/voting_config_exclusions", [])],
@@ -9381,7 +9381,7 @@ pub(all) struct ClusterExistsComponentTemplateQuery {
 pub impl ToJson for ClusterExistsComponentTemplateQuery with fn to_json(
   self : ClusterExistsComponentTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -9464,7 +9464,7 @@ pub async fn Client::cluster_exists_component_template(
   self : Client,
   request : ClusterExistsComponentTemplateRequest,
 ) -> EsResponse[ClusterExistsComponentTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -9487,7 +9487,7 @@ pub(all) struct ClusterGetComponentTemplateQuery {
 pub impl ToJson for ClusterGetComponentTemplateQuery with fn to_json(
   self : ClusterGetComponentTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.flat_settings {
     Some(value) => obj["flat_settings"] = value.to_json()
     None => ()
@@ -9602,7 +9602,7 @@ pub(all) struct ClusterGetComponentTemplateResponse {
 pub impl ToJson for ClusterGetComponentTemplateResponse with fn to_json(
   self : ClusterGetComponentTemplateResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["component_templates"] = self.component_templates.to_json()
   Json::object(obj)
 }
@@ -9644,7 +9644,7 @@ pub async fn Client::cluster_get_component_template(
   self : Client,
   request : ClusterGetComponentTemplateRequest,
 ) -> EsResponse[ClusterGetComponentTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -9672,7 +9672,7 @@ pub(all) struct ClusterGetSettingsQuery {
 pub impl ToJson for ClusterGetSettingsQuery with fn to_json(
   self : ClusterGetSettingsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.flat_settings {
     Some(value) => obj["flat_settings"] = value.to_json()
     None => ()
@@ -9769,7 +9769,7 @@ pub(all) struct ClusterGetSettingsResponse {
 pub impl ToJson for ClusterGetSettingsResponse with fn to_json(
   self : ClusterGetSettingsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["persistent"] = self.persistent.to_json()
   obj["transient"] = self.transient.to_json()
   match self.defaults {
@@ -9818,7 +9818,7 @@ pub async fn Client::cluster_get_settings(
   self : Client,
   request : ClusterGetSettingsRequest,
 ) -> EsResponse[ClusterGetSettingsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_cluster/settings", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -9843,7 +9843,7 @@ pub(all) struct ClusterHealthQuery {
 pub impl ToJson for ClusterHealthQuery with fn to_json(
   self : ClusterHealthQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
     None => ()
@@ -10083,7 +10083,7 @@ pub async fn Client::cluster_health(
   self : Client,
   request : ClusterHealthRequest,
 ) -> EsResponse[ClusterHealthResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -10104,7 +10104,7 @@ pub(all) struct ClusterInfoQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for ClusterInfoQuery with fn to_json(_self : ClusterInfoQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -10144,7 +10144,7 @@ pub(all) struct ClusterInfoResponse {
 pub impl ToJson for ClusterInfoResponse with fn to_json(
   self : ClusterInfoResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["cluster_name"] = self.cluster_name.to_json()
   match self.http {
     Some(value) => obj["http"] = value.to_json()
@@ -10218,7 +10218,7 @@ pub async fn Client::cluster_info(
   self : Client,
   request : ClusterInfoRequest,
 ) -> EsResponse[ClusterInfoResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["target"] = request.target
   let query = request.query.to_pairs()
   let path = select_path(
@@ -10238,7 +10238,7 @@ pub(all) struct ClusterPendingTasksQuery {
 pub impl ToJson for ClusterPendingTasksQuery with fn to_json(
   self : ClusterPendingTasksQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.local_ {
     Some(value) => obj["local"] = value.to_json()
     None => ()
@@ -10303,7 +10303,7 @@ pub(all) struct ClusterPendingTasksResponse {
 pub impl ToJson for ClusterPendingTasksResponse with fn to_json(
   self : ClusterPendingTasksResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["tasks"] = self.tasks.to_json()
   Json::object(obj)
 }
@@ -10340,7 +10340,7 @@ pub async fn Client::cluster_pending_tasks(
   self : Client,
   request : ClusterPendingTasksRequest,
 ) -> EsResponse[ClusterPendingTasksResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_cluster/pending_tasks", [])],
@@ -10361,7 +10361,7 @@ pub(all) struct ClusterPostVotingConfigExclusionsQuery {
 pub impl ToJson for ClusterPostVotingConfigExclusionsQuery with fn to_json(
   self : ClusterPostVotingConfigExclusionsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.node_names {
     Some(value) => obj["node_names"] = value.to_json()
     None => ()
@@ -10471,7 +10471,7 @@ pub async fn Client::cluster_post_voting_config_exclusions(
   self : Client,
   request : ClusterPostVotingConfigExclusionsRequest,
 ) -> EsResponse[ClusterPostVotingConfigExclusionsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_cluster/voting_config_exclusions", [])],
@@ -10491,7 +10491,7 @@ pub(all) struct ClusterPutComponentTemplateQuery {
 pub impl ToJson for ClusterPutComponentTemplateQuery with fn to_json(
   self : ClusterPutComponentTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.create {
     Some(value) => obj["create"] = value.to_json()
     None => ()
@@ -10578,7 +10578,7 @@ pub(all) struct ClusterPutComponentTemplateBody {
 pub impl ToJson for ClusterPutComponentTemplateBody with fn to_json(
   self : ClusterPutComponentTemplateBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["template"] = self.template.to_json()
   match self.version {
     Some(value) => obj["version"] = value.to_json()
@@ -10663,7 +10663,7 @@ pub async fn Client::cluster_put_component_template(
   self : Client,
   request : ClusterPutComponentTemplateRequest,
 ) -> EsResponse[ClusterPutComponentTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -10685,7 +10685,7 @@ pub(all) struct ClusterPutSettingsQuery {
 pub impl ToJson for ClusterPutSettingsQuery with fn to_json(
   self : ClusterPutSettingsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.flat_settings {
     Some(value) => obj["flat_settings"] = value.to_json()
     None => ()
@@ -10766,7 +10766,7 @@ pub(all) struct ClusterPutSettingsBody {
 pub impl ToJson for ClusterPutSettingsBody with fn to_json(
   self : ClusterPutSettingsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.persistent {
     Some(value) => obj["persistent"] = value.to_json()
     None => ()
@@ -10818,7 +10818,7 @@ pub(all) struct ClusterPutSettingsResponse {
 pub impl ToJson for ClusterPutSettingsResponse with fn to_json(
   self : ClusterPutSettingsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["persistent"] = self.persistent.to_json()
   obj["transient"] = self.transient.to_json()
@@ -10865,7 +10865,7 @@ pub async fn Client::cluster_put_settings(
   self : Client,
   request : ClusterPutSettingsRequest,
 ) -> EsResponse[ClusterPutSettingsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_cluster/settings", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -10879,7 +10879,7 @@ pub(all) struct ClusterRemoteInfoQuery {} derive(Eq, Debug)
 pub impl ToJson for ClusterRemoteInfoQuery with fn to_json(
   _self : ClusterRemoteInfoQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -10926,7 +10926,7 @@ pub async fn Client::cluster_remote_info(
   self : Client,
   request : ClusterRemoteInfoRequest,
 ) -> EsResponse[ClusterRemoteInfoResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_remote/info", [])], params)
   self.perform_json(EsRequest::new(Get, path, query~))
@@ -10946,7 +10946,7 @@ pub(all) struct ClusterRerouteQuery {
 pub impl ToJson for ClusterRerouteQuery with fn to_json(
   self : ClusterRerouteQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.dry_run {
     Some(value) => obj["dry_run"] = value.to_json()
     None => ()
@@ -11068,7 +11068,7 @@ pub(all) struct ClusterRerouteBody {
 pub impl ToJson for ClusterRerouteBody with fn to_json(
   self : ClusterRerouteBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.commands {
     Some(value) => obj["commands"] = value.to_json()
     None => ()
@@ -11106,7 +11106,7 @@ pub(all) struct ClusterRerouteResponse {
 pub impl ToJson for ClusterRerouteResponse with fn to_json(
   self : ClusterRerouteResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   match self.explanations {
     Some(value) => obj["explanations"] = value.to_json()
@@ -11162,7 +11162,7 @@ pub async fn Client::cluster_reroute(
   self : Client,
   request : ClusterRerouteRequest,
 ) -> EsResponse[ClusterRerouteResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_cluster/reroute", [])], params)
   let body = match request.body {
@@ -11186,7 +11186,7 @@ pub(all) struct ClusterStateQuery {
 
 ///|
 pub impl ToJson for ClusterStateQuery with fn to_json(self : ClusterStateQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -11368,7 +11368,7 @@ pub async fn Client::cluster_state(
   self : Client,
   request : ClusterStateRequest,
 ) -> EsResponse[ClusterStateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.metric {
     Some(value) => params["metric"] = value
     None => ()
@@ -11397,7 +11397,7 @@ pub(all) struct ClusterStatsQuery {
 
 ///|
 pub impl ToJson for ClusterStatsQuery with fn to_json(self : ClusterStatsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.include_remotes {
     Some(value) => obj["include_remotes"] = value.to_json()
     None => ()
@@ -11475,7 +11475,7 @@ pub async fn Client::cluster_stats(
   self : Client,
   request : ClusterStatsRequest,
 ) -> EsResponse[ClusterStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.node_id {
     Some(value) => params["node_id"] = value
     None => ()
@@ -11498,7 +11498,7 @@ pub(all) struct ConnectorCheckInQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorCheckInQuery with fn to_json(
   _self : ConnectorCheckInQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -11534,7 +11534,7 @@ pub(all) struct ConnectorCheckInResponse {
 pub impl ToJson for ConnectorCheckInResponse with fn to_json(
   self : ConnectorCheckInResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -11571,7 +11571,7 @@ pub async fn Client::connector_check_in(
   self : Client,
   request : ConnectorCheckInRequest,
 ) -> EsResponse[ConnectorCheckInResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -11591,7 +11591,7 @@ pub(all) struct ConnectorDeleteQuery {
 pub impl ToJson for ConnectorDeleteQuery with fn to_json(
   self : ConnectorDeleteQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.delete_sync_jobs {
     Some(value) => obj["delete_sync_jobs"] = value.to_json()
     None => ()
@@ -11669,7 +11669,7 @@ pub async fn Client::connector_delete(
   self : Client,
   request : ConnectorDeleteRequest,
 ) -> EsResponse[ConnectorDeleteResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -11686,7 +11686,7 @@ pub(all) struct ConnectorGetQuery {
 
 ///|
 pub impl ToJson for ConnectorGetQuery with fn to_json(self : ConnectorGetQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.include_deleted {
     Some(value) => obj["include_deleted"] = value.to_json()
     None => ()
@@ -11748,7 +11748,7 @@ pub async fn Client::connector_get(
   self : Client,
   request : ConnectorGetRequest,
 ) -> EsResponse[ConnectorGetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -11765,7 +11765,7 @@ pub(all) struct ConnectorLastSyncQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorLastSyncQuery with fn to_json(
   _self : ConnectorLastSyncQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -11812,7 +11812,7 @@ pub(all) struct ConnectorLastSyncBody {
 pub impl ToJson for ConnectorLastSyncBody with fn to_json(
   self : ConnectorLastSyncBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.last_access_control_sync_error {
     Some(value) => obj["last_access_control_sync_error"] = value.to_json()
     None => ()
@@ -12022,7 +12022,7 @@ pub(all) struct ConnectorLastSyncResponse {
 pub impl ToJson for ConnectorLastSyncResponse with fn to_json(
   self : ConnectorLastSyncResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -12061,7 +12061,7 @@ pub async fn Client::connector_last_sync(
   self : Client,
   request : ConnectorLastSyncRequest,
 ) -> EsResponse[ConnectorLastSyncResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -12089,7 +12089,7 @@ pub(all) struct ConnectorListQuery {
 pub impl ToJson for ConnectorListQuery with fn to_json(
   self : ConnectorListQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.from {
     Some(value) => obj["from"] = value.to_json()
     None => ()
@@ -12236,7 +12236,7 @@ pub(all) struct ConnectorListResponse {
 pub impl ToJson for ConnectorListResponse with fn to_json(
   self : ConnectorListResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["results"] = self.results.to_json()
   Json::object(obj)
@@ -12276,7 +12276,7 @@ pub async fn Client::connector_list(
   self : Client,
   request : ConnectorListRequest,
 ) -> EsResponse[ConnectorListResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_connector", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -12289,7 +12289,7 @@ pub(all) struct ConnectorPostQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorPostQuery with fn to_json(
   _self : ConnectorPostQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -12328,7 +12328,7 @@ pub(all) struct ConnectorPostBody {
 
 ///|
 pub impl ToJson for ConnectorPostBody with fn to_json(self : ConnectorPostBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.description {
     Some(value) => obj["description"] = value.to_json()
     None => ()
@@ -12421,7 +12421,7 @@ pub(all) struct ConnectorPostResponse {
 pub impl ToJson for ConnectorPostResponse with fn to_json(
   self : ConnectorPostResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   obj["id"] = self.id.to_json()
   Json::object(obj)
@@ -12463,7 +12463,7 @@ pub async fn Client::connector_post(
   self : Client,
   request : ConnectorPostRequest,
 ) -> EsResponse[ConnectorPostResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_connector", [])], params)
   let body = match request.body {
@@ -12478,7 +12478,7 @@ pub(all) struct ConnectorPutQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for ConnectorPutQuery with fn to_json(_self : ConnectorPutQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -12517,7 +12517,7 @@ pub(all) struct ConnectorPutBody {
 
 ///|
 pub impl ToJson for ConnectorPutBody with fn to_json(self : ConnectorPutBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.description {
     Some(value) => obj["description"] = value.to_json()
     None => ()
@@ -12610,7 +12610,7 @@ pub(all) struct ConnectorPutResponse {
 pub impl ToJson for ConnectorPutResponse with fn to_json(
   self : ConnectorPutResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   obj["id"] = self.id.to_json()
   Json::object(obj)
@@ -12654,7 +12654,7 @@ pub async fn Client::connector_put(
   self : Client,
   request : ConnectorPutRequest,
 ) -> EsResponse[ConnectorPutResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.connector_id {
     Some(value) => params["connector_id"] = value
     None => ()
@@ -12681,7 +12681,7 @@ pub(all) struct ConnectorSecretDeleteQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorSecretDeleteQuery with fn to_json(
   _self : ConnectorSecretDeleteQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -12717,7 +12717,7 @@ pub(all) struct ConnectorSecretDeleteResponse {
 pub impl ToJson for ConnectorSecretDeleteResponse with fn to_json(
   self : ConnectorSecretDeleteResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["deleted"] = self.deleted.to_json()
   Json::object(obj)
 }
@@ -12759,7 +12759,7 @@ pub async fn Client::connector_secret_delete(
   self : Client,
   request : ConnectorSecretDeleteRequest,
 ) -> EsResponse[ConnectorSecretDeleteResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -12776,7 +12776,7 @@ pub(all) struct ConnectorSecretGetQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorSecretGetQuery with fn to_json(
   _self : ConnectorSecretGetQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -12813,7 +12813,7 @@ pub(all) struct ConnectorSecretGetResponse {
 pub impl ToJson for ConnectorSecretGetResponse with fn to_json(
   self : ConnectorSecretGetResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["id"] = self.id.to_json()
   obj["value"] = self.value.to_json()
   Json::object(obj)
@@ -12855,7 +12855,7 @@ pub async fn Client::connector_secret_get(
   self : Client,
   request : ConnectorSecretGetRequest,
 ) -> EsResponse[ConnectorSecretGetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -12872,7 +12872,7 @@ pub(all) struct ConnectorSecretPostQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorSecretPostQuery with fn to_json(
   _self : ConnectorSecretPostQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -12908,7 +12908,7 @@ pub(all) struct ConnectorSecretPostResponse {
 pub impl ToJson for ConnectorSecretPostResponse with fn to_json(
   self : ConnectorSecretPostResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["id"] = self.id.to_json()
   Json::object(obj)
 }
@@ -12945,7 +12945,7 @@ pub async fn Client::connector_secret_post(
   self : Client,
   request : ConnectorSecretPostRequest,
 ) -> EsResponse[ConnectorSecretPostResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_connector/_secret", [])], params)
   self.perform(EsRequest::new(Post, path, query~))
@@ -12958,7 +12958,7 @@ pub(all) struct ConnectorSecretPutQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorSecretPutQuery with fn to_json(
   _self : ConnectorSecretPutQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -12994,7 +12994,7 @@ pub(all) struct ConnectorSecretPutResponse {
 pub impl ToJson for ConnectorSecretPutResponse with fn to_json(
   self : ConnectorSecretPutResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -13031,7 +13031,7 @@ pub async fn Client::connector_secret_put(
   self : Client,
   request : ConnectorSecretPutRequest,
 ) -> EsResponse[ConnectorSecretPutResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -13048,7 +13048,7 @@ pub(all) struct ConnectorSyncJobCancelQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorSyncJobCancelQuery with fn to_json(
   _self : ConnectorSyncJobCancelQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -13086,7 +13086,7 @@ pub(all) struct ConnectorSyncJobCancelResponse {
 pub impl ToJson for ConnectorSyncJobCancelResponse with fn to_json(
   self : ConnectorSyncJobCancelResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -13128,7 +13128,7 @@ pub async fn Client::connector_sync_job_cancel(
   self : Client,
   request : ConnectorSyncJobCancelRequest,
 ) -> EsResponse[ConnectorSyncJobCancelResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_sync_job_id"] = request.connector_sync_job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -13150,7 +13150,7 @@ pub(all) struct ConnectorSyncJobCheckInQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorSyncJobCheckInQuery with fn to_json(
   _self : ConnectorSyncJobCheckInQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -13201,7 +13201,7 @@ pub async fn Client::connector_sync_job_check_in(
   self : Client,
   request : ConnectorSyncJobCheckInRequest,
 ) -> EsResponse[ConnectorSyncJobCheckInResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_sync_job_id"] = request.connector_sync_job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -13223,7 +13223,7 @@ pub(all) struct ConnectorSyncJobClaimQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorSyncJobClaimQuery with fn to_json(
   _self : ConnectorSyncJobClaimQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -13260,7 +13260,7 @@ pub(all) struct ConnectorSyncJobClaimBody {
 pub impl ToJson for ConnectorSyncJobClaimBody with fn to_json(
   self : ConnectorSyncJobClaimBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.sync_cursor {
     Some(value) => obj["sync_cursor"] = value.to_json()
     None => ()
@@ -13320,7 +13320,7 @@ pub async fn Client::connector_sync_job_claim(
   self : Client,
   request : ConnectorSyncJobClaimRequest,
 ) -> EsResponse[ConnectorSyncJobClaimResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_sync_job_id"] = request.connector_sync_job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -13342,7 +13342,7 @@ pub(all) struct ConnectorSyncJobDeleteQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorSyncJobDeleteQuery with fn to_json(
   _self : ConnectorSyncJobDeleteQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -13393,7 +13393,7 @@ pub async fn Client::connector_sync_job_delete(
   self : Client,
   request : ConnectorSyncJobDeleteRequest,
 ) -> EsResponse[ConnectorSyncJobDeleteResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_sync_job_id"] = request.connector_sync_job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -13414,7 +13414,7 @@ pub(all) struct ConnectorSyncJobErrorQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorSyncJobErrorQuery with fn to_json(
   _self : ConnectorSyncJobErrorQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -13450,7 +13450,7 @@ pub(all) struct ConnectorSyncJobErrorBody {
 pub impl ToJson for ConnectorSyncJobErrorBody with fn to_json(
   self : ConnectorSyncJobErrorBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["error"] = self.error.to_json()
   Json::object(obj)
 }
@@ -13499,7 +13499,7 @@ pub async fn Client::connector_sync_job_error(
   self : Client,
   request : ConnectorSyncJobErrorRequest,
 ) -> EsResponse[ConnectorSyncJobErrorResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_sync_job_id"] = request.connector_sync_job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -13521,7 +13521,7 @@ pub(all) struct ConnectorSyncJobGetQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorSyncJobGetQuery with fn to_json(
   _self : ConnectorSyncJobGetQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -13570,7 +13570,7 @@ pub async fn Client::connector_sync_job_get(
   self : Client,
   request : ConnectorSyncJobGetRequest,
 ) -> EsResponse[ConnectorSyncJobGetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_sync_job_id"] = request.connector_sync_job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -13597,7 +13597,7 @@ pub(all) struct ConnectorSyncJobListQuery {
 pub impl ToJson for ConnectorSyncJobListQuery with fn to_json(
   self : ConnectorSyncJobListQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.from {
     Some(value) => obj["from"] = value.to_json()
     None => ()
@@ -13705,7 +13705,7 @@ pub(all) struct ConnectorSyncJobListResponse {
 pub impl ToJson for ConnectorSyncJobListResponse with fn to_json(
   self : ConnectorSyncJobListResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["results"] = self.results.to_json()
   Json::object(obj)
@@ -13747,7 +13747,7 @@ pub async fn Client::connector_sync_job_list(
   self : Client,
   request : ConnectorSyncJobListRequest,
 ) -> EsResponse[ConnectorSyncJobListResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_connector/_sync_job", [])],
@@ -13763,7 +13763,7 @@ pub(all) struct ConnectorSyncJobPostQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorSyncJobPostQuery with fn to_json(
   _self : ConnectorSyncJobPostQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -13801,7 +13801,7 @@ pub(all) struct ConnectorSyncJobPostBody {
 pub impl ToJson for ConnectorSyncJobPostBody with fn to_json(
   self : ConnectorSyncJobPostBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["id"] = self.id.to_json()
   match self.job_type {
     Some(value) => obj["job_type"] = value.to_json()
@@ -13856,7 +13856,7 @@ pub(all) struct ConnectorSyncJobPostResponse {
 pub impl ToJson for ConnectorSyncJobPostResponse with fn to_json(
   self : ConnectorSyncJobPostResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["id"] = self.id.to_json()
   Json::object(obj)
 }
@@ -13895,7 +13895,7 @@ pub async fn Client::connector_sync_job_post(
   self : Client,
   request : ConnectorSyncJobPostRequest,
 ) -> EsResponse[ConnectorSyncJobPostResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_connector/_sync_job", [])],
@@ -13912,7 +13912,7 @@ pub(all) struct ConnectorSyncJobUpdateStatsQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorSyncJobUpdateStatsQuery with fn to_json(
   _self : ConnectorSyncJobUpdateStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -13958,7 +13958,7 @@ pub(all) struct ConnectorSyncJobUpdateStatsBody {
 pub impl ToJson for ConnectorSyncJobUpdateStatsBody with fn to_json(
   self : ConnectorSyncJobUpdateStatsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["deleted_document_count"] = self.deleted_document_count.to_json()
   obj["indexed_document_count"] = self.indexed_document_count.to_json()
   obj["indexed_document_volume"] = self.indexed_document_volume.to_json()
@@ -14063,7 +14063,7 @@ pub async fn Client::connector_sync_job_update_stats(
   self : Client,
   request : ConnectorSyncJobUpdateStatsRequest,
 ) -> EsResponse[ConnectorSyncJobUpdateStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_sync_job_id"] = request.connector_sync_job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -14085,7 +14085,7 @@ pub(all) struct ConnectorUpdateActiveFilteringQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorUpdateActiveFilteringQuery with fn to_json(
   _self : ConnectorUpdateActiveFilteringQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -14129,7 +14129,7 @@ pub(all) struct ConnectorUpdateActiveFilteringResponse {
 pub impl ToJson for ConnectorUpdateActiveFilteringResponse with fn to_json(
   self : ConnectorUpdateActiveFilteringResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -14173,7 +14173,7 @@ pub async fn Client::connector_update_active_filtering(
   self : Client,
   request : ConnectorUpdateActiveFilteringRequest,
 ) -> EsResponse[ConnectorUpdateActiveFilteringResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -14198,7 +14198,7 @@ pub(all) struct ConnectorUpdateApiKeyIdQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorUpdateApiKeyIdQuery with fn to_json(
   _self : ConnectorUpdateApiKeyIdQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -14237,7 +14237,7 @@ pub(all) struct ConnectorUpdateApiKeyIdBody {
 pub impl ToJson for ConnectorUpdateApiKeyIdBody with fn to_json(
   self : ConnectorUpdateApiKeyIdBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.api_key_id {
     Some(value) => obj["api_key_id"] = value.to_json()
     None => ()
@@ -14289,7 +14289,7 @@ pub(all) struct ConnectorUpdateApiKeyIdResponse {
 pub impl ToJson for ConnectorUpdateApiKeyIdResponse with fn to_json(
   self : ConnectorUpdateApiKeyIdResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -14333,7 +14333,7 @@ pub async fn Client::connector_update_api_key_id(
   self : Client,
   request : ConnectorUpdateApiKeyIdRequest,
 ) -> EsResponse[ConnectorUpdateApiKeyIdResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -14355,7 +14355,7 @@ pub(all) struct ConnectorUpdateConfigurationQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorUpdateConfigurationQuery with fn to_json(
   _self : ConnectorUpdateConfigurationQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -14397,7 +14397,7 @@ pub(all) struct ConnectorUpdateConfigurationBody {
 pub impl ToJson for ConnectorUpdateConfigurationBody with fn to_json(
   self : ConnectorUpdateConfigurationBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.configuration {
     Some(value) => obj["configuration"] = value.to_json()
     None => ()
@@ -14451,7 +14451,7 @@ pub(all) struct ConnectorUpdateConfigurationResponse {
 pub impl ToJson for ConnectorUpdateConfigurationResponse with fn to_json(
   self : ConnectorUpdateConfigurationResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -14495,7 +14495,7 @@ pub async fn Client::connector_update_configuration(
   self : Client,
   request : ConnectorUpdateConfigurationRequest,
 ) -> EsResponse[ConnectorUpdateConfigurationResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -14517,7 +14517,7 @@ pub(all) struct ConnectorUpdateErrorQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorUpdateErrorQuery with fn to_json(
   _self : ConnectorUpdateErrorQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -14553,7 +14553,7 @@ pub(all) struct ConnectorUpdateErrorBody {
 pub impl ToJson for ConnectorUpdateErrorBody with fn to_json(
   self : ConnectorUpdateErrorBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["error"] = self.error.to_json()
   Json::object(obj)
 }
@@ -14585,7 +14585,7 @@ pub(all) struct ConnectorUpdateErrorResponse {
 pub impl ToJson for ConnectorUpdateErrorResponse with fn to_json(
   self : ConnectorUpdateErrorResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -14626,7 +14626,7 @@ pub async fn Client::connector_update_error(
   self : Client,
   request : ConnectorUpdateErrorRequest,
 ) -> EsResponse[ConnectorUpdateErrorResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -14644,7 +14644,7 @@ pub(all) struct ConnectorUpdateFeaturesQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorUpdateFeaturesQuery with fn to_json(
   _self : ConnectorUpdateFeaturesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -14682,7 +14682,7 @@ pub(all) struct ConnectorUpdateFeaturesBody {
 pub impl ToJson for ConnectorUpdateFeaturesBody with fn to_json(
   self : ConnectorUpdateFeaturesBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["features"] = self.features.to_json()
   Json::object(obj)
 }
@@ -14718,7 +14718,7 @@ pub(all) struct ConnectorUpdateFeaturesResponse {
 pub impl ToJson for ConnectorUpdateFeaturesResponse with fn to_json(
   self : ConnectorUpdateFeaturesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -14762,7 +14762,7 @@ pub async fn Client::connector_update_features(
   self : Client,
   request : ConnectorUpdateFeaturesRequest,
 ) -> EsResponse[ConnectorUpdateFeaturesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -14780,7 +14780,7 @@ pub(all) struct ConnectorUpdateFilteringQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorUpdateFilteringQuery with fn to_json(
   _self : ConnectorUpdateFilteringQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -14823,7 +14823,7 @@ pub(all) struct ConnectorUpdateFilteringBody {
 pub impl ToJson for ConnectorUpdateFilteringBody with fn to_json(
   self : ConnectorUpdateFilteringBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.filtering {
     Some(value) => obj["filtering"] = value.to_json()
     None => ()
@@ -14885,7 +14885,7 @@ pub(all) struct ConnectorUpdateFilteringResponse {
 pub impl ToJson for ConnectorUpdateFilteringResponse with fn to_json(
   self : ConnectorUpdateFilteringResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -14929,7 +14929,7 @@ pub async fn Client::connector_update_filtering(
   self : Client,
   request : ConnectorUpdateFilteringRequest,
 ) -> EsResponse[ConnectorUpdateFilteringResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -14949,7 +14949,7 @@ pub(all) struct ConnectorUpdateFilteringValidationQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorUpdateFilteringValidationQuery with fn to_json(
   _self : ConnectorUpdateFilteringValidationQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -14990,7 +14990,7 @@ pub(all) struct ConnectorUpdateFilteringValidationBody {
 pub impl ToJson for ConnectorUpdateFilteringValidationBody with fn to_json(
   self : ConnectorUpdateFilteringValidationBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["validation"] = self.validation.to_json()
   Json::object(obj)
 }
@@ -15029,7 +15029,7 @@ pub(all) struct ConnectorUpdateFilteringValidationResponse {
 pub impl ToJson for ConnectorUpdateFilteringValidationResponse with fn to_json(
   self : ConnectorUpdateFilteringValidationResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -15073,7 +15073,7 @@ pub async fn Client::connector_update_filtering_validation(
   self : Client,
   request : ConnectorUpdateFilteringValidationRequest,
 ) -> EsResponse[ConnectorUpdateFilteringValidationResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -15095,7 +15095,7 @@ pub(all) struct ConnectorUpdateIndexNameQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorUpdateIndexNameQuery with fn to_json(
   _self : ConnectorUpdateIndexNameQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -15136,7 +15136,7 @@ pub(all) struct ConnectorUpdateIndexNameBody {
 pub impl ToJson for ConnectorUpdateIndexNameBody with fn to_json(
   self : ConnectorUpdateIndexNameBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["index_name"] = self.index_name.to_json()
   Json::object(obj)
 }
@@ -15172,7 +15172,7 @@ pub(all) struct ConnectorUpdateIndexNameResponse {
 pub impl ToJson for ConnectorUpdateIndexNameResponse with fn to_json(
   self : ConnectorUpdateIndexNameResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -15216,7 +15216,7 @@ pub async fn Client::connector_update_index_name(
   self : Client,
   request : ConnectorUpdateIndexNameRequest,
 ) -> EsResponse[ConnectorUpdateIndexNameResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -15238,7 +15238,7 @@ pub(all) struct ConnectorUpdateNameQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorUpdateNameQuery with fn to_json(
   _self : ConnectorUpdateNameQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -15275,7 +15275,7 @@ pub(all) struct ConnectorUpdateNameBody {
 pub impl ToJson for ConnectorUpdateNameBody with fn to_json(
   self : ConnectorUpdateNameBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.name {
     Some(value) => obj["name"] = value.to_json()
     None => ()
@@ -15324,7 +15324,7 @@ pub(all) struct ConnectorUpdateNameResponse {
 pub impl ToJson for ConnectorUpdateNameResponse with fn to_json(
   self : ConnectorUpdateNameResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -15365,7 +15365,7 @@ pub async fn Client::connector_update_name(
   self : Client,
   request : ConnectorUpdateNameRequest,
 ) -> EsResponse[ConnectorUpdateNameResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -15383,7 +15383,7 @@ pub(all) struct ConnectorUpdateNativeQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorUpdateNativeQuery with fn to_json(
   _self : ConnectorUpdateNativeQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -15419,7 +15419,7 @@ pub(all) struct ConnectorUpdateNativeBody {
 pub impl ToJson for ConnectorUpdateNativeBody with fn to_json(
   self : ConnectorUpdateNativeBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["is_native"] = self.is_native.to_json()
   Json::object(obj)
 }
@@ -15453,7 +15453,7 @@ pub(all) struct ConnectorUpdateNativeResponse {
 pub impl ToJson for ConnectorUpdateNativeResponse with fn to_json(
   self : ConnectorUpdateNativeResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -15497,7 +15497,7 @@ pub async fn Client::connector_update_native(
   self : Client,
   request : ConnectorUpdateNativeRequest,
 ) -> EsResponse[ConnectorUpdateNativeResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -15515,7 +15515,7 @@ pub(all) struct ConnectorUpdatePipelineQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorUpdatePipelineQuery with fn to_json(
   _self : ConnectorUpdatePipelineQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -15553,7 +15553,7 @@ pub(all) struct ConnectorUpdatePipelineBody {
 pub impl ToJson for ConnectorUpdatePipelineBody with fn to_json(
   self : ConnectorUpdatePipelineBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["pipeline"] = self.pipeline.to_json()
   Json::object(obj)
 }
@@ -15589,7 +15589,7 @@ pub(all) struct ConnectorUpdatePipelineResponse {
 pub impl ToJson for ConnectorUpdatePipelineResponse with fn to_json(
   self : ConnectorUpdatePipelineResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -15633,7 +15633,7 @@ pub async fn Client::connector_update_pipeline(
   self : Client,
   request : ConnectorUpdatePipelineRequest,
 ) -> EsResponse[ConnectorUpdatePipelineResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -15651,7 +15651,7 @@ pub(all) struct ConnectorUpdateSchedulingQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorUpdateSchedulingQuery with fn to_json(
   _self : ConnectorUpdateSchedulingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -15692,7 +15692,7 @@ pub(all) struct ConnectorUpdateSchedulingBody {
 pub impl ToJson for ConnectorUpdateSchedulingBody with fn to_json(
   self : ConnectorUpdateSchedulingBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["scheduling"] = self.scheduling.to_json()
   Json::object(obj)
 }
@@ -15731,7 +15731,7 @@ pub(all) struct ConnectorUpdateSchedulingResponse {
 pub impl ToJson for ConnectorUpdateSchedulingResponse with fn to_json(
   self : ConnectorUpdateSchedulingResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -15775,7 +15775,7 @@ pub async fn Client::connector_update_scheduling(
   self : Client,
   request : ConnectorUpdateSchedulingRequest,
 ) -> EsResponse[ConnectorUpdateSchedulingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -15797,7 +15797,7 @@ pub(all) struct ConnectorUpdateServiceTypeQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorUpdateServiceTypeQuery with fn to_json(
   _self : ConnectorUpdateServiceTypeQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -15838,7 +15838,7 @@ pub(all) struct ConnectorUpdateServiceTypeBody {
 pub impl ToJson for ConnectorUpdateServiceTypeBody with fn to_json(
   self : ConnectorUpdateServiceTypeBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["service_type"] = self.service_type.to_json()
   Json::object(obj)
 }
@@ -15877,7 +15877,7 @@ pub(all) struct ConnectorUpdateServiceTypeResponse {
 pub impl ToJson for ConnectorUpdateServiceTypeResponse with fn to_json(
   self : ConnectorUpdateServiceTypeResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -15921,7 +15921,7 @@ pub async fn Client::connector_update_service_type(
   self : Client,
   request : ConnectorUpdateServiceTypeRequest,
 ) -> EsResponse[ConnectorUpdateServiceTypeResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -15943,7 +15943,7 @@ pub(all) struct ConnectorUpdateStatusQuery {} derive(Eq, Debug)
 pub impl ToJson for ConnectorUpdateStatusQuery with fn to_json(
   _self : ConnectorUpdateStatusQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -15979,7 +15979,7 @@ pub(all) struct ConnectorUpdateStatusBody {
 pub impl ToJson for ConnectorUpdateStatusBody with fn to_json(
   self : ConnectorUpdateStatusBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["status"] = self.status.to_json()
   Json::object(obj)
 }
@@ -16013,7 +16013,7 @@ pub(all) struct ConnectorUpdateStatusResponse {
 pub impl ToJson for ConnectorUpdateStatusResponse with fn to_json(
   self : ConnectorUpdateStatusResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -16057,7 +16057,7 @@ pub async fn Client::connector_update_status(
   self : Client,
   request : ConnectorUpdateStatusRequest,
 ) -> EsResponse[ConnectorUpdateStatusResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["connector_id"] = request.connector_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -16088,7 +16088,7 @@ pub(all) struct CountQuery {
 
 ///|
 pub impl ToJson for CountQuery with fn to_json(self : CountQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -16341,7 +16341,7 @@ pub(all) struct CountBody {
 
 ///|
 pub impl ToJson for CountBody with fn to_json(self : CountBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.query {
     Some(value) => obj["query"] = value.to_json()
     None => ()
@@ -16386,7 +16386,7 @@ pub(all) struct CountResponse {
 
 ///|
 pub impl ToJson for CountResponse with fn to_json(self : CountResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["_shards"] = self._shards.to_json()
   Json::object(obj)
@@ -16430,7 +16430,7 @@ pub async fn Client::count(
   self : Client,
   request : CountRequest,
 ) -> EsResponse[CountResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -16466,7 +16466,7 @@ pub(all) struct CreateQuery {
 
 ///|
 pub impl ToJson for CreateQuery with fn to_json(self : CreateQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.include_source_on_error {
     Some(value) => obj["include_source_on_error"] = value.to_json()
     None => ()
@@ -16683,7 +16683,7 @@ pub async fn Client::create(
   self : Client,
   request : CreateRequest,
 ) -> EsResponse[CreateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["id"] = request.id
   let query = request.query.to_pairs()
@@ -16706,7 +16706,7 @@ pub(all) struct DanglingIndicesDeleteDanglingIndexQuery {
 pub impl ToJson for DanglingIndicesDeleteDanglingIndexQuery with fn to_json(
   self : DanglingIndicesDeleteDanglingIndexQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.accept_data_loss {
     Some(value) => obj["accept_data_loss"] = value.to_json()
     None => ()
@@ -16804,7 +16804,7 @@ pub async fn Client::dangling_indices_delete_dangling_index(
   self : Client,
   request : DanglingIndicesDeleteDanglingIndexRequest,
 ) -> EsResponse[DanglingIndicesDeleteDanglingIndexResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index_uuid"] = request.index_uuid
   let query = request.query.to_pairs()
   let path = select_path(
@@ -16825,7 +16825,7 @@ pub(all) struct DanglingIndicesImportDanglingIndexQuery {
 pub impl ToJson for DanglingIndicesImportDanglingIndexQuery with fn to_json(
   self : DanglingIndicesImportDanglingIndexQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.accept_data_loss {
     Some(value) => obj["accept_data_loss"] = value.to_json()
     None => ()
@@ -16923,7 +16923,7 @@ pub async fn Client::dangling_indices_import_dangling_index(
   self : Client,
   request : DanglingIndicesImportDanglingIndexRequest,
 ) -> EsResponse[DanglingIndicesImportDanglingIndexResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index_uuid"] = request.index_uuid
   let query = request.query.to_pairs()
   let path = select_path(
@@ -16940,7 +16940,7 @@ pub(all) struct DanglingIndicesListDanglingIndicesQuery {} derive(Eq, Debug)
 pub impl ToJson for DanglingIndicesListDanglingIndicesQuery with fn to_json(
   _self : DanglingIndicesListDanglingIndicesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -16981,7 +16981,7 @@ pub(all) struct DanglingIndicesListDanglingIndicesResponse {
 pub impl ToJson for DanglingIndicesListDanglingIndicesResponse with fn to_json(
   self : DanglingIndicesListDanglingIndicesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["dangling_indices"] = self.dangling_indices.to_json()
   Json::object(obj)
 }
@@ -17021,7 +17021,7 @@ pub async fn Client::dangling_indices_list_dangling_indices(
   self : Client,
   request : DanglingIndicesListDanglingIndicesRequest,
 ) -> EsResponse[DanglingIndicesListDanglingIndicesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_dangling", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -17041,7 +17041,7 @@ pub(all) struct DeleteQuery {
 
 ///|
 pub impl ToJson for DeleteQuery with fn to_json(self : DeleteQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.if_primary_term {
     Some(value) => obj["if_primary_term"] = value.to_json()
     None => ()
@@ -17218,7 +17218,7 @@ pub async fn Client::delete(
   self : Client,
   request : DeleteRequest,
 ) -> EsResponse[DeleteResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["id"] = request.id
   let query = request.query.to_pairs()
@@ -17266,7 +17266,7 @@ pub(all) struct DeleteByQueryQuery {
 pub impl ToJson for DeleteByQueryQuery with fn to_json(
   self : DeleteByQueryQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -17759,7 +17759,7 @@ pub(all) struct DeleteByQueryBody {
 
 ///|
 pub impl ToJson for DeleteByQueryBody with fn to_json(self : DeleteByQueryBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.max_docs {
     Some(value) => obj["max_docs"] = value.to_json()
     None => ()
@@ -17843,7 +17843,7 @@ pub(all) struct DeleteByQueryResponse {
 pub impl ToJson for DeleteByQueryResponse with fn to_json(
   self : DeleteByQueryResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.batches {
     Some(value) => obj["batches"] = value.to_json()
     None => ()
@@ -18039,7 +18039,7 @@ pub async fn Client::delete_by_query(
   self : Client,
   request : DeleteByQueryRequest,
 ) -> EsResponse[DeleteByQueryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -18059,7 +18059,7 @@ pub(all) struct DeleteByQueryRethrottleQuery {
 pub impl ToJson for DeleteByQueryRethrottleQuery with fn to_json(
   self : DeleteByQueryRethrottleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["requests_per_second"] = self.requests_per_second.to_json()
   Json::object(obj)
 }
@@ -18121,7 +18121,7 @@ pub async fn Client::delete_by_query_rethrottle(
   self : Client,
   request : DeleteByQueryRethrottleRequest,
 ) -> EsResponse[DeleteByQueryRethrottleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_id"] = request.task_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -18139,7 +18139,7 @@ pub(all) struct DeleteScriptQuery {
 
 ///|
 pub impl ToJson for DeleteScriptQuery with fn to_json(self : DeleteScriptQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -18217,7 +18217,7 @@ pub async fn Client::delete_script(
   self : Client,
   request : DeleteScriptRequest,
 ) -> EsResponse[DeleteScriptResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_scripts/{id}", ["id"])], params)
@@ -18233,7 +18233,7 @@ pub(all) struct EnrichDeletePolicyQuery {
 pub impl ToJson for EnrichDeletePolicyQuery with fn to_json(
   self : EnrichDeletePolicyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -18297,7 +18297,7 @@ pub async fn Client::enrich_delete_policy(
   self : Client,
   request : EnrichDeletePolicyRequest,
 ) -> EsResponse[EnrichDeletePolicyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -18317,7 +18317,7 @@ pub(all) struct EnrichExecutePolicyQuery {
 pub impl ToJson for EnrichExecutePolicyQuery with fn to_json(
   self : EnrichExecutePolicyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -18385,7 +18385,7 @@ pub(all) struct EnrichExecutePolicyResponse {
 pub impl ToJson for EnrichExecutePolicyResponse with fn to_json(
   self : EnrichExecutePolicyResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.status {
     Some(value) => obj["status"] = value.to_json()
     None => ()
@@ -18437,7 +18437,7 @@ pub async fn Client::enrich_execute_policy(
   self : Client,
   request : EnrichExecutePolicyRequest,
 ) -> EsResponse[EnrichExecutePolicyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -18456,7 +18456,7 @@ pub(all) struct EnrichGetPolicyQuery {
 pub impl ToJson for EnrichGetPolicyQuery with fn to_json(
   self : EnrichGetPolicyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -18507,7 +18507,7 @@ pub(all) struct EnrichGetPolicyResponse {
 pub impl ToJson for EnrichGetPolicyResponse with fn to_json(
   self : EnrichGetPolicyResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["policies"] = self.policies.to_json()
   Json::object(obj)
 }
@@ -18544,7 +18544,7 @@ pub async fn Client::enrich_get_policy(
   self : Client,
   request : EnrichGetPolicyRequest,
 ) -> EsResponse[EnrichGetPolicyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -18569,7 +18569,7 @@ pub(all) struct EnrichPutPolicyQuery {
 pub impl ToJson for EnrichPutPolicyQuery with fn to_json(
   self : EnrichPutPolicyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -18622,7 +18622,7 @@ pub(all) struct EnrichPutPolicyBody {
 pub impl ToJson for EnrichPutPolicyBody with fn to_json(
   self : EnrichPutPolicyBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.geo_match {
     Some(value) => obj["geo_match"] = value.to_json()
     None => ()
@@ -18696,7 +18696,7 @@ pub async fn Client::enrich_put_policy(
   self : Client,
   request : EnrichPutPolicyRequest,
 ) -> EsResponse[EnrichPutPolicyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -18714,7 +18714,7 @@ pub(all) struct EnrichStatsQuery {
 
 ///|
 pub impl ToJson for EnrichStatsQuery with fn to_json(self : EnrichStatsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -18765,7 +18765,7 @@ pub(all) struct EnrichStatsResponse {
 pub impl ToJson for EnrichStatsResponse with fn to_json(
   self : EnrichStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["coordinator_stats"] = self.coordinator_stats.to_json()
   obj["executing_policies"] = self.executing_policies.to_json()
   match self.cache_stats {
@@ -18815,7 +18815,7 @@ pub async fn Client::enrich_stats(
   self : Client,
   request : EnrichStatsRequest,
 ) -> EsResponse[EnrichStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_enrich/_stats", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -18826,7 +18826,7 @@ pub(all) struct EqlDeleteQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for EqlDeleteQuery with fn to_json(_self : EqlDeleteQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -18875,7 +18875,7 @@ pub async fn Client::eql_delete(
   self : Client,
   request : EqlDeleteRequest,
 ) -> EsResponse[EqlDeleteResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -18893,7 +18893,7 @@ pub(all) struct EqlGetQuery {
 
 ///|
 pub impl ToJson for EqlGetQuery with fn to_json(self : EqlGetQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.keep_alive {
     Some(value) => obj["keep_alive"] = value.to_json()
     None => ()
@@ -18976,7 +18976,7 @@ pub async fn Client::eql_get(
   self : Client,
   request : EqlGetRequest,
 ) -> EsResponse[EqlGetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -18991,7 +18991,7 @@ pub(all) struct EqlGetStatusQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for EqlGetStatusQuery with fn to_json(_self : EqlGetStatusQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -19032,7 +19032,7 @@ pub(all) struct EqlGetStatusResponse {
 pub impl ToJson for EqlGetStatusResponse with fn to_json(
   self : EqlGetStatusResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["id"] = self.id.to_json()
   obj["is_partial"] = self.is_partial.to_json()
   obj["is_running"] = self.is_running.to_json()
@@ -19111,7 +19111,7 @@ pub async fn Client::eql_get_status(
   self : Client,
   request : EqlGetStatusRequest,
 ) -> EsResponse[EqlGetStatusResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -19136,7 +19136,7 @@ pub(all) struct EqlSearchQuery {
 
 ///|
 pub impl ToJson for EqlSearchQuery with fn to_json(self : EqlSearchQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -19355,7 +19355,7 @@ pub(all) struct EqlSearchBody {
 
 ///|
 pub impl ToJson for EqlSearchBody with fn to_json(self : EqlSearchBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.project_routing {
     Some(value) => obj["project_routing"] = value.to_json()
     None => ()
@@ -19624,7 +19624,7 @@ pub async fn Client::eql_search(
   self : Client,
   request : EqlSearchRequest,
 ) -> EsResponse[EqlSearchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -19647,7 +19647,7 @@ pub(all) struct EsqlAsyncQueryQuery {
 pub impl ToJson for EsqlAsyncQueryQuery with fn to_json(
   self : EsqlAsyncQueryQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_partial_results {
     Some(value) => obj["allow_partial_results"] = value.to_json()
     None => ()
@@ -19756,7 +19756,7 @@ pub(all) struct EsqlAsyncQueryBody {
 pub impl ToJson for EsqlAsyncQueryBody with fn to_json(
   self : EsqlAsyncQueryBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.columnar {
     Some(value) => obj["columnar"] = value.to_json()
     None => ()
@@ -19965,7 +19965,7 @@ pub async fn Client::esql_async_query(
   self : Client,
   request : EsqlAsyncQueryRequest,
 ) -> EsResponse[EsqlAsyncQueryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_query/async", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -19979,7 +19979,7 @@ pub(all) struct EsqlAsyncQueryDeleteQuery {} derive(Eq, Debug)
 pub impl ToJson for EsqlAsyncQueryDeleteQuery with fn to_json(
   _self : EsqlAsyncQueryDeleteQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -20028,7 +20028,7 @@ pub async fn Client::esql_async_query_delete(
   self : Client,
   request : EsqlAsyncQueryDeleteRequest,
 ) -> EsResponse[EsqlAsyncQueryDeleteResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -20050,7 +20050,7 @@ pub(all) struct EsqlAsyncQueryGetQuery {
 pub impl ToJson for EsqlAsyncQueryGetQuery with fn to_json(
   self : EsqlAsyncQueryGetQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.drop_null_columns {
     Some(value) => obj["drop_null_columns"] = value.to_json()
     None => ()
@@ -20164,7 +20164,7 @@ pub async fn Client::esql_async_query_get(
   self : Client,
   request : EsqlAsyncQueryGetRequest,
 ) -> EsResponse[EsqlAsyncQueryGetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -20183,7 +20183,7 @@ pub(all) struct EsqlAsyncQueryStopQuery {
 pub impl ToJson for EsqlAsyncQueryStopQuery with fn to_json(
   self : EsqlAsyncQueryStopQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.drop_null_columns {
     Some(value) => obj["drop_null_columns"] = value.to_json()
     None => ()
@@ -20247,7 +20247,7 @@ pub async fn Client::esql_async_query_stop(
   self : Client,
   request : EsqlAsyncQueryStopRequest,
 ) -> EsResponse[EsqlAsyncQueryStopResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -20264,7 +20264,7 @@ pub(all) struct EsqlDeleteViewQuery {} derive(Eq, Debug)
 pub impl ToJson for EsqlDeleteViewQuery with fn to_json(
   _self : EsqlDeleteViewQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -20318,7 +20318,7 @@ pub async fn Client::esql_delete_view(
   self : Client,
   request : EsqlDeleteViewRequest,
 ) -> EsResponse[EsqlDeleteViewResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -20337,7 +20337,7 @@ pub(all) struct EsqlGetQueryQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for EsqlGetQueryQuery with fn to_json(_self : EsqlGetQueryQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -20382,7 +20382,7 @@ pub(all) struct EsqlGetQueryResponse {
 pub impl ToJson for EsqlGetQueryResponse with fn to_json(
   self : EsqlGetQueryResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["id"] = self.id.to_json()
   obj["node"] = self.node.to_json()
   obj["start_time_millis"] = self.start_time_millis.to_json()
@@ -20451,7 +20451,7 @@ pub async fn Client::esql_get_query(
   self : Client,
   request : EsqlGetQueryRequest,
 ) -> EsResponse[EsqlGetQueryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -20470,7 +20470,7 @@ pub(all) struct EsqlGetViewQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for EsqlGetViewQuery with fn to_json(_self : EsqlGetViewQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -20509,7 +20509,7 @@ pub(all) struct EsqlGetViewResponse {
 pub impl ToJson for EsqlGetViewResponse with fn to_json(
   self : EsqlGetViewResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["views"] = self.views.to_json()
   Json::object(obj)
 }
@@ -20548,7 +20548,7 @@ pub async fn Client::esql_get_view(
   self : Client,
   request : EsqlGetViewRequest,
 ) -> EsResponse[EsqlGetViewResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -20575,7 +20575,7 @@ pub(all) struct EsqlListQueriesQuery {} derive(Eq, Debug)
 pub impl ToJson for EsqlListQueriesQuery with fn to_json(
   _self : EsqlListQueriesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -20614,7 +20614,7 @@ pub(all) struct EsqlListQueriesResponse {
 pub impl ToJson for EsqlListQueriesResponse with fn to_json(
   self : EsqlListQueriesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["queries"] = self.queries.to_json()
   Json::object(obj)
 }
@@ -20651,7 +20651,7 @@ pub async fn Client::esql_list_queries(
   self : Client,
   request : EsqlListQueriesRequest,
 ) -> EsResponse[EsqlListQueriesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_query/queries", [])], params)
   let body = match request.body {
@@ -20666,7 +20666,7 @@ pub(all) struct EsqlPutViewQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for EsqlPutViewQuery with fn to_json(_self : EsqlPutViewQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -20700,7 +20700,7 @@ pub(all) struct EsqlPutViewBody {
 
 ///|
 pub impl ToJson for EsqlPutViewBody with fn to_json(self : EsqlPutViewBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["query"] = self.query.to_json()
   Json::object(obj)
 }
@@ -20747,7 +20747,7 @@ pub async fn Client::esql_put_view(
   self : Client,
   request : EsqlPutViewRequest,
 ) -> EsResponse[EsqlPutViewResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -20768,7 +20768,7 @@ pub(all) struct EsqlQueryQuery {
 
 ///|
 pub impl ToJson for EsqlQueryQuery with fn to_json(self : EsqlQueryQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.format {
     Some(value) => obj["format"] = value.to_json()
     None => ()
@@ -20872,7 +20872,7 @@ pub(all) struct EsqlQueryBody {
 
 ///|
 pub impl ToJson for EsqlQueryBody with fn to_json(self : EsqlQueryBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.columnar {
     Some(value) => obj["columnar"] = value.to_json()
     None => ()
@@ -21040,7 +21040,7 @@ pub async fn Client::esql_query(
   self : Client,
   request : EsqlQueryRequest,
 ) -> EsResponse[EsqlQueryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_query", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -21063,7 +21063,7 @@ pub(all) struct ExistsQuery {
 
 ///|
 pub impl ToJson for ExistsQuery with fn to_json(self : ExistsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.preference {
     Some(value) => obj["preference"] = value.to_json()
     None => ()
@@ -21268,7 +21268,7 @@ pub async fn Client::exists(
   self : Client,
   request : ExistsRequest,
 ) -> EsResponse[ExistsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["id"] = request.id
   let query = request.query.to_pairs()
@@ -21294,7 +21294,7 @@ pub(all) struct ExistsSourceQuery {
 
 ///|
 pub impl ToJson for ExistsSourceQuery with fn to_json(self : ExistsSourceQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.preference {
     Some(value) => obj["preference"] = value.to_json()
     None => ()
@@ -21485,7 +21485,7 @@ pub async fn Client::exists_source(
   self : Client,
   request : ExistsSourceRequest,
 ) -> EsResponse[ExistsSourceResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["id"] = request.id
   let query = request.query.to_pairs()
@@ -21514,7 +21514,7 @@ pub(all) struct ExplainQuery {
 
 ///|
 pub impl ToJson for ExplainQuery with fn to_json(self : ExplainQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.analyzer {
     Some(value) => obj["analyzer"] = value.to_json()
     None => ()
@@ -21733,7 +21733,7 @@ pub(all) struct ExplainBody {
 
 ///|
 pub impl ToJson for ExplainBody with fn to_json(self : ExplainBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.query {
     Some(value) => obj["query"] = value.to_json()
     None => ()
@@ -21771,7 +21771,7 @@ pub(all) struct ExplainResponse {
 
 ///|
 pub impl ToJson for ExplainResponse with fn to_json(self : ExplainResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_index"] = self._index.to_json()
   obj["_id"] = self._id.to_json()
   obj["matched"] = self.matched.to_json()
@@ -21841,7 +21841,7 @@ pub async fn Client::explain(
   self : Client,
   request : ExplainRequest,
 ) -> EsResponse[ExplainResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["id"] = request.id
   let query = request.query.to_pairs()
@@ -21865,7 +21865,7 @@ pub(all) struct FeaturesGetFeaturesQuery {
 pub impl ToJson for FeaturesGetFeaturesQuery with fn to_json(
   self : FeaturesGetFeaturesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -21916,7 +21916,7 @@ pub(all) struct FeaturesGetFeaturesResponse {
 pub impl ToJson for FeaturesGetFeaturesResponse with fn to_json(
   self : FeaturesGetFeaturesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["features"] = self.features.to_json()
   Json::object(obj)
 }
@@ -21953,7 +21953,7 @@ pub async fn Client::features_get_features(
   self : Client,
   request : FeaturesGetFeaturesRequest,
 ) -> EsResponse[FeaturesGetFeaturesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_features", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -21968,7 +21968,7 @@ pub(all) struct FeaturesResetFeaturesQuery {
 pub impl ToJson for FeaturesResetFeaturesQuery with fn to_json(
   self : FeaturesResetFeaturesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -22019,7 +22019,7 @@ pub(all) struct FeaturesResetFeaturesResponse {
 pub impl ToJson for FeaturesResetFeaturesResponse with fn to_json(
   self : FeaturesResetFeaturesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["features"] = self.features.to_json()
   Json::object(obj)
 }
@@ -22059,7 +22059,7 @@ pub async fn Client::features_reset_features(
   self : Client,
   request : FeaturesResetFeaturesRequest,
 ) -> EsResponse[FeaturesResetFeaturesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_features/_reset", [])], params)
   self.perform(EsRequest::new(Post, path, query~))
@@ -22079,7 +22079,7 @@ pub(all) struct FieldCapsQuery {
 
 ///|
 pub impl ToJson for FieldCapsQuery with fn to_json(self : FieldCapsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -22243,7 +22243,7 @@ pub(all) struct FieldCapsBody {
 
 ///|
 pub impl ToJson for FieldCapsBody with fn to_json(self : FieldCapsBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.fields {
     Some(value) => obj["fields"] = value.to_json()
     None => ()
@@ -22313,7 +22313,7 @@ pub(all) struct FieldCapsResponse {
 
 ///|
 pub impl ToJson for FieldCapsResponse with fn to_json(self : FieldCapsResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["indices"] = self.indices.to_json()
   obj["fields"] = self.fields.to_json()
   Json::object(obj)
@@ -22357,7 +22357,7 @@ pub async fn Client::field_caps(
   self : Client,
   request : FieldCapsRequest,
 ) -> EsResponse[FieldCapsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -22384,7 +22384,7 @@ pub(all) struct FleetDeleteSecretQuery {} derive(Eq, Debug)
 pub impl ToJson for FleetDeleteSecretQuery with fn to_json(
   _self : FleetDeleteSecretQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -22420,7 +22420,7 @@ pub(all) struct FleetDeleteSecretResponse {
 pub impl ToJson for FleetDeleteSecretResponse with fn to_json(
   self : FleetDeleteSecretResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["deleted"] = self.deleted.to_json()
   Json::object(obj)
 }
@@ -22457,7 +22457,7 @@ pub async fn Client::fleet_delete_secret(
   self : Client,
   request : FleetDeleteSecretRequest,
 ) -> EsResponse[FleetDeleteSecretResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -22474,7 +22474,7 @@ pub(all) struct FleetGetSecretQuery {} derive(Eq, Debug)
 pub impl ToJson for FleetGetSecretQuery with fn to_json(
   _self : FleetGetSecretQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -22511,7 +22511,7 @@ pub(all) struct FleetGetSecretResponse {
 pub impl ToJson for FleetGetSecretResponse with fn to_json(
   self : FleetGetSecretResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["id"] = self.id.to_json()
   obj["value"] = self.value.to_json()
   Json::object(obj)
@@ -22553,7 +22553,7 @@ pub async fn Client::fleet_get_secret(
   self : Client,
   request : FleetGetSecretRequest,
 ) -> EsResponse[FleetGetSecretResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -22575,7 +22575,7 @@ pub(all) struct FleetGlobalCheckpointsQuery {
 pub impl ToJson for FleetGlobalCheckpointsQuery with fn to_json(
   self : FleetGlobalCheckpointsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.wait_for_advance {
     Some(value) => obj["wait_for_advance"] = value.to_json()
     None => ()
@@ -22676,7 +22676,7 @@ pub(all) struct FleetGlobalCheckpointsResponse {
 pub impl ToJson for FleetGlobalCheckpointsResponse with fn to_json(
   self : FleetGlobalCheckpointsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["global_checkpoints"] = self.global_checkpoints.to_json()
   obj["timed_out"] = self.timed_out.to_json()
   Json::object(obj)
@@ -22725,7 +22725,7 @@ pub async fn Client::fleet_global_checkpoints(
   self : Client,
   request : FleetGlobalCheckpointsRequest,
 ) -> EsResponse[FleetGlobalCheckpointsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -22758,7 +22758,7 @@ pub(all) struct FleetMsearchQuery {
 
 ///|
 pub impl ToJson for FleetMsearchQuery with fn to_json(self : FleetMsearchQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -23031,7 +23031,7 @@ pub(all) struct FleetMsearchResponse {
 pub impl ToJson for FleetMsearchResponse with fn to_json(
   self : FleetMsearchResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["docs"] = self.docs.to_json()
   Json::object(obj)
 }
@@ -23070,7 +23070,7 @@ pub async fn Client::fleet_msearch(
   self : Client,
   request : FleetMsearchRequest,
 ) -> EsResponse[FleetMsearchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -23094,7 +23094,7 @@ pub(all) struct FleetPostSecretQuery {} derive(Eq, Debug)
 pub impl ToJson for FleetPostSecretQuery with fn to_json(
   _self : FleetPostSecretQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -23130,7 +23130,7 @@ pub(all) struct FleetPostSecretResponse {
 pub impl ToJson for FleetPostSecretResponse with fn to_json(
   self : FleetPostSecretResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["id"] = self.id.to_json()
   Json::object(obj)
 }
@@ -23165,7 +23165,7 @@ pub async fn Client::fleet_post_secret(
   self : Client,
   request : FleetPostSecretRequest,
 ) -> EsResponse[FleetPostSecretResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_fleet/secret", [])], params)
   self.perform(EsRequest::new(Post, path, query~))
@@ -23220,7 +23220,7 @@ pub(all) struct FleetSearchQuery {
 
 ///|
 pub impl ToJson for FleetSearchQuery with fn to_json(self : FleetSearchQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -23983,7 +23983,7 @@ pub(all) struct FleetSearchBody {
 
 ///|
 pub impl ToJson for FleetSearchBody with fn to_json(self : FleetSearchBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aggregations {
     Some(value) => obj["aggregations"] = value.to_json()
     None => ()
@@ -24380,7 +24380,7 @@ pub(all) struct FleetSearchResponse {
 pub impl ToJson for FleetSearchResponse with fn to_json(
   self : FleetSearchResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["took"] = self.took.to_json()
   obj["timed_out"] = self.timed_out.to_json()
   obj["_shards"] = self._shards.to_json()
@@ -24530,7 +24530,7 @@ pub async fn Client::fleet_search(
   self : Client,
   request : FleetSearchRequest,
 ) -> EsResponse[FleetSearchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -24559,7 +24559,7 @@ pub(all) struct GetQuery {
 
 ///|
 pub impl ToJson for GetQuery with fn to_json(self : GetQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.force_synthetic_source {
     Some(value) => obj["force_synthetic_source"] = value.to_json()
     None => ()
@@ -24802,7 +24802,7 @@ pub async fn Client::get(
   self : Client,
   request : GetRequest,
 ) -> EsResponse[GetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["id"] = request.id
   let query = request.query.to_pairs()
@@ -24821,7 +24821,7 @@ pub(all) struct GetReindexQuery {
 
 ///|
 pub impl ToJson for GetReindexQuery with fn to_json(self : GetReindexQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.wait_for_completion {
     Some(value) => obj["wait_for_completion"] = value.to_json()
     None => ()
@@ -24897,7 +24897,7 @@ pub(all) struct GetReindexResponse {
 pub impl ToJson for GetReindexResponse with fn to_json(
   self : GetReindexResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["completed"] = self.completed.to_json()
   obj["id"] = self.id.to_json()
   match self.description {
@@ -25011,7 +25011,7 @@ pub async fn Client::get_reindex(
   self : Client,
   request : GetReindexRequest,
 ) -> EsResponse[GetReindexResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_id"] = request.task_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -25028,7 +25028,7 @@ pub(all) struct GetScriptQuery {
 
 ///|
 pub impl ToJson for GetScriptQuery with fn to_json(self : GetScriptQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -25077,7 +25077,7 @@ pub(all) struct GetScriptResponse {
 
 ///|
 pub impl ToJson for GetScriptResponse with fn to_json(self : GetScriptResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_id"] = self._id.to_json()
   obj["found"] = self.found.to_json()
   match self.script {
@@ -25128,7 +25128,7 @@ pub async fn Client::get_script(
   self : Client,
   request : GetScriptRequest,
 ) -> EsResponse[GetScriptResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_scripts/{id}", ["id"])], params)
@@ -25142,7 +25142,7 @@ pub(all) struct GetScriptContextQuery {} derive(Eq, Debug)
 pub impl ToJson for GetScriptContextQuery with fn to_json(
   _self : GetScriptContextQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -25178,7 +25178,7 @@ pub(all) struct GetScriptContextResponse {
 pub impl ToJson for GetScriptContextResponse with fn to_json(
   self : GetScriptContextResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["contexts"] = self.contexts.to_json()
   Json::object(obj)
 }
@@ -25213,7 +25213,7 @@ pub async fn Client::get_script_context(
   self : Client,
   request : GetScriptContextRequest,
 ) -> EsResponse[GetScriptContextResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_script_context", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -25226,7 +25226,7 @@ pub(all) struct GetScriptLanguagesQuery {} derive(Eq, Debug)
 pub impl ToJson for GetScriptLanguagesQuery with fn to_json(
   _self : GetScriptLanguagesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -25263,7 +25263,7 @@ pub(all) struct GetScriptLanguagesResponse {
 pub impl ToJson for GetScriptLanguagesResponse with fn to_json(
   self : GetScriptLanguagesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["language_contexts"] = self.language_contexts.to_json()
   obj["types_allowed"] = self.types_allowed.to_json()
   Json::object(obj)
@@ -25303,7 +25303,7 @@ pub async fn Client::get_script_languages(
   self : Client,
   request : GetScriptLanguagesRequest,
 ) -> EsResponse[GetScriptLanguagesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_script_language", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -25324,7 +25324,7 @@ pub(all) struct GetSourceQuery {
 
 ///|
 pub impl ToJson for GetSourceQuery with fn to_json(self : GetSourceQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.preference {
     Some(value) => obj["preference"] = value.to_json()
     None => ()
@@ -25515,7 +25515,7 @@ pub async fn Client::get_source(
   self : Client,
   request : GetSourceRequest,
 ) -> EsResponse[GetSourceResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["id"] = request.id
   let query = request.query.to_pairs()
@@ -25534,7 +25534,7 @@ pub(all) struct GraphExploreQuery {
 
 ///|
 pub impl ToJson for GraphExploreQuery with fn to_json(self : GraphExploreQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.routing {
     Some(value) => obj["routing"] = value.to_json()
     None => ()
@@ -25599,7 +25599,7 @@ pub(all) struct GraphExploreBody {
 
 ///|
 pub impl ToJson for GraphExploreBody with fn to_json(self : GraphExploreBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.connections {
     Some(value) => obj["connections"] = value.to_json()
     None => ()
@@ -25672,7 +25672,7 @@ pub(all) struct GraphExploreResponse {
 pub impl ToJson for GraphExploreResponse with fn to_json(
   self : GraphExploreResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["connections"] = self.connections.to_json()
   obj["failures"] = self.failures.to_json()
   obj["timed_out"] = self.timed_out.to_json()
@@ -25731,7 +25731,7 @@ pub async fn Client::graph_explore(
   self : Client,
   request : GraphExploreRequest,
 ) -> EsResponse[GraphExploreResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -25751,7 +25751,7 @@ pub(all) struct HealthReportQuery {
 
 ///|
 pub impl ToJson for HealthReportQuery with fn to_json(self : HealthReportQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -25831,7 +25831,7 @@ pub(all) struct HealthReportResponse {
 pub impl ToJson for HealthReportResponse with fn to_json(
   self : HealthReportResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["cluster_name"] = self.cluster_name.to_json()
   obj["indicators"] = self.indicators.to_json()
   match self.status {
@@ -25882,7 +25882,7 @@ pub async fn Client::health_report(
   self : Client,
   request : HealthReportRequest,
 ) -> EsResponse[HealthReportResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.feature {
     Some(value) => params["feature"] = value
     None => ()
@@ -25908,7 +25908,7 @@ pub(all) struct IlmDeleteLifecycleQuery {
 pub impl ToJson for IlmDeleteLifecycleQuery with fn to_json(
   self : IlmDeleteLifecycleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -25986,7 +25986,7 @@ pub async fn Client::ilm_delete_lifecycle(
   self : Client,
   request : IlmDeleteLifecycleRequest,
 ) -> EsResponse[IlmDeleteLifecycleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["policy"] = request.policy
   let query = request.query.to_pairs()
   let path = select_path(
@@ -26007,7 +26007,7 @@ pub(all) struct IlmExplainLifecycleQuery {
 pub impl ToJson for IlmExplainLifecycleQuery with fn to_json(
   self : IlmExplainLifecycleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.only_errors {
     Some(value) => obj["only_errors"] = value.to_json()
     None => ()
@@ -26088,7 +26088,7 @@ pub(all) struct IlmExplainLifecycleResponse {
 pub impl ToJson for IlmExplainLifecycleResponse with fn to_json(
   self : IlmExplainLifecycleResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["indices"] = self.indices.to_json()
   Json::object(obj)
 }
@@ -26127,7 +26127,7 @@ pub async fn Client::ilm_explain_lifecycle(
   self : Client,
   request : IlmExplainLifecycleRequest,
 ) -> EsResponse[IlmExplainLifecycleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -26147,7 +26147,7 @@ pub(all) struct IlmGetLifecycleQuery {
 pub impl ToJson for IlmGetLifecycleQuery with fn to_json(
   self : IlmGetLifecycleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -26225,7 +26225,7 @@ pub async fn Client::ilm_get_lifecycle(
   self : Client,
   request : IlmGetLifecycleRequest,
 ) -> EsResponse[IlmGetLifecycleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.policy {
     Some(value) => params["policy"] = value
     None => ()
@@ -26246,7 +26246,7 @@ pub(all) struct IlmGetStatusQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for IlmGetStatusQuery with fn to_json(_self : IlmGetStatusQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -26282,7 +26282,7 @@ pub(all) struct IlmGetStatusResponse {
 pub impl ToJson for IlmGetStatusResponse with fn to_json(
   self : IlmGetStatusResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["operation_mode"] = self.operation_mode.to_json()
   Json::object(obj)
 }
@@ -26317,7 +26317,7 @@ pub async fn Client::ilm_get_status(
   self : Client,
   request : IlmGetStatusRequest,
 ) -> EsResponse[IlmGetStatusResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_ilm/status", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -26333,7 +26333,7 @@ pub(all) struct IlmMigrateToDataTiersQuery {
 pub impl ToJson for IlmMigrateToDataTiersQuery with fn to_json(
   self : IlmMigrateToDataTiersQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.dry_run {
     Some(value) => obj["dry_run"] = value.to_json()
     None => ()
@@ -26399,7 +26399,7 @@ pub(all) struct IlmMigrateToDataTiersBody {
 pub impl ToJson for IlmMigrateToDataTiersBody with fn to_json(
   self : IlmMigrateToDataTiersBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.legacy_template_to_delete {
     Some(value) => obj["legacy_template_to_delete"] = value.to_json()
     None => ()
@@ -26457,7 +26457,7 @@ pub(all) struct IlmMigrateToDataTiersResponse {
 pub impl ToJson for IlmMigrateToDataTiersResponse with fn to_json(
   self : IlmMigrateToDataTiersResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["dry_run"] = self.dry_run.to_json()
   obj["removed_legacy_template"] = self.removed_legacy_template.to_json()
   obj["migrated_ilm_policies"] = self.migrated_ilm_policies.to_json()
@@ -26529,7 +26529,7 @@ pub async fn Client::ilm_migrate_to_data_tiers(
   self : Client,
   request : IlmMigrateToDataTiersRequest,
 ) -> EsResponse[IlmMigrateToDataTiersResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_ilm/migrate_to_data_tiers", [])],
@@ -26549,7 +26549,7 @@ pub(all) struct IlmMoveToStepQuery {} derive(Eq, Debug)
 pub impl ToJson for IlmMoveToStepQuery with fn to_json(
   _self : IlmMoveToStepQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -26584,7 +26584,7 @@ pub(all) struct IlmMoveToStepBody {
 
 ///|
 pub impl ToJson for IlmMoveToStepBody with fn to_json(self : IlmMoveToStepBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["current_step"] = self.current_step.to_json()
   obj["next_step"] = self.next_step.to_json()
   Json::object(obj)
@@ -26639,7 +26639,7 @@ pub async fn Client::ilm_move_to_step(
   self : Client,
   request : IlmMoveToStepRequest,
 ) -> EsResponse[IlmMoveToStepResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -26660,7 +26660,7 @@ pub(all) struct IlmPutLifecycleQuery {
 pub impl ToJson for IlmPutLifecycleQuery with fn to_json(
   self : IlmPutLifecycleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -26725,7 +26725,7 @@ pub(all) struct IlmPutLifecycleBody {
 pub impl ToJson for IlmPutLifecycleBody with fn to_json(
   self : IlmPutLifecycleBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.policy {
     Some(value) => obj["policy"] = value.to_json()
     None => ()
@@ -26776,7 +26776,7 @@ pub async fn Client::ilm_put_lifecycle(
   self : Client,
   request : IlmPutLifecycleRequest,
 ) -> EsResponse[IlmPutLifecycleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["policy"] = request.policy
   let query = request.query.to_pairs()
   let path = select_path(
@@ -26794,7 +26794,7 @@ pub(all) struct IlmRemovePolicyQuery {} derive(Eq, Debug)
 pub impl ToJson for IlmRemovePolicyQuery with fn to_json(
   _self : IlmRemovePolicyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -26831,7 +26831,7 @@ pub(all) struct IlmRemovePolicyResponse {
 pub impl ToJson for IlmRemovePolicyResponse with fn to_json(
   self : IlmRemovePolicyResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["failed_indexes"] = self.failed_indexes.to_json()
   obj["has_failures"] = self.has_failures.to_json()
   Json::object(obj)
@@ -26873,7 +26873,7 @@ pub async fn Client::ilm_remove_policy(
   self : Client,
   request : IlmRemovePolicyRequest,
 ) -> EsResponse[IlmRemovePolicyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -26888,7 +26888,7 @@ pub(all) struct IlmRetryQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for IlmRetryQuery with fn to_json(_self : IlmRetryQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -26937,7 +26937,7 @@ pub async fn Client::ilm_retry(
   self : Client,
   request : IlmRetryRequest,
 ) -> EsResponse[IlmRetryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -26955,7 +26955,7 @@ pub(all) struct IlmStartQuery {
 
 ///|
 pub impl ToJson for IlmStartQuery with fn to_json(self : IlmStartQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -27029,7 +27029,7 @@ pub async fn Client::ilm_start(
   self : Client,
   request : IlmStartRequest,
 ) -> EsResponse[IlmStartResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_ilm/start", [])], params)
   self.perform_json(EsRequest::new(Post, path, query~))
@@ -27043,7 +27043,7 @@ pub(all) struct IlmStopQuery {
 
 ///|
 pub impl ToJson for IlmStopQuery with fn to_json(self : IlmStopQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -27117,7 +27117,7 @@ pub async fn Client::ilm_stop(
   self : Client,
   request : IlmStopRequest,
 ) -> EsResponse[IlmStopResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_ilm/stop", [])], params)
   self.perform_json(EsRequest::new(Post, path, query~))
@@ -27142,7 +27142,7 @@ pub(all) struct IndexQuery {
 
 ///|
 pub impl ToJson for IndexQuery with fn to_json(self : IndexQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.if_primary_term {
     Some(value) => obj["if_primary_term"] = value.to_json()
     None => ()
@@ -27406,7 +27406,7 @@ pub async fn Client::index(
   self : Client,
   request : IndexRequest,
 ) -> EsResponse[IndexResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   match request.id {
     Some(value) => params["id"] = value
@@ -27437,7 +27437,7 @@ pub(all) struct IndicesAddBlockQuery {
 pub impl ToJson for IndicesAddBlockQuery with fn to_json(
   self : IndicesAddBlockQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -27555,7 +27555,7 @@ pub(all) struct IndicesAddBlockResponse {
 pub impl ToJson for IndicesAddBlockResponse with fn to_json(
   self : IndicesAddBlockResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["shards_acknowledged"] = self.shards_acknowledged.to_json()
   obj["indices"] = self.indices.to_json()
@@ -27604,7 +27604,7 @@ pub async fn Client::indices_add_block(
   self : Client,
   request : IndicesAddBlockRequest,
 ) -> EsResponse[IndicesAddBlockResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["block"] = request.block
   let query = request.query.to_pairs()
@@ -27624,7 +27624,7 @@ pub(all) struct IndicesAnalyzeQuery {
 pub impl ToJson for IndicesAnalyzeQuery with fn to_json(
   self : IndicesAnalyzeQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.index {
     Some(value) => obj["index"] = value.to_json()
     None => ()
@@ -27680,7 +27680,7 @@ pub(all) struct IndicesAnalyzeBody {
 pub impl ToJson for IndicesAnalyzeBody with fn to_json(
   self : IndicesAnalyzeBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.analyzer {
     Some(value) => obj["analyzer"] = value.to_json()
     None => ()
@@ -27813,7 +27813,7 @@ pub(all) struct IndicesAnalyzeResponse {
 pub impl ToJson for IndicesAnalyzeResponse with fn to_json(
   self : IndicesAnalyzeResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.detail {
     Some(value) => obj["detail"] = value.to_json()
     None => ()
@@ -27865,7 +27865,7 @@ pub async fn Client::indices_analyze(
   self : Client,
   request : IndicesAnalyzeRequest,
 ) -> EsResponse[IndicesAnalyzeResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -27889,7 +27889,7 @@ pub(all) struct IndicesCancelMigrateReindexQuery {} derive(Eq, Debug)
 pub impl ToJson for IndicesCancelMigrateReindexQuery with fn to_json(
   _self : IndicesCancelMigrateReindexQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -27948,7 +27948,7 @@ pub async fn Client::indices_cancel_migrate_reindex(
   self : Client,
   request : IndicesCancelMigrateReindexRequest,
 ) -> EsResponse[IndicesCancelMigrateReindexResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -27978,7 +27978,7 @@ pub(all) struct IndicesClearCacheQuery {
 pub impl ToJson for IndicesClearCacheQuery with fn to_json(
   self : IndicesClearCacheQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.index {
     Some(value) => obj["index"] = value.to_json()
     None => ()
@@ -28152,7 +28152,7 @@ pub async fn Client::indices_clear_cache(
   self : Client,
   request : IndicesClearCacheRequest,
 ) -> EsResponse[IndicesClearCacheResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -28177,7 +28177,7 @@ pub(all) struct IndicesCloneQuery {
 
 ///|
 pub impl ToJson for IndicesCloneQuery with fn to_json(self : IndicesCloneQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -28259,7 +28259,7 @@ pub(all) struct IndicesCloneBody {
 
 ///|
 pub impl ToJson for IndicesCloneBody with fn to_json(self : IndicesCloneBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aliases {
     Some(value) => obj["aliases"] = value.to_json()
     None => ()
@@ -28309,7 +28309,7 @@ pub(all) struct IndicesCloneResponse {
 pub impl ToJson for IndicesCloneResponse with fn to_json(
   self : IndicesCloneResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["index"] = self.index.to_json()
   obj["shards_acknowledged"] = self.shards_acknowledged.to_json()
@@ -28360,7 +28360,7 @@ pub async fn Client::indices_clone(
   self : Client,
   request : IndicesCloneRequest,
 ) -> EsResponse[IndicesCloneResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["target"] = request.target
   let query = request.query.to_pairs()
@@ -28387,7 +28387,7 @@ pub(all) struct IndicesCloseQuery {
 
 ///|
 pub impl ToJson for IndicesCloseQuery with fn to_json(self : IndicesCloseQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -28524,7 +28524,7 @@ pub(all) struct IndicesCloseResponse {
 pub impl ToJson for IndicesCloseResponse with fn to_json(
   self : IndicesCloseResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["indices"] = self.indices.to_json()
   obj["shards_acknowledged"] = self.shards_acknowledged.to_json()
@@ -28571,7 +28571,7 @@ pub async fn Client::indices_close(
   self : Client,
   request : IndicesCloseRequest,
 ) -> EsResponse[IndicesCloseResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -28592,7 +28592,7 @@ pub(all) struct IndicesCreateQuery {
 pub impl ToJson for IndicesCreateQuery with fn to_json(
   self : IndicesCreateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -28675,7 +28675,7 @@ pub(all) struct IndicesCreateBody {
 
 ///|
 pub impl ToJson for IndicesCreateBody with fn to_json(self : IndicesCreateBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aliases {
     Some(value) => obj["aliases"] = value.to_json()
     None => ()
@@ -28735,7 +28735,7 @@ pub(all) struct IndicesCreateResponse {
 pub impl ToJson for IndicesCreateResponse with fn to_json(
   self : IndicesCreateResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["index"] = self.index.to_json()
   obj["shards_acknowledged"] = self.shards_acknowledged.to_json()
   obj["acknowledged"] = self.acknowledged.to_json()
@@ -28784,7 +28784,7 @@ pub async fn Client::indices_create(
   self : Client,
   request : IndicesCreateRequest,
 ) -> EsResponse[IndicesCreateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/{index}", ["index"])], params)
@@ -28805,7 +28805,7 @@ pub(all) struct IndicesCreateDataStreamQuery {
 pub impl ToJson for IndicesCreateDataStreamQuery with fn to_json(
   self : IndicesCreateDataStreamQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -28885,7 +28885,7 @@ pub async fn Client::indices_create_data_stream(
   self : Client,
   request : IndicesCreateDataStreamRequest,
 ) -> EsResponse[IndicesCreateDataStreamResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -28902,7 +28902,7 @@ pub(all) struct IndicesCreateFromQuery {} derive(Eq, Debug)
 pub impl ToJson for IndicesCreateFromQuery with fn to_json(
   _self : IndicesCreateFromQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -28943,7 +28943,7 @@ pub(all) struct IndicesCreateFromResponse {
 pub impl ToJson for IndicesCreateFromResponse with fn to_json(
   self : IndicesCreateFromResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["index"] = self.index.to_json()
   obj["shards_acknowledged"] = self.shards_acknowledged.to_json()
@@ -28994,7 +28994,7 @@ pub async fn Client::indices_create_from(
   self : Client,
   request : IndicesCreateFromRequest,
 ) -> EsResponse[IndicesCreateFromResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["source"] = request.source
   params["dest"] = request.dest
   let query = request.query.to_pairs()
@@ -29018,7 +29018,7 @@ pub(all) struct IndicesDataStreamsStatsQuery {
 pub impl ToJson for IndicesDataStreamsStatsQuery with fn to_json(
   self : IndicesDataStreamsStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
     None => ()
@@ -29076,7 +29076,7 @@ pub(all) struct IndicesDataStreamsStatsResponse {
 pub impl ToJson for IndicesDataStreamsStatsResponse with fn to_json(
   self : IndicesDataStreamsStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_shards"] = self._shards.to_json()
   obj["backing_indices"] = self.backing_indices.to_json()
   obj["data_stream_count"] = self.data_stream_count.to_json()
@@ -29148,7 +29148,7 @@ pub async fn Client::indices_data_streams_stats(
   self : Client,
   request : IndicesDataStreamsStatsRequest,
 ) -> EsResponse[IndicesDataStreamsStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -29177,7 +29177,7 @@ pub(all) struct IndicesDeleteQuery {
 pub impl ToJson for IndicesDeleteQuery with fn to_json(
   self : IndicesDeleteQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -29306,7 +29306,7 @@ pub async fn Client::indices_delete(
   self : Client,
   request : IndicesDeleteRequest,
 ) -> EsResponse[IndicesDeleteResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/{index}", ["index"])], params)
@@ -29323,7 +29323,7 @@ pub(all) struct IndicesDeleteAliasQuery {
 pub impl ToJson for IndicesDeleteAliasQuery with fn to_json(
   self : IndicesDeleteAliasQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -29403,7 +29403,7 @@ pub async fn Client::indices_delete_alias(
   self : Client,
   request : IndicesDeleteAliasRequest,
 ) -> EsResponse[IndicesDeleteAliasResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["name"] = request.name
   let query = request.query.to_pairs()
@@ -29428,7 +29428,7 @@ pub(all) struct IndicesDeleteDataLifecycleQuery {
 pub impl ToJson for IndicesDeleteDataLifecycleQuery with fn to_json(
   self : IndicesDeleteDataLifecycleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
     None => ()
@@ -29526,7 +29526,7 @@ pub async fn Client::indices_delete_data_lifecycle(
   self : Client,
   request : IndicesDeleteDataLifecycleRequest,
 ) -> EsResponse[IndicesDeleteDataLifecycleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -29546,7 +29546,7 @@ pub(all) struct IndicesDeleteDataStreamQuery {
 pub impl ToJson for IndicesDeleteDataStreamQuery with fn to_json(
   self : IndicesDeleteDataStreamQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -29627,7 +29627,7 @@ pub async fn Client::indices_delete_data_stream(
   self : Client,
   request : IndicesDeleteDataStreamRequest,
 ) -> EsResponse[IndicesDeleteDataStreamResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -29648,7 +29648,7 @@ pub(all) struct IndicesDeleteDataStreamOptionsQuery {
 pub impl ToJson for IndicesDeleteDataStreamOptionsQuery with fn to_json(
   self : IndicesDeleteDataStreamOptionsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
     None => ()
@@ -29746,7 +29746,7 @@ pub async fn Client::indices_delete_data_stream_options(
   self : Client,
   request : IndicesDeleteDataStreamOptionsRequest,
 ) -> EsResponse[IndicesDeleteDataStreamOptionsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -29766,7 +29766,7 @@ pub(all) struct IndicesDeleteIndexTemplateQuery {
 pub impl ToJson for IndicesDeleteIndexTemplateQuery with fn to_json(
   self : IndicesDeleteIndexTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -29849,7 +29849,7 @@ pub async fn Client::indices_delete_index_template(
   self : Client,
   request : IndicesDeleteIndexTemplateRequest,
 ) -> EsResponse[IndicesDeleteIndexTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -29869,7 +29869,7 @@ pub(all) struct IndicesDeleteTemplateQuery {
 pub impl ToJson for IndicesDeleteTemplateQuery with fn to_json(
   self : IndicesDeleteTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -29947,7 +29947,7 @@ pub async fn Client::indices_delete_template(
   self : Client,
   request : IndicesDeleteTemplateRequest,
 ) -> EsResponse[IndicesDeleteTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -29970,7 +29970,7 @@ pub(all) struct IndicesDiskUsageQuery {
 pub impl ToJson for IndicesDiskUsageQuery with fn to_json(
   self : IndicesDiskUsageQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -30100,7 +30100,7 @@ pub async fn Client::indices_disk_usage(
   self : Client,
   request : IndicesDiskUsageRequest,
 ) -> EsResponse[IndicesDiskUsageResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -30117,7 +30117,7 @@ pub(all) struct IndicesDownsampleQuery {} derive(Eq, Debug)
 pub impl ToJson for IndicesDownsampleQuery with fn to_json(
   _self : IndicesDownsampleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -30173,7 +30173,7 @@ pub async fn Client::indices_downsample(
   self : Client,
   request : IndicesDownsampleRequest,
 ) -> EsResponse[IndicesDownsampleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["target_index"] = request.target_index
   let query = request.query.to_pairs()
@@ -30203,7 +30203,7 @@ pub(all) struct IndicesExistsQuery {
 pub impl ToJson for IndicesExistsQuery with fn to_json(
   self : IndicesExistsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -30348,7 +30348,7 @@ pub async fn Client::indices_exists(
   self : Client,
   request : IndicesExistsRequest,
 ) -> EsResponse[IndicesExistsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/{index}", ["index"])], params)
@@ -30367,7 +30367,7 @@ pub(all) struct IndicesExistsAliasQuery {
 pub impl ToJson for IndicesExistsAliasQuery with fn to_json(
   self : IndicesExistsAliasQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -30478,7 +30478,7 @@ pub async fn Client::indices_exists_alias(
   self : Client,
   request : IndicesExistsAliasRequest,
 ) -> EsResponse[IndicesExistsAliasResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -30506,7 +30506,7 @@ pub(all) struct IndicesExistsIndexTemplateQuery {
 pub impl ToJson for IndicesExistsIndexTemplateQuery with fn to_json(
   self : IndicesExistsIndexTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.local_ {
     Some(value) => obj["local"] = value.to_json()
     None => ()
@@ -30604,7 +30604,7 @@ pub async fn Client::indices_exists_index_template(
   self : Client,
   request : IndicesExistsIndexTemplateRequest,
 ) -> EsResponse[IndicesExistsIndexTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -30625,7 +30625,7 @@ pub(all) struct IndicesExistsTemplateQuery {
 pub impl ToJson for IndicesExistsTemplateQuery with fn to_json(
   self : IndicesExistsTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.flat_settings {
     Some(value) => obj["flat_settings"] = value.to_json()
     None => ()
@@ -30718,7 +30718,7 @@ pub async fn Client::indices_exists_template(
   self : Client,
   request : IndicesExistsTemplateRequest,
 ) -> EsResponse[IndicesExistsTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -30738,7 +30738,7 @@ pub(all) struct IndicesExplainDataLifecycleQuery {
 pub impl ToJson for IndicesExplainDataLifecycleQuery with fn to_json(
   self : IndicesExplainDataLifecycleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.include_defaults {
     Some(value) => obj["include_defaults"] = value.to_json()
     None => ()
@@ -30809,7 +30809,7 @@ pub(all) struct IndicesExplainDataLifecycleResponse {
 pub impl ToJson for IndicesExplainDataLifecycleResponse with fn to_json(
   self : IndicesExplainDataLifecycleResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["indices"] = self.indices.to_json()
   Json::object(obj)
 }
@@ -30851,7 +30851,7 @@ pub async fn Client::indices_explain_data_lifecycle(
   self : Client,
   request : IndicesExplainDataLifecycleRequest,
 ) -> EsResponse[IndicesExplainDataLifecycleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -30873,7 +30873,7 @@ pub(all) struct IndicesFieldUsageStatsQuery {
 pub impl ToJson for IndicesFieldUsageStatsQuery with fn to_json(
   self : IndicesFieldUsageStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -30983,7 +30983,7 @@ pub async fn Client::indices_field_usage_stats(
   self : Client,
   request : IndicesFieldUsageStatsRequest,
 ) -> EsResponse[IndicesFieldUsageStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -31004,7 +31004,7 @@ pub(all) struct IndicesFlushQuery {
 
 ///|
 pub impl ToJson for IndicesFlushQuery with fn to_json(self : IndicesFlushQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -31133,7 +31133,7 @@ pub async fn Client::indices_flush(
   self : Client,
   request : IndicesFlushRequest,
 ) -> EsResponse[IndicesFlushResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -31164,7 +31164,7 @@ pub(all) struct IndicesForcemergeQuery {
 pub impl ToJson for IndicesForcemergeQuery with fn to_json(
   self : IndicesForcemergeQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -31327,7 +31327,7 @@ pub async fn Client::indices_forcemerge(
   self : Client,
   request : IndicesForcemergeRequest,
 ) -> EsResponse[IndicesForcemergeResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -31357,7 +31357,7 @@ pub(all) struct IndicesGetQuery {
 
 ///|
 pub impl ToJson for IndicesGetQuery with fn to_json(self : IndicesGetQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -31533,7 +31533,7 @@ pub async fn Client::indices_get(
   self : Client,
   request : IndicesGetRequest,
 ) -> EsResponse[IndicesGetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/{index}", ["index"])], params)
@@ -31552,7 +31552,7 @@ pub(all) struct IndicesGetAliasQuery {
 pub impl ToJson for IndicesGetAliasQuery with fn to_json(
   self : IndicesGetAliasQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -31663,7 +31663,7 @@ pub async fn Client::indices_get_alias(
   self : Client,
   request : IndicesGetAliasRequest,
 ) -> EsResponse[IndicesGetAliasResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -31696,7 +31696,7 @@ pub(all) struct IndicesGetDataLifecycleQuery {
 pub impl ToJson for IndicesGetDataLifecycleQuery with fn to_json(
   self : IndicesGetDataLifecycleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
     None => ()
@@ -31779,7 +31779,7 @@ pub(all) struct IndicesGetDataLifecycleResponse {
 pub impl ToJson for IndicesGetDataLifecycleResponse with fn to_json(
   self : IndicesGetDataLifecycleResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["data_streams"] = self.data_streams.to_json()
   Json::object(obj)
 }
@@ -31821,7 +31821,7 @@ pub async fn Client::indices_get_data_lifecycle(
   self : Client,
   request : IndicesGetDataLifecycleRequest,
 ) -> EsResponse[IndicesGetDataLifecycleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -31838,7 +31838,7 @@ pub(all) struct IndicesGetDataLifecycleStatsQuery {} derive(Eq, Debug)
 pub impl ToJson for IndicesGetDataLifecycleStatsQuery with fn to_json(
   _self : IndicesGetDataLifecycleStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -31882,7 +31882,7 @@ pub(all) struct IndicesGetDataLifecycleStatsResponse {
 pub impl ToJson for IndicesGetDataLifecycleStatsResponse with fn to_json(
   self : IndicesGetDataLifecycleStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["data_stream_count"] = self.data_stream_count.to_json()
   obj["data_streams"] = self.data_streams.to_json()
   match self.last_run_duration_in_millis {
@@ -31958,7 +31958,7 @@ pub async fn Client::indices_get_data_lifecycle_stats(
   self : Client,
   request : IndicesGetDataLifecycleStatsRequest,
 ) -> EsResponse[IndicesGetDataLifecycleStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_lifecycle/stats", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -31976,7 +31976,7 @@ pub(all) struct IndicesGetDataStreamQuery {
 pub impl ToJson for IndicesGetDataStreamQuery with fn to_json(
   self : IndicesGetDataStreamQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
     None => ()
@@ -32071,7 +32071,7 @@ pub(all) struct IndicesGetDataStreamResponse {
 pub impl ToJson for IndicesGetDataStreamResponse with fn to_json(
   self : IndicesGetDataStreamResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["data_streams"] = self.data_streams.to_json()
   Json::object(obj)
 }
@@ -32110,7 +32110,7 @@ pub async fn Client::indices_get_data_stream(
   self : Client,
   request : IndicesGetDataStreamRequest,
 ) -> EsResponse[IndicesGetDataStreamResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -32135,7 +32135,7 @@ pub(all) struct IndicesGetDataStreamMappingsQuery {
 pub impl ToJson for IndicesGetDataStreamMappingsQuery with fn to_json(
   self : IndicesGetDataStreamMappingsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -32191,7 +32191,7 @@ pub(all) struct IndicesGetDataStreamMappingsResponse {
 pub impl ToJson for IndicesGetDataStreamMappingsResponse with fn to_json(
   self : IndicesGetDataStreamMappingsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["data_streams"] = self.data_streams.to_json()
   Json::object(obj)
 }
@@ -32233,7 +32233,7 @@ pub async fn Client::indices_get_data_stream_mappings(
   self : Client,
   request : IndicesGetDataStreamMappingsRequest,
 ) -> EsResponse[IndicesGetDataStreamMappingsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -32253,7 +32253,7 @@ pub(all) struct IndicesGetDataStreamOptionsQuery {
 pub impl ToJson for IndicesGetDataStreamOptionsQuery with fn to_json(
   self : IndicesGetDataStreamOptionsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
     None => ()
@@ -32324,7 +32324,7 @@ pub(all) struct IndicesGetDataStreamOptionsResponse {
 pub impl ToJson for IndicesGetDataStreamOptionsResponse with fn to_json(
   self : IndicesGetDataStreamOptionsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["data_streams"] = self.data_streams.to_json()
   Json::object(obj)
 }
@@ -32366,7 +32366,7 @@ pub async fn Client::indices_get_data_stream_options(
   self : Client,
   request : IndicesGetDataStreamOptionsRequest,
 ) -> EsResponse[IndicesGetDataStreamOptionsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -32385,7 +32385,7 @@ pub(all) struct IndicesGetDataStreamSettingsQuery {
 pub impl ToJson for IndicesGetDataStreamSettingsQuery with fn to_json(
   self : IndicesGetDataStreamSettingsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -32441,7 +32441,7 @@ pub(all) struct IndicesGetDataStreamSettingsResponse {
 pub impl ToJson for IndicesGetDataStreamSettingsResponse with fn to_json(
   self : IndicesGetDataStreamSettingsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["data_streams"] = self.data_streams.to_json()
   Json::object(obj)
 }
@@ -32483,7 +32483,7 @@ pub async fn Client::indices_get_data_stream_settings(
   self : Client,
   request : IndicesGetDataStreamSettingsRequest,
 ) -> EsResponse[IndicesGetDataStreamSettingsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -32505,7 +32505,7 @@ pub(all) struct IndicesGetFieldMappingQuery {
 pub impl ToJson for IndicesGetFieldMappingQuery with fn to_json(
   self : IndicesGetFieldMappingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -32618,7 +32618,7 @@ pub async fn Client::indices_get_field_mapping(
   self : Client,
   request : IndicesGetFieldMappingRequest,
 ) -> EsResponse[IndicesGetFieldMappingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -32647,7 +32647,7 @@ pub(all) struct IndicesGetIndexTemplateQuery {
 pub impl ToJson for IndicesGetIndexTemplateQuery with fn to_json(
   self : IndicesGetIndexTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.local_ {
     Some(value) => obj["local"] = value.to_json()
     None => ()
@@ -32744,7 +32744,7 @@ pub(all) struct IndicesGetIndexTemplateResponse {
 pub impl ToJson for IndicesGetIndexTemplateResponse with fn to_json(
   self : IndicesGetIndexTemplateResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["index_templates"] = self.index_templates.to_json()
   Json::object(obj)
 }
@@ -32786,7 +32786,7 @@ pub async fn Client::indices_get_index_template(
   self : Client,
   request : IndicesGetIndexTemplateRequest,
 ) -> EsResponse[IndicesGetIndexTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -32815,7 +32815,7 @@ pub(all) struct IndicesGetMappingQuery {
 pub impl ToJson for IndicesGetMappingQuery with fn to_json(
   self : IndicesGetMappingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -32944,7 +32944,7 @@ pub async fn Client::indices_get_mapping(
   self : Client,
   request : IndicesGetMappingRequest,
 ) -> EsResponse[IndicesGetMappingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -32967,7 +32967,7 @@ pub(all) struct IndicesGetMigrateReindexStatusQuery {} derive(Eq, Debug)
 pub impl ToJson for IndicesGetMigrateReindexStatusQuery with fn to_json(
   _self : IndicesGetMigrateReindexStatusQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -33020,7 +33020,7 @@ pub(all) struct IndicesGetMigrateReindexStatusResponse {
 pub impl ToJson for IndicesGetMigrateReindexStatusResponse with fn to_json(
   self : IndicesGetMigrateReindexStatusResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.start_time {
     Some(value) => obj["start_time"] = value.to_json()
     None => ()
@@ -33119,7 +33119,7 @@ pub async fn Client::indices_get_migrate_reindex_status(
   self : Client,
   request : IndicesGetMigrateReindexStatusRequest,
 ) -> EsResponse[IndicesGetMigrateReindexStatusResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -33148,7 +33148,7 @@ pub(all) struct IndicesGetSettingsQuery {
 pub impl ToJson for IndicesGetSettingsQuery with fn to_json(
   self : IndicesGetSettingsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -33311,7 +33311,7 @@ pub async fn Client::indices_get_settings(
   self : Client,
   request : IndicesGetSettingsRequest,
 ) -> EsResponse[IndicesGetSettingsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -33344,7 +33344,7 @@ pub(all) struct IndicesGetTemplateQuery {
 pub impl ToJson for IndicesGetTemplateQuery with fn to_json(
   self : IndicesGetTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.flat_settings {
     Some(value) => obj["flat_settings"] = value.to_json()
     None => ()
@@ -33437,7 +33437,7 @@ pub async fn Client::indices_get_template(
   self : Client,
   request : IndicesGetTemplateRequest,
 ) -> EsResponse[IndicesGetTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -33460,7 +33460,7 @@ pub(all) struct IndicesMigrateReindexQuery {} derive(Eq, Debug)
 pub impl ToJson for IndicesMigrateReindexQuery with fn to_json(
   _self : IndicesMigrateReindexQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -33512,7 +33512,7 @@ pub async fn Client::indices_migrate_reindex(
   self : Client,
   request : IndicesMigrateReindexRequest,
 ) -> EsResponse[IndicesMigrateReindexResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_migration/reindex", [])], params)
   let body = JsonBody(request.body)
@@ -33529,7 +33529,7 @@ pub(all) struct IndicesMigrateToDataStreamQuery {
 pub impl ToJson for IndicesMigrateToDataStreamQuery with fn to_json(
   self : IndicesMigrateToDataStreamQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -33612,7 +33612,7 @@ pub async fn Client::indices_migrate_to_data_stream(
   self : Client,
   request : IndicesMigrateToDataStreamRequest,
 ) -> EsResponse[IndicesMigrateToDataStreamResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -33629,7 +33629,7 @@ pub(all) struct IndicesModifyDataStreamQuery {} derive(Eq, Debug)
 pub impl ToJson for IndicesModifyDataStreamQuery with fn to_json(
   _self : IndicesModifyDataStreamQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -33667,7 +33667,7 @@ pub(all) struct IndicesModifyDataStreamBody {
 pub impl ToJson for IndicesModifyDataStreamBody with fn to_json(
   self : IndicesModifyDataStreamBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["actions"] = self.actions.to_json()
   Json::object(obj)
 }
@@ -33716,7 +33716,7 @@ pub async fn Client::indices_modify_data_stream(
   self : Client,
   request : IndicesModifyDataStreamRequest,
 ) -> EsResponse[IndicesModifyDataStreamResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_data_stream/_modify", [])],
@@ -33738,7 +33738,7 @@ pub(all) struct IndicesOpenQuery {
 
 ///|
 pub impl ToJson for IndicesOpenQuery with fn to_json(self : IndicesOpenQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -33874,7 +33874,7 @@ pub(all) struct IndicesOpenResponse {
 pub impl ToJson for IndicesOpenResponse with fn to_json(
   self : IndicesOpenResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["shards_acknowledged"] = self.shards_acknowledged.to_json()
   Json::object(obj)
@@ -33916,7 +33916,7 @@ pub async fn Client::indices_open(
   self : Client,
   request : IndicesOpenRequest,
 ) -> EsResponse[IndicesOpenResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -33935,7 +33935,7 @@ pub(all) struct IndicesPromoteDataStreamQuery {
 pub impl ToJson for IndicesPromoteDataStreamQuery with fn to_json(
   self : IndicesPromoteDataStreamQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -34004,7 +34004,7 @@ pub async fn Client::indices_promote_data_stream(
   self : Client,
   request : IndicesPromoteDataStreamRequest,
 ) -> EsResponse[IndicesPromoteDataStreamResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -34024,7 +34024,7 @@ pub(all) struct IndicesPutAliasQuery {
 pub impl ToJson for IndicesPutAliasQuery with fn to_json(
   self : IndicesPutAliasQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -34093,7 +34093,7 @@ pub(all) struct IndicesPutAliasBody {
 pub impl ToJson for IndicesPutAliasBody with fn to_json(
   self : IndicesPutAliasBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.filter {
     Some(value) => obj["filter"] = value.to_json()
     None => ()
@@ -34191,7 +34191,7 @@ pub async fn Client::indices_put_alias(
   self : Client,
   request : IndicesPutAliasRequest,
 ) -> EsResponse[IndicesPutAliasResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["name"] = request.name
   let query = request.query.to_pairs()
@@ -34220,7 +34220,7 @@ pub(all) struct IndicesPutDataLifecycleQuery {
 pub impl ToJson for IndicesPutDataLifecycleQuery with fn to_json(
   self : IndicesPutDataLifecycleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
     None => ()
@@ -34305,7 +34305,7 @@ pub(all) struct IndicesPutDataLifecycleBody {
 pub impl ToJson for IndicesPutDataLifecycleBody with fn to_json(
   self : IndicesPutDataLifecycleBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.data_retention {
     Some(value) => obj["data_retention"] = value.to_json()
     None => ()
@@ -34393,7 +34393,7 @@ pub async fn Client::indices_put_data_lifecycle(
   self : Client,
   request : IndicesPutDataLifecycleRequest,
 ) -> EsResponse[IndicesPutDataLifecycleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -34415,7 +34415,7 @@ pub(all) struct IndicesPutDataStreamMappingsQuery {
 pub impl ToJson for IndicesPutDataStreamMappingsQuery with fn to_json(
   self : IndicesPutDataStreamMappingsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.dry_run {
     Some(value) => obj["dry_run"] = value.to_json()
     None => ()
@@ -34499,7 +34499,7 @@ pub(all) struct IndicesPutDataStreamMappingsResponse {
 pub impl ToJson for IndicesPutDataStreamMappingsResponse with fn to_json(
   self : IndicesPutDataStreamMappingsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["data_streams"] = self.data_streams.to_json()
   Json::object(obj)
 }
@@ -34541,7 +34541,7 @@ pub async fn Client::indices_put_data_stream_mappings(
   self : Client,
   request : IndicesPutDataStreamMappingsRequest,
 ) -> EsResponse[IndicesPutDataStreamMappingsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -34562,7 +34562,7 @@ pub(all) struct IndicesPutDataStreamOptionsQuery {
 pub impl ToJson for IndicesPutDataStreamOptionsQuery with fn to_json(
   self : IndicesPutDataStreamOptionsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
     None => ()
@@ -34647,7 +34647,7 @@ pub(all) struct IndicesPutDataStreamOptionsBody {
 pub impl ToJson for IndicesPutDataStreamOptionsBody with fn to_json(
   self : IndicesPutDataStreamOptionsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.failure_store {
     Some(value) => obj["failure_store"] = value.to_json()
     None => ()
@@ -34706,7 +34706,7 @@ pub async fn Client::indices_put_data_stream_options(
   self : Client,
   request : IndicesPutDataStreamOptionsRequest,
 ) -> EsResponse[IndicesPutDataStreamOptionsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -34728,7 +34728,7 @@ pub(all) struct IndicesPutDataStreamSettingsQuery {
 pub impl ToJson for IndicesPutDataStreamSettingsQuery with fn to_json(
   self : IndicesPutDataStreamSettingsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.dry_run {
     Some(value) => obj["dry_run"] = value.to_json()
     None => ()
@@ -34812,7 +34812,7 @@ pub(all) struct IndicesPutDataStreamSettingsResponse {
 pub impl ToJson for IndicesPutDataStreamSettingsResponse with fn to_json(
   self : IndicesPutDataStreamSettingsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["data_streams"] = self.data_streams.to_json()
   Json::object(obj)
 }
@@ -34854,7 +34854,7 @@ pub async fn Client::indices_put_data_stream_settings(
   self : Client,
   request : IndicesPutDataStreamSettingsRequest,
 ) -> EsResponse[IndicesPutDataStreamSettingsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -34875,7 +34875,7 @@ pub(all) struct IndicesPutIndexTemplateQuery {
 pub impl ToJson for IndicesPutIndexTemplateQuery with fn to_json(
   self : IndicesPutIndexTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.create {
     Some(value) => obj["create"] = value.to_json()
     None => ()
@@ -34965,7 +34965,7 @@ pub(all) struct IndicesPutIndexTemplateBody {
 pub impl ToJson for IndicesPutIndexTemplateBody with fn to_json(
   self : IndicesPutIndexTemplateBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.index_patterns {
     Some(value) => obj["index_patterns"] = value.to_json()
     None => ()
@@ -35133,7 +35133,7 @@ pub async fn Client::indices_put_index_template(
   self : Client,
   request : IndicesPutIndexTemplateRequest,
 ) -> EsResponse[IndicesPutIndexTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -35158,7 +35158,7 @@ pub(all) struct IndicesPutMappingQuery {
 pub impl ToJson for IndicesPutMappingQuery with fn to_json(
   self : IndicesPutMappingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -35300,7 +35300,7 @@ pub(all) struct IndicesPutMappingBody {
 pub impl ToJson for IndicesPutMappingBody with fn to_json(
   self : IndicesPutMappingBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.date_detection {
     Some(value) => obj["date_detection"] = value.to_json()
     None => ()
@@ -35471,7 +35471,7 @@ pub async fn Client::indices_put_mapping(
   self : Client,
   request : IndicesPutMappingRequest,
 ) -> EsResponse[IndicesPutMappingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -35498,7 +35498,7 @@ pub(all) struct IndicesPutSettingsQuery {
 pub impl ToJson for IndicesPutSettingsQuery with fn to_json(
   self : IndicesPutSettingsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -35679,7 +35679,7 @@ pub async fn Client::indices_put_settings(
   self : Client,
   request : IndicesPutSettingsRequest,
 ) -> EsResponse[IndicesPutSettingsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -35708,7 +35708,7 @@ pub(all) struct IndicesPutTemplateQuery {
 pub impl ToJson for IndicesPutTemplateQuery with fn to_json(
   self : IndicesPutTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.create {
     Some(value) => obj["create"] = value.to_json()
     None => ()
@@ -35806,7 +35806,7 @@ pub(all) struct IndicesPutTemplateBody {
 pub impl ToJson for IndicesPutTemplateBody with fn to_json(
   self : IndicesPutTemplateBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aliases {
     Some(value) => obj["aliases"] = value.to_json()
     None => ()
@@ -35910,7 +35910,7 @@ pub async fn Client::indices_put_template(
   self : Client,
   request : IndicesPutTemplateRequest,
 ) -> EsResponse[IndicesPutTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -35934,7 +35934,7 @@ pub(all) struct IndicesRecoveryQuery {
 pub impl ToJson for IndicesRecoveryQuery with fn to_json(
   self : IndicesRecoveryQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.active_only {
     Some(value) => obj["active_only"] = value.to_json()
     None => ()
@@ -36063,7 +36063,7 @@ pub async fn Client::indices_recovery(
   self : Client,
   request : IndicesRecoveryRequest,
 ) -> EsResponse[IndicesRecoveryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -36090,7 +36090,7 @@ pub(all) struct IndicesRefreshQuery {
 pub impl ToJson for IndicesRefreshQuery with fn to_json(
   self : IndicesRefreshQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -36184,7 +36184,7 @@ pub async fn Client::indices_refresh(
   self : Client,
   request : IndicesRefreshRequest,
 ) -> EsResponse[IndicesRefreshResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -36212,7 +36212,7 @@ pub(all) struct IndicesReloadSearchAnalyzersQuery {
 pub impl ToJson for IndicesReloadSearchAnalyzersQuery with fn to_json(
   self : IndicesReloadSearchAnalyzersQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -36325,7 +36325,7 @@ pub async fn Client::indices_reload_search_analyzers(
   self : Client,
   request : IndicesReloadSearchAnalyzersRequest,
 ) -> EsResponse[IndicesReloadSearchAnalyzersResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -36348,7 +36348,7 @@ pub(all) struct IndicesRemoveBlockQuery {
 pub impl ToJson for IndicesRemoveBlockQuery with fn to_json(
   self : IndicesRemoveBlockQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -36465,7 +36465,7 @@ pub(all) struct IndicesRemoveBlockResponse {
 pub impl ToJson for IndicesRemoveBlockResponse with fn to_json(
   self : IndicesRemoveBlockResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["indices"] = self.indices.to_json()
   Json::object(obj)
@@ -36509,7 +36509,7 @@ pub async fn Client::indices_remove_block(
   self : Client,
   request : IndicesRemoveBlockRequest,
 ) -> EsResponse[IndicesRemoveBlockResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["block"] = request.block
   let query = request.query.to_pairs()
@@ -36533,7 +36533,7 @@ pub(all) struct IndicesResolveClusterQuery {
 pub impl ToJson for IndicesResolveClusterQuery with fn to_json(
   self : IndicesResolveClusterQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -36662,7 +36662,7 @@ pub async fn Client::indices_resolve_cluster(
   self : Client,
   request : IndicesResolveClusterRequest,
 ) -> EsResponse[IndicesResolveClusterResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -36690,7 +36690,7 @@ pub(all) struct IndicesResolveIndexQuery {
 pub impl ToJson for IndicesResolveIndexQuery with fn to_json(
   self : IndicesResolveIndexQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
     None => ()
@@ -36787,7 +36787,7 @@ pub(all) struct IndicesResolveIndexResponse {
 pub impl ToJson for IndicesResolveIndexResponse with fn to_json(
   self : IndicesResolveIndexResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["indices"] = self.indices.to_json()
   obj["aliases"] = self.aliases.to_json()
   obj["data_streams"] = self.data_streams.to_json()
@@ -36836,7 +36836,7 @@ pub async fn Client::indices_resolve_index(
   self : Client,
   request : IndicesResolveIndexRequest,
 ) -> EsResponse[IndicesResolveIndexResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -36859,7 +36859,7 @@ pub(all) struct IndicesRolloverQuery {
 pub impl ToJson for IndicesRolloverQuery with fn to_json(
   self : IndicesRolloverQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.dry_run {
     Some(value) => obj["dry_run"] = value.to_json()
     None => ()
@@ -36973,7 +36973,7 @@ pub(all) struct IndicesRolloverBody {
 pub impl ToJson for IndicesRolloverBody with fn to_json(
   self : IndicesRolloverBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aliases {
     Some(value) => obj["aliases"] = value.to_json()
     None => ()
@@ -37048,7 +37048,7 @@ pub(all) struct IndicesRolloverResponse {
 pub impl ToJson for IndicesRolloverResponse with fn to_json(
   self : IndicesRolloverResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["conditions"] = self.conditions.to_json()
   obj["dry_run"] = self.dry_run.to_json()
@@ -37119,7 +37119,7 @@ pub async fn Client::indices_rollover(
   self : Client,
   request : IndicesRolloverRequest,
 ) -> EsResponse[IndicesRolloverResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["alias"] = request.alias_
   match request.new_index {
     Some(value) => params["new_index"] = value
@@ -37151,7 +37151,7 @@ pub(all) struct IndicesSegmentsQuery {
 pub impl ToJson for IndicesSegmentsQuery with fn to_json(
   self : IndicesSegmentsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -37233,7 +37233,7 @@ pub(all) struct IndicesSegmentsResponse {
 pub impl ToJson for IndicesSegmentsResponse with fn to_json(
   self : IndicesSegmentsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["indices"] = self.indices.to_json()
   obj["_shards"] = self._shards.to_json()
   Json::object(obj)
@@ -37275,7 +37275,7 @@ pub async fn Client::indices_segments(
   self : Client,
   request : IndicesSegmentsRequest,
 ) -> EsResponse[IndicesSegmentsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -37303,7 +37303,7 @@ pub(all) struct IndicesShardStoresQuery {
 pub impl ToJson for IndicesShardStoresQuery with fn to_json(
   self : IndicesShardStoresQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -37398,7 +37398,7 @@ pub(all) struct IndicesShardStoresResponse {
 pub impl ToJson for IndicesShardStoresResponse with fn to_json(
   self : IndicesShardStoresResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["indices"] = self.indices.to_json()
   Json::object(obj)
 }
@@ -37435,7 +37435,7 @@ pub async fn Client::indices_shard_stores(
   self : Client,
   request : IndicesShardStoresRequest,
 ) -> EsResponse[IndicesShardStoresResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -37462,7 +37462,7 @@ pub(all) struct IndicesShrinkQuery {
 pub impl ToJson for IndicesShrinkQuery with fn to_json(
   self : IndicesShrinkQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -37544,7 +37544,7 @@ pub(all) struct IndicesShrinkBody {
 
 ///|
 pub impl ToJson for IndicesShrinkBody with fn to_json(self : IndicesShrinkBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aliases {
     Some(value) => obj["aliases"] = value.to_json()
     None => ()
@@ -37594,7 +37594,7 @@ pub(all) struct IndicesShrinkResponse {
 pub impl ToJson for IndicesShrinkResponse with fn to_json(
   self : IndicesShrinkResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["shards_acknowledged"] = self.shards_acknowledged.to_json()
   obj["index"] = self.index.to_json()
@@ -37645,7 +37645,7 @@ pub async fn Client::indices_shrink(
   self : Client,
   request : IndicesShrinkRequest,
 ) -> EsResponse[IndicesShrinkResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["target"] = request.target
   let query = request.query.to_pairs()
@@ -37669,7 +37669,7 @@ pub(all) struct IndicesSimulateIndexTemplateQuery {
 pub impl ToJson for IndicesSimulateIndexTemplateQuery with fn to_json(
   self : IndicesSimulateIndexTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.create {
     Some(value) => obj["create"] = value.to_json()
     None => ()
@@ -37772,7 +37772,7 @@ pub(all) struct IndicesSimulateIndexTemplateResponse {
 pub impl ToJson for IndicesSimulateIndexTemplateResponse with fn to_json(
   self : IndicesSimulateIndexTemplateResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.overlapping {
     Some(value) => obj["overlapping"] = value.to_json()
     None => ()
@@ -37826,7 +37826,7 @@ pub async fn Client::indices_simulate_index_template(
   self : Client,
   request : IndicesSimulateIndexTemplateRequest,
 ) -> EsResponse[IndicesSimulateIndexTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -37852,7 +37852,7 @@ pub(all) struct IndicesSimulateTemplateQuery {
 pub impl ToJson for IndicesSimulateTemplateQuery with fn to_json(
   self : IndicesSimulateTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.create {
     Some(value) => obj["create"] = value.to_json()
     None => ()
@@ -37957,7 +37957,7 @@ pub(all) struct IndicesSimulateTemplateBody {
 pub impl ToJson for IndicesSimulateTemplateBody with fn to_json(
   self : IndicesSimulateTemplateBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_auto_create {
     Some(value) => obj["allow_auto_create"] = value.to_json()
     None => ()
@@ -38111,7 +38111,7 @@ pub(all) struct IndicesSimulateTemplateResponse {
 pub impl ToJson for IndicesSimulateTemplateResponse with fn to_json(
   self : IndicesSimulateTemplateResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.overlapping {
     Some(value) => obj["overlapping"] = value.to_json()
     None => ()
@@ -38165,7 +38165,7 @@ pub async fn Client::indices_simulate_template(
   self : Client,
   request : IndicesSimulateTemplateRequest,
 ) -> EsResponse[IndicesSimulateTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -38194,7 +38194,7 @@ pub(all) struct IndicesSplitQuery {
 
 ///|
 pub impl ToJson for IndicesSplitQuery with fn to_json(self : IndicesSplitQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -38276,7 +38276,7 @@ pub(all) struct IndicesSplitBody {
 
 ///|
 pub impl ToJson for IndicesSplitBody with fn to_json(self : IndicesSplitBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aliases {
     Some(value) => obj["aliases"] = value.to_json()
     None => ()
@@ -38326,7 +38326,7 @@ pub(all) struct IndicesSplitResponse {
 pub impl ToJson for IndicesSplitResponse with fn to_json(
   self : IndicesSplitResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["shards_acknowledged"] = self.shards_acknowledged.to_json()
   obj["index"] = self.index.to_json()
@@ -38377,7 +38377,7 @@ pub async fn Client::indices_split(
   self : Client,
   request : IndicesSplitRequest,
 ) -> EsResponse[IndicesSplitResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["target"] = request.target
   let query = request.query.to_pairs()
@@ -38404,7 +38404,7 @@ pub(all) struct IndicesStatsQuery {
 
 ///|
 pub impl ToJson for IndicesStatsQuery with fn to_json(self : IndicesStatsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.completion_fields {
     Some(value) => obj["completion_fields"] = value.to_json()
     None => ()
@@ -38594,7 +38594,7 @@ pub(all) struct IndicesStatsResponse {
 pub impl ToJson for IndicesStatsResponse with fn to_json(
   self : IndicesStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.indices {
     Some(value) => obj["indices"] = value.to_json()
     None => ()
@@ -38647,7 +38647,7 @@ pub async fn Client::indices_stats(
   self : Client,
   request : IndicesStatsRequest,
 ) -> EsResponse[IndicesStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -38679,7 +38679,7 @@ pub(all) struct IndicesUpdateAliasesQuery {
 pub impl ToJson for IndicesUpdateAliasesQuery with fn to_json(
   self : IndicesUpdateAliasesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -38744,7 +38744,7 @@ pub(all) struct IndicesUpdateAliasesBody {
 pub impl ToJson for IndicesUpdateAliasesBody with fn to_json(
   self : IndicesUpdateAliasesBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.actions {
     Some(value) => obj["actions"] = value.to_json()
     None => ()
@@ -38795,7 +38795,7 @@ pub async fn Client::indices_update_aliases(
   self : Client,
   request : IndicesUpdateAliasesRequest,
 ) -> EsResponse[IndicesUpdateAliasesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_aliases", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -38822,7 +38822,7 @@ pub(all) struct IndicesValidateQueryQuery {
 pub impl ToJson for IndicesValidateQueryQuery with fn to_json(
   self : IndicesValidateQueryQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -39045,7 +39045,7 @@ pub(all) struct IndicesValidateQueryBody {
 pub impl ToJson for IndicesValidateQueryBody with fn to_json(
   self : IndicesValidateQueryBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.query {
     Some(value) => obj["query"] = value.to_json()
     None => ()
@@ -39084,7 +39084,7 @@ pub(all) struct IndicesValidateQueryResponse {
 pub impl ToJson for IndicesValidateQueryResponse with fn to_json(
   self : IndicesValidateQueryResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.explanations {
     Some(value) => obj["explanations"] = value.to_json()
     None => ()
@@ -39153,7 +39153,7 @@ pub async fn Client::indices_validate_query(
   self : Client,
   request : IndicesValidateQueryRequest,
 ) -> EsResponse[IndicesValidateQueryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -39182,7 +39182,7 @@ pub(all) struct InferenceChatCompletionUnifiedQuery {
 pub impl ToJson for InferenceChatCompletionUnifiedQuery with fn to_json(
   self : InferenceChatCompletionUnifiedQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -39255,7 +39255,7 @@ pub async fn Client::inference_chat_completion_unified(
   self : Client,
   request : InferenceChatCompletionUnifiedRequest,
 ) -> EsResponse[InferenceChatCompletionUnifiedResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["inference_id"] = request.inference_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -39279,7 +39279,7 @@ pub(all) struct InferenceCompletionQuery {
 pub impl ToJson for InferenceCompletionQuery with fn to_json(
   self : InferenceCompletionQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -39330,7 +39330,7 @@ pub(all) struct InferenceCompletionBody {
 pub impl ToJson for InferenceCompletionBody with fn to_json(
   self : InferenceCompletionBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["input"] = self.input.to_json()
   match self.task_settings {
     Some(value) => obj["task_settings"] = value.to_json()
@@ -39390,7 +39390,7 @@ pub async fn Client::inference_completion(
   self : Client,
   request : InferenceCompletionRequest,
 ) -> EsResponse[InferenceCompletionResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["inference_id"] = request.inference_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -39413,7 +39413,7 @@ pub(all) struct InferenceDeleteQuery {
 pub impl ToJson for InferenceDeleteQuery with fn to_json(
   self : InferenceDeleteQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.dry_run {
     Some(value) => obj["dry_run"] = value.to_json()
     None => ()
@@ -39492,7 +39492,7 @@ pub async fn Client::inference_delete(
   self : Client,
   request : InferenceDeleteRequest,
 ) -> EsResponse[InferenceDeleteResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.task_type {
     Some(value) => params["task_type"] = value
     None => ()
@@ -39520,7 +39520,7 @@ pub(all) struct InferenceEmbeddingQuery {
 pub impl ToJson for InferenceEmbeddingQuery with fn to_json(
   self : InferenceEmbeddingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -39588,7 +39588,7 @@ pub async fn Client::inference_embedding(
   self : Client,
   request : InferenceEmbeddingRequest,
 ) -> EsResponse[InferenceEmbeddingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["inference_id"] = request.inference_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -39604,7 +39604,7 @@ pub(all) struct InferenceGetQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for InferenceGetQuery with fn to_json(_self : InferenceGetQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -39640,7 +39640,7 @@ pub(all) struct InferenceGetResponse {
 pub impl ToJson for InferenceGetResponse with fn to_json(
   self : InferenceGetResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["endpoints"] = self.endpoints.to_json()
   Json::object(obj)
 }
@@ -39679,7 +39679,7 @@ pub async fn Client::inference_get(
   self : Client,
   request : InferenceGetRequest,
 ) -> EsResponse[InferenceGetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.task_type {
     Some(value) => params["task_type"] = value
     None => ()
@@ -39712,7 +39712,7 @@ pub(all) struct InferenceInferenceQuery {
 pub impl ToJson for InferenceInferenceQuery with fn to_json(
   self : InferenceInferenceQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -39765,7 +39765,7 @@ pub(all) struct InferenceInferenceBody {
 pub impl ToJson for InferenceInferenceBody with fn to_json(
   self : InferenceInferenceBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.query {
     Some(value) => obj["query"] = value.to_json()
     None => ()
@@ -39848,7 +39848,7 @@ pub async fn Client::inference_inference(
   self : Client,
   request : InferenceInferenceRequest,
 ) -> EsResponse[InferenceInferenceResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.task_type {
     Some(value) => params["task_type"] = value
     None => ()
@@ -39875,7 +39875,7 @@ pub(all) struct InferencePutQuery {
 
 ///|
 pub impl ToJson for InferencePutQuery with fn to_json(self : InferencePutQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -39943,7 +39943,7 @@ pub async fn Client::inference_put(
   self : Client,
   request : InferencePutRequest,
 ) -> EsResponse[InferencePutResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.task_type {
     Some(value) => params["task_type"] = value
     None => ()
@@ -39972,7 +39972,7 @@ pub(all) struct InferencePutAi21Query {
 pub impl ToJson for InferencePutAi21Query with fn to_json(
   self : InferencePutAi21Query,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -40021,7 +40021,7 @@ pub(all) struct InferencePutAi21Body {
 pub impl ToJson for InferencePutAi21Body with fn to_json(
   self : InferencePutAi21Body,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["service"] = self.service.to_json()
   obj["service_settings"] = self.service_settings.to_json()
   Json::object(obj)
@@ -40078,7 +40078,7 @@ pub async fn Client::inference_put_ai21(
   self : Client,
   request : InferencePutAi21Request,
 ) -> EsResponse[InferencePutAi21Response] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["ai21_inference_id"] = request.ai21_inference_id
   let query = request.query.to_pairs()
@@ -40103,7 +40103,7 @@ pub(all) struct InferencePutAlibabacloudQuery {
 pub impl ToJson for InferencePutAlibabacloudQuery with fn to_json(
   self : InferencePutAlibabacloudQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -40161,7 +40161,7 @@ pub(all) struct InferencePutAlibabacloudBody {
 pub impl ToJson for InferencePutAlibabacloudBody with fn to_json(
   self : InferencePutAlibabacloudBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -40242,7 +40242,7 @@ pub async fn Client::inference_put_alibabacloud(
   self : Client,
   request : InferencePutAlibabacloudRequest,
 ) -> EsResponse[InferencePutAlibabacloudResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["alibabacloud_inference_id"] = request.alibabacloud_inference_id
   let query = request.query.to_pairs()
@@ -40267,7 +40267,7 @@ pub(all) struct InferencePutAmazonbedrockQuery {
 pub impl ToJson for InferencePutAmazonbedrockQuery with fn to_json(
   self : InferencePutAmazonbedrockQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -40325,7 +40325,7 @@ pub(all) struct InferencePutAmazonbedrockBody {
 pub impl ToJson for InferencePutAmazonbedrockBody with fn to_json(
   self : InferencePutAmazonbedrockBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -40409,7 +40409,7 @@ pub async fn Client::inference_put_amazonbedrock(
   self : Client,
   request : InferencePutAmazonbedrockRequest,
 ) -> EsResponse[InferencePutAmazonbedrockResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["amazonbedrock_inference_id"] = request.amazonbedrock_inference_id
   let query = request.query.to_pairs()
@@ -40434,7 +40434,7 @@ pub(all) struct InferencePutAmazonsagemakerQuery {
 pub impl ToJson for InferencePutAmazonsagemakerQuery with fn to_json(
   self : InferencePutAmazonsagemakerQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -40492,7 +40492,7 @@ pub(all) struct InferencePutAmazonsagemakerBody {
 pub impl ToJson for InferencePutAmazonsagemakerBody with fn to_json(
   self : InferencePutAmazonsagemakerBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -40576,7 +40576,7 @@ pub async fn Client::inference_put_amazonsagemaker(
   self : Client,
   request : InferencePutAmazonsagemakerRequest,
 ) -> EsResponse[InferencePutAmazonsagemakerResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["amazonsagemaker_inference_id"] = request.amazonsagemaker_inference_id
   let query = request.query.to_pairs()
@@ -40602,7 +40602,7 @@ pub(all) struct InferencePutAnthropicQuery {
 pub impl ToJson for InferencePutAnthropicQuery with fn to_json(
   self : InferencePutAnthropicQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -40654,7 +40654,7 @@ pub(all) struct InferencePutAnthropicBody {
 pub impl ToJson for InferencePutAnthropicBody with fn to_json(
   self : InferencePutAnthropicBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["service"] = self.service.to_json()
   obj["service_settings"] = self.service_settings.to_json()
   match self.task_settings {
@@ -40722,7 +40722,7 @@ pub async fn Client::inference_put_anthropic(
   self : Client,
   request : InferencePutAnthropicRequest,
 ) -> EsResponse[InferencePutAnthropicResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["anthropic_inference_id"] = request.anthropic_inference_id
   let query = request.query.to_pairs()
@@ -40747,7 +40747,7 @@ pub(all) struct InferencePutAzureaistudioQuery {
 pub impl ToJson for InferencePutAzureaistudioQuery with fn to_json(
   self : InferencePutAzureaistudioQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -40805,7 +40805,7 @@ pub(all) struct InferencePutAzureaistudioBody {
 pub impl ToJson for InferencePutAzureaistudioBody with fn to_json(
   self : InferencePutAzureaistudioBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -40889,7 +40889,7 @@ pub async fn Client::inference_put_azureaistudio(
   self : Client,
   request : InferencePutAzureaistudioRequest,
 ) -> EsResponse[InferencePutAzureaistudioResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["azureaistudio_inference_id"] = request.azureaistudio_inference_id
   let query = request.query.to_pairs()
@@ -40914,7 +40914,7 @@ pub(all) struct InferencePutAzureopenaiQuery {
 pub impl ToJson for InferencePutAzureopenaiQuery with fn to_json(
   self : InferencePutAzureopenaiQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -40969,7 +40969,7 @@ pub(all) struct InferencePutAzureopenaiBody {
 pub impl ToJson for InferencePutAzureopenaiBody with fn to_json(
   self : InferencePutAzureopenaiBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -41050,7 +41050,7 @@ pub async fn Client::inference_put_azureopenai(
   self : Client,
   request : InferencePutAzureopenaiRequest,
 ) -> EsResponse[InferencePutAzureopenaiResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["azureopenai_inference_id"] = request.azureopenai_inference_id
   let query = request.query.to_pairs()
@@ -41075,7 +41075,7 @@ pub(all) struct InferencePutCohereQuery {
 pub impl ToJson for InferencePutCohereQuery with fn to_json(
   self : InferencePutCohereQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -41128,7 +41128,7 @@ pub(all) struct InferencePutCohereBody {
 pub impl ToJson for InferencePutCohereBody with fn to_json(
   self : InferencePutCohereBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -41207,7 +41207,7 @@ pub async fn Client::inference_put_cohere(
   self : Client,
   request : InferencePutCohereRequest,
 ) -> EsResponse[InferencePutCohereResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["cohere_inference_id"] = request.cohere_inference_id
   let query = request.query.to_pairs()
@@ -41232,7 +41232,7 @@ pub(all) struct InferencePutContextualaiQuery {
 pub impl ToJson for InferencePutContextualaiQuery with fn to_json(
   self : InferencePutContextualaiQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -41289,7 +41289,7 @@ pub(all) struct InferencePutContextualaiBody {
 pub impl ToJson for InferencePutContextualaiBody with fn to_json(
   self : InferencePutContextualaiBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["service"] = self.service.to_json()
   obj["service_settings"] = self.service_settings.to_json()
   match self.task_settings {
@@ -41359,7 +41359,7 @@ pub async fn Client::inference_put_contextualai(
   self : Client,
   request : InferencePutContextualaiRequest,
 ) -> EsResponse[InferencePutContextualaiResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["contextualai_inference_id"] = request.contextualai_inference_id
   let query = request.query.to_pairs()
@@ -41382,7 +41382,7 @@ pub(all) struct InferencePutCustomQuery {} derive(Eq, Debug)
 pub impl ToJson for InferencePutCustomQuery with fn to_json(
   _self : InferencePutCustomQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -41421,7 +41421,7 @@ pub(all) struct InferencePutCustomBody {
 pub impl ToJson for InferencePutCustomBody with fn to_json(
   self : InferencePutCustomBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -41500,7 +41500,7 @@ pub async fn Client::inference_put_custom(
   self : Client,
   request : InferencePutCustomRequest,
 ) -> EsResponse[InferencePutCustomResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["custom_inference_id"] = request.custom_inference_id
   let query = request.query.to_pairs()
@@ -41525,7 +41525,7 @@ pub(all) struct InferencePutDeepseekQuery {
 pub impl ToJson for InferencePutDeepseekQuery with fn to_json(
   self : InferencePutDeepseekQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -41576,7 +41576,7 @@ pub(all) struct InferencePutDeepseekBody {
 pub impl ToJson for InferencePutDeepseekBody with fn to_json(
   self : InferencePutDeepseekBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["service"] = self.service.to_json()
   obj["service_settings"] = self.service_settings.to_json()
   Json::object(obj)
@@ -41633,7 +41633,7 @@ pub async fn Client::inference_put_deepseek(
   self : Client,
   request : InferencePutDeepseekRequest,
 ) -> EsResponse[InferencePutDeepseekResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["deepseek_inference_id"] = request.deepseek_inference_id
   let query = request.query.to_pairs()
@@ -41658,7 +41658,7 @@ pub(all) struct InferencePutElasticsearchQuery {
 pub impl ToJson for InferencePutElasticsearchQuery with fn to_json(
   self : InferencePutElasticsearchQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -41716,7 +41716,7 @@ pub(all) struct InferencePutElasticsearchBody {
 pub impl ToJson for InferencePutElasticsearchBody with fn to_json(
   self : InferencePutElasticsearchBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -41800,7 +41800,7 @@ pub async fn Client::inference_put_elasticsearch(
   self : Client,
   request : InferencePutElasticsearchRequest,
 ) -> EsResponse[InferencePutElasticsearchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["elasticsearch_inference_id"] = request.elasticsearch_inference_id
   let query = request.query.to_pairs()
@@ -41825,7 +41825,7 @@ pub(all) struct InferencePutElserQuery {
 pub impl ToJson for InferencePutElserQuery with fn to_json(
   self : InferencePutElserQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -41875,7 +41875,7 @@ pub(all) struct InferencePutElserBody {
 pub impl ToJson for InferencePutElserBody with fn to_json(
   self : InferencePutElserBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -41943,7 +41943,7 @@ pub async fn Client::inference_put_elser(
   self : Client,
   request : InferencePutElserRequest,
 ) -> EsResponse[InferencePutElserResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["elser_inference_id"] = request.elser_inference_id
   let query = request.query.to_pairs()
@@ -41968,7 +41968,7 @@ pub(all) struct InferencePutFireworksaiQuery {
 pub impl ToJson for InferencePutFireworksaiQuery with fn to_json(
   self : InferencePutFireworksaiQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -42023,7 +42023,7 @@ pub(all) struct InferencePutFireworksaiBody {
 pub impl ToJson for InferencePutFireworksaiBody with fn to_json(
   self : InferencePutFireworksaiBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -42104,7 +42104,7 @@ pub async fn Client::inference_put_fireworksai(
   self : Client,
   request : InferencePutFireworksaiRequest,
 ) -> EsResponse[InferencePutFireworksaiResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["fireworksai_inference_id"] = request.fireworksai_inference_id
   let query = request.query.to_pairs()
@@ -42129,7 +42129,7 @@ pub(all) struct InferencePutGoogleaistudioQuery {
 pub impl ToJson for InferencePutGoogleaistudioQuery with fn to_json(
   self : InferencePutGoogleaistudioQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -42186,7 +42186,7 @@ pub(all) struct InferencePutGoogleaistudioBody {
 pub impl ToJson for InferencePutGoogleaistudioBody with fn to_json(
   self : InferencePutGoogleaistudioBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -42259,7 +42259,7 @@ pub async fn Client::inference_put_googleaistudio(
   self : Client,
   request : InferencePutGoogleaistudioRequest,
 ) -> EsResponse[InferencePutGoogleaistudioResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["googleaistudio_inference_id"] = request.googleaistudio_inference_id
   let query = request.query.to_pairs()
@@ -42285,7 +42285,7 @@ pub(all) struct InferencePutGooglevertexaiQuery {
 pub impl ToJson for InferencePutGooglevertexaiQuery with fn to_json(
   self : InferencePutGooglevertexaiQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -42343,7 +42343,7 @@ pub(all) struct InferencePutGooglevertexaiBody {
 pub impl ToJson for InferencePutGooglevertexaiBody with fn to_json(
   self : InferencePutGooglevertexaiBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -42427,7 +42427,7 @@ pub async fn Client::inference_put_googlevertexai(
   self : Client,
   request : InferencePutGooglevertexaiRequest,
 ) -> EsResponse[InferencePutGooglevertexaiResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["googlevertexai_inference_id"] = request.googlevertexai_inference_id
   let query = request.query.to_pairs()
@@ -42453,7 +42453,7 @@ pub(all) struct InferencePutGroqQuery {
 pub impl ToJson for InferencePutGroqQuery with fn to_json(
   self : InferencePutGroqQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -42502,7 +42502,7 @@ pub(all) struct InferencePutGroqBody {
 pub impl ToJson for InferencePutGroqBody with fn to_json(
   self : InferencePutGroqBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["service"] = self.service.to_json()
   obj["service_settings"] = self.service_settings.to_json()
   Json::object(obj)
@@ -42559,7 +42559,7 @@ pub async fn Client::inference_put_groq(
   self : Client,
   request : InferencePutGroqRequest,
 ) -> EsResponse[InferencePutGroqResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["groq_inference_id"] = request.groq_inference_id
   let query = request.query.to_pairs()
@@ -42584,7 +42584,7 @@ pub(all) struct InferencePutHuggingFaceQuery {
 pub impl ToJson for InferencePutHuggingFaceQuery with fn to_json(
   self : InferencePutHuggingFaceQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -42639,7 +42639,7 @@ pub(all) struct InferencePutHuggingFaceBody {
 pub impl ToJson for InferencePutHuggingFaceBody with fn to_json(
   self : InferencePutHuggingFaceBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -42720,7 +42720,7 @@ pub async fn Client::inference_put_hugging_face(
   self : Client,
   request : InferencePutHuggingFaceRequest,
 ) -> EsResponse[InferencePutHuggingFaceResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["huggingface_inference_id"] = request.huggingface_inference_id
   let query = request.query.to_pairs()
@@ -42745,7 +42745,7 @@ pub(all) struct InferencePutJinaaiQuery {
 pub impl ToJson for InferencePutJinaaiQuery with fn to_json(
   self : InferencePutJinaaiQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -42798,7 +42798,7 @@ pub(all) struct InferencePutJinaaiBody {
 pub impl ToJson for InferencePutJinaaiBody with fn to_json(
   self : InferencePutJinaaiBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -42877,7 +42877,7 @@ pub async fn Client::inference_put_jinaai(
   self : Client,
   request : InferencePutJinaaiRequest,
 ) -> EsResponse[InferencePutJinaaiResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["jinaai_inference_id"] = request.jinaai_inference_id
   let query = request.query.to_pairs()
@@ -42902,7 +42902,7 @@ pub(all) struct InferencePutLlamaQuery {
 pub impl ToJson for InferencePutLlamaQuery with fn to_json(
   self : InferencePutLlamaQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -42952,7 +42952,7 @@ pub(all) struct InferencePutLlamaBody {
 pub impl ToJson for InferencePutLlamaBody with fn to_json(
   self : InferencePutLlamaBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -43020,7 +43020,7 @@ pub async fn Client::inference_put_llama(
   self : Client,
   request : InferencePutLlamaRequest,
 ) -> EsResponse[InferencePutLlamaResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["llama_inference_id"] = request.llama_inference_id
   let query = request.query.to_pairs()
@@ -43045,7 +43045,7 @@ pub(all) struct InferencePutMistralQuery {
 pub impl ToJson for InferencePutMistralQuery with fn to_json(
   self : InferencePutMistralQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -43097,7 +43097,7 @@ pub(all) struct InferencePutMistralBody {
 pub impl ToJson for InferencePutMistralBody with fn to_json(
   self : InferencePutMistralBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -43165,7 +43165,7 @@ pub async fn Client::inference_put_mistral(
   self : Client,
   request : InferencePutMistralRequest,
 ) -> EsResponse[InferencePutMistralResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["mistral_inference_id"] = request.mistral_inference_id
   let query = request.query.to_pairs()
@@ -43190,7 +43190,7 @@ pub(all) struct InferencePutNvidiaQuery {
 pub impl ToJson for InferencePutNvidiaQuery with fn to_json(
   self : InferencePutNvidiaQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -43243,7 +43243,7 @@ pub(all) struct InferencePutNvidiaBody {
 pub impl ToJson for InferencePutNvidiaBody with fn to_json(
   self : InferencePutNvidiaBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -43322,7 +43322,7 @@ pub async fn Client::inference_put_nvidia(
   self : Client,
   request : InferencePutNvidiaRequest,
 ) -> EsResponse[InferencePutNvidiaResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["nvidia_inference_id"] = request.nvidia_inference_id
   let query = request.query.to_pairs()
@@ -43347,7 +43347,7 @@ pub(all) struct InferencePutOpenaiQuery {
 pub impl ToJson for InferencePutOpenaiQuery with fn to_json(
   self : InferencePutOpenaiQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -43400,7 +43400,7 @@ pub(all) struct InferencePutOpenaiBody {
 pub impl ToJson for InferencePutOpenaiBody with fn to_json(
   self : InferencePutOpenaiBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -43479,7 +43479,7 @@ pub async fn Client::inference_put_openai(
   self : Client,
   request : InferencePutOpenaiRequest,
 ) -> EsResponse[InferencePutOpenaiResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["openai_inference_id"] = request.openai_inference_id
   let query = request.query.to_pairs()
@@ -43504,7 +43504,7 @@ pub(all) struct InferencePutOpenshiftAiQuery {
 pub impl ToJson for InferencePutOpenshiftAiQuery with fn to_json(
   self : InferencePutOpenshiftAiQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -43559,7 +43559,7 @@ pub(all) struct InferencePutOpenshiftAiBody {
 pub impl ToJson for InferencePutOpenshiftAiBody with fn to_json(
   self : InferencePutOpenshiftAiBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -43640,7 +43640,7 @@ pub async fn Client::inference_put_openshift_ai(
   self : Client,
   request : InferencePutOpenshiftAiRequest,
 ) -> EsResponse[InferencePutOpenshiftAiResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["openshiftai_inference_id"] = request.openshiftai_inference_id
   let query = request.query.to_pairs()
@@ -43665,7 +43665,7 @@ pub(all) struct InferencePutVoyageaiQuery {
 pub impl ToJson for InferencePutVoyageaiQuery with fn to_json(
   self : InferencePutVoyageaiQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -43718,7 +43718,7 @@ pub(all) struct InferencePutVoyageaiBody {
 pub impl ToJson for InferencePutVoyageaiBody with fn to_json(
   self : InferencePutVoyageaiBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -43797,7 +43797,7 @@ pub async fn Client::inference_put_voyageai(
   self : Client,
   request : InferencePutVoyageaiRequest,
 ) -> EsResponse[InferencePutVoyageaiResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["voyageai_inference_id"] = request.voyageai_inference_id
   let query = request.query.to_pairs()
@@ -43822,7 +43822,7 @@ pub(all) struct InferencePutWatsonxQuery {
 pub impl ToJson for InferencePutWatsonxQuery with fn to_json(
   self : InferencePutWatsonxQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -43874,7 +43874,7 @@ pub(all) struct InferencePutWatsonxBody {
 pub impl ToJson for InferencePutWatsonxBody with fn to_json(
   self : InferencePutWatsonxBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.chunking_settings {
     Some(value) => obj["chunking_settings"] = value.to_json()
     None => ()
@@ -43942,7 +43942,7 @@ pub async fn Client::inference_put_watsonx(
   self : Client,
   request : InferencePutWatsonxRequest,
 ) -> EsResponse[InferencePutWatsonxResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_type"] = request.task_type
   params["watsonx_inference_id"] = request.watsonx_inference_id
   let query = request.query.to_pairs()
@@ -43967,7 +43967,7 @@ pub(all) struct InferenceRerankQuery {
 pub impl ToJson for InferenceRerankQuery with fn to_json(
   self : InferenceRerankQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -44019,7 +44019,7 @@ pub(all) struct InferenceRerankBody {
 pub impl ToJson for InferenceRerankBody with fn to_json(
   self : InferenceRerankBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["query"] = self.query.to_json()
   obj["input"] = self.input.to_json()
   match self.return_documents {
@@ -44106,7 +44106,7 @@ pub async fn Client::inference_rerank(
   self : Client,
   request : InferenceRerankRequest,
 ) -> EsResponse[InferenceRerankResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["inference_id"] = request.inference_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -44126,7 +44126,7 @@ pub(all) struct InferenceSparseEmbeddingQuery {
 pub impl ToJson for InferenceSparseEmbeddingQuery with fn to_json(
   self : InferenceSparseEmbeddingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -44182,7 +44182,7 @@ pub(all) struct InferenceSparseEmbeddingBody {
 pub impl ToJson for InferenceSparseEmbeddingBody with fn to_json(
   self : InferenceSparseEmbeddingBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["input"] = self.input.to_json()
   match self.task_settings {
     Some(value) => obj["task_settings"] = value.to_json()
@@ -44244,7 +44244,7 @@ pub async fn Client::inference_sparse_embedding(
   self : Client,
   request : InferenceSparseEmbeddingRequest,
 ) -> EsResponse[InferenceSparseEmbeddingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["inference_id"] = request.inference_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -44268,7 +44268,7 @@ pub(all) struct InferenceStreamCompletionQuery {
 pub impl ToJson for InferenceStreamCompletionQuery with fn to_json(
   self : InferenceStreamCompletionQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -44324,7 +44324,7 @@ pub(all) struct InferenceStreamCompletionBody {
 pub impl ToJson for InferenceStreamCompletionBody with fn to_json(
   self : InferenceStreamCompletionBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["input"] = self.input.to_json()
   match self.task_settings {
     Some(value) => obj["task_settings"] = value.to_json()
@@ -44389,7 +44389,7 @@ pub async fn Client::inference_stream_completion(
   self : Client,
   request : InferenceStreamCompletionRequest,
 ) -> EsResponse[InferenceStreamCompletionResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["inference_id"] = request.inference_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -44413,7 +44413,7 @@ pub(all) struct InferenceTextEmbeddingQuery {
 pub impl ToJson for InferenceTextEmbeddingQuery with fn to_json(
   self : InferenceTextEmbeddingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -44467,7 +44467,7 @@ pub(all) struct InferenceTextEmbeddingBody {
 pub impl ToJson for InferenceTextEmbeddingBody with fn to_json(
   self : InferenceTextEmbeddingBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["input"] = self.input.to_json()
   match self.input_type {
     Some(value) => obj["input_type"] = value.to_json()
@@ -44538,7 +44538,7 @@ pub async fn Client::inference_text_embedding(
   self : Client,
   request : InferenceTextEmbeddingRequest,
 ) -> EsResponse[InferenceTextEmbeddingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["inference_id"] = request.inference_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -44560,7 +44560,7 @@ pub(all) struct InferenceUpdateQuery {} derive(Eq, Debug)
 pub impl ToJson for InferenceUpdateQuery with fn to_json(
   _self : InferenceUpdateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -44616,7 +44616,7 @@ pub async fn Client::inference_update(
   self : Client,
   request : InferenceUpdateRequest,
 ) -> EsResponse[InferenceUpdateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.task_type {
     Some(value) => params["task_type"] = value
     None => ()
@@ -44641,7 +44641,7 @@ pub(all) struct InfoQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for InfoQuery with fn to_json(_self : InfoQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -44677,7 +44677,7 @@ pub(all) struct InfoResponse {
 
 ///|
 pub impl ToJson for InfoResponse with fn to_json(self : InfoResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["cluster_name"] = self.cluster_name.to_json()
   obj["cluster_uuid"] = self.cluster_uuid.to_json()
   obj["name"] = self.name.to_json()
@@ -44730,7 +44730,7 @@ pub async fn Client::info(
   self : Client,
   request : InfoRequest,
 ) -> EsResponse[InfoResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -44746,7 +44746,7 @@ pub(all) struct IngestDeleteGeoipDatabaseQuery {
 pub impl ToJson for IngestDeleteGeoipDatabaseQuery with fn to_json(
   self : IngestDeleteGeoipDatabaseQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -44829,7 +44829,7 @@ pub async fn Client::ingest_delete_geoip_database(
   self : Client,
   request : IngestDeleteGeoipDatabaseRequest,
 ) -> EsResponse[IngestDeleteGeoipDatabaseResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -44849,7 +44849,7 @@ pub(all) struct IngestDeleteIpLocationDatabaseQuery {
 pub impl ToJson for IngestDeleteIpLocationDatabaseQuery with fn to_json(
   self : IngestDeleteIpLocationDatabaseQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -44932,7 +44932,7 @@ pub async fn Client::ingest_delete_ip_location_database(
   self : Client,
   request : IngestDeleteIpLocationDatabaseRequest,
 ) -> EsResponse[IngestDeleteIpLocationDatabaseResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -44952,7 +44952,7 @@ pub(all) struct IngestDeletePipelineQuery {
 pub impl ToJson for IngestDeletePipelineQuery with fn to_json(
   self : IngestDeletePipelineQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -45030,7 +45030,7 @@ pub async fn Client::ingest_delete_pipeline(
   self : Client,
   request : IngestDeletePipelineRequest,
 ) -> EsResponse[IngestDeletePipelineResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -45047,7 +45047,7 @@ pub(all) struct IngestGeoIpStatsQuery {} derive(Eq, Debug)
 pub impl ToJson for IngestGeoIpStatsQuery with fn to_json(
   _self : IngestGeoIpStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -45084,7 +45084,7 @@ pub(all) struct IngestGeoIpStatsResponse {
 pub impl ToJson for IngestGeoIpStatsResponse with fn to_json(
   self : IngestGeoIpStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["stats"] = self.stats.to_json()
   obj["nodes"] = self.nodes.to_json()
   Json::object(obj)
@@ -45124,7 +45124,7 @@ pub async fn Client::ingest_geo_ip_stats(
   self : Client,
   request : IngestGeoIpStatsRequest,
 ) -> EsResponse[IngestGeoIpStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_ingest/geoip/stats", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -45137,7 +45137,7 @@ pub(all) struct IngestGetGeoipDatabaseQuery {} derive(Eq, Debug)
 pub impl ToJson for IngestGetGeoipDatabaseQuery with fn to_json(
   _self : IngestGetGeoipDatabaseQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -45175,7 +45175,7 @@ pub(all) struct IngestGetGeoipDatabaseResponse {
 pub impl ToJson for IngestGetGeoipDatabaseResponse with fn to_json(
   self : IngestGetGeoipDatabaseResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["databases"] = self.databases.to_json()
   Json::object(obj)
 }
@@ -45217,7 +45217,7 @@ pub async fn Client::ingest_get_geoip_database(
   self : Client,
   request : IngestGetGeoipDatabaseRequest,
 ) -> EsResponse[IngestGetGeoipDatabaseResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.id {
     Some(value) => params["id"] = value
     None => ()
@@ -45240,7 +45240,7 @@ pub(all) struct IngestGetIpLocationDatabaseQuery {} derive(Eq, Debug)
 pub impl ToJson for IngestGetIpLocationDatabaseQuery with fn to_json(
   _self : IngestGetIpLocationDatabaseQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -45281,7 +45281,7 @@ pub(all) struct IngestGetIpLocationDatabaseResponse {
 pub impl ToJson for IngestGetIpLocationDatabaseResponse with fn to_json(
   self : IngestGetIpLocationDatabaseResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["databases"] = self.databases.to_json()
   Json::object(obj)
 }
@@ -45323,7 +45323,7 @@ pub async fn Client::ingest_get_ip_location_database(
   self : Client,
   request : IngestGetIpLocationDatabaseRequest,
 ) -> EsResponse[IngestGetIpLocationDatabaseResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.id {
     Some(value) => params["id"] = value
     None => ()
@@ -45349,7 +45349,7 @@ pub(all) struct IngestGetPipelineQuery {
 pub impl ToJson for IngestGetPipelineQuery with fn to_json(
   self : IngestGetPipelineQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -45427,7 +45427,7 @@ pub async fn Client::ingest_get_pipeline(
   self : Client,
   request : IngestGetPipelineRequest,
 ) -> EsResponse[IngestGetPipelineResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.id {
     Some(value) => params["id"] = value
     None => ()
@@ -45450,7 +45450,7 @@ pub(all) struct IngestProcessorGrokQuery {} derive(Eq, Debug)
 pub impl ToJson for IngestProcessorGrokQuery with fn to_json(
   _self : IngestProcessorGrokQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -45486,7 +45486,7 @@ pub(all) struct IngestProcessorGrokResponse {
 pub impl ToJson for IngestProcessorGrokResponse with fn to_json(
   self : IngestProcessorGrokResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["patterns"] = self.patterns.to_json()
   Json::object(obj)
 }
@@ -45523,7 +45523,7 @@ pub async fn Client::ingest_processor_grok(
   self : Client,
   request : IngestProcessorGrokRequest,
 ) -> EsResponse[IngestProcessorGrokResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_ingest/processor/grok", [])],
@@ -45542,7 +45542,7 @@ pub(all) struct IngestPutGeoipDatabaseQuery {
 pub impl ToJson for IngestPutGeoipDatabaseQuery with fn to_json(
   self : IngestPutGeoipDatabaseQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -45610,7 +45610,7 @@ pub(all) struct IngestPutGeoipDatabaseBody {
 pub impl ToJson for IngestPutGeoipDatabaseBody with fn to_json(
   self : IngestPutGeoipDatabaseBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["name"] = self.name.to_json()
   obj["maxmind"] = self.maxmind.to_json()
   Json::object(obj)
@@ -45665,7 +45665,7 @@ pub async fn Client::ingest_put_geoip_database(
   self : Client,
   request : IngestPutGeoipDatabaseRequest,
 ) -> EsResponse[IngestPutGeoipDatabaseResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -45686,7 +45686,7 @@ pub(all) struct IngestPutIpLocationDatabaseQuery {
 pub impl ToJson for IngestPutIpLocationDatabaseQuery with fn to_json(
   self : IngestPutIpLocationDatabaseQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -45774,7 +45774,7 @@ pub async fn Client::ingest_put_ip_location_database(
   self : Client,
   request : IngestPutIpLocationDatabaseRequest,
 ) -> EsResponse[IngestPutIpLocationDatabaseResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -45796,7 +45796,7 @@ pub(all) struct IngestPutPipelineQuery {
 pub impl ToJson for IngestPutPipelineQuery with fn to_json(
   self : IngestPutPipelineQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -45882,7 +45882,7 @@ pub(all) struct IngestPutPipelineBody {
 pub impl ToJson for IngestPutPipelineBody with fn to_json(
   self : IngestPutPipelineBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self._meta {
     Some(value) => obj["_meta"] = value.to_json()
     None => ()
@@ -46008,7 +46008,7 @@ pub async fn Client::ingest_put_pipeline(
   self : Client,
   request : IngestPutPipelineRequest,
 ) -> EsResponse[IngestPutPipelineResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -46028,7 +46028,7 @@ pub(all) struct IngestSimulateQuery {
 pub impl ToJson for IngestSimulateQuery with fn to_json(
   self : IngestSimulateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.verbose {
     Some(value) => obj["verbose"] = value.to_json()
     None => ()
@@ -46077,7 +46077,7 @@ pub(all) struct IngestSimulateBody {
 pub impl ToJson for IngestSimulateBody with fn to_json(
   self : IngestSimulateBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["docs"] = self.docs.to_json()
   match self.pipeline {
     Some(value) => obj["pipeline"] = value.to_json()
@@ -46121,7 +46121,7 @@ pub(all) struct IngestSimulateResponse {
 pub impl ToJson for IngestSimulateResponse with fn to_json(
   self : IngestSimulateResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["docs"] = self.docs.to_json()
   Json::object(obj)
 }
@@ -46160,7 +46160,7 @@ pub async fn Client::ingest_simulate(
   self : Client,
   request : IngestSimulateRequest,
 ) -> EsResponse[IngestSimulateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.id {
     Some(value) => params["id"] = value
     None => ()
@@ -46184,7 +46184,7 @@ pub(all) struct KnnSearchQuery {
 
 ///|
 pub impl ToJson for KnnSearchQuery with fn to_json(self : KnnSearchQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.routing {
     Some(value) => obj["routing"] = value.to_json()
     None => ()
@@ -46235,7 +46235,7 @@ pub(all) struct KnnSearchBody {
 
 ///|
 pub impl ToJson for KnnSearchBody with fn to_json(self : KnnSearchBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self._source {
     Some(value) => obj["_source"] = value.to_json()
     None => ()
@@ -46324,7 +46324,7 @@ pub(all) struct KnnSearchResponse {
 
 ///|
 pub impl ToJson for KnnSearchResponse with fn to_json(self : KnnSearchResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["took"] = self.took.to_json()
   obj["timed_out"] = self.timed_out.to_json()
   obj["_shards"] = self._shards.to_json()
@@ -46397,7 +46397,7 @@ pub async fn Client::knn_search(
   self : Client,
   request : KnnSearchRequest,
 ) -> EsResponse[KnnSearchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -46418,7 +46418,7 @@ pub(all) struct LicenseDeleteQuery {
 pub impl ToJson for LicenseDeleteQuery with fn to_json(
   self : LicenseDeleteQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -46494,7 +46494,7 @@ pub async fn Client::license_delete(
   self : Client,
   request : LicenseDeleteRequest,
 ) -> EsResponse[LicenseDeleteResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_license", [])], params)
   self.perform_json(EsRequest::new(Delete, path, query~))
@@ -46508,7 +46508,7 @@ pub(all) struct LicenseGetQuery {
 
 ///|
 pub impl ToJson for LicenseGetQuery with fn to_json(self : LicenseGetQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.accept_enterprise {
     Some(value) => obj["accept_enterprise"] = value.to_json()
     None => ()
@@ -46573,7 +46573,7 @@ pub(all) struct LicenseGetResponse {
 pub impl ToJson for LicenseGetResponse with fn to_json(
   self : LicenseGetResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["license"] = self.license.to_json()
   Json::object(obj)
 }
@@ -46608,7 +46608,7 @@ pub async fn Client::license_get(
   self : Client,
   request : LicenseGetRequest,
 ) -> EsResponse[LicenseGetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_license", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -46621,7 +46621,7 @@ pub(all) struct LicenseGetBasicStatusQuery {} derive(Eq, Debug)
 pub impl ToJson for LicenseGetBasicStatusQuery with fn to_json(
   _self : LicenseGetBasicStatusQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -46657,7 +46657,7 @@ pub(all) struct LicenseGetBasicStatusResponse {
 pub impl ToJson for LicenseGetBasicStatusResponse with fn to_json(
   self : LicenseGetBasicStatusResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["eligible_to_start_basic"] = self.eligible_to_start_basic.to_json()
   Json::object(obj)
 }
@@ -46697,7 +46697,7 @@ pub async fn Client::license_get_basic_status(
   self : Client,
   request : LicenseGetBasicStatusRequest,
 ) -> EsResponse[LicenseGetBasicStatusResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_license/basic_status", [])],
@@ -46713,7 +46713,7 @@ pub(all) struct LicenseGetTrialStatusQuery {} derive(Eq, Debug)
 pub impl ToJson for LicenseGetTrialStatusQuery with fn to_json(
   _self : LicenseGetTrialStatusQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -46749,7 +46749,7 @@ pub(all) struct LicenseGetTrialStatusResponse {
 pub impl ToJson for LicenseGetTrialStatusResponse with fn to_json(
   self : LicenseGetTrialStatusResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["eligible_to_start_trial"] = self.eligible_to_start_trial.to_json()
   Json::object(obj)
 }
@@ -46789,7 +46789,7 @@ pub async fn Client::license_get_trial_status(
   self : Client,
   request : LicenseGetTrialStatusRequest,
 ) -> EsResponse[LicenseGetTrialStatusResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_license/trial_status", [])],
@@ -46807,7 +46807,7 @@ pub(all) struct LicensePostQuery {
 
 ///|
 pub impl ToJson for LicensePostQuery with fn to_json(self : LicensePostQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.acknowledge {
     Some(value) => obj["acknowledge"] = value.to_json()
     None => ()
@@ -46886,7 +46886,7 @@ pub(all) struct LicensePostBody {
 
 ///|
 pub impl ToJson for LicensePostBody with fn to_json(self : LicensePostBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.license {
     Some(value) => obj["license"] = value.to_json()
     None => ()
@@ -46936,7 +46936,7 @@ pub(all) struct LicensePostResponse {
 pub impl ToJson for LicensePostResponse with fn to_json(
   self : LicensePostResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.acknowledge {
     Some(value) => obj["acknowledge"] = value.to_json()
     None => ()
@@ -46988,7 +46988,7 @@ pub async fn Client::license_post(
   self : Client,
   request : LicensePostRequest,
 ) -> EsResponse[LicensePostResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_license", [])], params)
   let body = match request.body {
@@ -47009,7 +47009,7 @@ pub(all) struct LicensePostStartBasicQuery {
 pub impl ToJson for LicensePostStartBasicQuery with fn to_json(
   self : LicensePostStartBasicQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.acknowledge {
     Some(value) => obj["acknowledge"] = value.to_json()
     None => ()
@@ -47093,7 +47093,7 @@ pub(all) struct LicensePostStartBasicResponse {
 pub impl ToJson for LicensePostStartBasicResponse with fn to_json(
   self : LicensePostStartBasicResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["basic_was_started"] = self.basic_was_started.to_json()
   match self.error_message {
@@ -47167,7 +47167,7 @@ pub async fn Client::license_post_start_basic(
   self : Client,
   request : LicensePostStartBasicRequest,
 ) -> EsResponse[LicensePostStartBasicResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_license/start_basic", [])],
@@ -47187,7 +47187,7 @@ pub(all) struct LicensePostStartTrialQuery {
 pub impl ToJson for LicensePostStartTrialQuery with fn to_json(
   self : LicensePostStartTrialQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.acknowledge {
     Some(value) => obj["acknowledge"] = value.to_json()
     None => ()
@@ -47270,7 +47270,7 @@ pub(all) struct LicensePostStartTrialResponse {
 pub impl ToJson for LicensePostStartTrialResponse with fn to_json(
   self : LicensePostStartTrialResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   match self.error_message {
     Some(value) => obj["error_message"] = value.to_json()
@@ -47334,7 +47334,7 @@ pub async fn Client::license_post_start_trial(
   self : Client,
   request : LicensePostStartTrialRequest,
 ) -> EsResponse[LicensePostStartTrialResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_license/start_trial", [])],
@@ -47350,7 +47350,7 @@ pub(all) struct ListReindexQuery {
 
 ///|
 pub impl ToJson for ListReindexQuery with fn to_json(self : ListReindexQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.detailed {
     Some(value) => obj["detailed"] = value.to_json()
     None => ()
@@ -47400,7 +47400,7 @@ pub(all) struct ListReindexResponse {
 pub impl ToJson for ListReindexResponse with fn to_json(
   self : ListReindexResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["reindex"] = self.reindex.to_json()
   match self.task_failures {
     Some(value) => obj["task_failures"] = value.to_json()
@@ -47455,7 +47455,7 @@ pub async fn Client::list_reindex(
   self : Client,
   request : ListReindexRequest,
 ) -> EsResponse[ListReindexResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_reindex", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -47468,7 +47468,7 @@ pub(all) struct LogstashDeletePipelineQuery {} derive(Eq, Debug)
 pub impl ToJson for LogstashDeletePipelineQuery with fn to_json(
   _self : LogstashDeletePipelineQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -47519,7 +47519,7 @@ pub async fn Client::logstash_delete_pipeline(
   self : Client,
   request : LogstashDeletePipelineRequest,
 ) -> EsResponse[LogstashDeletePipelineResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -47536,7 +47536,7 @@ pub(all) struct LogstashGetPipelineQuery {} derive(Eq, Debug)
 pub impl ToJson for LogstashGetPipelineQuery with fn to_json(
   _self : LogstashGetPipelineQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -47585,7 +47585,7 @@ pub async fn Client::logstash_get_pipeline(
   self : Client,
   request : LogstashGetPipelineRequest,
 ) -> EsResponse[LogstashGetPipelineResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.id {
     Some(value) => params["id"] = value
     None => ()
@@ -47608,7 +47608,7 @@ pub(all) struct LogstashPutPipelineQuery {} derive(Eq, Debug)
 pub impl ToJson for LogstashPutPipelineQuery with fn to_json(
   _self : LogstashPutPipelineQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -47662,7 +47662,7 @@ pub async fn Client::logstash_put_pipeline(
   self : Client,
   request : LogstashPutPipelineRequest,
 ) -> EsResponse[LogstashPutPipelineResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -47688,7 +47688,7 @@ pub(all) struct MgetQuery {
 
 ///|
 pub impl ToJson for MgetQuery with fn to_json(self : MgetQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.force_synthetic_source {
     Some(value) => obj["force_synthetic_source"] = value.to_json()
     None => ()
@@ -47865,7 +47865,7 @@ pub(all) struct MgetBody {
 
 ///|
 pub impl ToJson for MgetBody with fn to_json(self : MgetBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.docs {
     Some(value) => obj["docs"] = value.to_json()
     None => ()
@@ -47908,7 +47908,7 @@ pub(all) struct MgetResponse {
 
 ///|
 pub impl ToJson for MgetResponse with fn to_json(self : MgetResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["docs"] = self.docs.to_json()
   Json::object(obj)
 }
@@ -47947,7 +47947,7 @@ pub async fn Client::mget(
   self : Client,
   request : MgetRequest,
 ) -> EsResponse[MgetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -47971,7 +47971,7 @@ pub(all) struct MigrationDeprecationsQuery {} derive(Eq, Debug)
 pub impl ToJson for MigrationDeprecationsQuery with fn to_json(
   _self : MigrationDeprecationsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -48013,7 +48013,7 @@ pub(all) struct MigrationDeprecationsResponse {
 pub impl ToJson for MigrationDeprecationsResponse with fn to_json(
   self : MigrationDeprecationsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["cluster_settings"] = self.cluster_settings.to_json()
   obj["index_settings"] = self.index_settings.to_json()
   obj["data_streams"] = self.data_streams.to_json()
@@ -48085,7 +48085,7 @@ pub async fn Client::migration_deprecations(
   self : Client,
   request : MigrationDeprecationsRequest,
 ) -> EsResponse[MigrationDeprecationsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -48108,7 +48108,7 @@ pub(all) struct MigrationGetFeatureUpgradeStatusQuery {} derive(Eq, Debug)
 pub impl ToJson for MigrationGetFeatureUpgradeStatusQuery with fn to_json(
   _self : MigrationGetFeatureUpgradeStatusQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -48150,7 +48150,7 @@ pub(all) struct MigrationGetFeatureUpgradeStatusResponse {
 pub impl ToJson for MigrationGetFeatureUpgradeStatusResponse with fn to_json(
   self : MigrationGetFeatureUpgradeStatusResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["features"] = self.features.to_json()
   obj["migration_status"] = self.migration_status.to_json()
   Json::object(obj)
@@ -48195,7 +48195,7 @@ pub async fn Client::migration_get_feature_upgrade_status(
   self : Client,
   request : MigrationGetFeatureUpgradeStatusRequest,
 ) -> EsResponse[MigrationGetFeatureUpgradeStatusResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_migration/system_features", [])],
@@ -48211,7 +48211,7 @@ pub(all) struct MigrationPostFeatureUpgradeQuery {} derive(Eq, Debug)
 pub impl ToJson for MigrationPostFeatureUpgradeQuery with fn to_json(
   _self : MigrationPostFeatureUpgradeQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -48254,7 +48254,7 @@ pub(all) struct MigrationPostFeatureUpgradeResponse {
 pub impl ToJson for MigrationPostFeatureUpgradeResponse with fn to_json(
   self : MigrationPostFeatureUpgradeResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["accepted"] = self.accepted.to_json()
   match self.features {
     Some(value) => obj["features"] = value.to_json()
@@ -48312,7 +48312,7 @@ pub async fn Client::migration_post_feature_upgrade(
   self : Client,
   request : MigrationPostFeatureUpgradeRequest,
 ) -> EsResponse[MigrationPostFeatureUpgradeResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_migration/system_features", [])],
@@ -48328,7 +48328,7 @@ pub(all) struct MlClearTrainedModelDeploymentCacheQuery {} derive(Eq, Debug)
 pub impl ToJson for MlClearTrainedModelDeploymentCacheQuery with fn to_json(
   _self : MlClearTrainedModelDeploymentCacheQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -48372,7 +48372,7 @@ pub(all) struct MlClearTrainedModelDeploymentCacheResponse {
 pub impl ToJson for MlClearTrainedModelDeploymentCacheResponse with fn to_json(
   self : MlClearTrainedModelDeploymentCacheResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["cleared"] = self.cleared.to_json()
   Json::object(obj)
 }
@@ -48416,7 +48416,7 @@ pub async fn Client::ml_clear_trained_model_deployment_cache(
   self : Client,
   request : MlClearTrainedModelDeploymentCacheRequest,
 ) -> EsResponse[MlClearTrainedModelDeploymentCacheResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["model_id"] = request.model_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -48444,7 +48444,7 @@ pub(all) struct MlCloseJobQuery {
 
 ///|
 pub impl ToJson for MlCloseJobQuery with fn to_json(self : MlCloseJobQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -48523,7 +48523,7 @@ pub(all) struct MlCloseJobBody {
 
 ///|
 pub impl ToJson for MlCloseJobBody with fn to_json(self : MlCloseJobBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -48582,7 +48582,7 @@ pub(all) struct MlCloseJobResponse {
 pub impl ToJson for MlCloseJobResponse with fn to_json(
   self : MlCloseJobResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["closed"] = self.closed.to_json()
   Json::object(obj)
 }
@@ -48621,7 +48621,7 @@ pub async fn Client::ml_close_job(
   self : Client,
   request : MlCloseJobRequest,
 ) -> EsResponse[MlCloseJobResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -48642,7 +48642,7 @@ pub(all) struct MlDeleteCalendarQuery {} derive(Eq, Debug)
 pub impl ToJson for MlDeleteCalendarQuery with fn to_json(
   _self : MlDeleteCalendarQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -48691,7 +48691,7 @@ pub async fn Client::ml_delete_calendar(
   self : Client,
   request : MlDeleteCalendarRequest,
 ) -> EsResponse[MlDeleteCalendarResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["calendar_id"] = request.calendar_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -48708,7 +48708,7 @@ pub(all) struct MlDeleteCalendarEventQuery {} derive(Eq, Debug)
 pub impl ToJson for MlDeleteCalendarEventQuery with fn to_json(
   _self : MlDeleteCalendarEventQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -48759,7 +48759,7 @@ pub async fn Client::ml_delete_calendar_event(
   self : Client,
   request : MlDeleteCalendarEventRequest,
 ) -> EsResponse[MlDeleteCalendarEventResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["calendar_id"] = request.calendar_id
   params["event_id"] = request.event_id
   let query = request.query.to_pairs()
@@ -48781,7 +48781,7 @@ pub(all) struct MlDeleteCalendarJobQuery {} derive(Eq, Debug)
 pub impl ToJson for MlDeleteCalendarJobQuery with fn to_json(
   _self : MlDeleteCalendarJobQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -48819,7 +48819,7 @@ pub(all) struct MlDeleteCalendarJobResponse {
 pub impl ToJson for MlDeleteCalendarJobResponse with fn to_json(
   self : MlDeleteCalendarJobResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["calendar_id"] = self.calendar_id.to_json()
   match self.description {
     Some(value) => obj["description"] = value.to_json()
@@ -48875,7 +48875,7 @@ pub async fn Client::ml_delete_calendar_job(
   self : Client,
   request : MlDeleteCalendarJobRequest,
 ) -> EsResponse[MlDeleteCalendarJobResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["calendar_id"] = request.calendar_id
   params["job_id"] = request.job_id
   let query = request.query.to_pairs()
@@ -48900,7 +48900,7 @@ pub(all) struct MlDeleteDataFrameAnalyticsQuery {
 pub impl ToJson for MlDeleteDataFrameAnalyticsQuery with fn to_json(
   self : MlDeleteDataFrameAnalyticsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.force {
     Some(value) => obj["force"] = value.to_json()
     None => ()
@@ -48982,7 +48982,7 @@ pub async fn Client::ml_delete_data_frame_analytics(
   self : Client,
   request : MlDeleteDataFrameAnalyticsRequest,
 ) -> EsResponse[MlDeleteDataFrameAnalyticsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -49001,7 +49001,7 @@ pub(all) struct MlDeleteDatafeedQuery {
 pub impl ToJson for MlDeleteDatafeedQuery with fn to_json(
   self : MlDeleteDatafeedQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.force {
     Some(value) => obj["force"] = value.to_json()
     None => ()
@@ -49062,7 +49062,7 @@ pub async fn Client::ml_delete_datafeed(
   self : Client,
   request : MlDeleteDatafeedRequest,
 ) -> EsResponse[MlDeleteDatafeedResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["datafeed_id"] = request.datafeed_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -49082,7 +49082,7 @@ pub(all) struct MlDeleteExpiredDataQuery {
 pub impl ToJson for MlDeleteExpiredDataQuery with fn to_json(
   self : MlDeleteExpiredDataQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.requests_per_second {
     Some(value) => obj["requests_per_second"] = value.to_json()
     None => ()
@@ -49149,7 +49149,7 @@ pub(all) struct MlDeleteExpiredDataBody {
 pub impl ToJson for MlDeleteExpiredDataBody with fn to_json(
   self : MlDeleteExpiredDataBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.requests_per_second {
     Some(value) => obj["requests_per_second"] = value.to_json()
     None => ()
@@ -49198,7 +49198,7 @@ pub(all) struct MlDeleteExpiredDataResponse {
 pub impl ToJson for MlDeleteExpiredDataResponse with fn to_json(
   self : MlDeleteExpiredDataResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["deleted"] = self.deleted.to_json()
   Json::object(obj)
 }
@@ -49239,7 +49239,7 @@ pub async fn Client::ml_delete_expired_data(
   self : Client,
   request : MlDeleteExpiredDataRequest,
 ) -> EsResponse[MlDeleteExpiredDataResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.job_id {
     Some(value) => params["job_id"] = value
     None => ()
@@ -49266,7 +49266,7 @@ pub(all) struct MlDeleteFilterQuery {} derive(Eq, Debug)
 pub impl ToJson for MlDeleteFilterQuery with fn to_json(
   _self : MlDeleteFilterQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -49315,7 +49315,7 @@ pub async fn Client::ml_delete_filter(
   self : Client,
   request : MlDeleteFilterRequest,
 ) -> EsResponse[MlDeleteFilterResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["filter_id"] = request.filter_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -49335,7 +49335,7 @@ pub(all) struct MlDeleteForecastQuery {
 pub impl ToJson for MlDeleteForecastQuery with fn to_json(
   self : MlDeleteForecastQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_forecasts {
     Some(value) => obj["allow_no_forecasts"] = value.to_json()
     None => ()
@@ -49415,7 +49415,7 @@ pub async fn Client::ml_delete_forecast(
   self : Client,
   request : MlDeleteForecastRequest,
 ) -> EsResponse[MlDeleteForecastResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   match request.forecast_id {
     Some(value) => params["forecast_id"] = value
@@ -49444,7 +49444,7 @@ pub(all) struct MlDeleteJobQuery {
 
 ///|
 pub impl ToJson for MlDeleteJobQuery with fn to_json(self : MlDeleteJobQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.force {
     Some(value) => obj["force"] = value.to_json()
     None => ()
@@ -49541,7 +49541,7 @@ pub async fn Client::ml_delete_job(
   self : Client,
   request : MlDeleteJobRequest,
 ) -> EsResponse[MlDeleteJobResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -49558,7 +49558,7 @@ pub(all) struct MlDeleteModelSnapshotQuery {} derive(Eq, Debug)
 pub impl ToJson for MlDeleteModelSnapshotQuery with fn to_json(
   _self : MlDeleteModelSnapshotQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -49609,7 +49609,7 @@ pub async fn Client::ml_delete_model_snapshot(
   self : Client,
   request : MlDeleteModelSnapshotRequest,
 ) -> EsResponse[MlDeleteModelSnapshotResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   params["snapshot_id"] = request.snapshot_id
   let query = request.query.to_pairs()
@@ -49635,7 +49635,7 @@ pub(all) struct MlDeleteTrainedModelQuery {
 pub impl ToJson for MlDeleteTrainedModelQuery with fn to_json(
   self : MlDeleteTrainedModelQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.force {
     Some(value) => obj["force"] = value.to_json()
     None => ()
@@ -49712,7 +49712,7 @@ pub async fn Client::ml_delete_trained_model(
   self : Client,
   request : MlDeleteTrainedModelRequest,
 ) -> EsResponse[MlDeleteTrainedModelResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["model_id"] = request.model_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -49729,7 +49729,7 @@ pub(all) struct MlDeleteTrainedModelAliasQuery {} derive(Eq, Debug)
 pub impl ToJson for MlDeleteTrainedModelAliasQuery with fn to_json(
   _self : MlDeleteTrainedModelAliasQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -49790,7 +49790,7 @@ pub async fn Client::ml_delete_trained_model_alias(
   self : Client,
   request : MlDeleteTrainedModelAliasRequest,
 ) -> EsResponse[MlDeleteTrainedModelAliasResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["model_id"] = request.model_id
   params["model_alias"] = request.model_alias
   let query = request.query.to_pairs()
@@ -49817,7 +49817,7 @@ pub(all) struct MlEstimateModelMemoryQuery {} derive(Eq, Debug)
 pub impl ToJson for MlEstimateModelMemoryQuery with fn to_json(
   _self : MlEstimateModelMemoryQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -49855,7 +49855,7 @@ pub(all) struct MlEstimateModelMemoryBody {
 pub impl ToJson for MlEstimateModelMemoryBody with fn to_json(
   self : MlEstimateModelMemoryBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.analysis_config {
     Some(value) => obj["analysis_config"] = value.to_json()
     None => ()
@@ -49918,7 +49918,7 @@ pub(all) struct MlEstimateModelMemoryResponse {
 pub impl ToJson for MlEstimateModelMemoryResponse with fn to_json(
   self : MlEstimateModelMemoryResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["model_memory_estimate"] = self.model_memory_estimate.to_json()
   Json::object(obj)
 }
@@ -49960,7 +49960,7 @@ pub async fn Client::ml_estimate_model_memory(
   self : Client,
   request : MlEstimateModelMemoryRequest,
 ) -> EsResponse[MlEstimateModelMemoryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_ml/anomaly_detectors/_estimate_model_memory", [])],
@@ -49977,7 +49977,7 @@ pub(all) struct MlEvaluateDataFrameQuery {} derive(Eq, Debug)
 pub impl ToJson for MlEvaluateDataFrameQuery with fn to_json(
   _self : MlEvaluateDataFrameQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -50015,7 +50015,7 @@ pub(all) struct MlEvaluateDataFrameBody {
 pub impl ToJson for MlEvaluateDataFrameBody with fn to_json(
   self : MlEvaluateDataFrameBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["evaluation"] = self.evaluation.to_json()
   obj["index"] = self.index.to_json()
   match self.query {
@@ -50067,7 +50067,7 @@ pub(all) struct MlEvaluateDataFrameResponse {
 pub impl ToJson for MlEvaluateDataFrameResponse with fn to_json(
   self : MlEvaluateDataFrameResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.classification {
     Some(value) => obj["classification"] = value.to_json()
     None => ()
@@ -50131,7 +50131,7 @@ pub async fn Client::ml_evaluate_data_frame(
   self : Client,
   request : MlEvaluateDataFrameRequest,
 ) -> EsResponse[MlEvaluateDataFrameResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_ml/data_frame/_evaluate", [])],
@@ -50148,7 +50148,7 @@ pub(all) struct MlExplainDataFrameAnalyticsQuery {} derive(Eq, Debug)
 pub impl ToJson for MlExplainDataFrameAnalyticsQuery with fn to_json(
   _self : MlExplainDataFrameAnalyticsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -50196,7 +50196,7 @@ pub(all) struct MlExplainDataFrameAnalyticsBody {
 pub impl ToJson for MlExplainDataFrameAnalyticsBody with fn to_json(
   self : MlExplainDataFrameAnalyticsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.source {
     Some(value) => obj["source"] = value.to_json()
     None => ()
@@ -50324,7 +50324,7 @@ pub(all) struct MlExplainDataFrameAnalyticsResponse {
 pub impl ToJson for MlExplainDataFrameAnalyticsResponse with fn to_json(
   self : MlExplainDataFrameAnalyticsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["field_selection"] = self.field_selection.to_json()
   obj["memory_estimation"] = self.memory_estimation.to_json()
   Json::object(obj)
@@ -50373,7 +50373,7 @@ pub async fn Client::ml_explain_data_frame_analytics(
   self : Client,
   request : MlExplainDataFrameAnalyticsRequest,
 ) -> EsResponse[MlExplainDataFrameAnalyticsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.id {
     Some(value) => params["id"] = value
     None => ()
@@ -50404,7 +50404,7 @@ pub(all) struct MlFlushJobQuery {
 
 ///|
 pub impl ToJson for MlFlushJobQuery with fn to_json(self : MlFlushJobQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.advance_time {
     Some(value) => obj["advance_time"] = value.to_json()
     None => ()
@@ -50515,7 +50515,7 @@ pub(all) struct MlFlushJobBody {
 
 ///|
 pub impl ToJson for MlFlushJobBody with fn to_json(self : MlFlushJobBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.advance_time {
     Some(value) => obj["advance_time"] = value.to_json()
     None => ()
@@ -50597,7 +50597,7 @@ pub(all) struct MlFlushJobResponse {
 pub impl ToJson for MlFlushJobResponse with fn to_json(
   self : MlFlushJobResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["flushed"] = self.flushed.to_json()
   match self.last_finalized_bucket_end {
     Some(value) => obj["last_finalized_bucket_end"] = value.to_json()
@@ -50648,7 +50648,7 @@ pub async fn Client::ml_flush_job(
   self : Client,
   request : MlFlushJobRequest,
 ) -> EsResponse[MlFlushJobResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -50671,7 +50671,7 @@ pub(all) struct MlForecastQuery {
 
 ///|
 pub impl ToJson for MlForecastQuery with fn to_json(self : MlForecastQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.duration {
     Some(value) => obj["duration"] = value.to_json()
     None => ()
@@ -50751,7 +50751,7 @@ pub(all) struct MlForecastBody {
 
 ///|
 pub impl ToJson for MlForecastBody with fn to_json(self : MlForecastBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.duration {
     Some(value) => obj["duration"] = value.to_json()
     None => ()
@@ -50812,7 +50812,7 @@ pub(all) struct MlForecastResponse {
 pub impl ToJson for MlForecastResponse with fn to_json(
   self : MlForecastResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["forecast_id"] = self.forecast_id.to_json()
   Json::object(obj)
@@ -50856,7 +50856,7 @@ pub async fn Client::ml_forecast(
   self : Client,
   request : MlForecastRequest,
 ) -> EsResponse[MlForecastResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -50885,7 +50885,7 @@ pub(all) struct MlGetBucketsQuery {
 
 ///|
 pub impl ToJson for MlGetBucketsQuery with fn to_json(self : MlGetBucketsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.anomaly_score {
     Some(value) => obj["anomaly_score"] = value.to_json()
     None => ()
@@ -51054,7 +51054,7 @@ pub(all) struct MlGetBucketsBody {
 
 ///|
 pub impl ToJson for MlGetBucketsBody with fn to_json(self : MlGetBucketsBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.anomaly_score {
     Some(value) => obj["anomaly_score"] = value.to_json()
     None => ()
@@ -51165,7 +51165,7 @@ pub(all) struct MlGetBucketsResponse {
 pub impl ToJson for MlGetBucketsResponse with fn to_json(
   self : MlGetBucketsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["buckets"] = self.buckets.to_json()
   obj["count"] = self.count.to_json()
   Json::object(obj)
@@ -51211,7 +51211,7 @@ pub async fn Client::ml_get_buckets(
   self : Client,
   request : MlGetBucketsRequest,
 ) -> EsResponse[MlGetBucketsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   match request.timestamp {
     Some(value) => params["timestamp"] = value
@@ -51250,7 +51250,7 @@ pub(all) struct MlGetCalendarEventsQuery {
 pub impl ToJson for MlGetCalendarEventsQuery with fn to_json(
   self : MlGetCalendarEventsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.end {
     Some(value) => obj["end"] = value.to_json()
     None => ()
@@ -51357,7 +51357,7 @@ pub(all) struct MlGetCalendarEventsResponse {
 pub impl ToJson for MlGetCalendarEventsResponse with fn to_json(
   self : MlGetCalendarEventsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["events"] = self.events.to_json()
   Json::object(obj)
@@ -51401,7 +51401,7 @@ pub async fn Client::ml_get_calendar_events(
   self : Client,
   request : MlGetCalendarEventsRequest,
 ) -> EsResponse[MlGetCalendarEventsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["calendar_id"] = request.calendar_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -51421,7 +51421,7 @@ pub(all) struct MlGetCalendarsQuery {
 pub impl ToJson for MlGetCalendarsQuery with fn to_json(
   self : MlGetCalendarsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.from {
     Some(value) => obj["from"] = value.to_json()
     None => ()
@@ -51485,7 +51485,7 @@ pub(all) struct MlGetCalendarsBody {
 pub impl ToJson for MlGetCalendarsBody with fn to_json(
   self : MlGetCalendarsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.page {
     Some(value) => obj["page"] = value.to_json()
     None => ()
@@ -51522,7 +51522,7 @@ pub(all) struct MlGetCalendarsResponse {
 pub impl ToJson for MlGetCalendarsResponse with fn to_json(
   self : MlGetCalendarsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["calendars"] = self.calendars.to_json()
   obj["count"] = self.count.to_json()
   Json::object(obj)
@@ -51566,7 +51566,7 @@ pub async fn Client::ml_get_calendars(
   self : Client,
   request : MlGetCalendarsRequest,
 ) -> EsResponse[MlGetCalendarsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.calendar_id {
     Some(value) => params["calendar_id"] = value
     None => ()
@@ -51597,7 +51597,7 @@ pub(all) struct MlGetCategoriesQuery {
 pub impl ToJson for MlGetCategoriesQuery with fn to_json(
   self : MlGetCategoriesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.from {
     Some(value) => obj["from"] = value.to_json()
     None => ()
@@ -51677,7 +51677,7 @@ pub(all) struct MlGetCategoriesBody {
 pub impl ToJson for MlGetCategoriesBody with fn to_json(
   self : MlGetCategoriesBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.page {
     Some(value) => obj["page"] = value.to_json()
     None => ()
@@ -51714,7 +51714,7 @@ pub(all) struct MlGetCategoriesResponse {
 pub impl ToJson for MlGetCategoriesResponse with fn to_json(
   self : MlGetCategoriesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["categories"] = self.categories.to_json()
   obj["count"] = self.count.to_json()
   Json::object(obj)
@@ -51760,7 +51760,7 @@ pub async fn Client::ml_get_categories(
   self : Client,
   request : MlGetCategoriesRequest,
 ) -> EsResponse[MlGetCategoriesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   match request.category_id {
     Some(value) => params["category_id"] = value
@@ -51798,7 +51798,7 @@ pub(all) struct MlGetDataFrameAnalyticsQuery {
 pub impl ToJson for MlGetDataFrameAnalyticsQuery with fn to_json(
   self : MlGetDataFrameAnalyticsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -51895,7 +51895,7 @@ pub(all) struct MlGetDataFrameAnalyticsResponse {
 pub impl ToJson for MlGetDataFrameAnalyticsResponse with fn to_json(
   self : MlGetDataFrameAnalyticsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["data_frame_analytics"] = self.data_frame_analytics.to_json()
   Json::object(obj)
@@ -51942,7 +51942,7 @@ pub async fn Client::ml_get_data_frame_analytics(
   self : Client,
   request : MlGetDataFrameAnalyticsRequest,
 ) -> EsResponse[MlGetDataFrameAnalyticsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.id {
     Some(value) => params["id"] = value
     None => ()
@@ -51970,7 +51970,7 @@ pub(all) struct MlGetDataFrameAnalyticsStatsQuery {
 pub impl ToJson for MlGetDataFrameAnalyticsStatsQuery with fn to_json(
   self : MlGetDataFrameAnalyticsStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -52069,7 +52069,7 @@ pub(all) struct MlGetDataFrameAnalyticsStatsResponse {
 pub impl ToJson for MlGetDataFrameAnalyticsStatsResponse with fn to_json(
   self : MlGetDataFrameAnalyticsStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["data_frame_analytics"] = self.data_frame_analytics.to_json()
   Json::object(obj)
@@ -52116,7 +52116,7 @@ pub async fn Client::ml_get_data_frame_analytics_stats(
   self : Client,
   request : MlGetDataFrameAnalyticsStatsRequest,
 ) -> EsResponse[MlGetDataFrameAnalyticsStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.id {
     Some(value) => params["id"] = value
     None => ()
@@ -52141,7 +52141,7 @@ pub(all) struct MlGetDatafeedStatsQuery {
 pub impl ToJson for MlGetDatafeedStatsQuery with fn to_json(
   self : MlGetDatafeedStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -52193,7 +52193,7 @@ pub(all) struct MlGetDatafeedStatsResponse {
 pub impl ToJson for MlGetDatafeedStatsResponse with fn to_json(
   self : MlGetDatafeedStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["datafeeds"] = self.datafeeds.to_json()
   Json::object(obj)
@@ -52235,7 +52235,7 @@ pub async fn Client::ml_get_datafeed_stats(
   self : Client,
   request : MlGetDatafeedStatsRequest,
 ) -> EsResponse[MlGetDatafeedStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.datafeed_id {
     Some(value) => params["datafeed_id"] = value
     None => ()
@@ -52261,7 +52261,7 @@ pub(all) struct MlGetDatafeedsQuery {
 pub impl ToJson for MlGetDatafeedsQuery with fn to_json(
   self : MlGetDatafeedsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -52328,7 +52328,7 @@ pub(all) struct MlGetDatafeedsResponse {
 pub impl ToJson for MlGetDatafeedsResponse with fn to_json(
   self : MlGetDatafeedsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["datafeeds"] = self.datafeeds.to_json()
   Json::object(obj)
@@ -52370,7 +52370,7 @@ pub async fn Client::ml_get_datafeeds(
   self : Client,
   request : MlGetDatafeedsRequest,
 ) -> EsResponse[MlGetDatafeedsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.datafeed_id {
     Some(value) => params["datafeed_id"] = value
     None => ()
@@ -52394,7 +52394,7 @@ pub(all) struct MlGetFiltersQuery {
 
 ///|
 pub impl ToJson for MlGetFiltersQuery with fn to_json(self : MlGetFiltersQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.from {
     Some(value) => obj["from"] = value.to_json()
     None => ()
@@ -52456,7 +52456,7 @@ pub(all) struct MlGetFiltersResponse {
 pub impl ToJson for MlGetFiltersResponse with fn to_json(
   self : MlGetFiltersResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["filters"] = self.filters.to_json()
   Json::object(obj)
@@ -52498,7 +52498,7 @@ pub async fn Client::ml_get_filters(
   self : Client,
   request : MlGetFiltersRequest,
 ) -> EsResponse[MlGetFiltersResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.filter_id {
     Some(value) => params["filter_id"] = value
     None => ()
@@ -52530,7 +52530,7 @@ pub(all) struct MlGetInfluencersQuery {
 pub impl ToJson for MlGetInfluencersQuery with fn to_json(
   self : MlGetInfluencersQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.desc {
     Some(value) => obj["desc"] = value.to_json()
     None => ()
@@ -52680,7 +52680,7 @@ pub(all) struct MlGetInfluencersBody {
 pub impl ToJson for MlGetInfluencersBody with fn to_json(
   self : MlGetInfluencersBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.page {
     Some(value) => obj["page"] = value.to_json()
     None => ()
@@ -52717,7 +52717,7 @@ pub(all) struct MlGetInfluencersResponse {
 pub impl ToJson for MlGetInfluencersResponse with fn to_json(
   self : MlGetInfluencersResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["influencers"] = self.influencers.to_json()
   Json::object(obj)
@@ -52761,7 +52761,7 @@ pub async fn Client::ml_get_influencers(
   self : Client,
   request : MlGetInfluencersRequest,
 ) -> EsResponse[MlGetInfluencersResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -52788,7 +52788,7 @@ pub(all) struct MlGetJobStatsQuery {
 pub impl ToJson for MlGetJobStatsQuery with fn to_json(
   self : MlGetJobStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -52838,7 +52838,7 @@ pub(all) struct MlGetJobStatsResponse {
 pub impl ToJson for MlGetJobStatsResponse with fn to_json(
   self : MlGetJobStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["jobs"] = self.jobs.to_json()
   Json::object(obj)
@@ -52880,7 +52880,7 @@ pub async fn Client::ml_get_job_stats(
   self : Client,
   request : MlGetJobStatsRequest,
 ) -> EsResponse[MlGetJobStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.job_id {
     Some(value) => params["job_id"] = value
     None => ()
@@ -52904,7 +52904,7 @@ pub(all) struct MlGetJobsQuery {
 
 ///|
 pub impl ToJson for MlGetJobsQuery with fn to_json(self : MlGetJobsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -52969,7 +52969,7 @@ pub(all) struct MlGetJobsResponse {
 
 ///|
 pub impl ToJson for MlGetJobsResponse with fn to_json(self : MlGetJobsResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["jobs"] = self.jobs.to_json()
   Json::object(obj)
@@ -53011,7 +53011,7 @@ pub async fn Client::ml_get_jobs(
   self : Client,
   request : MlGetJobsRequest,
 ) -> EsResponse[MlGetJobsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.job_id {
     Some(value) => params["job_id"] = value
     None => ()
@@ -53037,7 +53037,7 @@ pub(all) struct MlGetMemoryStatsQuery {
 pub impl ToJson for MlGetMemoryStatsQuery with fn to_json(
   self : MlGetMemoryStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -53104,7 +53104,7 @@ pub(all) struct MlGetMemoryStatsResponse {
 pub impl ToJson for MlGetMemoryStatsResponse with fn to_json(
   self : MlGetMemoryStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_nodes"] = self._nodes.to_json()
   obj["cluster_name"] = self.cluster_name.to_json()
   obj["nodes"] = self.nodes.to_json()
@@ -53151,7 +53151,7 @@ pub async fn Client::ml_get_memory_stats(
   self : Client,
   request : MlGetMemoryStatsRequest,
 ) -> EsResponse[MlGetMemoryStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.node_id {
     Some(value) => params["node_id"] = value
     None => ()
@@ -53176,7 +53176,7 @@ pub(all) struct MlGetModelSnapshotUpgradeStatsQuery {
 pub impl ToJson for MlGetModelSnapshotUpgradeStatsQuery with fn to_json(
   self : MlGetModelSnapshotUpgradeStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -53233,7 +53233,7 @@ pub(all) struct MlGetModelSnapshotUpgradeStatsResponse {
 pub impl ToJson for MlGetModelSnapshotUpgradeStatsResponse with fn to_json(
   self : MlGetModelSnapshotUpgradeStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["model_snapshot_upgrades"] = self.model_snapshot_upgrades.to_json()
   Json::object(obj)
@@ -53282,7 +53282,7 @@ pub async fn Client::ml_get_model_snapshot_upgrade_stats(
   self : Client,
   request : MlGetModelSnapshotUpgradeStatsRequest,
 ) -> EsResponse[MlGetModelSnapshotUpgradeStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   params["snapshot_id"] = request.snapshot_id
   let query = request.query.to_pairs()
@@ -53312,7 +53312,7 @@ pub(all) struct MlGetModelSnapshotsQuery {
 pub impl ToJson for MlGetModelSnapshotsQuery with fn to_json(
   self : MlGetModelSnapshotsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.desc {
     Some(value) => obj["desc"] = value.to_json()
     None => ()
@@ -53436,7 +53436,7 @@ pub(all) struct MlGetModelSnapshotsBody {
 pub impl ToJson for MlGetModelSnapshotsBody with fn to_json(
   self : MlGetModelSnapshotsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.desc {
     Some(value) => obj["desc"] = value.to_json()
     None => ()
@@ -53515,7 +53515,7 @@ pub(all) struct MlGetModelSnapshotsResponse {
 pub impl ToJson for MlGetModelSnapshotsResponse with fn to_json(
   self : MlGetModelSnapshotsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["model_snapshots"] = self.model_snapshots.to_json()
   Json::object(obj)
@@ -53563,7 +53563,7 @@ pub async fn Client::ml_get_model_snapshots(
   self : Client,
   request : MlGetModelSnapshotsRequest,
 ) -> EsResponse[MlGetModelSnapshotsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   match request.snapshot_id {
     Some(value) => params["snapshot_id"] = value
@@ -53604,7 +53604,7 @@ pub(all) struct MlGetOverallBucketsQuery {
 pub impl ToJson for MlGetOverallBucketsQuery with fn to_json(
   self : MlGetOverallBucketsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -53756,7 +53756,7 @@ pub(all) struct MlGetOverallBucketsBody {
 pub impl ToJson for MlGetOverallBucketsBody with fn to_json(
   self : MlGetOverallBucketsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -53867,7 +53867,7 @@ pub(all) struct MlGetOverallBucketsResponse {
 pub impl ToJson for MlGetOverallBucketsResponse with fn to_json(
   self : MlGetOverallBucketsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["overall_buckets"] = self.overall_buckets.to_json()
   Json::object(obj)
@@ -53913,7 +53913,7 @@ pub async fn Client::ml_get_overall_buckets(
   self : Client,
   request : MlGetOverallBucketsRequest,
 ) -> EsResponse[MlGetOverallBucketsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -53946,7 +53946,7 @@ pub(all) struct MlGetRecordsQuery {
 
 ///|
 pub impl ToJson for MlGetRecordsQuery with fn to_json(self : MlGetRecordsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.desc {
     Some(value) => obj["desc"] = value.to_json()
     None => ()
@@ -54100,7 +54100,7 @@ pub(all) struct MlGetRecordsBody {
 
 ///|
 pub impl ToJson for MlGetRecordsBody with fn to_json(self : MlGetRecordsBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.desc {
     Some(value) => obj["desc"] = value.to_json()
     None => ()
@@ -54201,7 +54201,7 @@ pub(all) struct MlGetRecordsResponse {
 pub impl ToJson for MlGetRecordsResponse with fn to_json(
   self : MlGetRecordsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["records"] = self.records.to_json()
   Json::object(obj)
@@ -54245,7 +54245,7 @@ pub async fn Client::ml_get_records(
   self : Client,
   request : MlGetRecordsRequest,
 ) -> EsResponse[MlGetRecordsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -54278,7 +54278,7 @@ pub(all) struct MlGetTrainedModelsQuery {
 pub impl ToJson for MlGetTrainedModelsQuery with fn to_json(
   self : MlGetTrainedModelsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -54425,7 +54425,7 @@ pub(all) struct MlGetTrainedModelsResponse {
 pub impl ToJson for MlGetTrainedModelsResponse with fn to_json(
   self : MlGetTrainedModelsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["trained_model_configs"] = self.trained_model_configs.to_json()
   Json::object(obj)
@@ -54467,7 +54467,7 @@ pub async fn Client::ml_get_trained_models(
   self : Client,
   request : MlGetTrainedModelsRequest,
 ) -> EsResponse[MlGetTrainedModelsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.model_id {
     Some(value) => params["model_id"] = value
     None => ()
@@ -54494,7 +54494,7 @@ pub(all) struct MlGetTrainedModelsStatsQuery {
 pub impl ToJson for MlGetTrainedModelsStatsQuery with fn to_json(
   self : MlGetTrainedModelsStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -54576,7 +54576,7 @@ pub(all) struct MlGetTrainedModelsStatsResponse {
 pub impl ToJson for MlGetTrainedModelsStatsResponse with fn to_json(
   self : MlGetTrainedModelsStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["trained_model_stats"] = self.trained_model_stats.to_json()
   Json::object(obj)
@@ -54623,7 +54623,7 @@ pub async fn Client::ml_get_trained_models_stats(
   self : Client,
   request : MlGetTrainedModelsStatsRequest,
 ) -> EsResponse[MlGetTrainedModelsStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.model_id {
     Some(value) => params["model_id"] = value
     None => ()
@@ -54648,7 +54648,7 @@ pub(all) struct MlInferTrainedModelQuery {
 pub impl ToJson for MlInferTrainedModelQuery with fn to_json(
   self : MlInferTrainedModelQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -54699,7 +54699,7 @@ pub(all) struct MlInferTrainedModelBody {
 pub impl ToJson for MlInferTrainedModelBody with fn to_json(
   self : MlInferTrainedModelBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["docs"] = self.docs.to_json()
   match self.inference_config {
     Some(value) => obj["inference_config"] = value.to_json()
@@ -54744,7 +54744,7 @@ pub(all) struct MlInferTrainedModelResponse {
 pub impl ToJson for MlInferTrainedModelResponse with fn to_json(
   self : MlInferTrainedModelResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["inference_results"] = self.inference_results.to_json()
   Json::object(obj)
 }
@@ -54785,7 +54785,7 @@ pub async fn Client::ml_infer_trained_model(
   self : Client,
   request : MlInferTrainedModelRequest,
 ) -> EsResponse[MlInferTrainedModelResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["model_id"] = request.model_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -54801,7 +54801,7 @@ pub(all) struct MlInfoQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for MlInfoQuery with fn to_json(_self : MlInfoQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -54836,7 +54836,7 @@ pub(all) struct MlInfoResponse {
 
 ///|
 pub impl ToJson for MlInfoResponse with fn to_json(self : MlInfoResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["defaults"] = self.defaults.to_json()
   obj["limits"] = self.limits.to_json()
   obj["upgrade_mode"] = self.upgrade_mode.to_json()
@@ -54886,7 +54886,7 @@ pub async fn Client::ml_info(
   self : Client,
   request : MlInfoRequest,
 ) -> EsResponse[MlInfoResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_ml/info", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -54899,7 +54899,7 @@ pub(all) struct MlOpenJobQuery {
 
 ///|
 pub impl ToJson for MlOpenJobQuery with fn to_json(self : MlOpenJobQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -54945,7 +54945,7 @@ pub(all) struct MlOpenJobBody {
 
 ///|
 pub impl ToJson for MlOpenJobBody with fn to_json(self : MlOpenJobBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -54980,7 +54980,7 @@ pub(all) struct MlOpenJobResponse {
 
 ///|
 pub impl ToJson for MlOpenJobResponse with fn to_json(self : MlOpenJobResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["opened"] = self.opened.to_json()
   obj["node"] = self.node.to_json()
   Json::object(obj)
@@ -55024,7 +55024,7 @@ pub async fn Client::ml_open_job(
   self : Client,
   request : MlOpenJobRequest,
 ) -> EsResponse[MlOpenJobResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -55045,7 +55045,7 @@ pub(all) struct MlPostCalendarEventsQuery {} derive(Eq, Debug)
 pub impl ToJson for MlPostCalendarEventsQuery with fn to_json(
   _self : MlPostCalendarEventsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -55081,7 +55081,7 @@ pub(all) struct MlPostCalendarEventsBody {
 pub impl ToJson for MlPostCalendarEventsBody with fn to_json(
   self : MlPostCalendarEventsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["events"] = self.events.to_json()
   Json::object(obj)
 }
@@ -55115,7 +55115,7 @@ pub(all) struct MlPostCalendarEventsResponse {
 pub impl ToJson for MlPostCalendarEventsResponse with fn to_json(
   self : MlPostCalendarEventsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["events"] = self.events.to_json()
   Json::object(obj)
 }
@@ -55156,7 +55156,7 @@ pub async fn Client::ml_post_calendar_events(
   self : Client,
   request : MlPostCalendarEventsRequest,
 ) -> EsResponse[MlPostCalendarEventsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["calendar_id"] = request.calendar_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -55175,7 +55175,7 @@ pub(all) struct MlPostDataQuery {
 
 ///|
 pub impl ToJson for MlPostDataQuery with fn to_json(self : MlPostDataQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.reset_end {
     Some(value) => obj["reset_end"] = value.to_json()
     None => ()
@@ -55261,7 +55261,7 @@ pub(all) struct MlPostDataResponse {
 pub impl ToJson for MlPostDataResponse with fn to_json(
   self : MlPostDataResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["job_id"] = self.job_id.to_json()
   obj["processed_record_count"] = self.processed_record_count.to_json()
   obj["processed_field_count"] = self.processed_field_count.to_json()
@@ -55430,7 +55430,7 @@ pub async fn Client::ml_post_data(
   self : Client,
   request : MlPostDataRequest,
 ) -> EsResponse[MlPostDataResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -55448,7 +55448,7 @@ pub(all) struct MlPreviewDataFrameAnalyticsQuery {} derive(Eq, Debug)
 pub impl ToJson for MlPreviewDataFrameAnalyticsQuery with fn to_json(
   _self : MlPreviewDataFrameAnalyticsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -55489,7 +55489,7 @@ pub(all) struct MlPreviewDataFrameAnalyticsBody {
 pub impl ToJson for MlPreviewDataFrameAnalyticsBody with fn to_json(
   self : MlPreviewDataFrameAnalyticsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.config {
     Some(value) => obj["config"] = value.to_json()
     None => ()
@@ -55532,7 +55532,7 @@ pub(all) struct MlPreviewDataFrameAnalyticsResponse {
 pub impl ToJson for MlPreviewDataFrameAnalyticsResponse with fn to_json(
   self : MlPreviewDataFrameAnalyticsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["feature_values"] = self.feature_values.to_json()
   Json::object(obj)
 }
@@ -55576,7 +55576,7 @@ pub async fn Client::ml_preview_data_frame_analytics(
   self : Client,
   request : MlPreviewDataFrameAnalyticsRequest,
 ) -> EsResponse[MlPreviewDataFrameAnalyticsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.id {
     Some(value) => params["id"] = value
     None => ()
@@ -55606,7 +55606,7 @@ pub(all) struct MlPreviewDatafeedQuery {
 pub impl ToJson for MlPreviewDatafeedQuery with fn to_json(
   self : MlPreviewDatafeedQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.start {
     Some(value) => obj["start"] = value.to_json()
     None => ()
@@ -55671,7 +55671,7 @@ pub(all) struct MlPreviewDatafeedBody {
 pub impl ToJson for MlPreviewDatafeedBody with fn to_json(
   self : MlPreviewDatafeedBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.datafeed_config {
     Some(value) => obj["datafeed_config"] = value.to_json()
     None => ()
@@ -55736,7 +55736,7 @@ pub async fn Client::ml_preview_datafeed(
   self : Client,
   request : MlPreviewDatafeedRequest,
 ) -> EsResponse[MlPreviewDatafeedResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.datafeed_id {
     Some(value) => params["datafeed_id"] = value
     None => ()
@@ -55763,7 +55763,7 @@ pub(all) struct MlPutCalendarQuery {} derive(Eq, Debug)
 pub impl ToJson for MlPutCalendarQuery with fn to_json(
   _self : MlPutCalendarQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -55798,7 +55798,7 @@ pub(all) struct MlPutCalendarBody {
 
 ///|
 pub impl ToJson for MlPutCalendarBody with fn to_json(self : MlPutCalendarBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.job_ids {
     Some(value) => obj["job_ids"] = value.to_json()
     None => ()
@@ -55849,7 +55849,7 @@ pub(all) struct MlPutCalendarResponse {
 pub impl ToJson for MlPutCalendarResponse with fn to_json(
   self : MlPutCalendarResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["calendar_id"] = self.calendar_id.to_json()
   match self.description {
     Some(value) => obj["description"] = value.to_json()
@@ -55903,7 +55903,7 @@ pub async fn Client::ml_put_calendar(
   self : Client,
   request : MlPutCalendarRequest,
 ) -> EsResponse[MlPutCalendarResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["calendar_id"] = request.calendar_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -55924,7 +55924,7 @@ pub(all) struct MlPutCalendarJobQuery {} derive(Eq, Debug)
 pub impl ToJson for MlPutCalendarJobQuery with fn to_json(
   _self : MlPutCalendarJobQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -55962,7 +55962,7 @@ pub(all) struct MlPutCalendarJobResponse {
 pub impl ToJson for MlPutCalendarJobResponse with fn to_json(
   self : MlPutCalendarJobResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["calendar_id"] = self.calendar_id.to_json()
   match self.description {
     Some(value) => obj["description"] = value.to_json()
@@ -56016,7 +56016,7 @@ pub async fn Client::ml_put_calendar_job(
   self : Client,
   request : MlPutCalendarJobRequest,
 ) -> EsResponse[MlPutCalendarJobResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["calendar_id"] = request.calendar_id
   params["job_id"] = request.job_id
   let query = request.query.to_pairs()
@@ -56038,7 +56038,7 @@ pub(all) struct MlPutDataFrameAnalyticsQuery {} derive(Eq, Debug)
 pub impl ToJson for MlPutDataFrameAnalyticsQuery with fn to_json(
   _self : MlPutDataFrameAnalyticsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -56086,7 +56086,7 @@ pub(all) struct MlPutDataFrameAnalyticsBody {
 pub impl ToJson for MlPutDataFrameAnalyticsBody with fn to_json(
   self : MlPutDataFrameAnalyticsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_lazy_start {
     Some(value) => obj["allow_lazy_start"] = value.to_json()
     None => ()
@@ -56243,7 +56243,7 @@ pub(all) struct MlPutDataFrameAnalyticsResponse {
 pub impl ToJson for MlPutDataFrameAnalyticsResponse with fn to_json(
   self : MlPutDataFrameAnalyticsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.authorization {
     Some(value) => obj["authorization"] = value.to_json()
     None => ()
@@ -56366,7 +56366,7 @@ pub async fn Client::ml_put_data_frame_analytics(
   self : Client,
   request : MlPutDataFrameAnalyticsRequest,
 ) -> EsResponse[MlPutDataFrameAnalyticsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -56389,7 +56389,7 @@ pub(all) struct MlPutDatafeedQuery {
 pub impl ToJson for MlPutDatafeedQuery with fn to_json(
   self : MlPutDatafeedQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -56496,7 +56496,7 @@ pub(all) struct MlPutDatafeedBody {
 
 ///|
 pub impl ToJson for MlPutDatafeedBody with fn to_json(self : MlPutDatafeedBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aggregations {
     Some(value) => obj["aggregations"] = value.to_json()
     None => ()
@@ -56705,7 +56705,7 @@ pub(all) struct MlPutDatafeedResponse {
 pub impl ToJson for MlPutDatafeedResponse with fn to_json(
   self : MlPutDatafeedResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aggregations {
     Some(value) => obj["aggregations"] = value.to_json()
     None => ()
@@ -56856,7 +56856,7 @@ pub async fn Client::ml_put_datafeed(
   self : Client,
   request : MlPutDatafeedRequest,
 ) -> EsResponse[MlPutDatafeedResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["datafeed_id"] = request.datafeed_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -56872,7 +56872,7 @@ pub(all) struct MlPutFilterQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for MlPutFilterQuery with fn to_json(_self : MlPutFilterQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -56907,7 +56907,7 @@ pub(all) struct MlPutFilterBody {
 
 ///|
 pub impl ToJson for MlPutFilterBody with fn to_json(self : MlPutFilterBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.description {
     Some(value) => obj["description"] = value.to_json()
     None => ()
@@ -56958,7 +56958,7 @@ pub(all) struct MlPutFilterResponse {
 pub impl ToJson for MlPutFilterResponse with fn to_json(
   self : MlPutFilterResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["description"] = self.description.to_json()
   obj["filter_id"] = self.filter_id.to_json()
   obj["items"] = self.items.to_json()
@@ -57007,7 +57007,7 @@ pub async fn Client::ml_put_filter(
   self : Client,
   request : MlPutFilterRequest,
 ) -> EsResponse[MlPutFilterResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["filter_id"] = request.filter_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -57028,7 +57028,7 @@ pub(all) struct MlPutJobQuery {
 
 ///|
 pub impl ToJson for MlPutJobQuery with fn to_json(self : MlPutJobQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -57135,7 +57135,7 @@ pub(all) struct MlPutJobBody {
 
 ///|
 pub impl ToJson for MlPutJobBody with fn to_json(self : MlPutJobBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_lazy_open {
     Some(value) => obj["allow_lazy_open"] = value.to_json()
     None => ()
@@ -57386,7 +57386,7 @@ pub(all) struct MlPutJobResponse {
 
 ///|
 pub impl ToJson for MlPutJobResponse with fn to_json(self : MlPutJobResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["allow_lazy_open"] = self.allow_lazy_open.to_json()
   obj["analysis_config"] = self.analysis_config.to_json()
   obj["analysis_limits"] = self.analysis_limits.to_json()
@@ -57578,7 +57578,7 @@ pub async fn Client::ml_put_job(
   self : Client,
   request : MlPutJobRequest,
 ) -> EsResponse[MlPutJobResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -57599,7 +57599,7 @@ pub(all) struct MlPutTrainedModelQuery {
 pub impl ToJson for MlPutTrainedModelQuery with fn to_json(
   self : MlPutTrainedModelQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.defer_definition_decompression {
     Some(value) => obj["defer_definition_decompression"] = value.to_json()
     None => ()
@@ -57683,7 +57683,7 @@ pub(all) struct MlPutTrainedModelBody {
 pub impl ToJson for MlPutTrainedModelBody with fn to_json(
   self : MlPutTrainedModelBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.compressed_definition {
     Some(value) => obj["compressed_definition"] = value.to_json()
     None => ()
@@ -57856,7 +57856,7 @@ pub async fn Client::ml_put_trained_model(
   self : Client,
   request : MlPutTrainedModelRequest,
 ) -> EsResponse[MlPutTrainedModelResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["model_id"] = request.model_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -57876,7 +57876,7 @@ pub(all) struct MlPutTrainedModelAliasQuery {
 pub impl ToJson for MlPutTrainedModelAliasQuery with fn to_json(
   self : MlPutTrainedModelAliasQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.reassign {
     Some(value) => obj["reassign"] = value.to_json()
     None => ()
@@ -57948,7 +57948,7 @@ pub async fn Client::ml_put_trained_model_alias(
   self : Client,
   request : MlPutTrainedModelAliasRequest,
 ) -> EsResponse[MlPutTrainedModelAliasResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["model_id"] = request.model_id
   params["model_alias"] = request.model_alias
   let query = request.query.to_pairs()
@@ -57975,7 +57975,7 @@ pub(all) struct MlPutTrainedModelDefinitionPartQuery {} derive(Eq, Debug)
 pub impl ToJson for MlPutTrainedModelDefinitionPartQuery with fn to_json(
   _self : MlPutTrainedModelDefinitionPartQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -58018,7 +58018,7 @@ pub(all) struct MlPutTrainedModelDefinitionPartBody {
 pub impl ToJson for MlPutTrainedModelDefinitionPartBody with fn to_json(
   self : MlPutTrainedModelDefinitionPartBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["definition"] = self.definition.to_json()
   obj["total_definition_length"] = self.total_definition_length.to_json()
   obj["total_parts"] = self.total_parts.to_json()
@@ -58086,7 +58086,7 @@ pub async fn Client::ml_put_trained_model_definition_part(
   self : Client,
   request : MlPutTrainedModelDefinitionPartRequest,
 ) -> EsResponse[MlPutTrainedModelDefinitionPartResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["model_id"] = request.model_id
   params["part"] = request.part
   let query = request.query.to_pairs()
@@ -58109,7 +58109,7 @@ pub(all) struct MlPutTrainedModelVocabularyQuery {} derive(Eq, Debug)
 pub impl ToJson for MlPutTrainedModelVocabularyQuery with fn to_json(
   _self : MlPutTrainedModelVocabularyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -58152,7 +58152,7 @@ pub(all) struct MlPutTrainedModelVocabularyBody {
 pub impl ToJson for MlPutTrainedModelVocabularyBody with fn to_json(
   self : MlPutTrainedModelVocabularyBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["vocabulary"] = self.vocabulary.to_json()
   match self.merges {
     Some(value) => obj["merges"] = value.to_json()
@@ -58226,7 +58226,7 @@ pub async fn Client::ml_put_trained_model_vocabulary(
   self : Client,
   request : MlPutTrainedModelVocabularyRequest,
 ) -> EsResponse[MlPutTrainedModelVocabularyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["model_id"] = request.model_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -58247,7 +58247,7 @@ pub(all) struct MlResetJobQuery {
 
 ///|
 pub impl ToJson for MlResetJobQuery with fn to_json(self : MlResetJobQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.wait_for_completion {
     Some(value) => obj["wait_for_completion"] = value.to_json()
     None => ()
@@ -58330,7 +58330,7 @@ pub async fn Client::ml_reset_job(
   self : Client,
   request : MlResetJobRequest,
 ) -> EsResponse[MlResetJobResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -58349,7 +58349,7 @@ pub(all) struct MlRevertModelSnapshotQuery {
 pub impl ToJson for MlRevertModelSnapshotQuery with fn to_json(
   self : MlRevertModelSnapshotQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.delete_intervening_results {
     Some(value) => obj["delete_intervening_results"] = value.to_json()
     None => ()
@@ -58406,7 +58406,7 @@ pub(all) struct MlRevertModelSnapshotBody {
 pub impl ToJson for MlRevertModelSnapshotBody with fn to_json(
   self : MlRevertModelSnapshotBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.delete_intervening_results {
     Some(value) => obj["delete_intervening_results"] = value.to_json()
     None => ()
@@ -58450,7 +58450,7 @@ pub(all) struct MlRevertModelSnapshotResponse {
 pub impl ToJson for MlRevertModelSnapshotResponse with fn to_json(
   self : MlRevertModelSnapshotResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["model"] = self.model.to_json()
   Json::object(obj)
 }
@@ -58496,7 +58496,7 @@ pub async fn Client::ml_revert_model_snapshot(
   self : Client,
   request : MlRevertModelSnapshotRequest,
 ) -> EsResponse[MlRevertModelSnapshotResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   params["snapshot_id"] = request.snapshot_id
   let query = request.query.to_pairs()
@@ -58526,7 +58526,7 @@ pub(all) struct MlSetUpgradeModeQuery {
 pub impl ToJson for MlSetUpgradeModeQuery with fn to_json(
   self : MlSetUpgradeModeQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.enabled {
     Some(value) => obj["enabled"] = value.to_json()
     None => ()
@@ -58601,7 +58601,7 @@ pub async fn Client::ml_set_upgrade_mode(
   self : Client,
   request : MlSetUpgradeModeRequest,
 ) -> EsResponse[MlSetUpgradeModeResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_ml/set_upgrade_mode", [])],
@@ -58619,7 +58619,7 @@ pub(all) struct MlStartDataFrameAnalyticsQuery {
 pub impl ToJson for MlStartDataFrameAnalyticsQuery with fn to_json(
   self : MlStartDataFrameAnalyticsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -58675,7 +58675,7 @@ pub(all) struct MlStartDataFrameAnalyticsBody {
 pub impl ToJson for MlStartDataFrameAnalyticsBody with fn to_json(
   self : MlStartDataFrameAnalyticsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.id {
     Some(value) => obj["id"] = value.to_json()
     None => ()
@@ -58729,7 +58729,7 @@ pub(all) struct MlStartDataFrameAnalyticsResponse {
 pub impl ToJson for MlStartDataFrameAnalyticsResponse with fn to_json(
   self : MlStartDataFrameAnalyticsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["node"] = self.node.to_json()
   Json::object(obj)
@@ -58778,7 +58778,7 @@ pub async fn Client::ml_start_data_frame_analytics(
   self : Client,
   request : MlStartDataFrameAnalyticsRequest,
 ) -> EsResponse[MlStartDataFrameAnalyticsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -58803,7 +58803,7 @@ pub(all) struct MlStartDatafeedQuery {
 pub impl ToJson for MlStartDatafeedQuery with fn to_json(
   self : MlStartDatafeedQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.end {
     Some(value) => obj["end"] = value.to_json()
     None => ()
@@ -58883,7 +58883,7 @@ pub(all) struct MlStartDatafeedBody {
 pub impl ToJson for MlStartDatafeedBody with fn to_json(
   self : MlStartDatafeedBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.end {
     Some(value) => obj["end"] = value.to_json()
     None => ()
@@ -58942,7 +58942,7 @@ pub(all) struct MlStartDatafeedResponse {
 pub impl ToJson for MlStartDatafeedResponse with fn to_json(
   self : MlStartDatafeedResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["node"] = self.node.to_json()
   obj["started"] = self.started.to_json()
   Json::object(obj)
@@ -58986,7 +58986,7 @@ pub async fn Client::ml_start_datafeed(
   self : Client,
   request : MlStartDatafeedRequest,
 ) -> EsResponse[MlStartDatafeedResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["datafeed_id"] = request.datafeed_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -59016,7 +59016,7 @@ pub(all) struct MlStartTrainedModelDeploymentQuery {
 pub impl ToJson for MlStartTrainedModelDeploymentQuery with fn to_json(
   self : MlStartTrainedModelDeploymentQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.cache_size {
     Some(value) => obj["cache_size"] = value.to_json()
     None => ()
@@ -59187,7 +59187,7 @@ pub(all) struct MlStartTrainedModelDeploymentBody {
 pub impl ToJson for MlStartTrainedModelDeploymentBody with fn to_json(
   self : MlStartTrainedModelDeploymentBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.adaptive_allocations {
     Some(value) => obj["adaptive_allocations"] = value.to_json()
     None => ()
@@ -59231,7 +59231,7 @@ pub(all) struct MlStartTrainedModelDeploymentResponse {
 pub impl ToJson for MlStartTrainedModelDeploymentResponse with fn to_json(
   self : MlStartTrainedModelDeploymentResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["assignment"] = self.assignment.to_json()
   Json::object(obj)
 }
@@ -59275,7 +59275,7 @@ pub async fn Client::ml_start_trained_model_deployment(
   self : Client,
   request : MlStartTrainedModelDeploymentRequest,
 ) -> EsResponse[MlStartTrainedModelDeploymentResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["model_id"] = request.model_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -59304,7 +59304,7 @@ pub(all) struct MlStopDataFrameAnalyticsQuery {
 pub impl ToJson for MlStopDataFrameAnalyticsQuery with fn to_json(
   self : MlStopDataFrameAnalyticsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -59391,7 +59391,7 @@ pub(all) struct MlStopDataFrameAnalyticsBody {
 pub impl ToJson for MlStopDataFrameAnalyticsBody with fn to_json(
   self : MlStopDataFrameAnalyticsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.id {
     Some(value) => obj["id"] = value.to_json()
     None => ()
@@ -59462,7 +59462,7 @@ pub(all) struct MlStopDataFrameAnalyticsResponse {
 pub impl ToJson for MlStopDataFrameAnalyticsResponse with fn to_json(
   self : MlStopDataFrameAnalyticsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["stopped"] = self.stopped.to_json()
   Json::object(obj)
 }
@@ -59506,7 +59506,7 @@ pub async fn Client::ml_stop_data_frame_analytics(
   self : Client,
   request : MlStopDataFrameAnalyticsRequest,
 ) -> EsResponse[MlStopDataFrameAnalyticsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -59532,7 +59532,7 @@ pub(all) struct MlStopDatafeedQuery {
 pub impl ToJson for MlStopDatafeedQuery with fn to_json(
   self : MlStopDatafeedQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -59629,7 +59629,7 @@ pub(all) struct MlStopDatafeedBody {
 pub impl ToJson for MlStopDatafeedBody with fn to_json(
   self : MlStopDatafeedBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -59699,7 +59699,7 @@ pub(all) struct MlStopDatafeedResponse {
 pub impl ToJson for MlStopDatafeedResponse with fn to_json(
   self : MlStopDatafeedResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["stopped"] = self.stopped.to_json()
   Json::object(obj)
 }
@@ -59738,7 +59738,7 @@ pub async fn Client::ml_stop_datafeed(
   self : Client,
   request : MlStopDatafeedRequest,
 ) -> EsResponse[MlStopDatafeedResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["datafeed_id"] = request.datafeed_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -59762,7 +59762,7 @@ pub(all) struct MlStopTrainedModelDeploymentQuery {
 pub impl ToJson for MlStopTrainedModelDeploymentQuery with fn to_json(
   self : MlStopTrainedModelDeploymentQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -59834,7 +59834,7 @@ pub(all) struct MlStopTrainedModelDeploymentBody {
 pub impl ToJson for MlStopTrainedModelDeploymentBody with fn to_json(
   self : MlStopTrainedModelDeploymentBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.id {
     Some(value) => obj["id"] = value.to_json()
     None => ()
@@ -59898,7 +59898,7 @@ pub(all) struct MlStopTrainedModelDeploymentResponse {
 pub impl ToJson for MlStopTrainedModelDeploymentResponse with fn to_json(
   self : MlStopTrainedModelDeploymentResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["stopped"] = self.stopped.to_json()
   Json::object(obj)
 }
@@ -59942,7 +59942,7 @@ pub async fn Client::ml_stop_trained_model_deployment(
   self : Client,
   request : MlStopTrainedModelDeploymentRequest,
 ) -> EsResponse[MlStopTrainedModelDeploymentResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["model_id"] = request.model_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -59967,7 +59967,7 @@ pub(all) struct MlUpdateDataFrameAnalyticsQuery {} derive(Eq, Debug)
 pub impl ToJson for MlUpdateDataFrameAnalyticsQuery with fn to_json(
   _self : MlUpdateDataFrameAnalyticsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -60011,7 +60011,7 @@ pub(all) struct MlUpdateDataFrameAnalyticsBody {
 pub impl ToJson for MlUpdateDataFrameAnalyticsBody with fn to_json(
   self : MlUpdateDataFrameAnalyticsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.description {
     Some(value) => obj["description"] = value.to_json()
     None => ()
@@ -60099,7 +60099,7 @@ pub(all) struct MlUpdateDataFrameAnalyticsResponse {
 pub impl ToJson for MlUpdateDataFrameAnalyticsResponse with fn to_json(
   self : MlUpdateDataFrameAnalyticsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.authorization {
     Some(value) => obj["authorization"] = value.to_json()
     None => ()
@@ -60213,7 +60213,7 @@ pub async fn Client::ml_update_data_frame_analytics(
   self : Client,
   request : MlUpdateDataFrameAnalyticsRequest,
 ) -> EsResponse[MlUpdateDataFrameAnalyticsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -60236,7 +60236,7 @@ pub(all) struct MlUpdateDatafeedQuery {
 pub impl ToJson for MlUpdateDatafeedQuery with fn to_json(
   self : MlUpdateDatafeedQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -60344,7 +60344,7 @@ pub(all) struct MlUpdateDatafeedBody {
 pub impl ToJson for MlUpdateDatafeedBody with fn to_json(
   self : MlUpdateDatafeedBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aggregations {
     Some(value) => obj["aggregations"] = value.to_json()
     None => ()
@@ -60542,7 +60542,7 @@ pub(all) struct MlUpdateDatafeedResponse {
 pub impl ToJson for MlUpdateDatafeedResponse with fn to_json(
   self : MlUpdateDatafeedResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.authorization {
     Some(value) => obj["authorization"] = value.to_json()
     None => ()
@@ -60693,7 +60693,7 @@ pub async fn Client::ml_update_datafeed(
   self : Client,
   request : MlUpdateDatafeedRequest,
 ) -> EsResponse[MlUpdateDatafeedResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["datafeed_id"] = request.datafeed_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -60711,7 +60711,7 @@ pub(all) struct MlUpdateFilterQuery {} derive(Eq, Debug)
 pub impl ToJson for MlUpdateFilterQuery with fn to_json(
   _self : MlUpdateFilterQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -60749,7 +60749,7 @@ pub(all) struct MlUpdateFilterBody {
 pub impl ToJson for MlUpdateFilterBody with fn to_json(
   self : MlUpdateFilterBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.add_items {
     Some(value) => obj["add_items"] = value.to_json()
     None => ()
@@ -60812,7 +60812,7 @@ pub(all) struct MlUpdateFilterResponse {
 pub impl ToJson for MlUpdateFilterResponse with fn to_json(
   self : MlUpdateFilterResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["description"] = self.description.to_json()
   obj["filter_id"] = self.filter_id.to_json()
   obj["items"] = self.items.to_json()
@@ -60861,7 +60861,7 @@ pub async fn Client::ml_update_filter(
   self : Client,
   request : MlUpdateFilterRequest,
 ) -> EsResponse[MlUpdateFilterResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["filter_id"] = request.filter_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -60877,7 +60877,7 @@ pub(all) struct MlUpdateJobQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for MlUpdateJobQuery with fn to_json(_self : MlUpdateJobQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -60925,7 +60925,7 @@ pub(all) struct MlUpdateJobBody {
 
 ///|
 pub impl ToJson for MlUpdateJobBody with fn to_json(self : MlUpdateJobBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_lazy_open {
     Some(value) => obj["allow_lazy_open"] = value.to_json()
     None => ()
@@ -61186,7 +61186,7 @@ pub(all) struct MlUpdateJobResponse {
 pub impl ToJson for MlUpdateJobResponse with fn to_json(
   self : MlUpdateJobResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["allow_lazy_open"] = self.allow_lazy_open.to_json()
   obj["analysis_config"] = self.analysis_config.to_json()
   obj["analysis_limits"] = self.analysis_limits.to_json()
@@ -61388,7 +61388,7 @@ pub async fn Client::ml_update_job(
   self : Client,
   request : MlUpdateJobRequest,
 ) -> EsResponse[MlUpdateJobResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -61406,7 +61406,7 @@ pub(all) struct MlUpdateModelSnapshotQuery {} derive(Eq, Debug)
 pub impl ToJson for MlUpdateModelSnapshotQuery with fn to_json(
   _self : MlUpdateModelSnapshotQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -61443,7 +61443,7 @@ pub(all) struct MlUpdateModelSnapshotBody {
 pub impl ToJson for MlUpdateModelSnapshotBody with fn to_json(
   self : MlUpdateModelSnapshotBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.description {
     Some(value) => obj["description"] = value.to_json()
     None => ()
@@ -61493,7 +61493,7 @@ pub(all) struct MlUpdateModelSnapshotResponse {
 pub impl ToJson for MlUpdateModelSnapshotResponse with fn to_json(
   self : MlUpdateModelSnapshotResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   obj["model"] = self.model.to_json()
   Json::object(obj)
@@ -61544,7 +61544,7 @@ pub async fn Client::ml_update_model_snapshot(
   self : Client,
   request : MlUpdateModelSnapshotRequest,
 ) -> EsResponse[MlUpdateModelSnapshotResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   params["snapshot_id"] = request.snapshot_id
   let query = request.query.to_pairs()
@@ -61570,7 +61570,7 @@ pub(all) struct MlUpdateTrainedModelDeploymentQuery {
 pub impl ToJson for MlUpdateTrainedModelDeploymentQuery with fn to_json(
   self : MlUpdateTrainedModelDeploymentQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.number_of_allocations {
     Some(value) => obj["number_of_allocations"] = value.to_json()
     None => ()
@@ -61628,7 +61628,7 @@ pub(all) struct MlUpdateTrainedModelDeploymentBody {
 pub impl ToJson for MlUpdateTrainedModelDeploymentBody with fn to_json(
   self : MlUpdateTrainedModelDeploymentBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.number_of_allocations {
     Some(value) => obj["number_of_allocations"] = value.to_json()
     None => ()
@@ -61683,7 +61683,7 @@ pub(all) struct MlUpdateTrainedModelDeploymentResponse {
 pub impl ToJson for MlUpdateTrainedModelDeploymentResponse with fn to_json(
   self : MlUpdateTrainedModelDeploymentResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["assignment"] = self.assignment.to_json()
   Json::object(obj)
 }
@@ -61727,7 +61727,7 @@ pub async fn Client::ml_update_trained_model_deployment(
   self : Client,
   request : MlUpdateTrainedModelDeploymentRequest,
 ) -> EsResponse[MlUpdateTrainedModelDeploymentResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["model_id"] = request.model_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -61755,7 +61755,7 @@ pub(all) struct MlUpgradeJobSnapshotQuery {
 pub impl ToJson for MlUpgradeJobSnapshotQuery with fn to_json(
   self : MlUpgradeJobSnapshotQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.wait_for_completion {
     Some(value) => obj["wait_for_completion"] = value.to_json()
     None => ()
@@ -61822,7 +61822,7 @@ pub(all) struct MlUpgradeJobSnapshotResponse {
 pub impl ToJson for MlUpgradeJobSnapshotResponse with fn to_json(
   self : MlUpgradeJobSnapshotResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["node"] = self.node.to_json()
   obj["completed"] = self.completed.to_json()
   Json::object(obj)
@@ -61868,7 +61868,7 @@ pub async fn Client::ml_upgrade_job_snapshot(
   self : Client,
   request : MlUpgradeJobSnapshotRequest,
 ) -> EsResponse[MlUpgradeJobSnapshotResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["job_id"] = request.job_id
   params["snapshot_id"] = request.snapshot_id
   let query = request.query.to_pairs()
@@ -61889,7 +61889,7 @@ pub(all) struct MlValidateQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for MlValidateQuery with fn to_json(_self : MlValidateQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -61931,7 +61931,7 @@ pub(all) struct MlValidateBody {
 
 ///|
 pub impl ToJson for MlValidateBody with fn to_json(self : MlValidateBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.job_id {
     Some(value) => obj["job_id"] = value.to_json()
     None => ()
@@ -62086,7 +62086,7 @@ pub async fn Client::ml_validate(
   self : Client,
   request : MlValidateRequest,
 ) -> EsResponse[MlValidateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_ml/anomaly_detectors/_validate", [])],
@@ -62103,7 +62103,7 @@ pub(all) struct MlValidateDetectorQuery {} derive(Eq, Debug)
 pub impl ToJson for MlValidateDetectorQuery with fn to_json(
   _self : MlValidateDetectorQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -62155,7 +62155,7 @@ pub async fn Client::ml_validate_detector(
   self : Client,
   request : MlValidateDetectorRequest,
 ) -> EsResponse[MlValidateDetectorResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_ml/anomaly_detectors/_validate/detector", [])],
@@ -62176,7 +62176,7 @@ pub(all) struct MonitoringBulkQuery {
 pub impl ToJson for MonitoringBulkQuery with fn to_json(
   self : MonitoringBulkQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["system_id"] = self.system_id.to_json()
   obj["system_api_version"] = self.system_api_version.to_json()
   obj["interval"] = self.interval.to_json()
@@ -62243,7 +62243,7 @@ pub(all) struct MonitoringBulkResponse {
 pub impl ToJson for MonitoringBulkResponse with fn to_json(
   self : MonitoringBulkResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.error {
     Some(value) => obj["error"] = value.to_json()
     None => ()
@@ -62299,7 +62299,7 @@ pub async fn Client::monitoring_bulk(
   self : Client,
   request : MonitoringBulkRequest,
 ) -> EsResponse[MonitoringBulkResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_monitoring/bulk", [])], params)
   let body = Ndjson(request.body)
@@ -62327,7 +62327,7 @@ pub(all) struct MsearchQuery {
 
 ///|
 pub impl ToJson for MsearchQuery with fn to_json(self : MsearchQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -62641,7 +62641,7 @@ pub async fn Client::msearch(
   self : Client,
   request : MsearchRequest,
 ) -> EsResponse[MsearchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -62672,7 +62672,7 @@ pub(all) struct MsearchTemplateQuery {
 pub impl ToJson for MsearchTemplateQuery with fn to_json(
   self : MsearchTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.ccs_minimize_roundtrips {
     Some(value) => obj["ccs_minimize_roundtrips"] = value.to_json()
     None => ()
@@ -62832,7 +62832,7 @@ pub async fn Client::msearch_template(
   self : Client,
   request : MsearchTemplateRequest,
 ) -> EsResponse[MsearchTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -62867,7 +62867,7 @@ pub(all) struct MtermvectorsQuery {
 
 ///|
 pub impl ToJson for MtermvectorsQuery with fn to_json(self : MtermvectorsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.ids {
     Some(value) => obj["ids"] = value.to_json()
     None => ()
@@ -63088,7 +63088,7 @@ pub(all) struct MtermvectorsBody {
 
 ///|
 pub impl ToJson for MtermvectorsBody with fn to_json(self : MtermvectorsBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.docs {
     Some(value) => obj["docs"] = value.to_json()
     None => ()
@@ -63136,7 +63136,7 @@ pub(all) struct MtermvectorsResponse {
 pub impl ToJson for MtermvectorsResponse with fn to_json(
   self : MtermvectorsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["docs"] = self.docs.to_json()
   Json::object(obj)
 }
@@ -63175,7 +63175,7 @@ pub async fn Client::mtermvectors(
   self : Client,
   request : MtermvectorsRequest,
 ) -> EsResponse[MtermvectorsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -63202,7 +63202,7 @@ pub(all) struct NodesClearRepositoriesMeteringArchiveQuery {} derive(Eq, Debug)
 pub impl ToJson for NodesClearRepositoriesMeteringArchiveQuery with fn to_json(
   _self : NodesClearRepositoriesMeteringArchiveQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -63258,7 +63258,7 @@ pub async fn Client::nodes_clear_repositories_metering_archive(
   self : Client,
   request : NodesClearRepositoriesMeteringArchiveRequest,
 ) -> EsResponse[NodesClearRepositoriesMeteringArchiveResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["node_id"] = request.node_id
   params["max_archive_version"] = request.max_archive_version
   let query = request.query.to_pairs()
@@ -63281,7 +63281,7 @@ pub(all) struct NodesGetRepositoriesMeteringInfoQuery {} derive(Eq, Debug)
 pub impl ToJson for NodesGetRepositoriesMeteringInfoQuery with fn to_json(
   _self : NodesGetRepositoriesMeteringInfoQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -63335,7 +63335,7 @@ pub async fn Client::nodes_get_repositories_metering_info(
   self : Client,
   request : NodesGetRepositoriesMeteringInfoRequest,
 ) -> EsResponse[NodesGetRepositoriesMeteringInfoResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["node_id"] = request.node_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -63360,7 +63360,7 @@ pub(all) struct NodesHotThreadsQuery {
 pub impl ToJson for NodesHotThreadsQuery with fn to_json(
   self : NodesHotThreadsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.ignore_idle_threads {
     Some(value) => obj["ignore_idle_threads"] = value.to_json()
     None => ()
@@ -63510,7 +63510,7 @@ pub async fn Client::nodes_hot_threads(
   self : Client,
   request : NodesHotThreadsRequest,
 ) -> EsResponse[NodesHotThreadsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.node_id {
     Some(value) => params["node_id"] = value
     None => ()
@@ -63534,7 +63534,7 @@ pub(all) struct NodesInfoQuery {
 
 ///|
 pub impl ToJson for NodesInfoQuery with fn to_json(self : NodesInfoQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.flat_settings {
     Some(value) => obj["flat_settings"] = value.to_json()
     None => ()
@@ -63614,7 +63614,7 @@ pub async fn Client::nodes_info(
   self : Client,
   request : NodesInfoRequest,
 ) -> EsResponse[NodesInfoResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.node_id {
     Some(value) => params["node_id"] = value
     None => ()
@@ -63645,7 +63645,7 @@ pub(all) struct NodesReloadSecureSettingsQuery {
 pub impl ToJson for NodesReloadSecureSettingsQuery with fn to_json(
   self : NodesReloadSecureSettingsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -63700,7 +63700,7 @@ pub(all) struct NodesReloadSecureSettingsBody {
 pub impl ToJson for NodesReloadSecureSettingsBody with fn to_json(
   self : NodesReloadSecureSettingsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.secure_settings_password {
     Some(value) => obj["secure_settings_password"] = value.to_json()
     None => ()
@@ -63761,7 +63761,7 @@ pub async fn Client::nodes_reload_secure_settings(
   self : Client,
   request : NodesReloadSecureSettingsRequest,
 ) -> EsResponse[NodesReloadSecureSettingsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.node_id {
     Some(value) => params["node_id"] = value
     None => ()
@@ -63796,7 +63796,7 @@ pub(all) struct NodesStatsQuery {
 
 ///|
 pub impl ToJson for NodesStatsQuery with fn to_json(self : NodesStatsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.completion_fields {
     Some(value) => obj["completion_fields"] = value.to_json()
     None => ()
@@ -63998,7 +63998,7 @@ pub async fn Client::nodes_stats(
   self : Client,
   request : NodesStatsRequest,
 ) -> EsResponse[NodesStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.node_id {
     Some(value) => params["node_id"] = value
     None => ()
@@ -64037,7 +64037,7 @@ pub(all) struct NodesUsageQuery {
 
 ///|
 pub impl ToJson for NodesUsageQuery with fn to_json(self : NodesUsageQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -64100,7 +64100,7 @@ pub async fn Client::nodes_usage(
   self : Client,
   request : NodesUsageRequest,
 ) -> EsResponse[NodesUsageResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.node_id {
     Some(value) => params["node_id"] = value
     None => ()
@@ -64137,7 +64137,7 @@ pub(all) struct OpenPointInTimeQuery {
 pub impl ToJson for OpenPointInTimeQuery with fn to_json(
   self : OpenPointInTimeQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["keep_alive"] = self.keep_alive.to_json()
   match self.ignore_unavailable {
     Some(value) => obj["ignore_unavailable"] = value.to_json()
@@ -64292,7 +64292,7 @@ pub(all) struct OpenPointInTimeBody {
 pub impl ToJson for OpenPointInTimeBody with fn to_json(
   self : OpenPointInTimeBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.index_filter {
     Some(value) => obj["index_filter"] = value.to_json()
     None => ()
@@ -64343,7 +64343,7 @@ pub(all) struct OpenPointInTimeResponse {
 pub impl ToJson for OpenPointInTimeResponse with fn to_json(
   self : OpenPointInTimeResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_shards"] = self._shards.to_json()
   obj["id"] = self.id.to_json()
   Json::object(obj)
@@ -64387,7 +64387,7 @@ pub async fn Client::open_point_in_time(
   self : Client,
   request : OpenPointInTimeRequest,
 ) -> EsResponse[OpenPointInTimeResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/{index}/_pit", ["index"])], params)
@@ -64403,7 +64403,7 @@ pub(all) struct PingQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for PingQuery with fn to_json(_self : PingQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -64446,7 +64446,7 @@ pub async fn Client::ping(
   self : Client,
   request : PingRequest,
 ) -> EsResponse[PingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/", [])], params)
   self.perform_json(EsRequest::new(Head, path, query~))
@@ -64459,7 +64459,7 @@ pub(all) struct ProfilingFlamegraphQuery {} derive(Eq, Debug)
 pub impl ToJson for ProfilingFlamegraphQuery with fn to_json(
   _self : ProfilingFlamegraphQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -64511,7 +64511,7 @@ pub async fn Client::profiling_flamegraph(
   self : Client,
   request : ProfilingFlamegraphRequest,
 ) -> EsResponse[ProfilingFlamegraphResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_profiling/flamegraph", [])],
@@ -64528,7 +64528,7 @@ pub(all) struct ProfilingStacktracesQuery {} derive(Eq, Debug)
 pub impl ToJson for ProfilingStacktracesQuery with fn to_json(
   _self : ProfilingStacktracesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -64580,7 +64580,7 @@ pub async fn Client::profiling_stacktraces(
   self : Client,
   request : ProfilingStacktracesRequest,
 ) -> EsResponse[ProfilingStacktracesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_profiling/stacktraces", [])],
@@ -64601,7 +64601,7 @@ pub(all) struct ProfilingStatusQuery {
 pub impl ToJson for ProfilingStatusQuery with fn to_json(
   self : ProfilingStatusQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -64687,7 +64687,7 @@ pub(all) struct ProfilingStatusResponse {
 pub impl ToJson for ProfilingStatusResponse with fn to_json(
   self : ProfilingStatusResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["operation_mode"] = self.operation_mode.to_json()
   Json::object(obj)
 }
@@ -64722,7 +64722,7 @@ pub async fn Client::profiling_status(
   self : Client,
   request : ProfilingStatusRequest,
 ) -> EsResponse[ProfilingStatusResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_profiling/status", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -64735,7 +64735,7 @@ pub(all) struct ProfilingTopnFunctionsQuery {} derive(Eq, Debug)
 pub impl ToJson for ProfilingTopnFunctionsQuery with fn to_json(
   _self : ProfilingTopnFunctionsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -64789,7 +64789,7 @@ pub async fn Client::profiling_topn_functions(
   self : Client,
   request : ProfilingTopnFunctionsRequest,
 ) -> EsResponse[ProfilingTopnFunctionsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_profiling/topn/functions", [])],
@@ -64806,7 +64806,7 @@ pub(all) struct ProjectCreateManyRoutingQuery {} derive(Eq, Debug)
 pub impl ToJson for ProjectCreateManyRoutingQuery with fn to_json(
   _self : ProjectCreateManyRoutingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -64863,7 +64863,7 @@ pub async fn Client::project_create_many_routing(
   self : Client,
   request : ProjectCreateManyRoutingRequest,
 ) -> EsResponse[ProjectCreateManyRoutingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_project_routing", [])], params)
   let body = JsonBody(request.body)
@@ -64877,7 +64877,7 @@ pub(all) struct ProjectCreateRoutingQuery {} derive(Eq, Debug)
 pub impl ToJson for ProjectCreateRoutingQuery with fn to_json(
   _self : ProjectCreateRoutingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -64931,7 +64931,7 @@ pub async fn Client::project_create_routing(
   self : Client,
   request : ProjectCreateRoutingRequest,
 ) -> EsResponse[ProjectCreateRoutingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -64949,7 +64949,7 @@ pub(all) struct ProjectDeleteRoutingQuery {} derive(Eq, Debug)
 pub impl ToJson for ProjectDeleteRoutingQuery with fn to_json(
   _self : ProjectDeleteRoutingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -64998,7 +64998,7 @@ pub async fn Client::project_delete_routing(
   self : Client,
   request : ProjectDeleteRoutingRequest,
 ) -> EsResponse[ProjectDeleteRoutingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -65015,7 +65015,7 @@ pub(all) struct ProjectGetManyRoutingQuery {} derive(Eq, Debug)
 pub impl ToJson for ProjectGetManyRoutingQuery with fn to_json(
   _self : ProjectGetManyRoutingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -65062,7 +65062,7 @@ pub async fn Client::project_get_many_routing(
   self : Client,
   request : ProjectGetManyRoutingRequest,
 ) -> EsResponse[ProjectGetManyRoutingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_project_routing", [])], params)
   self.perform_json(EsRequest::new(Get, path, query~))
@@ -65075,7 +65075,7 @@ pub(all) struct ProjectGetRoutingQuery {} derive(Eq, Debug)
 pub impl ToJson for ProjectGetRoutingQuery with fn to_json(
   _self : ProjectGetRoutingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -65124,7 +65124,7 @@ pub async fn Client::project_get_routing(
   self : Client,
   request : ProjectGetRoutingRequest,
 ) -> EsResponse[ProjectGetRoutingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -65139,7 +65139,7 @@ pub(all) struct ProjectTagsQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for ProjectTagsQuery with fn to_json(_self : ProjectTagsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -65186,7 +65186,7 @@ pub async fn Client::project_tags(
   self : Client,
   request : ProjectTagsRequest,
 ) -> EsResponse[ProjectTagsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_project/tags", [])], params)
   self.perform_json(EsRequest::new(Get, path, query~))
@@ -65201,7 +65201,7 @@ pub(all) struct PutScriptQuery {
 
 ///|
 pub impl ToJson for PutScriptQuery with fn to_json(self : PutScriptQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.context {
     Some(value) => obj["context"] = value.to_json()
     None => ()
@@ -65278,7 +65278,7 @@ pub(all) struct PutScriptBody {
 
 ///|
 pub impl ToJson for PutScriptBody with fn to_json(self : PutScriptBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["script"] = self.script.to_json()
   Json::object(obj)
 }
@@ -65327,7 +65327,7 @@ pub async fn Client::put_script(
   self : Client,
   request : PutScriptRequest,
 ) -> EsResponse[PutScriptResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   match request.context {
     Some(value) => params["context"] = value
@@ -65352,7 +65352,7 @@ pub(all) struct QueryRulesDeleteRuleQuery {} derive(Eq, Debug)
 pub impl ToJson for QueryRulesDeleteRuleQuery with fn to_json(
   _self : QueryRulesDeleteRuleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -65403,7 +65403,7 @@ pub async fn Client::query_rules_delete_rule(
   self : Client,
   request : QueryRulesDeleteRuleRequest,
 ) -> EsResponse[QueryRulesDeleteRuleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["ruleset_id"] = request.ruleset_id
   params["rule_id"] = request.rule_id
   let query = request.query.to_pairs()
@@ -65425,7 +65425,7 @@ pub(all) struct QueryRulesDeleteRulesetQuery {} derive(Eq, Debug)
 pub impl ToJson for QueryRulesDeleteRulesetQuery with fn to_json(
   _self : QueryRulesDeleteRulesetQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -65476,7 +65476,7 @@ pub async fn Client::query_rules_delete_ruleset(
   self : Client,
   request : QueryRulesDeleteRulesetRequest,
 ) -> EsResponse[QueryRulesDeleteRulesetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["ruleset_id"] = request.ruleset_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -65493,7 +65493,7 @@ pub(all) struct QueryRulesGetRuleQuery {} derive(Eq, Debug)
 pub impl ToJson for QueryRulesGetRuleQuery with fn to_json(
   _self : QueryRulesGetRuleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -65544,7 +65544,7 @@ pub async fn Client::query_rules_get_rule(
   self : Client,
   request : QueryRulesGetRuleRequest,
 ) -> EsResponse[QueryRulesGetRuleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["ruleset_id"] = request.ruleset_id
   params["rule_id"] = request.rule_id
   let query = request.query.to_pairs()
@@ -65566,7 +65566,7 @@ pub(all) struct QueryRulesGetRulesetQuery {} derive(Eq, Debug)
 pub impl ToJson for QueryRulesGetRulesetQuery with fn to_json(
   _self : QueryRulesGetRulesetQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -65615,7 +65615,7 @@ pub async fn Client::query_rules_get_ruleset(
   self : Client,
   request : QueryRulesGetRulesetRequest,
 ) -> EsResponse[QueryRulesGetRulesetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["ruleset_id"] = request.ruleset_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -65635,7 +65635,7 @@ pub(all) struct QueryRulesListRulesetsQuery {
 pub impl ToJson for QueryRulesListRulesetsQuery with fn to_json(
   self : QueryRulesListRulesetsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.from {
     Some(value) => obj["from"] = value.to_json()
     None => ()
@@ -65702,7 +65702,7 @@ pub(all) struct QueryRulesListRulesetsResponse {
 pub impl ToJson for QueryRulesListRulesetsResponse with fn to_json(
   self : QueryRulesListRulesetsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["results"] = self.results.to_json()
   Json::object(obj)
@@ -65747,7 +65747,7 @@ pub async fn Client::query_rules_list_rulesets(
   self : Client,
   request : QueryRulesListRulesetsRequest,
 ) -> EsResponse[QueryRulesListRulesetsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_query_rules", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -65760,7 +65760,7 @@ pub(all) struct QueryRulesPutRuleQuery {} derive(Eq, Debug)
 pub impl ToJson for QueryRulesPutRuleQuery with fn to_json(
   _self : QueryRulesPutRuleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -65799,7 +65799,7 @@ pub(all) struct QueryRulesPutRuleBody {
 pub impl ToJson for QueryRulesPutRuleBody with fn to_json(
   self : QueryRulesPutRuleBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["type"] = self.type_.to_json()
   obj["criteria"] = self.criteria.to_json()
   obj["actions"] = self.actions.to_json()
@@ -65855,7 +65855,7 @@ pub(all) struct QueryRulesPutRuleResponse {
 pub impl ToJson for QueryRulesPutRuleResponse with fn to_json(
   self : QueryRulesPutRuleResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -65896,7 +65896,7 @@ pub async fn Client::query_rules_put_rule(
   self : Client,
   request : QueryRulesPutRuleRequest,
 ) -> EsResponse[QueryRulesPutRuleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["ruleset_id"] = request.ruleset_id
   params["rule_id"] = request.rule_id
   let query = request.query.to_pairs()
@@ -65919,7 +65919,7 @@ pub(all) struct QueryRulesPutRulesetQuery {} derive(Eq, Debug)
 pub impl ToJson for QueryRulesPutRulesetQuery with fn to_json(
   _self : QueryRulesPutRulesetQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -65955,7 +65955,7 @@ pub(all) struct QueryRulesPutRulesetBody {
 pub impl ToJson for QueryRulesPutRulesetBody with fn to_json(
   self : QueryRulesPutRulesetBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["rules"] = self.rules.to_json()
   Json::object(obj)
 }
@@ -65987,7 +65987,7 @@ pub(all) struct QueryRulesPutRulesetResponse {
 pub impl ToJson for QueryRulesPutRulesetResponse with fn to_json(
   self : QueryRulesPutRulesetResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -66028,7 +66028,7 @@ pub async fn Client::query_rules_put_ruleset(
   self : Client,
   request : QueryRulesPutRulesetRequest,
 ) -> EsResponse[QueryRulesPutRulesetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["ruleset_id"] = request.ruleset_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -66046,7 +66046,7 @@ pub(all) struct QueryRulesTestQuery {} derive(Eq, Debug)
 pub impl ToJson for QueryRulesTestQuery with fn to_json(
   _self : QueryRulesTestQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -66082,7 +66082,7 @@ pub(all) struct QueryRulesTestBody {
 pub impl ToJson for QueryRulesTestBody with fn to_json(
   self : QueryRulesTestBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["match_criteria"] = self.match_criteria.to_json()
   Json::object(obj)
 }
@@ -66117,7 +66117,7 @@ pub(all) struct QueryRulesTestResponse {
 pub impl ToJson for QueryRulesTestResponse with fn to_json(
   self : QueryRulesTestResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["total_matched_rules"] = self.total_matched_rules.to_json()
   obj["matched_rules"] = self.matched_rules.to_json()
   Json::object(obj)
@@ -66161,7 +66161,7 @@ pub async fn Client::query_rules_test(
   self : Client,
   request : QueryRulesTestRequest,
 ) -> EsResponse[QueryRulesTestResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["ruleset_id"] = request.ruleset_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -66182,7 +66182,7 @@ pub(all) struct RankEvalQuery {
 
 ///|
 pub impl ToJson for RankEvalQuery with fn to_json(self : RankEvalQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -66275,7 +66275,7 @@ pub(all) struct RankEvalBody {
 
 ///|
 pub impl ToJson for RankEvalBody with fn to_json(self : RankEvalBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["requests"] = self.requests.to_json()
   match self.metric {
     Some(value) => obj["metric"] = value.to_json()
@@ -66319,7 +66319,7 @@ pub(all) struct RankEvalResponse {
 
 ///|
 pub impl ToJson for RankEvalResponse with fn to_json(self : RankEvalResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["metric_score"] = self.metric_score.to_json()
   obj["details"] = self.details.to_json()
   obj["failures"] = self.failures.to_json()
@@ -66368,7 +66368,7 @@ pub async fn Client::rank_eval(
   self : Client,
   request : RankEvalRequest,
 ) -> EsResponse[RankEvalResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -66400,7 +66400,7 @@ pub(all) struct ReindexQuery {
 
 ///|
 pub impl ToJson for ReindexQuery with fn to_json(self : ReindexQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -66581,7 +66581,7 @@ pub(all) struct ReindexBody {
 
 ///|
 pub impl ToJson for ReindexBody with fn to_json(self : ReindexBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.conflicts {
     Some(value) => obj["conflicts"] = value.to_json()
     None => ()
@@ -66666,7 +66666,7 @@ pub(all) struct ReindexResponse {
 
 ///|
 pub impl ToJson for ReindexResponse with fn to_json(self : ReindexResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.batches {
     Some(value) => obj["batches"] = value.to_json()
     None => ()
@@ -66858,7 +66858,7 @@ pub async fn Client::reindex(
   self : Client,
   request : ReindexRequest,
 ) -> EsResponse[ReindexResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_reindex", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -66875,7 +66875,7 @@ pub(all) struct ReindexRethrottleQuery {
 pub impl ToJson for ReindexRethrottleQuery with fn to_json(
   self : ReindexRethrottleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["requests_per_second"] = self.requests_per_second.to_json()
   match self.group_by {
     Some(value) => obj["group_by"] = value.to_json()
@@ -66939,7 +66939,7 @@ pub(all) struct ReindexRethrottleResponse {
 pub impl ToJson for ReindexRethrottleResponse with fn to_json(
   self : ReindexRethrottleResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.node_failures {
     Some(value) => obj["node_failures"] = value.to_json()
     None => ()
@@ -67009,7 +67009,7 @@ pub async fn Client::reindex_rethrottle(
   self : Client,
   request : ReindexRethrottleRequest,
 ) -> EsResponse[ReindexRethrottleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_id"] = request.task_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -67026,7 +67026,7 @@ pub(all) struct RenderSearchTemplateQuery {} derive(Eq, Debug)
 pub impl ToJson for RenderSearchTemplateQuery with fn to_json(
   _self : RenderSearchTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -67065,7 +67065,7 @@ pub(all) struct RenderSearchTemplateBody {
 pub impl ToJson for RenderSearchTemplateBody with fn to_json(
   self : RenderSearchTemplateBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.id {
     Some(value) => obj["id"] = value.to_json()
     None => ()
@@ -67133,7 +67133,7 @@ pub(all) struct RenderSearchTemplateResponse {
 pub impl ToJson for RenderSearchTemplateResponse with fn to_json(
   self : RenderSearchTemplateResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["template_output"] = self.template_output.to_json()
   Json::object(obj)
 }
@@ -67174,7 +67174,7 @@ pub async fn Client::render_search_template(
   self : Client,
   request : RenderSearchTemplateRequest,
 ) -> EsResponse[RenderSearchTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.id {
     Some(value) => params["id"] = value
     None => ()
@@ -67198,7 +67198,7 @@ pub(all) struct RollupDeleteJobQuery {} derive(Eq, Debug)
 pub impl ToJson for RollupDeleteJobQuery with fn to_json(
   _self : RollupDeleteJobQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -67235,7 +67235,7 @@ pub(all) struct RollupDeleteJobResponse {
 pub impl ToJson for RollupDeleteJobResponse with fn to_json(
   self : RollupDeleteJobResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   match self.task_failures {
     Some(value) => obj["task_failures"] = value.to_json()
@@ -67282,7 +67282,7 @@ pub async fn Client::rollup_delete_job(
   self : Client,
   request : RollupDeleteJobRequest,
 ) -> EsResponse[RollupDeleteJobResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -67299,7 +67299,7 @@ pub(all) struct RollupGetJobsQuery {} derive(Eq, Debug)
 pub impl ToJson for RollupGetJobsQuery with fn to_json(
   _self : RollupGetJobsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -67335,7 +67335,7 @@ pub(all) struct RollupGetJobsResponse {
 pub impl ToJson for RollupGetJobsResponse with fn to_json(
   self : RollupGetJobsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["jobs"] = self.jobs.to_json()
   Json::object(obj)
 }
@@ -67372,7 +67372,7 @@ pub async fn Client::rollup_get_jobs(
   self : Client,
   request : RollupGetJobsRequest,
 ) -> EsResponse[RollupGetJobsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.id {
     Some(value) => params["id"] = value
     None => ()
@@ -67395,7 +67395,7 @@ pub(all) struct RollupGetRollupCapsQuery {} derive(Eq, Debug)
 pub impl ToJson for RollupGetRollupCapsQuery with fn to_json(
   _self : RollupGetRollupCapsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -67444,7 +67444,7 @@ pub async fn Client::rollup_get_rollup_caps(
   self : Client,
   request : RollupGetRollupCapsRequest,
 ) -> EsResponse[RollupGetRollupCapsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.id {
     Some(value) => params["id"] = value
     None => ()
@@ -67467,7 +67467,7 @@ pub(all) struct RollupGetRollupIndexCapsQuery {} derive(Eq, Debug)
 pub impl ToJson for RollupGetRollupIndexCapsQuery with fn to_json(
   _self : RollupGetRollupIndexCapsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -67521,7 +67521,7 @@ pub async fn Client::rollup_get_rollup_index_caps(
   self : Client,
   request : RollupGetRollupIndexCapsRequest,
 ) -> EsResponse[RollupGetRollupIndexCapsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -67536,7 +67536,7 @@ pub(all) struct RollupPutJobQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for RollupPutJobQuery with fn to_json(_self : RollupPutJobQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -67577,7 +67577,7 @@ pub(all) struct RollupPutJobBody {
 
 ///|
 pub impl ToJson for RollupPutJobBody with fn to_json(self : RollupPutJobBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["cron"] = self.cron.to_json()
   obj["groups"] = self.groups.to_json()
   obj["index_pattern"] = self.index_pattern.to_json()
@@ -67689,7 +67689,7 @@ pub async fn Client::rollup_put_job(
   self : Client,
   request : RollupPutJobRequest,
 ) -> EsResponse[RollupPutJobResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -67710,7 +67710,7 @@ pub(all) struct RollupRollupSearchQuery {
 pub impl ToJson for RollupRollupSearchQuery with fn to_json(
   self : RollupRollupSearchQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.rest_total_hits_as_int {
     Some(value) => obj["rest_total_hits_as_int"] = value.to_json()
     None => ()
@@ -67781,7 +67781,7 @@ pub(all) struct RollupRollupSearchBody {
 pub impl ToJson for RollupRollupSearchBody with fn to_json(
   self : RollupRollupSearchBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aggregations {
     Some(value) => obj["aggregations"] = value.to_json()
     None => ()
@@ -67845,7 +67845,7 @@ pub(all) struct RollupRollupSearchResponse {
 pub impl ToJson for RollupRollupSearchResponse with fn to_json(
   self : RollupRollupSearchResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["took"] = self.took.to_json()
   obj["timed_out"] = self.timed_out.to_json()
   match self.terminated_early {
@@ -67919,7 +67919,7 @@ pub async fn Client::rollup_rollup_search(
   self : Client,
   request : RollupRollupSearchRequest,
 ) -> EsResponse[RollupRollupSearchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -67937,7 +67937,7 @@ pub(all) struct RollupStartJobQuery {} derive(Eq, Debug)
 pub impl ToJson for RollupStartJobQuery with fn to_json(
   _self : RollupStartJobQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -67973,7 +67973,7 @@ pub(all) struct RollupStartJobResponse {
 pub impl ToJson for RollupStartJobResponse with fn to_json(
   self : RollupStartJobResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["started"] = self.started.to_json()
   Json::object(obj)
 }
@@ -68010,7 +68010,7 @@ pub async fn Client::rollup_start_job(
   self : Client,
   request : RollupStartJobRequest,
 ) -> EsResponse[RollupStartJobResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -68030,7 +68030,7 @@ pub(all) struct RollupStopJobQuery {
 pub impl ToJson for RollupStopJobQuery with fn to_json(
   self : RollupStopJobQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -68096,7 +68096,7 @@ pub(all) struct RollupStopJobResponse {
 pub impl ToJson for RollupStopJobResponse with fn to_json(
   self : RollupStopJobResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["stopped"] = self.stopped.to_json()
   Json::object(obj)
 }
@@ -68133,7 +68133,7 @@ pub async fn Client::rollup_stop_job(
   self : Client,
   request : RollupStopJobRequest,
 ) -> EsResponse[RollupStopJobResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -68150,7 +68150,7 @@ pub(all) struct ScriptsPainlessExecuteQuery {} derive(Eq, Debug)
 pub impl ToJson for ScriptsPainlessExecuteQuery with fn to_json(
   _self : ScriptsPainlessExecuteQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -68190,7 +68190,7 @@ pub(all) struct ScriptsPainlessExecuteBody {
 pub impl ToJson for ScriptsPainlessExecuteBody with fn to_json(
   self : ScriptsPainlessExecuteBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.context {
     Some(value) => obj["context"] = value.to_json()
     None => ()
@@ -68249,7 +68249,7 @@ pub(all) struct ScriptsPainlessExecuteResponse {
 pub impl ToJson for ScriptsPainlessExecuteResponse with fn to_json(
   self : ScriptsPainlessExecuteResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -68291,7 +68291,7 @@ pub async fn Client::scripts_painless_execute(
   self : Client,
   request : ScriptsPainlessExecuteRequest,
 ) -> EsResponse[ScriptsPainlessExecuteResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_scripts/painless/_execute", [])],
@@ -68310,7 +68310,7 @@ pub(all) struct ScrollQuery {
 
 ///|
 pub impl ToJson for ScrollQuery with fn to_json(self : ScrollQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.scroll {
     Some(value) => obj["scroll"] = value.to_json()
     None => ()
@@ -68390,7 +68390,7 @@ pub(all) struct ScrollBody {
 
 ///|
 pub impl ToJson for ScrollBody with fn to_json(self : ScrollBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.scroll {
     Some(value) => obj["scroll"] = value.to_json()
     None => ()
@@ -68446,7 +68446,7 @@ pub async fn Client::scroll(
   self : Client,
   request : ScrollRequest,
 ) -> EsResponse[ScrollResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.scroll_id {
     Some(value) => params["scroll_id"] = value
     None => ()
@@ -68517,7 +68517,7 @@ pub(all) struct SearchQuery {
 
 ///|
 pub impl ToJson for SearchQuery with fn to_json(self : SearchQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -69325,7 +69325,7 @@ pub(all) struct SearchBody {
 
 ///|
 pub impl ToJson for SearchBody with fn to_json(self : SearchBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aggregations {
     Some(value) => obj["aggregations"] = value.to_json()
     None => ()
@@ -69770,7 +69770,7 @@ pub async fn Client::search(
   self : Client,
   request : SearchRequest,
 ) -> EsResponse[SearchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -69797,7 +69797,7 @@ pub(all) struct SearchApplicationDeleteQuery {} derive(Eq, Debug)
 pub impl ToJson for SearchApplicationDeleteQuery with fn to_json(
   _self : SearchApplicationDeleteQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -69848,7 +69848,7 @@ pub async fn Client::search_application_delete(
   self : Client,
   request : SearchApplicationDeleteRequest,
 ) -> EsResponse[SearchApplicationDeleteResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -69868,7 +69868,7 @@ pub(all) struct SearchApplicationDeleteBehavioralAnalyticsQuery {} derive (
 pub impl ToJson for SearchApplicationDeleteBehavioralAnalyticsQuery with fn to_json(
   _self : SearchApplicationDeleteBehavioralAnalyticsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -69922,7 +69922,7 @@ pub async fn Client::search_application_delete_behavioral_analytics(
   self : Client,
   request : SearchApplicationDeleteBehavioralAnalyticsRequest,
 ) -> EsResponse[SearchApplicationDeleteBehavioralAnalyticsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -69939,7 +69939,7 @@ pub(all) struct SearchApplicationGetQuery {} derive(Eq, Debug)
 pub impl ToJson for SearchApplicationGetQuery with fn to_json(
   _self : SearchApplicationGetQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -69988,7 +69988,7 @@ pub async fn Client::search_application_get(
   self : Client,
   request : SearchApplicationGetRequest,
 ) -> EsResponse[SearchApplicationGetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -70005,7 +70005,7 @@ pub(all) struct SearchApplicationGetBehavioralAnalyticsQuery {} derive(Eq, Debug
 pub impl ToJson for SearchApplicationGetBehavioralAnalyticsQuery with fn to_json(
   _self : SearchApplicationGetBehavioralAnalyticsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -70059,7 +70059,7 @@ pub async fn Client::search_application_get_behavioral_analytics(
   self : Client,
   request : SearchApplicationGetBehavioralAnalyticsRequest,
 ) -> EsResponse[SearchApplicationGetBehavioralAnalyticsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -70086,7 +70086,7 @@ pub(all) struct SearchApplicationListQuery {
 pub impl ToJson for SearchApplicationListQuery with fn to_json(
   self : SearchApplicationListQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.q {
     Some(value) => obj["q"] = value.to_json()
     None => ()
@@ -70165,7 +70165,7 @@ pub(all) struct SearchApplicationListResponse {
 pub impl ToJson for SearchApplicationListResponse with fn to_json(
   self : SearchApplicationListResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["results"] = self.results.to_json()
   Json::object(obj)
@@ -70210,7 +70210,7 @@ pub async fn Client::search_application_list(
   self : Client,
   request : SearchApplicationListRequest,
 ) -> EsResponse[SearchApplicationListResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_application/search_application", [])],
@@ -70228,7 +70228,7 @@ pub(all) struct SearchApplicationPostBehavioralAnalyticsEventQuery {
 pub impl ToJson for SearchApplicationPostBehavioralAnalyticsEventQuery with fn to_json(
   self : SearchApplicationPostBehavioralAnalyticsEventQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.debug {
     Some(value) => obj["debug"] = value.to_json()
     None => ()
@@ -70289,7 +70289,7 @@ pub(all) struct SearchApplicationPostBehavioralAnalyticsEventResponse {
 pub impl ToJson for SearchApplicationPostBehavioralAnalyticsEventResponse with fn to_json(
   self : SearchApplicationPostBehavioralAnalyticsEventResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["accepted"] = self.accepted.to_json()
   match self.event {
     Some(value) => obj["event"] = value.to_json()
@@ -70346,7 +70346,7 @@ pub async fn Client::search_application_post_behavioral_analytics_event(
   self : Client,
   request : SearchApplicationPostBehavioralAnalyticsEventRequest,
 ) -> EsResponse[SearchApplicationPostBehavioralAnalyticsEventResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["collection_name"] = request.collection_name
   params["event_type"] = request.event_type
   let query = request.query.to_pairs()
@@ -70372,7 +70372,7 @@ pub(all) struct SearchApplicationPutQuery {
 pub impl ToJson for SearchApplicationPutQuery with fn to_json(
   self : SearchApplicationPutQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.create {
     Some(value) => obj["create"] = value.to_json()
     None => ()
@@ -70425,7 +70425,7 @@ pub(all) struct SearchApplicationPutResponse {
 pub impl ToJson for SearchApplicationPutResponse with fn to_json(
   self : SearchApplicationPutResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   Json::object(obj)
 }
@@ -70466,7 +70466,7 @@ pub async fn Client::search_application_put(
   self : Client,
   request : SearchApplicationPutRequest,
 ) -> EsResponse[SearchApplicationPutResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -70484,7 +70484,7 @@ pub(all) struct SearchApplicationPutBehavioralAnalyticsQuery {} derive(Eq, Debug
 pub impl ToJson for SearchApplicationPutBehavioralAnalyticsQuery with fn to_json(
   _self : SearchApplicationPutBehavioralAnalyticsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -70538,7 +70538,7 @@ pub async fn Client::search_application_put_behavioral_analytics(
   self : Client,
   request : SearchApplicationPutBehavioralAnalyticsRequest,
 ) -> EsResponse[SearchApplicationPutBehavioralAnalyticsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -70555,7 +70555,7 @@ pub(all) struct SearchApplicationRenderQueryQuery {} derive(Eq, Debug)
 pub impl ToJson for SearchApplicationRenderQueryQuery with fn to_json(
   _self : SearchApplicationRenderQueryQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -70596,7 +70596,7 @@ pub(all) struct SearchApplicationRenderQueryBody {
 pub impl ToJson for SearchApplicationRenderQueryBody with fn to_json(
   self : SearchApplicationRenderQueryBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.params {
     Some(value) => obj["params"] = value.to_json()
     None => ()
@@ -70654,7 +70654,7 @@ pub async fn Client::search_application_render_query(
   self : Client,
   request : SearchApplicationRenderQueryRequest,
 ) -> EsResponse[SearchApplicationRenderQueryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -70682,7 +70682,7 @@ pub(all) struct SearchApplicationSearchQuery {
 pub impl ToJson for SearchApplicationSearchQuery with fn to_json(
   self : SearchApplicationSearchQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.typed_keys {
     Some(value) => obj["typed_keys"] = value.to_json()
     None => ()
@@ -70735,7 +70735,7 @@ pub(all) struct SearchApplicationSearchBody {
 pub impl ToJson for SearchApplicationSearchBody with fn to_json(
   self : SearchApplicationSearchBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.params {
     Some(value) => obj["params"] = value.to_json()
     None => ()
@@ -70790,7 +70790,7 @@ pub async fn Client::search_application_search(
   self : Client,
   request : SearchApplicationSearchRequest,
 ) -> EsResponse[SearchApplicationSearchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -70822,7 +70822,7 @@ pub(all) struct SearchMvtQuery {
 
 ///|
 pub impl ToJson for SearchMvtQuery with fn to_json(self : SearchMvtQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.exact_bounds {
     Some(value) => obj["exact_bounds"] = value.to_json()
     None => ()
@@ -70996,7 +70996,7 @@ pub(all) struct SearchMvtBody {
 
 ///|
 pub impl ToJson for SearchMvtBody with fn to_json(self : SearchMvtBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aggs {
     Some(value) => obj["aggs"] = value.to_json()
     None => ()
@@ -71220,7 +71220,7 @@ pub async fn Client::search_mvt(
   self : Client,
   request : SearchMvtRequest,
 ) -> EsResponse[SearchMvtResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["field"] = request.field
   params["zoom"] = request.zoom
@@ -71255,7 +71255,7 @@ pub(all) struct SearchShardsQuery {
 
 ///|
 pub impl ToJson for SearchShardsQuery with fn to_json(self : SearchShardsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -71404,7 +71404,7 @@ pub(all) struct SearchShardsResponse {
 pub impl ToJson for SearchShardsResponse with fn to_json(
   self : SearchShardsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["nodes"] = self.nodes.to_json()
   obj["shards"] = self.shards.to_json()
   obj["indices"] = self.indices.to_json()
@@ -71451,7 +71451,7 @@ pub async fn Client::search_shards(
   self : Client,
   request : SearchShardsRequest,
 ) -> EsResponse[SearchShardsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -71488,7 +71488,7 @@ pub(all) struct SearchTemplateQuery {
 pub impl ToJson for SearchTemplateQuery with fn to_json(
   self : SearchTemplateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -71740,7 +71740,7 @@ pub(all) struct SearchTemplateBody {
 pub impl ToJson for SearchTemplateBody with fn to_json(
   self : SearchTemplateBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.explain {
     Some(value) => obj["explain"] = value.to_json()
     None => ()
@@ -71842,7 +71842,7 @@ pub(all) struct SearchTemplateResponse {
 pub impl ToJson for SearchTemplateResponse with fn to_json(
   self : SearchTemplateResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["took"] = self.took.to_json()
   obj["timed_out"] = self.timed_out.to_json()
   obj["_shards"] = self._shards.to_json()
@@ -71992,7 +71992,7 @@ pub async fn Client::search_template(
   self : Client,
   request : SearchTemplateRequest,
 ) -> EsResponse[SearchTemplateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -72016,7 +72016,7 @@ pub(all) struct SearchableSnapshotsCacheStatsQuery {} derive(Eq, Debug)
 pub impl ToJson for SearchableSnapshotsCacheStatsQuery with fn to_json(
   _self : SearchableSnapshotsCacheStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -72057,7 +72057,7 @@ pub(all) struct SearchableSnapshotsCacheStatsResponse {
 pub impl ToJson for SearchableSnapshotsCacheStatsResponse with fn to_json(
   self : SearchableSnapshotsCacheStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["nodes"] = self.nodes.to_json()
   Json::object(obj)
 }
@@ -72099,7 +72099,7 @@ pub async fn Client::searchable_snapshots_cache_stats(
   self : Client,
   request : SearchableSnapshotsCacheStatsRequest,
 ) -> EsResponse[SearchableSnapshotsCacheStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.node_id {
     Some(value) => params["node_id"] = value
     None => ()
@@ -72128,7 +72128,7 @@ pub(all) struct SearchableSnapshotsClearCacheQuery {
 pub impl ToJson for SearchableSnapshotsClearCacheQuery with fn to_json(
   self : SearchableSnapshotsClearCacheQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
     None => ()
@@ -72227,7 +72227,7 @@ pub async fn Client::searchable_snapshots_clear_cache(
   self : Client,
   request : SearchableSnapshotsClearCacheRequest,
 ) -> EsResponse[SearchableSnapshotsClearCacheResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -72254,7 +72254,7 @@ pub(all) struct SearchableSnapshotsMountQuery {
 pub impl ToJson for SearchableSnapshotsMountQuery with fn to_json(
   self : SearchableSnapshotsMountQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -72343,7 +72343,7 @@ pub(all) struct SearchableSnapshotsMountBody {
 pub impl ToJson for SearchableSnapshotsMountBody with fn to_json(
   self : SearchableSnapshotsMountBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["index"] = self.index.to_json()
   match self.renamed_index {
     Some(value) => obj["renamed_index"] = value.to_json()
@@ -72412,7 +72412,7 @@ pub(all) struct SearchableSnapshotsMountResponse {
 pub impl ToJson for SearchableSnapshotsMountResponse with fn to_json(
   self : SearchableSnapshotsMountResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["snapshot"] = self.snapshot.to_json()
   Json::object(obj)
 }
@@ -72458,7 +72458,7 @@ pub async fn Client::searchable_snapshots_mount(
   self : Client,
   request : SearchableSnapshotsMountRequest,
 ) -> EsResponse[SearchableSnapshotsMountResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["repository"] = request.repository
   params["snapshot"] = request.snapshot
   let query = request.query.to_pairs()
@@ -72483,7 +72483,7 @@ pub(all) struct SearchableSnapshotsStatsQuery {
 pub impl ToJson for SearchableSnapshotsStatsQuery with fn to_json(
   self : SearchableSnapshotsStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.level {
     Some(value) => obj["level"] = value.to_json()
     None => ()
@@ -72539,7 +72539,7 @@ pub(all) struct SearchableSnapshotsStatsResponse {
 pub impl ToJson for SearchableSnapshotsStatsResponse with fn to_json(
   self : SearchableSnapshotsStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["stats"] = self.stats.to_json()
   obj["total"] = self.total.to_json()
   Json::object(obj)
@@ -72586,7 +72586,7 @@ pub async fn Client::searchable_snapshots_stats(
   self : Client,
   request : SearchableSnapshotsStatsRequest,
 ) -> EsResponse[SearchableSnapshotsStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -72609,7 +72609,7 @@ pub(all) struct SecurityActivateUserProfileQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityActivateUserProfileQuery with fn to_json(
   _self : SecurityActivateUserProfileQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -72653,7 +72653,7 @@ pub(all) struct SecurityActivateUserProfileBody {
 pub impl ToJson for SecurityActivateUserProfileBody with fn to_json(
   self : SecurityActivateUserProfileBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.access_token {
     Some(value) => obj["access_token"] = value.to_json()
     None => ()
@@ -72736,7 +72736,7 @@ pub async fn Client::security_activate_user_profile(
   self : Client,
   request : SecurityActivateUserProfileRequest,
 ) -> EsResponse[SecurityActivateUserProfileResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/profile/_activate", [])],
@@ -72753,7 +72753,7 @@ pub(all) struct SecurityAuthenticateQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityAuthenticateQuery with fn to_json(
   _self : SecurityAuthenticateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -72799,7 +72799,7 @@ pub(all) struct SecurityAuthenticateResponse {
 pub impl ToJson for SecurityAuthenticateResponse with fn to_json(
   self : SecurityAuthenticateResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.api_key {
     Some(value) => obj["api_key"] = value.to_json()
     None => ()
@@ -72903,7 +72903,7 @@ pub async fn Client::security_authenticate(
   self : Client,
   request : SecurityAuthenticateRequest,
 ) -> EsResponse[SecurityAuthenticateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/_authenticate", [])],
@@ -72921,7 +72921,7 @@ pub(all) struct SecurityBulkDeleteRoleQuery {
 pub impl ToJson for SecurityBulkDeleteRoleQuery with fn to_json(
   self : SecurityBulkDeleteRoleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -72973,7 +72973,7 @@ pub(all) struct SecurityBulkDeleteRoleBody {
 pub impl ToJson for SecurityBulkDeleteRoleBody with fn to_json(
   self : SecurityBulkDeleteRoleBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["names"] = self.names.to_json()
   Json::object(obj)
 }
@@ -73009,7 +73009,7 @@ pub(all) struct SecurityBulkDeleteRoleResponse {
 pub impl ToJson for SecurityBulkDeleteRoleResponse with fn to_json(
   self : SecurityBulkDeleteRoleResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.deleted {
     Some(value) => obj["deleted"] = value.to_json()
     None => ()
@@ -73074,7 +73074,7 @@ pub async fn Client::security_bulk_delete_role(
   self : Client,
   request : SecurityBulkDeleteRoleRequest,
 ) -> EsResponse[SecurityBulkDeleteRoleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_security/role", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -73090,7 +73090,7 @@ pub(all) struct SecurityBulkPutRoleQuery {
 pub impl ToJson for SecurityBulkPutRoleQuery with fn to_json(
   self : SecurityBulkPutRoleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -73140,7 +73140,7 @@ pub(all) struct SecurityBulkPutRoleBody {
 pub impl ToJson for SecurityBulkPutRoleBody with fn to_json(
   self : SecurityBulkPutRoleBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["roles"] = self.roles.to_json()
   Json::object(obj)
 }
@@ -73177,7 +73177,7 @@ pub(all) struct SecurityBulkPutRoleResponse {
 pub impl ToJson for SecurityBulkPutRoleResponse with fn to_json(
   self : SecurityBulkPutRoleResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.created {
     Some(value) => obj["created"] = value.to_json()
     None => ()
@@ -73247,7 +73247,7 @@ pub async fn Client::security_bulk_put_role(
   self : Client,
   request : SecurityBulkPutRoleRequest,
 ) -> EsResponse[SecurityBulkPutRoleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_security/role", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -73261,7 +73261,7 @@ pub(all) struct SecurityBulkUpdateApiKeysQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityBulkUpdateApiKeysQuery with fn to_json(
   _self : SecurityBulkUpdateApiKeysQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -73305,7 +73305,7 @@ pub(all) struct SecurityBulkUpdateApiKeysBody {
 pub impl ToJson for SecurityBulkUpdateApiKeysBody with fn to_json(
   self : SecurityBulkUpdateApiKeysBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expiration {
     Some(value) => obj["expiration"] = value.to_json()
     None => ()
@@ -73378,7 +73378,7 @@ pub(all) struct SecurityBulkUpdateApiKeysResponse {
 pub impl ToJson for SecurityBulkUpdateApiKeysResponse with fn to_json(
   self : SecurityBulkUpdateApiKeysResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.errors {
     Some(value) => obj["errors"] = value.to_json()
     None => ()
@@ -73434,7 +73434,7 @@ pub async fn Client::security_bulk_update_api_keys(
   self : Client,
   request : SecurityBulkUpdateApiKeysRequest,
 ) -> EsResponse[SecurityBulkUpdateApiKeysResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/api_key/_bulk_update", [])],
@@ -73453,7 +73453,7 @@ pub(all) struct SecurityChangePasswordQuery {
 pub impl ToJson for SecurityChangePasswordQuery with fn to_json(
   self : SecurityChangePasswordQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -73506,7 +73506,7 @@ pub(all) struct SecurityChangePasswordBody {
 pub impl ToJson for SecurityChangePasswordBody with fn to_json(
   self : SecurityChangePasswordBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.password {
     Some(value) => obj["password"] = value.to_json()
     None => ()
@@ -73570,7 +73570,7 @@ pub async fn Client::security_change_password(
   self : Client,
   request : SecurityChangePasswordRequest,
 ) -> EsResponse[SecurityChangePasswordResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.username {
     Some(value) => params["username"] = value
     None => ()
@@ -73594,7 +73594,7 @@ pub(all) struct SecurityClearApiKeyCacheQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityClearApiKeyCacheQuery with fn to_json(
   _self : SecurityClearApiKeyCacheQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -73637,7 +73637,7 @@ pub(all) struct SecurityClearApiKeyCacheResponse {
 pub impl ToJson for SecurityClearApiKeyCacheResponse with fn to_json(
   self : SecurityClearApiKeyCacheResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_nodes"] = self._nodes.to_json()
   obj["cluster_name"] = self.cluster_name.to_json()
   obj["nodes"] = self.nodes.to_json()
@@ -73689,7 +73689,7 @@ pub async fn Client::security_clear_api_key_cache(
   self : Client,
   request : SecurityClearApiKeyCacheRequest,
 ) -> EsResponse[SecurityClearApiKeyCacheResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["ids"] = request.ids
   let query = request.query.to_pairs()
   let path = select_path(
@@ -73706,7 +73706,7 @@ pub(all) struct SecurityClearCachedPrivilegesQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityClearCachedPrivilegesQuery with fn to_json(
   _self : SecurityClearCachedPrivilegesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -73749,7 +73749,7 @@ pub(all) struct SecurityClearCachedPrivilegesResponse {
 pub impl ToJson for SecurityClearCachedPrivilegesResponse with fn to_json(
   self : SecurityClearCachedPrivilegesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_nodes"] = self._nodes.to_json()
   obj["cluster_name"] = self.cluster_name.to_json()
   obj["nodes"] = self.nodes.to_json()
@@ -73801,7 +73801,7 @@ pub async fn Client::security_clear_cached_privileges(
   self : Client,
   request : SecurityClearCachedPrivilegesRequest,
 ) -> EsResponse[SecurityClearCachedPrivilegesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["application"] = request.application
   let query = request.query.to_pairs()
   let path = select_path(
@@ -73824,7 +73824,7 @@ pub(all) struct SecurityClearCachedRealmsQuery {
 pub impl ToJson for SecurityClearCachedRealmsQuery with fn to_json(
   self : SecurityClearCachedRealmsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.usernames {
     Some(value) => obj["usernames"] = value.to_json()
     None => ()
@@ -73882,7 +73882,7 @@ pub(all) struct SecurityClearCachedRealmsResponse {
 pub impl ToJson for SecurityClearCachedRealmsResponse with fn to_json(
   self : SecurityClearCachedRealmsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_nodes"] = self._nodes.to_json()
   obj["cluster_name"] = self.cluster_name.to_json()
   obj["nodes"] = self.nodes.to_json()
@@ -73934,7 +73934,7 @@ pub async fn Client::security_clear_cached_realms(
   self : Client,
   request : SecurityClearCachedRealmsRequest,
 ) -> EsResponse[SecurityClearCachedRealmsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["realms"] = request.realms
   let query = request.query.to_pairs()
   let path = select_path(
@@ -73951,7 +73951,7 @@ pub(all) struct SecurityClearCachedRolesQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityClearCachedRolesQuery with fn to_json(
   _self : SecurityClearCachedRolesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -73994,7 +73994,7 @@ pub(all) struct SecurityClearCachedRolesResponse {
 pub impl ToJson for SecurityClearCachedRolesResponse with fn to_json(
   self : SecurityClearCachedRolesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_nodes"] = self._nodes.to_json()
   obj["cluster_name"] = self.cluster_name.to_json()
   obj["nodes"] = self.nodes.to_json()
@@ -74046,7 +74046,7 @@ pub async fn Client::security_clear_cached_roles(
   self : Client,
   request : SecurityClearCachedRolesRequest,
 ) -> EsResponse[SecurityClearCachedRolesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -74063,7 +74063,7 @@ pub(all) struct SecurityClearCachedServiceTokensQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityClearCachedServiceTokensQuery with fn to_json(
   _self : SecurityClearCachedServiceTokensQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -74106,7 +74106,7 @@ pub(all) struct SecurityClearCachedServiceTokensResponse {
 pub impl ToJson for SecurityClearCachedServiceTokensResponse with fn to_json(
   self : SecurityClearCachedServiceTokensResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_nodes"] = self._nodes.to_json()
   obj["cluster_name"] = self.cluster_name.to_json()
   obj["nodes"] = self.nodes.to_json()
@@ -74162,7 +74162,7 @@ pub async fn Client::security_clear_cached_service_tokens(
   self : Client,
   request : SecurityClearCachedServiceTokensRequest,
 ) -> EsResponse[SecurityClearCachedServiceTokensResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["namespace"] = request.namespace_
   params["service"] = request.service
   params["name"] = request.name
@@ -74188,7 +74188,7 @@ pub(all) struct SecurityCloneApiKeyQuery {
 pub impl ToJson for SecurityCloneApiKeyQuery with fn to_json(
   self : SecurityCloneApiKeyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -74241,7 +74241,7 @@ pub(all) struct SecurityCloneApiKeyBody {
 pub impl ToJson for SecurityCloneApiKeyBody with fn to_json(
   self : SecurityCloneApiKeyBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["api_key"] = self.api_key.to_json()
   match self.name {
     Some(value) => obj["name"] = value.to_json()
@@ -74310,7 +74310,7 @@ pub(all) struct SecurityCloneApiKeyResponse {
 pub impl ToJson for SecurityCloneApiKeyResponse with fn to_json(
   self : SecurityCloneApiKeyResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["api_key"] = self.api_key.to_json()
   match self.expiration {
     Some(value) => obj["expiration"] = value.to_json()
@@ -74374,7 +74374,7 @@ pub async fn Client::security_clone_api_key(
   self : Client,
   request : SecurityCloneApiKeyRequest,
 ) -> EsResponse[SecurityCloneApiKeyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/api_key/clone", [])],
@@ -74393,7 +74393,7 @@ pub(all) struct SecurityCreateApiKeyQuery {
 pub impl ToJson for SecurityCreateApiKeyQuery with fn to_json(
   self : SecurityCreateApiKeyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -74446,7 +74446,7 @@ pub(all) struct SecurityCreateApiKeyBody {
 pub impl ToJson for SecurityCreateApiKeyBody with fn to_json(
   self : SecurityCreateApiKeyBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expiration {
     Some(value) => obj["expiration"] = value.to_json()
     None => ()
@@ -74520,7 +74520,7 @@ pub(all) struct SecurityCreateApiKeyResponse {
 pub impl ToJson for SecurityCreateApiKeyResponse with fn to_json(
   self : SecurityCreateApiKeyResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["api_key"] = self.api_key.to_json()
   match self.expiration {
     Some(value) => obj["expiration"] = value.to_json()
@@ -74584,7 +74584,7 @@ pub async fn Client::security_create_api_key(
   self : Client,
   request : SecurityCreateApiKeyRequest,
 ) -> EsResponse[SecurityCreateApiKeyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_security/api_key", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -74598,7 +74598,7 @@ pub(all) struct SecurityCreateCrossClusterApiKeyQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityCreateCrossClusterApiKeyQuery with fn to_json(
   _self : SecurityCreateCrossClusterApiKeyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -74643,7 +74643,7 @@ pub(all) struct SecurityCreateCrossClusterApiKeyBody {
 pub impl ToJson for SecurityCreateCrossClusterApiKeyBody with fn to_json(
   self : SecurityCreateCrossClusterApiKeyBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["access"] = self.access.to_json()
   match self.expiration {
     Some(value) => obj["expiration"] = value.to_json()
@@ -74724,7 +74724,7 @@ pub(all) struct SecurityCreateCrossClusterApiKeyResponse {
 pub impl ToJson for SecurityCreateCrossClusterApiKeyResponse with fn to_json(
   self : SecurityCreateCrossClusterApiKeyResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["api_key"] = self.api_key.to_json()
   match self.expiration {
     Some(value) => obj["expiration"] = value.to_json()
@@ -74791,7 +74791,7 @@ pub async fn Client::security_create_cross_cluster_api_key(
   self : Client,
   request : SecurityCreateCrossClusterApiKeyRequest,
 ) -> EsResponse[SecurityCreateCrossClusterApiKeyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/cross_cluster/api_key", [])],
@@ -74810,7 +74810,7 @@ pub(all) struct SecurityCreateServiceTokenQuery {
 pub impl ToJson for SecurityCreateServiceTokenQuery with fn to_json(
   self : SecurityCreateServiceTokenQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -74866,7 +74866,7 @@ pub(all) struct SecurityCreateServiceTokenResponse {
 pub impl ToJson for SecurityCreateServiceTokenResponse with fn to_json(
   self : SecurityCreateServiceTokenResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["created"] = self.created.to_json()
   obj["token"] = self.token.to_json()
   Json::object(obj)
@@ -74917,7 +74917,7 @@ pub async fn Client::security_create_service_token(
   self : Client,
   request : SecurityCreateServiceTokenRequest,
 ) -> EsResponse[SecurityCreateServiceTokenResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["namespace"] = request.namespace_
   params["service"] = request.service
   match request.name {
@@ -74948,7 +74948,7 @@ pub(all) struct SecurityDelegatePkiQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityDelegatePkiQuery with fn to_json(
   _self : SecurityDelegatePkiQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -74987,7 +74987,7 @@ pub(all) struct SecurityDelegatePkiResponse {
 pub impl ToJson for SecurityDelegatePkiResponse with fn to_json(
   self : SecurityDelegatePkiResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["access_token"] = self.access_token.to_json()
   obj["expires_in"] = self.expires_in.to_json()
   obj["type"] = self.type_.to_json()
@@ -75044,7 +75044,7 @@ pub async fn Client::security_delegate_pki(
   self : Client,
   request : SecurityDelegatePkiRequest,
 ) -> EsResponse[SecurityDelegatePkiResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/delegate_pki", [])],
@@ -75062,7 +75062,7 @@ pub(all) struct SecurityDeletePrivilegesQuery {
 pub impl ToJson for SecurityDeletePrivilegesQuery with fn to_json(
   self : SecurityDeletePrivilegesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -75132,7 +75132,7 @@ pub async fn Client::security_delete_privileges(
   self : Client,
   request : SecurityDeletePrivilegesRequest,
 ) -> EsResponse[SecurityDeletePrivilegesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["application"] = request.application
   params["name"] = request.name
   let query = request.query.to_pairs()
@@ -75156,7 +75156,7 @@ pub(all) struct SecurityDeleteRoleQuery {
 pub impl ToJson for SecurityDeleteRoleQuery with fn to_json(
   self : SecurityDeleteRoleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -75206,7 +75206,7 @@ pub(all) struct SecurityDeleteRoleResponse {
 pub impl ToJson for SecurityDeleteRoleResponse with fn to_json(
   self : SecurityDeleteRoleResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["found"] = self.found.to_json()
   Json::object(obj)
 }
@@ -75243,7 +75243,7 @@ pub async fn Client::security_delete_role(
   self : Client,
   request : SecurityDeleteRoleRequest,
 ) -> EsResponse[SecurityDeleteRoleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -75262,7 +75262,7 @@ pub(all) struct SecurityDeleteRoleMappingQuery {
 pub impl ToJson for SecurityDeleteRoleMappingQuery with fn to_json(
   self : SecurityDeleteRoleMappingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -75317,7 +75317,7 @@ pub(all) struct SecurityDeleteRoleMappingResponse {
 pub impl ToJson for SecurityDeleteRoleMappingResponse with fn to_json(
   self : SecurityDeleteRoleMappingResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["found"] = self.found.to_json()
   Json::object(obj)
 }
@@ -75359,7 +75359,7 @@ pub async fn Client::security_delete_role_mapping(
   self : Client,
   request : SecurityDeleteRoleMappingRequest,
 ) -> EsResponse[SecurityDeleteRoleMappingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -75378,7 +75378,7 @@ pub(all) struct SecurityDeleteServiceTokenQuery {
 pub impl ToJson for SecurityDeleteServiceTokenQuery with fn to_json(
   self : SecurityDeleteServiceTokenQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -75433,7 +75433,7 @@ pub(all) struct SecurityDeleteServiceTokenResponse {
 pub impl ToJson for SecurityDeleteServiceTokenResponse with fn to_json(
   self : SecurityDeleteServiceTokenResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["found"] = self.found.to_json()
   Json::object(obj)
 }
@@ -75479,7 +75479,7 @@ pub async fn Client::security_delete_service_token(
   self : Client,
   request : SecurityDeleteServiceTokenRequest,
 ) -> EsResponse[SecurityDeleteServiceTokenResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["namespace"] = request.namespace_
   params["service"] = request.service
   params["name"] = request.name
@@ -75505,7 +75505,7 @@ pub(all) struct SecurityDeleteUserQuery {
 pub impl ToJson for SecurityDeleteUserQuery with fn to_json(
   self : SecurityDeleteUserQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -75555,7 +75555,7 @@ pub(all) struct SecurityDeleteUserResponse {
 pub impl ToJson for SecurityDeleteUserResponse with fn to_json(
   self : SecurityDeleteUserResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["found"] = self.found.to_json()
   Json::object(obj)
 }
@@ -75592,7 +75592,7 @@ pub async fn Client::security_delete_user(
   self : Client,
   request : SecurityDeleteUserRequest,
 ) -> EsResponse[SecurityDeleteUserResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["username"] = request.username
   let query = request.query.to_pairs()
   let path = select_path(
@@ -75611,7 +75611,7 @@ pub(all) struct SecurityDisableUserQuery {
 pub impl ToJson for SecurityDisableUserQuery with fn to_json(
   self : SecurityDisableUserQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -75674,7 +75674,7 @@ pub async fn Client::security_disable_user(
   self : Client,
   request : SecurityDisableUserRequest,
 ) -> EsResponse[SecurityDisableUserResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["username"] = request.username
   let query = request.query.to_pairs()
   let path = select_path(
@@ -75693,7 +75693,7 @@ pub(all) struct SecurityDisableUserProfileQuery {
 pub impl ToJson for SecurityDisableUserProfileQuery with fn to_json(
   self : SecurityDisableUserProfileQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -75761,7 +75761,7 @@ pub async fn Client::security_disable_user_profile(
   self : Client,
   request : SecurityDisableUserProfileRequest,
 ) -> EsResponse[SecurityDisableUserProfileResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["uid"] = request.uid
   let query = request.query.to_pairs()
   let path = select_path(
@@ -75780,7 +75780,7 @@ pub(all) struct SecurityEnableUserQuery {
 pub impl ToJson for SecurityEnableUserQuery with fn to_json(
   self : SecurityEnableUserQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -75843,7 +75843,7 @@ pub async fn Client::security_enable_user(
   self : Client,
   request : SecurityEnableUserRequest,
 ) -> EsResponse[SecurityEnableUserResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["username"] = request.username
   let query = request.query.to_pairs()
   let path = select_path(
@@ -75862,7 +75862,7 @@ pub(all) struct SecurityEnableUserProfileQuery {
 pub impl ToJson for SecurityEnableUserProfileQuery with fn to_json(
   self : SecurityEnableUserProfileQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -75930,7 +75930,7 @@ pub async fn Client::security_enable_user_profile(
   self : Client,
   request : SecurityEnableUserProfileRequest,
 ) -> EsResponse[SecurityEnableUserProfileResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["uid"] = request.uid
   let query = request.query.to_pairs()
   let path = select_path(
@@ -75947,7 +75947,7 @@ pub(all) struct SecurityEnrollKibanaQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityEnrollKibanaQuery with fn to_json(
   _self : SecurityEnrollKibanaQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -75987,7 +75987,7 @@ pub(all) struct SecurityEnrollKibanaResponse {
 pub impl ToJson for SecurityEnrollKibanaResponse with fn to_json(
   self : SecurityEnrollKibanaResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["token"] = self.token.to_json()
   obj["http_ca"] = self.http_ca.to_json()
   Json::object(obj)
@@ -76031,7 +76031,7 @@ pub async fn Client::security_enroll_kibana(
   self : Client,
   request : SecurityEnrollKibanaRequest,
 ) -> EsResponse[SecurityEnrollKibanaResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/enroll/kibana", [])],
@@ -76051,7 +76051,7 @@ pub(all) struct SecurityEnrollNodeQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityEnrollNodeQuery with fn to_json(
   _self : SecurityEnrollNodeQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -76095,7 +76095,7 @@ pub(all) struct SecurityEnrollNodeResponse {
 pub impl ToJson for SecurityEnrollNodeResponse with fn to_json(
   self : SecurityEnrollNodeResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["http_ca_key"] = self.http_ca_key.to_json()
   obj["http_ca_cert"] = self.http_ca_cert.to_json()
   obj["transport_ca_cert"] = self.transport_ca_cert.to_json()
@@ -76157,7 +76157,7 @@ pub async fn Client::security_enroll_node(
   self : Client,
   request : SecurityEnrollNodeRequest,
 ) -> EsResponse[SecurityEnrollNodeResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/enroll/node", [])],
@@ -76186,7 +76186,7 @@ pub(all) struct SecurityGetApiKeyQuery {
 pub impl ToJson for SecurityGetApiKeyQuery with fn to_json(
   self : SecurityGetApiKeyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.id {
     Some(value) => obj["id"] = value.to_json()
     None => ()
@@ -76347,7 +76347,7 @@ pub(all) struct SecurityGetApiKeyResponse {
 pub impl ToJson for SecurityGetApiKeyResponse with fn to_json(
   self : SecurityGetApiKeyResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["api_keys"] = self.api_keys.to_json()
   Json::object(obj)
 }
@@ -76382,7 +76382,7 @@ pub async fn Client::security_get_api_key(
   self : Client,
   request : SecurityGetApiKeyRequest,
 ) -> EsResponse[SecurityGetApiKeyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_security/api_key", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -76395,7 +76395,7 @@ pub(all) struct SecurityGetBuiltinPrivilegesQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityGetBuiltinPrivilegesQuery with fn to_json(
   _self : SecurityGetBuiltinPrivilegesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -76438,7 +76438,7 @@ pub(all) struct SecurityGetBuiltinPrivilegesResponse {
 pub impl ToJson for SecurityGetBuiltinPrivilegesResponse with fn to_json(
   self : SecurityGetBuiltinPrivilegesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["cluster"] = self.cluster.to_json()
   obj["index"] = self.index.to_json()
   obj["remote_cluster"] = self.remote_cluster.to_json()
@@ -76488,7 +76488,7 @@ pub async fn Client::security_get_builtin_privileges(
   self : Client,
   request : SecurityGetBuiltinPrivilegesRequest,
 ) -> EsResponse[SecurityGetBuiltinPrivilegesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/privilege/_builtin", [])],
@@ -76504,7 +76504,7 @@ pub(all) struct SecurityGetPrivilegesQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityGetPrivilegesQuery with fn to_json(
   _self : SecurityGetPrivilegesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -76555,7 +76555,7 @@ pub async fn Client::security_get_privileges(
   self : Client,
   request : SecurityGetPrivilegesRequest,
 ) -> EsResponse[SecurityGetPrivilegesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.application {
     Some(value) => params["application"] = value
     None => ()
@@ -76585,7 +76585,7 @@ pub(all) struct SecurityGetRoleQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityGetRoleQuery with fn to_json(
   _self : SecurityGetRoleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -76634,7 +76634,7 @@ pub async fn Client::security_get_role(
   self : Client,
   request : SecurityGetRoleRequest,
 ) -> EsResponse[SecurityGetRoleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -76657,7 +76657,7 @@ pub(all) struct SecurityGetRoleMappingQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityGetRoleMappingQuery with fn to_json(
   _self : SecurityGetRoleMappingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -76708,7 +76708,7 @@ pub async fn Client::security_get_role_mapping(
   self : Client,
   request : SecurityGetRoleMappingRequest,
 ) -> EsResponse[SecurityGetRoleMappingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.name {
     Some(value) => params["name"] = value
     None => ()
@@ -76731,7 +76731,7 @@ pub(all) struct SecurityGetServiceAccountsQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityGetServiceAccountsQuery with fn to_json(
   _self : SecurityGetServiceAccountsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -76787,7 +76787,7 @@ pub async fn Client::security_get_service_accounts(
   self : Client,
   request : SecurityGetServiceAccountsRequest,
 ) -> EsResponse[SecurityGetServiceAccountsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.namespace_ {
     Some(value) => params["namespace"] = value
     None => ()
@@ -76817,7 +76817,7 @@ pub(all) struct SecurityGetServiceCredentialsQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityGetServiceCredentialsQuery with fn to_json(
   _self : SecurityGetServiceCredentialsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -76861,7 +76861,7 @@ pub(all) struct SecurityGetServiceCredentialsResponse {
 pub impl ToJson for SecurityGetServiceCredentialsResponse with fn to_json(
   self : SecurityGetServiceCredentialsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["service_account"] = self.service_account.to_json()
   obj["count"] = self.count.to_json()
   obj["tokens"] = self.tokens.to_json()
@@ -76920,7 +76920,7 @@ pub async fn Client::security_get_service_credentials(
   self : Client,
   request : SecurityGetServiceCredentialsRequest,
 ) -> EsResponse[SecurityGetServiceCredentialsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["namespace"] = request.namespace_
   params["service"] = request.service
   let query = request.query.to_pairs()
@@ -76944,7 +76944,7 @@ pub(all) struct SecurityGetSettingsQuery {
 pub impl ToJson for SecurityGetSettingsQuery with fn to_json(
   self : SecurityGetSettingsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -77000,7 +77000,7 @@ pub(all) struct SecurityGetSettingsResponse {
 pub impl ToJson for SecurityGetSettingsResponse with fn to_json(
   self : SecurityGetSettingsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["security"] = self.security.to_json()
   obj["security-profile"] = self.security_profile.to_json()
   obj["security-tokens"] = self.security_tokens.to_json()
@@ -77049,7 +77049,7 @@ pub async fn Client::security_get_settings(
   self : Client,
   request : SecurityGetSettingsRequest,
 ) -> EsResponse[SecurityGetSettingsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_security/settings", [])], params)
   let body = match request.body {
@@ -77066,7 +77066,7 @@ pub(all) struct SecurityGetStatsQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityGetStatsQuery with fn to_json(
   _self : SecurityGetStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -77105,7 +77105,7 @@ pub(all) struct SecurityGetStatsResponse {
 pub impl ToJson for SecurityGetStatsResponse with fn to_json(
   self : SecurityGetStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["nodes"] = self.nodes.to_json()
   Json::object(obj)
 }
@@ -77142,7 +77142,7 @@ pub async fn Client::security_get_stats(
   self : Client,
   request : SecurityGetStatsRequest,
 ) -> EsResponse[SecurityGetStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_security/stats", [])], params)
   let body = match request.body {
@@ -77159,7 +77159,7 @@ pub(all) struct SecurityGetTokenQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityGetTokenQuery with fn to_json(
   _self : SecurityGetTokenQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -77200,7 +77200,7 @@ pub(all) struct SecurityGetTokenBody {
 pub impl ToJson for SecurityGetTokenBody with fn to_json(
   self : SecurityGetTokenBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.grant_type {
     Some(value) => obj["grant_type"] = value.to_json()
     None => ()
@@ -77297,7 +77297,7 @@ pub(all) struct SecurityGetTokenResponse {
 pub impl ToJson for SecurityGetTokenResponse with fn to_json(
   self : SecurityGetTokenResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["access_token"] = self.access_token.to_json()
   obj["expires_in"] = self.expires_in.to_json()
   match self.scope {
@@ -77385,7 +77385,7 @@ pub async fn Client::security_get_token(
   self : Client,
   request : SecurityGetTokenRequest,
 ) -> EsResponse[SecurityGetTokenResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/oauth2/token", [])],
@@ -77404,7 +77404,7 @@ pub(all) struct SecurityGetUserQuery {
 pub impl ToJson for SecurityGetUserQuery with fn to_json(
   self : SecurityGetUserQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.with_profile_uid {
     Some(value) => obj["with_profile_uid"] = value.to_json()
     None => ()
@@ -77468,7 +77468,7 @@ pub async fn Client::security_get_user(
   self : Client,
   request : SecurityGetUserRequest,
 ) -> EsResponse[SecurityGetUserResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.username {
     Some(value) => params["username"] = value
     None => ()
@@ -77491,7 +77491,7 @@ pub(all) struct SecurityGetUserPrivilegesQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityGetUserPrivilegesQuery with fn to_json(
   _self : SecurityGetUserPrivilegesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -77538,7 +77538,7 @@ pub(all) struct SecurityGetUserPrivilegesResponse {
 pub impl ToJson for SecurityGetUserPrivilegesResponse with fn to_json(
   self : SecurityGetUserPrivilegesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["applications"] = self.applications.to_json()
   obj["cluster"] = self.cluster.to_json()
   match self.remote_cluster {
@@ -77618,7 +77618,7 @@ pub async fn Client::security_get_user_privileges(
   self : Client,
   request : SecurityGetUserPrivilegesRequest,
 ) -> EsResponse[SecurityGetUserPrivilegesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/user/_privileges", [])],
@@ -77636,7 +77636,7 @@ pub(all) struct SecurityGetUserProfileQuery {
 pub impl ToJson for SecurityGetUserProfileQuery with fn to_json(
   self : SecurityGetUserProfileQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.data {
     Some(value) => obj["data"] = value.to_json()
     None => ()
@@ -77689,7 +77689,7 @@ pub(all) struct SecurityGetUserProfileResponse {
 pub impl ToJson for SecurityGetUserProfileResponse with fn to_json(
   self : SecurityGetUserProfileResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["profiles"] = self.profiles.to_json()
   match self.errors {
     Some(value) => obj["errors"] = value.to_json()
@@ -77740,7 +77740,7 @@ pub async fn Client::security_get_user_profile(
   self : Client,
   request : SecurityGetUserProfileRequest,
 ) -> EsResponse[SecurityGetUserProfileResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["uid"] = request.uid
   let query = request.query.to_pairs()
   let path = select_path(
@@ -77759,7 +77759,7 @@ pub(all) struct SecurityGrantApiKeyQuery {
 pub impl ToJson for SecurityGrantApiKeyQuery with fn to_json(
   self : SecurityGrantApiKeyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -77814,7 +77814,7 @@ pub(all) struct SecurityGrantApiKeyBody {
 pub impl ToJson for SecurityGrantApiKeyBody with fn to_json(
   self : SecurityGrantApiKeyBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["api_key"] = self.api_key.to_json()
   obj["grant_type"] = self.grant_type.to_json()
   match self.access_token {
@@ -77899,7 +77899,7 @@ pub(all) struct SecurityGrantApiKeyResponse {
 pub impl ToJson for SecurityGrantApiKeyResponse with fn to_json(
   self : SecurityGrantApiKeyResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["api_key"] = self.api_key.to_json()
   obj["id"] = self.id.to_json()
   obj["name"] = self.name.to_json()
@@ -77963,7 +77963,7 @@ pub async fn Client::security_grant_api_key(
   self : Client,
   request : SecurityGrantApiKeyRequest,
 ) -> EsResponse[SecurityGrantApiKeyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/api_key/grant", [])],
@@ -77980,7 +77980,7 @@ pub(all) struct SecurityHasPrivilegesQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityHasPrivilegesQuery with fn to_json(
   _self : SecurityHasPrivilegesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -78018,7 +78018,7 @@ pub(all) struct SecurityHasPrivilegesBody {
 pub impl ToJson for SecurityHasPrivilegesBody with fn to_json(
   self : SecurityHasPrivilegesBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.application {
     Some(value) => obj["application"] = value.to_json()
     None => ()
@@ -78081,7 +78081,7 @@ pub(all) struct SecurityHasPrivilegesResponse {
 pub impl ToJson for SecurityHasPrivilegesResponse with fn to_json(
   self : SecurityHasPrivilegesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["application"] = self.application.to_json()
   obj["cluster"] = self.cluster.to_json()
   obj["has_all_requested"] = self.has_all_requested.to_json()
@@ -78145,7 +78145,7 @@ pub async fn Client::security_has_privileges(
   self : Client,
   request : SecurityHasPrivilegesRequest,
 ) -> EsResponse[SecurityHasPrivilegesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.user {
     Some(value) => params["user"] = value
     None => ()
@@ -78169,7 +78169,7 @@ pub(all) struct SecurityHasPrivilegesUserProfileQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityHasPrivilegesUserProfileQuery with fn to_json(
   _self : SecurityHasPrivilegesUserProfileQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -78211,7 +78211,7 @@ pub(all) struct SecurityHasPrivilegesUserProfileBody {
 pub impl ToJson for SecurityHasPrivilegesUserProfileBody with fn to_json(
   self : SecurityHasPrivilegesUserProfileBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["uids"] = self.uids.to_json()
   obj["privileges"] = self.privileges.to_json()
   Json::object(obj)
@@ -78257,7 +78257,7 @@ pub(all) struct SecurityHasPrivilegesUserProfileResponse {
 pub impl ToJson for SecurityHasPrivilegesUserProfileResponse with fn to_json(
   self : SecurityHasPrivilegesUserProfileResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["has_privilege_uids"] = self.has_privilege_uids.to_json()
   match self.errors {
     Some(value) => obj["errors"] = value.to_json()
@@ -78308,7 +78308,7 @@ pub async fn Client::security_has_privileges_user_profile(
   self : Client,
   request : SecurityHasPrivilegesUserProfileRequest,
 ) -> EsResponse[SecurityHasPrivilegesUserProfileResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/profile/_has_privileges", [])],
@@ -78325,7 +78325,7 @@ pub(all) struct SecurityInvalidateApiKeyQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityInvalidateApiKeyQuery with fn to_json(
   _self : SecurityInvalidateApiKeyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -78371,7 +78371,7 @@ pub(all) struct SecurityInvalidateApiKeyBody {
 pub impl ToJson for SecurityInvalidateApiKeyBody with fn to_json(
   self : SecurityInvalidateApiKeyBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.id {
     Some(value) => obj["id"] = value.to_json()
     None => ()
@@ -78465,7 +78465,7 @@ pub(all) struct SecurityInvalidateApiKeyResponse {
 pub impl ToJson for SecurityInvalidateApiKeyResponse with fn to_json(
   self : SecurityInvalidateApiKeyResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["error_count"] = self.error_count.to_json()
   match self.error_details {
     Some(value) => obj["error_details"] = value.to_json()
@@ -78527,7 +78527,7 @@ pub async fn Client::security_invalidate_api_key(
   self : Client,
   request : SecurityInvalidateApiKeyRequest,
 ) -> EsResponse[SecurityInvalidateApiKeyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_security/api_key", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -78541,7 +78541,7 @@ pub(all) struct SecurityInvalidateTokenQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityInvalidateTokenQuery with fn to_json(
   _self : SecurityInvalidateTokenQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -78582,7 +78582,7 @@ pub(all) struct SecurityInvalidateTokenBody {
 pub impl ToJson for SecurityInvalidateTokenBody with fn to_json(
   self : SecurityInvalidateTokenBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.token {
     Some(value) => obj["token"] = value.to_json()
     None => ()
@@ -78657,7 +78657,7 @@ pub(all) struct SecurityInvalidateTokenResponse {
 pub impl ToJson for SecurityInvalidateTokenResponse with fn to_json(
   self : SecurityInvalidateTokenResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["error_count"] = self.error_count.to_json()
   match self.error_details {
     Some(value) => obj["error_details"] = value.to_json()
@@ -78719,7 +78719,7 @@ pub async fn Client::security_invalidate_token(
   self : Client,
   request : SecurityInvalidateTokenRequest,
 ) -> EsResponse[SecurityInvalidateTokenResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/oauth2/token", [])],
@@ -78736,7 +78736,7 @@ pub(all) struct SecurityOidcAuthenticateQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityOidcAuthenticateQuery with fn to_json(
   _self : SecurityOidcAuthenticateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -78780,7 +78780,7 @@ pub(all) struct SecurityOidcAuthenticateBody {
 pub impl ToJson for SecurityOidcAuthenticateBody with fn to_json(
   self : SecurityOidcAuthenticateBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["nonce"] = self.nonce.to_json()
   match self.realm {
     Some(value) => obj["realm"] = value.to_json()
@@ -78841,7 +78841,7 @@ pub(all) struct SecurityOidcAuthenticateResponse {
 pub impl ToJson for SecurityOidcAuthenticateResponse with fn to_json(
   self : SecurityOidcAuthenticateResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["access_token"] = self.access_token.to_json()
   obj["expires_in"] = self.expires_in.to_json()
   obj["refresh_token"] = self.refresh_token.to_json()
@@ -78898,7 +78898,7 @@ pub async fn Client::security_oidc_authenticate(
   self : Client,
   request : SecurityOidcAuthenticateRequest,
 ) -> EsResponse[SecurityOidcAuthenticateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/oidc/authenticate", [])],
@@ -78915,7 +78915,7 @@ pub(all) struct SecurityOidcLogoutQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityOidcLogoutQuery with fn to_json(
   _self : SecurityOidcLogoutQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -78952,7 +78952,7 @@ pub(all) struct SecurityOidcLogoutBody {
 pub impl ToJson for SecurityOidcLogoutBody with fn to_json(
   self : SecurityOidcLogoutBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["token"] = self.token.to_json()
   match self.refresh_token {
     Some(value) => obj["refresh_token"] = value.to_json()
@@ -78997,7 +78997,7 @@ pub(all) struct SecurityOidcLogoutResponse {
 pub impl ToJson for SecurityOidcLogoutResponse with fn to_json(
   self : SecurityOidcLogoutResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["redirect"] = self.redirect.to_json()
   Json::object(obj)
 }
@@ -79034,7 +79034,7 @@ pub async fn Client::security_oidc_logout(
   self : Client,
   request : SecurityOidcLogoutRequest,
 ) -> EsResponse[SecurityOidcLogoutResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/oidc/logout", [])],
@@ -79051,7 +79051,7 @@ pub(all) struct SecurityOidcPrepareAuthenticationQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityOidcPrepareAuthenticationQuery with fn to_json(
   _self : SecurityOidcPrepareAuthenticationQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -79096,7 +79096,7 @@ pub(all) struct SecurityOidcPrepareAuthenticationBody {
 pub impl ToJson for SecurityOidcPrepareAuthenticationBody with fn to_json(
   self : SecurityOidcPrepareAuthenticationBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.iss {
     Some(value) => obj["iss"] = value.to_json()
     None => ()
@@ -79183,7 +79183,7 @@ pub(all) struct SecurityOidcPrepareAuthenticationResponse {
 pub impl ToJson for SecurityOidcPrepareAuthenticationResponse with fn to_json(
   self : SecurityOidcPrepareAuthenticationResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["nonce"] = self.nonce.to_json()
   obj["realm"] = self.realm.to_json()
   obj["redirect"] = self.redirect.to_json()
@@ -79240,7 +79240,7 @@ pub async fn Client::security_oidc_prepare_authentication(
   self : Client,
   request : SecurityOidcPrepareAuthenticationRequest,
 ) -> EsResponse[SecurityOidcPrepareAuthenticationResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/oidc/prepare", [])],
@@ -79259,7 +79259,7 @@ pub(all) struct SecurityPutPrivilegesQuery {
 pub impl ToJson for SecurityPutPrivilegesQuery with fn to_json(
   self : SecurityPutPrivilegesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -79325,7 +79325,7 @@ pub async fn Client::security_put_privileges(
   self : Client,
   request : SecurityPutPrivilegesRequest,
 ) -> EsResponse[SecurityPutPrivilegesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_security/privilege", [])], params)
   let body = JsonBody(request.body)
@@ -79341,7 +79341,7 @@ pub(all) struct SecurityPutRoleQuery {
 pub impl ToJson for SecurityPutRoleQuery with fn to_json(
   self : SecurityPutRoleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -79398,7 +79398,7 @@ pub(all) struct SecurityPutRoleBody {
 pub impl ToJson for SecurityPutRoleBody with fn to_json(
   self : SecurityPutRoleBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.applications {
     Some(value) => obj["applications"] = value.to_json()
     None => ()
@@ -79542,7 +79542,7 @@ pub(all) struct SecurityPutRoleResponse {
 pub impl ToJson for SecurityPutRoleResponse with fn to_json(
   self : SecurityPutRoleResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["role"] = self.role.to_json()
   Json::object(obj)
 }
@@ -79581,7 +79581,7 @@ pub async fn Client::security_put_role(
   self : Client,
   request : SecurityPutRoleRequest,
 ) -> EsResponse[SecurityPutRoleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -79601,7 +79601,7 @@ pub(all) struct SecurityPutRoleMappingQuery {
 pub impl ToJson for SecurityPutRoleMappingQuery with fn to_json(
   self : SecurityPutRoleMappingQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -79658,7 +79658,7 @@ pub(all) struct SecurityPutRoleMappingBody {
 pub impl ToJson for SecurityPutRoleMappingBody with fn to_json(
   self : SecurityPutRoleMappingBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.enabled {
     Some(value) => obj["enabled"] = value.to_json()
     None => ()
@@ -79748,7 +79748,7 @@ pub(all) struct SecurityPutRoleMappingResponse {
 pub impl ToJson for SecurityPutRoleMappingResponse with fn to_json(
   self : SecurityPutRoleMappingResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.created {
     Some(value) => obj["created"] = value.to_json()
     None => ()
@@ -79801,7 +79801,7 @@ pub async fn Client::security_put_role_mapping(
   self : Client,
   request : SecurityPutRoleMappingRequest,
 ) -> EsResponse[SecurityPutRoleMappingResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -79821,7 +79821,7 @@ pub(all) struct SecurityPutUserQuery {
 pub impl ToJson for SecurityPutUserQuery with fn to_json(
   self : SecurityPutUserQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -79876,7 +79876,7 @@ pub(all) struct SecurityPutUserBody {
 pub impl ToJson for SecurityPutUserBody with fn to_json(
   self : SecurityPutUserBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.username {
     Some(value) => obj["username"] = value.to_json()
     None => ()
@@ -79995,7 +79995,7 @@ pub(all) struct SecurityPutUserResponse {
 pub impl ToJson for SecurityPutUserResponse with fn to_json(
   self : SecurityPutUserResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["created"] = self.created.to_json()
   Json::object(obj)
 }
@@ -80034,7 +80034,7 @@ pub async fn Client::security_put_user(
   self : Client,
   request : SecurityPutUserRequest,
 ) -> EsResponse[SecurityPutUserResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["username"] = request.username
   let query = request.query.to_pairs()
   let path = select_path(
@@ -80056,7 +80056,7 @@ pub(all) struct SecurityQueryApiKeysQuery {
 pub impl ToJson for SecurityQueryApiKeysQuery with fn to_json(
   self : SecurityQueryApiKeysQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.with_limited_by {
     Some(value) => obj["with_limited_by"] = value.to_json()
     None => ()
@@ -80142,7 +80142,7 @@ pub(all) struct SecurityQueryApiKeysBody {
 pub impl ToJson for SecurityQueryApiKeysBody with fn to_json(
   self : SecurityQueryApiKeysBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aggregations {
     Some(value) => obj["aggregations"] = value.to_json()
     None => ()
@@ -80235,7 +80235,7 @@ pub(all) struct SecurityQueryApiKeysResponse {
 pub impl ToJson for SecurityQueryApiKeysResponse with fn to_json(
   self : SecurityQueryApiKeysResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["total"] = self.total.to_json()
   obj["count"] = self.count.to_json()
   obj["api_keys"] = self.api_keys.to_json()
@@ -80294,7 +80294,7 @@ pub async fn Client::security_query_api_keys(
   self : Client,
   request : SecurityQueryApiKeysRequest,
 ) -> EsResponse[SecurityQueryApiKeysResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/_query/api_key", [])],
@@ -80314,7 +80314,7 @@ pub(all) struct SecurityQueryRoleQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityQueryRoleQuery with fn to_json(
   _self : SecurityQueryRoleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -80354,7 +80354,7 @@ pub(all) struct SecurityQueryRoleBody {
 pub impl ToJson for SecurityQueryRoleBody with fn to_json(
   self : SecurityQueryRoleBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.query {
     Some(value) => obj["query"] = value.to_json()
     None => ()
@@ -80435,7 +80435,7 @@ pub(all) struct SecurityQueryRoleResponse {
 pub impl ToJson for SecurityQueryRoleResponse with fn to_json(
   self : SecurityQueryRoleResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["total"] = self.total.to_json()
   obj["count"] = self.count.to_json()
   obj["roles"] = self.roles.to_json()
@@ -80482,7 +80482,7 @@ pub async fn Client::security_query_role(
   self : Client,
   request : SecurityQueryRoleRequest,
 ) -> EsResponse[SecurityQueryRoleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/_query/role", [])],
@@ -80504,7 +80504,7 @@ pub(all) struct SecurityQueryUserQuery {
 pub impl ToJson for SecurityQueryUserQuery with fn to_json(
   self : SecurityQueryUserQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.with_profile_uid {
     Some(value) => obj["with_profile_uid"] = value.to_json()
     None => ()
@@ -80559,7 +80559,7 @@ pub(all) struct SecurityQueryUserBody {
 pub impl ToJson for SecurityQueryUserBody with fn to_json(
   self : SecurityQueryUserBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.query {
     Some(value) => obj["query"] = value.to_json()
     None => ()
@@ -80640,7 +80640,7 @@ pub(all) struct SecurityQueryUserResponse {
 pub impl ToJson for SecurityQueryUserResponse with fn to_json(
   self : SecurityQueryUserResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["total"] = self.total.to_json()
   obj["count"] = self.count.to_json()
   obj["users"] = self.users.to_json()
@@ -80687,7 +80687,7 @@ pub async fn Client::security_query_user(
   self : Client,
   request : SecurityQueryUserRequest,
 ) -> EsResponse[SecurityQueryUserResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/_query/user", [])],
@@ -80707,7 +80707,7 @@ pub(all) struct SecuritySamlAuthenticateQuery {} derive(Eq, Debug)
 pub impl ToJson for SecuritySamlAuthenticateQuery with fn to_json(
   _self : SecuritySamlAuthenticateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -80750,7 +80750,7 @@ pub(all) struct SecuritySamlAuthenticateBody {
 pub impl ToJson for SecuritySamlAuthenticateBody with fn to_json(
   self : SecuritySamlAuthenticateBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["content"] = self.content.to_json()
   obj["ids"] = self.ids.to_json()
   match self.realm {
@@ -80807,7 +80807,7 @@ pub(all) struct SecuritySamlAuthenticateResponse {
 pub impl ToJson for SecuritySamlAuthenticateResponse with fn to_json(
   self : SecuritySamlAuthenticateResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["access_token"] = self.access_token.to_json()
   obj["username"] = self.username.to_json()
   obj["expires_in"] = self.expires_in.to_json()
@@ -80879,7 +80879,7 @@ pub async fn Client::security_saml_authenticate(
   self : Client,
   request : SecuritySamlAuthenticateRequest,
 ) -> EsResponse[SecuritySamlAuthenticateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/saml/authenticate", [])],
@@ -80896,7 +80896,7 @@ pub(all) struct SecuritySamlCompleteLogoutQuery {} derive(Eq, Debug)
 pub impl ToJson for SecuritySamlCompleteLogoutQuery with fn to_json(
   _self : SecuritySamlCompleteLogoutQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -80940,7 +80940,7 @@ pub(all) struct SecuritySamlCompleteLogoutBody {
 pub impl ToJson for SecuritySamlCompleteLogoutBody with fn to_json(
   self : SecuritySamlCompleteLogoutBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["realm"] = self.realm.to_json()
   obj["ids"] = self.ids.to_json()
   match self.query_string {
@@ -81019,7 +81019,7 @@ pub async fn Client::security_saml_complete_logout(
   self : Client,
   request : SecuritySamlCompleteLogoutRequest,
 ) -> EsResponse[SecuritySamlCompleteLogoutResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/saml/complete_logout", [])],
@@ -81036,7 +81036,7 @@ pub(all) struct SecuritySamlInvalidateQuery {} derive(Eq, Debug)
 pub impl ToJson for SecuritySamlInvalidateQuery with fn to_json(
   _self : SecuritySamlInvalidateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -81076,7 +81076,7 @@ pub(all) struct SecuritySamlInvalidateBody {
 pub impl ToJson for SecuritySamlInvalidateBody with fn to_json(
   self : SecuritySamlInvalidateBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.acs {
     Some(value) => obj["acs"] = value.to_json()
     None => ()
@@ -81132,7 +81132,7 @@ pub(all) struct SecuritySamlInvalidateResponse {
 pub impl ToJson for SecuritySamlInvalidateResponse with fn to_json(
   self : SecuritySamlInvalidateResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["invalidated"] = self.invalidated.to_json()
   obj["realm"] = self.realm.to_json()
   obj["redirect"] = self.redirect.to_json()
@@ -81184,7 +81184,7 @@ pub async fn Client::security_saml_invalidate(
   self : Client,
   request : SecuritySamlInvalidateRequest,
 ) -> EsResponse[SecuritySamlInvalidateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/saml/invalidate", [])],
@@ -81201,7 +81201,7 @@ pub(all) struct SecuritySamlLogoutQuery {} derive(Eq, Debug)
 pub impl ToJson for SecuritySamlLogoutQuery with fn to_json(
   _self : SecuritySamlLogoutQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -81238,7 +81238,7 @@ pub(all) struct SecuritySamlLogoutBody {
 pub impl ToJson for SecuritySamlLogoutBody with fn to_json(
   self : SecuritySamlLogoutBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["token"] = self.token.to_json()
   match self.refresh_token {
     Some(value) => obj["refresh_token"] = value.to_json()
@@ -81283,7 +81283,7 @@ pub(all) struct SecuritySamlLogoutResponse {
 pub impl ToJson for SecuritySamlLogoutResponse with fn to_json(
   self : SecuritySamlLogoutResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["redirect"] = self.redirect.to_json()
   Json::object(obj)
 }
@@ -81320,7 +81320,7 @@ pub async fn Client::security_saml_logout(
   self : Client,
   request : SecuritySamlLogoutRequest,
 ) -> EsResponse[SecuritySamlLogoutResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/saml/logout", [])],
@@ -81337,7 +81337,7 @@ pub(all) struct SecuritySamlPrepareAuthenticationQuery {} derive(Eq, Debug)
 pub impl ToJson for SecuritySamlPrepareAuthenticationQuery with fn to_json(
   _self : SecuritySamlPrepareAuthenticationQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -81380,7 +81380,7 @@ pub(all) struct SecuritySamlPrepareAuthenticationBody {
 pub impl ToJson for SecuritySamlPrepareAuthenticationBody with fn to_json(
   self : SecuritySamlPrepareAuthenticationBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.acs {
     Some(value) => obj["acs"] = value.to_json()
     None => ()
@@ -81446,7 +81446,7 @@ pub(all) struct SecuritySamlPrepareAuthenticationResponse {
 pub impl ToJson for SecuritySamlPrepareAuthenticationResponse with fn to_json(
   self : SecuritySamlPrepareAuthenticationResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["id"] = self.id.to_json()
   obj["realm"] = self.realm.to_json()
   obj["redirect"] = self.redirect.to_json()
@@ -81498,7 +81498,7 @@ pub async fn Client::security_saml_prepare_authentication(
   self : Client,
   request : SecuritySamlPrepareAuthenticationRequest,
 ) -> EsResponse[SecuritySamlPrepareAuthenticationResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/saml/prepare", [])],
@@ -81515,7 +81515,7 @@ pub(all) struct SecuritySamlServiceProviderMetadataQuery {} derive(Eq, Debug)
 pub impl ToJson for SecuritySamlServiceProviderMetadataQuery with fn to_json(
   _self : SecuritySamlServiceProviderMetadataQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -81559,7 +81559,7 @@ pub(all) struct SecuritySamlServiceProviderMetadataResponse {
 pub impl ToJson for SecuritySamlServiceProviderMetadataResponse with fn to_json(
   self : SecuritySamlServiceProviderMetadataResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["metadata"] = self.metadata.to_json()
   Json::object(obj)
 }
@@ -81603,7 +81603,7 @@ pub async fn Client::security_saml_service_provider_metadata(
   self : Client,
   request : SecuritySamlServiceProviderMetadataRequest,
 ) -> EsResponse[SecuritySamlServiceProviderMetadataResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["realm_name"] = request.realm_name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -81626,7 +81626,7 @@ pub(all) struct SecuritySuggestUserProfilesQuery {
 pub impl ToJson for SecuritySuggestUserProfilesQuery with fn to_json(
   self : SecuritySuggestUserProfilesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.data {
     Some(value) => obj["data"] = value.to_json()
     None => ()
@@ -81684,7 +81684,7 @@ pub(all) struct SecuritySuggestUserProfilesBody {
 pub impl ToJson for SecuritySuggestUserProfilesBody with fn to_json(
   self : SecuritySuggestUserProfilesBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.name {
     Some(value) => obj["name"] = value.to_json()
     None => ()
@@ -81759,7 +81759,7 @@ pub(all) struct SecuritySuggestUserProfilesResponse {
 pub impl ToJson for SecuritySuggestUserProfilesResponse with fn to_json(
   self : SecuritySuggestUserProfilesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["total"] = self.total.to_json()
   obj["took"] = self.took.to_json()
   obj["profiles"] = self.profiles.to_json()
@@ -81811,7 +81811,7 @@ pub async fn Client::security_suggest_user_profiles(
   self : Client,
   request : SecuritySuggestUserProfilesRequest,
 ) -> EsResponse[SecuritySuggestUserProfilesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_security/profile/_suggest", [])],
@@ -81831,7 +81831,7 @@ pub(all) struct SecurityUpdateApiKeyQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityUpdateApiKeyQuery with fn to_json(
   _self : SecurityUpdateApiKeyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -81869,7 +81869,7 @@ pub(all) struct SecurityUpdateApiKeyBody {
 pub impl ToJson for SecurityUpdateApiKeyBody with fn to_json(
   self : SecurityUpdateApiKeyBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.role_descriptors {
     Some(value) => obj["role_descriptors"] = value.to_json()
     None => ()
@@ -81929,7 +81929,7 @@ pub(all) struct SecurityUpdateApiKeyResponse {
 pub impl ToJson for SecurityUpdateApiKeyResponse with fn to_json(
   self : SecurityUpdateApiKeyResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["updated"] = self.updated.to_json()
   Json::object(obj)
 }
@@ -81970,7 +81970,7 @@ pub async fn Client::security_update_api_key(
   self : Client,
   request : SecurityUpdateApiKeyRequest,
 ) -> EsResponse[SecurityUpdateApiKeyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -81991,7 +81991,7 @@ pub(all) struct SecurityUpdateCrossClusterApiKeyQuery {} derive(Eq, Debug)
 pub impl ToJson for SecurityUpdateCrossClusterApiKeyQuery with fn to_json(
   _self : SecurityUpdateCrossClusterApiKeyQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -82035,7 +82035,7 @@ pub(all) struct SecurityUpdateCrossClusterApiKeyBody {
 pub impl ToJson for SecurityUpdateCrossClusterApiKeyBody with fn to_json(
   self : SecurityUpdateCrossClusterApiKeyBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["access"] = self.access.to_json()
   match self.expiration {
     Some(value) => obj["expiration"] = value.to_json()
@@ -82106,7 +82106,7 @@ pub(all) struct SecurityUpdateCrossClusterApiKeyResponse {
 pub impl ToJson for SecurityUpdateCrossClusterApiKeyResponse with fn to_json(
   self : SecurityUpdateCrossClusterApiKeyResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["updated"] = self.updated.to_json()
   Json::object(obj)
 }
@@ -82150,7 +82150,7 @@ pub async fn Client::security_update_cross_cluster_api_key(
   self : Client,
   request : SecurityUpdateCrossClusterApiKeyRequest,
 ) -> EsResponse[SecurityUpdateCrossClusterApiKeyResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -82171,7 +82171,7 @@ pub(all) struct SecurityUpdateSettingsQuery {
 pub impl ToJson for SecurityUpdateSettingsQuery with fn to_json(
   self : SecurityUpdateSettingsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -82240,7 +82240,7 @@ pub(all) struct SecurityUpdateSettingsBody {
 pub impl ToJson for SecurityUpdateSettingsBody with fn to_json(
   self : SecurityUpdateSettingsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.security {
     Some(value) => obj["security"] = value.to_json()
     None => ()
@@ -82300,7 +82300,7 @@ pub(all) struct SecurityUpdateSettingsResponse {
 pub impl ToJson for SecurityUpdateSettingsResponse with fn to_json(
   self : SecurityUpdateSettingsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   Json::object(obj)
 }
@@ -82342,7 +82342,7 @@ pub async fn Client::security_update_settings(
   self : Client,
   request : SecurityUpdateSettingsRequest,
 ) -> EsResponse[SecurityUpdateSettingsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_security/settings", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -82360,7 +82360,7 @@ pub(all) struct SecurityUpdateUserProfileDataQuery {
 pub impl ToJson for SecurityUpdateUserProfileDataQuery with fn to_json(
   self : SecurityUpdateUserProfileDataQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.if_seq_no {
     Some(value) => obj["if_seq_no"] = value.to_json()
     None => ()
@@ -82446,7 +82446,7 @@ pub(all) struct SecurityUpdateUserProfileDataBody {
 pub impl ToJson for SecurityUpdateUserProfileDataBody with fn to_json(
   self : SecurityUpdateUserProfileDataBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.labels {
     Some(value) => obj["labels"] = value.to_json()
     None => ()
@@ -82514,7 +82514,7 @@ pub async fn Client::security_update_user_profile_data(
   self : Client,
   request : SecurityUpdateUserProfileDataRequest,
 ) -> EsResponse[SecurityUpdateUserProfileDataResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["uid"] = request.uid
   let query = request.query.to_pairs()
   let path = select_path(
@@ -82535,7 +82535,7 @@ pub(all) struct ShutdownDeleteNodeQuery {
 pub impl ToJson for ShutdownDeleteNodeQuery with fn to_json(
   self : ShutdownDeleteNodeQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -82618,7 +82618,7 @@ pub async fn Client::shutdown_delete_node(
   self : Client,
   request : ShutdownDeleteNodeRequest,
 ) -> EsResponse[ShutdownDeleteNodeResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["node_id"] = request.node_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -82641,7 +82641,7 @@ pub(all) struct ShutdownGetNodeQuery {
 pub impl ToJson for ShutdownGetNodeQuery with fn to_json(
   self : ShutdownGetNodeQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -82695,7 +82695,7 @@ pub(all) struct ShutdownGetNodeResponse {
 pub impl ToJson for ShutdownGetNodeResponse with fn to_json(
   self : ShutdownGetNodeResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["nodes"] = self.nodes.to_json()
   Json::object(obj)
 }
@@ -82734,7 +82734,7 @@ pub async fn Client::shutdown_get_node(
   self : Client,
   request : ShutdownGetNodeRequest,
 ) -> EsResponse[ShutdownGetNodeResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.node_id {
     Some(value) => params["node_id"] = value
     None => ()
@@ -82764,7 +82764,7 @@ pub(all) struct ShutdownPutNodeQuery {
 pub impl ToJson for ShutdownPutNodeQuery with fn to_json(
   self : ShutdownPutNodeQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -82832,7 +82832,7 @@ pub(all) struct ShutdownPutNodeBody {
 pub impl ToJson for ShutdownPutNodeBody with fn to_json(
   self : ShutdownPutNodeBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["type"] = self.type_.to_json()
   obj["reason"] = self.reason.to_json()
   match self.allocation_delay {
@@ -82909,7 +82909,7 @@ pub async fn Client::shutdown_put_node(
   self : Client,
   request : ShutdownPutNodeRequest,
 ) -> EsResponse[ShutdownPutNodeResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["node_id"] = request.node_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -82930,7 +82930,7 @@ pub(all) struct SimulateIngestQuery {
 pub impl ToJson for SimulateIngestQuery with fn to_json(
   self : SimulateIngestQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.pipeline {
     Some(value) => obj["pipeline"] = value.to_json()
     None => ()
@@ -82999,7 +82999,7 @@ pub(all) struct SimulateIngestBody {
 pub impl ToJson for SimulateIngestBody with fn to_json(
   self : SimulateIngestBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["docs"] = self.docs.to_json()
   match self.component_template_substitutions {
     Some(value) => obj["component_template_substitutions"] = value.to_json()
@@ -83097,7 +83097,7 @@ pub(all) struct SimulateIngestResponse {
 pub impl ToJson for SimulateIngestResponse with fn to_json(
   self : SimulateIngestResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["docs"] = self.docs.to_json()
   Json::object(obj)
 }
@@ -83136,7 +83136,7 @@ pub async fn Client::simulate_ingest(
   self : Client,
   request : SimulateIngestRequest,
 ) -> EsResponse[SimulateIngestResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.index {
     Some(value) => params["index"] = value
     None => ()
@@ -83163,7 +83163,7 @@ pub(all) struct SlmDeleteLifecycleQuery {
 pub impl ToJson for SlmDeleteLifecycleQuery with fn to_json(
   self : SlmDeleteLifecycleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -83241,7 +83241,7 @@ pub async fn Client::slm_delete_lifecycle(
   self : Client,
   request : SlmDeleteLifecycleRequest,
 ) -> EsResponse[SlmDeleteLifecycleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["policy_id"] = request.policy_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -83261,7 +83261,7 @@ pub(all) struct SlmExecuteLifecycleQuery {
 pub impl ToJson for SlmExecuteLifecycleQuery with fn to_json(
   self : SlmExecuteLifecycleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -83326,7 +83326,7 @@ pub(all) struct SlmExecuteLifecycleResponse {
 pub impl ToJson for SlmExecuteLifecycleResponse with fn to_json(
   self : SlmExecuteLifecycleResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["snapshot_name"] = self.snapshot_name.to_json()
   Json::object(obj)
 }
@@ -83365,7 +83365,7 @@ pub async fn Client::slm_execute_lifecycle(
   self : Client,
   request : SlmExecuteLifecycleRequest,
 ) -> EsResponse[SlmExecuteLifecycleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["policy_id"] = request.policy_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -83385,7 +83385,7 @@ pub(all) struct SlmExecuteRetentionQuery {
 pub impl ToJson for SlmExecuteRetentionQuery with fn to_json(
   self : SlmExecuteRetentionQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -83461,7 +83461,7 @@ pub async fn Client::slm_execute_retention(
   self : Client,
   request : SlmExecuteRetentionRequest,
 ) -> EsResponse[SlmExecuteRetentionResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_slm/_execute_retention", [])],
@@ -83480,7 +83480,7 @@ pub(all) struct SlmGetLifecycleQuery {
 pub impl ToJson for SlmGetLifecycleQuery with fn to_json(
   self : SlmGetLifecycleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -83558,7 +83558,7 @@ pub async fn Client::slm_get_lifecycle(
   self : Client,
   request : SlmGetLifecycleRequest,
 ) -> EsResponse[SlmGetLifecycleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.policy_id {
     Some(value) => params["policy_id"] = value
     None => ()
@@ -83582,7 +83582,7 @@ pub(all) struct SlmGetStatsQuery {
 
 ///|
 pub impl ToJson for SlmGetStatsQuery with fn to_json(self : SlmGetStatsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -83656,7 +83656,7 @@ pub(all) struct SlmGetStatsResponse {
 pub impl ToJson for SlmGetStatsResponse with fn to_json(
   self : SlmGetStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["retention_deletion_time"] = self.retention_deletion_time.to_json()
   obj["retention_deletion_time_millis"] = self.retention_deletion_time_millis.to_json()
   obj["retention_failed"] = self.retention_failed.to_json()
@@ -83736,7 +83736,7 @@ pub async fn Client::slm_get_stats(
   self : Client,
   request : SlmGetStatsRequest,
 ) -> EsResponse[SlmGetStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_slm/stats", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -83750,7 +83750,7 @@ pub(all) struct SlmGetStatusQuery {
 
 ///|
 pub impl ToJson for SlmGetStatusQuery with fn to_json(self : SlmGetStatusQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -83815,7 +83815,7 @@ pub(all) struct SlmGetStatusResponse {
 pub impl ToJson for SlmGetStatusResponse with fn to_json(
   self : SlmGetStatusResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["operation_mode"] = self.operation_mode.to_json()
   Json::object(obj)
 }
@@ -83850,7 +83850,7 @@ pub async fn Client::slm_get_status(
   self : Client,
   request : SlmGetStatusRequest,
 ) -> EsResponse[SlmGetStatusResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_slm/status", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -83866,7 +83866,7 @@ pub(all) struct SlmPutLifecycleQuery {
 pub impl ToJson for SlmPutLifecycleQuery with fn to_json(
   self : SlmPutLifecycleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -83935,7 +83935,7 @@ pub(all) struct SlmPutLifecycleBody {
 pub impl ToJson for SlmPutLifecycleBody with fn to_json(
   self : SlmPutLifecycleBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.config {
     Some(value) => obj["config"] = value.to_json()
     None => ()
@@ -84030,7 +84030,7 @@ pub async fn Client::slm_put_lifecycle(
   self : Client,
   request : SlmPutLifecycleRequest,
 ) -> EsResponse[SlmPutLifecycleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["policy_id"] = request.policy_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -84049,7 +84049,7 @@ pub(all) struct SlmStartQuery {
 
 ///|
 pub impl ToJson for SlmStartQuery with fn to_json(self : SlmStartQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -84123,7 +84123,7 @@ pub async fn Client::slm_start(
   self : Client,
   request : SlmStartRequest,
 ) -> EsResponse[SlmStartResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_slm/start", [])], params)
   self.perform_json(EsRequest::new(Post, path, query~))
@@ -84137,7 +84137,7 @@ pub(all) struct SlmStopQuery {
 
 ///|
 pub impl ToJson for SlmStopQuery with fn to_json(self : SlmStopQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -84211,7 +84211,7 @@ pub async fn Client::slm_stop(
   self : Client,
   request : SlmStopRequest,
 ) -> EsResponse[SlmStopResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_slm/stop", [])], params)
   self.perform_json(EsRequest::new(Post, path, query~))
@@ -84227,7 +84227,7 @@ pub(all) struct SnapshotCleanupRepositoryQuery {
 pub impl ToJson for SnapshotCleanupRepositoryQuery with fn to_json(
   self : SnapshotCleanupRepositoryQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -84297,7 +84297,7 @@ pub(all) struct SnapshotCleanupRepositoryResponse {
 pub impl ToJson for SnapshotCleanupRepositoryResponse with fn to_json(
   self : SnapshotCleanupRepositoryResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["results"] = self.results.to_json()
   Json::object(obj)
 }
@@ -84339,7 +84339,7 @@ pub async fn Client::snapshot_cleanup_repository(
   self : Client,
   request : SnapshotCleanupRepositoryRequest,
 ) -> EsResponse[SnapshotCleanupRepositoryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["repository"] = request.repository
   let query = request.query.to_pairs()
   let path = select_path(
@@ -84358,7 +84358,7 @@ pub(all) struct SnapshotCloneQuery {
 pub impl ToJson for SnapshotCloneQuery with fn to_json(
   self : SnapshotCloneQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -84405,7 +84405,7 @@ pub(all) struct SnapshotCloneBody {
 
 ///|
 pub impl ToJson for SnapshotCloneBody with fn to_json(self : SnapshotCloneBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["indices"] = self.indices.to_json()
   Json::object(obj)
 }
@@ -84456,7 +84456,7 @@ pub async fn Client::snapshot_clone(
   self : Client,
   request : SnapshotCloneRequest,
 ) -> EsResponse[SnapshotCloneResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["repository"] = request.repository
   params["snapshot"] = request.snapshot
   params["target_snapshot"] = request.target_snapshot
@@ -84484,7 +84484,7 @@ pub(all) struct SnapshotCreateQuery {
 pub impl ToJson for SnapshotCreateQuery with fn to_json(
   self : SnapshotCreateQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -84557,7 +84557,7 @@ pub(all) struct SnapshotCreateBody {
 pub impl ToJson for SnapshotCreateBody with fn to_json(
   self : SnapshotCreateBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.expand_wildcards {
     Some(value) => obj["expand_wildcards"] = value.to_json()
     None => ()
@@ -84668,7 +84668,7 @@ pub(all) struct SnapshotCreateResponse {
 pub impl ToJson for SnapshotCreateResponse with fn to_json(
   self : SnapshotCreateResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.accepted {
     Some(value) => obj["accepted"] = value.to_json()
     None => ()
@@ -84722,7 +84722,7 @@ pub async fn Client::snapshot_create(
   self : Client,
   request : SnapshotCreateRequest,
 ) -> EsResponse[SnapshotCreateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["repository"] = request.repository
   params["snapshot"] = request.snapshot
   let query = request.query.to_pairs()
@@ -84752,7 +84752,7 @@ pub(all) struct SnapshotCreateRepositoryQuery {
 pub impl ToJson for SnapshotCreateRepositoryQuery with fn to_json(
   self : SnapshotCreateRepositoryQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -84854,7 +84854,7 @@ pub async fn Client::snapshot_create_repository(
   self : Client,
   request : SnapshotCreateRepositoryRequest,
 ) -> EsResponse[SnapshotCreateRepositoryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["repository"] = request.repository
   let query = request.query.to_pairs()
   let path = select_path(
@@ -84875,7 +84875,7 @@ pub(all) struct SnapshotDeleteQuery {
 pub impl ToJson for SnapshotDeleteQuery with fn to_json(
   self : SnapshotDeleteQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -84957,7 +84957,7 @@ pub async fn Client::snapshot_delete(
   self : Client,
   request : SnapshotDeleteRequest,
 ) -> EsResponse[SnapshotDeleteResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["repository"] = request.repository
   params["snapshot"] = request.snapshot
   let query = request.query.to_pairs()
@@ -84982,7 +84982,7 @@ pub(all) struct SnapshotDeleteRepositoryQuery {
 pub impl ToJson for SnapshotDeleteRepositoryQuery with fn to_json(
   self : SnapshotDeleteRepositoryQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -85065,7 +85065,7 @@ pub async fn Client::snapshot_delete_repository(
   self : Client,
   request : SnapshotDeleteRepositoryRequest,
 ) -> EsResponse[SnapshotDeleteRepositoryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["repository"] = request.repository
   let query = request.query.to_pairs()
   let path = select_path(
@@ -85095,7 +85095,7 @@ pub(all) struct SnapshotGetQuery {
 
 ///|
 pub impl ToJson for SnapshotGetQuery with fn to_json(self : SnapshotGetQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.after {
     Some(value) => obj["after"] = value.to_json()
     None => ()
@@ -85353,7 +85353,7 @@ pub(all) struct SnapshotGetResponse {
 pub impl ToJson for SnapshotGetResponse with fn to_json(
   self : SnapshotGetResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["remaining"] = self.remaining.to_json()
   obj["total"] = self.total.to_json()
   match self.next {
@@ -85426,7 +85426,7 @@ pub async fn Client::snapshot_get(
   self : Client,
   request : SnapshotGetRequest,
 ) -> EsResponse[SnapshotGetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["repository"] = request.repository
   params["snapshot"] = request.snapshot
   let query = request.query.to_pairs()
@@ -85451,7 +85451,7 @@ pub(all) struct SnapshotGetRepositoryQuery {
 pub impl ToJson for SnapshotGetRepositoryQuery with fn to_json(
   self : SnapshotGetRepositoryQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.local_ {
     Some(value) => obj["local"] = value.to_json()
     None => ()
@@ -85529,7 +85529,7 @@ pub async fn Client::snapshot_get_repository(
   self : Client,
   request : SnapshotGetRepositoryRequest,
 ) -> EsResponse[SnapshotGetRepositoryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.repository {
     Some(value) => params["repository"] = value
     None => ()
@@ -85566,7 +85566,7 @@ pub(all) struct SnapshotRepositoryAnalyzeQuery {
 pub impl ToJson for SnapshotRepositoryAnalyzeQuery with fn to_json(
   self : SnapshotRepositoryAnalyzeQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.blob_count {
     Some(value) => obj["blob_count"] = value.to_json()
     None => ()
@@ -85847,7 +85847,7 @@ pub(all) struct SnapshotRepositoryAnalyzeResponse {
 pub impl ToJson for SnapshotRepositoryAnalyzeResponse with fn to_json(
   self : SnapshotRepositoryAnalyzeResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["blob_count"] = self.blob_count.to_json()
   obj["blob_path"] = self.blob_path.to_json()
   obj["concurrency"] = self.concurrency.to_json()
@@ -85984,7 +85984,7 @@ pub async fn Client::snapshot_repository_analyze(
   self : Client,
   request : SnapshotRepositoryAnalyzeRequest,
 ) -> EsResponse[SnapshotRepositoryAnalyzeResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["repository"] = request.repository
   let query = request.query.to_pairs()
   let path = select_path(
@@ -86010,7 +86010,7 @@ pub(all) struct SnapshotRepositoryVerifyIntegrityQuery {
 pub impl ToJson for SnapshotRepositoryVerifyIntegrityQuery with fn to_json(
   self : SnapshotRepositoryVerifyIntegrityQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.blob_thread_pool_concurrency {
     Some(value) => obj["blob_thread_pool_concurrency"] = value.to_json()
     None => ()
@@ -86244,7 +86244,7 @@ pub async fn Client::snapshot_repository_verify_integrity(
   self : Client,
   request : SnapshotRepositoryVerifyIntegrityRequest,
 ) -> EsResponse[SnapshotRepositoryVerifyIntegrityResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["repository"] = request.repository
   let query = request.query.to_pairs()
   let path = select_path(
@@ -86268,7 +86268,7 @@ pub(all) struct SnapshotRestoreQuery {
 pub impl ToJson for SnapshotRestoreQuery with fn to_json(
   self : SnapshotRestoreQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -86344,7 +86344,7 @@ pub(all) struct SnapshotRestoreBody {
 pub impl ToJson for SnapshotRestoreBody with fn to_json(
   self : SnapshotRestoreBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.feature_states {
     Some(value) => obj["feature_states"] = value.to_json()
     None => ()
@@ -86492,7 +86492,7 @@ pub(all) struct SnapshotRestoreResponse {
 pub impl ToJson for SnapshotRestoreResponse with fn to_json(
   self : SnapshotRestoreResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.accepted {
     Some(value) => obj["accepted"] = value.to_json()
     None => ()
@@ -86546,7 +86546,7 @@ pub async fn Client::snapshot_restore(
   self : Client,
   request : SnapshotRestoreRequest,
 ) -> EsResponse[SnapshotRestoreResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["repository"] = request.repository
   params["snapshot"] = request.snapshot
   let query = request.query.to_pairs()
@@ -86575,7 +86575,7 @@ pub(all) struct SnapshotStatusQuery {
 pub impl ToJson for SnapshotStatusQuery with fn to_json(
   self : SnapshotStatusQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.ignore_unavailable {
     Some(value) => obj["ignore_unavailable"] = value.to_json()
     None => ()
@@ -86641,7 +86641,7 @@ pub(all) struct SnapshotStatusResponse {
 pub impl ToJson for SnapshotStatusResponse with fn to_json(
   self : SnapshotStatusResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["snapshots"] = self.snapshots.to_json()
   Json::object(obj)
 }
@@ -86680,7 +86680,7 @@ pub async fn Client::snapshot_status(
   self : Client,
   request : SnapshotStatusRequest,
 ) -> EsResponse[SnapshotStatusResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.repository {
     Some(value) => params["repository"] = value
     None => ()
@@ -86713,7 +86713,7 @@ pub(all) struct SnapshotVerifyRepositoryQuery {
 pub impl ToJson for SnapshotVerifyRepositoryQuery with fn to_json(
   self : SnapshotVerifyRepositoryQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -86783,7 +86783,7 @@ pub(all) struct SnapshotVerifyRepositoryResponse {
 pub impl ToJson for SnapshotVerifyRepositoryResponse with fn to_json(
   self : SnapshotVerifyRepositoryResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["nodes"] = self.nodes.to_json()
   Json::object(obj)
 }
@@ -86825,7 +86825,7 @@ pub async fn Client::snapshot_verify_repository(
   self : Client,
   request : SnapshotVerifyRepositoryRequest,
 ) -> EsResponse[SnapshotVerifyRepositoryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["repository"] = request.repository
   let query = request.query.to_pairs()
   let path = select_path(
@@ -86842,7 +86842,7 @@ pub(all) struct SqlClearCursorQuery {} derive(Eq, Debug)
 pub impl ToJson for SqlClearCursorQuery with fn to_json(
   _self : SqlClearCursorQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -86878,7 +86878,7 @@ pub(all) struct SqlClearCursorBody {
 pub impl ToJson for SqlClearCursorBody with fn to_json(
   self : SqlClearCursorBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["cursor"] = self.cursor.to_json()
   Json::object(obj)
 }
@@ -86910,7 +86910,7 @@ pub(all) struct SqlClearCursorResponse {
 pub impl ToJson for SqlClearCursorResponse with fn to_json(
   self : SqlClearCursorResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["succeeded"] = self.succeeded.to_json()
   Json::object(obj)
 }
@@ -86947,7 +86947,7 @@ pub async fn Client::sql_clear_cursor(
   self : Client,
   request : SqlClearCursorRequest,
 ) -> EsResponse[SqlClearCursorResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_sql/close", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -86961,7 +86961,7 @@ pub(all) struct SqlDeleteAsyncQuery {} derive(Eq, Debug)
 pub impl ToJson for SqlDeleteAsyncQuery with fn to_json(
   _self : SqlDeleteAsyncQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -87010,7 +87010,7 @@ pub async fn Client::sql_delete_async(
   self : Client,
   request : SqlDeleteAsyncRequest,
 ) -> EsResponse[SqlDeleteAsyncResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -87030,7 +87030,7 @@ pub(all) struct SqlGetAsyncQuery {
 
 ///|
 pub impl ToJson for SqlGetAsyncQuery with fn to_json(self : SqlGetAsyncQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.delimiter {
     Some(value) => obj["delimiter"] = value.to_json()
     None => ()
@@ -87136,7 +87136,7 @@ pub(all) struct SqlGetAsyncResponse {
 pub impl ToJson for SqlGetAsyncResponse with fn to_json(
   self : SqlGetAsyncResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["id"] = self.id.to_json()
   obj["is_running"] = self.is_running.to_json()
   obj["is_partial"] = self.is_partial.to_json()
@@ -87206,7 +87206,7 @@ pub async fn Client::sql_get_async(
   self : Client,
   request : SqlGetAsyncRequest,
 ) -> EsResponse[SqlGetAsyncResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_sql/async/{id}", ["id"])], params)
@@ -87220,7 +87220,7 @@ pub(all) struct SqlGetAsyncStatusQuery {} derive(Eq, Debug)
 pub impl ToJson for SqlGetAsyncStatusQuery with fn to_json(
   _self : SqlGetAsyncStatusQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -87261,7 +87261,7 @@ pub(all) struct SqlGetAsyncStatusResponse {
 pub impl ToJson for SqlGetAsyncStatusResponse with fn to_json(
   self : SqlGetAsyncStatusResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["expiration_time_in_millis"] = self.expiration_time_in_millis.to_json()
   obj["id"] = self.id.to_json()
   obj["is_running"] = self.is_running.to_json()
@@ -87328,7 +87328,7 @@ pub async fn Client::sql_get_async_status(
   self : Client,
   request : SqlGetAsyncStatusRequest,
 ) -> EsResponse[SqlGetAsyncStatusResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -87345,7 +87345,7 @@ pub(all) struct SqlQueryQuery {
 
 ///|
 pub impl ToJson for SqlQueryQuery with fn to_json(self : SqlQueryQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.format {
     Some(value) => obj["format"] = value.to_json()
     None => ()
@@ -87406,7 +87406,7 @@ pub(all) struct SqlQueryBody {
 
 ///|
 pub impl ToJson for SqlQueryBody with fn to_json(self : SqlQueryBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_partial_search_results {
     Some(value) => obj["allow_partial_search_results"] = value.to_json()
     None => ()
@@ -87664,7 +87664,7 @@ pub(all) struct SqlQueryResponse {
 
 ///|
 pub impl ToJson for SqlQueryResponse with fn to_json(self : SqlQueryResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.columns {
     Some(value) => obj["columns"] = value.to_json()
     None => ()
@@ -87748,7 +87748,7 @@ pub async fn Client::sql_query(
   self : Client,
   request : SqlQueryRequest,
 ) -> EsResponse[SqlQueryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_sql", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -87760,7 +87760,7 @@ pub(all) struct SqlTranslateQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for SqlTranslateQuery with fn to_json(_self : SqlTranslateQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -87797,7 +87797,7 @@ pub(all) struct SqlTranslateBody {
 
 ///|
 pub impl ToJson for SqlTranslateBody with fn to_json(self : SqlTranslateBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.fetch_size {
     Some(value) => obj["fetch_size"] = value.to_json()
     None => ()
@@ -87869,7 +87869,7 @@ pub(all) struct SqlTranslateResponse {
 pub impl ToJson for SqlTranslateResponse with fn to_json(
   self : SqlTranslateResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.aggregations {
     Some(value) => obj["aggregations"] = value.to_json()
     None => ()
@@ -87966,7 +87966,7 @@ pub async fn Client::sql_translate(
   self : Client,
   request : SqlTranslateRequest,
 ) -> EsResponse[SqlTranslateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_sql/translate", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -87980,7 +87980,7 @@ pub(all) struct SslCertificatesQuery {} derive(Eq, Debug)
 pub impl ToJson for SslCertificatesQuery with fn to_json(
   _self : SslCertificatesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -88027,7 +88027,7 @@ pub async fn Client::ssl_certificates(
   self : Client,
   request : SslCertificatesRequest,
 ) -> EsResponse[SslCertificatesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_ssl/certificates", [])], params)
   self.perform_json(EsRequest::new(Get, path, query~))
@@ -88043,7 +88043,7 @@ pub(all) struct StreamsLogsDisableQuery {
 pub impl ToJson for StreamsLogsDisableQuery with fn to_json(
   self : StreamsLogsDisableQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -88121,7 +88121,7 @@ pub async fn Client::streams_logs_disable(
   self : Client,
   request : StreamsLogsDisableRequest,
 ) -> EsResponse[StreamsLogsDisableResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -88141,7 +88141,7 @@ pub(all) struct StreamsLogsEnableQuery {
 pub impl ToJson for StreamsLogsEnableQuery with fn to_json(
   self : StreamsLogsEnableQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -88219,7 +88219,7 @@ pub async fn Client::streams_logs_enable(
   self : Client,
   request : StreamsLogsEnableRequest,
 ) -> EsResponse[StreamsLogsEnableResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["name"] = request.name
   let query = request.query.to_pairs()
   let path = select_path(
@@ -88238,7 +88238,7 @@ pub(all) struct StreamsStatusQuery {
 pub impl ToJson for StreamsStatusQuery with fn to_json(
   self : StreamsStatusQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -88289,7 +88289,7 @@ pub(all) struct StreamsStatusResponse {
 pub impl ToJson for StreamsStatusResponse with fn to_json(
   self : StreamsStatusResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["logs"] = self.logs.to_json()
   obj["logs.otel"] = self.logs_otel.to_json()
   obj["logs.ecs"] = self.logs_ecs.to_json()
@@ -88334,7 +88334,7 @@ pub async fn Client::streams_status(
   self : Client,
   request : StreamsStatusRequest,
 ) -> EsResponse[StreamsStatusResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_streams/status", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -88347,7 +88347,7 @@ pub(all) struct SynonymsDeleteSynonymQuery {} derive(Eq, Debug)
 pub impl ToJson for SynonymsDeleteSynonymQuery with fn to_json(
   _self : SynonymsDeleteSynonymQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -88396,7 +88396,7 @@ pub async fn Client::synonyms_delete_synonym(
   self : Client,
   request : SynonymsDeleteSynonymRequest,
 ) -> EsResponse[SynonymsDeleteSynonymResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_synonyms/{id}", ["id"])], params)
@@ -88412,7 +88412,7 @@ pub(all) struct SynonymsDeleteSynonymRuleQuery {
 pub impl ToJson for SynonymsDeleteSynonymRuleQuery with fn to_json(
   self : SynonymsDeleteSynonymRuleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -88487,7 +88487,7 @@ pub async fn Client::synonyms_delete_synonym_rule(
   self : Client,
   request : SynonymsDeleteSynonymRuleRequest,
 ) -> EsResponse[SynonymsDeleteSynonymRuleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["set_id"] = request.set_id
   params["rule_id"] = request.rule_id
   let query = request.query.to_pairs()
@@ -88512,7 +88512,7 @@ pub(all) struct SynonymsGetSynonymQuery {
 pub impl ToJson for SynonymsGetSynonymQuery with fn to_json(
   self : SynonymsGetSynonymQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.from {
     Some(value) => obj["from"] = value.to_json()
     None => ()
@@ -88577,7 +88577,7 @@ pub(all) struct SynonymsGetSynonymResponse {
 pub impl ToJson for SynonymsGetSynonymResponse with fn to_json(
   self : SynonymsGetSynonymResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["synonyms_set"] = self.synonyms_set.to_json()
   Json::object(obj)
@@ -88619,7 +88619,7 @@ pub async fn Client::synonyms_get_synonym(
   self : Client,
   request : SynonymsGetSynonymRequest,
 ) -> EsResponse[SynonymsGetSynonymResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_synonyms/{id}", ["id"])], params)
@@ -88633,7 +88633,7 @@ pub(all) struct SynonymsGetSynonymRuleQuery {} derive(Eq, Debug)
 pub impl ToJson for SynonymsGetSynonymRuleQuery with fn to_json(
   _self : SynonymsGetSynonymRuleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -88691,7 +88691,7 @@ pub async fn Client::synonyms_get_synonym_rule(
   self : Client,
   request : SynonymsGetSynonymRuleRequest,
 ) -> EsResponse[SynonymsGetSynonymRuleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["set_id"] = request.set_id
   params["rule_id"] = request.rule_id
   let query = request.query.to_pairs()
@@ -88716,7 +88716,7 @@ pub(all) struct SynonymsGetSynonymsSetsQuery {
 pub impl ToJson for SynonymsGetSynonymsSetsQuery with fn to_json(
   self : SynonymsGetSynonymsSetsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.from {
     Some(value) => obj["from"] = value.to_json()
     None => ()
@@ -88783,7 +88783,7 @@ pub(all) struct SynonymsGetSynonymsSetsResponse {
 pub impl ToJson for SynonymsGetSynonymsSetsResponse with fn to_json(
   self : SynonymsGetSynonymsSetsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["results"] = self.results.to_json()
   Json::object(obj)
@@ -88828,7 +88828,7 @@ pub async fn Client::synonyms_get_synonyms_sets(
   self : Client,
   request : SynonymsGetSynonymsSetsRequest,
 ) -> EsResponse[SynonymsGetSynonymsSetsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_synonyms", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -88843,7 +88843,7 @@ pub(all) struct SynonymsPutSynonymQuery {
 pub impl ToJson for SynonymsPutSynonymQuery with fn to_json(
   self : SynonymsPutSynonymQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -88891,7 +88891,7 @@ pub(all) struct SynonymsPutSynonymBody {
 pub impl ToJson for SynonymsPutSynonymBody with fn to_json(
   self : SynonymsPutSynonymBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["synonyms_set"] = self.synonyms_set.to_json()
   Json::object(obj)
 }
@@ -88926,7 +88926,7 @@ pub(all) struct SynonymsPutSynonymResponse {
 pub impl ToJson for SynonymsPutSynonymResponse with fn to_json(
   self : SynonymsPutSynonymResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["result"] = self.result.to_json()
   match self.reload_analyzers_details {
     Some(value) => obj["reload_analyzers_details"] = value.to_json()
@@ -88977,7 +88977,7 @@ pub async fn Client::synonyms_put_synonym(
   self : Client,
   request : SynonymsPutSynonymRequest,
 ) -> EsResponse[SynonymsPutSynonymResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_synonyms/{id}", ["id"])], params)
@@ -88994,7 +88994,7 @@ pub(all) struct SynonymsPutSynonymRuleQuery {
 pub impl ToJson for SynonymsPutSynonymRuleQuery with fn to_json(
   self : SynonymsPutSynonymRuleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.refresh {
     Some(value) => obj["refresh"] = value.to_json()
     None => ()
@@ -89046,7 +89046,7 @@ pub(all) struct SynonymsPutSynonymRuleBody {
 pub impl ToJson for SynonymsPutSynonymRuleBody with fn to_json(
   self : SynonymsPutSynonymRuleBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["synonyms"] = self.synonyms.to_json()
   Json::object(obj)
 }
@@ -89097,7 +89097,7 @@ pub async fn Client::synonyms_put_synonym_rule(
   self : Client,
   request : SynonymsPutSynonymRuleRequest,
 ) -> EsResponse[SynonymsPutSynonymRuleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["set_id"] = request.set_id
   params["rule_id"] = request.rule_id
   let query = request.query.to_pairs()
@@ -89119,7 +89119,7 @@ pub(all) struct TasksCancelQuery {
 
 ///|
 pub impl ToJson for TasksCancelQuery with fn to_json(self : TasksCancelQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.actions {
     Some(value) => obj["actions"] = value.to_json()
     None => ()
@@ -89227,7 +89227,7 @@ pub async fn Client::tasks_cancel(
   self : Client,
   request : TasksCancelRequest,
 ) -> EsResponse[TasksCancelResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.task_id {
     Some(value) => params["task_id"] = value
     None => ()
@@ -89252,7 +89252,7 @@ pub(all) struct TasksGetQuery {
 
 ///|
 pub impl ToJson for TasksGetQuery with fn to_json(self : TasksGetQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -89332,7 +89332,7 @@ pub(all) struct TasksGetResponse {
 
 ///|
 pub impl ToJson for TasksGetResponse with fn to_json(self : TasksGetResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["completed"] = self.completed.to_json()
   obj["task"] = self.task.to_json()
   match self.response {
@@ -89392,7 +89392,7 @@ pub async fn Client::tasks_get(
   self : Client,
   request : TasksGetRequest,
 ) -> EsResponse[TasksGetResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_id"] = request.task_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -89415,7 +89415,7 @@ pub(all) struct TasksListQuery {
 
 ///|
 pub impl ToJson for TasksListQuery with fn to_json(self : TasksListQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.actions {
     Some(value) => obj["actions"] = value.to_json()
     None => ()
@@ -89571,7 +89571,7 @@ pub async fn Client::tasks_list(
   self : Client,
   request : TasksListRequest,
 ) -> EsResponse[TasksListResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_tasks", [])], params)
   self.perform_json(EsRequest::new(Get, path, query~))
@@ -89582,7 +89582,7 @@ pub(all) struct TermsEnumQuery {} derive(Eq, Debug)
 
 ///|
 pub impl ToJson for TermsEnumQuery with fn to_json(_self : TermsEnumQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -89622,7 +89622,7 @@ pub(all) struct TermsEnumBody {
 
 ///|
 pub impl ToJson for TermsEnumBody with fn to_json(self : TermsEnumBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["field"] = self.field.to_json()
   match self.size {
     Some(value) => obj["size"] = value.to_json()
@@ -89719,7 +89719,7 @@ pub(all) struct TermsEnumResponse {
 
 ///|
 pub impl ToJson for TermsEnumResponse with fn to_json(self : TermsEnumResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_shards"] = self._shards.to_json()
   obj["terms"] = self.terms.to_json()
   obj["complete"] = self.complete.to_json()
@@ -89768,7 +89768,7 @@ pub async fn Client::terms_enum(
   self : Client,
   request : TermsEnumRequest,
 ) -> EsResponse[TermsEnumResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -89796,7 +89796,7 @@ pub(all) struct TermvectorsQuery {
 
 ///|
 pub impl ToJson for TermvectorsQuery with fn to_json(self : TermvectorsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.fields {
     Some(value) => obj["fields"] = value.to_json()
     None => ()
@@ -90012,7 +90012,7 @@ pub(all) struct TermvectorsBody {
 
 ///|
 pub impl ToJson for TermvectorsBody with fn to_json(self : TermvectorsBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.doc {
     Some(value) => obj["doc"] = value.to_json()
     None => ()
@@ -90183,7 +90183,7 @@ pub(all) struct TermvectorsResponse {
 pub impl ToJson for TermvectorsResponse with fn to_json(
   self : TermvectorsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["found"] = self.found.to_json()
   match self._id {
     Some(value) => obj["_id"] = value.to_json()
@@ -90258,7 +90258,7 @@ pub async fn Client::termvectors(
   self : Client,
   request : TermvectorsRequest,
 ) -> EsResponse[TermvectorsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   match request.id {
     Some(value) => params["id"] = value
@@ -90302,7 +90302,7 @@ pub(all) struct TextStructureFindFieldStructureQuery {
 pub impl ToJson for TextStructureFindFieldStructureQuery with fn to_json(
   self : TextStructureFindFieldStructureQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.column_names {
     Some(value) => obj["column_names"] = value.to_json()
     None => ()
@@ -90582,7 +90582,7 @@ pub(all) struct TextStructureFindFieldStructureResponse {
 pub impl ToJson for TextStructureFindFieldStructureResponse with fn to_json(
   self : TextStructureFindFieldStructureResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["charset"] = self.charset.to_json()
   match self.ecs_compatibility {
     Some(value) => obj["ecs_compatibility"] = value.to_json()
@@ -90728,7 +90728,7 @@ pub async fn Client::text_structure_find_field_structure(
   self : Client,
   request : TextStructureFindFieldStructureRequest,
 ) -> EsResponse[TextStructureFindFieldStructureResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_text_structure/find_field_structure", [])],
@@ -90757,7 +90757,7 @@ pub(all) struct TextStructureFindMessageStructureQuery {
 pub impl ToJson for TextStructureFindMessageStructureQuery with fn to_json(
   self : TextStructureFindMessageStructureQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.column_names {
     Some(value) => obj["column_names"] = value.to_json()
     None => ()
@@ -90990,7 +90990,7 @@ pub(all) struct TextStructureFindMessageStructureBody {
 pub impl ToJson for TextStructureFindMessageStructureBody with fn to_json(
   self : TextStructureFindMessageStructureBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["messages"] = self.messages.to_json()
   Json::object(obj)
 }
@@ -91043,7 +91043,7 @@ pub(all) struct TextStructureFindMessageStructureResponse {
 pub impl ToJson for TextStructureFindMessageStructureResponse with fn to_json(
   self : TextStructureFindMessageStructureResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["charset"] = self.charset.to_json()
   match self.ecs_compatibility {
     Some(value) => obj["ecs_compatibility"] = value.to_json()
@@ -91191,7 +91191,7 @@ pub async fn Client::text_structure_find_message_structure(
   self : Client,
   request : TextStructureFindMessageStructureRequest,
 ) -> EsResponse[TextStructureFindMessageStructureResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_text_structure/find_message_structure", [])],
@@ -91225,7 +91225,7 @@ pub(all) struct TextStructureFindStructureQuery {
 pub impl ToJson for TextStructureFindStructureQuery with fn to_json(
   self : TextStructureFindStructureQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.charset {
     Some(value) => obj["charset"] = value.to_json()
     None => ()
@@ -91546,7 +91546,7 @@ pub(all) struct TextStructureFindStructureResponse {
 pub impl ToJson for TextStructureFindStructureResponse with fn to_json(
   self : TextStructureFindStructureResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["charset"] = self.charset.to_json()
   match self.has_header_row {
     Some(value) => obj["has_header_row"] = value.to_json()
@@ -91758,7 +91758,7 @@ pub async fn Client::text_structure_find_structure(
   self : Client,
   request : TextStructureFindStructureRequest,
 ) -> EsResponse[TextStructureFindStructureResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_text_structure/find_structure", [])],
@@ -91777,7 +91777,7 @@ pub(all) struct TextStructureTestGrokPatternQuery {
 pub impl ToJson for TextStructureTestGrokPatternQuery with fn to_json(
   self : TextStructureTestGrokPatternQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.ecs_compatibility {
     Some(value) => obj["ecs_compatibility"] = value.to_json()
     None => ()
@@ -91834,7 +91834,7 @@ pub(all) struct TextStructureTestGrokPatternBody {
 pub impl ToJson for TextStructureTestGrokPatternBody with fn to_json(
   self : TextStructureTestGrokPatternBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["grok_pattern"] = self.grok_pattern.to_json()
   obj["text"] = self.text.to_json()
   Json::object(obj)
@@ -91879,7 +91879,7 @@ pub(all) struct TextStructureTestGrokPatternResponse {
 pub impl ToJson for TextStructureTestGrokPatternResponse with fn to_json(
   self : TextStructureTestGrokPatternResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["matches"] = self.matches.to_json()
   Json::object(obj)
 }
@@ -91921,7 +91921,7 @@ pub async fn Client::text_structure_test_grok_pattern(
   self : Client,
   request : TextStructureTestGrokPatternRequest,
 ) -> EsResponse[TextStructureTestGrokPatternResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_text_structure/test_grok_pattern", [])],
@@ -91942,7 +91942,7 @@ pub(all) struct TransformDeleteTransformQuery {
 pub impl ToJson for TransformDeleteTransformQuery with fn to_json(
   self : TransformDeleteTransformQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.force {
     Some(value) => obj["force"] = value.to_json()
     None => ()
@@ -92039,7 +92039,7 @@ pub async fn Client::transform_delete_transform(
   self : Client,
   request : TransformDeleteTransformRequest,
 ) -> EsResponse[TransformDeleteTransformResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["transform_id"] = request.transform_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -92056,7 +92056,7 @@ pub(all) struct TransformGetNodeStatsQuery {} derive(Eq, Debug)
 pub impl ToJson for TransformGetNodeStatsQuery with fn to_json(
   _self : TransformGetNodeStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -92103,7 +92103,7 @@ pub async fn Client::transform_get_node_stats(
   self : Client,
   request : TransformGetNodeStatsRequest,
 ) -> EsResponse[TransformGetNodeStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_transform/_node_stats", [])],
@@ -92124,7 +92124,7 @@ pub(all) struct TransformGetTransformQuery {
 pub impl ToJson for TransformGetTransformQuery with fn to_json(
   self : TransformGetTransformQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -92219,7 +92219,7 @@ pub(all) struct TransformGetTransformResponse {
 pub impl ToJson for TransformGetTransformResponse with fn to_json(
   self : TransformGetTransformResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["transforms"] = self.transforms.to_json()
   Json::object(obj)
@@ -92266,7 +92266,7 @@ pub async fn Client::transform_get_transform(
   self : Client,
   request : TransformGetTransformRequest,
 ) -> EsResponse[TransformGetTransformResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.transform_id {
     Some(value) => params["transform_id"] = value
     None => ()
@@ -92294,7 +92294,7 @@ pub(all) struct TransformGetTransformStatsQuery {
 pub impl ToJson for TransformGetTransformStatsQuery with fn to_json(
   self : TransformGetTransformStatsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -92393,7 +92393,7 @@ pub(all) struct TransformGetTransformStatsResponse {
 pub impl ToJson for TransformGetTransformStatsResponse with fn to_json(
   self : TransformGetTransformStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["transforms"] = self.transforms.to_json()
   Json::object(obj)
@@ -92440,7 +92440,7 @@ pub async fn Client::transform_get_transform_stats(
   self : Client,
   request : TransformGetTransformStatsRequest,
 ) -> EsResponse[TransformGetTransformStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["transform_id"] = request.transform_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -92459,7 +92459,7 @@ pub(all) struct TransformPreviewTransformQuery {
 pub impl ToJson for TransformPreviewTransformQuery with fn to_json(
   self : TransformPreviewTransformQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -92522,7 +92522,7 @@ pub(all) struct TransformPreviewTransformBody {
 pub impl ToJson for TransformPreviewTransformBody with fn to_json(
   self : TransformPreviewTransformBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.dest {
     Some(value) => obj["dest"] = value.to_json()
     None => ()
@@ -92659,7 +92659,7 @@ pub(all) struct TransformPreviewTransformResponse {
 pub impl ToJson for TransformPreviewTransformResponse with fn to_json(
   self : TransformPreviewTransformResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["generated_dest_index"] = self.generated_dest_index.to_json()
   obj["preview"] = self.preview.to_json()
   Json::object(obj)
@@ -92708,7 +92708,7 @@ pub async fn Client::transform_preview_transform(
   self : Client,
   request : TransformPreviewTransformRequest,
 ) -> EsResponse[TransformPreviewTransformResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.transform_id {
     Some(value) => params["transform_id"] = value
     None => ()
@@ -92738,7 +92738,7 @@ pub(all) struct TransformPutTransformQuery {
 pub impl ToJson for TransformPutTransformQuery with fn to_json(
   self : TransformPutTransformQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.defer_validation {
     Some(value) => obj["defer_validation"] = value.to_json()
     None => ()
@@ -92812,7 +92812,7 @@ pub(all) struct TransformPutTransformBody {
 pub impl ToJson for TransformPutTransformBody with fn to_json(
   self : TransformPutTransformBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["dest"] = self.dest.to_json()
   match self.description {
     Some(value) => obj["description"] = value.to_json()
@@ -92961,7 +92961,7 @@ pub async fn Client::transform_put_transform(
   self : Client,
   request : TransformPutTransformRequest,
 ) -> EsResponse[TransformPutTransformResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["transform_id"] = request.transform_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -92982,7 +92982,7 @@ pub(all) struct TransformResetTransformQuery {
 pub impl ToJson for TransformResetTransformQuery with fn to_json(
   self : TransformResetTransformQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.force {
     Some(value) => obj["force"] = value.to_json()
     None => ()
@@ -93061,7 +93061,7 @@ pub async fn Client::transform_reset_transform(
   self : Client,
   request : TransformResetTransformRequest,
 ) -> EsResponse[TransformResetTransformResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["transform_id"] = request.transform_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -93081,7 +93081,7 @@ pub(all) struct TransformScheduleNowTransformQuery {
 pub impl ToJson for TransformScheduleNowTransformQuery with fn to_json(
   self : TransformScheduleNowTransformQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -93168,7 +93168,7 @@ pub async fn Client::transform_schedule_now_transform(
   self : Client,
   request : TransformScheduleNowTransformRequest,
 ) -> EsResponse[TransformScheduleNowTransformResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["transform_id"] = request.transform_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -93196,7 +93196,7 @@ pub(all) struct TransformSetUpgradeModeQuery {
 pub impl ToJson for TransformSetUpgradeModeQuery with fn to_json(
   self : TransformSetUpgradeModeQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.enabled {
     Some(value) => obj["enabled"] = value.to_json()
     None => ()
@@ -93273,7 +93273,7 @@ pub async fn Client::transform_set_upgrade_mode(
   self : Client,
   request : TransformSetUpgradeModeRequest,
 ) -> EsResponse[TransformSetUpgradeModeResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_transform/set_upgrade_mode", [])],
@@ -93292,7 +93292,7 @@ pub(all) struct TransformStartTransformQuery {
 pub impl ToJson for TransformStartTransformQuery with fn to_json(
   self : TransformStartTransformQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.timeout {
     Some(value) => obj["timeout"] = value.to_json()
     None => ()
@@ -93371,7 +93371,7 @@ pub async fn Client::transform_start_transform(
   self : Client,
   request : TransformStartTransformRequest,
 ) -> EsResponse[TransformStartTransformResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["transform_id"] = request.transform_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -93394,7 +93394,7 @@ pub(all) struct TransformStopTransformQuery {
 pub impl ToJson for TransformStopTransformQuery with fn to_json(
   self : TransformStopTransformQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_match {
     Some(value) => obj["allow_no_match"] = value.to_json()
     None => ()
@@ -93520,7 +93520,7 @@ pub async fn Client::transform_stop_transform(
   self : Client,
   request : TransformStopTransformRequest,
 ) -> EsResponse[TransformStopTransformResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["transform_id"] = request.transform_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -93540,7 +93540,7 @@ pub(all) struct TransformUpdateTransformQuery {
 pub impl ToJson for TransformUpdateTransformQuery with fn to_json(
   self : TransformUpdateTransformQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.defer_validation {
     Some(value) => obj["defer_validation"] = value.to_json()
     None => ()
@@ -93617,7 +93617,7 @@ pub(all) struct TransformUpdateTransformBody {
 pub impl ToJson for TransformUpdateTransformBody with fn to_json(
   self : TransformUpdateTransformBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.dest {
     Some(value) => obj["dest"] = value.to_json()
     None => ()
@@ -93752,7 +93752,7 @@ pub(all) struct TransformUpdateTransformResponse {
 pub impl ToJson for TransformUpdateTransformResponse with fn to_json(
   self : TransformUpdateTransformResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.authorization {
     Some(value) => obj["authorization"] = value.to_json()
     None => ()
@@ -93892,7 +93892,7 @@ pub async fn Client::transform_update_transform(
   self : Client,
   request : TransformUpdateTransformRequest,
 ) -> EsResponse[TransformUpdateTransformResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["transform_id"] = request.transform_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -93913,7 +93913,7 @@ pub(all) struct TransformUpgradeTransformsQuery {
 pub impl ToJson for TransformUpgradeTransformsQuery with fn to_json(
   self : TransformUpgradeTransformsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.dry_run {
     Some(value) => obj["dry_run"] = value.to_json()
     None => ()
@@ -93987,7 +93987,7 @@ pub(all) struct TransformUpgradeTransformsResponse {
 pub impl ToJson for TransformUpgradeTransformsResponse with fn to_json(
   self : TransformUpgradeTransformsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["needs_update"] = self.needs_update.to_json()
   obj["no_action"] = self.no_action.to_json()
   obj["updated"] = self.updated.to_json()
@@ -94039,7 +94039,7 @@ pub async fn Client::transform_upgrade_transforms(
   self : Client,
   request : TransformUpgradeTransformsRequest,
 ) -> EsResponse[TransformUpgradeTransformsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_transform/_upgrade", [])], params)
   let body = match request.body {
@@ -94068,7 +94068,7 @@ pub(all) struct UpdateQuery {
 
 ///|
 pub impl ToJson for UpdateQuery with fn to_json(self : UpdateQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.if_primary_term {
     Some(value) => obj["if_primary_term"] = value.to_json()
     None => ()
@@ -94316,7 +94316,7 @@ pub(all) struct UpdateBody {
 
 ///|
 pub impl ToJson for UpdateBody with fn to_json(self : UpdateBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.detect_noop {
     Some(value) => obj["detect_noop"] = value.to_json()
     None => ()
@@ -94434,7 +94434,7 @@ pub async fn Client::update(
   self : Client,
   request : UpdateRequest,
 ) -> EsResponse[UpdateResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   params["id"] = request.id
   let query = request.query.to_pairs()
@@ -94485,7 +94485,7 @@ pub(all) struct UpdateByQueryQuery {
 pub impl ToJson for UpdateByQueryQuery with fn to_json(
   self : UpdateByQueryQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.allow_no_indices {
     Some(value) => obj["allow_no_indices"] = value.to_json()
     None => ()
@@ -95010,7 +95010,7 @@ pub(all) struct UpdateByQueryBody {
 
 ///|
 pub impl ToJson for UpdateByQueryBody with fn to_json(self : UpdateByQueryBody) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.max_docs {
     Some(value) => obj["max_docs"] = value.to_json()
     None => ()
@@ -95105,7 +95105,7 @@ pub(all) struct UpdateByQueryResponse {
 pub impl ToJson for UpdateByQueryResponse with fn to_json(
   self : UpdateByQueryResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.batches {
     Some(value) => obj["batches"] = value.to_json()
     None => ()
@@ -95301,7 +95301,7 @@ pub async fn Client::update_by_query(
   self : Client,
   request : UpdateByQueryRequest,
 ) -> EsResponse[UpdateByQueryResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["index"] = request.index
   let query = request.query.to_pairs()
   let path = select_path(
@@ -95324,7 +95324,7 @@ pub(all) struct UpdateByQueryRethrottleQuery {
 pub impl ToJson for UpdateByQueryRethrottleQuery with fn to_json(
   self : UpdateByQueryRethrottleQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["requests_per_second"] = self.requests_per_second.to_json()
   Json::object(obj)
 }
@@ -95373,7 +95373,7 @@ pub(all) struct UpdateByQueryRethrottleResponse {
 pub impl ToJson for UpdateByQueryRethrottleResponse with fn to_json(
   self : UpdateByQueryRethrottleResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["nodes"] = self.nodes.to_json()
   Json::object(obj)
 }
@@ -95415,7 +95415,7 @@ pub async fn Client::update_by_query_rethrottle(
   self : Client,
   request : UpdateByQueryRethrottleRequest,
 ) -> EsResponse[UpdateByQueryRethrottleResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["task_id"] = request.task_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -95432,7 +95432,7 @@ pub(all) struct WatcherAckWatchQuery {} derive(Eq, Debug)
 pub impl ToJson for WatcherAckWatchQuery with fn to_json(
   _self : WatcherAckWatchQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -95468,7 +95468,7 @@ pub(all) struct WatcherAckWatchResponse {
 pub impl ToJson for WatcherAckWatchResponse with fn to_json(
   self : WatcherAckWatchResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["status"] = self.status.to_json()
   Json::object(obj)
 }
@@ -95507,7 +95507,7 @@ pub async fn Client::watcher_ack_watch(
   self : Client,
   request : WatcherAckWatchRequest,
 ) -> EsResponse[WatcherAckWatchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["watch_id"] = request.watch_id
   match request.action_id {
     Some(value) => params["action_id"] = value
@@ -95533,7 +95533,7 @@ pub(all) struct WatcherActivateWatchQuery {} derive(Eq, Debug)
 pub impl ToJson for WatcherActivateWatchQuery with fn to_json(
   _self : WatcherActivateWatchQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -95569,7 +95569,7 @@ pub(all) struct WatcherActivateWatchResponse {
 pub impl ToJson for WatcherActivateWatchResponse with fn to_json(
   self : WatcherActivateWatchResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["status"] = self.status.to_json()
   Json::object(obj)
 }
@@ -95608,7 +95608,7 @@ pub async fn Client::watcher_activate_watch(
   self : Client,
   request : WatcherActivateWatchRequest,
 ) -> EsResponse[WatcherActivateWatchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["watch_id"] = request.watch_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -95625,7 +95625,7 @@ pub(all) struct WatcherDeactivateWatchQuery {} derive(Eq, Debug)
 pub impl ToJson for WatcherDeactivateWatchQuery with fn to_json(
   _self : WatcherDeactivateWatchQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -95663,7 +95663,7 @@ pub(all) struct WatcherDeactivateWatchResponse {
 pub impl ToJson for WatcherDeactivateWatchResponse with fn to_json(
   self : WatcherDeactivateWatchResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["status"] = self.status.to_json()
   Json::object(obj)
 }
@@ -95705,7 +95705,7 @@ pub async fn Client::watcher_deactivate_watch(
   self : Client,
   request : WatcherDeactivateWatchRequest,
 ) -> EsResponse[WatcherDeactivateWatchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["watch_id"] = request.watch_id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -95722,7 +95722,7 @@ pub(all) struct WatcherDeleteWatchQuery {} derive(Eq, Debug)
 pub impl ToJson for WatcherDeleteWatchQuery with fn to_json(
   _self : WatcherDeleteWatchQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -95760,7 +95760,7 @@ pub(all) struct WatcherDeleteWatchResponse {
 pub impl ToJson for WatcherDeleteWatchResponse with fn to_json(
   self : WatcherDeleteWatchResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["found"] = self.found.to_json()
   obj["_id"] = self._id.to_json()
   obj["_version"] = self._version.to_json()
@@ -95807,7 +95807,7 @@ pub async fn Client::watcher_delete_watch(
   self : Client,
   request : WatcherDeleteWatchRequest,
 ) -> EsResponse[WatcherDeleteWatchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -95826,7 +95826,7 @@ pub(all) struct WatcherExecuteWatchQuery {
 pub impl ToJson for WatcherExecuteWatchQuery with fn to_json(
   self : WatcherExecuteWatchQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.debug {
     Some(value) => obj["debug"] = value.to_json()
     None => ()
@@ -95880,7 +95880,7 @@ pub(all) struct WatcherExecuteWatchBody {
 pub impl ToJson for WatcherExecuteWatchBody with fn to_json(
   self : WatcherExecuteWatchBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.action_modes {
     Some(value) => obj["action_modes"] = value.to_json()
     None => ()
@@ -95993,7 +95993,7 @@ pub(all) struct WatcherExecuteWatchResponse {
 pub impl ToJson for WatcherExecuteWatchResponse with fn to_json(
   self : WatcherExecuteWatchResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_id"] = self._id.to_json()
   obj["watch_record"] = self.watch_record.to_json()
   Json::object(obj)
@@ -96039,7 +96039,7 @@ pub async fn Client::watcher_execute_watch(
   self : Client,
   request : WatcherExecuteWatchRequest,
 ) -> EsResponse[WatcherExecuteWatchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.id {
     Some(value) => params["id"] = value
     None => ()
@@ -96068,7 +96068,7 @@ pub(all) struct WatcherGetSettingsQuery {
 pub impl ToJson for WatcherGetSettingsQuery with fn to_json(
   self : WatcherGetSettingsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -96122,7 +96122,7 @@ pub(all) struct WatcherGetSettingsResponse {
 pub impl ToJson for WatcherGetSettingsResponse with fn to_json(
   self : WatcherGetSettingsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["index"] = self.index.to_json()
   Json::object(obj)
 }
@@ -96159,7 +96159,7 @@ pub async fn Client::watcher_get_settings(
   self : Client,
   request : WatcherGetSettingsRequest,
 ) -> EsResponse[WatcherGetSettingsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_watcher/settings", [])], params)
   let body = match request.body {
@@ -96176,7 +96176,7 @@ pub(all) struct WatcherGetWatchQuery {} derive(Eq, Debug)
 pub impl ToJson for WatcherGetWatchQuery with fn to_json(
   _self : WatcherGetWatchQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -96218,7 +96218,7 @@ pub(all) struct WatcherGetWatchResponse {
 pub impl ToJson for WatcherGetWatchResponse with fn to_json(
   self : WatcherGetWatchResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["found"] = self.found.to_json()
   obj["_id"] = self._id.to_json()
   match self.status {
@@ -96306,7 +96306,7 @@ pub async fn Client::watcher_get_watch(
   self : Client,
   request : WatcherGetWatchRequest,
 ) -> EsResponse[WatcherGetWatchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -96328,7 +96328,7 @@ pub(all) struct WatcherPutWatchQuery {
 pub impl ToJson for WatcherPutWatchQuery with fn to_json(
   self : WatcherPutWatchQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.active {
     Some(value) => obj["active"] = value.to_json()
     None => ()
@@ -96429,7 +96429,7 @@ pub(all) struct WatcherPutWatchBody {
 pub impl ToJson for WatcherPutWatchBody with fn to_json(
   self : WatcherPutWatchBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.actions {
     Some(value) => obj["actions"] = value.to_json()
     None => ()
@@ -96556,7 +96556,7 @@ pub(all) struct WatcherPutWatchResponse {
 pub impl ToJson for WatcherPutWatchResponse with fn to_json(
   self : WatcherPutWatchResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["created"] = self.created.to_json()
   obj["_id"] = self._id.to_json()
   obj["_primary_term"] = self._primary_term.to_json()
@@ -96615,7 +96615,7 @@ pub async fn Client::watcher_put_watch(
   self : Client,
   request : WatcherPutWatchRequest,
 ) -> EsResponse[WatcherPutWatchResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   params["id"] = request.id
   let query = request.query.to_pairs()
   let path = select_path(
@@ -96633,7 +96633,7 @@ pub(all) struct WatcherQueryWatchesQuery {} derive(Eq, Debug)
 pub impl ToJson for WatcherQueryWatchesQuery with fn to_json(
   _self : WatcherQueryWatchesQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   Json::object(obj)
 }
 
@@ -96673,7 +96673,7 @@ pub(all) struct WatcherQueryWatchesBody {
 pub impl ToJson for WatcherQueryWatchesBody with fn to_json(
   self : WatcherQueryWatchesBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.from {
     Some(value) => obj["from"] = value.to_json()
     None => ()
@@ -96753,7 +96753,7 @@ pub(all) struct WatcherQueryWatchesResponse {
 pub impl ToJson for WatcherQueryWatchesResponse with fn to_json(
   self : WatcherQueryWatchesResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["count"] = self.count.to_json()
   obj["watches"] = self.watches.to_json()
   Json::object(obj)
@@ -96797,7 +96797,7 @@ pub async fn Client::watcher_query_watches(
   self : Client,
   request : WatcherQueryWatchesRequest,
 ) -> EsResponse[WatcherQueryWatchesResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path(
     [PathVariant::new("/_watcher/_query/watches", [])],
@@ -96817,7 +96817,7 @@ pub(all) struct WatcherStartQuery {
 
 ///|
 pub impl ToJson for WatcherStartQuery with fn to_json(self : WatcherStartQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -96877,7 +96877,7 @@ pub async fn Client::watcher_start(
   self : Client,
   request : WatcherStartRequest,
 ) -> EsResponse[WatcherStartResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_watcher/_start", [])], params)
   self.perform_json(EsRequest::new(Post, path, query~))
@@ -96891,7 +96891,7 @@ pub(all) struct WatcherStatsQuery {
 
 ///|
 pub impl ToJson for WatcherStatsQuery with fn to_json(self : WatcherStatsQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.emit_stacktraces {
     Some(value) => obj["emit_stacktraces"] = value.to_json()
     None => ()
@@ -96959,7 +96959,7 @@ pub(all) struct WatcherStatsResponse {
 pub impl ToJson for WatcherStatsResponse with fn to_json(
   self : WatcherStatsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["_nodes"] = self._nodes.to_json()
   obj["cluster_name"] = self.cluster_name.to_json()
   obj["manually_stopped"] = self.manually_stopped.to_json()
@@ -97011,7 +97011,7 @@ pub async fn Client::watcher_stats(
   self : Client,
   request : WatcherStatsRequest,
 ) -> EsResponse[WatcherStatsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   match request.metric {
     Some(value) => params["metric"] = value
     None => ()
@@ -97034,7 +97034,7 @@ pub(all) struct WatcherStopQuery {
 
 ///|
 pub impl ToJson for WatcherStopQuery with fn to_json(self : WatcherStopQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -97094,7 +97094,7 @@ pub async fn Client::watcher_stop(
   self : Client,
   request : WatcherStopRequest,
 ) -> EsResponse[WatcherStopResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_watcher/_stop", [])], params)
   self.perform_json(EsRequest::new(Post, path, query~))
@@ -97110,7 +97110,7 @@ pub(all) struct WatcherUpdateSettingsQuery {
 pub impl ToJson for WatcherUpdateSettingsQuery with fn to_json(
   self : WatcherUpdateSettingsQuery,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -97176,7 +97176,7 @@ pub(all) struct WatcherUpdateSettingsBody {
 pub impl ToJson for WatcherUpdateSettingsBody with fn to_json(
   self : WatcherUpdateSettingsBody,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.index_auto_expand_replicas {
     Some(value) => obj["index.auto_expand_replicas"] = value.to_json()
     None => ()
@@ -97233,7 +97233,7 @@ pub(all) struct WatcherUpdateSettingsResponse {
 pub impl ToJson for WatcherUpdateSettingsResponse with fn to_json(
   self : WatcherUpdateSettingsResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["acknowledged"] = self.acknowledged.to_json()
   Json::object(obj)
 }
@@ -97275,7 +97275,7 @@ pub async fn Client::watcher_update_settings(
   self : Client,
   request : WatcherUpdateSettingsRequest,
 ) -> EsResponse[WatcherUpdateSettingsResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_watcher/settings", [])], params)
   let body = JsonBody(request.body.to_json())
@@ -97291,7 +97291,7 @@ pub(all) struct XpackInfoQuery {
 
 ///|
 pub impl ToJson for XpackInfoQuery with fn to_json(self : XpackInfoQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.categories {
     Some(value) => obj["categories"] = value.to_json()
     None => ()
@@ -97372,7 +97372,7 @@ pub(all) struct XpackInfoResponse {
 
 ///|
 pub impl ToJson for XpackInfoResponse with fn to_json(self : XpackInfoResponse) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["build"] = self.build.to_json()
   obj["features"] = self.features.to_json()
   obj["license"] = self.license.to_json()
@@ -97422,7 +97422,7 @@ pub async fn Client::xpack_info(
   self : Client,
   request : XpackInfoRequest,
 ) -> EsResponse[XpackInfoResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_xpack", [])], params)
   self.perform(EsRequest::new(Get, path, query~))
@@ -97435,7 +97435,7 @@ pub(all) struct XpackUsageQuery {
 
 ///|
 pub impl ToJson for XpackUsageQuery with fn to_json(self : XpackUsageQuery) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   match self.master_timeout {
     Some(value) => obj["master_timeout"] = value.to_json()
     None => ()
@@ -97512,7 +97512,7 @@ pub(all) struct XpackUsageResponse {
 pub impl ToJson for XpackUsageResponse with fn to_json(
   self : XpackUsageResponse,
 ) -> Json {
-  let obj : Map[String, Json] = {}
+  let obj : Map[String, Json] = Map([])
   obj["aggregate_metric"] = self.aggregate_metric.to_json()
   obj["analytics"] = self.analytics.to_json()
   obj["archive"] = self.archive.to_json()
@@ -97730,7 +97730,7 @@ pub async fn Client::xpack_usage(
   self : Client,
   request : XpackUsageRequest,
 ) -> EsResponse[XpackUsageResponse] {
-  let params : Map[String, String] = {}
+  let params : Map[String, String] = Map([])
   let query = request.query.to_pairs()
   let path = select_path([PathVariant::new("/_xpack/usage", [])], params)
   self.perform(EsRequest::new(Get, path, query~))

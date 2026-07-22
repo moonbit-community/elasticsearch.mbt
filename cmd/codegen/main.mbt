@@ -56,29 +56,29 @@ let default_v9_output : String = "v9/generated.mbt"
 
 ///|
 fn codegen_command() -> @argparse.Command {
-  @argparse.Command::new(
+  @argparse.Command(
     "codegen",
     flags=[
-      @argparse.FlagArg::new(
+      @argparse.FlagArg(
         "check",
         about="Check that generated files are up to date without writing them.",
         action=SetTrue,
       ),
     ],
     options=[
-      @argparse.OptionArg::new(
+      @argparse.OptionArg(
         "input",
         about="Elasticsearch schema JSON to read.",
         action=Append,
         default_values=[default_input],
       ),
-      @argparse.OptionArg::new(
+      @argparse.OptionArg(
         "root-output",
         about="Root package generated endpoint file to write.",
         action=Append,
         default_values=[default_root_output],
       ),
-      @argparse.OptionArg::new(
+      @argparse.OptionArg(
         "v9-output",
         about="v9 package generated wrapper file to write.",
         action=Append,
@@ -715,7 +715,7 @@ fn write_json_to_json_impl(
   out.write_string(
     "pub impl ToJson for \{type_name} with fn to_json(\{receiver} : \{type_name}) -> Json {\n",
   )
-  out.write_string("  let obj : Map[String, Json] = {}\n")
+  out.write_string("  let obj : Map[String, Json] = Map([])\n")
   for field in fields {
     if field.required {
       out.write_string(
@@ -1002,7 +1002,7 @@ fn write_constructor(out : StringBuilder, endpoint : EndpointSpec) -> Unit {
 
 ///|
 fn write_params_map(out : StringBuilder, endpoint : EndpointSpec) -> Unit {
-  out.write_string("  let params : Map[String, String] = {}\n")
+  out.write_string("  let params : Map[String, String] = Map([])\n")
   for param in endpoint.path_params {
     if param.required {
       out.write_string(

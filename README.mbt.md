@@ -167,7 +167,7 @@ async fn search_logs(client : @es.Client) -> Unit {
         "latency", "errors",
       ]),
       body=@es.SearchBody::new(
-        query=Json::object({ "match_all": Json::object({}) }),
+        query=Json::object({ "match_all": Json::empty_object() }),
         size=10,
       ),
     ),
@@ -239,7 +239,7 @@ async fn call_v9(client : @es.Client) -> Unit {
     @esv9.SearchRequest::new(
       index="logs-2026",
       body=@esv9.SearchBody::new(
-        query=Json::object({ "match_all": Json::object({}) }),
+        query=Json::object({ "match_all": Json::empty_object() }),
       ),
     ),
   )

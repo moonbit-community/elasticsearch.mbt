@@ -145,7 +145,7 @@ async test "generated endpoints integrate request rendering http and decoding" {
           typed_keys=true,
         ),
         body=SearchBody::new(
-          query=Json::object({ "match_all": Json::object({}) }),
+          query=Json::object({ "match_all": Json::empty_object() }),
           size=2,
         ),
       ),
@@ -174,7 +174,7 @@ async test "generated endpoints integrate request rendering http and decoding" {
     assert_true(
       test_json_field(search.body, "body") ==
       Json::object({
-        "query": Json::object({ "match_all": Json::object({}) }),
+        "query": Json::object({ "match_all": Json::empty_object() }),
         "size": Json::number(2),
       }),
     )

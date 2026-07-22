@@ -89,7 +89,7 @@ fn parse_response_json(data : &@io.Data) -> Json raise EsError {
 
 ///|
 pub async fn Client::new(config : ClientConfig) -> Client {
-  let inner = @http.Client::Client(config.base_url, headers={})
+  let inner = @http.Client::Client(config.base_url, headers=Map([]))
   { config, inner: Some(inner) }
 }
 
@@ -98,7 +98,7 @@ pub async fn new(
   base_url : String,
   auth? : Auth = NoAuth,
   compatibility? : ApiCompatibility = Default,
-  headers? : Map[String, String] = {},
+  headers? : Map[String, String] = Map([]),
 ) -> Client {
   Client::new(ClientConfig::new(base_url, auth~, compatibility~, headers~))
 }
