@@ -8,12 +8,12 @@ import {
 
 readme = "README.mbt.md"
 
-repository = ""
+repository = "https://github.com/moonbit-community/elasticsearch.mbt"
 
 license = "Apache-2.0"
 
 keywords = [ ]
 
-description = ""
+description = "MoonBit client for Elasticsearch v9"
 
 preferred_target = "native"
