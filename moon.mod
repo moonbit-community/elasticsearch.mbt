@@ -3,7 +3,7 @@ name = "moonbit-community/elasticsearch"
 version = "0.1.0"
 
 import {
-  "moonbitlang/async@0.19.4",
+  "moonbitlang/async@0.20.2",
 }
 
 readme = "README.mbt.md"
