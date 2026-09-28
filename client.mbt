@@ -90,7 +90,7 @@ fn parse_response_json(data : &@io.Data) -> Json raise EsError {
 ///|
 pub async fn Client::new(config : ClientConfig) -> Client {
   let inner = @http.Client::Client(config.base_url, headers=Map([]))
-  { config, inner: Some(inner) }
+  { config, inner: Some(inner), }
 }
 
 ///|
@@ -147,7 +147,7 @@ pub async fn Client::perform_json(
     for key, value in response.headers {
       headers[key.to_string()] = value
     }
-    { status: response.code, headers, body }
+    { status: response.code, headers, body, }
   } else {
     raise Http(status=response.code, reason=response.reason, body~)
   }
@@ -162,5 +162,5 @@ pub async fn[T : FromJson] Client::perform(
   let body : T = @json.from_json(response.body) catch {
     err => raise Decode(err.to_string())
   }
-  { status: response.status, headers: response.headers, body }
+  { status: response.status, headers: response.headers, body, }
 }
