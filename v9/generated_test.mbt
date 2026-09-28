@@ -1,10 +1,13 @@
 ///|
 fn test_header_value(
-  headers : Map[String, String],
+  headers : Map[@http.CaseInsensitiveString, String],
   canonical : String,
   lowercase : String,
 ) -> String {
-  headers.get_or_default(canonical, headers.get_or_default(lowercase, ""))
+  headers.get_or_default(
+    @http.CaseInsensitiveString(canonical),
+    headers.get_or_default(@http.CaseInsensitiveString(lowercase), ""),
+  )
 }
 
 ///|

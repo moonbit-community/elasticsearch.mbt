@@ -60,8 +60,8 @@ async test "perform_json handles fake server success empty and error responses" 
           conn..send_response(400, "Bad Request").write("{\"error\":\"bad\"}")
         } else if request.path.contains("/ndjson") {
           let content_type = request.headers.get_or_default(
-            "Content-Type",
-            request.headers.get_or_default("content-type", ""),
+            @http.CaseInsensitiveString("Content-Type"),
+            "",
           )
           conn
           ..send_response(200, "OK")
