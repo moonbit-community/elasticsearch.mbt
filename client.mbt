@@ -134,13 +134,20 @@ pub async fn Client::perform_json(
     None => raise ClosedClient
   }
   let target = append_query(request.path, request.query)
-  let headers = self.config.request_headers(request)
+  let headers : Map[@http.CaseInsensitiveString, String] = Map([])
+  for key, value in self.config.request_headers(request) {
+    headers[@http.CaseInsensitiveString(key)] = value
+  }
   inner.request(request.meth.to_http_method(), target, extra_headers=headers)
   write_request_body(inner, request.body)
   let response = inner.end_request()
   let body = parse_response_json(inner.read_all())
   if response.code >= 200 && response.code < 300 {
-    { status: response.code, headers: response.headers, body, }
+    let headers : Map[String, String] = Map([])
+    for key, value in response.headers {
+      headers[key.to_string()] = value
+    }
+    { status: response.code, headers, body, }
   } else {
     raise Http(status=response.code, reason=response.reason, body~)
   }
