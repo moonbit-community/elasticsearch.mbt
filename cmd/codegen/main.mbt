@@ -186,7 +186,7 @@ fn is_separator(c : Char) -> Bool {
 
 ///|
 fn to_pascal(name : String) -> String {
-  let out = StringBuilder::new(size_hint=name.length())
+  let out = StringBuilder(size_hint=name.length())
   let mut next_upper = true
   for c in name {
     if is_separator(c) {
@@ -203,7 +203,7 @@ fn to_pascal(name : String) -> String {
 
 ///|
 fn to_method_name(name : String) -> String {
-  let out = StringBuilder::new(size_hint=name.length())
+  let out = StringBuilder(size_hint=name.length())
   for c in name {
     if c == '.' || c == '-' {
       out.write_char('_')
@@ -226,7 +226,7 @@ fn reserved_word(name : String) -> Bool {
 
 ///|
 fn field_name(name : String) -> String {
-  let out = StringBuilder::new(size_hint=name.length())
+  let out = StringBuilder(size_hint=name.length())
   let mut wrote = false
   for c in name {
     if c.is_ascii_alphabetic() || c == '_' {
@@ -445,7 +445,7 @@ fn push_unique(items : Array[String], value : String) -> Unit {
 ///|
 fn extract_path_params(path : String) -> Array[String] {
   let params : Array[String] = []
-  let current = StringBuilder::new()
+  let current = StringBuilder()
   let mut in_param = false
   for c in path {
     if c == '{' {
@@ -651,7 +651,7 @@ fn parse_schema(json : Json) -> Array[EndpointSpec] {
 
 ///|
 fn render_string_array(items : ArrayView[String]) -> String {
-  let out = StringBuilder::new()
+  let out = StringBuilder()
   out.write_char('[')
   let mut first = true
   for item in items {
@@ -668,7 +668,7 @@ fn render_string_array(items : ArrayView[String]) -> String {
 
 ///|
 fn render_url_variants(urls : ArrayView[UrlSpec]) -> String {
-  let out = StringBuilder::new()
+  let out = StringBuilder()
   if urls.length() == 1 {
     out.write_char('[')
     for url in urls {
@@ -719,11 +719,11 @@ fn write_json_to_json_impl(
   for field in fields {
     if field.required {
       out.write_string(
-        "  obj[\{mbt_string(field.name)}] = \{receiver}.\{field.field}.to_json()\n",
+        "  obj[\{mbt_string(field.name)}] = @json.to_json(\{receiver}.\{field.field})\n",
       )
     } else {
       out.write_string(
-        "  match \{receiver}.\{field.field} {\n    Some(value) => obj[\{mbt_string(field.name)}] = value.to_json()\n    None => ()\n  }\n",
+        "  match \{receiver}.\{field.field} {\n    Some(value) => obj[\{mbt_string(field.name)}] = @json.to_json(value)\n    None => ()\n  }\n",
       )
     }
   }
@@ -826,6 +826,23 @@ fn body_uses_json_struct(endpoint : EndpointSpec) -> Bool {
 }
 
 ///|
+/// Emits explicit `pub extend` declarations so the trait methods of a
+/// generated type stay callable as regular methods (e.g. `value.to_json()`)
+/// without relying on deprecated implicit promotion.
+fn write_trait_method_extends(out : StringBuilder, type_name : String) -> Unit {
+  out.write_string("///|\n")
+  out.write_string("pub extend \{type_name} with Eq::{equal, not_equal}\n\n")
+  out.write_string("///|\n")
+  out.write_string("pub extend \{type_name} with @debug.Debug::{to_repr}\n\n")
+  out.write_string("///|\n")
+  out.write_string("pub extend \{type_name} with ToJson::{to_json}\n\n")
+  out.write_string("///|\n")
+  out.write_string(
+    "pub extend \{type_name} with @json.FromJson::{from_json}\n\n",
+  )
+}
+
+///|
 fn write_json_struct(
   out : StringBuilder,
   type_name : String,
@@ -838,6 +855,7 @@ fn write_json_struct(
   out.write_string("} derive(Eq, Debug)\n\n")
   write_json_to_json_impl(out, type_name, fields)
   write_json_from_json_impl(out, type_name, fields)
+  write_trait_method_extends(out, type_name)
   if add_constructor {
     write_value_constructor(out, type_name, fields)
   }
@@ -858,11 +876,11 @@ fn write_query_to_pairs(out : StringBuilder, endpoint : EndpointSpec) -> Unit {
   for field in endpoint.query_fields {
     if field.required {
       out.write_string(
-        "  push_query_json(pairs, \{mbt_string(field.name)}, \{receiver}.\{field.field}.to_json())\n",
+        "  push_query_json(pairs, \{mbt_string(field.name)}, @json.to_json(\{receiver}.\{field.field}))\n",
       )
     } else {
       out.write_string(
-        "  match \{receiver}.\{field.field} {\n    Some(value) => push_query_json(pairs, \{mbt_string(field.name)}, value.to_json())\n    None => ()\n  }\n",
+        "  match \{receiver}.\{field.field} {\n    Some(value) => push_query_json(pairs, \{mbt_string(field.name)}, @json.to_json(value))\n    None => ()\n  }\n",
       )
     }
   }
@@ -928,6 +946,7 @@ fn write_request_struct(out : StringBuilder, endpoint : EndpointSpec) -> Unit {
     None => ()
   }
   out.write_string("} derive(Eq, Debug, ToJson, FromJson)\n\n")
+  write_trait_method_extends(out, endpoint.request_type)
 }
 
 ///|
@@ -1044,13 +1063,15 @@ fn write_client_method(out : StringBuilder, endpoint : EndpointSpec) -> Unit {
       JsonBody(required~) =>
         if required {
           if body_to_json {
-            out.write_string("  let body = JsonBody(request.body.to_json())\n")
+            out.write_string(
+              "  let body = JsonBody(@json.to_json(request.body))\n",
+            )
           } else {
             out.write_string("  let body = JsonBody(request.body)\n")
           }
         } else if body_to_json {
           out.write_string(
-            "  let body = match request.body {\n    Some(value) => JsonBody(value.to_json())\n    None => NoBody\n  }\n",
+            "  let body = match request.body {\n    Some(value) => JsonBody(@json.to_json(value))\n    None => NoBody\n  }\n",
           )
         } else {
           out.write_string(
@@ -1100,7 +1121,7 @@ fn write_root_endpoint(out : StringBuilder, endpoint : EndpointSpec) -> Unit {
 
 ///|
 fn generate_root(endpoints : ArrayView[EndpointSpec]) -> String {
-  let out = StringBuilder::new()
+  let out = StringBuilder()
   out.write_string("// Generated by `moon run cmd/codegen`; DO NOT EDIT.\n\n")
   let mut first = true
   for endpoint in endpoints {
@@ -1146,7 +1167,7 @@ fn write_v9_endpoint(out : StringBuilder, endpoint : EndpointSpec) -> Unit {
 
 ///|
 fn generate_v9(endpoints : ArrayView[EndpointSpec]) -> String {
-  let out = StringBuilder::new()
+  let out = StringBuilder()
   out.write_string("// Generated by `moon run cmd/codegen`; DO NOT EDIT.\n\n")
   let mut first = true
   for endpoint in endpoints {
@@ -1173,7 +1194,7 @@ fn is_source_whitespace(c : Char) -> Bool {
 
 ///|
 fn compact_source(source : String) -> String {
-  let out = StringBuilder::new(size_hint=source.length())
+  let out = StringBuilder(size_hint=source.length())
   for c in source {
     if !is_source_whitespace(c) {
       out.write_char(c)
