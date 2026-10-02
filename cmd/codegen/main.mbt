@@ -424,7 +424,7 @@ fn merge_path_fields(
           field = spec_param.field
         }
       }
-      out.push({ name: param.name, field, required: param.required })
+      out.push({ name: param.name, field, required: param.required, })
     }
     out
   }
@@ -485,7 +485,7 @@ fn parse_urls(endpoint_json : Json) -> Array[UrlSpec] {
   for item in json_array_field(endpoint_json, "urls") {
     if item is Object(_) {
       let path = json_string_field(item, "path").unwrap_or("")
-      urls.push({ path, required: extract_path_params(path) })
+      urls.push({ path, required: extract_path_params(path), })
     }
   }
   sort_urls(urls)

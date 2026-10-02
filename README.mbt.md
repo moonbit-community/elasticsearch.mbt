@@ -63,6 +63,7 @@ supported_targets = "+native"
 If you prefer the versioned function-wrapper package, also import:
 
 ```moonbit nocheck
+///|
 import {
   "moonbit-community/elasticsearch/v9" @esv9,
 }
