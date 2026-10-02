@@ -57,7 +57,7 @@ pub fn ClientConfig::new(
   compatibility? : ApiCompatibility = Default,
   headers? : Map[String, String] = Map([]),
 ) -> ClientConfig {
-  { base_url, auth, compatibility, default_headers: headers }
+  { base_url, auth, compatibility, default_headers: headers, }
 }
 
 ///|
@@ -83,7 +83,7 @@ pub fn EsRequest::new(
   headers? : Map[String, String] = Map([]),
   body? : RequestBody = NoBody,
 ) -> EsRequest {
-  { meth, path, query, headers, body }
+  { meth, path, query, headers, body, }
 }
 
 ///|
@@ -112,5 +112,5 @@ pub fn PathVariant::new(
   template : String,
   required : Array[String],
 ) -> PathVariant {
-  { template, required }
+  { template, required, }
 }

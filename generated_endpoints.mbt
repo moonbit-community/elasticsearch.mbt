@@ -17,13 +17,13 @@ pub impl FromJson for AsyncSearchDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "AsyncSearchDeleteQuery: expected object"))
   }
-  AsyncSearchDeleteQuery::{  }
+  AsyncSearchDeleteQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn AsyncSearchDeleteQuery::new() -> AsyncSearchDeleteQuery {
-  AsyncSearchDeleteQuery::{  }
+  AsyncSearchDeleteQuery::{ }
 }
 
 ///|
@@ -48,7 +48,7 @@ pub fn AsyncSearchDeleteRequest::new(
   id : String,
   query? : AsyncSearchDeleteQuery = AsyncSearchDeleteQuery::new(),
 ) -> AsyncSearchDeleteRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -196,7 +196,7 @@ pub fn AsyncSearchGetRequest::new(
   id : String,
   query? : AsyncSearchGetQuery = AsyncSearchGetQuery::new(),
 ) -> AsyncSearchGetRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -279,7 +279,7 @@ pub fn AsyncSearchStatusRequest::new(
   id : String,
   query? : AsyncSearchStatusQuery = AsyncSearchStatusQuery::new(),
 ) -> AsyncSearchStatusRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -1534,7 +1534,7 @@ pub fn AsyncSearchSubmitRequest::new(
   query? : AsyncSearchSubmitQuery = AsyncSearchSubmitQuery::new(),
   body? : AsyncSearchSubmitBody,
 ) -> AsyncSearchSubmitRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -1614,7 +1614,7 @@ pub fn AutoscalingDeleteAutoscalingPolicyQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> AutoscalingDeleteAutoscalingPolicyQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -1647,7 +1647,7 @@ pub fn AutoscalingDeleteAutoscalingPolicyRequest::new(
   name : String,
   query? : AutoscalingDeleteAutoscalingPolicyQuery = AutoscalingDeleteAutoscalingPolicyQuery::new(),
 ) -> AutoscalingDeleteAutoscalingPolicyRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -1849,7 +1849,7 @@ pub fn AutoscalingGetAutoscalingPolicyRequest::new(
   name : String,
   query? : AutoscalingGetAutoscalingPolicyQuery = AutoscalingGetAutoscalingPolicyQuery::new(),
 ) -> AutoscalingGetAutoscalingPolicyRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -1919,7 +1919,7 @@ pub fn AutoscalingPutAutoscalingPolicyQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> AutoscalingPutAutoscalingPolicyQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -1957,7 +1957,7 @@ pub fn AutoscalingPutAutoscalingPolicyRequest::new(
   body : AutoscalingPutAutoscalingPolicyBody,
   query? : AutoscalingPutAutoscalingPolicyQuery = AutoscalingPutAutoscalingPolicyQuery::new(),
 ) -> AutoscalingPutAutoscalingPolicyRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -2281,7 +2281,7 @@ pub fn BulkRequest::new(
   index? : String,
   query? : BulkQuery = BulkQuery::new(),
 ) -> BulkRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -2518,7 +2518,7 @@ pub fn CancelReindexRequest::new(
   task_id : String,
   query? : CancelReindexQuery = CancelReindexQuery::new(),
 ) -> CancelReindexRequest {
-  { task_id, query }
+  { task_id, query, }
 }
 
 ///|
@@ -2627,7 +2627,7 @@ pub fn CapabilitiesQuery::new(
   local_only? : Bool,
   timeout? : String,
 ) -> CapabilitiesQuery {
-  { method_, path, parameters, capabilities, local_only, timeout }
+  { method_, path, parameters, capabilities, local_only, timeout, }
 }
 
 ///|
@@ -2802,7 +2802,7 @@ pub fn CatAliasesQuery::new(
   expand_wildcards? : String,
   master_timeout? : String,
 ) -> CatAliasesQuery {
-  { h, s, expand_wildcards, master_timeout }
+  { h, s, expand_wildcards, master_timeout, }
 }
 
 ///|
@@ -2843,7 +2843,7 @@ pub fn CatAliasesRequest::new(
   name? : String,
   query? : CatAliasesQuery = CatAliasesQuery::new(),
 ) -> CatAliasesRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -2936,7 +2936,7 @@ pub fn CatAllocationQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> CatAllocationQuery {
-  { h, s, local_, master_timeout }
+  { h, s, local_, master_timeout, }
 }
 
 ///|
@@ -2977,7 +2977,7 @@ pub fn CatAllocationRequest::new(
   node_id? : String,
   query? : CatAllocationQuery = CatAllocationQuery::new(),
 ) -> CatAllocationRequest {
-  { node_id, query }
+  { node_id, query, }
 }
 
 ///|
@@ -3070,7 +3070,7 @@ pub fn CatCircuitBreakerQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> CatCircuitBreakerQuery {
-  { h, s, local_, master_timeout }
+  { h, s, local_, master_timeout, }
 }
 
 ///|
@@ -3111,7 +3111,7 @@ pub fn CatCircuitBreakerRequest::new(
   circuit_breaker_patterns? : String,
   query? : CatCircuitBreakerQuery = CatCircuitBreakerQuery::new(),
 ) -> CatCircuitBreakerRequest {
-  { circuit_breaker_patterns, query }
+  { circuit_breaker_patterns, query, }
 }
 
 ///|
@@ -3206,7 +3206,7 @@ pub fn CatComponentTemplatesQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> CatComponentTemplatesQuery {
-  { h, s, local_, master_timeout }
+  { h, s, local_, master_timeout, }
 }
 
 ///|
@@ -3247,7 +3247,7 @@ pub fn CatComponentTemplatesRequest::new(
   name? : String,
   query? : CatComponentTemplatesQuery = CatComponentTemplatesQuery::new(),
 ) -> CatComponentTemplatesRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -3312,7 +3312,7 @@ pub impl FromJson for CatCountQuery with fn from_json(json, path) {
 
 ///|
 pub fn CatCountQuery::new(h? : String, s? : String) -> CatCountQuery {
-  { h, s }
+  { h, s, }
 }
 
 ///|
@@ -3343,7 +3343,7 @@ pub fn CatCountRequest::new(
   index? : String,
   query? : CatCountQuery = CatCountQuery::new(),
 ) -> CatCountRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -3422,7 +3422,7 @@ pub fn CatFielddataQuery::new(
   h? : String,
   s? : String,
 ) -> CatFielddataQuery {
-  { fields, h, s }
+  { fields, h, s, }
 }
 
 ///|
@@ -3459,7 +3459,7 @@ pub fn CatFielddataRequest::new(
   fields? : String,
   query? : CatFielddataQuery = CatFielddataQuery::new(),
 ) -> CatFielddataRequest {
-  { fields, query }
+  { fields, query, }
 }
 
 ///|
@@ -3538,7 +3538,7 @@ pub fn CatHealthQuery::new(
   h? : String,
   s? : String,
 ) -> CatHealthQuery {
-  { ts, h, s }
+  { ts, h, s, }
 }
 
 ///|
@@ -3602,13 +3602,13 @@ pub impl FromJson for CatHelpQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "CatHelpQuery: expected object"))
   }
-  CatHelpQuery::{  }
+  CatHelpQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn CatHelpQuery::new() -> CatHelpQuery {
-  CatHelpQuery::{  }
+  CatHelpQuery::{ }
 }
 
 ///|
@@ -3809,7 +3809,7 @@ pub fn CatIndicesRequest::new(
   index? : String,
   query? : CatIndicesQuery = CatIndicesQuery::new(),
 ) -> CatIndicesRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -3900,7 +3900,7 @@ pub fn CatMasterQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> CatMasterQuery {
-  { h, s, local_, master_timeout }
+  { h, s, local_, master_timeout, }
 }
 
 ///|
@@ -4013,7 +4013,7 @@ pub fn CatMlDataFrameAnalyticsQuery::new(
   h? : String,
   s? : String,
 ) -> CatMlDataFrameAnalyticsQuery {
-  { allow_no_match, h, s }
+  { allow_no_match, h, s, }
 }
 
 ///|
@@ -4050,7 +4050,7 @@ pub fn CatMlDataFrameAnalyticsRequest::new(
   id? : String,
   query? : CatMlDataFrameAnalyticsQuery = CatMlDataFrameAnalyticsQuery::new(),
 ) -> CatMlDataFrameAnalyticsRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -4132,7 +4132,7 @@ pub fn CatMlDatafeedsQuery::new(
   h? : String,
   s? : String,
 ) -> CatMlDatafeedsQuery {
-  { allow_no_match, h, s }
+  { allow_no_match, h, s, }
 }
 
 ///|
@@ -4169,7 +4169,7 @@ pub fn CatMlDatafeedsRequest::new(
   datafeed_id? : String,
   query? : CatMlDatafeedsQuery = CatMlDatafeedsQuery::new(),
 ) -> CatMlDatafeedsRequest {
-  { datafeed_id, query }
+  { datafeed_id, query, }
 }
 
 ///|
@@ -4249,7 +4249,7 @@ pub fn CatMlJobsQuery::new(
   h? : String,
   s? : String,
 ) -> CatMlJobsQuery {
-  { allow_no_match, h, s }
+  { allow_no_match, h, s, }
 }
 
 ///|
@@ -4286,7 +4286,7 @@ pub fn CatMlJobsRequest::new(
   job_id? : String,
   query? : CatMlJobsQuery = CatMlJobsQuery::new(),
 ) -> CatMlJobsRequest {
-  { job_id, query }
+  { job_id, query, }
 }
 
 ///|
@@ -4390,7 +4390,7 @@ pub fn CatMlTrainedModelsQuery::new(
   from? : Int,
   size? : Int,
 ) -> CatMlTrainedModelsQuery {
-  { allow_no_match, h, s, from, size }
+  { allow_no_match, h, s, from, size, }
 }
 
 ///|
@@ -4435,7 +4435,7 @@ pub fn CatMlTrainedModelsRequest::new(
   model_id? : String,
   query? : CatMlTrainedModelsQuery = CatMlTrainedModelsQuery::new(),
 ) -> CatMlTrainedModelsRequest {
-  { model_id, query }
+  { model_id, query, }
 }
 
 ///|
@@ -4526,7 +4526,7 @@ pub fn CatNodeattrsQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> CatNodeattrsQuery {
-  { h, s, local_, master_timeout }
+  { h, s, local_, master_timeout, }
 }
 
 ///|
@@ -4660,7 +4660,7 @@ pub fn CatNodesQuery::new(
   s? : String,
   master_timeout? : String,
 ) -> CatNodesQuery {
-  { full_id, include_unloaded_segments, h, s, master_timeout }
+  { full_id, include_unloaded_segments, h, s, master_timeout, }
 }
 
 ///|
@@ -4785,7 +4785,7 @@ pub fn CatPendingTasksQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> CatPendingTasksQuery {
-  { h, s, local_, master_timeout }
+  { h, s, local_, master_timeout, }
 }
 
 ///|
@@ -4917,7 +4917,7 @@ pub fn CatPluginsQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> CatPluginsQuery {
-  { h, s, include_bootstrap, local_, master_timeout }
+  { h, s, include_bootstrap, local_, master_timeout, }
 }
 
 ///|
@@ -5052,7 +5052,7 @@ pub fn CatRecoveryQuery::new(
   h? : String,
   s? : String,
 ) -> CatRecoveryQuery {
-  { active_only, detailed, index, h, s }
+  { active_only, detailed, index, h, s, }
 }
 
 ///|
@@ -5097,7 +5097,7 @@ pub fn CatRecoveryRequest::new(
   index? : String,
   query? : CatRecoveryQuery = CatRecoveryQuery::new(),
 ) -> CatRecoveryRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -5190,7 +5190,7 @@ pub fn CatRepositoriesQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> CatRepositoriesQuery {
-  { h, s, local_, master_timeout }
+  { h, s, local_, master_timeout, }
 }
 
 ///|
@@ -5441,7 +5441,7 @@ pub fn CatSegmentsRequest::new(
   index? : String,
   query? : CatSegmentsQuery = CatSegmentsQuery::new(),
 ) -> CatSegmentsRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -5521,7 +5521,7 @@ pub fn CatShardsQuery::new(
   s? : String,
   master_timeout? : String,
 ) -> CatShardsQuery {
-  { h, s, master_timeout }
+  { h, s, master_timeout, }
 }
 
 ///|
@@ -5558,7 +5558,7 @@ pub fn CatShardsRequest::new(
   index? : String,
   query? : CatShardsQuery = CatShardsQuery::new(),
 ) -> CatShardsRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -5650,7 +5650,7 @@ pub fn CatSnapshotsQuery::new(
   s? : String,
   master_timeout? : String,
 ) -> CatSnapshotsQuery {
-  { ignore_unavailable, h, s, master_timeout }
+  { ignore_unavailable, h, s, master_timeout, }
 }
 
 ///|
@@ -5691,7 +5691,7 @@ pub fn CatSnapshotsRequest::new(
   repository? : String,
   query? : CatSnapshotsQuery = CatSnapshotsQuery::new(),
 ) -> CatSnapshotsRequest {
-  { repository, query }
+  { repository, query, }
 }
 
 ///|
@@ -5971,7 +5971,7 @@ pub fn CatTemplatesQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> CatTemplatesQuery {
-  { h, s, local_, master_timeout }
+  { h, s, local_, master_timeout, }
 }
 
 ///|
@@ -6012,7 +6012,7 @@ pub fn CatTemplatesRequest::new(
   name? : String,
   query? : CatTemplatesQuery = CatTemplatesQuery::new(),
 ) -> CatTemplatesRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -6105,7 +6105,7 @@ pub fn CatThreadPoolQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> CatThreadPoolQuery {
-  { h, s, local_, master_timeout }
+  { h, s, local_, master_timeout, }
 }
 
 ///|
@@ -6146,7 +6146,7 @@ pub fn CatThreadPoolRequest::new(
   thread_pool_patterns? : String,
   query? : CatThreadPoolQuery = CatThreadPoolQuery::new(),
 ) -> CatThreadPoolRequest {
-  { thread_pool_patterns, query }
+  { thread_pool_patterns, query, }
 }
 
 ///|
@@ -6252,7 +6252,7 @@ pub fn CatTransformsQuery::new(
   s? : String,
   size? : Int,
 ) -> CatTransformsQuery {
-  { allow_no_match, from, h, s, size }
+  { allow_no_match, from, h, s, size, }
 }
 
 ///|
@@ -6297,7 +6297,7 @@ pub fn CatTransformsRequest::new(
   transform_id? : String,
   query? : CatTransformsQuery = CatTransformsQuery::new(),
 ) -> CatTransformsRequest {
-  { transform_id, query }
+  { transform_id, query, }
 }
 
 ///|
@@ -6391,7 +6391,7 @@ pub fn CcrDeleteAutoFollowPatternRequest::new(
   name : String,
   query? : CcrDeleteAutoFollowPatternQuery = CcrDeleteAutoFollowPatternQuery::new(),
 ) -> CcrDeleteAutoFollowPatternRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -6457,7 +6457,7 @@ pub fn CcrFollowQuery::new(
   master_timeout? : String,
   wait_for_active_shards? : String,
 ) -> CcrFollowQuery {
-  { master_timeout, wait_for_active_shards }
+  { master_timeout, wait_for_active_shards, }
 }
 
 ///|
@@ -6752,7 +6752,7 @@ pub fn CcrFollowRequest::new(
   body : CcrFollowBody,
   query? : CcrFollowQuery = CcrFollowQuery::new(),
 ) -> CcrFollowRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -6858,7 +6858,7 @@ pub fn CcrFollowInfoRequest::new(
   index : String,
   query? : CcrFollowInfoQuery = CcrFollowInfoQuery::new(),
 ) -> CcrFollowInfoRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -6962,7 +6962,7 @@ pub fn CcrFollowStatsRequest::new(
   index : String,
   query? : CcrFollowStatsQuery = CcrFollowStatsQuery::new(),
 ) -> CcrFollowStatsRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -7148,7 +7148,7 @@ pub fn CcrForgetFollowerRequest::new(
   body : CcrForgetFollowerBody,
   query? : CcrForgetFollowerQuery = CcrForgetFollowerQuery::new(),
 ) -> CcrForgetFollowerRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -7263,7 +7263,7 @@ pub fn CcrGetAutoFollowPatternRequest::new(
   name? : String,
   query? : CcrGetAutoFollowPatternQuery = CcrGetAutoFollowPatternQuery::new(),
 ) -> CcrGetAutoFollowPatternRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -7357,7 +7357,7 @@ pub fn CcrPauseAutoFollowPatternRequest::new(
   name : String,
   query? : CcrPauseAutoFollowPatternQuery = CcrPauseAutoFollowPatternQuery::new(),
 ) -> CcrPauseAutoFollowPatternRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -7440,7 +7440,7 @@ pub fn CcrPauseFollowRequest::new(
   index : String,
   query? : CcrPauseFollowQuery = CcrPauseFollowQuery::new(),
 ) -> CcrPauseFollowRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -7780,7 +7780,7 @@ pub fn CcrPutAutoFollowPatternRequest::new(
   body : CcrPutAutoFollowPatternBody,
   query? : CcrPutAutoFollowPatternQuery = CcrPutAutoFollowPatternQuery::new(),
 ) -> CcrPutAutoFollowPatternRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -7869,7 +7869,7 @@ pub fn CcrResumeAutoFollowPatternRequest::new(
   name : String,
   query? : CcrResumeAutoFollowPatternQuery = CcrResumeAutoFollowPatternQuery::new(),
 ) -> CcrResumeAutoFollowPatternRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -8140,7 +8140,7 @@ pub fn CcrResumeFollowRequest::new(
   query? : CcrResumeFollowQuery = CcrResumeFollowQuery::new(),
   body? : CcrResumeFollowBody,
 ) -> CcrResumeFollowRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -8207,7 +8207,7 @@ pub fn CcrStatsQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> CcrStatsQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -8339,7 +8339,7 @@ pub fn CcrUnfollowRequest::new(
   index : String,
   query? : CcrUnfollowQuery = CcrUnfollowQuery::new(),
 ) -> CcrUnfollowRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -8372,13 +8372,13 @@ pub impl FromJson for ClearScrollQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ClearScrollQuery: expected object"))
   }
-  ClearScrollQuery::{  }
+  ClearScrollQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ClearScrollQuery::new() -> ClearScrollQuery {
-  ClearScrollQuery::{  }
+  ClearScrollQuery::{ }
 }
 
 ///|
@@ -8438,7 +8438,7 @@ pub fn ClearScrollRequest::new(
   query? : ClearScrollQuery = ClearScrollQuery::new(),
   body? : ClearScrollBody,
 ) -> ClearScrollRequest {
-  { scroll_id, query, body }
+  { scroll_id, query, body, }
 }
 
 ///|
@@ -8483,13 +8483,13 @@ pub impl FromJson for ClosePointInTimeQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ClosePointInTimeQuery: expected object"))
   }
-  ClosePointInTimeQuery::{  }
+  ClosePointInTimeQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ClosePointInTimeQuery::new() -> ClosePointInTimeQuery {
-  ClosePointInTimeQuery::{  }
+  ClosePointInTimeQuery::{ }
 }
 
 ///|
@@ -8576,7 +8576,7 @@ pub fn ClosePointInTimeRequest::new(
   body : ClosePointInTimeBody,
   query? : ClosePointInTimeQuery = ClosePointInTimeQuery::new(),
 ) -> ClosePointInTimeRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -8820,7 +8820,7 @@ pub fn ClusterAllocationExplainBody::new(
   primary? : Bool,
   current_node? : Json,
 ) -> ClusterAllocationExplainBody {
-  { index, shard, primary, current_node }
+  { index, shard, primary, current_node, }
 }
 
 ///|
@@ -9146,7 +9146,7 @@ pub fn ClusterAllocationExplainRequest::new(
   query? : ClusterAllocationExplainQuery = ClusterAllocationExplainQuery::new(),
   body? : ClusterAllocationExplainBody,
 ) -> ClusterAllocationExplainRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -9219,7 +9219,7 @@ pub fn ClusterDeleteComponentTemplateQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> ClusterDeleteComponentTemplateQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -9252,7 +9252,7 @@ pub fn ClusterDeleteComponentTemplateRequest::new(
   name : String,
   query? : ClusterDeleteComponentTemplateQuery = ClusterDeleteComponentTemplateQuery::new(),
 ) -> ClusterDeleteComponentTemplateRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -9323,7 +9323,7 @@ pub fn ClusterDeleteVotingConfigExclusionsQuery::new(
   master_timeout? : String,
   wait_for_removal? : Bool,
 ) -> ClusterDeleteVotingConfigExclusionsQuery {
-  { master_timeout, wait_for_removal }
+  { master_timeout, wait_for_removal, }
 }
 
 ///|
@@ -9423,7 +9423,7 @@ pub fn ClusterExistsComponentTemplateQuery::new(
   master_timeout? : String,
   local_? : Bool,
 ) -> ClusterExistsComponentTemplateQuery {
-  { master_timeout, local_ }
+  { master_timeout, local_, }
 }
 
 ///|
@@ -9456,7 +9456,7 @@ pub fn ClusterExistsComponentTemplateRequest::new(
   name : String,
   query? : ClusterExistsComponentTemplateQuery = ClusterExistsComponentTemplateQuery::new(),
 ) -> ClusterExistsComponentTemplateRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -9562,7 +9562,7 @@ pub fn ClusterGetComponentTemplateQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> ClusterGetComponentTemplateQuery {
-  { flat_settings, settings_filter, include_defaults, local_, master_timeout }
+  { flat_settings, settings_filter, include_defaults, local_, master_timeout, }
 }
 
 ///|
@@ -9636,7 +9636,7 @@ pub fn ClusterGetComponentTemplateRequest::new(
   name? : String,
   query? : ClusterGetComponentTemplateQuery = ClusterGetComponentTemplateQuery::new(),
 ) -> ClusterGetComponentTemplateRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -9731,7 +9731,7 @@ pub fn ClusterGetSettingsQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> ClusterGetSettingsQuery {
-  { flat_settings, include_defaults, master_timeout, timeout }
+  { flat_settings, include_defaults, master_timeout, timeout, }
 }
 
 ///|
@@ -10075,7 +10075,7 @@ pub fn ClusterHealthRequest::new(
   index? : String,
   query? : ClusterHealthQuery = ClusterHealthQuery::new(),
 ) -> ClusterHealthRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -10114,13 +10114,13 @@ pub impl FromJson for ClusterInfoQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ClusterInfoQuery: expected object"))
   }
-  ClusterInfoQuery::{  }
+  ClusterInfoQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ClusterInfoQuery::new() -> ClusterInfoQuery {
-  ClusterInfoQuery::{  }
+  ClusterInfoQuery::{ }
 }
 
 ///|
@@ -10210,7 +10210,7 @@ pub fn ClusterInfoRequest::new(
   target : String,
   query? : ClusterInfoQuery = ClusterInfoQuery::new(),
 ) -> ClusterInfoRequest {
-  { target, query }
+  { target, query, }
 }
 
 ///|
@@ -10275,7 +10275,7 @@ pub fn ClusterPendingTasksQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> ClusterPendingTasksQuery {
-  { local_, master_timeout }
+  { local_, master_timeout, }
 }
 
 ///|
@@ -10424,7 +10424,7 @@ pub fn ClusterPostVotingConfigExclusionsQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> ClusterPostVotingConfigExclusionsQuery {
-  { node_names, node_ids, master_timeout, timeout }
+  { node_names, node_ids, master_timeout, timeout, }
 }
 
 ///|
@@ -10543,7 +10543,7 @@ pub fn ClusterPutComponentTemplateQuery::new(
   cause? : String,
   master_timeout? : String,
 ) -> ClusterPutComponentTemplateQuery {
-  { create, cause, master_timeout }
+  { create, cause, master_timeout, }
 }
 
 ///|
@@ -10636,7 +10636,7 @@ pub fn ClusterPutComponentTemplateBody::new(
   _meta? : Json,
   deprecated? : Bool,
 ) -> ClusterPutComponentTemplateBody {
-  { template, version, _meta, deprecated }
+  { template, version, _meta, deprecated, }
 }
 
 ///|
@@ -10655,7 +10655,7 @@ pub fn ClusterPutComponentTemplateRequest::new(
   body : ClusterPutComponentTemplateBody,
   query? : ClusterPutComponentTemplateQuery = ClusterPutComponentTemplateQuery::new(),
 ) -> ClusterPutComponentTemplateRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -10733,7 +10733,7 @@ pub fn ClusterPutSettingsQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> ClusterPutSettingsQuery {
-  { flat_settings, master_timeout, timeout }
+  { flat_settings, master_timeout, timeout, }
 }
 
 ///|
@@ -10804,7 +10804,7 @@ pub fn ClusterPutSettingsBody::new(
   persistent? : Map[String, Json],
   transient? : Map[String, Json],
 ) -> ClusterPutSettingsBody {
-  { persistent, transient }
+  { persistent, transient, }
 }
 
 ///|
@@ -10857,7 +10857,7 @@ pub fn ClusterPutSettingsRequest::new(
   body : ClusterPutSettingsBody,
   query? : ClusterPutSettingsQuery = ClusterPutSettingsQuery::new(),
 ) -> ClusterPutSettingsRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -10889,13 +10889,13 @@ pub impl FromJson for ClusterRemoteInfoQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ClusterRemoteInfoQuery: expected object"))
   }
-  ClusterRemoteInfoQuery::{  }
+  ClusterRemoteInfoQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ClusterRemoteInfoQuery::new() -> ClusterRemoteInfoQuery {
-  ClusterRemoteInfoQuery::{  }
+  ClusterRemoteInfoQuery::{ }
 }
 
 ///|
@@ -11024,7 +11024,7 @@ pub fn ClusterRerouteQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> ClusterRerouteQuery {
-  { dry_run, explain, metric, retry_failed, master_timeout, timeout }
+  { dry_run, explain, metric, retry_failed, master_timeout, timeout, }
 }
 
 ///|
@@ -11154,7 +11154,7 @@ pub fn ClusterRerouteRequest::new(
   query? : ClusterRerouteQuery = ClusterRerouteQuery::new(),
   body? : ClusterRerouteBody,
 ) -> ClusterRerouteRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -11360,7 +11360,7 @@ pub fn ClusterStateRequest::new(
   index? : String,
   query? : ClusterStateQuery = ClusterStateQuery::new(),
 ) -> ClusterStateRequest {
-  { metric, index, query }
+  { metric, index, query, }
 }
 
 ///|
@@ -11434,7 +11434,7 @@ pub fn ClusterStatsQuery::new(
   include_remotes? : Bool,
   timeout? : String,
 ) -> ClusterStatsQuery {
-  { include_remotes, timeout }
+  { include_remotes, timeout, }
 }
 
 ///|
@@ -11467,7 +11467,7 @@ pub fn ClusterStatsRequest::new(
   node_id? : String,
   query? : ClusterStatsQuery = ClusterStatsQuery::new(),
 ) -> ClusterStatsRequest {
-  { node_id, query }
+  { node_id, query, }
 }
 
 ///|
@@ -11508,13 +11508,13 @@ pub impl FromJson for ConnectorCheckInQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorCheckInQuery: expected object"))
   }
-  ConnectorCheckInQuery::{  }
+  ConnectorCheckInQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorCheckInQuery::new() -> ConnectorCheckInQuery {
-  ConnectorCheckInQuery::{  }
+  ConnectorCheckInQuery::{ }
 }
 
 ///|
@@ -11563,7 +11563,7 @@ pub fn ConnectorCheckInRequest::new(
   connector_id : String,
   query? : ConnectorCheckInQuery = ConnectorCheckInQuery::new(),
 ) -> ConnectorCheckInRequest {
-  { connector_id, query }
+  { connector_id, query, }
 }
 
 ///|
@@ -11628,7 +11628,7 @@ pub fn ConnectorDeleteQuery::new(
   delete_sync_jobs? : Bool,
   hard? : Bool,
 ) -> ConnectorDeleteQuery {
-  { delete_sync_jobs, hard }
+  { delete_sync_jobs, hard, }
 }
 
 ///|
@@ -11661,7 +11661,7 @@ pub fn ConnectorDeleteRequest::new(
   connector_id : String,
   query? : ConnectorDeleteQuery = ConnectorDeleteQuery::new(),
 ) -> ConnectorDeleteRequest {
-  { connector_id, query }
+  { connector_id, query, }
 }
 
 ///|
@@ -11740,7 +11740,7 @@ pub fn ConnectorGetRequest::new(
   connector_id : String,
   query? : ConnectorGetQuery = ConnectorGetQuery::new(),
 ) -> ConnectorGetRequest {
-  { connector_id, query }
+  { connector_id, query, }
 }
 
 ///|
@@ -11775,13 +11775,13 @@ pub impl FromJson for ConnectorLastSyncQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorLastSyncQuery: expected object"))
   }
-  ConnectorLastSyncQuery::{  }
+  ConnectorLastSyncQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorLastSyncQuery::new() -> ConnectorLastSyncQuery {
-  ConnectorLastSyncQuery::{  }
+  ConnectorLastSyncQuery::{ }
 }
 
 ///|
@@ -12053,7 +12053,7 @@ pub fn ConnectorLastSyncRequest::new(
   body : ConnectorLastSyncBody,
   query? : ConnectorLastSyncQuery = ConnectorLastSyncQuery::new(),
 ) -> ConnectorLastSyncRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -12299,13 +12299,13 @@ pub impl FromJson for ConnectorPostQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorPostQuery: expected object"))
   }
-  ConnectorPostQuery::{  }
+  ConnectorPostQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorPostQuery::new() -> ConnectorPostQuery {
-  ConnectorPostQuery::{  }
+  ConnectorPostQuery::{ }
 }
 
 ///|
@@ -12408,7 +12408,7 @@ pub fn ConnectorPostBody::new(
   name? : String,
   service_type? : String,
 ) -> ConnectorPostBody {
-  { description, index_name, is_native, language, name, service_type }
+  { description, index_name, is_native, language, name, service_type, }
 }
 
 ///|
@@ -12455,7 +12455,7 @@ pub fn ConnectorPostRequest::new(
   query? : ConnectorPostQuery = ConnectorPostQuery::new(),
   body? : ConnectorPostBody,
 ) -> ConnectorPostRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -12488,13 +12488,13 @@ pub impl FromJson for ConnectorPutQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorPutQuery: expected object"))
   }
-  ConnectorPutQuery::{  }
+  ConnectorPutQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorPutQuery::new() -> ConnectorPutQuery {
-  ConnectorPutQuery::{  }
+  ConnectorPutQuery::{ }
 }
 
 ///|
@@ -12597,7 +12597,7 @@ pub fn ConnectorPutBody::new(
   name? : String,
   service_type? : String,
 ) -> ConnectorPutBody {
-  { description, index_name, is_native, language, name, service_type }
+  { description, index_name, is_native, language, name, service_type, }
 }
 
 ///|
@@ -12646,7 +12646,7 @@ pub fn ConnectorPutRequest::new(
   query? : ConnectorPutQuery = ConnectorPutQuery::new(),
   body? : ConnectorPutBody,
 ) -> ConnectorPutRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -12691,13 +12691,13 @@ pub impl FromJson for ConnectorSecretDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorSecretDeleteQuery: expected object"))
   }
-  ConnectorSecretDeleteQuery::{  }
+  ConnectorSecretDeleteQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorSecretDeleteQuery::new() -> ConnectorSecretDeleteQuery {
-  ConnectorSecretDeleteQuery::{  }
+  ConnectorSecretDeleteQuery::{ }
 }
 
 ///|
@@ -12751,7 +12751,7 @@ pub fn ConnectorSecretDeleteRequest::new(
   id : String,
   query? : ConnectorSecretDeleteQuery = ConnectorSecretDeleteQuery::new(),
 ) -> ConnectorSecretDeleteRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -12786,13 +12786,13 @@ pub impl FromJson for ConnectorSecretGetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorSecretGetQuery: expected object"))
   }
-  ConnectorSecretGetQuery::{  }
+  ConnectorSecretGetQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorSecretGetQuery::new() -> ConnectorSecretGetQuery {
-  ConnectorSecretGetQuery::{  }
+  ConnectorSecretGetQuery::{ }
 }
 
 ///|
@@ -12847,7 +12847,7 @@ pub fn ConnectorSecretGetRequest::new(
   id : String,
   query? : ConnectorSecretGetQuery = ConnectorSecretGetQuery::new(),
 ) -> ConnectorSecretGetRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -12882,13 +12882,13 @@ pub impl FromJson for ConnectorSecretPostQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorSecretPostQuery: expected object"))
   }
-  ConnectorSecretPostQuery::{  }
+  ConnectorSecretPostQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorSecretPostQuery::new() -> ConnectorSecretPostQuery {
-  ConnectorSecretPostQuery::{  }
+  ConnectorSecretPostQuery::{ }
 }
 
 ///|
@@ -12968,13 +12968,13 @@ pub impl FromJson for ConnectorSecretPutQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorSecretPutQuery: expected object"))
   }
-  ConnectorSecretPutQuery::{  }
+  ConnectorSecretPutQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorSecretPutQuery::new() -> ConnectorSecretPutQuery {
-  ConnectorSecretPutQuery::{  }
+  ConnectorSecretPutQuery::{ }
 }
 
 ///|
@@ -13023,7 +13023,7 @@ pub fn ConnectorSecretPutRequest::new(
   id : String,
   query? : ConnectorSecretPutQuery = ConnectorSecretPutQuery::new(),
 ) -> ConnectorSecretPutRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -13060,13 +13060,13 @@ pub impl FromJson for ConnectorSyncJobCancelQuery with fn from_json(json, path) 
       (path, "ConnectorSyncJobCancelQuery: expected object"),
     )
   }
-  ConnectorSyncJobCancelQuery::{  }
+  ConnectorSyncJobCancelQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobCancelQuery::new() -> ConnectorSyncJobCancelQuery {
-  ConnectorSyncJobCancelQuery::{  }
+  ConnectorSyncJobCancelQuery::{ }
 }
 
 ///|
@@ -13120,7 +13120,7 @@ pub fn ConnectorSyncJobCancelRequest::new(
   connector_sync_job_id : String,
   query? : ConnectorSyncJobCancelQuery = ConnectorSyncJobCancelQuery::new(),
 ) -> ConnectorSyncJobCancelRequest {
-  { connector_sync_job_id, query }
+  { connector_sync_job_id, query, }
 }
 
 ///|
@@ -13162,13 +13162,13 @@ pub impl FromJson for ConnectorSyncJobCheckInQuery with fn from_json(json, path)
       (path, "ConnectorSyncJobCheckInQuery: expected object"),
     )
   }
-  ConnectorSyncJobCheckInQuery::{  }
+  ConnectorSyncJobCheckInQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobCheckInQuery::new() -> ConnectorSyncJobCheckInQuery {
-  ConnectorSyncJobCheckInQuery::{  }
+  ConnectorSyncJobCheckInQuery::{ }
 }
 
 ///|
@@ -13193,7 +13193,7 @@ pub fn ConnectorSyncJobCheckInRequest::new(
   connector_sync_job_id : String,
   query? : ConnectorSyncJobCheckInQuery = ConnectorSyncJobCheckInQuery::new(),
 ) -> ConnectorSyncJobCheckInRequest {
-  { connector_sync_job_id, query }
+  { connector_sync_job_id, query, }
 }
 
 ///|
@@ -13233,13 +13233,13 @@ pub impl FromJson for ConnectorSyncJobClaimQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorSyncJobClaimQuery: expected object"))
   }
-  ConnectorSyncJobClaimQuery::{  }
+  ConnectorSyncJobClaimQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobClaimQuery::new() -> ConnectorSyncJobClaimQuery {
-  ConnectorSyncJobClaimQuery::{  }
+  ConnectorSyncJobClaimQuery::{ }
 }
 
 ///|
@@ -13293,7 +13293,7 @@ pub fn ConnectorSyncJobClaimBody::new(
   worker_hostname : String,
   sync_cursor? : Json,
 ) -> ConnectorSyncJobClaimBody {
-  { sync_cursor, worker_hostname }
+  { sync_cursor, worker_hostname, }
 }
 
 ///|
@@ -13312,7 +13312,7 @@ pub fn ConnectorSyncJobClaimRequest::new(
   body : ConnectorSyncJobClaimBody,
   query? : ConnectorSyncJobClaimQuery = ConnectorSyncJobClaimQuery::new(),
 ) -> ConnectorSyncJobClaimRequest {
-  { connector_sync_job_id, query, body }
+  { connector_sync_job_id, query, body, }
 }
 
 ///|
@@ -13354,13 +13354,13 @@ pub impl FromJson for ConnectorSyncJobDeleteQuery with fn from_json(json, path) 
       (path, "ConnectorSyncJobDeleteQuery: expected object"),
     )
   }
-  ConnectorSyncJobDeleteQuery::{  }
+  ConnectorSyncJobDeleteQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobDeleteQuery::new() -> ConnectorSyncJobDeleteQuery {
-  ConnectorSyncJobDeleteQuery::{  }
+  ConnectorSyncJobDeleteQuery::{ }
 }
 
 ///|
@@ -13385,7 +13385,7 @@ pub fn ConnectorSyncJobDeleteRequest::new(
   connector_sync_job_id : String,
   query? : ConnectorSyncJobDeleteQuery = ConnectorSyncJobDeleteQuery::new(),
 ) -> ConnectorSyncJobDeleteRequest {
-  { connector_sync_job_id, query }
+  { connector_sync_job_id, query, }
 }
 
 ///|
@@ -13424,13 +13424,13 @@ pub impl FromJson for ConnectorSyncJobErrorQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorSyncJobErrorQuery: expected object"))
   }
-  ConnectorSyncJobErrorQuery::{  }
+  ConnectorSyncJobErrorQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobErrorQuery::new() -> ConnectorSyncJobErrorQuery {
-  ConnectorSyncJobErrorQuery::{  }
+  ConnectorSyncJobErrorQuery::{ }
 }
 
 ///|
@@ -13491,7 +13491,7 @@ pub fn ConnectorSyncJobErrorRequest::new(
   body : ConnectorSyncJobErrorBody,
   query? : ConnectorSyncJobErrorQuery = ConnectorSyncJobErrorQuery::new(),
 ) -> ConnectorSyncJobErrorRequest {
-  { connector_sync_job_id, query, body }
+  { connector_sync_job_id, query, body, }
 }
 
 ///|
@@ -13531,13 +13531,13 @@ pub impl FromJson for ConnectorSyncJobGetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorSyncJobGetQuery: expected object"))
   }
-  ConnectorSyncJobGetQuery::{  }
+  ConnectorSyncJobGetQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobGetQuery::new() -> ConnectorSyncJobGetQuery {
-  ConnectorSyncJobGetQuery::{  }
+  ConnectorSyncJobGetQuery::{ }
 }
 
 ///|
@@ -13562,7 +13562,7 @@ pub fn ConnectorSyncJobGetRequest::new(
   connector_sync_job_id : String,
   query? : ConnectorSyncJobGetQuery = ConnectorSyncJobGetQuery::new(),
 ) -> ConnectorSyncJobGetRequest {
-  { connector_sync_job_id, query }
+  { connector_sync_job_id, query, }
 }
 
 ///|
@@ -13664,7 +13664,7 @@ pub fn ConnectorSyncJobListQuery::new(
   connector_id? : String,
   job_type? : Json,
 ) -> ConnectorSyncJobListQuery {
-  { from, size, status, connector_id, job_type }
+  { from, size, status, connector_id, job_type, }
 }
 
 ///|
@@ -13773,13 +13773,13 @@ pub impl FromJson for ConnectorSyncJobPostQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorSyncJobPostQuery: expected object"))
   }
-  ConnectorSyncJobPostQuery::{  }
+  ConnectorSyncJobPostQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobPostQuery::new() -> ConnectorSyncJobPostQuery {
-  ConnectorSyncJobPostQuery::{  }
+  ConnectorSyncJobPostQuery::{ }
 }
 
 ///|
@@ -13844,7 +13844,7 @@ pub fn ConnectorSyncJobPostBody::new(
   job_type? : Json,
   trigger_method? : Json,
 ) -> ConnectorSyncJobPostBody {
-  { id, job_type, trigger_method }
+  { id, job_type, trigger_method, }
 }
 
 ///|
@@ -13887,7 +13887,7 @@ pub fn ConnectorSyncJobPostRequest::new(
   body : ConnectorSyncJobPostBody,
   query? : ConnectorSyncJobPostQuery = ConnectorSyncJobPostQuery::new(),
 ) -> ConnectorSyncJobPostRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -13927,13 +13927,13 @@ pub impl FromJson for ConnectorSyncJobUpdateStatsQuery with fn from_json(
       (path, "ConnectorSyncJobUpdateStatsQuery: expected object"),
     )
   }
-  ConnectorSyncJobUpdateStatsQuery::{  }
+  ConnectorSyncJobUpdateStatsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorSyncJobUpdateStatsQuery::new() -> ConnectorSyncJobUpdateStatsQuery {
-  ConnectorSyncJobUpdateStatsQuery::{  }
+  ConnectorSyncJobUpdateStatsQuery::{ }
 }
 
 ///|
@@ -14055,7 +14055,7 @@ pub fn ConnectorSyncJobUpdateStatsRequest::new(
   body : ConnectorSyncJobUpdateStatsBody,
   query? : ConnectorSyncJobUpdateStatsQuery = ConnectorSyncJobUpdateStatsQuery::new(),
 ) -> ConnectorSyncJobUpdateStatsRequest {
-  { connector_sync_job_id, query, body }
+  { connector_sync_job_id, query, body, }
 }
 
 ///|
@@ -14100,13 +14100,13 @@ pub impl FromJson for ConnectorUpdateActiveFilteringQuery with fn from_json(
       (path, "ConnectorUpdateActiveFilteringQuery: expected object"),
     )
   }
-  ConnectorUpdateActiveFilteringQuery::{  }
+  ConnectorUpdateActiveFilteringQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateActiveFilteringQuery::new() -> ConnectorUpdateActiveFilteringQuery {
-  ConnectorUpdateActiveFilteringQuery::{  }
+  ConnectorUpdateActiveFilteringQuery::{ }
 }
 
 ///|
@@ -14165,7 +14165,7 @@ pub fn ConnectorUpdateActiveFilteringRequest::new(
   query? : ConnectorUpdateActiveFilteringQuery = ConnectorUpdateActiveFilteringQuery::new(),
   body? : ConnectorUpdateActiveFilteringBody,
 ) -> ConnectorUpdateActiveFilteringRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -14210,13 +14210,13 @@ pub impl FromJson for ConnectorUpdateApiKeyIdQuery with fn from_json(json, path)
       (path, "ConnectorUpdateApiKeyIdQuery: expected object"),
     )
   }
-  ConnectorUpdateApiKeyIdQuery::{  }
+  ConnectorUpdateApiKeyIdQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateApiKeyIdQuery::new() -> ConnectorUpdateApiKeyIdQuery {
-  ConnectorUpdateApiKeyIdQuery::{  }
+  ConnectorUpdateApiKeyIdQuery::{ }
 }
 
 ///|
@@ -14277,7 +14277,7 @@ pub fn ConnectorUpdateApiKeyIdBody::new(
   api_key_id? : String,
   api_key_secret_id? : String,
 ) -> ConnectorUpdateApiKeyIdBody {
-  { api_key_id, api_key_secret_id }
+  { api_key_id, api_key_secret_id, }
 }
 
 ///|
@@ -14325,7 +14325,7 @@ pub fn ConnectorUpdateApiKeyIdRequest::new(
   body : ConnectorUpdateApiKeyIdBody,
   query? : ConnectorUpdateApiKeyIdQuery = ConnectorUpdateApiKeyIdQuery::new(),
 ) -> ConnectorUpdateApiKeyIdRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -14370,13 +14370,13 @@ pub impl FromJson for ConnectorUpdateConfigurationQuery with fn from_json(
       (path, "ConnectorUpdateConfigurationQuery: expected object"),
     )
   }
-  ConnectorUpdateConfigurationQuery::{  }
+  ConnectorUpdateConfigurationQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateConfigurationQuery::new() -> ConnectorUpdateConfigurationQuery {
-  ConnectorUpdateConfigurationQuery::{  }
+  ConnectorUpdateConfigurationQuery::{ }
 }
 
 ///|
@@ -14439,7 +14439,7 @@ pub fn ConnectorUpdateConfigurationBody::new(
   configuration? : Json,
   values? : Map[String, Json],
 ) -> ConnectorUpdateConfigurationBody {
-  { configuration, values }
+  { configuration, values, }
 }
 
 ///|
@@ -14487,7 +14487,7 @@ pub fn ConnectorUpdateConfigurationRequest::new(
   body : ConnectorUpdateConfigurationBody,
   query? : ConnectorUpdateConfigurationQuery = ConnectorUpdateConfigurationQuery::new(),
 ) -> ConnectorUpdateConfigurationRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -14527,13 +14527,13 @@ pub impl FromJson for ConnectorUpdateErrorQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorUpdateErrorQuery: expected object"))
   }
-  ConnectorUpdateErrorQuery::{  }
+  ConnectorUpdateErrorQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateErrorQuery::new() -> ConnectorUpdateErrorQuery {
-  ConnectorUpdateErrorQuery::{  }
+  ConnectorUpdateErrorQuery::{ }
 }
 
 ///|
@@ -14618,7 +14618,7 @@ pub fn ConnectorUpdateErrorRequest::new(
   body : ConnectorUpdateErrorBody,
   query? : ConnectorUpdateErrorQuery = ConnectorUpdateErrorQuery::new(),
 ) -> ConnectorUpdateErrorRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -14656,13 +14656,13 @@ pub impl FromJson for ConnectorUpdateFeaturesQuery with fn from_json(json, path)
       (path, "ConnectorUpdateFeaturesQuery: expected object"),
     )
   }
-  ConnectorUpdateFeaturesQuery::{  }
+  ConnectorUpdateFeaturesQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateFeaturesQuery::new() -> ConnectorUpdateFeaturesQuery {
-  ConnectorUpdateFeaturesQuery::{  }
+  ConnectorUpdateFeaturesQuery::{ }
 }
 
 ///|
@@ -14754,7 +14754,7 @@ pub fn ConnectorUpdateFeaturesRequest::new(
   body : ConnectorUpdateFeaturesBody,
   query? : ConnectorUpdateFeaturesQuery = ConnectorUpdateFeaturesQuery::new(),
 ) -> ConnectorUpdateFeaturesRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -14795,13 +14795,13 @@ pub impl FromJson for ConnectorUpdateFilteringQuery with fn from_json(
       (path, "ConnectorUpdateFilteringQuery: expected object"),
     )
   }
-  ConnectorUpdateFilteringQuery::{  }
+  ConnectorUpdateFilteringQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateFilteringQuery::new() -> ConnectorUpdateFilteringQuery {
-  ConnectorUpdateFilteringQuery::{  }
+  ConnectorUpdateFilteringQuery::{ }
 }
 
 ///|
@@ -14873,7 +14873,7 @@ pub fn ConnectorUpdateFilteringBody::new(
   rules? : Array[Json],
   advanced_snippet? : Json,
 ) -> ConnectorUpdateFilteringBody {
-  { filtering, rules, advanced_snippet }
+  { filtering, rules, advanced_snippet, }
 }
 
 ///|
@@ -14921,7 +14921,7 @@ pub fn ConnectorUpdateFilteringRequest::new(
   body : ConnectorUpdateFilteringBody,
   query? : ConnectorUpdateFilteringQuery = ConnectorUpdateFilteringQuery::new(),
 ) -> ConnectorUpdateFilteringRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -14964,13 +14964,13 @@ pub impl FromJson for ConnectorUpdateFilteringValidationQuery with fn from_json(
       (path, "ConnectorUpdateFilteringValidationQuery: expected object"),
     )
   }
-  ConnectorUpdateFilteringValidationQuery::{  }
+  ConnectorUpdateFilteringValidationQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateFilteringValidationQuery::new() -> ConnectorUpdateFilteringValidationQuery {
-  ConnectorUpdateFilteringValidationQuery::{  }
+  ConnectorUpdateFilteringValidationQuery::{ }
 }
 
 ///|
@@ -15065,7 +15065,7 @@ pub fn ConnectorUpdateFilteringValidationRequest::new(
   body : ConnectorUpdateFilteringValidationBody,
   query? : ConnectorUpdateFilteringValidationQuery = ConnectorUpdateFilteringValidationQuery::new(),
 ) -> ConnectorUpdateFilteringValidationRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -15110,13 +15110,13 @@ pub impl FromJson for ConnectorUpdateIndexNameQuery with fn from_json(
       (path, "ConnectorUpdateIndexNameQuery: expected object"),
     )
   }
-  ConnectorUpdateIndexNameQuery::{  }
+  ConnectorUpdateIndexNameQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateIndexNameQuery::new() -> ConnectorUpdateIndexNameQuery {
-  ConnectorUpdateIndexNameQuery::{  }
+  ConnectorUpdateIndexNameQuery::{ }
 }
 
 ///|
@@ -15208,7 +15208,7 @@ pub fn ConnectorUpdateIndexNameRequest::new(
   body : ConnectorUpdateIndexNameBody,
   query? : ConnectorUpdateIndexNameQuery = ConnectorUpdateIndexNameQuery::new(),
 ) -> ConnectorUpdateIndexNameRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -15248,13 +15248,13 @@ pub impl FromJson for ConnectorUpdateNameQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorUpdateNameQuery: expected object"))
   }
-  ConnectorUpdateNameQuery::{  }
+  ConnectorUpdateNameQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateNameQuery::new() -> ConnectorUpdateNameQuery {
-  ConnectorUpdateNameQuery::{  }
+  ConnectorUpdateNameQuery::{ }
 }
 
 ///|
@@ -15312,7 +15312,7 @@ pub fn ConnectorUpdateNameBody::new(
   name? : String,
   description? : String,
 ) -> ConnectorUpdateNameBody {
-  { name, description }
+  { name, description, }
 }
 
 ///|
@@ -15357,7 +15357,7 @@ pub fn ConnectorUpdateNameRequest::new(
   body : ConnectorUpdateNameBody,
   query? : ConnectorUpdateNameQuery = ConnectorUpdateNameQuery::new(),
 ) -> ConnectorUpdateNameRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -15393,13 +15393,13 @@ pub impl FromJson for ConnectorUpdateNativeQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorUpdateNativeQuery: expected object"))
   }
-  ConnectorUpdateNativeQuery::{  }
+  ConnectorUpdateNativeQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateNativeQuery::new() -> ConnectorUpdateNativeQuery {
-  ConnectorUpdateNativeQuery::{  }
+  ConnectorUpdateNativeQuery::{ }
 }
 
 ///|
@@ -15489,7 +15489,7 @@ pub fn ConnectorUpdateNativeRequest::new(
   body : ConnectorUpdateNativeBody,
   query? : ConnectorUpdateNativeQuery = ConnectorUpdateNativeQuery::new(),
 ) -> ConnectorUpdateNativeRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -15527,13 +15527,13 @@ pub impl FromJson for ConnectorUpdatePipelineQuery with fn from_json(json, path)
       (path, "ConnectorUpdatePipelineQuery: expected object"),
     )
   }
-  ConnectorUpdatePipelineQuery::{  }
+  ConnectorUpdatePipelineQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorUpdatePipelineQuery::new() -> ConnectorUpdatePipelineQuery {
-  ConnectorUpdatePipelineQuery::{  }
+  ConnectorUpdatePipelineQuery::{ }
 }
 
 ///|
@@ -15625,7 +15625,7 @@ pub fn ConnectorUpdatePipelineRequest::new(
   body : ConnectorUpdatePipelineBody,
   query? : ConnectorUpdatePipelineQuery = ConnectorUpdatePipelineQuery::new(),
 ) -> ConnectorUpdatePipelineRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -15666,13 +15666,13 @@ pub impl FromJson for ConnectorUpdateSchedulingQuery with fn from_json(
       (path, "ConnectorUpdateSchedulingQuery: expected object"),
     )
   }
-  ConnectorUpdateSchedulingQuery::{  }
+  ConnectorUpdateSchedulingQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateSchedulingQuery::new() -> ConnectorUpdateSchedulingQuery {
-  ConnectorUpdateSchedulingQuery::{  }
+  ConnectorUpdateSchedulingQuery::{ }
 }
 
 ///|
@@ -15767,7 +15767,7 @@ pub fn ConnectorUpdateSchedulingRequest::new(
   body : ConnectorUpdateSchedulingBody,
   query? : ConnectorUpdateSchedulingQuery = ConnectorUpdateSchedulingQuery::new(),
 ) -> ConnectorUpdateSchedulingRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -15812,13 +15812,13 @@ pub impl FromJson for ConnectorUpdateServiceTypeQuery with fn from_json(
       (path, "ConnectorUpdateServiceTypeQuery: expected object"),
     )
   }
-  ConnectorUpdateServiceTypeQuery::{  }
+  ConnectorUpdateServiceTypeQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateServiceTypeQuery::new() -> ConnectorUpdateServiceTypeQuery {
-  ConnectorUpdateServiceTypeQuery::{  }
+  ConnectorUpdateServiceTypeQuery::{ }
 }
 
 ///|
@@ -15913,7 +15913,7 @@ pub fn ConnectorUpdateServiceTypeRequest::new(
   body : ConnectorUpdateServiceTypeBody,
   query? : ConnectorUpdateServiceTypeQuery = ConnectorUpdateServiceTypeQuery::new(),
 ) -> ConnectorUpdateServiceTypeRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -15953,13 +15953,13 @@ pub impl FromJson for ConnectorUpdateStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ConnectorUpdateStatusQuery: expected object"))
   }
-  ConnectorUpdateStatusQuery::{  }
+  ConnectorUpdateStatusQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ConnectorUpdateStatusQuery::new() -> ConnectorUpdateStatusQuery {
-  ConnectorUpdateStatusQuery::{  }
+  ConnectorUpdateStatusQuery::{ }
 }
 
 ///|
@@ -16049,7 +16049,7 @@ pub fn ConnectorUpdateStatusRequest::new(
   body : ConnectorUpdateStatusBody,
   query? : ConnectorUpdateStatusQuery = ConnectorUpdateStatusQuery::new(),
 ) -> ConnectorUpdateStatusRequest {
-  { connector_id, query, body }
+  { connector_id, query, body, }
 }
 
 ///|
@@ -16375,7 +16375,7 @@ pub impl FromJson for CountBody with fn from_json(json, path) {
 
 ///|
 pub fn CountBody::new(query? : Json, project_routing? : Json) -> CountBody {
-  { query, project_routing }
+  { query, project_routing, }
 }
 
 ///|
@@ -16422,7 +16422,7 @@ pub fn CountRequest::new(
   query? : CountQuery = CountQuery::new(),
   body? : CountBody,
 ) -> CountRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -16675,7 +16675,7 @@ pub fn CreateRequest::new(
   body : CreateBody,
   query? : CreateQuery = CreateQuery::new(),
 ) -> CreateRequest {
-  { index, id, query, body }
+  { index, id, query, body, }
 }
 
 ///|
@@ -16759,7 +16759,7 @@ pub fn DanglingIndicesDeleteDanglingIndexQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> DanglingIndicesDeleteDanglingIndexQuery {
-  { accept_data_loss, master_timeout, timeout }
+  { accept_data_loss, master_timeout, timeout, }
 }
 
 ///|
@@ -16796,7 +16796,7 @@ pub fn DanglingIndicesDeleteDanglingIndexRequest::new(
   index_uuid : String,
   query? : DanglingIndicesDeleteDanglingIndexQuery = DanglingIndicesDeleteDanglingIndexQuery::new(),
 ) -> DanglingIndicesDeleteDanglingIndexRequest {
-  { index_uuid, query }
+  { index_uuid, query, }
 }
 
 ///|
@@ -16878,7 +16878,7 @@ pub fn DanglingIndicesImportDanglingIndexQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> DanglingIndicesImportDanglingIndexQuery {
-  { accept_data_loss, master_timeout, timeout }
+  { accept_data_loss, master_timeout, timeout, }
 }
 
 ///|
@@ -16915,7 +16915,7 @@ pub fn DanglingIndicesImportDanglingIndexRequest::new(
   index_uuid : String,
   query? : DanglingIndicesImportDanglingIndexQuery = DanglingIndicesImportDanglingIndexQuery::new(),
 ) -> DanglingIndicesImportDanglingIndexRequest {
-  { index_uuid, query }
+  { index_uuid, query, }
 }
 
 ///|
@@ -16955,13 +16955,13 @@ pub impl FromJson for DanglingIndicesListDanglingIndicesQuery with fn from_json(
       (path, "DanglingIndicesListDanglingIndicesQuery: expected object"),
     )
   }
-  DanglingIndicesListDanglingIndicesQuery::{  }
+  DanglingIndicesListDanglingIndicesQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn DanglingIndicesListDanglingIndicesQuery::new() -> DanglingIndicesListDanglingIndicesQuery {
-  DanglingIndicesListDanglingIndicesQuery::{  }
+  DanglingIndicesListDanglingIndicesQuery::{ }
 }
 
 ///|
@@ -17210,7 +17210,7 @@ pub fn DeleteRequest::new(
   id : String,
   query? : DeleteQuery = DeleteQuery::new(),
 ) -> DeleteRequest {
-  { index, id, query }
+  { index, id, query, }
 }
 
 ///|
@@ -17815,7 +17815,7 @@ pub fn DeleteByQueryBody::new(
   slice? : Json,
   sort? : Json,
 ) -> DeleteByQueryBody {
-  { max_docs, query, slice, sort }
+  { max_docs, query, slice, sort, }
 }
 
 ///|
@@ -18031,7 +18031,7 @@ pub fn DeleteByQueryRequest::new(
   body : DeleteByQueryBody,
   query? : DeleteByQueryQuery = DeleteByQueryQuery::new(),
 ) -> DeleteByQueryRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -18113,7 +18113,7 @@ pub fn DeleteByQueryRethrottleRequest::new(
   task_id : String,
   query : DeleteByQueryRethrottleQuery,
 ) -> DeleteByQueryRethrottleRequest {
-  { task_id, query }
+  { task_id, query, }
 }
 
 ///|
@@ -18176,7 +18176,7 @@ pub fn DeleteScriptQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> DeleteScriptQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -18209,7 +18209,7 @@ pub fn DeleteScriptRequest::new(
   id : String,
   query? : DeleteScriptQuery = DeleteScriptQuery::new(),
 ) -> DeleteScriptRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -18289,7 +18289,7 @@ pub fn EnrichDeletePolicyRequest::new(
   name : String,
   query? : EnrichDeletePolicyQuery = EnrichDeletePolicyQuery::new(),
 ) -> EnrichDeletePolicyRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -18355,7 +18355,7 @@ pub fn EnrichExecutePolicyQuery::new(
   master_timeout? : String,
   wait_for_completion? : Bool,
 ) -> EnrichExecutePolicyQuery {
-  { master_timeout, wait_for_completion }
+  { master_timeout, wait_for_completion, }
 }
 
 ///|
@@ -18429,7 +18429,7 @@ pub fn EnrichExecutePolicyRequest::new(
   name : String,
   query? : EnrichExecutePolicyQuery = EnrichExecutePolicyQuery::new(),
 ) -> EnrichExecutePolicyRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -18536,7 +18536,7 @@ pub fn EnrichGetPolicyRequest::new(
   name? : String,
   query? : EnrichGetPolicyQuery = EnrichGetPolicyQuery::new(),
 ) -> EnrichGetPolicyRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -18669,7 +18669,7 @@ pub fn EnrichPutPolicyBody::new(
   match_? : Json,
   range? : Json,
 ) -> EnrichPutPolicyBody {
-  { geo_match, match_, range }
+  { geo_match, match_, range, }
 }
 
 ///|
@@ -18688,7 +18688,7 @@ pub fn EnrichPutPolicyRequest::new(
   body : EnrichPutPolicyBody,
   query? : EnrichPutPolicyQuery = EnrichPutPolicyQuery::new(),
 ) -> EnrichPutPolicyRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -18836,13 +18836,13 @@ pub impl FromJson for EqlDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "EqlDeleteQuery: expected object"))
   }
-  EqlDeleteQuery::{  }
+  EqlDeleteQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn EqlDeleteQuery::new() -> EqlDeleteQuery {
-  EqlDeleteQuery::{  }
+  EqlDeleteQuery::{ }
 }
 
 ///|
@@ -18867,7 +18867,7 @@ pub fn EqlDeleteRequest::new(
   id : String,
   query? : EqlDeleteQuery = EqlDeleteQuery::new(),
 ) -> EqlDeleteRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -18936,7 +18936,7 @@ pub fn EqlGetQuery::new(
   keep_alive? : String,
   wait_for_completion_timeout? : String,
 ) -> EqlGetQuery {
-  { keep_alive, wait_for_completion_timeout }
+  { keep_alive, wait_for_completion_timeout, }
 }
 
 ///|
@@ -18968,7 +18968,7 @@ pub fn EqlGetRequest::new(
   id : String,
   query? : EqlGetQuery = EqlGetQuery::new(),
 ) -> EqlGetRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -19001,13 +19001,13 @@ pub impl FromJson for EqlGetStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "EqlGetStatusQuery: expected object"))
   }
-  EqlGetStatusQuery::{  }
+  EqlGetStatusQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn EqlGetStatusQuery::new() -> EqlGetStatusQuery {
-  EqlGetStatusQuery::{  }
+  EqlGetStatusQuery::{ }
 }
 
 ///|
@@ -19103,7 +19103,7 @@ pub fn EqlGetStatusRequest::new(
   id : String,
   query? : EqlGetStatusQuery = EqlGetStatusQuery::new(),
 ) -> EqlGetStatusRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -19616,7 +19616,7 @@ pub fn EqlSearchRequest::new(
   body : EqlSearchBody,
   query? : EqlSearchQuery = EqlSearchQuery::new(),
 ) -> EqlSearchRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -19706,7 +19706,7 @@ pub fn EsqlAsyncQueryQuery::new(
   drop_null_columns? : Bool,
   format? : String,
 ) -> EsqlAsyncQueryQuery {
-  { allow_partial_results, delimiter, drop_null_columns, format }
+  { allow_partial_results, delimiter, drop_null_columns, format, }
 }
 
 ///|
@@ -19957,7 +19957,7 @@ pub fn EsqlAsyncQueryRequest::new(
   body : EsqlAsyncQueryBody,
   query? : EsqlAsyncQueryQuery = EsqlAsyncQueryQuery::new(),
 ) -> EsqlAsyncQueryRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -19989,13 +19989,13 @@ pub impl FromJson for EsqlAsyncQueryDeleteQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "EsqlAsyncQueryDeleteQuery: expected object"))
   }
-  EsqlAsyncQueryDeleteQuery::{  }
+  EsqlAsyncQueryDeleteQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn EsqlAsyncQueryDeleteQuery::new() -> EsqlAsyncQueryDeleteQuery {
-  EsqlAsyncQueryDeleteQuery::{  }
+  EsqlAsyncQueryDeleteQuery::{ }
 }
 
 ///|
@@ -20020,7 +20020,7 @@ pub fn EsqlAsyncQueryDeleteRequest::new(
   id : String,
   query? : EsqlAsyncQueryDeleteQuery = EsqlAsyncQueryDeleteQuery::new(),
 ) -> EsqlAsyncQueryDeleteRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -20114,7 +20114,7 @@ pub fn EsqlAsyncQueryGetQuery::new(
   keep_alive? : String,
   wait_for_completion_timeout? : String,
 ) -> EsqlAsyncQueryGetQuery {
-  { drop_null_columns, format, keep_alive, wait_for_completion_timeout }
+  { drop_null_columns, format, keep_alive, wait_for_completion_timeout, }
 }
 
 ///|
@@ -20156,7 +20156,7 @@ pub fn EsqlAsyncQueryGetRequest::new(
   id : String,
   query? : EsqlAsyncQueryGetQuery = EsqlAsyncQueryGetQuery::new(),
 ) -> EsqlAsyncQueryGetRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -20239,7 +20239,7 @@ pub fn EsqlAsyncQueryStopRequest::new(
   id : String,
   query? : EsqlAsyncQueryStopQuery = EsqlAsyncQueryStopQuery::new(),
 ) -> EsqlAsyncQueryStopRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -20274,13 +20274,13 @@ pub impl FromJson for EsqlDeleteViewQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "EsqlDeleteViewQuery: expected object"))
   }
-  EsqlDeleteViewQuery::{  }
+  EsqlDeleteViewQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn EsqlDeleteViewQuery::new() -> EsqlDeleteViewQuery {
-  EsqlDeleteViewQuery::{  }
+  EsqlDeleteViewQuery::{ }
 }
 
 ///|
@@ -20310,7 +20310,7 @@ pub fn EsqlDeleteViewRequest::new(
   query? : EsqlDeleteViewQuery = EsqlDeleteViewQuery::new(),
   body? : EsqlDeleteViewBody,
 ) -> EsqlDeleteViewRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -20347,13 +20347,13 @@ pub impl FromJson for EsqlGetQueryQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "EsqlGetQueryQuery: expected object"))
   }
-  EsqlGetQueryQuery::{  }
+  EsqlGetQueryQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn EsqlGetQueryQuery::new() -> EsqlGetQueryQuery {
-  EsqlGetQueryQuery::{  }
+  EsqlGetQueryQuery::{ }
 }
 
 ///|
@@ -20443,7 +20443,7 @@ pub fn EsqlGetQueryRequest::new(
   query? : EsqlGetQueryQuery = EsqlGetQueryQuery::new(),
   body? : EsqlGetQueryBody,
 ) -> EsqlGetQueryRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -20480,13 +20480,13 @@ pub impl FromJson for EsqlGetViewQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "EsqlGetViewQuery: expected object"))
   }
-  EsqlGetViewQuery::{  }
+  EsqlGetViewQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn EsqlGetViewQuery::new() -> EsqlGetViewQuery {
-  EsqlGetViewQuery::{  }
+  EsqlGetViewQuery::{ }
 }
 
 ///|
@@ -20540,7 +20540,7 @@ pub fn EsqlGetViewRequest::new(
   query? : EsqlGetViewQuery = EsqlGetViewQuery::new(),
   body? : EsqlGetViewBody,
 ) -> EsqlGetViewRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -20585,13 +20585,13 @@ pub impl FromJson for EsqlListQueriesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "EsqlListQueriesQuery: expected object"))
   }
-  EsqlListQueriesQuery::{  }
+  EsqlListQueriesQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn EsqlListQueriesQuery::new() -> EsqlListQueriesQuery {
-  EsqlListQueriesQuery::{  }
+  EsqlListQueriesQuery::{ }
 }
 
 ///|
@@ -20643,7 +20643,7 @@ pub fn EsqlListQueriesRequest::new(
   query? : EsqlListQueriesQuery = EsqlListQueriesQuery::new(),
   body? : EsqlListQueriesBody,
 ) -> EsqlListQueriesRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -20676,13 +20676,13 @@ pub impl FromJson for EsqlPutViewQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "EsqlPutViewQuery: expected object"))
   }
-  EsqlPutViewQuery::{  }
+  EsqlPutViewQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn EsqlPutViewQuery::new() -> EsqlPutViewQuery {
-  EsqlPutViewQuery::{  }
+  EsqlPutViewQuery::{ }
 }
 
 ///|
@@ -20739,7 +20739,7 @@ pub fn EsqlPutViewRequest::new(
   body : EsqlPutViewBody,
   query? : EsqlPutViewQuery = EsqlPutViewQuery::new(),
 ) -> EsqlPutViewRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -20827,7 +20827,7 @@ pub fn EsqlQueryQuery::new(
   drop_null_columns? : Bool,
   allow_partial_results? : Bool,
 ) -> EsqlQueryQuery {
-  { format, delimiter, drop_null_columns, allow_partial_results }
+  { format, delimiter, drop_null_columns, allow_partial_results, }
 }
 
 ///|
@@ -21032,7 +21032,7 @@ pub fn EsqlQueryRequest::new(
   body : EsqlQueryBody,
   query? : EsqlQueryQuery = EsqlQueryQuery::new(),
 ) -> EsqlQueryRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -21260,7 +21260,7 @@ pub fn ExistsRequest::new(
   id : String,
   query? : ExistsQuery = ExistsQuery::new(),
 ) -> ExistsRequest {
-  { index, id, query }
+  { index, id, query, }
 }
 
 ///|
@@ -21477,7 +21477,7 @@ pub fn ExistsSourceRequest::new(
   id : String,
   query? : ExistsSourceQuery = ExistsSourceQuery::new(),
 ) -> ExistsSourceRequest {
-  { index, id, query }
+  { index, id, query, }
 }
 
 ///|
@@ -21833,7 +21833,7 @@ pub fn ExplainRequest::new(
   query? : ExplainQuery = ExplainQuery::new(),
   body? : ExplainBody,
 ) -> ExplainRequest {
-  { index, id, query, body }
+  { index, id, query, body, }
 }
 
 ///|
@@ -22302,7 +22302,7 @@ pub fn FieldCapsBody::new(
   runtime_mappings? : Json,
   project_routing? : Json,
 ) -> FieldCapsBody {
-  { fields, index_filter, runtime_mappings, project_routing }
+  { fields, index_filter, runtime_mappings, project_routing, }
 }
 
 ///|
@@ -22349,7 +22349,7 @@ pub fn FieldCapsRequest::new(
   query? : FieldCapsQuery = FieldCapsQuery::new(),
   body? : FieldCapsBody,
 ) -> FieldCapsRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -22394,13 +22394,13 @@ pub impl FromJson for FleetDeleteSecretQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "FleetDeleteSecretQuery: expected object"))
   }
-  FleetDeleteSecretQuery::{  }
+  FleetDeleteSecretQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn FleetDeleteSecretQuery::new() -> FleetDeleteSecretQuery {
-  FleetDeleteSecretQuery::{  }
+  FleetDeleteSecretQuery::{ }
 }
 
 ///|
@@ -22449,7 +22449,7 @@ pub fn FleetDeleteSecretRequest::new(
   id : String,
   query? : FleetDeleteSecretQuery = FleetDeleteSecretQuery::new(),
 ) -> FleetDeleteSecretRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -22484,13 +22484,13 @@ pub impl FromJson for FleetGetSecretQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "FleetGetSecretQuery: expected object"))
   }
-  FleetGetSecretQuery::{  }
+  FleetGetSecretQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn FleetGetSecretQuery::new() -> FleetGetSecretQuery {
-  FleetGetSecretQuery::{  }
+  FleetGetSecretQuery::{ }
 }
 
 ///|
@@ -22545,7 +22545,7 @@ pub fn FleetGetSecretRequest::new(
   id : String,
   query? : FleetGetSecretQuery = FleetGetSecretQuery::new(),
 ) -> FleetGetSecretRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -22636,7 +22636,7 @@ pub fn FleetGlobalCheckpointsQuery::new(
   checkpoints? : Array[String],
   timeout? : String,
 ) -> FleetGlobalCheckpointsQuery {
-  { wait_for_advance, wait_for_index, checkpoints, timeout }
+  { wait_for_advance, wait_for_index, checkpoints, timeout, }
 }
 
 ///|
@@ -22717,7 +22717,7 @@ pub fn FleetGlobalCheckpointsRequest::new(
   query? : FleetGlobalCheckpointsQuery = FleetGlobalCheckpointsQuery::new(),
   body? : FleetGlobalCheckpointsBody,
 ) -> FleetGlobalCheckpointsRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -23062,7 +23062,7 @@ pub fn FleetMsearchRequest::new(
   index? : String,
   query? : FleetMsearchQuery = FleetMsearchQuery::new(),
 ) -> FleetMsearchRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -23104,13 +23104,13 @@ pub impl FromJson for FleetPostSecretQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "FleetPostSecretQuery: expected object"))
   }
-  FleetPostSecretQuery::{  }
+  FleetPostSecretQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn FleetPostSecretQuery::new() -> FleetPostSecretQuery {
-  FleetPostSecretQuery::{  }
+  FleetPostSecretQuery::{ }
 }
 
 ///|
@@ -24522,7 +24522,7 @@ pub fn FleetSearchRequest::new(
   body : FleetSearchBody,
   query? : FleetSearchQuery = FleetSearchQuery::new(),
 ) -> FleetSearchRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -24794,7 +24794,7 @@ pub fn GetRequest::new(
   id : String,
   query? : GetQuery = GetQuery::new(),
 ) -> GetRequest {
-  { index, id, query }
+  { index, id, query, }
 }
 
 ///|
@@ -24858,7 +24858,7 @@ pub fn GetReindexQuery::new(
   wait_for_completion? : Bool,
   timeout? : String,
 ) -> GetReindexQuery {
-  { wait_for_completion, timeout }
+  { wait_for_completion, timeout, }
 }
 
 ///|
@@ -25003,7 +25003,7 @@ pub fn GetReindexRequest::new(
   task_id : String,
   query? : GetReindexQuery = GetReindexQuery::new(),
 ) -> GetReindexRequest {
-  { task_id, query }
+  { task_id, query, }
 }
 
 ///|
@@ -25120,7 +25120,7 @@ pub fn GetScriptRequest::new(
   id : String,
   query? : GetScriptQuery = GetScriptQuery::new(),
 ) -> GetScriptRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -25152,13 +25152,13 @@ pub impl FromJson for GetScriptContextQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "GetScriptContextQuery: expected object"))
   }
-  GetScriptContextQuery::{  }
+  GetScriptContextQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn GetScriptContextQuery::new() -> GetScriptContextQuery {
-  GetScriptContextQuery::{  }
+  GetScriptContextQuery::{ }
 }
 
 ///|
@@ -25236,13 +25236,13 @@ pub impl FromJson for GetScriptLanguagesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "GetScriptLanguagesQuery: expected object"))
   }
-  GetScriptLanguagesQuery::{  }
+  GetScriptLanguagesQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn GetScriptLanguagesQuery::new() -> GetScriptLanguagesQuery {
-  GetScriptLanguagesQuery::{  }
+  GetScriptLanguagesQuery::{ }
 }
 
 ///|
@@ -25507,7 +25507,7 @@ pub fn GetSourceRequest::new(
   id : String,
   query? : GetSourceQuery = GetSourceQuery::new(),
 ) -> GetSourceRequest {
-  { index, id, query }
+  { index, id, query, }
 }
 
 ///|
@@ -25570,7 +25570,7 @@ pub fn GraphExploreQuery::new(
   routing? : String,
   timeout? : String,
 ) -> GraphExploreQuery {
-  { routing, timeout }
+  { routing, timeout, }
 }
 
 ///|
@@ -25656,7 +25656,7 @@ pub fn GraphExploreBody::new(
   query? : Json,
   vertices? : Array[Json],
 ) -> GraphExploreBody {
-  { connections, controls, query, vertices }
+  { connections, controls, query, vertices, }
 }
 
 ///|
@@ -25723,7 +25723,7 @@ pub fn GraphExploreRequest::new(
   body : GraphExploreBody,
   query? : GraphExploreQuery = GraphExploreQuery::new(),
 ) -> GraphExploreRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -25797,7 +25797,7 @@ pub fn HealthReportQuery::new(
   verbose? : Bool,
   size? : Int,
 ) -> HealthReportQuery {
-  { timeout, verbose, size }
+  { timeout, verbose, size, }
 }
 
 ///|
@@ -25874,7 +25874,7 @@ pub fn HealthReportRequest::new(
   feature? : String,
   query? : HealthReportQuery = HealthReportQuery::new(),
 ) -> HealthReportRequest {
-  { feature, query }
+  { feature, query, }
 }
 
 ///|
@@ -25945,7 +25945,7 @@ pub fn IlmDeleteLifecycleQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IlmDeleteLifecycleQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -25978,7 +25978,7 @@ pub fn IlmDeleteLifecycleRequest::new(
   policy : String,
   query? : IlmDeleteLifecycleQuery = IlmDeleteLifecycleQuery::new(),
 ) -> IlmDeleteLifecycleRequest {
-  { policy, query }
+  { policy, query, }
 }
 
 ///|
@@ -26056,7 +26056,7 @@ pub fn IlmExplainLifecycleQuery::new(
   only_managed? : Bool,
   master_timeout? : String,
 ) -> IlmExplainLifecycleQuery {
-  { only_errors, only_managed, master_timeout }
+  { only_errors, only_managed, master_timeout, }
 }
 
 ///|
@@ -26119,7 +26119,7 @@ pub fn IlmExplainLifecycleRequest::new(
   index : String,
   query? : IlmExplainLifecycleQuery = IlmExplainLifecycleQuery::new(),
 ) -> IlmExplainLifecycleRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -26184,7 +26184,7 @@ pub fn IlmGetLifecycleQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IlmGetLifecycleQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -26217,7 +26217,7 @@ pub fn IlmGetLifecycleRequest::new(
   policy? : String,
   query? : IlmGetLifecycleQuery = IlmGetLifecycleQuery::new(),
 ) -> IlmGetLifecycleRequest {
-  { policy, query }
+  { policy, query, }
 }
 
 ///|
@@ -26256,13 +26256,13 @@ pub impl FromJson for IlmGetStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "IlmGetStatusQuery: expected object"))
   }
-  IlmGetStatusQuery::{  }
+  IlmGetStatusQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IlmGetStatusQuery::new() -> IlmGetStatusQuery {
-  IlmGetStatusQuery::{  }
+  IlmGetStatusQuery::{ }
 }
 
 ///|
@@ -26370,7 +26370,7 @@ pub fn IlmMigrateToDataTiersQuery::new(
   dry_run? : Bool,
   master_timeout? : String,
 ) -> IlmMigrateToDataTiersQuery {
-  { dry_run, master_timeout }
+  { dry_run, master_timeout, }
 }
 
 ///|
@@ -26439,7 +26439,7 @@ pub fn IlmMigrateToDataTiersBody::new(
   legacy_template_to_delete? : String,
   node_attribute? : String,
 ) -> IlmMigrateToDataTiersBody {
-  { legacy_template_to_delete, node_attribute }
+  { legacy_template_to_delete, node_attribute, }
 }
 
 ///|
@@ -26521,7 +26521,7 @@ pub fn IlmMigrateToDataTiersRequest::new(
   query? : IlmMigrateToDataTiersQuery = IlmMigrateToDataTiersQuery::new(),
   body? : IlmMigrateToDataTiersBody,
 ) -> IlmMigrateToDataTiersRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -26559,13 +26559,13 @@ pub impl FromJson for IlmMoveToStepQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "IlmMoveToStepQuery: expected object"))
   }
-  IlmMoveToStepQuery::{  }
+  IlmMoveToStepQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IlmMoveToStepQuery::new() -> IlmMoveToStepQuery {
-  IlmMoveToStepQuery::{  }
+  IlmMoveToStepQuery::{ }
 }
 
 ///|
@@ -26612,7 +26612,7 @@ pub fn IlmMoveToStepBody::new(
   current_step : Json,
   next_step : Json,
 ) -> IlmMoveToStepBody {
-  { current_step, next_step }
+  { current_step, next_step, }
 }
 
 ///|
@@ -26631,7 +26631,7 @@ pub fn IlmMoveToStepRequest::new(
   body : IlmMoveToStepBody,
   query? : IlmMoveToStepQuery = IlmMoveToStepQuery::new(),
 ) -> IlmMoveToStepRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -26697,7 +26697,7 @@ pub fn IlmPutLifecycleQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IlmPutLifecycleQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -26768,7 +26768,7 @@ pub fn IlmPutLifecycleRequest::new(
   body : IlmPutLifecycleBody,
   query? : IlmPutLifecycleQuery = IlmPutLifecycleQuery::new(),
 ) -> IlmPutLifecycleRequest {
-  { policy, query, body }
+  { policy, query, body, }
 }
 
 ///|
@@ -26804,13 +26804,13 @@ pub impl FromJson for IlmRemovePolicyQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "IlmRemovePolicyQuery: expected object"))
   }
-  IlmRemovePolicyQuery::{  }
+  IlmRemovePolicyQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IlmRemovePolicyQuery::new() -> IlmRemovePolicyQuery {
-  IlmRemovePolicyQuery::{  }
+  IlmRemovePolicyQuery::{ }
 }
 
 ///|
@@ -26865,7 +26865,7 @@ pub fn IlmRemovePolicyRequest::new(
   index : String,
   query? : IlmRemovePolicyQuery = IlmRemovePolicyQuery::new(),
 ) -> IlmRemovePolicyRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -26898,13 +26898,13 @@ pub impl FromJson for IlmRetryQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "IlmRetryQuery: expected object"))
   }
-  IlmRetryQuery::{  }
+  IlmRetryQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IlmRetryQuery::new() -> IlmRetryQuery {
-  IlmRetryQuery::{  }
+  IlmRetryQuery::{ }
 }
 
 ///|
@@ -26929,7 +26929,7 @@ pub fn IlmRetryRequest::new(
   index : String,
   query? : IlmRetryQuery = IlmRetryQuery::new(),
 ) -> IlmRetryRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -26992,7 +26992,7 @@ pub fn IlmStartQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IlmStartQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -27080,7 +27080,7 @@ pub fn IlmStopQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IlmStopQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -27398,7 +27398,7 @@ pub fn IndexRequest::new(
   id? : String,
   query? : IndexQuery = IndexQuery::new(),
 ) -> IndexRequest {
-  { index, id, query, body }
+  { index, id, query, body, }
 }
 
 ///|
@@ -27596,7 +27596,7 @@ pub fn IndicesAddBlockRequest::new(
   block : String,
   query? : IndicesAddBlockQuery = IndicesAddBlockQuery::new(),
 ) -> IndicesAddBlockRequest {
-  { index, block, query }
+  { index, block, query, }
 }
 
 ///|
@@ -27857,7 +27857,7 @@ pub fn IndicesAnalyzeRequest::new(
   index? : String,
   query? : IndicesAnalyzeQuery = IndicesAnalyzeQuery::new(),
 ) -> IndicesAnalyzeRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -27904,13 +27904,13 @@ pub impl FromJson for IndicesCancelMigrateReindexQuery with fn from_json(
       (path, "IndicesCancelMigrateReindexQuery: expected object"),
     )
   }
-  IndicesCancelMigrateReindexQuery::{  }
+  IndicesCancelMigrateReindexQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IndicesCancelMigrateReindexQuery::new() -> IndicesCancelMigrateReindexQuery {
-  IndicesCancelMigrateReindexQuery::{  }
+  IndicesCancelMigrateReindexQuery::{ }
 }
 
 ///|
@@ -27940,7 +27940,7 @@ pub fn IndicesCancelMigrateReindexRequest::new(
   query? : IndicesCancelMigrateReindexQuery = IndicesCancelMigrateReindexQuery::new(),
   body? : IndicesCancelMigrateReindexBody,
 ) -> IndicesCancelMigrateReindexRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -28144,7 +28144,7 @@ pub fn IndicesClearCacheRequest::new(
   index? : String,
   query? : IndicesClearCacheQuery = IndicesClearCacheQuery::new(),
 ) -> IndicesClearCacheRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -28227,7 +28227,7 @@ pub fn IndicesCloneQuery::new(
   timeout? : String,
   wait_for_active_shards? : String,
 ) -> IndicesCloneQuery {
-  { master_timeout, timeout, wait_for_active_shards }
+  { master_timeout, timeout, wait_for_active_shards, }
 }
 
 ///|
@@ -28295,7 +28295,7 @@ pub fn IndicesCloneBody::new(
   aliases? : Map[String, Json],
   settings? : Map[String, Json],
 ) -> IndicesCloneBody {
-  { aliases, settings }
+  { aliases, settings, }
 }
 
 ///|
@@ -28352,7 +28352,7 @@ pub fn IndicesCloneRequest::new(
   query? : IndicesCloneQuery = IndicesCloneQuery::new(),
   body? : IndicesCloneBody,
 ) -> IndicesCloneRequest {
-  { index, target, query, body }
+  { index, target, query, body, }
 }
 
 ///|
@@ -28563,7 +28563,7 @@ pub fn IndicesCloseRequest::new(
   index : String,
   query? : IndicesCloseQuery = IndicesCloseQuery::new(),
 ) -> IndicesCloseRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -28642,7 +28642,7 @@ pub fn IndicesCreateQuery::new(
   timeout? : String,
   wait_for_active_shards? : String,
 ) -> IndicesCreateQuery {
-  { master_timeout, timeout, wait_for_active_shards }
+  { master_timeout, timeout, wait_for_active_shards, }
 }
 
 ///|
@@ -28721,7 +28721,7 @@ pub fn IndicesCreateBody::new(
   mappings? : Json,
   settings? : Json,
 ) -> IndicesCreateBody {
-  { aliases, mappings, settings }
+  { aliases, mappings, settings, }
 }
 
 ///|
@@ -28776,7 +28776,7 @@ pub fn IndicesCreateRequest::new(
   query? : IndicesCreateQuery = IndicesCreateQuery::new(),
   body? : IndicesCreateBody,
 ) -> IndicesCreateRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -28844,7 +28844,7 @@ pub fn IndicesCreateDataStreamQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IndicesCreateDataStreamQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -28877,7 +28877,7 @@ pub fn IndicesCreateDataStreamRequest::new(
   name : String,
   query? : IndicesCreateDataStreamQuery = IndicesCreateDataStreamQuery::new(),
 ) -> IndicesCreateDataStreamRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -28912,13 +28912,13 @@ pub impl FromJson for IndicesCreateFromQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "IndicesCreateFromQuery: expected object"))
   }
-  IndicesCreateFromQuery::{  }
+  IndicesCreateFromQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IndicesCreateFromQuery::new() -> IndicesCreateFromQuery {
-  IndicesCreateFromQuery::{  }
+  IndicesCreateFromQuery::{ }
 }
 
 ///|
@@ -28986,7 +28986,7 @@ pub fn IndicesCreateFromRequest::new(
   query? : IndicesCreateFromQuery = IndicesCreateFromQuery::new(),
   body? : IndicesCreateFromBody,
 ) -> IndicesCreateFromRequest {
-  { source, dest, query, body }
+  { source, dest, query, body, }
 }
 
 ///|
@@ -29140,7 +29140,7 @@ pub fn IndicesDataStreamsStatsRequest::new(
   name? : String,
   query? : IndicesDataStreamsStatsQuery = IndicesDataStreamsStatsQuery::new(),
 ) -> IndicesDataStreamsStatsRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -29298,7 +29298,7 @@ pub fn IndicesDeleteRequest::new(
   index : String,
   query? : IndicesDeleteQuery = IndicesDeleteQuery::new(),
 ) -> IndicesDeleteRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -29360,7 +29360,7 @@ pub fn IndicesDeleteAliasQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IndicesDeleteAliasQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -29395,7 +29395,7 @@ pub fn IndicesDeleteAliasRequest::new(
   name : String,
   query? : IndicesDeleteAliasQuery = IndicesDeleteAliasQuery::new(),
 ) -> IndicesDeleteAliasRequest {
-  { index, name, query }
+  { index, name, query, }
 }
 
 ///|
@@ -29481,7 +29481,7 @@ pub fn IndicesDeleteDataLifecycleQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IndicesDeleteDataLifecycleQuery {
-  { expand_wildcards, master_timeout, timeout }
+  { expand_wildcards, master_timeout, timeout, }
 }
 
 ///|
@@ -29518,7 +29518,7 @@ pub fn IndicesDeleteDataLifecycleRequest::new(
   name : String,
   query? : IndicesDeleteDataLifecycleQuery = IndicesDeleteDataLifecycleQuery::new(),
 ) -> IndicesDeleteDataLifecycleRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -29586,7 +29586,7 @@ pub fn IndicesDeleteDataStreamQuery::new(
   master_timeout? : String,
   expand_wildcards? : String,
 ) -> IndicesDeleteDataStreamQuery {
-  { master_timeout, expand_wildcards }
+  { master_timeout, expand_wildcards, }
 }
 
 ///|
@@ -29619,7 +29619,7 @@ pub fn IndicesDeleteDataStreamRequest::new(
   name : String,
   query? : IndicesDeleteDataStreamQuery = IndicesDeleteDataStreamQuery::new(),
 ) -> IndicesDeleteDataStreamRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -29701,7 +29701,7 @@ pub fn IndicesDeleteDataStreamOptionsQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IndicesDeleteDataStreamOptionsQuery {
-  { expand_wildcards, master_timeout, timeout }
+  { expand_wildcards, master_timeout, timeout, }
 }
 
 ///|
@@ -29738,7 +29738,7 @@ pub fn IndicesDeleteDataStreamOptionsRequest::new(
   name : String,
   query? : IndicesDeleteDataStreamOptionsQuery = IndicesDeleteDataStreamOptionsQuery::new(),
 ) -> IndicesDeleteDataStreamOptionsRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -29808,7 +29808,7 @@ pub fn IndicesDeleteIndexTemplateQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IndicesDeleteIndexTemplateQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -29841,7 +29841,7 @@ pub fn IndicesDeleteIndexTemplateRequest::new(
   name : String,
   query? : IndicesDeleteIndexTemplateQuery = IndicesDeleteIndexTemplateQuery::new(),
 ) -> IndicesDeleteIndexTemplateRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -29906,7 +29906,7 @@ pub fn IndicesDeleteTemplateQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IndicesDeleteTemplateQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -29939,7 +29939,7 @@ pub fn IndicesDeleteTemplateRequest::new(
   name : String,
   query? : IndicesDeleteTemplateQuery = IndicesDeleteTemplateQuery::new(),
 ) -> IndicesDeleteTemplateRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -30092,7 +30092,7 @@ pub fn IndicesDiskUsageRequest::new(
   index : String,
   query? : IndicesDiskUsageQuery = IndicesDiskUsageQuery::new(),
 ) -> IndicesDiskUsageRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -30127,13 +30127,13 @@ pub impl FromJson for IndicesDownsampleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "IndicesDownsampleQuery: expected object"))
   }
-  IndicesDownsampleQuery::{  }
+  IndicesDownsampleQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IndicesDownsampleQuery::new() -> IndicesDownsampleQuery {
-  IndicesDownsampleQuery::{  }
+  IndicesDownsampleQuery::{ }
 }
 
 ///|
@@ -30165,7 +30165,7 @@ pub fn IndicesDownsampleRequest::new(
   body : IndicesDownsampleBody,
   query? : IndicesDownsampleQuery = IndicesDownsampleQuery::new(),
 ) -> IndicesDownsampleRequest {
-  { index, target_index, query, body }
+  { index, target_index, query, body, }
 }
 
 ///|
@@ -30340,7 +30340,7 @@ pub fn IndicesExistsRequest::new(
   index : String,
   query? : IndicesExistsQuery = IndicesExistsQuery::new(),
 ) -> IndicesExistsRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -30427,7 +30427,7 @@ pub fn IndicesExistsAliasQuery::new(
   ignore_unavailable? : Bool,
   master_timeout? : String,
 ) -> IndicesExistsAliasQuery {
-  { allow_no_indices, expand_wildcards, ignore_unavailable, master_timeout }
+  { allow_no_indices, expand_wildcards, ignore_unavailable, master_timeout, }
 }
 
 ///|
@@ -30470,7 +30470,7 @@ pub fn IndicesExistsAliasRequest::new(
   index? : String,
   query? : IndicesExistsAliasQuery = IndicesExistsAliasQuery::new(),
 ) -> IndicesExistsAliasRequest {
-  { index, name, query }
+  { index, name, query, }
 }
 
 ///|
@@ -30559,7 +30559,7 @@ pub fn IndicesExistsIndexTemplateQuery::new(
   flat_settings? : Bool,
   master_timeout? : String,
 ) -> IndicesExistsIndexTemplateQuery {
-  { local_, flat_settings, master_timeout }
+  { local_, flat_settings, master_timeout, }
 }
 
 ///|
@@ -30596,7 +30596,7 @@ pub fn IndicesExistsIndexTemplateRequest::new(
   name : String,
   query? : IndicesExistsIndexTemplateQuery = IndicesExistsIndexTemplateQuery::new(),
 ) -> IndicesExistsIndexTemplateRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -30673,7 +30673,7 @@ pub fn IndicesExistsTemplateQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> IndicesExistsTemplateQuery {
-  { flat_settings, local_, master_timeout }
+  { flat_settings, local_, master_timeout, }
 }
 
 ///|
@@ -30710,7 +30710,7 @@ pub fn IndicesExistsTemplateRequest::new(
   name : String,
   query? : IndicesExistsTemplateQuery = IndicesExistsTemplateQuery::new(),
 ) -> IndicesExistsTemplateRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -30781,7 +30781,7 @@ pub fn IndicesExplainDataLifecycleQuery::new(
   include_defaults? : Bool,
   master_timeout? : String,
 ) -> IndicesExplainDataLifecycleQuery {
-  { include_defaults, master_timeout }
+  { include_defaults, master_timeout, }
 }
 
 ///|
@@ -30843,7 +30843,7 @@ pub fn IndicesExplainDataLifecycleRequest::new(
   index : String,
   query? : IndicesExplainDataLifecycleQuery = IndicesExplainDataLifecycleQuery::new(),
 ) -> IndicesExplainDataLifecycleRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -30934,7 +30934,7 @@ pub fn IndicesFieldUsageStatsQuery::new(
   ignore_unavailable? : Bool,
   fields? : String,
 ) -> IndicesFieldUsageStatsQuery {
-  { allow_no_indices, expand_wildcards, ignore_unavailable, fields }
+  { allow_no_indices, expand_wildcards, ignore_unavailable, fields, }
 }
 
 ///|
@@ -30975,7 +30975,7 @@ pub fn IndicesFieldUsageStatsRequest::new(
   index : String,
   query? : IndicesFieldUsageStatsQuery = IndicesFieldUsageStatsQuery::new(),
 ) -> IndicesFieldUsageStatsRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -31125,7 +31125,7 @@ pub fn IndicesFlushRequest::new(
   index? : String,
   query? : IndicesFlushQuery = IndicesFlushQuery::new(),
 ) -> IndicesFlushRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -31319,7 +31319,7 @@ pub fn IndicesForcemergeRequest::new(
   index? : String,
   query? : IndicesForcemergeQuery = IndicesForcemergeQuery::new(),
 ) -> IndicesForcemergeRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -31525,7 +31525,7 @@ pub fn IndicesGetRequest::new(
   index : String,
   query? : IndicesGetQuery = IndicesGetQuery::new(),
 ) -> IndicesGetRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -31612,7 +31612,7 @@ pub fn IndicesGetAliasQuery::new(
   ignore_unavailable? : Bool,
   master_timeout? : String,
 ) -> IndicesGetAliasQuery {
-  { allow_no_indices, expand_wildcards, ignore_unavailable, master_timeout }
+  { allow_no_indices, expand_wildcards, ignore_unavailable, master_timeout, }
 }
 
 ///|
@@ -31655,7 +31655,7 @@ pub fn IndicesGetAliasRequest::new(
   name? : String,
   query? : IndicesGetAliasQuery = IndicesGetAliasQuery::new(),
 ) -> IndicesGetAliasRequest {
-  { index, name, query }
+  { index, name, query, }
 }
 
 ///|
@@ -31747,7 +31747,7 @@ pub fn IndicesGetDataLifecycleQuery::new(
   include_defaults? : Bool,
   master_timeout? : String,
 ) -> IndicesGetDataLifecycleQuery {
-  { expand_wildcards, include_defaults, master_timeout }
+  { expand_wildcards, include_defaults, master_timeout, }
 }
 
 ///|
@@ -31813,7 +31813,7 @@ pub fn IndicesGetDataLifecycleRequest::new(
   name : String,
   query? : IndicesGetDataLifecycleQuery = IndicesGetDataLifecycleQuery::new(),
 ) -> IndicesGetDataLifecycleRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -31853,13 +31853,13 @@ pub impl FromJson for IndicesGetDataLifecycleStatsQuery with fn from_json(
       (path, "IndicesGetDataLifecycleStatsQuery: expected object"),
     )
   }
-  IndicesGetDataLifecycleStatsQuery::{  }
+  IndicesGetDataLifecycleStatsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IndicesGetDataLifecycleStatsQuery::new() -> IndicesGetDataLifecycleStatsQuery {
-  IndicesGetDataLifecycleStatsQuery::{  }
+  IndicesGetDataLifecycleStatsQuery::{ }
 }
 
 ///|
@@ -32035,7 +32035,7 @@ pub fn IndicesGetDataStreamQuery::new(
   master_timeout? : String,
   verbose? : Bool,
 ) -> IndicesGetDataStreamQuery {
-  { expand_wildcards, include_defaults, master_timeout, verbose }
+  { expand_wildcards, include_defaults, master_timeout, verbose, }
 }
 
 ///|
@@ -32102,7 +32102,7 @@ pub fn IndicesGetDataStreamRequest::new(
   name? : String,
   query? : IndicesGetDataStreamQuery = IndicesGetDataStreamQuery::new(),
 ) -> IndicesGetDataStreamRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -32225,7 +32225,7 @@ pub fn IndicesGetDataStreamMappingsRequest::new(
   name : String,
   query? : IndicesGetDataStreamMappingsQuery = IndicesGetDataStreamMappingsQuery::new(),
 ) -> IndicesGetDataStreamMappingsRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -32296,7 +32296,7 @@ pub fn IndicesGetDataStreamOptionsQuery::new(
   expand_wildcards? : String,
   master_timeout? : String,
 ) -> IndicesGetDataStreamOptionsQuery {
-  { expand_wildcards, master_timeout }
+  { expand_wildcards, master_timeout, }
 }
 
 ///|
@@ -32358,7 +32358,7 @@ pub fn IndicesGetDataStreamOptionsRequest::new(
   name : String,
   query? : IndicesGetDataStreamOptionsQuery = IndicesGetDataStreamOptionsQuery::new(),
 ) -> IndicesGetDataStreamOptionsRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -32475,7 +32475,7 @@ pub fn IndicesGetDataStreamSettingsRequest::new(
   name : String,
   query? : IndicesGetDataStreamSettingsQuery = IndicesGetDataStreamSettingsQuery::new(),
 ) -> IndicesGetDataStreamSettingsRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -32567,7 +32567,7 @@ pub fn IndicesGetFieldMappingQuery::new(
   ignore_unavailable? : Bool,
   include_defaults? : Bool,
 ) -> IndicesGetFieldMappingQuery {
-  { allow_no_indices, expand_wildcards, ignore_unavailable, include_defaults }
+  { allow_no_indices, expand_wildcards, ignore_unavailable, include_defaults, }
 }
 
 ///|
@@ -32610,7 +32610,7 @@ pub fn IndicesGetFieldMappingRequest::new(
   index? : String,
   query? : IndicesGetFieldMappingQuery = IndicesGetFieldMappingQuery::new(),
 ) -> IndicesGetFieldMappingRequest {
-  { index, fields, query }
+  { index, fields, query, }
 }
 
 ///|
@@ -32708,7 +32708,7 @@ pub fn IndicesGetIndexTemplateQuery::new(
   master_timeout? : String,
   include_defaults? : Bool,
 ) -> IndicesGetIndexTemplateQuery {
-  { local_, flat_settings, master_timeout, include_defaults }
+  { local_, flat_settings, master_timeout, include_defaults, }
 }
 
 ///|
@@ -32778,7 +32778,7 @@ pub fn IndicesGetIndexTemplateRequest::new(
   name? : String,
   query? : IndicesGetIndexTemplateQuery = IndicesGetIndexTemplateQuery::new(),
 ) -> IndicesGetIndexTemplateRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -32936,7 +32936,7 @@ pub fn IndicesGetMappingRequest::new(
   index? : String,
   query? : IndicesGetMappingQuery = IndicesGetMappingQuery::new(),
 ) -> IndicesGetMappingRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -32982,13 +32982,13 @@ pub impl FromJson for IndicesGetMigrateReindexStatusQuery with fn from_json(
       (path, "IndicesGetMigrateReindexStatusQuery: expected object"),
     )
   }
-  IndicesGetMigrateReindexStatusQuery::{  }
+  IndicesGetMigrateReindexStatusQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IndicesGetMigrateReindexStatusQuery::new() -> IndicesGetMigrateReindexStatusQuery {
-  IndicesGetMigrateReindexStatusQuery::{  }
+  IndicesGetMigrateReindexStatusQuery::{ }
 }
 
 ///|
@@ -33111,7 +33111,7 @@ pub fn IndicesGetMigrateReindexStatusRequest::new(
   query? : IndicesGetMigrateReindexStatusQuery = IndicesGetMigrateReindexStatusQuery::new(),
   body? : IndicesGetMigrateReindexStatusBody,
 ) -> IndicesGetMigrateReindexStatusRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -33303,7 +33303,7 @@ pub fn IndicesGetSettingsRequest::new(
   name? : String,
   query? : IndicesGetSettingsQuery = IndicesGetSettingsQuery::new(),
 ) -> IndicesGetSettingsRequest {
-  { index, name, query }
+  { index, name, query, }
 }
 
 ///|
@@ -33392,7 +33392,7 @@ pub fn IndicesGetTemplateQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> IndicesGetTemplateQuery {
-  { flat_settings, local_, master_timeout }
+  { flat_settings, local_, master_timeout, }
 }
 
 ///|
@@ -33429,7 +33429,7 @@ pub fn IndicesGetTemplateRequest::new(
   name? : String,
   query? : IndicesGetTemplateQuery = IndicesGetTemplateQuery::new(),
 ) -> IndicesGetTemplateRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -33470,13 +33470,13 @@ pub impl FromJson for IndicesMigrateReindexQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "IndicesMigrateReindexQuery: expected object"))
   }
-  IndicesMigrateReindexQuery::{  }
+  IndicesMigrateReindexQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IndicesMigrateReindexQuery::new() -> IndicesMigrateReindexQuery {
-  IndicesMigrateReindexQuery::{  }
+  IndicesMigrateReindexQuery::{ }
 }
 
 ///|
@@ -33504,7 +33504,7 @@ pub fn IndicesMigrateReindexRequest::new(
   body : IndicesMigrateReindexBody,
   query? : IndicesMigrateReindexQuery = IndicesMigrateReindexQuery::new(),
 ) -> IndicesMigrateReindexRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -33571,7 +33571,7 @@ pub fn IndicesMigrateToDataStreamQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IndicesMigrateToDataStreamQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -33604,7 +33604,7 @@ pub fn IndicesMigrateToDataStreamRequest::new(
   name : String,
   query? : IndicesMigrateToDataStreamQuery = IndicesMigrateToDataStreamQuery::new(),
 ) -> IndicesMigrateToDataStreamRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -33641,13 +33641,13 @@ pub impl FromJson for IndicesModifyDataStreamQuery with fn from_json(json, path)
       (path, "IndicesModifyDataStreamQuery: expected object"),
     )
   }
-  IndicesModifyDataStreamQuery::{  }
+  IndicesModifyDataStreamQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IndicesModifyDataStreamQuery::new() -> IndicesModifyDataStreamQuery {
-  IndicesModifyDataStreamQuery::{  }
+  IndicesModifyDataStreamQuery::{ }
 }
 
 ///|
@@ -33708,7 +33708,7 @@ pub fn IndicesModifyDataStreamRequest::new(
   body : IndicesModifyDataStreamBody,
   query? : IndicesModifyDataStreamQuery = IndicesModifyDataStreamQuery::new(),
 ) -> IndicesModifyDataStreamRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -33908,7 +33908,7 @@ pub fn IndicesOpenRequest::new(
   index : String,
   query? : IndicesOpenQuery = IndicesOpenQuery::new(),
 ) -> IndicesOpenRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -33996,7 +33996,7 @@ pub fn IndicesPromoteDataStreamRequest::new(
   name : String,
   query? : IndicesPromoteDataStreamQuery = IndicesPromoteDataStreamQuery::new(),
 ) -> IndicesPromoteDataStreamRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -34061,7 +34061,7 @@ pub fn IndicesPutAliasQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IndicesPutAliasQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -34162,7 +34162,7 @@ pub fn IndicesPutAliasBody::new(
   routing? : String,
   search_routing? : String,
 ) -> IndicesPutAliasBody {
-  { filter, index_routing, is_write_index, routing, search_routing }
+  { filter, index_routing, is_write_index, routing, search_routing, }
 }
 
 ///|
@@ -34183,7 +34183,7 @@ pub fn IndicesPutAliasRequest::new(
   query? : IndicesPutAliasQuery = IndicesPutAliasQuery::new(),
   body? : IndicesPutAliasBody,
 ) -> IndicesPutAliasRequest {
-  { index, name, query, body }
+  { index, name, query, body, }
 }
 
 ///|
@@ -34270,7 +34270,7 @@ pub fn IndicesPutDataLifecycleQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IndicesPutDataLifecycleQuery {
-  { expand_wildcards, master_timeout, timeout }
+  { expand_wildcards, master_timeout, timeout, }
 }
 
 ///|
@@ -34366,7 +34366,7 @@ pub fn IndicesPutDataLifecycleBody::new(
   downsampling_method? : Json,
   enabled? : Bool,
 ) -> IndicesPutDataLifecycleBody {
-  { data_retention, downsampling, downsampling_method, enabled }
+  { data_retention, downsampling, downsampling_method, enabled, }
 }
 
 ///|
@@ -34385,7 +34385,7 @@ pub fn IndicesPutDataLifecycleRequest::new(
   body : IndicesPutDataLifecycleBody,
   query? : IndicesPutDataLifecycleQuery = IndicesPutDataLifecycleQuery::new(),
 ) -> IndicesPutDataLifecycleRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -34467,7 +34467,7 @@ pub fn IndicesPutDataStreamMappingsQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IndicesPutDataStreamMappingsQuery {
-  { dry_run, master_timeout, timeout }
+  { dry_run, master_timeout, timeout, }
 }
 
 ///|
@@ -34533,7 +34533,7 @@ pub fn IndicesPutDataStreamMappingsRequest::new(
   name : String,
   query? : IndicesPutDataStreamMappingsQuery = IndicesPutDataStreamMappingsQuery::new(),
 ) -> IndicesPutDataStreamMappingsRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -34615,7 +34615,7 @@ pub fn IndicesPutDataStreamOptionsQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IndicesPutDataStreamOptionsQuery {
-  { expand_wildcards, master_timeout, timeout }
+  { expand_wildcards, master_timeout, timeout, }
 }
 
 ///|
@@ -34698,7 +34698,7 @@ pub fn IndicesPutDataStreamOptionsRequest::new(
   body : IndicesPutDataStreamOptionsBody,
   query? : IndicesPutDataStreamOptionsQuery = IndicesPutDataStreamOptionsQuery::new(),
 ) -> IndicesPutDataStreamOptionsRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -34780,7 +34780,7 @@ pub fn IndicesPutDataStreamSettingsQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IndicesPutDataStreamSettingsQuery {
-  { dry_run, master_timeout, timeout }
+  { dry_run, master_timeout, timeout, }
 }
 
 ///|
@@ -34846,7 +34846,7 @@ pub fn IndicesPutDataStreamSettingsRequest::new(
   name : String,
   query? : IndicesPutDataStreamSettingsQuery = IndicesPutDataStreamSettingsQuery::new(),
 ) -> IndicesPutDataStreamSettingsRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -34924,7 +34924,7 @@ pub fn IndicesPutIndexTemplateQuery::new(
   master_timeout? : String,
   cause? : String,
 ) -> IndicesPutIndexTemplateQuery {
-  { create, master_timeout, cause }
+  { create, master_timeout, cause, }
 }
 
 ///|
@@ -35125,7 +35125,7 @@ pub fn IndicesPutIndexTemplateRequest::new(
   body : IndicesPutIndexTemplateBody,
   query? : IndicesPutIndexTemplateQuery = IndicesPutIndexTemplateQuery::new(),
 ) -> IndicesPutIndexTemplateRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -35463,7 +35463,7 @@ pub fn IndicesPutMappingRequest::new(
   body : IndicesPutMappingBody,
   query? : IndicesPutMappingQuery = IndicesPutMappingQuery::new(),
 ) -> IndicesPutMappingRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -35671,7 +35671,7 @@ pub fn IndicesPutSettingsRequest::new(
   index? : String,
   query? : IndicesPutSettingsQuery = IndicesPutSettingsQuery::new(),
 ) -> IndicesPutSettingsRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -35765,7 +35765,7 @@ pub fn IndicesPutTemplateQuery::new(
   order? : Int,
   cause? : String,
 ) -> IndicesPutTemplateQuery {
-  { create, master_timeout, order, cause }
+  { create, master_timeout, order, cause, }
 }
 
 ///|
@@ -35883,7 +35883,7 @@ pub fn IndicesPutTemplateBody::new(
   settings? : Json,
   version? : Json,
 ) -> IndicesPutTemplateBody {
-  { aliases, index_patterns, mappings, order, settings, version }
+  { aliases, index_patterns, mappings, order, settings, version, }
 }
 
 ///|
@@ -35902,7 +35902,7 @@ pub fn IndicesPutTemplateRequest::new(
   body : IndicesPutTemplateBody,
   query? : IndicesPutTemplateQuery = IndicesPutTemplateQuery::new(),
 ) -> IndicesPutTemplateRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -36055,7 +36055,7 @@ pub fn IndicesRecoveryRequest::new(
   index? : String,
   query? : IndicesRecoveryQuery = IndicesRecoveryQuery::new(),
 ) -> IndicesRecoveryRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -36139,7 +36139,7 @@ pub fn IndicesRefreshQuery::new(
   expand_wildcards? : String,
   ignore_unavailable? : Bool,
 ) -> IndicesRefreshQuery {
-  { allow_no_indices, expand_wildcards, ignore_unavailable }
+  { allow_no_indices, expand_wildcards, ignore_unavailable, }
 }
 
 ///|
@@ -36176,7 +36176,7 @@ pub fn IndicesRefreshRequest::new(
   index? : String,
   query? : IndicesRefreshQuery = IndicesRefreshQuery::new(),
 ) -> IndicesRefreshRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -36276,7 +36276,7 @@ pub fn IndicesReloadSearchAnalyzersQuery::new(
   ignore_unavailable? : Bool,
   resource? : String,
 ) -> IndicesReloadSearchAnalyzersQuery {
-  { allow_no_indices, expand_wildcards, ignore_unavailable, resource }
+  { allow_no_indices, expand_wildcards, ignore_unavailable, resource, }
 }
 
 ///|
@@ -36317,7 +36317,7 @@ pub fn IndicesReloadSearchAnalyzersRequest::new(
   index : String,
   query? : IndicesReloadSearchAnalyzersQuery = IndicesReloadSearchAnalyzersQuery::new(),
 ) -> IndicesReloadSearchAnalyzersRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -36501,7 +36501,7 @@ pub fn IndicesRemoveBlockRequest::new(
   block : String,
   query? : IndicesRemoveBlockQuery = IndicesRemoveBlockQuery::new(),
 ) -> IndicesRemoveBlockRequest {
-  { index, block, query }
+  { index, block, query, }
 }
 
 ///|
@@ -36654,7 +36654,7 @@ pub fn IndicesResolveClusterRequest::new(
   name? : String,
   query? : IndicesResolveClusterQuery = IndicesResolveClusterQuery::new(),
 ) -> IndicesResolveClusterRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -36749,7 +36749,7 @@ pub fn IndicesResolveIndexQuery::new(
   allow_no_indices? : Bool,
   mode? : Json,
 ) -> IndicesResolveIndexQuery {
-  { expand_wildcards, ignore_unavailable, allow_no_indices, mode }
+  { expand_wildcards, ignore_unavailable, allow_no_indices, mode, }
 }
 
 ///|
@@ -36828,7 +36828,7 @@ pub fn IndicesResolveIndexRequest::new(
   name : String,
   query? : IndicesResolveIndexQuery = IndicesResolveIndexQuery::new(),
 ) -> IndicesResolveIndexRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -36929,7 +36929,7 @@ pub fn IndicesRolloverQuery::new(
   wait_for_active_shards? : String,
   lazy_? : Bool,
 ) -> IndicesRolloverQuery {
-  { dry_run, master_timeout, timeout, wait_for_active_shards, lazy_ }
+  { dry_run, master_timeout, timeout, wait_for_active_shards, lazy_, }
 }
 
 ///|
@@ -37030,7 +37030,7 @@ pub fn IndicesRolloverBody::new(
   mappings? : Json,
   settings? : Map[String, Json],
 ) -> IndicesRolloverBody {
-  { aliases, conditions, mappings, settings }
+  { aliases, conditions, mappings, settings, }
 }
 
 ///|
@@ -37111,7 +37111,7 @@ pub fn IndicesRolloverRequest::new(
   query? : IndicesRolloverQuery = IndicesRolloverQuery::new(),
   body? : IndicesRolloverBody,
 ) -> IndicesRolloverRequest {
-  { alias_, new_index, query, body }
+  { alias_, new_index, query, body, }
 }
 
 ///|
@@ -37200,7 +37200,7 @@ pub fn IndicesSegmentsQuery::new(
   expand_wildcards? : String,
   ignore_unavailable? : Bool,
 ) -> IndicesSegmentsQuery {
-  { allow_no_indices, expand_wildcards, ignore_unavailable }
+  { allow_no_indices, expand_wildcards, ignore_unavailable, }
 }
 
 ///|
@@ -37267,7 +37267,7 @@ pub fn IndicesSegmentsRequest::new(
   index? : String,
   query? : IndicesSegmentsQuery = IndicesSegmentsQuery::new(),
 ) -> IndicesSegmentsRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -37362,7 +37362,7 @@ pub fn IndicesShardStoresQuery::new(
   ignore_unavailable? : Bool,
   status? : Json,
 ) -> IndicesShardStoresQuery {
-  { allow_no_indices, expand_wildcards, ignore_unavailable, status }
+  { allow_no_indices, expand_wildcards, ignore_unavailable, status, }
 }
 
 ///|
@@ -37427,7 +37427,7 @@ pub fn IndicesShardStoresRequest::new(
   index? : String,
   query? : IndicesShardStoresQuery = IndicesShardStoresQuery::new(),
 ) -> IndicesShardStoresRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -37512,7 +37512,7 @@ pub fn IndicesShrinkQuery::new(
   timeout? : String,
   wait_for_active_shards? : String,
 ) -> IndicesShrinkQuery {
-  { master_timeout, timeout, wait_for_active_shards }
+  { master_timeout, timeout, wait_for_active_shards, }
 }
 
 ///|
@@ -37580,7 +37580,7 @@ pub fn IndicesShrinkBody::new(
   aliases? : Map[String, Json],
   settings? : Map[String, Json],
 ) -> IndicesShrinkBody {
-  { aliases, settings }
+  { aliases, settings, }
 }
 
 ///|
@@ -37637,7 +37637,7 @@ pub fn IndicesShrinkRequest::new(
   body : IndicesShrinkBody,
   query? : IndicesShrinkQuery = IndicesShrinkQuery::new(),
 ) -> IndicesShrinkRequest {
-  { index, target, query, body }
+  { index, target, query, body, }
 }
 
 ///|
@@ -37732,7 +37732,7 @@ pub fn IndicesSimulateIndexTemplateQuery::new(
   master_timeout? : String,
   include_defaults? : Bool,
 ) -> IndicesSimulateIndexTemplateQuery {
-  { create, cause, master_timeout, include_defaults }
+  { create, cause, master_timeout, include_defaults, }
 }
 
 ///|
@@ -37818,7 +37818,7 @@ pub fn IndicesSimulateIndexTemplateRequest::new(
   query? : IndicesSimulateIndexTemplateQuery = IndicesSimulateIndexTemplateQuery::new(),
   body? : IndicesSimulateIndexTemplateBody,
 ) -> IndicesSimulateIndexTemplateRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -37912,7 +37912,7 @@ pub fn IndicesSimulateTemplateQuery::new(
   master_timeout? : String,
   include_defaults? : Bool,
 ) -> IndicesSimulateTemplateQuery {
-  { create, cause, master_timeout, include_defaults }
+  { create, cause, master_timeout, include_defaults, }
 }
 
 ///|
@@ -38157,7 +38157,7 @@ pub fn IndicesSimulateTemplateRequest::new(
   query? : IndicesSimulateTemplateQuery = IndicesSimulateTemplateQuery::new(),
   body? : IndicesSimulateTemplateBody,
 ) -> IndicesSimulateTemplateRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -38244,7 +38244,7 @@ pub fn IndicesSplitQuery::new(
   timeout? : String,
   wait_for_active_shards? : String,
 ) -> IndicesSplitQuery {
-  { master_timeout, timeout, wait_for_active_shards }
+  { master_timeout, timeout, wait_for_active_shards, }
 }
 
 ///|
@@ -38312,7 +38312,7 @@ pub fn IndicesSplitBody::new(
   aliases? : Map[String, Json],
   settings? : Map[String, Json],
 ) -> IndicesSplitBody {
-  { aliases, settings }
+  { aliases, settings, }
 }
 
 ///|
@@ -38369,7 +38369,7 @@ pub fn IndicesSplitRequest::new(
   body : IndicesSplitBody,
   query? : IndicesSplitQuery = IndicesSplitQuery::new(),
 ) -> IndicesSplitRequest {
-  { index, target, query, body }
+  { index, target, query, body, }
 }
 
 ///|
@@ -38639,7 +38639,7 @@ pub fn IndicesStatsRequest::new(
   metric? : String,
   query? : IndicesStatsQuery = IndicesStatsQuery::new(),
 ) -> IndicesStatsRequest {
-  { index, metric, query }
+  { index, metric, query, }
 }
 
 ///|
@@ -38716,7 +38716,7 @@ pub fn IndicesUpdateAliasesQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IndicesUpdateAliasesQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -38787,7 +38787,7 @@ pub fn IndicesUpdateAliasesRequest::new(
   body : IndicesUpdateAliasesBody,
   query? : IndicesUpdateAliasesQuery = IndicesUpdateAliasesQuery::new(),
 ) -> IndicesUpdateAliasesRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -39145,7 +39145,7 @@ pub fn IndicesValidateQueryRequest::new(
   query? : IndicesValidateQueryQuery = IndicesValidateQueryQuery::new(),
   body? : IndicesValidateQueryBody,
 ) -> IndicesValidateQueryRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -39247,7 +39247,7 @@ pub fn InferenceChatCompletionUnifiedRequest::new(
   body : InferenceChatCompletionUnifiedBody,
   query? : InferenceChatCompletionUnifiedQuery = InferenceChatCompletionUnifiedQuery::new(),
 ) -> InferenceChatCompletionUnifiedRequest {
-  { inference_id, query, body }
+  { inference_id, query, body, }
 }
 
 ///|
@@ -39363,7 +39363,7 @@ pub fn InferenceCompletionBody::new(
   input : Json,
   task_settings? : Json,
 ) -> InferenceCompletionBody {
-  { input, task_settings }
+  { input, task_settings, }
 }
 
 ///|
@@ -39382,7 +39382,7 @@ pub fn InferenceCompletionRequest::new(
   body : InferenceCompletionBody,
   query? : InferenceCompletionQuery = InferenceCompletionQuery::new(),
 ) -> InferenceCompletionRequest {
-  { inference_id, query, body }
+  { inference_id, query, body, }
 }
 
 ///|
@@ -39449,7 +39449,7 @@ pub fn InferenceDeleteQuery::new(
   dry_run? : Bool,
   force? : Bool,
 ) -> InferenceDeleteQuery {
-  { dry_run, force }
+  { dry_run, force, }
 }
 
 ///|
@@ -39484,7 +39484,7 @@ pub fn InferenceDeleteRequest::new(
   task_type? : String,
   query? : InferenceDeleteQuery = InferenceDeleteQuery::new(),
 ) -> InferenceDeleteRequest {
-  { task_type, inference_id, query }
+  { task_type, inference_id, query, }
 }
 
 ///|
@@ -39580,7 +39580,7 @@ pub fn InferenceEmbeddingRequest::new(
   body : InferenceEmbeddingBody,
   query? : InferenceEmbeddingQuery = InferenceEmbeddingQuery::new(),
 ) -> InferenceEmbeddingRequest {
-  { inference_id, query, body }
+  { inference_id, query, body, }
 }
 
 ///|
@@ -39614,13 +39614,13 @@ pub impl FromJson for InferenceGetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "InferenceGetQuery: expected object"))
   }
-  InferenceGetQuery::{  }
+  InferenceGetQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn InferenceGetQuery::new() -> InferenceGetQuery {
-  InferenceGetQuery::{  }
+  InferenceGetQuery::{ }
 }
 
 ///|
@@ -39671,7 +39671,7 @@ pub fn InferenceGetRequest::new(
   inference_id? : String,
   query? : InferenceGetQuery = InferenceGetQuery::new(),
 ) -> InferenceGetRequest {
-  { task_type, inference_id, query }
+  { task_type, inference_id, query, }
 }
 
 ///|
@@ -39819,7 +39819,7 @@ pub fn InferenceInferenceBody::new(
   input_type? : String,
   task_settings? : Json,
 ) -> InferenceInferenceBody {
-  { query, input, input_type, task_settings }
+  { query, input, input_type, task_settings, }
 }
 
 ///|
@@ -39840,7 +39840,7 @@ pub fn InferenceInferenceRequest::new(
   task_type? : String,
   query? : InferenceInferenceQuery = InferenceInferenceQuery::new(),
 ) -> InferenceInferenceRequest {
-  { task_type, inference_id, query, body }
+  { task_type, inference_id, query, body, }
 }
 
 ///|
@@ -39935,7 +39935,7 @@ pub fn InferencePutRequest::new(
   task_type? : String,
   query? : InferencePutQuery = InferencePutQuery::new(),
 ) -> InferencePutRequest {
-  { task_type, inference_id, query, body }
+  { task_type, inference_id, query, body, }
 }
 
 ///|
@@ -40049,7 +40049,7 @@ pub fn InferencePutAi21Body::new(
   service : Json,
   service_settings : Json,
 ) -> InferencePutAi21Body {
-  { service, service_settings }
+  { service, service_settings, }
 }
 
 ///|
@@ -40070,7 +40070,7 @@ pub fn InferencePutAi21Request::new(
   body : InferencePutAi21Body,
   query? : InferencePutAi21Query = InferencePutAi21Query::new(),
 ) -> InferencePutAi21Request {
-  { task_type, ai21_inference_id, query, body }
+  { task_type, ai21_inference_id, query, body, }
 }
 
 ///|
@@ -40213,7 +40213,7 @@ pub fn InferencePutAlibabacloudBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutAlibabacloudBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -40234,7 +40234,7 @@ pub fn InferencePutAlibabacloudRequest::new(
   body : InferencePutAlibabacloudBody,
   query? : InferencePutAlibabacloudQuery = InferencePutAlibabacloudQuery::new(),
 ) -> InferencePutAlibabacloudRequest {
-  { task_type, alibabacloud_inference_id, query, body }
+  { task_type, alibabacloud_inference_id, query, body, }
 }
 
 ///|
@@ -40380,7 +40380,7 @@ pub fn InferencePutAmazonbedrockBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutAmazonbedrockBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -40401,7 +40401,7 @@ pub fn InferencePutAmazonbedrockRequest::new(
   body : InferencePutAmazonbedrockBody,
   query? : InferencePutAmazonbedrockQuery = InferencePutAmazonbedrockQuery::new(),
 ) -> InferencePutAmazonbedrockRequest {
-  { task_type, amazonbedrock_inference_id, query, body }
+  { task_type, amazonbedrock_inference_id, query, body, }
 }
 
 ///|
@@ -40547,7 +40547,7 @@ pub fn InferencePutAmazonsagemakerBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutAmazonsagemakerBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -40568,7 +40568,7 @@ pub fn InferencePutAmazonsagemakerRequest::new(
   body : InferencePutAmazonsagemakerBody,
   query? : InferencePutAmazonsagemakerQuery = InferencePutAmazonsagemakerQuery::new(),
 ) -> InferencePutAmazonsagemakerRequest {
-  { task_type, amazonsagemaker_inference_id, query, body }
+  { task_type, amazonsagemaker_inference_id, query, body, }
 }
 
 ///|
@@ -40693,7 +40693,7 @@ pub fn InferencePutAnthropicBody::new(
   service_settings : Json,
   task_settings? : Json,
 ) -> InferencePutAnthropicBody {
-  { service, service_settings, task_settings }
+  { service, service_settings, task_settings, }
 }
 
 ///|
@@ -40714,7 +40714,7 @@ pub fn InferencePutAnthropicRequest::new(
   body : InferencePutAnthropicBody,
   query? : InferencePutAnthropicQuery = InferencePutAnthropicQuery::new(),
 ) -> InferencePutAnthropicRequest {
-  { task_type, anthropic_inference_id, query, body }
+  { task_type, anthropic_inference_id, query, body, }
 }
 
 ///|
@@ -40860,7 +40860,7 @@ pub fn InferencePutAzureaistudioBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutAzureaistudioBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -40881,7 +40881,7 @@ pub fn InferencePutAzureaistudioRequest::new(
   body : InferencePutAzureaistudioBody,
   query? : InferencePutAzureaistudioQuery = InferencePutAzureaistudioQuery::new(),
 ) -> InferencePutAzureaistudioRequest {
-  { task_type, azureaistudio_inference_id, query, body }
+  { task_type, azureaistudio_inference_id, query, body, }
 }
 
 ///|
@@ -41021,7 +41021,7 @@ pub fn InferencePutAzureopenaiBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutAzureopenaiBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -41042,7 +41042,7 @@ pub fn InferencePutAzureopenaiRequest::new(
   body : InferencePutAzureopenaiBody,
   query? : InferencePutAzureopenaiQuery = InferencePutAzureopenaiQuery::new(),
 ) -> InferencePutAzureopenaiRequest {
-  { task_type, azureopenai_inference_id, query, body }
+  { task_type, azureopenai_inference_id, query, body, }
 }
 
 ///|
@@ -41178,7 +41178,7 @@ pub fn InferencePutCohereBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutCohereBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -41199,7 +41199,7 @@ pub fn InferencePutCohereRequest::new(
   body : InferencePutCohereBody,
   query? : InferencePutCohereQuery = InferencePutCohereQuery::new(),
 ) -> InferencePutCohereRequest {
-  { task_type, cohere_inference_id, query, body }
+  { task_type, cohere_inference_id, query, body, }
 }
 
 ///|
@@ -41330,7 +41330,7 @@ pub fn InferencePutContextualaiBody::new(
   service_settings : Json,
   task_settings? : Json,
 ) -> InferencePutContextualaiBody {
-  { service, service_settings, task_settings }
+  { service, service_settings, task_settings, }
 }
 
 ///|
@@ -41351,7 +41351,7 @@ pub fn InferencePutContextualaiRequest::new(
   body : InferencePutContextualaiBody,
   query? : InferencePutContextualaiQuery = InferencePutContextualaiQuery::new(),
 ) -> InferencePutContextualaiRequest {
-  { task_type, contextualai_inference_id, query, body }
+  { task_type, contextualai_inference_id, query, body, }
 }
 
 ///|
@@ -41392,13 +41392,13 @@ pub impl FromJson for InferencePutCustomQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "InferencePutCustomQuery: expected object"))
   }
-  InferencePutCustomQuery::{  }
+  InferencePutCustomQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn InferencePutCustomQuery::new() -> InferencePutCustomQuery {
-  InferencePutCustomQuery::{  }
+  InferencePutCustomQuery::{ }
 }
 
 ///|
@@ -41471,7 +41471,7 @@ pub fn InferencePutCustomBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutCustomBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -41492,7 +41492,7 @@ pub fn InferencePutCustomRequest::new(
   body : InferencePutCustomBody,
   query? : InferencePutCustomQuery = InferencePutCustomQuery::new(),
 ) -> InferencePutCustomRequest {
-  { task_type, custom_inference_id, query, body }
+  { task_type, custom_inference_id, query, body, }
 }
 
 ///|
@@ -41604,7 +41604,7 @@ pub fn InferencePutDeepseekBody::new(
   service : Json,
   service_settings : Json,
 ) -> InferencePutDeepseekBody {
-  { service, service_settings }
+  { service, service_settings, }
 }
 
 ///|
@@ -41625,7 +41625,7 @@ pub fn InferencePutDeepseekRequest::new(
   body : InferencePutDeepseekBody,
   query? : InferencePutDeepseekQuery = InferencePutDeepseekQuery::new(),
 ) -> InferencePutDeepseekRequest {
-  { task_type, deepseek_inference_id, query, body }
+  { task_type, deepseek_inference_id, query, body, }
 }
 
 ///|
@@ -41771,7 +41771,7 @@ pub fn InferencePutElasticsearchBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutElasticsearchBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -41792,7 +41792,7 @@ pub fn InferencePutElasticsearchRequest::new(
   body : InferencePutElasticsearchBody,
   query? : InferencePutElasticsearchQuery = InferencePutElasticsearchQuery::new(),
 ) -> InferencePutElasticsearchRequest {
-  { task_type, elasticsearch_inference_id, query, body }
+  { task_type, elasticsearch_inference_id, query, body, }
 }
 
 ///|
@@ -41914,7 +41914,7 @@ pub fn InferencePutElserBody::new(
   service_settings : Json,
   chunking_settings? : Json,
 ) -> InferencePutElserBody {
-  { chunking_settings, service, service_settings }
+  { chunking_settings, service, service_settings, }
 }
 
 ///|
@@ -41935,7 +41935,7 @@ pub fn InferencePutElserRequest::new(
   body : InferencePutElserBody,
   query? : InferencePutElserQuery = InferencePutElserQuery::new(),
 ) -> InferencePutElserRequest {
-  { task_type, elser_inference_id, query, body }
+  { task_type, elser_inference_id, query, body, }
 }
 
 ///|
@@ -42075,7 +42075,7 @@ pub fn InferencePutFireworksaiBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutFireworksaiBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -42096,7 +42096,7 @@ pub fn InferencePutFireworksaiRequest::new(
   body : InferencePutFireworksaiBody,
   query? : InferencePutFireworksaiQuery = InferencePutFireworksaiQuery::new(),
 ) -> InferencePutFireworksaiRequest {
-  { task_type, fireworksai_inference_id, query, body }
+  { task_type, fireworksai_inference_id, query, body, }
 }
 
 ///|
@@ -42230,7 +42230,7 @@ pub fn InferencePutGoogleaistudioBody::new(
   service_settings : Json,
   chunking_settings? : Json,
 ) -> InferencePutGoogleaistudioBody {
-  { chunking_settings, service, service_settings }
+  { chunking_settings, service, service_settings, }
 }
 
 ///|
@@ -42251,7 +42251,7 @@ pub fn InferencePutGoogleaistudioRequest::new(
   body : InferencePutGoogleaistudioBody,
   query? : InferencePutGoogleaistudioQuery = InferencePutGoogleaistudioQuery::new(),
 ) -> InferencePutGoogleaistudioRequest {
-  { task_type, googleaistudio_inference_id, query, body }
+  { task_type, googleaistudio_inference_id, query, body, }
 }
 
 ///|
@@ -42398,7 +42398,7 @@ pub fn InferencePutGooglevertexaiBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutGooglevertexaiBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -42419,7 +42419,7 @@ pub fn InferencePutGooglevertexaiRequest::new(
   body : InferencePutGooglevertexaiBody,
   query? : InferencePutGooglevertexaiQuery = InferencePutGooglevertexaiQuery::new(),
 ) -> InferencePutGooglevertexaiRequest {
-  { task_type, googlevertexai_inference_id, query, body }
+  { task_type, googlevertexai_inference_id, query, body, }
 }
 
 ///|
@@ -42530,7 +42530,7 @@ pub fn InferencePutGroqBody::new(
   service : Json,
   service_settings : Json,
 ) -> InferencePutGroqBody {
-  { service, service_settings }
+  { service, service_settings, }
 }
 
 ///|
@@ -42551,7 +42551,7 @@ pub fn InferencePutGroqRequest::new(
   body : InferencePutGroqBody,
   query? : InferencePutGroqQuery = InferencePutGroqQuery::new(),
 ) -> InferencePutGroqRequest {
-  { task_type, groq_inference_id, query, body }
+  { task_type, groq_inference_id, query, body, }
 }
 
 ///|
@@ -42691,7 +42691,7 @@ pub fn InferencePutHuggingFaceBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutHuggingFaceBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -42712,7 +42712,7 @@ pub fn InferencePutHuggingFaceRequest::new(
   body : InferencePutHuggingFaceBody,
   query? : InferencePutHuggingFaceQuery = InferencePutHuggingFaceQuery::new(),
 ) -> InferencePutHuggingFaceRequest {
-  { task_type, huggingface_inference_id, query, body }
+  { task_type, huggingface_inference_id, query, body, }
 }
 
 ///|
@@ -42848,7 +42848,7 @@ pub fn InferencePutJinaaiBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutJinaaiBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -42869,7 +42869,7 @@ pub fn InferencePutJinaaiRequest::new(
   body : InferencePutJinaaiBody,
   query? : InferencePutJinaaiQuery = InferencePutJinaaiQuery::new(),
 ) -> InferencePutJinaaiRequest {
-  { task_type, jinaai_inference_id, query, body }
+  { task_type, jinaai_inference_id, query, body, }
 }
 
 ///|
@@ -42991,7 +42991,7 @@ pub fn InferencePutLlamaBody::new(
   service_settings : Json,
   chunking_settings? : Json,
 ) -> InferencePutLlamaBody {
-  { chunking_settings, service, service_settings }
+  { chunking_settings, service, service_settings, }
 }
 
 ///|
@@ -43012,7 +43012,7 @@ pub fn InferencePutLlamaRequest::new(
   body : InferencePutLlamaBody,
   query? : InferencePutLlamaQuery = InferencePutLlamaQuery::new(),
 ) -> InferencePutLlamaRequest {
-  { task_type, llama_inference_id, query, body }
+  { task_type, llama_inference_id, query, body, }
 }
 
 ///|
@@ -43136,7 +43136,7 @@ pub fn InferencePutMistralBody::new(
   service_settings : Json,
   chunking_settings? : Json,
 ) -> InferencePutMistralBody {
-  { chunking_settings, service, service_settings }
+  { chunking_settings, service, service_settings, }
 }
 
 ///|
@@ -43157,7 +43157,7 @@ pub fn InferencePutMistralRequest::new(
   body : InferencePutMistralBody,
   query? : InferencePutMistralQuery = InferencePutMistralQuery::new(),
 ) -> InferencePutMistralRequest {
-  { task_type, mistral_inference_id, query, body }
+  { task_type, mistral_inference_id, query, body, }
 }
 
 ///|
@@ -43293,7 +43293,7 @@ pub fn InferencePutNvidiaBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutNvidiaBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -43314,7 +43314,7 @@ pub fn InferencePutNvidiaRequest::new(
   body : InferencePutNvidiaBody,
   query? : InferencePutNvidiaQuery = InferencePutNvidiaQuery::new(),
 ) -> InferencePutNvidiaRequest {
-  { task_type, nvidia_inference_id, query, body }
+  { task_type, nvidia_inference_id, query, body, }
 }
 
 ///|
@@ -43450,7 +43450,7 @@ pub fn InferencePutOpenaiBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutOpenaiBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -43471,7 +43471,7 @@ pub fn InferencePutOpenaiRequest::new(
   body : InferencePutOpenaiBody,
   query? : InferencePutOpenaiQuery = InferencePutOpenaiQuery::new(),
 ) -> InferencePutOpenaiRequest {
-  { task_type, openai_inference_id, query, body }
+  { task_type, openai_inference_id, query, body, }
 }
 
 ///|
@@ -43611,7 +43611,7 @@ pub fn InferencePutOpenshiftAiBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutOpenshiftAiBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -43632,7 +43632,7 @@ pub fn InferencePutOpenshiftAiRequest::new(
   body : InferencePutOpenshiftAiBody,
   query? : InferencePutOpenshiftAiQuery = InferencePutOpenshiftAiQuery::new(),
 ) -> InferencePutOpenshiftAiRequest {
-  { task_type, openshiftai_inference_id, query, body }
+  { task_type, openshiftai_inference_id, query, body, }
 }
 
 ///|
@@ -43768,7 +43768,7 @@ pub fn InferencePutVoyageaiBody::new(
   chunking_settings? : Json,
   task_settings? : Json,
 ) -> InferencePutVoyageaiBody {
-  { chunking_settings, service, service_settings, task_settings }
+  { chunking_settings, service, service_settings, task_settings, }
 }
 
 ///|
@@ -43789,7 +43789,7 @@ pub fn InferencePutVoyageaiRequest::new(
   body : InferencePutVoyageaiBody,
   query? : InferencePutVoyageaiQuery = InferencePutVoyageaiQuery::new(),
 ) -> InferencePutVoyageaiRequest {
-  { task_type, voyageai_inference_id, query, body }
+  { task_type, voyageai_inference_id, query, body, }
 }
 
 ///|
@@ -43913,7 +43913,7 @@ pub fn InferencePutWatsonxBody::new(
   service_settings : Json,
   chunking_settings? : Json,
 ) -> InferencePutWatsonxBody {
-  { chunking_settings, service, service_settings }
+  { chunking_settings, service, service_settings, }
 }
 
 ///|
@@ -43934,7 +43934,7 @@ pub fn InferencePutWatsonxRequest::new(
   body : InferencePutWatsonxBody,
   query? : InferencePutWatsonxQuery = InferencePutWatsonxQuery::new(),
 ) -> InferencePutWatsonxRequest {
-  { task_type, watsonx_inference_id, query, body }
+  { task_type, watsonx_inference_id, query, body, }
 }
 
 ///|
@@ -44079,7 +44079,7 @@ pub fn InferenceRerankBody::new(
   top_n? : Int,
   task_settings? : Json,
 ) -> InferenceRerankBody {
-  { query, input, return_documents, top_n, task_settings }
+  { query, input, return_documents, top_n, task_settings, }
 }
 
 ///|
@@ -44098,7 +44098,7 @@ pub fn InferenceRerankRequest::new(
   body : InferenceRerankBody,
   query? : InferenceRerankQuery = InferenceRerankQuery::new(),
 ) -> InferenceRerankRequest {
-  { inference_id, query, body }
+  { inference_id, query, body, }
 }
 
 ///|
@@ -44217,7 +44217,7 @@ pub fn InferenceSparseEmbeddingBody::new(
   input : Json,
   task_settings? : Json,
 ) -> InferenceSparseEmbeddingBody {
-  { input, task_settings }
+  { input, task_settings, }
 }
 
 ///|
@@ -44236,7 +44236,7 @@ pub fn InferenceSparseEmbeddingRequest::new(
   body : InferenceSparseEmbeddingBody,
   query? : InferenceSparseEmbeddingQuery = InferenceSparseEmbeddingQuery::new(),
 ) -> InferenceSparseEmbeddingRequest {
-  { inference_id, query, body }
+  { inference_id, query, body, }
 }
 
 ///|
@@ -44362,7 +44362,7 @@ pub fn InferenceStreamCompletionBody::new(
   input : Json,
   task_settings? : Json,
 ) -> InferenceStreamCompletionBody {
-  { input, task_settings }
+  { input, task_settings, }
 }
 
 ///|
@@ -44381,7 +44381,7 @@ pub fn InferenceStreamCompletionRequest::new(
   body : InferenceStreamCompletionBody,
   query? : InferenceStreamCompletionQuery = InferenceStreamCompletionQuery::new(),
 ) -> InferenceStreamCompletionRequest {
-  { inference_id, query, body }
+  { inference_id, query, body, }
 }
 
 ///|
@@ -44511,7 +44511,7 @@ pub fn InferenceTextEmbeddingBody::new(
   input_type? : String,
   task_settings? : Json,
 ) -> InferenceTextEmbeddingBody {
-  { input, input_type, task_settings }
+  { input, input_type, task_settings, }
 }
 
 ///|
@@ -44530,7 +44530,7 @@ pub fn InferenceTextEmbeddingRequest::new(
   body : InferenceTextEmbeddingBody,
   query? : InferenceTextEmbeddingQuery = InferenceTextEmbeddingQuery::new(),
 ) -> InferenceTextEmbeddingRequest {
-  { inference_id, query, body }
+  { inference_id, query, body, }
 }
 
 ///|
@@ -44570,13 +44570,13 @@ pub impl FromJson for InferenceUpdateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "InferenceUpdateQuery: expected object"))
   }
-  InferenceUpdateQuery::{  }
+  InferenceUpdateQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn InferenceUpdateQuery::new() -> InferenceUpdateQuery {
-  InferenceUpdateQuery::{  }
+  InferenceUpdateQuery::{ }
 }
 
 ///|
@@ -44608,7 +44608,7 @@ pub fn InferenceUpdateRequest::new(
   task_type? : String,
   query? : InferenceUpdateQuery = InferenceUpdateQuery::new(),
 ) -> InferenceUpdateRequest {
-  { task_type, inference_id, query, body }
+  { task_type, inference_id, query, body, }
 }
 
 ///|
@@ -44651,13 +44651,13 @@ pub impl FromJson for InfoQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "InfoQuery: expected object"))
   }
-  InfoQuery::{  }
+  InfoQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn InfoQuery::new() -> InfoQuery {
-  InfoQuery::{  }
+  InfoQuery::{ }
 }
 
 ///|
@@ -44788,7 +44788,7 @@ pub fn IngestDeleteGeoipDatabaseQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IngestDeleteGeoipDatabaseQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -44821,7 +44821,7 @@ pub fn IngestDeleteGeoipDatabaseRequest::new(
   id : String,
   query? : IngestDeleteGeoipDatabaseQuery = IngestDeleteGeoipDatabaseQuery::new(),
 ) -> IngestDeleteGeoipDatabaseRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -44891,7 +44891,7 @@ pub fn IngestDeleteIpLocationDatabaseQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IngestDeleteIpLocationDatabaseQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -44924,7 +44924,7 @@ pub fn IngestDeleteIpLocationDatabaseRequest::new(
   id : String,
   query? : IngestDeleteIpLocationDatabaseQuery = IngestDeleteIpLocationDatabaseQuery::new(),
 ) -> IngestDeleteIpLocationDatabaseRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -44989,7 +44989,7 @@ pub fn IngestDeletePipelineQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IngestDeletePipelineQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -45022,7 +45022,7 @@ pub fn IngestDeletePipelineRequest::new(
   id : String,
   query? : IngestDeletePipelineQuery = IngestDeletePipelineQuery::new(),
 ) -> IngestDeletePipelineRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -45057,13 +45057,13 @@ pub impl FromJson for IngestGeoIpStatsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "IngestGeoIpStatsQuery: expected object"))
   }
-  IngestGeoIpStatsQuery::{  }
+  IngestGeoIpStatsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IngestGeoIpStatsQuery::new() -> IngestGeoIpStatsQuery {
-  IngestGeoIpStatsQuery::{  }
+  IngestGeoIpStatsQuery::{ }
 }
 
 ///|
@@ -45149,13 +45149,13 @@ pub impl FromJson for IngestGetGeoipDatabaseQuery with fn from_json(json, path) 
       (path, "IngestGetGeoipDatabaseQuery: expected object"),
     )
   }
-  IngestGetGeoipDatabaseQuery::{  }
+  IngestGetGeoipDatabaseQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IngestGetGeoipDatabaseQuery::new() -> IngestGetGeoipDatabaseQuery {
-  IngestGetGeoipDatabaseQuery::{  }
+  IngestGetGeoipDatabaseQuery::{ }
 }
 
 ///|
@@ -45209,7 +45209,7 @@ pub fn IngestGetGeoipDatabaseRequest::new(
   id? : String,
   query? : IngestGetGeoipDatabaseQuery = IngestGetGeoipDatabaseQuery::new(),
 ) -> IngestGetGeoipDatabaseRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -45255,13 +45255,13 @@ pub impl FromJson for IngestGetIpLocationDatabaseQuery with fn from_json(
       (path, "IngestGetIpLocationDatabaseQuery: expected object"),
     )
   }
-  IngestGetIpLocationDatabaseQuery::{  }
+  IngestGetIpLocationDatabaseQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IngestGetIpLocationDatabaseQuery::new() -> IngestGetIpLocationDatabaseQuery {
-  IngestGetIpLocationDatabaseQuery::{  }
+  IngestGetIpLocationDatabaseQuery::{ }
 }
 
 ///|
@@ -45315,7 +45315,7 @@ pub fn IngestGetIpLocationDatabaseRequest::new(
   id? : String,
   query? : IngestGetIpLocationDatabaseQuery = IngestGetIpLocationDatabaseQuery::new(),
 ) -> IngestGetIpLocationDatabaseRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -45386,7 +45386,7 @@ pub fn IngestGetPipelineQuery::new(
   master_timeout? : String,
   summary? : Bool,
 ) -> IngestGetPipelineQuery {
-  { master_timeout, summary }
+  { master_timeout, summary, }
 }
 
 ///|
@@ -45419,7 +45419,7 @@ pub fn IngestGetPipelineRequest::new(
   id? : String,
   query? : IngestGetPipelineQuery = IngestGetPipelineQuery::new(),
 ) -> IngestGetPipelineRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -45460,13 +45460,13 @@ pub impl FromJson for IngestProcessorGrokQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "IngestProcessorGrokQuery: expected object"))
   }
-  IngestProcessorGrokQuery::{  }
+  IngestProcessorGrokQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn IngestProcessorGrokQuery::new() -> IngestProcessorGrokQuery {
-  IngestProcessorGrokQuery::{  }
+  IngestProcessorGrokQuery::{ }
 }
 
 ///|
@@ -45581,7 +45581,7 @@ pub fn IngestPutGeoipDatabaseQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IngestPutGeoipDatabaseQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -45638,7 +45638,7 @@ pub fn IngestPutGeoipDatabaseBody::new(
   name : Json,
   maxmind : Json,
 ) -> IngestPutGeoipDatabaseBody {
-  { name, maxmind }
+  { name, maxmind, }
 }
 
 ///|
@@ -45657,7 +45657,7 @@ pub fn IngestPutGeoipDatabaseRequest::new(
   body : IngestPutGeoipDatabaseBody,
   query? : IngestPutGeoipDatabaseQuery = IngestPutGeoipDatabaseQuery::new(),
 ) -> IngestPutGeoipDatabaseRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -45728,7 +45728,7 @@ pub fn IngestPutIpLocationDatabaseQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> IngestPutIpLocationDatabaseQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -45766,7 +45766,7 @@ pub fn IngestPutIpLocationDatabaseRequest::new(
   body : IngestPutIpLocationDatabaseBody,
   query? : IngestPutIpLocationDatabaseQuery = IngestPutIpLocationDatabaseQuery::new(),
 ) -> IngestPutIpLocationDatabaseRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -45844,7 +45844,7 @@ pub fn IngestPutPipelineQuery::new(
   timeout? : String,
   if_version? : Int,
 ) -> IngestPutPipelineQuery {
-  { master_timeout, timeout, if_version }
+  { master_timeout, timeout, if_version, }
 }
 
 ///|
@@ -46000,7 +46000,7 @@ pub fn IngestPutPipelineRequest::new(
   body : IngestPutPipelineBody,
   query? : IngestPutPipelineQuery = IngestPutPipelineQuery::new(),
 ) -> IngestPutPipelineRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -46109,7 +46109,7 @@ pub fn IngestSimulateBody::new(
   docs : Array[Json],
   pipeline? : Json,
 ) -> IngestSimulateBody {
-  { docs, pipeline }
+  { docs, pipeline, }
 }
 
 ///|
@@ -46152,7 +46152,7 @@ pub fn IngestSimulateRequest::new(
   id? : String,
   query? : IngestSimulateQuery = IngestSimulateQuery::new(),
 ) -> IngestSimulateRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -46309,7 +46309,7 @@ pub fn KnnSearchBody::new(
   fields? : Json,
   filter? : Json,
 ) -> KnnSearchBody {
-  { _source, docvalue_fields, stored_fields, fields, filter, knn }
+  { _source, docvalue_fields, stored_fields, fields, filter, knn, }
 }
 
 ///|
@@ -46389,7 +46389,7 @@ pub fn KnnSearchRequest::new(
   body : KnnSearchBody,
   query? : KnnSearchQuery = KnnSearchQuery::new(),
 ) -> KnnSearchRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -46455,7 +46455,7 @@ pub fn LicenseDeleteQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> LicenseDeleteQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -46545,7 +46545,7 @@ pub fn LicenseGetQuery::new(
   accept_enterprise? : Bool,
   local_? : Bool,
 ) -> LicenseGetQuery {
-  { accept_enterprise, local_ }
+  { accept_enterprise, local_, }
 }
 
 ///|
@@ -46631,13 +46631,13 @@ pub impl FromJson for LicenseGetBasicStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "LicenseGetBasicStatusQuery: expected object"))
   }
-  LicenseGetBasicStatusQuery::{  }
+  LicenseGetBasicStatusQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn LicenseGetBasicStatusQuery::new() -> LicenseGetBasicStatusQuery {
-  LicenseGetBasicStatusQuery::{  }
+  LicenseGetBasicStatusQuery::{ }
 }
 
 ///|
@@ -46723,13 +46723,13 @@ pub impl FromJson for LicenseGetTrialStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "LicenseGetTrialStatusQuery: expected object"))
   }
-  LicenseGetTrialStatusQuery::{  }
+  LicenseGetTrialStatusQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn LicenseGetTrialStatusQuery::new() -> LicenseGetTrialStatusQuery {
-  LicenseGetTrialStatusQuery::{  }
+  LicenseGetTrialStatusQuery::{ }
 }
 
 ///|
@@ -46855,7 +46855,7 @@ pub fn LicensePostQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> LicensePostQuery {
-  { acknowledge, master_timeout, timeout }
+  { acknowledge, master_timeout, timeout, }
 }
 
 ///|
@@ -46922,7 +46922,7 @@ pub fn LicensePostBody::new(
   license? : Json,
   licenses? : Array[Json],
 ) -> LicensePostBody {
-  { license, licenses }
+  { license, licenses, }
 }
 
 ///|
@@ -46980,7 +46980,7 @@ pub fn LicensePostRequest::new(
   query? : LicensePostQuery = LicensePostQuery::new(),
   body? : LicensePostBody,
 ) -> LicensePostRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -47057,7 +47057,7 @@ pub fn LicensePostStartBasicQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> LicensePostStartBasicQuery {
-  { acknowledge, master_timeout, timeout }
+  { acknowledge, master_timeout, timeout, }
 }
 
 ///|
@@ -47235,7 +47235,7 @@ pub fn LicensePostStartTrialQuery::new(
   type_? : String,
   master_timeout? : String,
 ) -> LicensePostStartTrialQuery {
-  { acknowledge, type_, master_timeout }
+  { acknowledge, type_, master_timeout, }
 }
 
 ///|
@@ -47480,13 +47480,13 @@ pub impl FromJson for LogstashDeletePipelineQuery with fn from_json(json, path) 
       (path, "LogstashDeletePipelineQuery: expected object"),
     )
   }
-  LogstashDeletePipelineQuery::{  }
+  LogstashDeletePipelineQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn LogstashDeletePipelineQuery::new() -> LogstashDeletePipelineQuery {
-  LogstashDeletePipelineQuery::{  }
+  LogstashDeletePipelineQuery::{ }
 }
 
 ///|
@@ -47511,7 +47511,7 @@ pub fn LogstashDeletePipelineRequest::new(
   id : String,
   query? : LogstashDeletePipelineQuery = LogstashDeletePipelineQuery::new(),
 ) -> LogstashDeletePipelineRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -47546,13 +47546,13 @@ pub impl FromJson for LogstashGetPipelineQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "LogstashGetPipelineQuery: expected object"))
   }
-  LogstashGetPipelineQuery::{  }
+  LogstashGetPipelineQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn LogstashGetPipelineQuery::new() -> LogstashGetPipelineQuery {
-  LogstashGetPipelineQuery::{  }
+  LogstashGetPipelineQuery::{ }
 }
 
 ///|
@@ -47577,7 +47577,7 @@ pub fn LogstashGetPipelineRequest::new(
   id? : String,
   query? : LogstashGetPipelineQuery = LogstashGetPipelineQuery::new(),
 ) -> LogstashGetPipelineRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -47618,13 +47618,13 @@ pub impl FromJson for LogstashPutPipelineQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "LogstashPutPipelineQuery: expected object"))
   }
-  LogstashPutPipelineQuery::{  }
+  LogstashPutPipelineQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn LogstashPutPipelineQuery::new() -> LogstashPutPipelineQuery {
-  LogstashPutPipelineQuery::{  }
+  LogstashPutPipelineQuery::{ }
 }
 
 ///|
@@ -47654,7 +47654,7 @@ pub fn LogstashPutPipelineRequest::new(
   body : LogstashPutPipelineBody,
   query? : LogstashPutPipelineQuery = LogstashPutPipelineQuery::new(),
 ) -> LogstashPutPipelineRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -47898,7 +47898,7 @@ pub impl FromJson for MgetBody with fn from_json(json, path) {
 
 ///|
 pub fn MgetBody::new(docs? : Array[Json], ids? : Json) -> MgetBody {
-  { docs, ids }
+  { docs, ids, }
 }
 
 ///|
@@ -47939,7 +47939,7 @@ pub fn MgetRequest::new(
   index? : String,
   query? : MgetQuery = MgetQuery::new(),
 ) -> MgetRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -47981,13 +47981,13 @@ pub impl FromJson for MigrationDeprecationsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MigrationDeprecationsQuery: expected object"))
   }
-  MigrationDeprecationsQuery::{  }
+  MigrationDeprecationsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MigrationDeprecationsQuery::new() -> MigrationDeprecationsQuery {
-  MigrationDeprecationsQuery::{  }
+  MigrationDeprecationsQuery::{ }
 }
 
 ///|
@@ -48077,7 +48077,7 @@ pub fn MigrationDeprecationsRequest::new(
   index? : String,
   query? : MigrationDeprecationsQuery = MigrationDeprecationsQuery::new(),
 ) -> MigrationDeprecationsRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -48123,13 +48123,13 @@ pub impl FromJson for MigrationGetFeatureUpgradeStatusQuery with fn from_json(
       (path, "MigrationGetFeatureUpgradeStatusQuery: expected object"),
     )
   }
-  MigrationGetFeatureUpgradeStatusQuery::{  }
+  MigrationGetFeatureUpgradeStatusQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MigrationGetFeatureUpgradeStatusQuery::new() -> MigrationGetFeatureUpgradeStatusQuery {
-  MigrationGetFeatureUpgradeStatusQuery::{  }
+  MigrationGetFeatureUpgradeStatusQuery::{ }
 }
 
 ///|
@@ -48226,13 +48226,13 @@ pub impl FromJson for MigrationPostFeatureUpgradeQuery with fn from_json(
       (path, "MigrationPostFeatureUpgradeQuery: expected object"),
     )
   }
-  MigrationPostFeatureUpgradeQuery::{  }
+  MigrationPostFeatureUpgradeQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MigrationPostFeatureUpgradeQuery::new() -> MigrationPostFeatureUpgradeQuery {
-  MigrationPostFeatureUpgradeQuery::{  }
+  MigrationPostFeatureUpgradeQuery::{ }
 }
 
 ///|
@@ -48343,13 +48343,13 @@ pub impl FromJson for MlClearTrainedModelDeploymentCacheQuery with fn from_json(
       (path, "MlClearTrainedModelDeploymentCacheQuery: expected object"),
     )
   }
-  MlClearTrainedModelDeploymentCacheQuery::{  }
+  MlClearTrainedModelDeploymentCacheQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlClearTrainedModelDeploymentCacheQuery::new() -> MlClearTrainedModelDeploymentCacheQuery {
-  MlClearTrainedModelDeploymentCacheQuery::{  }
+  MlClearTrainedModelDeploymentCacheQuery::{ }
 }
 
 ///|
@@ -48408,7 +48408,7 @@ pub fn MlClearTrainedModelDeploymentCacheRequest::new(
   query? : MlClearTrainedModelDeploymentCacheQuery = MlClearTrainedModelDeploymentCacheQuery::new(),
   body? : MlClearTrainedModelDeploymentCacheBody,
 ) -> MlClearTrainedModelDeploymentCacheRequest {
-  { model_id, query, body }
+  { model_id, query, body, }
 }
 
 ///|
@@ -48491,7 +48491,7 @@ pub fn MlCloseJobQuery::new(
   force? : Bool,
   timeout? : String,
 ) -> MlCloseJobQuery {
-  { allow_no_match, force, timeout }
+  { allow_no_match, force, timeout, }
 }
 
 ///|
@@ -48570,7 +48570,7 @@ pub fn MlCloseJobBody::new(
   force? : Bool,
   timeout? : Json,
 ) -> MlCloseJobBody {
-  { allow_no_match, force, timeout }
+  { allow_no_match, force, timeout, }
 }
 
 ///|
@@ -48613,7 +48613,7 @@ pub fn MlCloseJobRequest::new(
   query? : MlCloseJobQuery = MlCloseJobQuery::new(),
   body? : MlCloseJobBody,
 ) -> MlCloseJobRequest {
-  { job_id, query, body }
+  { job_id, query, body, }
 }
 
 ///|
@@ -48652,13 +48652,13 @@ pub impl FromJson for MlDeleteCalendarQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlDeleteCalendarQuery: expected object"))
   }
-  MlDeleteCalendarQuery::{  }
+  MlDeleteCalendarQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlDeleteCalendarQuery::new() -> MlDeleteCalendarQuery {
-  MlDeleteCalendarQuery::{  }
+  MlDeleteCalendarQuery::{ }
 }
 
 ///|
@@ -48683,7 +48683,7 @@ pub fn MlDeleteCalendarRequest::new(
   calendar_id : String,
   query? : MlDeleteCalendarQuery = MlDeleteCalendarQuery::new(),
 ) -> MlDeleteCalendarRequest {
-  { calendar_id, query }
+  { calendar_id, query, }
 }
 
 ///|
@@ -48718,13 +48718,13 @@ pub impl FromJson for MlDeleteCalendarEventQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlDeleteCalendarEventQuery: expected object"))
   }
-  MlDeleteCalendarEventQuery::{  }
+  MlDeleteCalendarEventQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlDeleteCalendarEventQuery::new() -> MlDeleteCalendarEventQuery {
-  MlDeleteCalendarEventQuery::{  }
+  MlDeleteCalendarEventQuery::{ }
 }
 
 ///|
@@ -48751,7 +48751,7 @@ pub fn MlDeleteCalendarEventRequest::new(
   event_id : String,
   query? : MlDeleteCalendarEventQuery = MlDeleteCalendarEventQuery::new(),
 ) -> MlDeleteCalendarEventRequest {
-  { calendar_id, event_id, query }
+  { calendar_id, event_id, query, }
 }
 
 ///|
@@ -48791,13 +48791,13 @@ pub impl FromJson for MlDeleteCalendarJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlDeleteCalendarJobQuery: expected object"))
   }
-  MlDeleteCalendarJobQuery::{  }
+  MlDeleteCalendarJobQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlDeleteCalendarJobQuery::new() -> MlDeleteCalendarJobQuery {
-  MlDeleteCalendarJobQuery::{  }
+  MlDeleteCalendarJobQuery::{ }
 }
 
 ///|
@@ -48867,7 +48867,7 @@ pub fn MlDeleteCalendarJobRequest::new(
   job_id : String,
   query? : MlDeleteCalendarJobQuery = MlDeleteCalendarJobQuery::new(),
 ) -> MlDeleteCalendarJobRequest {
-  { calendar_id, job_id, query }
+  { calendar_id, job_id, query, }
 }
 
 ///|
@@ -48941,7 +48941,7 @@ pub fn MlDeleteDataFrameAnalyticsQuery::new(
   force? : Bool,
   timeout? : String,
 ) -> MlDeleteDataFrameAnalyticsQuery {
-  { force, timeout }
+  { force, timeout, }
 }
 
 ///|
@@ -48974,7 +48974,7 @@ pub fn MlDeleteDataFrameAnalyticsRequest::new(
   id : String,
   query? : MlDeleteDataFrameAnalyticsQuery = MlDeleteDataFrameAnalyticsQuery::new(),
 ) -> MlDeleteDataFrameAnalyticsRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -49054,7 +49054,7 @@ pub fn MlDeleteDatafeedRequest::new(
   datafeed_id : String,
   query? : MlDeleteDatafeedQuery = MlDeleteDatafeedQuery::new(),
 ) -> MlDeleteDatafeedRequest {
-  { datafeed_id, query }
+  { datafeed_id, query, }
 }
 
 ///|
@@ -49119,7 +49119,7 @@ pub fn MlDeleteExpiredDataQuery::new(
   requests_per_second? : Double,
   timeout? : String,
 ) -> MlDeleteExpiredDataQuery {
-  { requests_per_second, timeout }
+  { requests_per_second, timeout, }
 }
 
 ///|
@@ -49186,7 +49186,7 @@ pub fn MlDeleteExpiredDataBody::new(
   requests_per_second? : Double,
   timeout? : Json,
 ) -> MlDeleteExpiredDataBody {
-  { requests_per_second, timeout }
+  { requests_per_second, timeout, }
 }
 
 ///|
@@ -49231,7 +49231,7 @@ pub fn MlDeleteExpiredDataRequest::new(
   query? : MlDeleteExpiredDataQuery = MlDeleteExpiredDataQuery::new(),
   body? : MlDeleteExpiredDataBody,
 ) -> MlDeleteExpiredDataRequest {
-  { job_id, query, body }
+  { job_id, query, body, }
 }
 
 ///|
@@ -49276,13 +49276,13 @@ pub impl FromJson for MlDeleteFilterQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlDeleteFilterQuery: expected object"))
   }
-  MlDeleteFilterQuery::{  }
+  MlDeleteFilterQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlDeleteFilterQuery::new() -> MlDeleteFilterQuery {
-  MlDeleteFilterQuery::{  }
+  MlDeleteFilterQuery::{ }
 }
 
 ///|
@@ -49307,7 +49307,7 @@ pub fn MlDeleteFilterRequest::new(
   filter_id : String,
   query? : MlDeleteFilterQuery = MlDeleteFilterQuery::new(),
 ) -> MlDeleteFilterRequest {
-  { filter_id, query }
+  { filter_id, query, }
 }
 
 ///|
@@ -49372,7 +49372,7 @@ pub fn MlDeleteForecastQuery::new(
   allow_no_forecasts? : Bool,
   timeout? : String,
 ) -> MlDeleteForecastQuery {
-  { allow_no_forecasts, timeout }
+  { allow_no_forecasts, timeout, }
 }
 
 ///|
@@ -49407,7 +49407,7 @@ pub fn MlDeleteForecastRequest::new(
   forecast_id? : String,
   query? : MlDeleteForecastQuery = MlDeleteForecastQuery::new(),
 ) -> MlDeleteForecastRequest {
-  { job_id, forecast_id, query }
+  { job_id, forecast_id, query, }
 }
 
 ///|
@@ -49494,7 +49494,7 @@ pub fn MlDeleteJobQuery::new(
   delete_user_annotations? : Bool,
   wait_for_completion? : Bool,
 ) -> MlDeleteJobQuery {
-  { force, delete_user_annotations, wait_for_completion }
+  { force, delete_user_annotations, wait_for_completion, }
 }
 
 ///|
@@ -49533,7 +49533,7 @@ pub fn MlDeleteJobRequest::new(
   job_id : String,
   query? : MlDeleteJobQuery = MlDeleteJobQuery::new(),
 ) -> MlDeleteJobRequest {
-  { job_id, query }
+  { job_id, query, }
 }
 
 ///|
@@ -49568,13 +49568,13 @@ pub impl FromJson for MlDeleteModelSnapshotQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlDeleteModelSnapshotQuery: expected object"))
   }
-  MlDeleteModelSnapshotQuery::{  }
+  MlDeleteModelSnapshotQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlDeleteModelSnapshotQuery::new() -> MlDeleteModelSnapshotQuery {
-  MlDeleteModelSnapshotQuery::{  }
+  MlDeleteModelSnapshotQuery::{ }
 }
 
 ///|
@@ -49601,7 +49601,7 @@ pub fn MlDeleteModelSnapshotRequest::new(
   snapshot_id : String,
   query? : MlDeleteModelSnapshotQuery = MlDeleteModelSnapshotQuery::new(),
 ) -> MlDeleteModelSnapshotRequest {
-  { job_id, snapshot_id, query }
+  { job_id, snapshot_id, query, }
 }
 
 ///|
@@ -49671,7 +49671,7 @@ pub fn MlDeleteTrainedModelQuery::new(
   force? : Bool,
   timeout? : String,
 ) -> MlDeleteTrainedModelQuery {
-  { force, timeout }
+  { force, timeout, }
 }
 
 ///|
@@ -49704,7 +49704,7 @@ pub fn MlDeleteTrainedModelRequest::new(
   model_id : String,
   query? : MlDeleteTrainedModelQuery = MlDeleteTrainedModelQuery::new(),
 ) -> MlDeleteTrainedModelRequest {
-  { model_id, query }
+  { model_id, query, }
 }
 
 ///|
@@ -49744,13 +49744,13 @@ pub impl FromJson for MlDeleteTrainedModelAliasQuery with fn from_json(
       (path, "MlDeleteTrainedModelAliasQuery: expected object"),
     )
   }
-  MlDeleteTrainedModelAliasQuery::{  }
+  MlDeleteTrainedModelAliasQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlDeleteTrainedModelAliasQuery::new() -> MlDeleteTrainedModelAliasQuery {
-  MlDeleteTrainedModelAliasQuery::{  }
+  MlDeleteTrainedModelAliasQuery::{ }
 }
 
 ///|
@@ -49782,7 +49782,7 @@ pub fn MlDeleteTrainedModelAliasRequest::new(
   query? : MlDeleteTrainedModelAliasQuery = MlDeleteTrainedModelAliasQuery::new(),
   body? : MlDeleteTrainedModelAliasBody,
 ) -> MlDeleteTrainedModelAliasRequest {
-  { model_id, model_alias, query, body }
+  { model_id, model_alias, query, body, }
 }
 
 ///|
@@ -49827,13 +49827,13 @@ pub impl FromJson for MlEstimateModelMemoryQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlEstimateModelMemoryQuery: expected object"))
   }
-  MlEstimateModelMemoryQuery::{  }
+  MlEstimateModelMemoryQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlEstimateModelMemoryQuery::new() -> MlEstimateModelMemoryQuery {
-  MlEstimateModelMemoryQuery::{  }
+  MlEstimateModelMemoryQuery::{ }
 }
 
 ///|
@@ -49906,7 +49906,7 @@ pub fn MlEstimateModelMemoryBody::new(
   max_bucket_cardinality? : Map[String, Json],
   overall_cardinality? : Map[String, Json],
 ) -> MlEstimateModelMemoryBody {
-  { analysis_config, max_bucket_cardinality, overall_cardinality }
+  { analysis_config, max_bucket_cardinality, overall_cardinality, }
 }
 
 ///|
@@ -49952,7 +49952,7 @@ pub fn MlEstimateModelMemoryRequest::new(
   body : MlEstimateModelMemoryBody,
   query? : MlEstimateModelMemoryQuery = MlEstimateModelMemoryQuery::new(),
 ) -> MlEstimateModelMemoryRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -49987,13 +49987,13 @@ pub impl FromJson for MlEvaluateDataFrameQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlEvaluateDataFrameQuery: expected object"))
   }
-  MlEvaluateDataFrameQuery::{  }
+  MlEvaluateDataFrameQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlEvaluateDataFrameQuery::new() -> MlEvaluateDataFrameQuery {
-  MlEvaluateDataFrameQuery::{  }
+  MlEvaluateDataFrameQuery::{ }
 }
 
 ///|
@@ -50053,7 +50053,7 @@ pub fn MlEvaluateDataFrameBody::new(
   index : Json,
   query? : Json,
 ) -> MlEvaluateDataFrameBody {
-  { evaluation, index, query }
+  { evaluation, index, query, }
 }
 
 ///|
@@ -50123,7 +50123,7 @@ pub fn MlEvaluateDataFrameRequest::new(
   body : MlEvaluateDataFrameBody,
   query? : MlEvaluateDataFrameQuery = MlEvaluateDataFrameQuery::new(),
 ) -> MlEvaluateDataFrameRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -50163,13 +50163,13 @@ pub impl FromJson for MlExplainDataFrameAnalyticsQuery with fn from_json(
       (path, "MlExplainDataFrameAnalyticsQuery: expected object"),
     )
   }
-  MlExplainDataFrameAnalyticsQuery::{  }
+  MlExplainDataFrameAnalyticsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlExplainDataFrameAnalyticsQuery::new() -> MlExplainDataFrameAnalyticsQuery {
-  MlExplainDataFrameAnalyticsQuery::{  }
+  MlExplainDataFrameAnalyticsQuery::{ }
 }
 
 ///|
@@ -50365,7 +50365,7 @@ pub fn MlExplainDataFrameAnalyticsRequest::new(
   query? : MlExplainDataFrameAnalyticsQuery = MlExplainDataFrameAnalyticsQuery::new(),
   body? : MlExplainDataFrameAnalyticsBody,
 ) -> MlExplainDataFrameAnalyticsRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -50473,7 +50473,7 @@ pub fn MlFlushJobQuery::new(
   skip_time? : String,
   start? : String,
 ) -> MlFlushJobQuery {
-  { advance_time, calc_interim, end, skip_time, start }
+  { advance_time, calc_interim, end, skip_time, start, }
 }
 
 ///|
@@ -50584,7 +50584,7 @@ pub fn MlFlushJobBody::new(
   skip_time? : Json,
   start? : Json,
 ) -> MlFlushJobBody {
-  { advance_time, calc_interim, end, skip_time, start }
+  { advance_time, calc_interim, end, skip_time, start, }
 }
 
 ///|
@@ -50640,7 +50640,7 @@ pub fn MlFlushJobRequest::new(
   query? : MlFlushJobQuery = MlFlushJobQuery::new(),
   body? : MlFlushJobBody,
 ) -> MlFlushJobRequest {
-  { job_id, query, body }
+  { job_id, query, body, }
 }
 
 ///|
@@ -50719,7 +50719,7 @@ pub fn MlForecastQuery::new(
   expires_in? : String,
   max_model_memory? : String,
 ) -> MlForecastQuery {
-  { duration, expires_in, max_model_memory }
+  { duration, expires_in, max_model_memory, }
 }
 
 ///|
@@ -50799,7 +50799,7 @@ pub fn MlForecastBody::new(
   expires_in? : Json,
   max_model_memory? : String,
 ) -> MlForecastBody {
-  { duration, expires_in, max_model_memory }
+  { duration, expires_in, max_model_memory, }
 }
 
 ///|
@@ -50848,7 +50848,7 @@ pub fn MlForecastRequest::new(
   query? : MlForecastQuery = MlForecastQuery::new(),
   body? : MlForecastBody,
 ) -> MlForecastRequest {
-  { job_id, query, body }
+  { job_id, query, body, }
 }
 
 ///|
@@ -50993,7 +50993,17 @@ pub fn MlGetBucketsQuery::new(
   sort? : String,
   start? : String,
 ) -> MlGetBucketsQuery {
-  { anomaly_score, desc, end, exclude_interim, expand, from, size, sort, start }
+  {
+    anomaly_score,
+    desc,
+    end,
+    exclude_interim,
+    expand,
+    from,
+    size,
+    sort,
+    start,
+  }
 }
 
 ///|
@@ -51152,7 +51162,7 @@ pub fn MlGetBucketsBody::new(
   sort? : Json,
   start? : Json,
 ) -> MlGetBucketsBody {
-  { anomaly_score, desc, end, exclude_interim, expand, page, sort, start }
+  { anomaly_score, desc, end, exclude_interim, expand, page, sort, start, }
 }
 
 ///|
@@ -51203,7 +51213,7 @@ pub fn MlGetBucketsRequest::new(
   query? : MlGetBucketsQuery = MlGetBucketsQuery::new(),
   body? : MlGetBucketsBody,
 ) -> MlGetBucketsRequest {
-  { job_id, timestamp, query, body }
+  { job_id, timestamp, query, body, }
 }
 
 ///|
@@ -51316,7 +51326,7 @@ pub fn MlGetCalendarEventsQuery::new(
   size? : Int,
   start? : String,
 ) -> MlGetCalendarEventsQuery {
-  { end, from, job_id, size, start }
+  { end, from, job_id, size, start, }
 }
 
 ///|
@@ -51393,7 +51403,7 @@ pub fn MlGetCalendarEventsRequest::new(
   calendar_id : String,
   query? : MlGetCalendarEventsQuery = MlGetCalendarEventsQuery::new(),
 ) -> MlGetCalendarEventsRequest {
-  { calendar_id, query }
+  { calendar_id, query, }
 }
 
 ///|
@@ -51457,7 +51467,7 @@ pub fn MlGetCalendarsQuery::new(
   from? : Int,
   size? : Int,
 ) -> MlGetCalendarsQuery {
-  { from, size }
+  { from, size, }
 }
 
 ///|
@@ -51558,7 +51568,7 @@ pub fn MlGetCalendarsRequest::new(
   query? : MlGetCalendarsQuery = MlGetCalendarsQuery::new(),
   body? : MlGetCalendarsBody,
 ) -> MlGetCalendarsRequest {
-  { calendar_id, query, body }
+  { calendar_id, query, body, }
 }
 
 ///|
@@ -51644,7 +51654,7 @@ pub fn MlGetCategoriesQuery::new(
   partition_field_value? : String,
   size? : Int,
 ) -> MlGetCategoriesQuery {
-  { from, partition_field_value, size }
+  { from, partition_field_value, size, }
 }
 
 ///|
@@ -51752,7 +51762,7 @@ pub fn MlGetCategoriesRequest::new(
   query? : MlGetCategoriesQuery = MlGetCategoriesQuery::new(),
   body? : MlGetCategoriesBody,
 ) -> MlGetCategoriesRequest {
-  { job_id, category_id, query, body }
+  { job_id, category_id, query, body, }
 }
 
 ///|
@@ -51858,7 +51868,7 @@ pub fn MlGetDataFrameAnalyticsQuery::new(
   size? : Int,
   exclude_generated? : Bool,
 ) -> MlGetDataFrameAnalyticsQuery {
-  { allow_no_match, from, size, exclude_generated }
+  { allow_no_match, from, size, exclude_generated, }
 }
 
 ///|
@@ -51934,7 +51944,7 @@ pub fn MlGetDataFrameAnalyticsRequest::new(
   id? : String,
   query? : MlGetDataFrameAnalyticsQuery = MlGetDataFrameAnalyticsQuery::new(),
 ) -> MlGetDataFrameAnalyticsRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -52032,7 +52042,7 @@ pub fn MlGetDataFrameAnalyticsStatsQuery::new(
   size? : Int,
   verbose? : Bool,
 ) -> MlGetDataFrameAnalyticsStatsQuery {
-  { allow_no_match, from, size, verbose }
+  { allow_no_match, from, size, verbose, }
 }
 
 ///|
@@ -52108,7 +52118,7 @@ pub fn MlGetDataFrameAnalyticsStatsRequest::new(
   id? : String,
   query? : MlGetDataFrameAnalyticsStatsQuery = MlGetDataFrameAnalyticsStatsQuery::new(),
 ) -> MlGetDataFrameAnalyticsStatsRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -52227,7 +52237,7 @@ pub fn MlGetDatafeedStatsRequest::new(
   datafeed_id? : String,
   query? : MlGetDatafeedStatsQuery = MlGetDatafeedStatsQuery::new(),
 ) -> MlGetDatafeedStatsRequest {
-  { datafeed_id, query }
+  { datafeed_id, query, }
 }
 
 ///|
@@ -52299,7 +52309,7 @@ pub fn MlGetDatafeedsQuery::new(
   allow_no_match? : Bool,
   exclude_generated? : Bool,
 ) -> MlGetDatafeedsQuery {
-  { allow_no_match, exclude_generated }
+  { allow_no_match, exclude_generated, }
 }
 
 ///|
@@ -52362,7 +52372,7 @@ pub fn MlGetDatafeedsRequest::new(
   datafeed_id? : String,
   query? : MlGetDatafeedsQuery = MlGetDatafeedsQuery::new(),
 ) -> MlGetDatafeedsRequest {
-  { datafeed_id, query }
+  { datafeed_id, query, }
 }
 
 ///|
@@ -52427,7 +52437,7 @@ pub impl FromJson for MlGetFiltersQuery with fn from_json(json, path) {
 
 ///|
 pub fn MlGetFiltersQuery::new(from? : Int, size? : Int) -> MlGetFiltersQuery {
-  { from, size }
+  { from, size, }
 }
 
 ///|
@@ -52490,7 +52500,7 @@ pub fn MlGetFiltersRequest::new(
   filter_id? : String,
   query? : MlGetFiltersQuery = MlGetFiltersQuery::new(),
 ) -> MlGetFiltersRequest {
-  { filter_id, query }
+  { filter_id, query, }
 }
 
 ///|
@@ -52628,7 +52638,7 @@ pub fn MlGetInfluencersQuery::new(
   sort? : String,
   start? : String,
 ) -> MlGetInfluencersQuery {
-  { desc, end, exclude_interim, influencer_score, from, size, sort, start }
+  { desc, end, exclude_interim, influencer_score, from, size, sort, start, }
 }
 
 ///|
@@ -52753,7 +52763,7 @@ pub fn MlGetInfluencersRequest::new(
   query? : MlGetInfluencersQuery = MlGetInfluencersQuery::new(),
   body? : MlGetInfluencersBody,
 ) -> MlGetInfluencersRequest {
-  { job_id, query, body }
+  { job_id, query, body, }
 }
 
 ///|
@@ -52872,7 +52882,7 @@ pub fn MlGetJobStatsRequest::new(
   job_id? : String,
   query? : MlGetJobStatsQuery = MlGetJobStatsQuery::new(),
 ) -> MlGetJobStatsRequest {
-  { job_id, query }
+  { job_id, query, }
 }
 
 ///|
@@ -52942,7 +52952,7 @@ pub fn MlGetJobsQuery::new(
   allow_no_match? : Bool,
   exclude_generated? : Bool,
 ) -> MlGetJobsQuery {
-  { allow_no_match, exclude_generated }
+  { allow_no_match, exclude_generated, }
 }
 
 ///|
@@ -53003,7 +53013,7 @@ pub fn MlGetJobsRequest::new(
   job_id? : String,
   query? : MlGetJobsQuery = MlGetJobsQuery::new(),
 ) -> MlGetJobsRequest {
-  { job_id, query }
+  { job_id, query, }
 }
 
 ///|
@@ -53074,7 +53084,7 @@ pub fn MlGetMemoryStatsQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> MlGetMemoryStatsQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -53143,7 +53153,7 @@ pub fn MlGetMemoryStatsRequest::new(
   node_id? : String,
   query? : MlGetMemoryStatsQuery = MlGetMemoryStatsQuery::new(),
 ) -> MlGetMemoryStatsRequest {
-  { node_id, query }
+  { node_id, query, }
 }
 
 ///|
@@ -53274,7 +53284,7 @@ pub fn MlGetModelSnapshotUpgradeStatsRequest::new(
   snapshot_id : String,
   query? : MlGetModelSnapshotUpgradeStatsQuery = MlGetModelSnapshotUpgradeStatsQuery::new(),
 ) -> MlGetModelSnapshotUpgradeStatsRequest {
-  { job_id, snapshot_id, query }
+  { job_id, snapshot_id, query, }
 }
 
 ///|
@@ -53388,7 +53398,7 @@ pub fn MlGetModelSnapshotsQuery::new(
   sort? : String,
   start? : String,
 ) -> MlGetModelSnapshotsQuery {
-  { desc, end, from, size, sort, start }
+  { desc, end, from, size, sort, start, }
 }
 
 ///|
@@ -53502,7 +53512,7 @@ pub fn MlGetModelSnapshotsBody::new(
   sort? : Json,
   start? : Json,
 ) -> MlGetModelSnapshotsBody {
-  { desc, end, page, sort, start }
+  { desc, end, page, sort, start, }
 }
 
 ///|
@@ -53555,7 +53565,7 @@ pub fn MlGetModelSnapshotsRequest::new(
   query? : MlGetModelSnapshotsQuery = MlGetModelSnapshotsQuery::new(),
   body? : MlGetModelSnapshotsBody,
 ) -> MlGetModelSnapshotsRequest {
-  { job_id, snapshot_id, query, body }
+  { job_id, snapshot_id, query, body, }
 }
 
 ///|
@@ -53905,7 +53915,7 @@ pub fn MlGetOverallBucketsRequest::new(
   query? : MlGetOverallBucketsQuery = MlGetOverallBucketsQuery::new(),
   body? : MlGetOverallBucketsBody,
 ) -> MlGetOverallBucketsRequest {
-  { job_id, query, body }
+  { job_id, query, body, }
 }
 
 ///|
@@ -54044,7 +54054,7 @@ pub fn MlGetRecordsQuery::new(
   sort? : String,
   start? : String,
 ) -> MlGetRecordsQuery {
-  { desc, end, exclude_interim, from, record_score, size, sort, start }
+  { desc, end, exclude_interim, from, record_score, size, sort, start, }
 }
 
 ///|
@@ -54188,7 +54198,7 @@ pub fn MlGetRecordsBody::new(
   sort? : Json,
   start? : Json,
 ) -> MlGetRecordsBody {
-  { desc, end, exclude_interim, page, record_score, sort, start }
+  { desc, end, exclude_interim, page, record_score, sort, start, }
 }
 
 ///|
@@ -54237,7 +54247,7 @@ pub fn MlGetRecordsRequest::new(
   query? : MlGetRecordsQuery = MlGetRecordsQuery::new(),
   body? : MlGetRecordsBody,
 ) -> MlGetRecordsRequest {
-  { job_id, query, body }
+  { job_id, query, body, }
 }
 
 ///|
@@ -54459,7 +54469,7 @@ pub fn MlGetTrainedModelsRequest::new(
   model_id? : String,
   query? : MlGetTrainedModelsQuery = MlGetTrainedModelsQuery::new(),
 ) -> MlGetTrainedModelsRequest {
-  { model_id, query }
+  { model_id, query, }
 }
 
 ///|
@@ -54543,7 +54553,7 @@ pub fn MlGetTrainedModelsStatsQuery::new(
   from? : Int,
   size? : Int,
 ) -> MlGetTrainedModelsStatsQuery {
-  { allow_no_match, from, size }
+  { allow_no_match, from, size, }
 }
 
 ///|
@@ -54615,7 +54625,7 @@ pub fn MlGetTrainedModelsStatsRequest::new(
   model_id? : String,
   query? : MlGetTrainedModelsStatsQuery = MlGetTrainedModelsStatsQuery::new(),
 ) -> MlGetTrainedModelsStatsRequest {
-  { model_id, query }
+  { model_id, query, }
 }
 
 ///|
@@ -54732,7 +54742,7 @@ pub fn MlInferTrainedModelBody::new(
   docs : Array[Map[String, Json]],
   inference_config? : Json,
 ) -> MlInferTrainedModelBody {
-  { docs, inference_config }
+  { docs, inference_config, }
 }
 
 ///|
@@ -54777,7 +54787,7 @@ pub fn MlInferTrainedModelRequest::new(
   body : MlInferTrainedModelBody,
   query? : MlInferTrainedModelQuery = MlInferTrainedModelQuery::new(),
 ) -> MlInferTrainedModelRequest {
-  { model_id, query, body }
+  { model_id, query, body, }
 }
 
 ///|
@@ -54811,13 +54821,13 @@ pub impl FromJson for MlInfoQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlInfoQuery: expected object"))
   }
-  MlInfoQuery::{  }
+  MlInfoQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlInfoQuery::new() -> MlInfoQuery {
-  MlInfoQuery::{  }
+  MlInfoQuery::{ }
 }
 
 ///|
@@ -55016,7 +55026,7 @@ pub fn MlOpenJobRequest::new(
   query? : MlOpenJobQuery = MlOpenJobQuery::new(),
   body? : MlOpenJobBody,
 ) -> MlOpenJobRequest {
-  { job_id, query, body }
+  { job_id, query, body, }
 }
 
 ///|
@@ -55055,13 +55065,13 @@ pub impl FromJson for MlPostCalendarEventsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlPostCalendarEventsQuery: expected object"))
   }
-  MlPostCalendarEventsQuery::{  }
+  MlPostCalendarEventsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlPostCalendarEventsQuery::new() -> MlPostCalendarEventsQuery {
-  MlPostCalendarEventsQuery::{  }
+  MlPostCalendarEventsQuery::{ }
 }
 
 ///|
@@ -55148,7 +55158,7 @@ pub fn MlPostCalendarEventsRequest::new(
   body : MlPostCalendarEventsBody,
   query? : MlPostCalendarEventsQuery = MlPostCalendarEventsQuery::new(),
 ) -> MlPostCalendarEventsRequest {
-  { calendar_id, query, body }
+  { calendar_id, query, body, }
 }
 
 ///|
@@ -55213,7 +55223,7 @@ pub fn MlPostDataQuery::new(
   reset_end? : String,
   reset_start? : String,
 ) -> MlPostDataQuery {
-  { reset_end, reset_start }
+  { reset_end, reset_start, }
 }
 
 ///|
@@ -55422,7 +55432,7 @@ pub fn MlPostDataRequest::new(
   body : MlPostDataBody,
   query? : MlPostDataQuery = MlPostDataQuery::new(),
 ) -> MlPostDataRequest {
-  { job_id, query, body }
+  { job_id, query, body, }
 }
 
 ///|
@@ -55463,13 +55473,13 @@ pub impl FromJson for MlPreviewDataFrameAnalyticsQuery with fn from_json(
       (path, "MlPreviewDataFrameAnalyticsQuery: expected object"),
     )
   }
-  MlPreviewDataFrameAnalyticsQuery::{  }
+  MlPreviewDataFrameAnalyticsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlPreviewDataFrameAnalyticsQuery::new() -> MlPreviewDataFrameAnalyticsQuery {
-  MlPreviewDataFrameAnalyticsQuery::{  }
+  MlPreviewDataFrameAnalyticsQuery::{ }
 }
 
 ///|
@@ -55568,7 +55578,7 @@ pub fn MlPreviewDataFrameAnalyticsRequest::new(
   query? : MlPreviewDataFrameAnalyticsQuery = MlPreviewDataFrameAnalyticsQuery::new(),
   body? : MlPreviewDataFrameAnalyticsBody,
 ) -> MlPreviewDataFrameAnalyticsRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -55642,7 +55652,7 @@ pub fn MlPreviewDatafeedQuery::new(
   start? : String,
   end? : String,
 ) -> MlPreviewDatafeedQuery {
-  { start, end }
+  { start, end, }
 }
 
 ///|
@@ -55709,7 +55719,7 @@ pub fn MlPreviewDatafeedBody::new(
   datafeed_config? : Json,
   job_config? : Json,
 ) -> MlPreviewDatafeedBody {
-  { datafeed_config, job_config }
+  { datafeed_config, job_config, }
 }
 
 ///|
@@ -55728,7 +55738,7 @@ pub fn MlPreviewDatafeedRequest::new(
   query? : MlPreviewDatafeedQuery = MlPreviewDatafeedQuery::new(),
   body? : MlPreviewDatafeedBody,
 ) -> MlPreviewDatafeedRequest {
-  { datafeed_id, query, body }
+  { datafeed_id, query, body, }
 }
 
 ///|
@@ -55773,13 +55783,13 @@ pub impl FromJson for MlPutCalendarQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlPutCalendarQuery: expected object"))
   }
-  MlPutCalendarQuery::{  }
+  MlPutCalendarQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlPutCalendarQuery::new() -> MlPutCalendarQuery {
-  MlPutCalendarQuery::{  }
+  MlPutCalendarQuery::{ }
 }
 
 ///|
@@ -55835,7 +55845,7 @@ pub fn MlPutCalendarBody::new(
   job_ids? : Array[Json],
   description? : String,
 ) -> MlPutCalendarBody {
-  { job_ids, description }
+  { job_ids, description, }
 }
 
 ///|
@@ -55895,7 +55905,7 @@ pub fn MlPutCalendarRequest::new(
   query? : MlPutCalendarQuery = MlPutCalendarQuery::new(),
   body? : MlPutCalendarBody,
 ) -> MlPutCalendarRequest {
-  { calendar_id, query, body }
+  { calendar_id, query, body, }
 }
 
 ///|
@@ -55934,13 +55944,13 @@ pub impl FromJson for MlPutCalendarJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlPutCalendarJobQuery: expected object"))
   }
-  MlPutCalendarJobQuery::{  }
+  MlPutCalendarJobQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlPutCalendarJobQuery::new() -> MlPutCalendarJobQuery {
-  MlPutCalendarJobQuery::{  }
+  MlPutCalendarJobQuery::{ }
 }
 
 ///|
@@ -56008,7 +56018,7 @@ pub fn MlPutCalendarJobRequest::new(
   job_id : String,
   query? : MlPutCalendarJobQuery = MlPutCalendarJobQuery::new(),
 ) -> MlPutCalendarJobRequest {
-  { calendar_id, job_id, query }
+  { calendar_id, job_id, query, }
 }
 
 ///|
@@ -56050,13 +56060,13 @@ pub impl FromJson for MlPutDataFrameAnalyticsQuery with fn from_json(json, path)
       (path, "MlPutDataFrameAnalyticsQuery: expected object"),
     )
   }
-  MlPutDataFrameAnalyticsQuery::{  }
+  MlPutDataFrameAnalyticsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlPutDataFrameAnalyticsQuery::new() -> MlPutDataFrameAnalyticsQuery {
-  MlPutDataFrameAnalyticsQuery::{  }
+  MlPutDataFrameAnalyticsQuery::{ }
 }
 
 ///|
@@ -56358,7 +56368,7 @@ pub fn MlPutDataFrameAnalyticsRequest::new(
   body : MlPutDataFrameAnalyticsBody,
   query? : MlPutDataFrameAnalyticsQuery = MlPutDataFrameAnalyticsQuery::new(),
 ) -> MlPutDataFrameAnalyticsRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -56449,7 +56459,7 @@ pub fn MlPutDatafeedQuery::new(
   ignore_throttled? : Bool,
   ignore_unavailable? : Bool,
 ) -> MlPutDatafeedQuery {
-  { allow_no_indices, expand_wildcards, ignore_throttled, ignore_unavailable }
+  { allow_no_indices, expand_wildcards, ignore_throttled, ignore_unavailable, }
 }
 
 ///|
@@ -56848,7 +56858,7 @@ pub fn MlPutDatafeedRequest::new(
   body : MlPutDatafeedBody,
   query? : MlPutDatafeedQuery = MlPutDatafeedQuery::new(),
 ) -> MlPutDatafeedRequest {
-  { datafeed_id, query, body }
+  { datafeed_id, query, body, }
 }
 
 ///|
@@ -56882,13 +56892,13 @@ pub impl FromJson for MlPutFilterQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlPutFilterQuery: expected object"))
   }
-  MlPutFilterQuery::{  }
+  MlPutFilterQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlPutFilterQuery::new() -> MlPutFilterQuery {
-  MlPutFilterQuery::{  }
+  MlPutFilterQuery::{ }
 }
 
 ///|
@@ -56944,7 +56954,7 @@ pub fn MlPutFilterBody::new(
   description? : String,
   items? : Array[String],
 ) -> MlPutFilterBody {
-  { description, items }
+  { description, items, }
 }
 
 ///|
@@ -56999,7 +57009,7 @@ pub fn MlPutFilterRequest::new(
   body : MlPutFilterBody,
   query? : MlPutFilterQuery = MlPutFilterQuery::new(),
 ) -> MlPutFilterRequest {
-  { filter_id, query, body }
+  { filter_id, query, body, }
 }
 
 ///|
@@ -57088,7 +57098,7 @@ pub fn MlPutJobQuery::new(
   ignore_throttled? : Bool,
   ignore_unavailable? : Bool,
 ) -> MlPutJobQuery {
-  { allow_no_indices, expand_wildcards, ignore_throttled, ignore_unavailable }
+  { allow_no_indices, expand_wildcards, ignore_throttled, ignore_unavailable, }
 }
 
 ///|
@@ -57570,7 +57580,7 @@ pub fn MlPutJobRequest::new(
   body : MlPutJobBody,
   query? : MlPutJobQuery = MlPutJobQuery::new(),
 ) -> MlPutJobRequest {
-  { job_id, query, body }
+  { job_id, query, body, }
 }
 
 ///|
@@ -57643,7 +57653,7 @@ pub fn MlPutTrainedModelQuery::new(
   defer_definition_decompression? : Bool,
   wait_for_completion? : Bool,
 ) -> MlPutTrainedModelQuery {
-  { defer_definition_decompression, wait_for_completion }
+  { defer_definition_decompression, wait_for_completion, }
 }
 
 ///|
@@ -57848,7 +57858,7 @@ pub fn MlPutTrainedModelRequest::new(
   body : MlPutTrainedModelBody,
   query? : MlPutTrainedModelQuery = MlPutTrainedModelQuery::new(),
 ) -> MlPutTrainedModelRequest {
-  { model_id, query, body }
+  { model_id, query, body, }
 }
 
 ///|
@@ -57940,7 +57950,7 @@ pub fn MlPutTrainedModelAliasRequest::new(
   query? : MlPutTrainedModelAliasQuery = MlPutTrainedModelAliasQuery::new(),
   body? : MlPutTrainedModelAliasBody,
 ) -> MlPutTrainedModelAliasRequest {
-  { model_id, model_alias, query, body }
+  { model_id, model_alias, query, body, }
 }
 
 ///|
@@ -57990,13 +58000,13 @@ pub impl FromJson for MlPutTrainedModelDefinitionPartQuery with fn from_json(
       (path, "MlPutTrainedModelDefinitionPartQuery: expected object"),
     )
   }
-  MlPutTrainedModelDefinitionPartQuery::{  }
+  MlPutTrainedModelDefinitionPartQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlPutTrainedModelDefinitionPartQuery::new() -> MlPutTrainedModelDefinitionPartQuery {
-  MlPutTrainedModelDefinitionPartQuery::{  }
+  MlPutTrainedModelDefinitionPartQuery::{ }
 }
 
 ///|
@@ -58057,7 +58067,7 @@ pub fn MlPutTrainedModelDefinitionPartBody::new(
   total_definition_length : Int,
   total_parts : Int,
 ) -> MlPutTrainedModelDefinitionPartBody {
-  { definition, total_definition_length, total_parts }
+  { definition, total_definition_length, total_parts, }
 }
 
 ///|
@@ -58078,7 +58088,7 @@ pub fn MlPutTrainedModelDefinitionPartRequest::new(
   body : MlPutTrainedModelDefinitionPartBody,
   query? : MlPutTrainedModelDefinitionPartQuery = MlPutTrainedModelDefinitionPartQuery::new(),
 ) -> MlPutTrainedModelDefinitionPartRequest {
-  { model_id, part, query, body }
+  { model_id, part, query, body, }
 }
 
 ///|
@@ -58124,13 +58134,13 @@ pub impl FromJson for MlPutTrainedModelVocabularyQuery with fn from_json(
       (path, "MlPutTrainedModelVocabularyQuery: expected object"),
     )
   }
-  MlPutTrainedModelVocabularyQuery::{  }
+  MlPutTrainedModelVocabularyQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlPutTrainedModelVocabularyQuery::new() -> MlPutTrainedModelVocabularyQuery {
-  MlPutTrainedModelVocabularyQuery::{  }
+  MlPutTrainedModelVocabularyQuery::{ }
 }
 
 ///|
@@ -58199,7 +58209,7 @@ pub fn MlPutTrainedModelVocabularyBody::new(
   merges? : Array[String],
   scores? : Array[Double],
 ) -> MlPutTrainedModelVocabularyBody {
-  { vocabulary, merges, scores }
+  { vocabulary, merges, scores, }
 }
 
 ///|
@@ -58218,7 +58228,7 @@ pub fn MlPutTrainedModelVocabularyRequest::new(
   body : MlPutTrainedModelVocabularyBody,
   query? : MlPutTrainedModelVocabularyQuery = MlPutTrainedModelVocabularyQuery::new(),
 ) -> MlPutTrainedModelVocabularyRequest {
-  { model_id, query, body }
+  { model_id, query, body, }
 }
 
 ///|
@@ -58287,7 +58297,7 @@ pub fn MlResetJobQuery::new(
   wait_for_completion? : Bool,
   delete_user_annotations? : Bool,
 ) -> MlResetJobQuery {
-  { wait_for_completion, delete_user_annotations }
+  { wait_for_completion, delete_user_annotations, }
 }
 
 ///|
@@ -58322,7 +58332,7 @@ pub fn MlResetJobRequest::new(
   job_id : String,
   query? : MlResetJobQuery = MlResetJobQuery::new(),
 ) -> MlResetJobRequest {
-  { job_id, query }
+  { job_id, query, }
 }
 
 ///|
@@ -58488,7 +58498,7 @@ pub fn MlRevertModelSnapshotRequest::new(
   query? : MlRevertModelSnapshotQuery = MlRevertModelSnapshotQuery::new(),
   body? : MlRevertModelSnapshotBody,
 ) -> MlRevertModelSnapshotRequest {
-  { job_id, snapshot_id, query, body }
+  { job_id, snapshot_id, query, body, }
 }
 
 ///|
@@ -58562,7 +58572,7 @@ pub fn MlSetUpgradeModeQuery::new(
   enabled? : Bool,
   timeout? : String,
 ) -> MlSetUpgradeModeQuery {
-  { enabled, timeout }
+  { enabled, timeout, }
 }
 
 ///|
@@ -58716,7 +58726,7 @@ pub fn MlStartDataFrameAnalyticsBody::new(
   id? : Json,
   timeout? : Json,
 ) -> MlStartDataFrameAnalyticsBody {
-  { id, timeout }
+  { id, timeout, }
 }
 
 ///|
@@ -58770,7 +58780,7 @@ pub fn MlStartDataFrameAnalyticsRequest::new(
   query? : MlStartDataFrameAnalyticsQuery = MlStartDataFrameAnalyticsQuery::new(),
   body? : MlStartDataFrameAnalyticsBody,
 ) -> MlStartDataFrameAnalyticsRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -58849,7 +58859,7 @@ pub fn MlStartDatafeedQuery::new(
   start? : String,
   timeout? : String,
 ) -> MlStartDatafeedQuery {
-  { end, start, timeout }
+  { end, start, timeout, }
 }
 
 ///|
@@ -58929,7 +58939,7 @@ pub fn MlStartDatafeedBody::new(
   start? : Json,
   timeout? : Json,
 ) -> MlStartDatafeedBody {
-  { end, start, timeout }
+  { end, start, timeout, }
 }
 
 ///|
@@ -58978,7 +58988,7 @@ pub fn MlStartDatafeedRequest::new(
   query? : MlStartDatafeedQuery = MlStartDatafeedQuery::new(),
   body? : MlStartDatafeedBody,
 ) -> MlStartDatafeedRequest {
-  { datafeed_id, query, body }
+  { datafeed_id, query, body, }
 }
 
 ///|
@@ -59267,7 +59277,7 @@ pub fn MlStartTrainedModelDeploymentRequest::new(
   query? : MlStartTrainedModelDeploymentQuery = MlStartTrainedModelDeploymentQuery::new(),
   body? : MlStartTrainedModelDeploymentBody,
 ) -> MlStartTrainedModelDeploymentRequest {
-  { model_id, query, body }
+  { model_id, query, body, }
 }
 
 ///|
@@ -59356,7 +59366,7 @@ pub fn MlStopDataFrameAnalyticsQuery::new(
   force? : Bool,
   timeout? : String,
 ) -> MlStopDataFrameAnalyticsQuery {
-  { allow_no_match, force, timeout }
+  { allow_no_match, force, timeout, }
 }
 
 ///|
@@ -59450,7 +59460,7 @@ pub fn MlStopDataFrameAnalyticsBody::new(
   force? : Bool,
   timeout? : Json,
 ) -> MlStopDataFrameAnalyticsBody {
-  { id, allow_no_match, force, timeout }
+  { id, allow_no_match, force, timeout, }
 }
 
 ///|
@@ -59498,7 +59508,7 @@ pub fn MlStopDataFrameAnalyticsRequest::new(
   query? : MlStopDataFrameAnalyticsQuery = MlStopDataFrameAnalyticsQuery::new(),
   body? : MlStopDataFrameAnalyticsBody,
 ) -> MlStopDataFrameAnalyticsRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -59590,7 +59600,7 @@ pub fn MlStopDatafeedQuery::new(
   timeout? : String,
   close_job? : Bool,
 ) -> MlStopDatafeedQuery {
-  { allow_no_match, force, timeout, close_job }
+  { allow_no_match, force, timeout, close_job, }
 }
 
 ///|
@@ -59687,7 +59697,7 @@ pub fn MlStopDatafeedBody::new(
   timeout? : Json,
   close_job? : Bool,
 ) -> MlStopDatafeedBody {
-  { allow_no_match, force, timeout, close_job }
+  { allow_no_match, force, timeout, close_job, }
 }
 
 ///|
@@ -59730,7 +59740,7 @@ pub fn MlStopDatafeedRequest::new(
   query? : MlStopDatafeedQuery = MlStopDatafeedQuery::new(),
   body? : MlStopDatafeedBody,
 ) -> MlStopDatafeedRequest {
-  { datafeed_id, query, body }
+  { datafeed_id, query, body, }
 }
 
 ///|
@@ -59804,7 +59814,7 @@ pub fn MlStopTrainedModelDeploymentQuery::new(
   allow_no_match? : Bool,
   force? : Bool,
 ) -> MlStopTrainedModelDeploymentQuery {
-  { allow_no_match, force }
+  { allow_no_match, force, }
 }
 
 ///|
@@ -59886,7 +59896,7 @@ pub fn MlStopTrainedModelDeploymentBody::new(
   allow_no_match? : Bool,
   force? : Bool,
 ) -> MlStopTrainedModelDeploymentBody {
-  { id, allow_no_match, force }
+  { id, allow_no_match, force, }
 }
 
 ///|
@@ -59934,7 +59944,7 @@ pub fn MlStopTrainedModelDeploymentRequest::new(
   query? : MlStopTrainedModelDeploymentQuery = MlStopTrainedModelDeploymentQuery::new(),
   body? : MlStopTrainedModelDeploymentBody,
 ) -> MlStopTrainedModelDeploymentRequest {
-  { model_id, query, body }
+  { model_id, query, body, }
 }
 
 ///|
@@ -59982,13 +59992,13 @@ pub impl FromJson for MlUpdateDataFrameAnalyticsQuery with fn from_json(
       (path, "MlUpdateDataFrameAnalyticsQuery: expected object"),
     )
   }
-  MlUpdateDataFrameAnalyticsQuery::{  }
+  MlUpdateDataFrameAnalyticsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlUpdateDataFrameAnalyticsQuery::new() -> MlUpdateDataFrameAnalyticsQuery {
-  MlUpdateDataFrameAnalyticsQuery::{  }
+  MlUpdateDataFrameAnalyticsQuery::{ }
 }
 
 ///|
@@ -60076,7 +60086,7 @@ pub fn MlUpdateDataFrameAnalyticsBody::new(
   max_num_threads? : Int,
   allow_lazy_start? : Bool,
 ) -> MlUpdateDataFrameAnalyticsBody {
-  { description, model_memory_limit, max_num_threads, allow_lazy_start }
+  { description, model_memory_limit, max_num_threads, allow_lazy_start, }
 }
 
 ///|
@@ -60205,7 +60215,7 @@ pub fn MlUpdateDataFrameAnalyticsRequest::new(
   body : MlUpdateDataFrameAnalyticsBody,
   query? : MlUpdateDataFrameAnalyticsQuery = MlUpdateDataFrameAnalyticsQuery::new(),
 ) -> MlUpdateDataFrameAnalyticsRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -60296,7 +60306,7 @@ pub fn MlUpdateDatafeedQuery::new(
   ignore_throttled? : Bool,
   ignore_unavailable? : Bool,
 ) -> MlUpdateDatafeedQuery {
-  { allow_no_indices, expand_wildcards, ignore_throttled, ignore_unavailable }
+  { allow_no_indices, expand_wildcards, ignore_throttled, ignore_unavailable, }
 }
 
 ///|
@@ -60685,7 +60695,7 @@ pub fn MlUpdateDatafeedRequest::new(
   body : MlUpdateDatafeedBody,
   query? : MlUpdateDatafeedQuery = MlUpdateDatafeedQuery::new(),
 ) -> MlUpdateDatafeedRequest {
-  { datafeed_id, query, body }
+  { datafeed_id, query, body, }
 }
 
 ///|
@@ -60721,13 +60731,13 @@ pub impl FromJson for MlUpdateFilterQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlUpdateFilterQuery: expected object"))
   }
-  MlUpdateFilterQuery::{  }
+  MlUpdateFilterQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlUpdateFilterQuery::new() -> MlUpdateFilterQuery {
-  MlUpdateFilterQuery::{  }
+  MlUpdateFilterQuery::{ }
 }
 
 ///|
@@ -60798,7 +60808,7 @@ pub fn MlUpdateFilterBody::new(
   description? : String,
   remove_items? : Array[String],
 ) -> MlUpdateFilterBody {
-  { add_items, description, remove_items }
+  { add_items, description, remove_items, }
 }
 
 ///|
@@ -60853,7 +60863,7 @@ pub fn MlUpdateFilterRequest::new(
   body : MlUpdateFilterBody,
   query? : MlUpdateFilterQuery = MlUpdateFilterQuery::new(),
 ) -> MlUpdateFilterRequest {
-  { filter_id, query, body }
+  { filter_id, query, body, }
 }
 
 ///|
@@ -60887,13 +60897,13 @@ pub impl FromJson for MlUpdateJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlUpdateJobQuery: expected object"))
   }
-  MlUpdateJobQuery::{  }
+  MlUpdateJobQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlUpdateJobQuery::new() -> MlUpdateJobQuery {
-  MlUpdateJobQuery::{  }
+  MlUpdateJobQuery::{ }
 }
 
 ///|
@@ -61380,7 +61390,7 @@ pub fn MlUpdateJobRequest::new(
   body : MlUpdateJobBody,
   query? : MlUpdateJobQuery = MlUpdateJobQuery::new(),
 ) -> MlUpdateJobRequest {
-  { job_id, query, body }
+  { job_id, query, body, }
 }
 
 ///|
@@ -61416,13 +61426,13 @@ pub impl FromJson for MlUpdateModelSnapshotQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlUpdateModelSnapshotQuery: expected object"))
   }
-  MlUpdateModelSnapshotQuery::{  }
+  MlUpdateModelSnapshotQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlUpdateModelSnapshotQuery::new() -> MlUpdateModelSnapshotQuery {
-  MlUpdateModelSnapshotQuery::{  }
+  MlUpdateModelSnapshotQuery::{ }
 }
 
 ///|
@@ -61480,7 +61490,7 @@ pub fn MlUpdateModelSnapshotBody::new(
   description? : String,
   retain? : Bool,
 ) -> MlUpdateModelSnapshotBody {
-  { description, retain }
+  { description, retain, }
 }
 
 ///|
@@ -61536,7 +61546,7 @@ pub fn MlUpdateModelSnapshotRequest::new(
   body : MlUpdateModelSnapshotBody,
   query? : MlUpdateModelSnapshotQuery = MlUpdateModelSnapshotQuery::new(),
 ) -> MlUpdateModelSnapshotRequest {
-  { job_id, snapshot_id, query, body }
+  { job_id, snapshot_id, query, body, }
 }
 
 ///|
@@ -61671,7 +61681,7 @@ pub fn MlUpdateTrainedModelDeploymentBody::new(
   number_of_allocations? : Int,
   adaptive_allocations? : Json,
 ) -> MlUpdateTrainedModelDeploymentBody {
-  { number_of_allocations, adaptive_allocations }
+  { number_of_allocations, adaptive_allocations, }
 }
 
 ///|
@@ -61719,7 +61729,7 @@ pub fn MlUpdateTrainedModelDeploymentRequest::new(
   query? : MlUpdateTrainedModelDeploymentQuery = MlUpdateTrainedModelDeploymentQuery::new(),
   body? : MlUpdateTrainedModelDeploymentBody,
 ) -> MlUpdateTrainedModelDeploymentRequest {
-  { model_id, query, body }
+  { model_id, query, body, }
 }
 
 ///|
@@ -61792,7 +61802,7 @@ pub fn MlUpgradeJobSnapshotQuery::new(
   wait_for_completion? : Bool,
   timeout? : String,
 ) -> MlUpgradeJobSnapshotQuery {
-  { wait_for_completion, timeout }
+  { wait_for_completion, timeout, }
 }
 
 ///|
@@ -61860,7 +61870,7 @@ pub fn MlUpgradeJobSnapshotRequest::new(
   snapshot_id : String,
   query? : MlUpgradeJobSnapshotQuery = MlUpgradeJobSnapshotQuery::new(),
 ) -> MlUpgradeJobSnapshotRequest {
-  { job_id, snapshot_id, query }
+  { job_id, snapshot_id, query, }
 }
 
 ///|
@@ -61899,13 +61909,13 @@ pub impl FromJson for MlValidateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlValidateQuery: expected object"))
   }
-  MlValidateQuery::{  }
+  MlValidateQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlValidateQuery::new() -> MlValidateQuery {
-  MlValidateQuery::{  }
+  MlValidateQuery::{ }
 }
 
 ///|
@@ -62078,7 +62088,7 @@ pub fn MlValidateRequest::new(
   body : MlValidateBody,
   query? : MlValidateQuery = MlValidateQuery::new(),
 ) -> MlValidateRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -62113,13 +62123,13 @@ pub impl FromJson for MlValidateDetectorQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "MlValidateDetectorQuery: expected object"))
   }
-  MlValidateDetectorQuery::{  }
+  MlValidateDetectorQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn MlValidateDetectorQuery::new() -> MlValidateDetectorQuery {
-  MlValidateDetectorQuery::{  }
+  MlValidateDetectorQuery::{ }
 }
 
 ///|
@@ -62147,7 +62157,7 @@ pub fn MlValidateDetectorRequest::new(
   body : MlValidateDetectorBody,
   query? : MlValidateDetectorQuery = MlValidateDetectorQuery::new(),
 ) -> MlValidateDetectorRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -62210,7 +62220,7 @@ pub fn MonitoringBulkQuery::new(
   system_api_version : String,
   interval : String,
 ) -> MonitoringBulkQuery {
-  { system_id, system_api_version, interval }
+  { system_id, system_api_version, interval, }
 }
 
 ///|
@@ -62291,7 +62301,7 @@ pub fn MonitoringBulkRequest::new(
   body : MonitoringBulkBody,
   query : MonitoringBulkQuery,
 ) -> MonitoringBulkRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -62633,7 +62643,7 @@ pub fn MsearchRequest::new(
   index? : String,
   query? : MsearchQuery = MsearchQuery::new(),
 ) -> MsearchRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -62824,7 +62834,7 @@ pub fn MsearchTemplateRequest::new(
   index? : String,
   query? : MsearchTemplateQuery = MsearchTemplateQuery::new(),
 ) -> MsearchTemplateRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -63124,7 +63134,7 @@ pub fn MtermvectorsBody::new(
   docs? : Array[Json],
   ids? : Array[Json],
 ) -> MtermvectorsBody {
-  { docs, ids }
+  { docs, ids, }
 }
 
 ///|
@@ -63167,7 +63177,7 @@ pub fn MtermvectorsRequest::new(
   query? : MtermvectorsQuery = MtermvectorsQuery::new(),
   body? : MtermvectorsBody,
 ) -> MtermvectorsRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -63217,13 +63227,13 @@ pub impl FromJson for NodesClearRepositoriesMeteringArchiveQuery with fn from_js
       (path, "NodesClearRepositoriesMeteringArchiveQuery: expected object"),
     )
   }
-  NodesClearRepositoriesMeteringArchiveQuery::{  }
+  NodesClearRepositoriesMeteringArchiveQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn NodesClearRepositoriesMeteringArchiveQuery::new() -> NodesClearRepositoriesMeteringArchiveQuery {
-  NodesClearRepositoriesMeteringArchiveQuery::{  }
+  NodesClearRepositoriesMeteringArchiveQuery::{ }
 }
 
 ///|
@@ -63250,7 +63260,7 @@ pub fn NodesClearRepositoriesMeteringArchiveRequest::new(
   max_archive_version : String,
   query? : NodesClearRepositoriesMeteringArchiveQuery = NodesClearRepositoriesMeteringArchiveQuery::new(),
 ) -> NodesClearRepositoriesMeteringArchiveRequest {
-  { node_id, max_archive_version, query }
+  { node_id, max_archive_version, query, }
 }
 
 ///|
@@ -63296,13 +63306,13 @@ pub impl FromJson for NodesGetRepositoriesMeteringInfoQuery with fn from_json(
       (path, "NodesGetRepositoriesMeteringInfoQuery: expected object"),
     )
   }
-  NodesGetRepositoriesMeteringInfoQuery::{  }
+  NodesGetRepositoriesMeteringInfoQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn NodesGetRepositoriesMeteringInfoQuery::new() -> NodesGetRepositoriesMeteringInfoQuery {
-  NodesGetRepositoriesMeteringInfoQuery::{  }
+  NodesGetRepositoriesMeteringInfoQuery::{ }
 }
 
 ///|
@@ -63327,7 +63337,7 @@ pub fn NodesGetRepositoriesMeteringInfoRequest::new(
   node_id : String,
   query? : NodesGetRepositoriesMeteringInfoQuery = NodesGetRepositoriesMeteringInfoQuery::new(),
 ) -> NodesGetRepositoriesMeteringInfoRequest {
-  { node_id, query }
+  { node_id, query, }
 }
 
 ///|
@@ -63448,7 +63458,7 @@ pub fn NodesHotThreadsQuery::new(
   type_? : String,
   sort? : String,
 ) -> NodesHotThreadsQuery {
-  { ignore_idle_threads, interval, snapshots, threads, timeout, type_, sort }
+  { ignore_idle_threads, interval, snapshots, threads, timeout, type_, sort, }
 }
 
 ///|
@@ -63502,7 +63512,7 @@ pub fn NodesHotThreadsRequest::new(
   node_id? : String,
   query? : NodesHotThreadsQuery = NodesHotThreadsQuery::new(),
 ) -> NodesHotThreadsRequest {
-  { node_id, query }
+  { node_id, query, }
 }
 
 ///|
@@ -63571,7 +63581,7 @@ pub fn NodesInfoQuery::new(
   flat_settings? : Bool,
   timeout? : String,
 ) -> NodesInfoQuery {
-  { flat_settings, timeout }
+  { flat_settings, timeout, }
 }
 
 ///|
@@ -63606,7 +63616,7 @@ pub fn NodesInfoRequest::new(
   metric? : String,
   query? : NodesInfoQuery = NodesInfoQuery::new(),
 ) -> NodesInfoRequest {
-  { node_id, metric, query }
+  { node_id, metric, query, }
 }
 
 ///|
@@ -63753,7 +63763,7 @@ pub fn NodesReloadSecureSettingsRequest::new(
   query? : NodesReloadSecureSettingsQuery = NodesReloadSecureSettingsQuery::new(),
   body? : NodesReloadSecureSettingsBody,
 ) -> NodesReloadSecureSettingsRequest {
-  { node_id, query, body }
+  { node_id, query, body, }
 }
 
 ///|
@@ -63990,7 +64000,7 @@ pub fn NodesStatsRequest::new(
   index_metric? : String,
   query? : NodesStatsQuery = NodesStatsQuery::new(),
 ) -> NodesStatsRequest {
-  { node_id, metric, index_metric, query }
+  { node_id, metric, index_metric, query, }
 }
 
 ///|
@@ -64092,7 +64102,7 @@ pub fn NodesUsageRequest::new(
   metric? : String,
   query? : NodesUsageQuery = NodesUsageQuery::new(),
 ) -> NodesUsageRequest {
-  { node_id, metric, query }
+  { node_id, metric, query, }
 }
 
 ///|
@@ -64330,7 +64340,7 @@ pub fn OpenPointInTimeBody::new(
   index_filter? : Json,
   project_routing? : Json,
 ) -> OpenPointInTimeBody {
-  { index_filter, project_routing }
+  { index_filter, project_routing, }
 }
 
 ///|
@@ -64379,7 +64389,7 @@ pub fn OpenPointInTimeRequest::new(
   query : OpenPointInTimeQuery,
   body? : OpenPointInTimeBody,
 ) -> OpenPointInTimeRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -64413,13 +64423,13 @@ pub impl FromJson for PingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "PingQuery: expected object"))
   }
-  PingQuery::{  }
+  PingQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn PingQuery::new() -> PingQuery {
-  PingQuery::{  }
+  PingQuery::{ }
 }
 
 ///|
@@ -64469,13 +64479,13 @@ pub impl FromJson for ProfilingFlamegraphQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ProfilingFlamegraphQuery: expected object"))
   }
-  ProfilingFlamegraphQuery::{  }
+  ProfilingFlamegraphQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ProfilingFlamegraphQuery::new() -> ProfilingFlamegraphQuery {
-  ProfilingFlamegraphQuery::{  }
+  ProfilingFlamegraphQuery::{ }
 }
 
 ///|
@@ -64503,7 +64513,7 @@ pub fn ProfilingFlamegraphRequest::new(
   body : ProfilingFlamegraphBody,
   query? : ProfilingFlamegraphQuery = ProfilingFlamegraphQuery::new(),
 ) -> ProfilingFlamegraphRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -64538,13 +64548,13 @@ pub impl FromJson for ProfilingStacktracesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ProfilingStacktracesQuery: expected object"))
   }
-  ProfilingStacktracesQuery::{  }
+  ProfilingStacktracesQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ProfilingStacktracesQuery::new() -> ProfilingStacktracesQuery {
-  ProfilingStacktracesQuery::{  }
+  ProfilingStacktracesQuery::{ }
 }
 
 ///|
@@ -64572,7 +64582,7 @@ pub fn ProfilingStacktracesRequest::new(
   body : ProfilingStacktracesBody,
   query? : ProfilingStacktracesQuery = ProfilingStacktracesQuery::new(),
 ) -> ProfilingStacktracesRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -64654,7 +64664,7 @@ pub fn ProfilingStatusQuery::new(
   timeout? : String,
   wait_for_resources_created? : Bool,
 ) -> ProfilingStatusQuery {
-  { master_timeout, timeout, wait_for_resources_created }
+  { master_timeout, timeout, wait_for_resources_created, }
 }
 
 ///|
@@ -64747,13 +64757,13 @@ pub impl FromJson for ProfilingTopnFunctionsQuery with fn from_json(json, path) 
       (path, "ProfilingTopnFunctionsQuery: expected object"),
     )
   }
-  ProfilingTopnFunctionsQuery::{  }
+  ProfilingTopnFunctionsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ProfilingTopnFunctionsQuery::new() -> ProfilingTopnFunctionsQuery {
-  ProfilingTopnFunctionsQuery::{  }
+  ProfilingTopnFunctionsQuery::{ }
 }
 
 ///|
@@ -64781,7 +64791,7 @@ pub fn ProfilingTopnFunctionsRequest::new(
   body : ProfilingTopnFunctionsBody,
   query? : ProfilingTopnFunctionsQuery = ProfilingTopnFunctionsQuery::new(),
 ) -> ProfilingTopnFunctionsRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -64821,13 +64831,13 @@ pub impl FromJson for ProjectCreateManyRoutingQuery with fn from_json(
       (path, "ProjectCreateManyRoutingQuery: expected object"),
     )
   }
-  ProjectCreateManyRoutingQuery::{  }
+  ProjectCreateManyRoutingQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ProjectCreateManyRoutingQuery::new() -> ProjectCreateManyRoutingQuery {
-  ProjectCreateManyRoutingQuery::{  }
+  ProjectCreateManyRoutingQuery::{ }
 }
 
 ///|
@@ -64855,7 +64865,7 @@ pub fn ProjectCreateManyRoutingRequest::new(
   body : ProjectCreateManyRoutingBody,
   query? : ProjectCreateManyRoutingQuery = ProjectCreateManyRoutingQuery::new(),
 ) -> ProjectCreateManyRoutingRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -64887,13 +64897,13 @@ pub impl FromJson for ProjectCreateRoutingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ProjectCreateRoutingQuery: expected object"))
   }
-  ProjectCreateRoutingQuery::{  }
+  ProjectCreateRoutingQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ProjectCreateRoutingQuery::new() -> ProjectCreateRoutingQuery {
-  ProjectCreateRoutingQuery::{  }
+  ProjectCreateRoutingQuery::{ }
 }
 
 ///|
@@ -64923,7 +64933,7 @@ pub fn ProjectCreateRoutingRequest::new(
   body : ProjectCreateRoutingBody,
   query? : ProjectCreateRoutingQuery = ProjectCreateRoutingQuery::new(),
 ) -> ProjectCreateRoutingRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -64959,13 +64969,13 @@ pub impl FromJson for ProjectDeleteRoutingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ProjectDeleteRoutingQuery: expected object"))
   }
-  ProjectDeleteRoutingQuery::{  }
+  ProjectDeleteRoutingQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ProjectDeleteRoutingQuery::new() -> ProjectDeleteRoutingQuery {
-  ProjectDeleteRoutingQuery::{  }
+  ProjectDeleteRoutingQuery::{ }
 }
 
 ///|
@@ -64990,7 +65000,7 @@ pub fn ProjectDeleteRoutingRequest::new(
   name : String,
   query? : ProjectDeleteRoutingQuery = ProjectDeleteRoutingQuery::new(),
 ) -> ProjectDeleteRoutingRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -65025,13 +65035,13 @@ pub impl FromJson for ProjectGetManyRoutingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ProjectGetManyRoutingQuery: expected object"))
   }
-  ProjectGetManyRoutingQuery::{  }
+  ProjectGetManyRoutingQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ProjectGetManyRoutingQuery::new() -> ProjectGetManyRoutingQuery {
-  ProjectGetManyRoutingQuery::{  }
+  ProjectGetManyRoutingQuery::{ }
 }
 
 ///|
@@ -65085,13 +65095,13 @@ pub impl FromJson for ProjectGetRoutingQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ProjectGetRoutingQuery: expected object"))
   }
-  ProjectGetRoutingQuery::{  }
+  ProjectGetRoutingQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ProjectGetRoutingQuery::new() -> ProjectGetRoutingQuery {
-  ProjectGetRoutingQuery::{  }
+  ProjectGetRoutingQuery::{ }
 }
 
 ///|
@@ -65116,7 +65126,7 @@ pub fn ProjectGetRoutingRequest::new(
   name : String,
   query? : ProjectGetRoutingQuery = ProjectGetRoutingQuery::new(),
 ) -> ProjectGetRoutingRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -65149,13 +65159,13 @@ pub impl FromJson for ProjectTagsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "ProjectTagsQuery: expected object"))
   }
-  ProjectTagsQuery::{  }
+  ProjectTagsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ProjectTagsQuery::new() -> ProjectTagsQuery {
-  ProjectTagsQuery::{  }
+  ProjectTagsQuery::{ }
 }
 
 ///|
@@ -65248,7 +65258,7 @@ pub fn PutScriptQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> PutScriptQuery {
-  { context, master_timeout, timeout }
+  { context, master_timeout, timeout, }
 }
 
 ///|
@@ -65319,7 +65329,7 @@ pub fn PutScriptRequest::new(
   context? : String,
   query? : PutScriptQuery = PutScriptQuery::new(),
 ) -> PutScriptRequest {
-  { id, context, query, body }
+  { id, context, query, body, }
 }
 
 ///|
@@ -65362,13 +65372,13 @@ pub impl FromJson for QueryRulesDeleteRuleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "QueryRulesDeleteRuleQuery: expected object"))
   }
-  QueryRulesDeleteRuleQuery::{  }
+  QueryRulesDeleteRuleQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn QueryRulesDeleteRuleQuery::new() -> QueryRulesDeleteRuleQuery {
-  QueryRulesDeleteRuleQuery::{  }
+  QueryRulesDeleteRuleQuery::{ }
 }
 
 ///|
@@ -65395,7 +65405,7 @@ pub fn QueryRulesDeleteRuleRequest::new(
   rule_id : String,
   query? : QueryRulesDeleteRuleQuery = QueryRulesDeleteRuleQuery::new(),
 ) -> QueryRulesDeleteRuleRequest {
-  { ruleset_id, rule_id, query }
+  { ruleset_id, rule_id, query, }
 }
 
 ///|
@@ -65437,13 +65447,13 @@ pub impl FromJson for QueryRulesDeleteRulesetQuery with fn from_json(json, path)
       (path, "QueryRulesDeleteRulesetQuery: expected object"),
     )
   }
-  QueryRulesDeleteRulesetQuery::{  }
+  QueryRulesDeleteRulesetQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn QueryRulesDeleteRulesetQuery::new() -> QueryRulesDeleteRulesetQuery {
-  QueryRulesDeleteRulesetQuery::{  }
+  QueryRulesDeleteRulesetQuery::{ }
 }
 
 ///|
@@ -65468,7 +65478,7 @@ pub fn QueryRulesDeleteRulesetRequest::new(
   ruleset_id : String,
   query? : QueryRulesDeleteRulesetQuery = QueryRulesDeleteRulesetQuery::new(),
 ) -> QueryRulesDeleteRulesetRequest {
-  { ruleset_id, query }
+  { ruleset_id, query, }
 }
 
 ///|
@@ -65503,13 +65513,13 @@ pub impl FromJson for QueryRulesGetRuleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "QueryRulesGetRuleQuery: expected object"))
   }
-  QueryRulesGetRuleQuery::{  }
+  QueryRulesGetRuleQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn QueryRulesGetRuleQuery::new() -> QueryRulesGetRuleQuery {
-  QueryRulesGetRuleQuery::{  }
+  QueryRulesGetRuleQuery::{ }
 }
 
 ///|
@@ -65536,7 +65546,7 @@ pub fn QueryRulesGetRuleRequest::new(
   rule_id : String,
   query? : QueryRulesGetRuleQuery = QueryRulesGetRuleQuery::new(),
 ) -> QueryRulesGetRuleRequest {
-  { ruleset_id, rule_id, query }
+  { ruleset_id, rule_id, query, }
 }
 
 ///|
@@ -65576,13 +65586,13 @@ pub impl FromJson for QueryRulesGetRulesetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "QueryRulesGetRulesetQuery: expected object"))
   }
-  QueryRulesGetRulesetQuery::{  }
+  QueryRulesGetRulesetQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn QueryRulesGetRulesetQuery::new() -> QueryRulesGetRulesetQuery {
-  QueryRulesGetRulesetQuery::{  }
+  QueryRulesGetRulesetQuery::{ }
 }
 
 ///|
@@ -65607,7 +65617,7 @@ pub fn QueryRulesGetRulesetRequest::new(
   ruleset_id : String,
   query? : QueryRulesGetRulesetQuery = QueryRulesGetRulesetQuery::new(),
 ) -> QueryRulesGetRulesetRequest {
-  { ruleset_id, query }
+  { ruleset_id, query, }
 }
 
 ///|
@@ -65673,7 +65683,7 @@ pub fn QueryRulesListRulesetsQuery::new(
   from? : Int,
   size? : Int,
 ) -> QueryRulesListRulesetsQuery {
-  { from, size }
+  { from, size, }
 }
 
 ///|
@@ -65770,13 +65780,13 @@ pub impl FromJson for QueryRulesPutRuleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "QueryRulesPutRuleQuery: expected object"))
   }
-  QueryRulesPutRuleQuery::{  }
+  QueryRulesPutRuleQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn QueryRulesPutRuleQuery::new() -> QueryRulesPutRuleQuery {
-  QueryRulesPutRuleQuery::{  }
+  QueryRulesPutRuleQuery::{ }
 }
 
 ///|
@@ -65843,7 +65853,7 @@ pub fn QueryRulesPutRuleBody::new(
   actions : Json,
   priority? : Int,
 ) -> QueryRulesPutRuleBody {
-  { type_, criteria, actions, priority }
+  { type_, criteria, actions, priority, }
 }
 
 ///|
@@ -65888,7 +65898,7 @@ pub fn QueryRulesPutRuleRequest::new(
   body : QueryRulesPutRuleBody,
   query? : QueryRulesPutRuleQuery = QueryRulesPutRuleQuery::new(),
 ) -> QueryRulesPutRuleRequest {
-  { ruleset_id, rule_id, query, body }
+  { ruleset_id, rule_id, query, body, }
 }
 
 ///|
@@ -65929,13 +65939,13 @@ pub impl FromJson for QueryRulesPutRulesetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "QueryRulesPutRulesetQuery: expected object"))
   }
-  QueryRulesPutRulesetQuery::{  }
+  QueryRulesPutRulesetQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn QueryRulesPutRulesetQuery::new() -> QueryRulesPutRulesetQuery {
-  QueryRulesPutRulesetQuery::{  }
+  QueryRulesPutRulesetQuery::{ }
 }
 
 ///|
@@ -66020,7 +66030,7 @@ pub fn QueryRulesPutRulesetRequest::new(
   body : QueryRulesPutRulesetBody,
   query? : QueryRulesPutRulesetQuery = QueryRulesPutRulesetQuery::new(),
 ) -> QueryRulesPutRulesetRequest {
-  { ruleset_id, query, body }
+  { ruleset_id, query, body, }
 }
 
 ///|
@@ -66056,13 +66066,13 @@ pub impl FromJson for QueryRulesTestQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "QueryRulesTestQuery: expected object"))
   }
-  QueryRulesTestQuery::{  }
+  QueryRulesTestQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn QueryRulesTestQuery::new() -> QueryRulesTestQuery {
-  QueryRulesTestQuery::{  }
+  QueryRulesTestQuery::{ }
 }
 
 ///|
@@ -66153,7 +66163,7 @@ pub fn QueryRulesTestRequest::new(
   body : QueryRulesTestBody,
   query? : QueryRulesTestQuery = QueryRulesTestQuery::new(),
 ) -> QueryRulesTestRequest {
-  { ruleset_id, query, body }
+  { ruleset_id, query, body, }
 }
 
 ///|
@@ -66242,7 +66252,7 @@ pub fn RankEvalQuery::new(
   ignore_unavailable? : Bool,
   search_type? : String,
 ) -> RankEvalQuery {
-  { allow_no_indices, expand_wildcards, ignore_unavailable, search_type }
+  { allow_no_indices, expand_wildcards, ignore_unavailable, search_type, }
 }
 
 ///|
@@ -66307,7 +66317,7 @@ pub fn RankEvalBody::new(
   requests : Array[Json],
   metric? : Json,
 ) -> RankEvalBody {
-  { requests, metric }
+  { requests, metric, }
 }
 
 ///|
@@ -66360,7 +66370,7 @@ pub fn RankEvalRequest::new(
   index? : String,
   query? : RankEvalQuery = RankEvalQuery::new(),
 ) -> RankEvalRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -66640,7 +66650,7 @@ pub fn ReindexBody::new(
   max_docs? : Int,
   script? : Json,
 ) -> ReindexBody {
-  { conflicts, dest, max_docs, script, source }
+  { conflicts, dest, max_docs, script, source, }
 }
 
 ///|
@@ -66850,7 +66860,7 @@ pub fn ReindexRequest::new(
   body : ReindexBody,
   query? : ReindexQuery = ReindexQuery::new(),
 ) -> ReindexRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -66907,7 +66917,7 @@ pub fn ReindexRethrottleQuery::new(
   requests_per_second : Double,
   group_by? : String,
 ) -> ReindexRethrottleQuery {
-  { requests_per_second, group_by }
+  { requests_per_second, group_by, }
 }
 
 ///|
@@ -67001,7 +67011,7 @@ pub fn ReindexRethrottleRequest::new(
   task_id : String,
   query : ReindexRethrottleQuery,
 ) -> ReindexRethrottleRequest {
-  { task_id, query }
+  { task_id, query, }
 }
 
 ///|
@@ -67036,13 +67046,13 @@ pub impl FromJson for RenderSearchTemplateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "RenderSearchTemplateQuery: expected object"))
   }
-  RenderSearchTemplateQuery::{  }
+  RenderSearchTemplateQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn RenderSearchTemplateQuery::new() -> RenderSearchTemplateQuery {
-  RenderSearchTemplateQuery::{  }
+  RenderSearchTemplateQuery::{ }
 }
 
 ///|
@@ -67121,7 +67131,7 @@ pub fn RenderSearchTemplateBody::new(
   params? : Map[String, Json],
   source? : Json,
 ) -> RenderSearchTemplateBody {
-  { id, file, params, source }
+  { id, file, params, source, }
 }
 
 ///|
@@ -67166,7 +67176,7 @@ pub fn RenderSearchTemplateRequest::new(
   id? : String,
   query? : RenderSearchTemplateQuery = RenderSearchTemplateQuery::new(),
 ) -> RenderSearchTemplateRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -67208,13 +67218,13 @@ pub impl FromJson for RollupDeleteJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "RollupDeleteJobQuery: expected object"))
   }
-  RollupDeleteJobQuery::{  }
+  RollupDeleteJobQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn RollupDeleteJobQuery::new() -> RollupDeleteJobQuery {
-  RollupDeleteJobQuery::{  }
+  RollupDeleteJobQuery::{ }
 }
 
 ///|
@@ -67274,7 +67284,7 @@ pub fn RollupDeleteJobRequest::new(
   id : String,
   query? : RollupDeleteJobQuery = RollupDeleteJobQuery::new(),
 ) -> RollupDeleteJobRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -67309,13 +67319,13 @@ pub impl FromJson for RollupGetJobsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "RollupGetJobsQuery: expected object"))
   }
-  RollupGetJobsQuery::{  }
+  RollupGetJobsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn RollupGetJobsQuery::new() -> RollupGetJobsQuery {
-  RollupGetJobsQuery::{  }
+  RollupGetJobsQuery::{ }
 }
 
 ///|
@@ -67364,7 +67374,7 @@ pub fn RollupGetJobsRequest::new(
   id? : String,
   query? : RollupGetJobsQuery = RollupGetJobsQuery::new(),
 ) -> RollupGetJobsRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -67405,13 +67415,13 @@ pub impl FromJson for RollupGetRollupCapsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "RollupGetRollupCapsQuery: expected object"))
   }
-  RollupGetRollupCapsQuery::{  }
+  RollupGetRollupCapsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn RollupGetRollupCapsQuery::new() -> RollupGetRollupCapsQuery {
-  RollupGetRollupCapsQuery::{  }
+  RollupGetRollupCapsQuery::{ }
 }
 
 ///|
@@ -67436,7 +67446,7 @@ pub fn RollupGetRollupCapsRequest::new(
   id? : String,
   query? : RollupGetRollupCapsQuery = RollupGetRollupCapsQuery::new(),
 ) -> RollupGetRollupCapsRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -67482,13 +67492,13 @@ pub impl FromJson for RollupGetRollupIndexCapsQuery with fn from_json(
       (path, "RollupGetRollupIndexCapsQuery: expected object"),
     )
   }
-  RollupGetRollupIndexCapsQuery::{  }
+  RollupGetRollupIndexCapsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn RollupGetRollupIndexCapsQuery::new() -> RollupGetRollupIndexCapsQuery {
-  RollupGetRollupIndexCapsQuery::{  }
+  RollupGetRollupIndexCapsQuery::{ }
 }
 
 ///|
@@ -67513,7 +67523,7 @@ pub fn RollupGetRollupIndexCapsRequest::new(
   index : String,
   query? : RollupGetRollupIndexCapsQuery = RollupGetRollupIndexCapsQuery::new(),
 ) -> RollupGetRollupIndexCapsRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -67546,13 +67556,13 @@ pub impl FromJson for RollupPutJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "RollupPutJobQuery: expected object"))
   }
-  RollupPutJobQuery::{  }
+  RollupPutJobQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn RollupPutJobQuery::new() -> RollupPutJobQuery {
-  RollupPutJobQuery::{  }
+  RollupPutJobQuery::{ }
 }
 
 ///|
@@ -67681,7 +67691,7 @@ pub fn RollupPutJobRequest::new(
   body : RollupPutJobBody,
   query? : RollupPutJobQuery = RollupPutJobQuery::new(),
 ) -> RollupPutJobRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -67750,7 +67760,7 @@ pub fn RollupRollupSearchQuery::new(
   rest_total_hits_as_int? : Bool,
   typed_keys? : Bool,
 ) -> RollupRollupSearchQuery {
-  { rest_total_hits_as_int, typed_keys }
+  { rest_total_hits_as_int, typed_keys, }
 }
 
 ///|
@@ -67828,7 +67838,7 @@ pub fn RollupRollupSearchBody::new(
   query? : Json,
   size? : Int,
 ) -> RollupRollupSearchBody {
-  { aggregations, query, size }
+  { aggregations, query, size, }
 }
 
 ///|
@@ -67911,7 +67921,7 @@ pub fn RollupRollupSearchRequest::new(
   body : RollupRollupSearchBody,
   query? : RollupRollupSearchQuery = RollupRollupSearchQuery::new(),
 ) -> RollupRollupSearchRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -67947,13 +67957,13 @@ pub impl FromJson for RollupStartJobQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "RollupStartJobQuery: expected object"))
   }
-  RollupStartJobQuery::{  }
+  RollupStartJobQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn RollupStartJobQuery::new() -> RollupStartJobQuery {
-  RollupStartJobQuery::{  }
+  RollupStartJobQuery::{ }
 }
 
 ///|
@@ -68002,7 +68012,7 @@ pub fn RollupStartJobRequest::new(
   id : String,
   query? : RollupStartJobQuery = RollupStartJobQuery::new(),
 ) -> RollupStartJobRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -68067,7 +68077,7 @@ pub fn RollupStopJobQuery::new(
   timeout? : String,
   wait_for_completion? : Bool,
 ) -> RollupStopJobQuery {
-  { timeout, wait_for_completion }
+  { timeout, wait_for_completion, }
 }
 
 ///|
@@ -68125,7 +68135,7 @@ pub fn RollupStopJobRequest::new(
   id : String,
   query? : RollupStopJobQuery = RollupStopJobQuery::new(),
 ) -> RollupStopJobRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -68162,13 +68172,13 @@ pub impl FromJson for ScriptsPainlessExecuteQuery with fn from_json(json, path) 
       (path, "ScriptsPainlessExecuteQuery: expected object"),
     )
   }
-  ScriptsPainlessExecuteQuery::{  }
+  ScriptsPainlessExecuteQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn ScriptsPainlessExecuteQuery::new() -> ScriptsPainlessExecuteQuery {
-  ScriptsPainlessExecuteQuery::{  }
+  ScriptsPainlessExecuteQuery::{ }
 }
 
 ///|
@@ -68237,7 +68247,7 @@ pub fn ScriptsPainlessExecuteBody::new(
   context_setup? : Json,
   script? : Json,
 ) -> ScriptsPainlessExecuteBody {
-  { context, context_setup, script }
+  { context, context_setup, script, }
 }
 
 ///|
@@ -68283,7 +68293,7 @@ pub fn ScriptsPainlessExecuteRequest::new(
   body : ScriptsPainlessExecuteBody,
   query? : ScriptsPainlessExecuteQuery = ScriptsPainlessExecuteQuery::new(),
 ) -> ScriptsPainlessExecuteRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -68360,7 +68370,7 @@ pub fn ScrollQuery::new(
   scroll_id? : String,
   rest_total_hits_as_int? : Bool,
 ) -> ScrollQuery {
-  { scroll, scroll_id, rest_total_hits_as_int }
+  { scroll, scroll_id, rest_total_hits_as_int, }
 }
 
 ///|
@@ -68419,7 +68429,7 @@ pub impl FromJson for ScrollBody with fn from_json(json, path) {
 
 ///|
 pub fn ScrollBody::new(scroll_id : Json, scroll? : Json) -> ScrollBody {
-  { scroll, scroll_id }
+  { scroll, scroll_id, }
 }
 
 ///|
@@ -68438,7 +68448,7 @@ pub fn ScrollRequest::new(
   query? : ScrollQuery = ScrollQuery::new(),
   body? : ScrollBody,
 ) -> ScrollRequest {
-  { scroll_id, query, body }
+  { scroll_id, query, body, }
 }
 
 ///|
@@ -69762,7 +69772,7 @@ pub fn SearchRequest::new(
   query? : SearchQuery = SearchQuery::new(),
   body? : SearchBody,
 ) -> SearchRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -69809,13 +69819,13 @@ pub impl FromJson for SearchApplicationDeleteQuery with fn from_json(json, path)
       (path, "SearchApplicationDeleteQuery: expected object"),
     )
   }
-  SearchApplicationDeleteQuery::{  }
+  SearchApplicationDeleteQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SearchApplicationDeleteQuery::new() -> SearchApplicationDeleteQuery {
-  SearchApplicationDeleteQuery::{  }
+  SearchApplicationDeleteQuery::{ }
 }
 
 ///|
@@ -69840,7 +69850,7 @@ pub fn SearchApplicationDeleteRequest::new(
   name : String,
   query? : SearchApplicationDeleteQuery = SearchApplicationDeleteQuery::new(),
 ) -> SearchApplicationDeleteRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -69883,13 +69893,13 @@ pub impl FromJson for SearchApplicationDeleteBehavioralAnalyticsQuery with fn fr
       (path, "SearchApplicationDeleteBehavioralAnalyticsQuery: expected object"),
     )
   }
-  SearchApplicationDeleteBehavioralAnalyticsQuery::{  }
+  SearchApplicationDeleteBehavioralAnalyticsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SearchApplicationDeleteBehavioralAnalyticsQuery::new() -> SearchApplicationDeleteBehavioralAnalyticsQuery {
-  SearchApplicationDeleteBehavioralAnalyticsQuery::{  }
+  SearchApplicationDeleteBehavioralAnalyticsQuery::{ }
 }
 
 ///|
@@ -69914,7 +69924,7 @@ pub fn SearchApplicationDeleteBehavioralAnalyticsRequest::new(
   name : String,
   query? : SearchApplicationDeleteBehavioralAnalyticsQuery = SearchApplicationDeleteBehavioralAnalyticsQuery::new(),
 ) -> SearchApplicationDeleteBehavioralAnalyticsRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -69949,13 +69959,13 @@ pub impl FromJson for SearchApplicationGetQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SearchApplicationGetQuery: expected object"))
   }
-  SearchApplicationGetQuery::{  }
+  SearchApplicationGetQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SearchApplicationGetQuery::new() -> SearchApplicationGetQuery {
-  SearchApplicationGetQuery::{  }
+  SearchApplicationGetQuery::{ }
 }
 
 ///|
@@ -69980,7 +69990,7 @@ pub fn SearchApplicationGetRequest::new(
   name : String,
   query? : SearchApplicationGetQuery = SearchApplicationGetQuery::new(),
 ) -> SearchApplicationGetRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -70020,13 +70030,13 @@ pub impl FromJson for SearchApplicationGetBehavioralAnalyticsQuery with fn from_
       (path, "SearchApplicationGetBehavioralAnalyticsQuery: expected object"),
     )
   }
-  SearchApplicationGetBehavioralAnalyticsQuery::{  }
+  SearchApplicationGetBehavioralAnalyticsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SearchApplicationGetBehavioralAnalyticsQuery::new() -> SearchApplicationGetBehavioralAnalyticsQuery {
-  SearchApplicationGetBehavioralAnalyticsQuery::{  }
+  SearchApplicationGetBehavioralAnalyticsQuery::{ }
 }
 
 ///|
@@ -70051,7 +70061,7 @@ pub fn SearchApplicationGetBehavioralAnalyticsRequest::new(
   name? : String,
   query? : SearchApplicationGetBehavioralAnalyticsQuery = SearchApplicationGetBehavioralAnalyticsQuery::new(),
 ) -> SearchApplicationGetBehavioralAnalyticsRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -70132,7 +70142,7 @@ pub fn SearchApplicationListQuery::new(
   from? : Int,
   size? : Int,
 ) -> SearchApplicationListQuery {
-  { q, from, size }
+  { q, from, size, }
 }
 
 ///|
@@ -70338,7 +70348,7 @@ pub fn SearchApplicationPostBehavioralAnalyticsEventRequest::new(
   body : SearchApplicationPostBehavioralAnalyticsEventBody,
   query? : SearchApplicationPostBehavioralAnalyticsEventQuery = SearchApplicationPostBehavioralAnalyticsEventQuery::new(),
 ) -> SearchApplicationPostBehavioralAnalyticsEventRequest {
-  { collection_name, event_type, query, body }
+  { collection_name, event_type, query, body, }
 }
 
 ///|
@@ -70458,7 +70468,7 @@ pub fn SearchApplicationPutRequest::new(
   body : SearchApplicationPutBody,
   query? : SearchApplicationPutQuery = SearchApplicationPutQuery::new(),
 ) -> SearchApplicationPutRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -70499,13 +70509,13 @@ pub impl FromJson for SearchApplicationPutBehavioralAnalyticsQuery with fn from_
       (path, "SearchApplicationPutBehavioralAnalyticsQuery: expected object"),
     )
   }
-  SearchApplicationPutBehavioralAnalyticsQuery::{  }
+  SearchApplicationPutBehavioralAnalyticsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SearchApplicationPutBehavioralAnalyticsQuery::new() -> SearchApplicationPutBehavioralAnalyticsQuery {
-  SearchApplicationPutBehavioralAnalyticsQuery::{  }
+  SearchApplicationPutBehavioralAnalyticsQuery::{ }
 }
 
 ///|
@@ -70530,7 +70540,7 @@ pub fn SearchApplicationPutBehavioralAnalyticsRequest::new(
   name : String,
   query? : SearchApplicationPutBehavioralAnalyticsQuery = SearchApplicationPutBehavioralAnalyticsQuery::new(),
 ) -> SearchApplicationPutBehavioralAnalyticsRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -70570,13 +70580,13 @@ pub impl FromJson for SearchApplicationRenderQueryQuery with fn from_json(
       (path, "SearchApplicationRenderQueryQuery: expected object"),
     )
   }
-  SearchApplicationRenderQueryQuery::{  }
+  SearchApplicationRenderQueryQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SearchApplicationRenderQueryQuery::new() -> SearchApplicationRenderQueryQuery {
-  SearchApplicationRenderQueryQuery::{  }
+  SearchApplicationRenderQueryQuery::{ }
 }
 
 ///|
@@ -70646,7 +70656,7 @@ pub fn SearchApplicationRenderQueryRequest::new(
   query? : SearchApplicationRenderQueryQuery = SearchApplicationRenderQueryQuery::new(),
   body? : SearchApplicationRenderQueryBody,
 ) -> SearchApplicationRenderQueryRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -70782,7 +70792,7 @@ pub fn SearchApplicationSearchRequest::new(
   query? : SearchApplicationSearchQuery = SearchApplicationSearchQuery::new(),
   body? : SearchApplicationSearchBody,
 ) -> SearchApplicationSearchRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -71212,7 +71222,7 @@ pub fn SearchMvtRequest::new(
   query? : SearchMvtQuery = SearchMvtQuery::new(),
   body? : SearchMvtBody,
 ) -> SearchMvtRequest {
-  { index, field, zoom, x, y, query, body }
+  { index, field, zoom, x, y, query, body, }
 }
 
 ///|
@@ -71443,7 +71453,7 @@ pub fn SearchShardsRequest::new(
   index? : String,
   query? : SearchShardsQuery = SearchShardsQuery::new(),
 ) -> SearchShardsRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -71817,7 +71827,7 @@ pub fn SearchTemplateBody::new(
   source? : Json,
   project_routing? : Json,
 ) -> SearchTemplateBody {
-  { explain, id, params, profile, source, project_routing }
+  { explain, id, params, profile, source, project_routing, }
 }
 
 ///|
@@ -71984,7 +71994,7 @@ pub fn SearchTemplateRequest::new(
   index? : String,
   query? : SearchTemplateQuery = SearchTemplateQuery::new(),
 ) -> SearchTemplateRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -72031,13 +72041,13 @@ pub impl FromJson for SearchableSnapshotsCacheStatsQuery with fn from_json(
       (path, "SearchableSnapshotsCacheStatsQuery: expected object"),
     )
   }
-  SearchableSnapshotsCacheStatsQuery::{  }
+  SearchableSnapshotsCacheStatsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SearchableSnapshotsCacheStatsQuery::new() -> SearchableSnapshotsCacheStatsQuery {
-  SearchableSnapshotsCacheStatsQuery::{  }
+  SearchableSnapshotsCacheStatsQuery::{ }
 }
 
 ///|
@@ -72091,7 +72101,7 @@ pub fn SearchableSnapshotsCacheStatsRequest::new(
   node_id? : String,
   query? : SearchableSnapshotsCacheStatsQuery = SearchableSnapshotsCacheStatsQuery::new(),
 ) -> SearchableSnapshotsCacheStatsRequest {
-  { node_id, query }
+  { node_id, query, }
 }
 
 ///|
@@ -72182,7 +72192,7 @@ pub fn SearchableSnapshotsClearCacheQuery::new(
   allow_no_indices? : Bool,
   ignore_unavailable? : Bool,
 ) -> SearchableSnapshotsClearCacheQuery {
-  { expand_wildcards, allow_no_indices, ignore_unavailable }
+  { expand_wildcards, allow_no_indices, ignore_unavailable, }
 }
 
 ///|
@@ -72219,7 +72229,7 @@ pub fn SearchableSnapshotsClearCacheRequest::new(
   index? : String,
   query? : SearchableSnapshotsClearCacheQuery = SearchableSnapshotsClearCacheQuery::new(),
 ) -> SearchableSnapshotsClearCacheRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -72307,7 +72317,7 @@ pub fn SearchableSnapshotsMountQuery::new(
   wait_for_completion? : Bool,
   storage? : String,
 ) -> SearchableSnapshotsMountQuery {
-  { master_timeout, wait_for_completion, storage }
+  { master_timeout, wait_for_completion, storage, }
 }
 
 ///|
@@ -72400,7 +72410,7 @@ pub fn SearchableSnapshotsMountBody::new(
   index_settings? : Map[String, Json],
   ignore_index_settings? : Array[String],
 ) -> SearchableSnapshotsMountBody {
-  { index, renamed_index, index_settings, ignore_index_settings }
+  { index, renamed_index, index_settings, ignore_index_settings, }
 }
 
 ///|
@@ -72450,7 +72460,7 @@ pub fn SearchableSnapshotsMountRequest::new(
   body : SearchableSnapshotsMountBody,
   query? : SearchableSnapshotsMountQuery = SearchableSnapshotsMountQuery::new(),
 ) -> SearchableSnapshotsMountRequest {
-  { repository, snapshot, query, body }
+  { repository, snapshot, query, body, }
 }
 
 ///|
@@ -72578,7 +72588,7 @@ pub fn SearchableSnapshotsStatsRequest::new(
   index? : String,
   query? : SearchableSnapshotsStatsQuery = SearchableSnapshotsStatsQuery::new(),
 ) -> SearchableSnapshotsStatsRequest {
-  { index, query }
+  { index, query, }
 }
 
 ///|
@@ -72624,13 +72634,13 @@ pub impl FromJson for SecurityActivateUserProfileQuery with fn from_json(
       (path, "SecurityActivateUserProfileQuery: expected object"),
     )
   }
-  SecurityActivateUserProfileQuery::{  }
+  SecurityActivateUserProfileQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityActivateUserProfileQuery::new() -> SecurityActivateUserProfileQuery {
-  SecurityActivateUserProfileQuery::{  }
+  SecurityActivateUserProfileQuery::{ }
 }
 
 ///|
@@ -72711,7 +72721,7 @@ pub fn SecurityActivateUserProfileBody::new(
   password? : String,
   username? : String,
 ) -> SecurityActivateUserProfileBody {
-  { access_token, grant_type, password, username }
+  { access_token, grant_type, password, username, }
 }
 
 ///|
@@ -72728,7 +72738,7 @@ pub fn SecurityActivateUserProfileRequest::new(
   body : SecurityActivateUserProfileBody,
   query? : SecurityActivateUserProfileQuery = SecurityActivateUserProfileQuery::new(),
 ) -> SecurityActivateUserProfileRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -72763,13 +72773,13 @@ pub impl FromJson for SecurityAuthenticateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SecurityAuthenticateQuery: expected object"))
   }
-  SecurityAuthenticateQuery::{  }
+  SecurityAuthenticateQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityAuthenticateQuery::new() -> SecurityAuthenticateQuery {
-  SecurityAuthenticateQuery::{  }
+  SecurityAuthenticateQuery::{ }
 }
 
 ///|
@@ -73066,7 +73076,7 @@ pub fn SecurityBulkDeleteRoleRequest::new(
   body : SecurityBulkDeleteRoleBody,
   query? : SecurityBulkDeleteRoleQuery = SecurityBulkDeleteRoleQuery::new(),
 ) -> SecurityBulkDeleteRoleRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -73239,7 +73249,7 @@ pub fn SecurityBulkPutRoleRequest::new(
   body : SecurityBulkPutRoleBody,
   query? : SecurityBulkPutRoleQuery = SecurityBulkPutRoleQuery::new(),
 ) -> SecurityBulkPutRoleRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -73276,13 +73286,13 @@ pub impl FromJson for SecurityBulkUpdateApiKeysQuery with fn from_json(
       (path, "SecurityBulkUpdateApiKeysQuery: expected object"),
     )
   }
-  SecurityBulkUpdateApiKeysQuery::{  }
+  SecurityBulkUpdateApiKeysQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityBulkUpdateApiKeysQuery::new() -> SecurityBulkUpdateApiKeysQuery {
-  SecurityBulkUpdateApiKeysQuery::{  }
+  SecurityBulkUpdateApiKeysQuery::{ }
 }
 
 ///|
@@ -73364,7 +73374,7 @@ pub fn SecurityBulkUpdateApiKeysBody::new(
   metadata? : Json,
   role_descriptors? : Map[String, Json],
 ) -> SecurityBulkUpdateApiKeysBody {
-  { expiration, ids, metadata, role_descriptors }
+  { expiration, ids, metadata, role_descriptors, }
 }
 
 ///|
@@ -73426,7 +73436,7 @@ pub fn SecurityBulkUpdateApiKeysRequest::new(
   body : SecurityBulkUpdateApiKeysBody,
   query? : SecurityBulkUpdateApiKeysQuery = SecurityBulkUpdateApiKeysQuery::new(),
 ) -> SecurityBulkUpdateApiKeysRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -73543,7 +73553,7 @@ pub fn SecurityChangePasswordBody::new(
   password? : Json,
   password_hash? : String,
 ) -> SecurityChangePasswordBody {
-  { password, password_hash }
+  { password, password_hash, }
 }
 
 ///|
@@ -73562,7 +73572,7 @@ pub fn SecurityChangePasswordRequest::new(
   username? : String,
   query? : SecurityChangePasswordQuery = SecurityChangePasswordQuery::new(),
 ) -> SecurityChangePasswordRequest {
-  { username, query, body }
+  { username, query, body, }
 }
 
 ///|
@@ -73609,13 +73619,13 @@ pub impl FromJson for SecurityClearApiKeyCacheQuery with fn from_json(
       (path, "SecurityClearApiKeyCacheQuery: expected object"),
     )
   }
-  SecurityClearApiKeyCacheQuery::{  }
+  SecurityClearApiKeyCacheQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityClearApiKeyCacheQuery::new() -> SecurityClearApiKeyCacheQuery {
-  SecurityClearApiKeyCacheQuery::{  }
+  SecurityClearApiKeyCacheQuery::{ }
 }
 
 ///|
@@ -73681,7 +73691,7 @@ pub fn SecurityClearApiKeyCacheRequest::new(
   ids : String,
   query? : SecurityClearApiKeyCacheQuery = SecurityClearApiKeyCacheQuery::new(),
 ) -> SecurityClearApiKeyCacheRequest {
-  { ids, query }
+  { ids, query, }
 }
 
 ///|
@@ -73721,13 +73731,13 @@ pub impl FromJson for SecurityClearCachedPrivilegesQuery with fn from_json(
       (path, "SecurityClearCachedPrivilegesQuery: expected object"),
     )
   }
-  SecurityClearCachedPrivilegesQuery::{  }
+  SecurityClearCachedPrivilegesQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityClearCachedPrivilegesQuery::new() -> SecurityClearCachedPrivilegesQuery {
-  SecurityClearCachedPrivilegesQuery::{  }
+  SecurityClearCachedPrivilegesQuery::{ }
 }
 
 ///|
@@ -73793,7 +73803,7 @@ pub fn SecurityClearCachedPrivilegesRequest::new(
   application : String,
   query? : SecurityClearCachedPrivilegesQuery = SecurityClearCachedPrivilegesQuery::new(),
 ) -> SecurityClearCachedPrivilegesRequest {
-  { application, query }
+  { application, query, }
 }
 
 ///|
@@ -73926,7 +73936,7 @@ pub fn SecurityClearCachedRealmsRequest::new(
   realms : String,
   query? : SecurityClearCachedRealmsQuery = SecurityClearCachedRealmsQuery::new(),
 ) -> SecurityClearCachedRealmsRequest {
-  { realms, query }
+  { realms, query, }
 }
 
 ///|
@@ -73966,13 +73976,13 @@ pub impl FromJson for SecurityClearCachedRolesQuery with fn from_json(
       (path, "SecurityClearCachedRolesQuery: expected object"),
     )
   }
-  SecurityClearCachedRolesQuery::{  }
+  SecurityClearCachedRolesQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityClearCachedRolesQuery::new() -> SecurityClearCachedRolesQuery {
-  SecurityClearCachedRolesQuery::{  }
+  SecurityClearCachedRolesQuery::{ }
 }
 
 ///|
@@ -74038,7 +74048,7 @@ pub fn SecurityClearCachedRolesRequest::new(
   name : String,
   query? : SecurityClearCachedRolesQuery = SecurityClearCachedRolesQuery::new(),
 ) -> SecurityClearCachedRolesRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -74078,13 +74088,13 @@ pub impl FromJson for SecurityClearCachedServiceTokensQuery with fn from_json(
       (path, "SecurityClearCachedServiceTokensQuery: expected object"),
     )
   }
-  SecurityClearCachedServiceTokensQuery::{  }
+  SecurityClearCachedServiceTokensQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityClearCachedServiceTokensQuery::new() -> SecurityClearCachedServiceTokensQuery {
-  SecurityClearCachedServiceTokensQuery::{  }
+  SecurityClearCachedServiceTokensQuery::{ }
 }
 
 ///|
@@ -74154,7 +74164,7 @@ pub fn SecurityClearCachedServiceTokensRequest::new(
   name : String,
   query? : SecurityClearCachedServiceTokensQuery = SecurityClearCachedServiceTokensQuery::new(),
 ) -> SecurityClearCachedServiceTokensRequest {
-  { namespace_, service, name, query }
+  { namespace_, service, name, query, }
 }
 
 ///|
@@ -74294,7 +74304,7 @@ pub fn SecurityCloneApiKeyBody::new(
   expiration? : Json,
   metadata? : Json,
 ) -> SecurityCloneApiKeyBody {
-  { api_key, name, expiration, metadata }
+  { api_key, name, expiration, metadata, }
 }
 
 ///|
@@ -74366,7 +74376,7 @@ pub fn SecurityCloneApiKeyRequest::new(
   body : SecurityCloneApiKeyBody,
   query? : SecurityCloneApiKeyQuery = SecurityCloneApiKeyQuery::new(),
 ) -> SecurityCloneApiKeyRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -74504,7 +74514,7 @@ pub fn SecurityCreateApiKeyBody::new(
   role_descriptors? : Map[String, Json],
   metadata? : Json,
 ) -> SecurityCreateApiKeyBody {
-  { expiration, name, role_descriptors, metadata }
+  { expiration, name, role_descriptors, metadata, }
 }
 
 ///|
@@ -74576,7 +74586,7 @@ pub fn SecurityCreateApiKeyRequest::new(
   body : SecurityCreateApiKeyBody,
   query? : SecurityCreateApiKeyQuery = SecurityCreateApiKeyQuery::new(),
 ) -> SecurityCreateApiKeyRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -74613,13 +74623,13 @@ pub impl FromJson for SecurityCreateCrossClusterApiKeyQuery with fn from_json(
       (path, "SecurityCreateCrossClusterApiKeyQuery: expected object"),
     )
   }
-  SecurityCreateCrossClusterApiKeyQuery::{  }
+  SecurityCreateCrossClusterApiKeyQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityCreateCrossClusterApiKeyQuery::new() -> SecurityCreateCrossClusterApiKeyQuery {
-  SecurityCreateCrossClusterApiKeyQuery::{  }
+  SecurityCreateCrossClusterApiKeyQuery::{ }
 }
 
 ///|
@@ -74708,7 +74718,7 @@ pub fn SecurityCreateCrossClusterApiKeyBody::new(
   metadata? : Json,
   certificate_identity? : String,
 ) -> SecurityCreateCrossClusterApiKeyBody {
-  { access, expiration, metadata, name, certificate_identity }
+  { access, expiration, metadata, name, certificate_identity, }
 }
 
 ///|
@@ -74783,7 +74793,7 @@ pub fn SecurityCreateCrossClusterApiKeyRequest::new(
   body : SecurityCreateCrossClusterApiKeyBody,
   query? : SecurityCreateCrossClusterApiKeyQuery = SecurityCreateCrossClusterApiKeyQuery::new(),
 ) -> SecurityCreateCrossClusterApiKeyRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -74909,7 +74919,7 @@ pub fn SecurityCreateServiceTokenRequest::new(
   name? : String,
   query? : SecurityCreateServiceTokenQuery = SecurityCreateServiceTokenQuery::new(),
 ) -> SecurityCreateServiceTokenRequest {
-  { namespace_, service, name, query }
+  { namespace_, service, name, query, }
 }
 
 ///|
@@ -74958,13 +74968,13 @@ pub impl FromJson for SecurityDelegatePkiQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SecurityDelegatePkiQuery: expected object"))
   }
-  SecurityDelegatePkiQuery::{  }
+  SecurityDelegatePkiQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityDelegatePkiQuery::new() -> SecurityDelegatePkiQuery {
-  SecurityDelegatePkiQuery::{  }
+  SecurityDelegatePkiQuery::{ }
 }
 
 ///|
@@ -75124,7 +75134,7 @@ pub fn SecurityDeletePrivilegesRequest::new(
   name : String,
   query? : SecurityDeletePrivilegesQuery = SecurityDeletePrivilegesQuery::new(),
 ) -> SecurityDeletePrivilegesRequest {
-  { application, name, query }
+  { application, name, query, }
 }
 
 ///|
@@ -75235,7 +75245,7 @@ pub fn SecurityDeleteRoleRequest::new(
   name : String,
   query? : SecurityDeleteRoleQuery = SecurityDeleteRoleQuery::new(),
 ) -> SecurityDeleteRoleRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -75351,7 +75361,7 @@ pub fn SecurityDeleteRoleMappingRequest::new(
   name : String,
   query? : SecurityDeleteRoleMappingQuery = SecurityDeleteRoleMappingQuery::new(),
 ) -> SecurityDeleteRoleMappingRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -75471,7 +75481,7 @@ pub fn SecurityDeleteServiceTokenRequest::new(
   name : String,
   query? : SecurityDeleteServiceTokenQuery = SecurityDeleteServiceTokenQuery::new(),
 ) -> SecurityDeleteServiceTokenRequest {
-  { namespace_, service, name, query }
+  { namespace_, service, name, query, }
 }
 
 ///|
@@ -75584,7 +75594,7 @@ pub fn SecurityDeleteUserRequest::new(
   username : String,
   query? : SecurityDeleteUserQuery = SecurityDeleteUserQuery::new(),
 ) -> SecurityDeleteUserRequest {
-  { username, query }
+  { username, query, }
 }
 
 ///|
@@ -75666,7 +75676,7 @@ pub fn SecurityDisableUserRequest::new(
   username : String,
   query? : SecurityDisableUserQuery = SecurityDisableUserQuery::new(),
 ) -> SecurityDisableUserRequest {
-  { username, query }
+  { username, query, }
 }
 
 ///|
@@ -75753,7 +75763,7 @@ pub fn SecurityDisableUserProfileRequest::new(
   uid : String,
   query? : SecurityDisableUserProfileQuery = SecurityDisableUserProfileQuery::new(),
 ) -> SecurityDisableUserProfileRequest {
-  { uid, query }
+  { uid, query, }
 }
 
 ///|
@@ -75835,7 +75845,7 @@ pub fn SecurityEnableUserRequest::new(
   username : String,
   query? : SecurityEnableUserQuery = SecurityEnableUserQuery::new(),
 ) -> SecurityEnableUserRequest {
-  { username, query }
+  { username, query, }
 }
 
 ///|
@@ -75922,7 +75932,7 @@ pub fn SecurityEnableUserProfileRequest::new(
   uid : String,
   query? : SecurityEnableUserProfileQuery = SecurityEnableUserProfileQuery::new(),
 ) -> SecurityEnableUserProfileRequest {
-  { uid, query }
+  { uid, query, }
 }
 
 ///|
@@ -75957,13 +75967,13 @@ pub impl FromJson for SecurityEnrollKibanaQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SecurityEnrollKibanaQuery: expected object"))
   }
-  SecurityEnrollKibanaQuery::{  }
+  SecurityEnrollKibanaQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityEnrollKibanaQuery::new() -> SecurityEnrollKibanaQuery {
-  SecurityEnrollKibanaQuery::{  }
+  SecurityEnrollKibanaQuery::{ }
 }
 
 ///|
@@ -76023,7 +76033,7 @@ pub fn SecurityEnrollKibanaRequest::new(
   query? : SecurityEnrollKibanaQuery = SecurityEnrollKibanaQuery::new(),
   body? : SecurityEnrollKibanaBody,
 ) -> SecurityEnrollKibanaRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -76061,13 +76071,13 @@ pub impl FromJson for SecurityEnrollNodeQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SecurityEnrollNodeQuery: expected object"))
   }
-  SecurityEnrollNodeQuery::{  }
+  SecurityEnrollNodeQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityEnrollNodeQuery::new() -> SecurityEnrollNodeQuery {
-  SecurityEnrollNodeQuery::{  }
+  SecurityEnrollNodeQuery::{ }
 }
 
 ///|
@@ -76149,7 +76159,7 @@ pub fn SecurityEnrollNodeRequest::new(
   query? : SecurityEnrollNodeQuery = SecurityEnrollNodeQuery::new(),
   body? : SecurityEnrollNodeBody,
 ) -> SecurityEnrollNodeRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -76410,13 +76420,13 @@ pub impl FromJson for SecurityGetBuiltinPrivilegesQuery with fn from_json(
       (path, "SecurityGetBuiltinPrivilegesQuery: expected object"),
     )
   }
-  SecurityGetBuiltinPrivilegesQuery::{  }
+  SecurityGetBuiltinPrivilegesQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityGetBuiltinPrivilegesQuery::new() -> SecurityGetBuiltinPrivilegesQuery {
-  SecurityGetBuiltinPrivilegesQuery::{  }
+  SecurityGetBuiltinPrivilegesQuery::{ }
 }
 
 ///|
@@ -76514,13 +76524,13 @@ pub impl FromJson for SecurityGetPrivilegesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SecurityGetPrivilegesQuery: expected object"))
   }
-  SecurityGetPrivilegesQuery::{  }
+  SecurityGetPrivilegesQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityGetPrivilegesQuery::new() -> SecurityGetPrivilegesQuery {
-  SecurityGetPrivilegesQuery::{  }
+  SecurityGetPrivilegesQuery::{ }
 }
 
 ///|
@@ -76547,7 +76557,7 @@ pub fn SecurityGetPrivilegesRequest::new(
   name? : String,
   query? : SecurityGetPrivilegesQuery = SecurityGetPrivilegesQuery::new(),
 ) -> SecurityGetPrivilegesRequest {
-  { application, name, query }
+  { application, name, query, }
 }
 
 ///|
@@ -76595,13 +76605,13 @@ pub impl FromJson for SecurityGetRoleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SecurityGetRoleQuery: expected object"))
   }
-  SecurityGetRoleQuery::{  }
+  SecurityGetRoleQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityGetRoleQuery::new() -> SecurityGetRoleQuery {
-  SecurityGetRoleQuery::{  }
+  SecurityGetRoleQuery::{ }
 }
 
 ///|
@@ -76626,7 +76636,7 @@ pub fn SecurityGetRoleRequest::new(
   name? : String,
   query? : SecurityGetRoleQuery = SecurityGetRoleQuery::new(),
 ) -> SecurityGetRoleRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -76669,13 +76679,13 @@ pub impl FromJson for SecurityGetRoleMappingQuery with fn from_json(json, path) 
       (path, "SecurityGetRoleMappingQuery: expected object"),
     )
   }
-  SecurityGetRoleMappingQuery::{  }
+  SecurityGetRoleMappingQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityGetRoleMappingQuery::new() -> SecurityGetRoleMappingQuery {
-  SecurityGetRoleMappingQuery::{  }
+  SecurityGetRoleMappingQuery::{ }
 }
 
 ///|
@@ -76700,7 +76710,7 @@ pub fn SecurityGetRoleMappingRequest::new(
   name? : String,
   query? : SecurityGetRoleMappingQuery = SecurityGetRoleMappingQuery::new(),
 ) -> SecurityGetRoleMappingRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -76746,13 +76756,13 @@ pub impl FromJson for SecurityGetServiceAccountsQuery with fn from_json(
       (path, "SecurityGetServiceAccountsQuery: expected object"),
     )
   }
-  SecurityGetServiceAccountsQuery::{  }
+  SecurityGetServiceAccountsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityGetServiceAccountsQuery::new() -> SecurityGetServiceAccountsQuery {
-  SecurityGetServiceAccountsQuery::{  }
+  SecurityGetServiceAccountsQuery::{ }
 }
 
 ///|
@@ -76779,7 +76789,7 @@ pub fn SecurityGetServiceAccountsRequest::new(
   service? : String,
   query? : SecurityGetServiceAccountsQuery = SecurityGetServiceAccountsQuery::new(),
 ) -> SecurityGetServiceAccountsRequest {
-  { namespace_, service, query }
+  { namespace_, service, query, }
 }
 
 ///|
@@ -76832,13 +76842,13 @@ pub impl FromJson for SecurityGetServiceCredentialsQuery with fn from_json(
       (path, "SecurityGetServiceCredentialsQuery: expected object"),
     )
   }
-  SecurityGetServiceCredentialsQuery::{  }
+  SecurityGetServiceCredentialsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityGetServiceCredentialsQuery::new() -> SecurityGetServiceCredentialsQuery {
-  SecurityGetServiceCredentialsQuery::{  }
+  SecurityGetServiceCredentialsQuery::{ }
 }
 
 ///|
@@ -76912,7 +76922,7 @@ pub fn SecurityGetServiceCredentialsRequest::new(
   service : String,
   query? : SecurityGetServiceCredentialsQuery = SecurityGetServiceCredentialsQuery::new(),
 ) -> SecurityGetServiceCredentialsRequest {
-  { namespace_, service, query }
+  { namespace_, service, query, }
 }
 
 ///|
@@ -77041,7 +77051,7 @@ pub fn SecurityGetSettingsRequest::new(
   query? : SecurityGetSettingsQuery = SecurityGetSettingsQuery::new(),
   body? : SecurityGetSettingsBody,
 ) -> SecurityGetSettingsRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -77076,13 +77086,13 @@ pub impl FromJson for SecurityGetStatsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SecurityGetStatsQuery: expected object"))
   }
-  SecurityGetStatsQuery::{  }
+  SecurityGetStatsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityGetStatsQuery::new() -> SecurityGetStatsQuery {
-  SecurityGetStatsQuery::{  }
+  SecurityGetStatsQuery::{ }
 }
 
 ///|
@@ -77134,7 +77144,7 @@ pub fn SecurityGetStatsRequest::new(
   query? : SecurityGetStatsQuery = SecurityGetStatsQuery::new(),
   body? : SecurityGetStatsBody,
 ) -> SecurityGetStatsRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -77169,13 +77179,13 @@ pub impl FromJson for SecurityGetTokenQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SecurityGetTokenQuery: expected object"))
   }
-  SecurityGetTokenQuery::{  }
+  SecurityGetTokenQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityGetTokenQuery::new() -> SecurityGetTokenQuery {
-  SecurityGetTokenQuery::{  }
+  SecurityGetTokenQuery::{ }
 }
 
 ///|
@@ -77279,7 +77289,7 @@ pub fn SecurityGetTokenBody::new(
   refresh_token? : String,
   username? : Json,
 ) -> SecurityGetTokenBody {
-  { grant_type, scope, password, kerberos_ticket, refresh_token, username }
+  { grant_type, scope, password, kerberos_ticket, refresh_token, username, }
 }
 
 ///|
@@ -77377,7 +77387,7 @@ pub fn SecurityGetTokenRequest::new(
   body : SecurityGetTokenBody,
   query? : SecurityGetTokenQuery = SecurityGetTokenQuery::new(),
 ) -> SecurityGetTokenRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -77460,7 +77470,7 @@ pub fn SecurityGetUserRequest::new(
   username? : String,
   query? : SecurityGetUserQuery = SecurityGetUserQuery::new(),
 ) -> SecurityGetUserRequest {
-  { username, query }
+  { username, query, }
 }
 
 ///|
@@ -77506,13 +77516,13 @@ pub impl FromJson for SecurityGetUserPrivilegesQuery with fn from_json(
       (path, "SecurityGetUserPrivilegesQuery: expected object"),
     )
   }
-  SecurityGetUserPrivilegesQuery::{  }
+  SecurityGetUserPrivilegesQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityGetUserPrivilegesQuery::new() -> SecurityGetUserPrivilegesQuery {
-  SecurityGetUserPrivilegesQuery::{  }
+  SecurityGetUserPrivilegesQuery::{ }
 }
 
 ///|
@@ -77732,7 +77742,7 @@ pub fn SecurityGetUserProfileRequest::new(
   uid : String,
   query? : SecurityGetUserProfileQuery = SecurityGetUserProfileQuery::new(),
 ) -> SecurityGetUserProfileRequest {
-  { uid, query }
+  { uid, query, }
 }
 
 ///|
@@ -77883,7 +77893,7 @@ pub fn SecurityGrantApiKeyBody::new(
   password? : Json,
   run_as? : Json,
 ) -> SecurityGrantApiKeyBody {
-  { api_key, grant_type, access_token, username, password, run_as }
+  { api_key, grant_type, access_token, username, password, run_as, }
 }
 
 ///|
@@ -77955,7 +77965,7 @@ pub fn SecurityGrantApiKeyRequest::new(
   body : SecurityGrantApiKeyBody,
   query? : SecurityGrantApiKeyQuery = SecurityGrantApiKeyQuery::new(),
 ) -> SecurityGrantApiKeyRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -77990,13 +78000,13 @@ pub impl FromJson for SecurityHasPrivilegesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SecurityHasPrivilegesQuery: expected object"))
   }
-  SecurityHasPrivilegesQuery::{  }
+  SecurityHasPrivilegesQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityHasPrivilegesQuery::new() -> SecurityHasPrivilegesQuery {
-  SecurityHasPrivilegesQuery::{  }
+  SecurityHasPrivilegesQuery::{ }
 }
 
 ///|
@@ -78065,7 +78075,7 @@ pub fn SecurityHasPrivilegesBody::new(
   cluster? : Array[Json],
   index? : Array[Json],
 ) -> SecurityHasPrivilegesBody {
-  { application, cluster, index }
+  { application, cluster, index, }
 }
 
 ///|
@@ -78137,7 +78147,7 @@ pub fn SecurityHasPrivilegesRequest::new(
   user? : String,
   query? : SecurityHasPrivilegesQuery = SecurityHasPrivilegesQuery::new(),
 ) -> SecurityHasPrivilegesRequest {
-  { user, query, body }
+  { user, query, body, }
 }
 
 ///|
@@ -78184,13 +78194,13 @@ pub impl FromJson for SecurityHasPrivilegesUserProfileQuery with fn from_json(
       (path, "SecurityHasPrivilegesUserProfileQuery: expected object"),
     )
   }
-  SecurityHasPrivilegesUserProfileQuery::{  }
+  SecurityHasPrivilegesUserProfileQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityHasPrivilegesUserProfileQuery::new() -> SecurityHasPrivilegesUserProfileQuery {
-  SecurityHasPrivilegesUserProfileQuery::{  }
+  SecurityHasPrivilegesUserProfileQuery::{ }
 }
 
 ///|
@@ -78244,7 +78254,7 @@ pub fn SecurityHasPrivilegesUserProfileBody::new(
   uids : Array[Json],
   privileges : Json,
 ) -> SecurityHasPrivilegesUserProfileBody {
-  { uids, privileges }
+  { uids, privileges, }
 }
 
 ///|
@@ -78300,7 +78310,7 @@ pub fn SecurityHasPrivilegesUserProfileRequest::new(
   body : SecurityHasPrivilegesUserProfileBody,
   query? : SecurityHasPrivilegesUserProfileQuery = SecurityHasPrivilegesUserProfileQuery::new(),
 ) -> SecurityHasPrivilegesUserProfileRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -78340,13 +78350,13 @@ pub impl FromJson for SecurityInvalidateApiKeyQuery with fn from_json(
       (path, "SecurityInvalidateApiKeyQuery: expected object"),
     )
   }
-  SecurityInvalidateApiKeyQuery::{  }
+  SecurityInvalidateApiKeyQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityInvalidateApiKeyQuery::new() -> SecurityInvalidateApiKeyQuery {
-  SecurityInvalidateApiKeyQuery::{  }
+  SecurityInvalidateApiKeyQuery::{ }
 }
 
 ///|
@@ -78450,7 +78460,7 @@ pub fn SecurityInvalidateApiKeyBody::new(
   realm_name? : String,
   username? : Json,
 ) -> SecurityInvalidateApiKeyBody {
-  { id, ids, name, owner, realm_name, username }
+  { id, ids, name, owner, realm_name, username, }
 }
 
 ///|
@@ -78519,7 +78529,7 @@ pub fn SecurityInvalidateApiKeyRequest::new(
   body : SecurityInvalidateApiKeyBody,
   query? : SecurityInvalidateApiKeyQuery = SecurityInvalidateApiKeyQuery::new(),
 ) -> SecurityInvalidateApiKeyRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -78553,13 +78563,13 @@ pub impl FromJson for SecurityInvalidateTokenQuery with fn from_json(json, path)
       (path, "SecurityInvalidateTokenQuery: expected object"),
     )
   }
-  SecurityInvalidateTokenQuery::{  }
+  SecurityInvalidateTokenQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityInvalidateTokenQuery::new() -> SecurityInvalidateTokenQuery {
-  SecurityInvalidateTokenQuery::{  }
+  SecurityInvalidateTokenQuery::{ }
 }
 
 ///|
@@ -78642,7 +78652,7 @@ pub fn SecurityInvalidateTokenBody::new(
   realm_name? : Json,
   username? : Json,
 ) -> SecurityInvalidateTokenBody {
-  { token, refresh_token, realm_name, username }
+  { token, refresh_token, realm_name, username, }
 }
 
 ///|
@@ -78711,7 +78721,7 @@ pub fn SecurityInvalidateTokenRequest::new(
   body : SecurityInvalidateTokenBody,
   query? : SecurityInvalidateTokenQuery = SecurityInvalidateTokenQuery::new(),
 ) -> SecurityInvalidateTokenRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -78751,13 +78761,13 @@ pub impl FromJson for SecurityOidcAuthenticateQuery with fn from_json(
       (path, "SecurityOidcAuthenticateQuery: expected object"),
     )
   }
-  SecurityOidcAuthenticateQuery::{  }
+  SecurityOidcAuthenticateQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityOidcAuthenticateQuery::new() -> SecurityOidcAuthenticateQuery {
-  SecurityOidcAuthenticateQuery::{  }
+  SecurityOidcAuthenticateQuery::{ }
 }
 
 ///|
@@ -78826,7 +78836,7 @@ pub fn SecurityOidcAuthenticateBody::new(
   state : String,
   realm? : String,
 ) -> SecurityOidcAuthenticateBody {
-  { nonce, realm, redirect_uri, state }
+  { nonce, realm, redirect_uri, state, }
 }
 
 ///|
@@ -78890,7 +78900,7 @@ pub fn SecurityOidcAuthenticateRequest::new(
   body : SecurityOidcAuthenticateBody,
   query? : SecurityOidcAuthenticateQuery = SecurityOidcAuthenticateQuery::new(),
 ) -> SecurityOidcAuthenticateRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -78925,13 +78935,13 @@ pub impl FromJson for SecurityOidcLogoutQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SecurityOidcLogoutQuery: expected object"))
   }
-  SecurityOidcLogoutQuery::{  }
+  SecurityOidcLogoutQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityOidcLogoutQuery::new() -> SecurityOidcLogoutQuery {
-  SecurityOidcLogoutQuery::{  }
+  SecurityOidcLogoutQuery::{ }
 }
 
 ///|
@@ -78985,7 +78995,7 @@ pub fn SecurityOidcLogoutBody::new(
   token : String,
   refresh_token? : String,
 ) -> SecurityOidcLogoutBody {
-  { token, refresh_token }
+  { token, refresh_token, }
 }
 
 ///|
@@ -79026,7 +79036,7 @@ pub fn SecurityOidcLogoutRequest::new(
   body : SecurityOidcLogoutBody,
   query? : SecurityOidcLogoutQuery = SecurityOidcLogoutQuery::new(),
 ) -> SecurityOidcLogoutRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -79066,13 +79076,13 @@ pub impl FromJson for SecurityOidcPrepareAuthenticationQuery with fn from_json(
       (path, "SecurityOidcPrepareAuthenticationQuery: expected object"),
     )
   }
-  SecurityOidcPrepareAuthenticationQuery::{  }
+  SecurityOidcPrepareAuthenticationQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityOidcPrepareAuthenticationQuery::new() -> SecurityOidcPrepareAuthenticationQuery {
-  SecurityOidcPrepareAuthenticationQuery::{  }
+  SecurityOidcPrepareAuthenticationQuery::{ }
 }
 
 ///|
@@ -79168,7 +79178,7 @@ pub fn SecurityOidcPrepareAuthenticationBody::new(
   realm? : String,
   state? : String,
 ) -> SecurityOidcPrepareAuthenticationBody {
-  { iss, login_hint, nonce, realm, state }
+  { iss, login_hint, nonce, realm, state, }
 }
 
 ///|
@@ -79232,7 +79242,7 @@ pub fn SecurityOidcPrepareAuthenticationRequest::new(
   body : SecurityOidcPrepareAuthenticationBody,
   query? : SecurityOidcPrepareAuthenticationQuery = SecurityOidcPrepareAuthenticationQuery::new(),
 ) -> SecurityOidcPrepareAuthenticationRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -79317,7 +79327,7 @@ pub fn SecurityPutPrivilegesRequest::new(
   body : SecurityPutPrivilegesBody,
   query? : SecurityPutPrivilegesQuery = SecurityPutPrivilegesQuery::new(),
 ) -> SecurityPutPrivilegesRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -79573,7 +79583,7 @@ pub fn SecurityPutRoleRequest::new(
   body : SecurityPutRoleBody,
   query? : SecurityPutRoleQuery = SecurityPutRoleQuery::new(),
 ) -> SecurityPutRoleRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -79735,7 +79745,7 @@ pub fn SecurityPutRoleMappingBody::new(
   rules? : Json,
   run_as? : Array[String],
 ) -> SecurityPutRoleMappingBody {
-  { enabled, metadata, roles, role_templates, rules, run_as }
+  { enabled, metadata, roles, role_templates, rules, run_as, }
 }
 
 ///|
@@ -79793,7 +79803,7 @@ pub fn SecurityPutRoleMappingRequest::new(
   body : SecurityPutRoleMappingBody,
   query? : SecurityPutRoleMappingQuery = SecurityPutRoleMappingQuery::new(),
 ) -> SecurityPutRoleMappingRequest {
-  { name, query, body }
+  { name, query, body, }
 }
 
 ///|
@@ -80026,7 +80036,7 @@ pub fn SecurityPutUserRequest::new(
   body : SecurityPutUserBody,
   query? : SecurityPutUserQuery = SecurityPutUserQuery::new(),
 ) -> SecurityPutUserRequest {
-  { username, query, body }
+  { username, query, body, }
 }
 
 ///|
@@ -80105,7 +80115,7 @@ pub fn SecurityQueryApiKeysQuery::new(
   with_profile_uid? : Bool,
   typed_keys? : Bool,
 ) -> SecurityQueryApiKeysQuery {
-  { with_limited_by, with_profile_uid, typed_keys }
+  { with_limited_by, with_profile_uid, typed_keys, }
 }
 
 ///|
@@ -80220,7 +80230,7 @@ pub fn SecurityQueryApiKeysBody::new(
   size? : Int,
   search_after? : Json,
 ) -> SecurityQueryApiKeysBody {
-  { aggregations, query, from, sort, size, search_after }
+  { aggregations, query, from, sort, size, search_after, }
 }
 
 ///|
@@ -80286,7 +80296,7 @@ pub fn SecurityQueryApiKeysRequest::new(
   query? : SecurityQueryApiKeysQuery = SecurityQueryApiKeysQuery::new(),
   body? : SecurityQueryApiKeysBody,
 ) -> SecurityQueryApiKeysRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -80324,13 +80334,13 @@ pub impl FromJson for SecurityQueryRoleQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SecurityQueryRoleQuery: expected object"))
   }
-  SecurityQueryRoleQuery::{  }
+  SecurityQueryRoleQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityQueryRoleQuery::new() -> SecurityQueryRoleQuery {
-  SecurityQueryRoleQuery::{  }
+  SecurityQueryRoleQuery::{ }
 }
 
 ///|
@@ -80421,7 +80431,7 @@ pub fn SecurityQueryRoleBody::new(
   size? : Int,
   search_after? : Json,
 ) -> SecurityQueryRoleBody {
-  { query, from, sort, size, search_after }
+  { query, from, sort, size, search_after, }
 }
 
 ///|
@@ -80474,7 +80484,7 @@ pub fn SecurityQueryRoleRequest::new(
   query? : SecurityQueryRoleQuery = SecurityQueryRoleQuery::new(),
   body? : SecurityQueryRoleBody,
 ) -> SecurityQueryRoleRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -80626,7 +80636,7 @@ pub fn SecurityQueryUserBody::new(
   size? : Int,
   search_after? : Json,
 ) -> SecurityQueryUserBody {
-  { query, from, sort, size, search_after }
+  { query, from, sort, size, search_after, }
 }
 
 ///|
@@ -80679,7 +80689,7 @@ pub fn SecurityQueryUserRequest::new(
   query? : SecurityQueryUserQuery = SecurityQueryUserQuery::new(),
   body? : SecurityQueryUserBody,
 ) -> SecurityQueryUserRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -80722,13 +80732,13 @@ pub impl FromJson for SecuritySamlAuthenticateQuery with fn from_json(
       (path, "SecuritySamlAuthenticateQuery: expected object"),
     )
   }
-  SecuritySamlAuthenticateQuery::{  }
+  SecuritySamlAuthenticateQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecuritySamlAuthenticateQuery::new() -> SecuritySamlAuthenticateQuery {
-  SecuritySamlAuthenticateQuery::{  }
+  SecuritySamlAuthenticateQuery::{ }
 }
 
 ///|
@@ -80790,7 +80800,7 @@ pub fn SecuritySamlAuthenticateBody::new(
   ids : Json,
   realm? : String,
 ) -> SecuritySamlAuthenticateBody {
-  { content, ids, realm }
+  { content, ids, realm, }
 }
 
 ///|
@@ -80871,7 +80881,7 @@ pub fn SecuritySamlAuthenticateRequest::new(
   body : SecuritySamlAuthenticateBody,
   query? : SecuritySamlAuthenticateQuery = SecuritySamlAuthenticateQuery::new(),
 ) -> SecuritySamlAuthenticateRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -80911,13 +80921,13 @@ pub impl FromJson for SecuritySamlCompleteLogoutQuery with fn from_json(
       (path, "SecuritySamlCompleteLogoutQuery: expected object"),
     )
   }
-  SecuritySamlCompleteLogoutQuery::{  }
+  SecuritySamlCompleteLogoutQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecuritySamlCompleteLogoutQuery::new() -> SecuritySamlCompleteLogoutQuery {
-  SecuritySamlCompleteLogoutQuery::{  }
+  SecuritySamlCompleteLogoutQuery::{ }
 }
 
 ///|
@@ -80994,7 +81004,7 @@ pub fn SecuritySamlCompleteLogoutBody::new(
   query_string? : String,
   content? : String,
 ) -> SecuritySamlCompleteLogoutBody {
-  { realm, ids, query_string, content }
+  { realm, ids, query_string, content, }
 }
 
 ///|
@@ -81011,7 +81021,7 @@ pub fn SecuritySamlCompleteLogoutRequest::new(
   body : SecuritySamlCompleteLogoutBody,
   query? : SecuritySamlCompleteLogoutQuery = SecuritySamlCompleteLogoutQuery::new(),
 ) -> SecuritySamlCompleteLogoutRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -81048,13 +81058,13 @@ pub impl FromJson for SecuritySamlInvalidateQuery with fn from_json(json, path) 
       (path, "SecuritySamlInvalidateQuery: expected object"),
     )
   }
-  SecuritySamlInvalidateQuery::{  }
+  SecuritySamlInvalidateQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecuritySamlInvalidateQuery::new() -> SecuritySamlInvalidateQuery {
-  SecuritySamlInvalidateQuery::{  }
+  SecuritySamlInvalidateQuery::{ }
 }
 
 ///|
@@ -81118,7 +81128,7 @@ pub fn SecuritySamlInvalidateBody::new(
   acs? : String,
   realm? : String,
 ) -> SecuritySamlInvalidateBody {
-  { acs, query_string, realm }
+  { acs, query_string, realm, }
 }
 
 ///|
@@ -81176,7 +81186,7 @@ pub fn SecuritySamlInvalidateRequest::new(
   body : SecuritySamlInvalidateBody,
   query? : SecuritySamlInvalidateQuery = SecuritySamlInvalidateQuery::new(),
 ) -> SecuritySamlInvalidateRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -81211,13 +81221,13 @@ pub impl FromJson for SecuritySamlLogoutQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SecuritySamlLogoutQuery: expected object"))
   }
-  SecuritySamlLogoutQuery::{  }
+  SecuritySamlLogoutQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecuritySamlLogoutQuery::new() -> SecuritySamlLogoutQuery {
-  SecuritySamlLogoutQuery::{  }
+  SecuritySamlLogoutQuery::{ }
 }
 
 ///|
@@ -81271,7 +81281,7 @@ pub fn SecuritySamlLogoutBody::new(
   token : String,
   refresh_token? : String,
 ) -> SecuritySamlLogoutBody {
-  { token, refresh_token }
+  { token, refresh_token, }
 }
 
 ///|
@@ -81312,7 +81322,7 @@ pub fn SecuritySamlLogoutRequest::new(
   body : SecuritySamlLogoutBody,
   query? : SecuritySamlLogoutQuery = SecuritySamlLogoutQuery::new(),
 ) -> SecuritySamlLogoutRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -81352,13 +81362,13 @@ pub impl FromJson for SecuritySamlPrepareAuthenticationQuery with fn from_json(
       (path, "SecuritySamlPrepareAuthenticationQuery: expected object"),
     )
   }
-  SecuritySamlPrepareAuthenticationQuery::{  }
+  SecuritySamlPrepareAuthenticationQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecuritySamlPrepareAuthenticationQuery::new() -> SecuritySamlPrepareAuthenticationQuery {
-  SecuritySamlPrepareAuthenticationQuery::{  }
+  SecuritySamlPrepareAuthenticationQuery::{ }
 }
 
 ///|
@@ -81432,7 +81442,7 @@ pub fn SecuritySamlPrepareAuthenticationBody::new(
   realm? : String,
   relay_state? : String,
 ) -> SecuritySamlPrepareAuthenticationBody {
-  { acs, realm, relay_state }
+  { acs, realm, relay_state, }
 }
 
 ///|
@@ -81490,7 +81500,7 @@ pub fn SecuritySamlPrepareAuthenticationRequest::new(
   body : SecuritySamlPrepareAuthenticationBody,
   query? : SecuritySamlPrepareAuthenticationQuery = SecuritySamlPrepareAuthenticationQuery::new(),
 ) -> SecuritySamlPrepareAuthenticationRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -81530,13 +81540,13 @@ pub impl FromJson for SecuritySamlServiceProviderMetadataQuery with fn from_json
       (path, "SecuritySamlServiceProviderMetadataQuery: expected object"),
     )
   }
-  SecuritySamlServiceProviderMetadataQuery::{  }
+  SecuritySamlServiceProviderMetadataQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecuritySamlServiceProviderMetadataQuery::new() -> SecuritySamlServiceProviderMetadataQuery {
-  SecuritySamlServiceProviderMetadataQuery::{  }
+  SecuritySamlServiceProviderMetadataQuery::{ }
 }
 
 ///|
@@ -81595,7 +81605,7 @@ pub fn SecuritySamlServiceProviderMetadataRequest::new(
   query? : SecuritySamlServiceProviderMetadataQuery = SecuritySamlServiceProviderMetadataQuery::new(),
   body? : SecuritySamlServiceProviderMetadataBody,
 ) -> SecuritySamlServiceProviderMetadataRequest {
-  { realm_name, query, body }
+  { realm_name, query, body, }
 }
 
 ///|
@@ -81745,7 +81755,7 @@ pub fn SecuritySuggestUserProfilesBody::new(
   data? : Json,
   hint? : Json,
 ) -> SecuritySuggestUserProfilesBody {
-  { name, size, data, hint }
+  { name, size, data, hint, }
 }
 
 ///|
@@ -81803,7 +81813,7 @@ pub fn SecuritySuggestUserProfilesRequest::new(
   query? : SecuritySuggestUserProfilesQuery = SecuritySuggestUserProfilesQuery::new(),
   body? : SecuritySuggestUserProfilesBody,
 ) -> SecuritySuggestUserProfilesRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -81841,13 +81851,13 @@ pub impl FromJson for SecurityUpdateApiKeyQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SecurityUpdateApiKeyQuery: expected object"))
   }
-  SecurityUpdateApiKeyQuery::{  }
+  SecurityUpdateApiKeyQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityUpdateApiKeyQuery::new() -> SecurityUpdateApiKeyQuery {
-  SecurityUpdateApiKeyQuery::{  }
+  SecurityUpdateApiKeyQuery::{ }
 }
 
 ///|
@@ -81917,7 +81927,7 @@ pub fn SecurityUpdateApiKeyBody::new(
   metadata? : Json,
   expiration? : Json,
 ) -> SecurityUpdateApiKeyBody {
-  { role_descriptors, metadata, expiration }
+  { role_descriptors, metadata, expiration, }
 }
 
 ///|
@@ -81962,7 +81972,7 @@ pub fn SecurityUpdateApiKeyRequest::new(
   query? : SecurityUpdateApiKeyQuery = SecurityUpdateApiKeyQuery::new(),
   body? : SecurityUpdateApiKeyBody,
 ) -> SecurityUpdateApiKeyRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -82006,13 +82016,13 @@ pub impl FromJson for SecurityUpdateCrossClusterApiKeyQuery with fn from_json(
       (path, "SecurityUpdateCrossClusterApiKeyQuery: expected object"),
     )
   }
-  SecurityUpdateCrossClusterApiKeyQuery::{  }
+  SecurityUpdateCrossClusterApiKeyQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SecurityUpdateCrossClusterApiKeyQuery::new() -> SecurityUpdateCrossClusterApiKeyQuery {
-  SecurityUpdateCrossClusterApiKeyQuery::{  }
+  SecurityUpdateCrossClusterApiKeyQuery::{ }
 }
 
 ///|
@@ -82094,7 +82104,7 @@ pub fn SecurityUpdateCrossClusterApiKeyBody::new(
   metadata? : Json,
   certificate_identity? : String,
 ) -> SecurityUpdateCrossClusterApiKeyBody {
-  { access, expiration, metadata, certificate_identity }
+  { access, expiration, metadata, certificate_identity, }
 }
 
 ///|
@@ -82142,7 +82152,7 @@ pub fn SecurityUpdateCrossClusterApiKeyRequest::new(
   body : SecurityUpdateCrossClusterApiKeyBody,
   query? : SecurityUpdateCrossClusterApiKeyQuery = SecurityUpdateCrossClusterApiKeyQuery::new(),
 ) -> SecurityUpdateCrossClusterApiKeyRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -82210,7 +82220,7 @@ pub fn SecurityUpdateSettingsQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> SecurityUpdateSettingsQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -82288,7 +82298,7 @@ pub fn SecurityUpdateSettingsBody::new(
   security_profile? : Json,
   security_tokens? : Json,
 ) -> SecurityUpdateSettingsBody {
-  { security, security_profile, security_tokens }
+  { security, security_profile, security_tokens, }
 }
 
 ///|
@@ -82334,7 +82344,7 @@ pub fn SecurityUpdateSettingsRequest::new(
   body : SecurityUpdateSettingsBody,
   query? : SecurityUpdateSettingsQuery = SecurityUpdateSettingsQuery::new(),
 ) -> SecurityUpdateSettingsRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -82413,7 +82423,7 @@ pub fn SecurityUpdateUserProfileDataQuery::new(
   if_primary_term? : Int,
   refresh? : String,
 ) -> SecurityUpdateUserProfileDataQuery {
-  { if_seq_no, if_primary_term, refresh }
+  { if_seq_no, if_primary_term, refresh, }
 }
 
 ///|
@@ -82487,7 +82497,7 @@ pub fn SecurityUpdateUserProfileDataBody::new(
   labels? : Map[String, Json],
   data? : Map[String, Json],
 ) -> SecurityUpdateUserProfileDataBody {
-  { labels, data }
+  { labels, data, }
 }
 
 ///|
@@ -82506,7 +82516,7 @@ pub fn SecurityUpdateUserProfileDataRequest::new(
   body : SecurityUpdateUserProfileDataBody,
   query? : SecurityUpdateUserProfileDataQuery = SecurityUpdateUserProfileDataQuery::new(),
 ) -> SecurityUpdateUserProfileDataRequest {
-  { uid, query, body }
+  { uid, query, body, }
 }
 
 ///|
@@ -82572,7 +82582,7 @@ pub fn ShutdownDeleteNodeQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> ShutdownDeleteNodeQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -82610,7 +82620,7 @@ pub fn ShutdownDeleteNodeRequest::new(
   query? : ShutdownDeleteNodeQuery = ShutdownDeleteNodeQuery::new(),
   body? : ShutdownDeleteNodeBody,
 ) -> ShutdownDeleteNodeRequest {
-  { node_id, query, body }
+  { node_id, query, body, }
 }
 
 ///|
@@ -82726,7 +82736,7 @@ pub fn ShutdownGetNodeRequest::new(
   query? : ShutdownGetNodeQuery = ShutdownGetNodeQuery::new(),
   body? : ShutdownGetNodeBody,
 ) -> ShutdownGetNodeRequest {
-  { node_id, query, body }
+  { node_id, query, body, }
 }
 
 ///|
@@ -82801,7 +82811,7 @@ pub fn ShutdownPutNodeQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> ShutdownPutNodeQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -82882,7 +82892,7 @@ pub fn ShutdownPutNodeBody::new(
   allocation_delay? : String,
   target_node_name? : String,
 ) -> ShutdownPutNodeBody {
-  { type_, reason, allocation_delay, target_node_name }
+  { type_, reason, allocation_delay, target_node_name, }
 }
 
 ///|
@@ -82901,7 +82911,7 @@ pub fn ShutdownPutNodeRequest::new(
   body : ShutdownPutNodeBody,
   query? : ShutdownPutNodeQuery = ShutdownPutNodeQuery::new(),
 ) -> ShutdownPutNodeRequest {
-  { node_id, query, body }
+  { node_id, query, body, }
 }
 
 ///|
@@ -82967,7 +82977,7 @@ pub fn SimulateIngestQuery::new(
   pipeline? : String,
   merge_type? : String,
 ) -> SimulateIngestQuery {
-  { pipeline, merge_type }
+  { pipeline, merge_type, }
 }
 
 ///|
@@ -83128,7 +83138,7 @@ pub fn SimulateIngestRequest::new(
   index? : String,
   query? : SimulateIngestQuery = SimulateIngestQuery::new(),
 ) -> SimulateIngestRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -83200,7 +83210,7 @@ pub fn SlmDeleteLifecycleQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> SlmDeleteLifecycleQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -83233,7 +83243,7 @@ pub fn SlmDeleteLifecycleRequest::new(
   policy_id : String,
   query? : SlmDeleteLifecycleQuery = SlmDeleteLifecycleQuery::new(),
 ) -> SlmDeleteLifecycleRequest {
-  { policy_id, query }
+  { policy_id, query, }
 }
 
 ///|
@@ -83298,7 +83308,7 @@ pub fn SlmExecuteLifecycleQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> SlmExecuteLifecycleQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -83357,7 +83367,7 @@ pub fn SlmExecuteLifecycleRequest::new(
   policy_id : String,
   query? : SlmExecuteLifecycleQuery = SlmExecuteLifecycleQuery::new(),
 ) -> SlmExecuteLifecycleRequest {
-  { policy_id, query }
+  { policy_id, query, }
 }
 
 ///|
@@ -83422,7 +83432,7 @@ pub fn SlmExecuteRetentionQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> SlmExecuteRetentionQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -83517,7 +83527,7 @@ pub fn SlmGetLifecycleQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> SlmGetLifecycleQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -83550,7 +83560,7 @@ pub fn SlmGetLifecycleRequest::new(
   policy_id? : String,
   query? : SlmGetLifecycleQuery = SlmGetLifecycleQuery::new(),
 ) -> SlmGetLifecycleRequest {
-  { policy_id, query }
+  { policy_id, query, }
 }
 
 ///|
@@ -83619,7 +83629,7 @@ pub fn SlmGetStatsQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> SlmGetStatsQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -83787,7 +83797,7 @@ pub fn SlmGetStatusQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> SlmGetStatusQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -83903,7 +83913,7 @@ pub fn SlmPutLifecycleQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> SlmPutLifecycleQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -84003,7 +84013,7 @@ pub fn SlmPutLifecycleBody::new(
   retention? : Json,
   schedule? : Json,
 ) -> SlmPutLifecycleBody {
-  { config, name, repository, retention, schedule }
+  { config, name, repository, retention, schedule, }
 }
 
 ///|
@@ -84022,7 +84032,7 @@ pub fn SlmPutLifecycleRequest::new(
   body : SlmPutLifecycleBody,
   query? : SlmPutLifecycleQuery = SlmPutLifecycleQuery::new(),
 ) -> SlmPutLifecycleRequest {
-  { policy_id, query, body }
+  { policy_id, query, body, }
 }
 
 ///|
@@ -84086,7 +84096,7 @@ pub fn SlmStartQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> SlmStartQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -84174,7 +84184,7 @@ pub fn SlmStopQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> SlmStopQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -84269,7 +84279,7 @@ pub fn SnapshotCleanupRepositoryQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> SnapshotCleanupRepositoryQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -84331,7 +84341,7 @@ pub fn SnapshotCleanupRepositoryRequest::new(
   repository : String,
   query? : SnapshotCleanupRepositoryQuery = SnapshotCleanupRepositoryQuery::new(),
 ) -> SnapshotCleanupRepositoryRequest {
-  { repository, query }
+  { repository, query, }
 }
 
 ///|
@@ -84448,7 +84458,7 @@ pub fn SnapshotCloneRequest::new(
   body : SnapshotCloneBody,
   query? : SnapshotCloneQuery = SnapshotCloneQuery::new(),
 ) -> SnapshotCloneRequest {
-  { repository, snapshot, target_snapshot, query, body }
+  { repository, snapshot, target_snapshot, query, body, }
 }
 
 ///|
@@ -84522,7 +84532,7 @@ pub fn SnapshotCreateQuery::new(
   master_timeout? : String,
   wait_for_completion? : Bool,
 ) -> SnapshotCreateQuery {
-  { master_timeout, wait_for_completion }
+  { master_timeout, wait_for_completion, }
 }
 
 ///|
@@ -84714,7 +84724,7 @@ pub fn SnapshotCreateRequest::new(
   query? : SnapshotCreateQuery = SnapshotCreateQuery::new(),
   body? : SnapshotCreateBody,
 ) -> SnapshotCreateRequest {
-  { repository, snapshot, query, body }
+  { repository, snapshot, query, body, }
 }
 
 ///|
@@ -84804,7 +84814,7 @@ pub fn SnapshotCreateRepositoryQuery::new(
   timeout? : String,
   verify? : Bool,
 ) -> SnapshotCreateRepositoryQuery {
-  { master_timeout, timeout, verify }
+  { master_timeout, timeout, verify, }
 }
 
 ///|
@@ -84846,7 +84856,7 @@ pub fn SnapshotCreateRepositoryRequest::new(
   body : SnapshotCreateRepositoryBody,
   query? : SnapshotCreateRepositoryQuery = SnapshotCreateRepositoryQuery::new(),
 ) -> SnapshotCreateRepositoryRequest {
-  { repository, query, body }
+  { repository, query, body, }
 }
 
 ///|
@@ -84913,7 +84923,7 @@ pub fn SnapshotDeleteQuery::new(
   master_timeout? : String,
   wait_for_completion? : Bool,
 ) -> SnapshotDeleteQuery {
-  { master_timeout, wait_for_completion }
+  { master_timeout, wait_for_completion, }
 }
 
 ///|
@@ -84949,7 +84959,7 @@ pub fn SnapshotDeleteRequest::new(
   snapshot : String,
   query? : SnapshotDeleteQuery = SnapshotDeleteQuery::new(),
 ) -> SnapshotDeleteRequest {
-  { repository, snapshot, query }
+  { repository, snapshot, query, }
 }
 
 ///|
@@ -85024,7 +85034,7 @@ pub fn SnapshotDeleteRepositoryQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> SnapshotDeleteRepositoryQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -85057,7 +85067,7 @@ pub fn SnapshotDeleteRepositoryRequest::new(
   repository : String,
   query? : SnapshotDeleteRepositoryQuery = SnapshotDeleteRepositoryQuery::new(),
 ) -> SnapshotDeleteRepositoryRequest {
-  { repository, query }
+  { repository, query, }
 }
 
 ///|
@@ -85418,7 +85428,7 @@ pub fn SnapshotGetRequest::new(
   snapshot : String,
   query? : SnapshotGetQuery = SnapshotGetQuery::new(),
 ) -> SnapshotGetRequest {
-  { repository, snapshot, query }
+  { repository, snapshot, query, }
 }
 
 ///|
@@ -85488,7 +85498,7 @@ pub fn SnapshotGetRepositoryQuery::new(
   local_? : Bool,
   master_timeout? : String,
 ) -> SnapshotGetRepositoryQuery {
-  { local_, master_timeout }
+  { local_, master_timeout, }
 }
 
 ///|
@@ -85521,7 +85531,7 @@ pub fn SnapshotGetRepositoryRequest::new(
   repository? : String,
   query? : SnapshotGetRepositoryQuery = SnapshotGetRepositoryQuery::new(),
 ) -> SnapshotGetRepositoryRequest {
-  { repository, query }
+  { repository, query, }
 }
 
 ///|
@@ -85976,7 +85986,7 @@ pub fn SnapshotRepositoryAnalyzeRequest::new(
   repository : String,
   query? : SnapshotRepositoryAnalyzeQuery = SnapshotRepositoryAnalyzeQuery::new(),
 ) -> SnapshotRepositoryAnalyzeRequest {
-  { repository, query }
+  { repository, query, }
 }
 
 ///|
@@ -86236,7 +86246,7 @@ pub fn SnapshotRepositoryVerifyIntegrityRequest::new(
   repository : String,
   query? : SnapshotRepositoryVerifyIntegrityQuery = SnapshotRepositoryVerifyIntegrityQuery::new(),
 ) -> SnapshotRepositoryVerifyIntegrityRequest {
-  { repository, query }
+  { repository, query, }
 }
 
 ///|
@@ -86306,7 +86316,7 @@ pub fn SnapshotRestoreQuery::new(
   master_timeout? : String,
   wait_for_completion? : Bool,
 ) -> SnapshotRestoreQuery {
-  { master_timeout, wait_for_completion }
+  { master_timeout, wait_for_completion, }
 }
 
 ///|
@@ -86538,7 +86548,7 @@ pub fn SnapshotRestoreRequest::new(
   query? : SnapshotRestoreQuery = SnapshotRestoreQuery::new(),
   body? : SnapshotRestoreBody,
 ) -> SnapshotRestoreRequest {
-  { repository, snapshot, query, body }
+  { repository, snapshot, query, body, }
 }
 
 ///|
@@ -86613,7 +86623,7 @@ pub fn SnapshotStatusQuery::new(
   ignore_unavailable? : Bool,
   master_timeout? : String,
 ) -> SnapshotStatusQuery {
-  { ignore_unavailable, master_timeout }
+  { ignore_unavailable, master_timeout, }
 }
 
 ///|
@@ -86672,7 +86682,7 @@ pub fn SnapshotStatusRequest::new(
   snapshot? : String,
   query? : SnapshotStatusQuery = SnapshotStatusQuery::new(),
 ) -> SnapshotStatusRequest {
-  { repository, snapshot, query }
+  { repository, snapshot, query, }
 }
 
 ///|
@@ -86755,7 +86765,7 @@ pub fn SnapshotVerifyRepositoryQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> SnapshotVerifyRepositoryQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -86817,7 +86827,7 @@ pub fn SnapshotVerifyRepositoryRequest::new(
   repository : String,
   query? : SnapshotVerifyRepositoryQuery = SnapshotVerifyRepositoryQuery::new(),
 ) -> SnapshotVerifyRepositoryRequest {
-  { repository, query }
+  { repository, query, }
 }
 
 ///|
@@ -86852,13 +86862,13 @@ pub impl FromJson for SqlClearCursorQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SqlClearCursorQuery: expected object"))
   }
-  SqlClearCursorQuery::{  }
+  SqlClearCursorQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SqlClearCursorQuery::new() -> SqlClearCursorQuery {
-  SqlClearCursorQuery::{  }
+  SqlClearCursorQuery::{ }
 }
 
 ///|
@@ -86939,7 +86949,7 @@ pub fn SqlClearCursorRequest::new(
   body : SqlClearCursorBody,
   query? : SqlClearCursorQuery = SqlClearCursorQuery::new(),
 ) -> SqlClearCursorRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -86971,13 +86981,13 @@ pub impl FromJson for SqlDeleteAsyncQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SqlDeleteAsyncQuery: expected object"))
   }
-  SqlDeleteAsyncQuery::{  }
+  SqlDeleteAsyncQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SqlDeleteAsyncQuery::new() -> SqlDeleteAsyncQuery {
-  SqlDeleteAsyncQuery::{  }
+  SqlDeleteAsyncQuery::{ }
 }
 
 ///|
@@ -87002,7 +87012,7 @@ pub fn SqlDeleteAsyncRequest::new(
   id : String,
   query? : SqlDeleteAsyncQuery = SqlDeleteAsyncQuery::new(),
 ) -> SqlDeleteAsyncRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -87094,7 +87104,7 @@ pub fn SqlGetAsyncQuery::new(
   keep_alive? : String,
   wait_for_completion_timeout? : String,
 ) -> SqlGetAsyncQuery {
-  { delimiter, format, keep_alive, wait_for_completion_timeout }
+  { delimiter, format, keep_alive, wait_for_completion_timeout, }
 }
 
 ///|
@@ -87198,7 +87208,7 @@ pub fn SqlGetAsyncRequest::new(
   id : String,
   query? : SqlGetAsyncQuery = SqlGetAsyncQuery::new(),
 ) -> SqlGetAsyncRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -87230,13 +87240,13 @@ pub impl FromJson for SqlGetAsyncStatusQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SqlGetAsyncStatusQuery: expected object"))
   }
-  SqlGetAsyncStatusQuery::{  }
+  SqlGetAsyncStatusQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SqlGetAsyncStatusQuery::new() -> SqlGetAsyncStatusQuery {
-  SqlGetAsyncStatusQuery::{  }
+  SqlGetAsyncStatusQuery::{ }
 }
 
 ///|
@@ -87320,7 +87330,7 @@ pub fn SqlGetAsyncStatusRequest::new(
   id : String,
   query? : SqlGetAsyncStatusQuery = SqlGetAsyncStatusQuery::new(),
 ) -> SqlGetAsyncStatusRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -87740,7 +87750,7 @@ pub fn SqlQueryRequest::new(
   body : SqlQueryBody,
   query? : SqlQueryQuery = SqlQueryQuery::new(),
 ) -> SqlQueryRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -87770,13 +87780,13 @@ pub impl FromJson for SqlTranslateQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SqlTranslateQuery: expected object"))
   }
-  SqlTranslateQuery::{  }
+  SqlTranslateQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SqlTranslateQuery::new() -> SqlTranslateQuery {
-  SqlTranslateQuery::{  }
+  SqlTranslateQuery::{ }
 }
 
 ///|
@@ -87851,7 +87861,7 @@ pub fn SqlTranslateBody::new(
   filter? : Json,
   time_zone? : Json,
 ) -> SqlTranslateBody {
-  { fetch_size, filter, query, time_zone }
+  { fetch_size, filter, query, time_zone, }
 }
 
 ///|
@@ -87958,7 +87968,7 @@ pub fn SqlTranslateRequest::new(
   body : SqlTranslateBody,
   query? : SqlTranslateQuery = SqlTranslateQuery::new(),
 ) -> SqlTranslateRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -87990,13 +88000,13 @@ pub impl FromJson for SslCertificatesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SslCertificatesQuery: expected object"))
   }
-  SslCertificatesQuery::{  }
+  SslCertificatesQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SslCertificatesQuery::new() -> SslCertificatesQuery {
-  SslCertificatesQuery::{  }
+  SslCertificatesQuery::{ }
 }
 
 ///|
@@ -88080,7 +88090,7 @@ pub fn StreamsLogsDisableQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> StreamsLogsDisableQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -88113,7 +88123,7 @@ pub fn StreamsLogsDisableRequest::new(
   name : String,
   query? : StreamsLogsDisableQuery = StreamsLogsDisableQuery::new(),
 ) -> StreamsLogsDisableRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -88178,7 +88188,7 @@ pub fn StreamsLogsEnableQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> StreamsLogsEnableQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -88211,7 +88221,7 @@ pub fn StreamsLogsEnableRequest::new(
   name : String,
   query? : StreamsLogsEnableQuery = StreamsLogsEnableQuery::new(),
 ) -> StreamsLogsEnableRequest {
-  { name, query }
+  { name, query, }
 }
 
 ///|
@@ -88357,13 +88367,13 @@ pub impl FromJson for SynonymsDeleteSynonymQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "SynonymsDeleteSynonymQuery: expected object"))
   }
-  SynonymsDeleteSynonymQuery::{  }
+  SynonymsDeleteSynonymQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SynonymsDeleteSynonymQuery::new() -> SynonymsDeleteSynonymQuery {
-  SynonymsDeleteSynonymQuery::{  }
+  SynonymsDeleteSynonymQuery::{ }
 }
 
 ///|
@@ -88388,7 +88398,7 @@ pub fn SynonymsDeleteSynonymRequest::new(
   id : String,
   query? : SynonymsDeleteSynonymQuery = SynonymsDeleteSynonymQuery::new(),
 ) -> SynonymsDeleteSynonymRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -88479,7 +88489,7 @@ pub fn SynonymsDeleteSynonymRuleRequest::new(
   query? : SynonymsDeleteSynonymRuleQuery = SynonymsDeleteSynonymRuleQuery::new(),
   body? : SynonymsDeleteSynonymRuleBody,
 ) -> SynonymsDeleteSynonymRuleRequest {
-  { set_id, rule_id, query, body }
+  { set_id, rule_id, query, body, }
 }
 
 ///|
@@ -88548,7 +88558,7 @@ pub fn SynonymsGetSynonymQuery::new(
   from? : Int,
   size? : Int,
 ) -> SynonymsGetSynonymQuery {
-  { from, size }
+  { from, size, }
 }
 
 ///|
@@ -88611,7 +88621,7 @@ pub fn SynonymsGetSynonymRequest::new(
   id : String,
   query? : SynonymsGetSynonymQuery = SynonymsGetSynonymQuery::new(),
 ) -> SynonymsGetSynonymRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -88645,13 +88655,13 @@ pub impl FromJson for SynonymsGetSynonymRuleQuery with fn from_json(json, path) 
       (path, "SynonymsGetSynonymRuleQuery: expected object"),
     )
   }
-  SynonymsGetSynonymRuleQuery::{  }
+  SynonymsGetSynonymRuleQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn SynonymsGetSynonymRuleQuery::new() -> SynonymsGetSynonymRuleQuery {
-  SynonymsGetSynonymRuleQuery::{  }
+  SynonymsGetSynonymRuleQuery::{ }
 }
 
 ///|
@@ -88683,7 +88693,7 @@ pub fn SynonymsGetSynonymRuleRequest::new(
   query? : SynonymsGetSynonymRuleQuery = SynonymsGetSynonymRuleQuery::new(),
   body? : SynonymsGetSynonymRuleBody,
 ) -> SynonymsGetSynonymRuleRequest {
-  { set_id, rule_id, query, body }
+  { set_id, rule_id, query, body, }
 }
 
 ///|
@@ -88754,7 +88764,7 @@ pub fn SynonymsGetSynonymsSetsQuery::new(
   from? : Int,
   size? : Int,
 ) -> SynonymsGetSynonymsSetsQuery {
-  { from, size }
+  { from, size, }
 }
 
 ///|
@@ -88969,7 +88979,7 @@ pub fn SynonymsPutSynonymRequest::new(
   body : SynonymsPutSynonymBody,
   query? : SynonymsPutSynonymQuery = SynonymsPutSynonymQuery::new(),
 ) -> SynonymsPutSynonymRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -89089,7 +89099,7 @@ pub fn SynonymsPutSynonymRuleRequest::new(
   body : SynonymsPutSynonymRuleBody,
   query? : SynonymsPutSynonymRuleQuery = SynonymsPutSynonymRuleQuery::new(),
 ) -> SynonymsPutSynonymRuleRequest {
-  { set_id, rule_id, query, body }
+  { set_id, rule_id, query, body, }
 }
 
 ///|
@@ -89177,7 +89187,7 @@ pub fn TasksCancelQuery::new(
   parent_task_id? : String,
   wait_for_completion? : Bool,
 ) -> TasksCancelQuery {
-  { actions, nodes, parent_task_id, wait_for_completion }
+  { actions, nodes, parent_task_id, wait_for_completion, }
 }
 
 ///|
@@ -89219,7 +89229,7 @@ pub fn TasksCancelRequest::new(
   task_id? : String,
   query? : TasksCancelQuery = TasksCancelQuery::new(),
 ) -> TasksCancelRequest {
-  { task_id, query }
+  { task_id, query, }
 }
 
 ///|
@@ -89300,7 +89310,7 @@ pub fn TasksGetQuery::new(
   wait_for_completion? : Bool,
   follow_relocations? : Bool,
 ) -> TasksGetQuery {
-  { timeout, wait_for_completion, follow_relocations }
+  { timeout, wait_for_completion, follow_relocations, }
 }
 
 ///|
@@ -89384,7 +89394,7 @@ pub fn TasksGetRequest::new(
   task_id : String,
   query? : TasksGetQuery = TasksGetQuery::new(),
 ) -> TasksGetRequest {
-  { task_id, query }
+  { task_id, query, }
 }
 
 ///|
@@ -89592,13 +89602,13 @@ pub impl FromJson for TermsEnumQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "TermsEnumQuery: expected object"))
   }
-  TermsEnumQuery::{  }
+  TermsEnumQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn TermsEnumQuery::new() -> TermsEnumQuery {
-  TermsEnumQuery::{  }
+  TermsEnumQuery::{ }
 }
 
 ///|
@@ -89707,7 +89717,15 @@ pub fn TermsEnumBody::new(
   string? : String,
   search_after? : String,
 ) -> TermsEnumBody {
-  { field, size, timeout, case_insensitive, index_filter, string, search_after }
+  {
+    field,
+    size,
+    timeout,
+    case_insensitive,
+    index_filter,
+    string,
+    search_after,
+  }
 }
 
 ///|
@@ -89760,7 +89778,7 @@ pub fn TermsEnumRequest::new(
   body : TermsEnumBody,
   query? : TermsEnumQuery = TermsEnumQuery::new(),
 ) -> TermsEnumRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -90250,7 +90268,7 @@ pub fn TermvectorsRequest::new(
   query? : TermvectorsQuery = TermvectorsQuery::new(),
   body? : TermvectorsBody,
 ) -> TermvectorsRequest {
-  { index, id, query, body }
+  { index, id, query, body, }
 }
 
 ///|
@@ -91183,7 +91201,7 @@ pub fn TextStructureFindMessageStructureRequest::new(
   body : TextStructureFindMessageStructureBody,
   query? : TextStructureFindMessageStructureQuery = TextStructureFindMessageStructureQuery::new(),
 ) -> TextStructureFindMessageStructureRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -91750,7 +91768,7 @@ pub fn TextStructureFindStructureRequest::new(
   body : TextStructureFindStructureBody,
   query? : TextStructureFindStructureQuery = TextStructureFindStructureQuery::new(),
 ) -> TextStructureFindStructureRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -91867,7 +91885,7 @@ pub fn TextStructureTestGrokPatternBody::new(
   grok_pattern : Json,
   text : Array[String],
 ) -> TextStructureTestGrokPatternBody {
-  { grok_pattern, text }
+  { grok_pattern, text, }
 }
 
 ///|
@@ -91913,7 +91931,7 @@ pub fn TextStructureTestGrokPatternRequest::new(
   body : TextStructureTestGrokPatternBody,
   query? : TextStructureTestGrokPatternQuery = TextStructureTestGrokPatternQuery::new(),
 ) -> TextStructureTestGrokPatternRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -91994,7 +92012,7 @@ pub fn TransformDeleteTransformQuery::new(
   delete_dest_index? : Bool,
   timeout? : String,
 ) -> TransformDeleteTransformQuery {
-  { force, delete_dest_index, timeout }
+  { force, delete_dest_index, timeout, }
 }
 
 ///|
@@ -92031,7 +92049,7 @@ pub fn TransformDeleteTransformRequest::new(
   transform_id : String,
   query? : TransformDeleteTransformQuery = TransformDeleteTransformQuery::new(),
 ) -> TransformDeleteTransformRequest {
-  { transform_id, query }
+  { transform_id, query, }
 }
 
 ///|
@@ -92066,13 +92084,13 @@ pub impl FromJson for TransformGetNodeStatsQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "TransformGetNodeStatsQuery: expected object"))
   }
-  TransformGetNodeStatsQuery::{  }
+  TransformGetNodeStatsQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn TransformGetNodeStatsQuery::new() -> TransformGetNodeStatsQuery {
-  TransformGetNodeStatsQuery::{  }
+  TransformGetNodeStatsQuery::{ }
 }
 
 ///|
@@ -92182,7 +92200,7 @@ pub fn TransformGetTransformQuery::new(
   size? : Int,
   exclude_generated? : Bool,
 ) -> TransformGetTransformQuery {
-  { allow_no_match, from, size, exclude_generated }
+  { allow_no_match, from, size, exclude_generated, }
 }
 
 ///|
@@ -92258,7 +92276,7 @@ pub fn TransformGetTransformRequest::new(
   transform_id? : String,
   query? : TransformGetTransformQuery = TransformGetTransformQuery::new(),
 ) -> TransformGetTransformRequest {
-  { transform_id, query }
+  { transform_id, query, }
 }
 
 ///|
@@ -92356,7 +92374,7 @@ pub fn TransformGetTransformStatsQuery::new(
   size? : Int,
   timeout? : String,
 ) -> TransformGetTransformStatsQuery {
-  { allow_no_match, from, size, timeout }
+  { allow_no_match, from, size, timeout, }
 }
 
 ///|
@@ -92432,7 +92450,7 @@ pub fn TransformGetTransformStatsRequest::new(
   transform_id : String,
   query? : TransformGetTransformStatsQuery = TransformGetTransformStatsQuery::new(),
 ) -> TransformGetTransformStatsRequest {
-  { transform_id, query }
+  { transform_id, query, }
 }
 
 ///|
@@ -92700,7 +92718,7 @@ pub fn TransformPreviewTransformRequest::new(
   query? : TransformPreviewTransformQuery = TransformPreviewTransformQuery::new(),
   body? : TransformPreviewTransformBody,
 ) -> TransformPreviewTransformRequest {
-  { transform_id, query, body }
+  { transform_id, query, body, }
 }
 
 ///|
@@ -92775,7 +92793,7 @@ pub fn TransformPutTransformQuery::new(
   defer_validation? : Bool,
   timeout? : String,
 ) -> TransformPutTransformQuery {
-  { defer_validation, timeout }
+  { defer_validation, timeout, }
 }
 
 ///|
@@ -92953,7 +92971,7 @@ pub fn TransformPutTransformRequest::new(
   body : TransformPutTransformBody,
   query? : TransformPutTransformQuery = TransformPutTransformQuery::new(),
 ) -> TransformPutTransformRequest {
-  { transform_id, query, body }
+  { transform_id, query, body, }
 }
 
 ///|
@@ -93020,7 +93038,7 @@ pub fn TransformResetTransformQuery::new(
   force? : Bool,
   timeout? : String,
 ) -> TransformResetTransformQuery {
-  { force, timeout }
+  { force, timeout, }
 }
 
 ///|
@@ -93053,7 +93071,7 @@ pub fn TransformResetTransformRequest::new(
   transform_id : String,
   query? : TransformResetTransformQuery = TransformResetTransformQuery::new(),
 ) -> TransformResetTransformRequest {
-  { transform_id, query }
+  { transform_id, query, }
 }
 
 ///|
@@ -93122,7 +93140,7 @@ pub fn TransformScheduleNowTransformQuery::new(
   timeout? : String,
   defer_? : Bool,
 ) -> TransformScheduleNowTransformQuery {
-  { timeout, defer_ }
+  { timeout, defer_, }
 }
 
 ///|
@@ -93160,7 +93178,7 @@ pub fn TransformScheduleNowTransformRequest::new(
   query? : TransformScheduleNowTransformQuery = TransformScheduleNowTransformQuery::new(),
   body? : TransformScheduleNowTransformBody,
 ) -> TransformScheduleNowTransformRequest {
-  { transform_id, query, body }
+  { transform_id, query, body, }
 }
 
 ///|
@@ -93234,7 +93252,7 @@ pub fn TransformSetUpgradeModeQuery::new(
   enabled? : Bool,
   timeout? : String,
 ) -> TransformSetUpgradeModeQuery {
-  { enabled, timeout }
+  { enabled, timeout, }
 }
 
 ///|
@@ -93330,7 +93348,7 @@ pub fn TransformStartTransformQuery::new(
   timeout? : String,
   from? : String,
 ) -> TransformStartTransformQuery {
-  { timeout, from }
+  { timeout, from, }
 }
 
 ///|
@@ -93363,7 +93381,7 @@ pub fn TransformStartTransformRequest::new(
   transform_id : String,
   query? : TransformStartTransformQuery = TransformStartTransformQuery::new(),
 ) -> TransformStartTransformRequest {
-  { transform_id, query }
+  { transform_id, query, }
 }
 
 ///|
@@ -93465,7 +93483,7 @@ pub fn TransformStopTransformQuery::new(
   wait_for_checkpoint? : Bool,
   wait_for_completion? : Bool,
 ) -> TransformStopTransformQuery {
-  { allow_no_match, force, timeout, wait_for_checkpoint, wait_for_completion }
+  { allow_no_match, force, timeout, wait_for_checkpoint, wait_for_completion, }
 }
 
 ///|
@@ -93512,7 +93530,7 @@ pub fn TransformStopTransformRequest::new(
   transform_id : String,
   query? : TransformStopTransformQuery = TransformStopTransformQuery::new(),
 ) -> TransformStopTransformRequest {
-  { transform_id, query }
+  { transform_id, query, }
 }
 
 ///|
@@ -93582,7 +93600,7 @@ pub fn TransformUpdateTransformQuery::new(
   defer_validation? : Bool,
   timeout? : String,
 ) -> TransformUpdateTransformQuery {
-  { defer_validation, timeout }
+  { defer_validation, timeout, }
 }
 
 ///|
@@ -93884,7 +93902,7 @@ pub fn TransformUpdateTransformRequest::new(
   body : TransformUpdateTransformBody,
   query? : TransformUpdateTransformQuery = TransformUpdateTransformQuery::new(),
 ) -> TransformUpdateTransformRequest {
-  { transform_id, query, body }
+  { transform_id, query, body, }
 }
 
 ///|
@@ -93954,7 +93972,7 @@ pub fn TransformUpgradeTransformsQuery::new(
   dry_run? : Bool,
   timeout? : String,
 ) -> TransformUpgradeTransformsQuery {
-  { dry_run, timeout }
+  { dry_run, timeout, }
 }
 
 ///|
@@ -94031,7 +94049,7 @@ pub fn TransformUpgradeTransformsRequest::new(
   query? : TransformUpgradeTransformsQuery = TransformUpgradeTransformsQuery::new(),
   body? : TransformUpgradeTransformsBody,
 ) -> TransformUpgradeTransformsRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -94405,7 +94423,7 @@ pub fn UpdateBody::new(
   _source? : Json,
   upsert? : Json,
 ) -> UpdateBody {
-  { detect_noop, doc, doc_as_upsert, script, scripted_upsert, _source, upsert }
+  { detect_noop, doc, doc_as_upsert, script, scripted_upsert, _source, upsert, }
 }
 
 ///|
@@ -94426,7 +94444,7 @@ pub fn UpdateRequest::new(
   body : UpdateBody,
   query? : UpdateQuery = UpdateQuery::new(),
 ) -> UpdateRequest {
-  { index, id, query, body }
+  { index, id, query, body, }
 }
 
 ///|
@@ -95077,7 +95095,7 @@ pub fn UpdateByQueryBody::new(
   slice? : Json,
   conflicts? : Json,
 ) -> UpdateByQueryBody {
-  { max_docs, query, script, slice, conflicts }
+  { max_docs, query, script, slice, conflicts, }
 }
 
 ///|
@@ -95293,7 +95311,7 @@ pub fn UpdateByQueryRequest::new(
   query? : UpdateByQueryQuery = UpdateByQueryQuery::new(),
   body? : UpdateByQueryBody,
 ) -> UpdateByQueryRequest {
-  { index, query, body }
+  { index, query, body, }
 }
 
 ///|
@@ -95407,7 +95425,7 @@ pub fn UpdateByQueryRethrottleRequest::new(
   task_id : String,
   query : UpdateByQueryRethrottleQuery,
 ) -> UpdateByQueryRethrottleRequest {
-  { task_id, query }
+  { task_id, query, }
 }
 
 ///|
@@ -95442,13 +95460,13 @@ pub impl FromJson for WatcherAckWatchQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "WatcherAckWatchQuery: expected object"))
   }
-  WatcherAckWatchQuery::{  }
+  WatcherAckWatchQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn WatcherAckWatchQuery::new() -> WatcherAckWatchQuery {
-  WatcherAckWatchQuery::{  }
+  WatcherAckWatchQuery::{ }
 }
 
 ///|
@@ -95499,7 +95517,7 @@ pub fn WatcherAckWatchRequest::new(
   action_id? : String,
   query? : WatcherAckWatchQuery = WatcherAckWatchQuery::new(),
 ) -> WatcherAckWatchRequest {
-  { watch_id, action_id, query }
+  { watch_id, action_id, query, }
 }
 
 ///|
@@ -95543,13 +95561,13 @@ pub impl FromJson for WatcherActivateWatchQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "WatcherActivateWatchQuery: expected object"))
   }
-  WatcherActivateWatchQuery::{  }
+  WatcherActivateWatchQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn WatcherActivateWatchQuery::new() -> WatcherActivateWatchQuery {
-  WatcherActivateWatchQuery::{  }
+  WatcherActivateWatchQuery::{ }
 }
 
 ///|
@@ -95600,7 +95618,7 @@ pub fn WatcherActivateWatchRequest::new(
   watch_id : String,
   query? : WatcherActivateWatchQuery = WatcherActivateWatchQuery::new(),
 ) -> WatcherActivateWatchRequest {
-  { watch_id, query }
+  { watch_id, query, }
 }
 
 ///|
@@ -95637,13 +95655,13 @@ pub impl FromJson for WatcherDeactivateWatchQuery with fn from_json(json, path) 
       (path, "WatcherDeactivateWatchQuery: expected object"),
     )
   }
-  WatcherDeactivateWatchQuery::{  }
+  WatcherDeactivateWatchQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn WatcherDeactivateWatchQuery::new() -> WatcherDeactivateWatchQuery {
-  WatcherDeactivateWatchQuery::{  }
+  WatcherDeactivateWatchQuery::{ }
 }
 
 ///|
@@ -95697,7 +95715,7 @@ pub fn WatcherDeactivateWatchRequest::new(
   watch_id : String,
   query? : WatcherDeactivateWatchQuery = WatcherDeactivateWatchQuery::new(),
 ) -> WatcherDeactivateWatchRequest {
-  { watch_id, query }
+  { watch_id, query, }
 }
 
 ///|
@@ -95732,13 +95750,13 @@ pub impl FromJson for WatcherDeleteWatchQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "WatcherDeleteWatchQuery: expected object"))
   }
-  WatcherDeleteWatchQuery::{  }
+  WatcherDeleteWatchQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn WatcherDeleteWatchQuery::new() -> WatcherDeleteWatchQuery {
-  WatcherDeleteWatchQuery::{  }
+  WatcherDeleteWatchQuery::{ }
 }
 
 ///|
@@ -95799,7 +95817,7 @@ pub fn WatcherDeleteWatchRequest::new(
   id : String,
   query? : WatcherDeleteWatchQuery = WatcherDeleteWatchQuery::new(),
 ) -> WatcherDeleteWatchRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -96031,7 +96049,7 @@ pub fn WatcherExecuteWatchRequest::new(
   query? : WatcherExecuteWatchQuery = WatcherExecuteWatchQuery::new(),
   body? : WatcherExecuteWatchBody,
 ) -> WatcherExecuteWatchRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -96151,7 +96169,7 @@ pub fn WatcherGetSettingsRequest::new(
   query? : WatcherGetSettingsQuery = WatcherGetSettingsQuery::new(),
   body? : WatcherGetSettingsBody,
 ) -> WatcherGetSettingsRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -96186,13 +96204,13 @@ pub impl FromJson for WatcherGetWatchQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "WatcherGetWatchQuery: expected object"))
   }
-  WatcherGetWatchQuery::{  }
+  WatcherGetWatchQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn WatcherGetWatchQuery::new() -> WatcherGetWatchQuery {
-  WatcherGetWatchQuery::{  }
+  WatcherGetWatchQuery::{ }
 }
 
 ///|
@@ -96298,7 +96316,7 @@ pub fn WatcherGetWatchRequest::new(
   id : String,
   query? : WatcherGetWatchQuery = WatcherGetWatchQuery::new(),
 ) -> WatcherGetWatchRequest {
-  { id, query }
+  { id, query, }
 }
 
 ///|
@@ -96386,7 +96404,7 @@ pub fn WatcherPutWatchQuery::new(
   if_seq_no? : String,
   version? : String,
 ) -> WatcherPutWatchQuery {
-  { active, if_primary_term, if_seq_no, version }
+  { active, if_primary_term, if_seq_no, version, }
 }
 
 ///|
@@ -96607,7 +96625,7 @@ pub fn WatcherPutWatchRequest::new(
   body : WatcherPutWatchBody,
   query? : WatcherPutWatchQuery = WatcherPutWatchQuery::new(),
 ) -> WatcherPutWatchRequest {
-  { id, query, body }
+  { id, query, body, }
 }
 
 ///|
@@ -96643,13 +96661,13 @@ pub impl FromJson for WatcherQueryWatchesQuery with fn from_json(json, path) {
   guard json is Object(_) || json is Null else {
     raise JsonDecodeError((path, "WatcherQueryWatchesQuery: expected object"))
   }
-  WatcherQueryWatchesQuery::{  }
+  WatcherQueryWatchesQuery::{ }
 }
 
 ///|
 #warnings("-unnecessary_annotation")
 pub fn WatcherQueryWatchesQuery::new() -> WatcherQueryWatchesQuery {
-  WatcherQueryWatchesQuery::{  }
+  WatcherQueryWatchesQuery::{ }
 }
 
 ///|
@@ -96740,7 +96758,7 @@ pub fn WatcherQueryWatchesBody::new(
   sort? : Json,
   search_after? : Json,
 ) -> WatcherQueryWatchesBody {
-  { from, size, query, sort, search_after }
+  { from, size, query, sort, search_after, }
 }
 
 ///|
@@ -96789,7 +96807,7 @@ pub fn WatcherQueryWatchesRequest::new(
   query? : WatcherQueryWatchesQuery = WatcherQueryWatchesQuery::new(),
   body? : WatcherQueryWatchesBody,
 ) -> WatcherQueryWatchesRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -96928,7 +96946,7 @@ pub fn WatcherStatsQuery::new(
   emit_stacktraces? : Bool,
   metric? : Json,
 ) -> WatcherStatsQuery {
-  { emit_stacktraces, metric }
+  { emit_stacktraces, metric, }
 }
 
 ///|
@@ -97003,7 +97021,7 @@ pub fn WatcherStatsRequest::new(
   metric? : String,
   query? : WatcherStatsQuery = WatcherStatsQuery::new(),
 ) -> WatcherStatsRequest {
-  { metric, query }
+  { metric, query, }
 }
 
 ///|
@@ -97147,7 +97165,7 @@ pub fn WatcherUpdateSettingsQuery::new(
   master_timeout? : String,
   timeout? : String,
 ) -> WatcherUpdateSettingsQuery {
-  { master_timeout, timeout }
+  { master_timeout, timeout, }
 }
 
 ///|
@@ -97221,7 +97239,7 @@ pub fn WatcherUpdateSettingsBody::new(
   index_auto_expand_replicas? : String,
   index_number_of_replicas? : Int,
 ) -> WatcherUpdateSettingsBody {
-  { index_auto_expand_replicas, index_number_of_replicas }
+  { index_auto_expand_replicas, index_number_of_replicas, }
 }
 
 ///|
@@ -97267,7 +97285,7 @@ pub fn WatcherUpdateSettingsRequest::new(
   body : WatcherUpdateSettingsBody,
   query? : WatcherUpdateSettingsQuery = WatcherUpdateSettingsQuery::new(),
 ) -> WatcherUpdateSettingsRequest {
-  { query, body }
+  { query, body, }
 }
 
 ///|
@@ -97339,7 +97357,7 @@ pub fn XpackInfoQuery::new(
   accept_enterprise? : Bool,
   human? : Bool,
 ) -> XpackInfoQuery {
-  { categories, accept_enterprise, human }
+  { categories, accept_enterprise, human, }
 }
 
 ///|
