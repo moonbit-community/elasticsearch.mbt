@@ -269,7 +269,7 @@ fn builtin_type_expr(name : String) -> String? {
   match name {
     "string" => Some("String")
     "boolean" => Some("Bool")
-    "integer" | "int" | "long" | "short" | "byte" => Some("Int")
+    "integer" | "int" | "long" | "short" | "byte" => Some("Int32")
     "double" | "float" | "number" => Some("Double")
     _ => None
   }
@@ -975,7 +975,7 @@ fn write_constructor_params(
     out.write_string("  query : \{endpoint.query_type},\n")
   } else {
     out.write_string(
-      "  query? : \{endpoint.query_type} = \{endpoint.query_type}::new(),\n",
+      "  query~ : \{endpoint.query_type} = \{endpoint.query_type}::new(),\n",
     )
   }
   match endpoint.body_type {

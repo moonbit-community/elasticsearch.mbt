@@ -70,7 +70,7 @@ pub extend AsyncSearchDeleteRequest with @json.FromJson::{from_json}
 ///|
 pub fn AsyncSearchDeleteRequest::new(
   id : String,
-  query? : AsyncSearchDeleteQuery = AsyncSearchDeleteQuery::new(),
+  query~ : AsyncSearchDeleteQuery = AsyncSearchDeleteQuery::new(),
 ) -> AsyncSearchDeleteRequest {
   { id, query, }
 }
@@ -250,7 +250,7 @@ pub extend AsyncSearchGetRequest with @json.FromJson::{from_json}
 ///|
 pub fn AsyncSearchGetRequest::new(
   id : String,
-  query? : AsyncSearchGetQuery = AsyncSearchGetQuery::new(),
+  query~ : AsyncSearchGetQuery = AsyncSearchGetQuery::new(),
 ) -> AsyncSearchGetRequest {
   { id, query, }
 }
@@ -357,7 +357,7 @@ pub extend AsyncSearchStatusRequest with @json.FromJson::{from_json}
 ///|
 pub fn AsyncSearchStatusRequest::new(
   id : String,
-  query? : AsyncSearchStatusQuery = AsyncSearchStatusQuery::new(),
+  query~ : AsyncSearchStatusQuery = AsyncSearchStatusQuery::new(),
 ) -> AsyncSearchStatusRequest {
   { id, query, }
 }
@@ -386,7 +386,7 @@ pub(all) struct AsyncSearchSubmitQuery {
   allow_partial_search_results : Bool?
   analyzer : String?
   analyze_wildcard : Bool?
-  batched_reduce_size : Int?
+  batched_reduce_size : Int32?
   ccs_minimize_roundtrips : Bool?
   default_operator : String?
   df : String?
@@ -396,7 +396,7 @@ pub(all) struct AsyncSearchSubmitQuery {
   ignore_throttled : Bool?
   ignore_unavailable : Bool?
   lenient : Bool?
-  max_concurrent_shard_requests : Int?
+  max_concurrent_shard_requests : Int32?
   preference : String?
   request_cache : Bool?
   routing : String?
@@ -405,9 +405,9 @@ pub(all) struct AsyncSearchSubmitQuery {
   stored_fields : String?
   suggest_field : String?
   suggest_mode : String?
-  suggest_size : Int?
+  suggest_size : Int32?
   suggest_text : String?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   track_total_hits : String?
   track_scores : Bool?
@@ -419,8 +419,8 @@ pub(all) struct AsyncSearchSubmitQuery {
   _source_includes : String?
   seq_no_primary_term : Bool?
   q : String?
-  size : Int?
-  from : Int?
+  size : Int32?
+  from : Int32?
   sort : Json?
 } derive(Eq, Debug)
 
@@ -900,7 +900,7 @@ pub fn AsyncSearchSubmitQuery::new(
   allow_partial_search_results? : Bool,
   analyzer? : String,
   analyze_wildcard? : Bool,
-  batched_reduce_size? : Int,
+  batched_reduce_size? : Int32,
   ccs_minimize_roundtrips? : Bool,
   default_operator? : String,
   df? : String,
@@ -910,7 +910,7 @@ pub fn AsyncSearchSubmitQuery::new(
   ignore_throttled? : Bool,
   ignore_unavailable? : Bool,
   lenient? : Bool,
-  max_concurrent_shard_requests? : Int,
+  max_concurrent_shard_requests? : Int32,
   preference? : String,
   request_cache? : Bool,
   routing? : String,
@@ -919,9 +919,9 @@ pub fn AsyncSearchSubmitQuery::new(
   stored_fields? : String,
   suggest_field? : String,
   suggest_mode? : String,
-  suggest_size? : Int,
+  suggest_size? : Int32,
   suggest_text? : String,
-  terminate_after? : Int,
+  terminate_after? : Int32,
   timeout? : String,
   track_total_hits? : String,
   track_scores? : Bool,
@@ -933,8 +933,8 @@ pub fn AsyncSearchSubmitQuery::new(
   _source_includes? : String,
   seq_no_primary_term? : Bool,
   q? : String,
-  size? : Int,
-  from? : Int,
+  size? : Int32,
+  from? : Int32,
   sort? : Json,
 ) -> AsyncSearchSubmitQuery {
   {
@@ -1201,7 +1201,7 @@ pub(all) struct AsyncSearchSubmitBody {
   collapse : Json?
   explain : Bool?
   ext : Map[String, Json]?
-  from : Int?
+  from : Int32?
   highlight : Json?
   track_total_hits : Json?
   indices_boost : Array[Map[String, Json]]?
@@ -1214,13 +1214,13 @@ pub(all) struct AsyncSearchSubmitBody {
   rescore : Json?
   script_fields : Map[String, Json]?
   search_after : Json?
-  size : Int?
+  size : Int32?
   slice : Json?
   sort : Json?
   _source : Json?
   fields : Array[Json]?
   suggest : Json?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   track_scores : Bool?
   version : Bool?
@@ -1579,7 +1579,7 @@ pub fn AsyncSearchSubmitBody::new(
   collapse? : Json,
   explain? : Bool,
   ext? : Map[String, Json],
-  from? : Int,
+  from? : Int32,
   highlight? : Json,
   track_total_hits? : Json,
   indices_boost? : Array[Map[String, Json]],
@@ -1592,13 +1592,13 @@ pub fn AsyncSearchSubmitBody::new(
   rescore? : Json,
   script_fields? : Map[String, Json],
   search_after? : Json,
-  size? : Int,
+  size? : Int32,
   slice? : Json,
   sort? : Json,
   _source? : Json,
   fields? : Array[Json],
   suggest? : Json,
-  terminate_after? : Int,
+  terminate_after? : Int32,
   timeout? : String,
   track_scores? : Bool,
   version? : Bool,
@@ -1671,7 +1671,7 @@ pub extend AsyncSearchSubmitRequest with @json.FromJson::{from_json}
 ///|
 pub fn AsyncSearchSubmitRequest::new(
   index? : String,
-  query? : AsyncSearchSubmitQuery = AsyncSearchSubmitQuery::new(),
+  query~ : AsyncSearchSubmitQuery = AsyncSearchSubmitQuery::new(),
   body? : AsyncSearchSubmitBody,
 ) -> AsyncSearchSubmitRequest {
   { index, query, body, }
@@ -1816,7 +1816,7 @@ pub extend AutoscalingDeleteAutoscalingPolicyRequest with @json.FromJson::{
 ///|
 pub fn AutoscalingDeleteAutoscalingPolicyRequest::new(
   name : String,
-  query? : AutoscalingDeleteAutoscalingPolicyQuery = AutoscalingDeleteAutoscalingPolicyQuery::new(),
+  query~ : AutoscalingDeleteAutoscalingPolicyQuery = AutoscalingDeleteAutoscalingPolicyQuery::new(),
 ) -> AutoscalingDeleteAutoscalingPolicyRequest {
   { name, query, }
 }
@@ -1976,7 +1976,7 @@ pub extend AutoscalingGetAutoscalingCapacityRequest with @json.FromJson::{
 
 ///|
 pub fn AutoscalingGetAutoscalingCapacityRequest::new(
-  query? : AutoscalingGetAutoscalingCapacityQuery = AutoscalingGetAutoscalingCapacityQuery::new(),
+  query~ : AutoscalingGetAutoscalingCapacityQuery = AutoscalingGetAutoscalingCapacityQuery::new(),
 ) -> AutoscalingGetAutoscalingCapacityRequest {
   { query, }
 }
@@ -2090,7 +2090,7 @@ pub extend AutoscalingGetAutoscalingPolicyRequest with @json.FromJson::{
 ///|
 pub fn AutoscalingGetAutoscalingPolicyRequest::new(
   name : String,
-  query? : AutoscalingGetAutoscalingPolicyQuery = AutoscalingGetAutoscalingPolicyQuery::new(),
+  query~ : AutoscalingGetAutoscalingPolicyQuery = AutoscalingGetAutoscalingPolicyQuery::new(),
 ) -> AutoscalingGetAutoscalingPolicyRequest {
   { name, query, }
 }
@@ -2225,7 +2225,7 @@ pub extend AutoscalingPutAutoscalingPolicyRequest with @json.FromJson::{
 pub fn AutoscalingPutAutoscalingPolicyRequest::new(
   name : String,
   body : AutoscalingPutAutoscalingPolicyBody,
-  query? : AutoscalingPutAutoscalingPolicyQuery = AutoscalingPutAutoscalingPolicyQuery::new(),
+  query~ : AutoscalingPutAutoscalingPolicyQuery = AutoscalingPutAutoscalingPolicyQuery::new(),
 ) -> AutoscalingPutAutoscalingPolicyRequest {
   { name, query, body, }
 }
@@ -2508,8 +2508,8 @@ pub type BulkBody = Array[Json]
 pub(all) struct BulkResponse {
   errors : Bool
   items : Array[Map[String, Json]]
-  took : Int
-  ingest_took : Int?
+  took : Int32
+  ingest_took : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -2587,7 +2587,7 @@ pub extend BulkRequest with @json.FromJson::{from_json}
 pub fn BulkRequest::new(
   body : BulkBody,
   index? : String,
-  query? : BulkQuery = BulkQuery::new(),
+  query~ : BulkQuery = BulkQuery::new(),
 ) -> BulkRequest {
   { index, query, body, }
 }
@@ -2860,7 +2860,7 @@ pub extend CancelReindexRequest with @json.FromJson::{from_json}
 ///|
 pub fn CancelReindexRequest::new(
   task_id : String,
-  query? : CancelReindexQuery = CancelReindexQuery::new(),
+  query~ : CancelReindexQuery = CancelReindexQuery::new(),
 ) -> CancelReindexRequest {
   { task_id, query, }
 }
@@ -3098,7 +3098,7 @@ pub extend CapabilitiesRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn CapabilitiesRequest::new(
-  query? : CapabilitiesQuery = CapabilitiesQuery::new(),
+  query~ : CapabilitiesQuery = CapabilitiesQuery::new(),
 ) -> CapabilitiesRequest {
   { query, }
 }
@@ -3247,7 +3247,7 @@ pub extend CatAliasesRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatAliasesRequest::new(
   name? : String,
-  query? : CatAliasesQuery = CatAliasesQuery::new(),
+  query~ : CatAliasesQuery = CatAliasesQuery::new(),
 ) -> CatAliasesRequest {
   { name, query, }
 }
@@ -3406,7 +3406,7 @@ pub extend CatAllocationRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatAllocationRequest::new(
   node_id? : String,
-  query? : CatAllocationQuery = CatAllocationQuery::new(),
+  query~ : CatAllocationQuery = CatAllocationQuery::new(),
 ) -> CatAllocationRequest {
   { node_id, query, }
 }
@@ -3565,7 +3565,7 @@ pub extend CatCircuitBreakerRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatCircuitBreakerRequest::new(
   circuit_breaker_patterns? : String,
-  query? : CatCircuitBreakerQuery = CatCircuitBreakerQuery::new(),
+  query~ : CatCircuitBreakerQuery = CatCircuitBreakerQuery::new(),
 ) -> CatCircuitBreakerRequest {
   { circuit_breaker_patterns, query, }
 }
@@ -3726,7 +3726,7 @@ pub extend CatComponentTemplatesRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatComponentTemplatesRequest::new(
   name? : String,
-  query? : CatComponentTemplatesQuery = CatComponentTemplatesQuery::new(),
+  query~ : CatComponentTemplatesQuery = CatComponentTemplatesQuery::new(),
 ) -> CatComponentTemplatesRequest {
   { name, query, }
 }
@@ -3846,7 +3846,7 @@ pub extend CatCountRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatCountRequest::new(
   index? : String,
-  query? : CatCountQuery = CatCountQuery::new(),
+  query~ : CatCountQuery = CatCountQuery::new(),
 ) -> CatCountRequest {
   { index, query, }
 }
@@ -3986,7 +3986,7 @@ pub extend CatFielddataRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatFielddataRequest::new(
   fields? : String,
-  query? : CatFielddataQuery = CatFielddataQuery::new(),
+  query~ : CatFielddataQuery = CatFielddataQuery::new(),
 ) -> CatFielddataRequest {
   { fields, query, }
 }
@@ -4124,7 +4124,7 @@ pub extend CatHealthRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn CatHealthRequest::new(
-  query? : CatHealthQuery = CatHealthQuery::new(),
+  query~ : CatHealthQuery = CatHealthQuery::new(),
 ) -> CatHealthRequest {
   { query, }
 }
@@ -4204,7 +4204,7 @@ pub extend CatHelpRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn CatHelpRequest::new(
-  query? : CatHelpQuery = CatHelpQuery::new(),
+  query~ : CatHelpQuery = CatHelpQuery::new(),
 ) -> CatHelpRequest {
   { query, }
 }
@@ -4410,7 +4410,7 @@ pub extend CatIndicesRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatIndicesRequest::new(
   index? : String,
-  query? : CatIndicesQuery = CatIndicesQuery::new(),
+  query~ : CatIndicesQuery = CatIndicesQuery::new(),
 ) -> CatIndicesRequest {
   { index, query, }
 }
@@ -4565,7 +4565,7 @@ pub extend CatMasterRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn CatMasterRequest::new(
-  query? : CatMasterQuery = CatMasterQuery::new(),
+  query~ : CatMasterQuery = CatMasterQuery::new(),
 ) -> CatMasterRequest {
   { query, }
 }
@@ -4701,7 +4701,7 @@ pub extend CatMlDataFrameAnalyticsRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatMlDataFrameAnalyticsRequest::new(
   id? : String,
-  query? : CatMlDataFrameAnalyticsQuery = CatMlDataFrameAnalyticsQuery::new(),
+  query~ : CatMlDataFrameAnalyticsQuery = CatMlDataFrameAnalyticsQuery::new(),
 ) -> CatMlDataFrameAnalyticsRequest {
   { id, query, }
 }
@@ -4845,7 +4845,7 @@ pub extend CatMlDatafeedsRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatMlDatafeedsRequest::new(
   datafeed_id? : String,
-  query? : CatMlDatafeedsQuery = CatMlDatafeedsQuery::new(),
+  query~ : CatMlDatafeedsQuery = CatMlDatafeedsQuery::new(),
 ) -> CatMlDatafeedsRequest {
   { datafeed_id, query, }
 }
@@ -4987,7 +4987,7 @@ pub extend CatMlJobsRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatMlJobsRequest::new(
   job_id? : String,
-  query? : CatMlJobsQuery = CatMlJobsQuery::new(),
+  query~ : CatMlJobsQuery = CatMlJobsQuery::new(),
 ) -> CatMlJobsRequest {
   { job_id, query, }
 }
@@ -5018,8 +5018,8 @@ pub(all) struct CatMlTrainedModelsQuery {
   allow_no_match : Bool?
   h : String?
   s : String?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -5102,8 +5102,8 @@ pub fn CatMlTrainedModelsQuery::new(
   allow_no_match? : Bool,
   h? : String,
   s? : String,
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
 ) -> CatMlTrainedModelsQuery {
   { allow_no_match, h, s, from, size, }
 }
@@ -5161,7 +5161,7 @@ pub extend CatMlTrainedModelsRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatMlTrainedModelsRequest::new(
   model_id? : String,
-  query? : CatMlTrainedModelsQuery = CatMlTrainedModelsQuery::new(),
+  query~ : CatMlTrainedModelsQuery = CatMlTrainedModelsQuery::new(),
 ) -> CatMlTrainedModelsRequest {
   { model_id, query, }
 }
@@ -5316,7 +5316,7 @@ pub extend CatNodeattrsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn CatNodeattrsRequest::new(
-  query? : CatNodeattrsQuery = CatNodeattrsQuery::new(),
+  query~ : CatNodeattrsQuery = CatNodeattrsQuery::new(),
 ) -> CatNodeattrsRequest {
   { query, }
 }
@@ -5478,7 +5478,7 @@ pub extend CatNodesRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn CatNodesRequest::new(
-  query? : CatNodesQuery = CatNodesQuery::new(),
+  query~ : CatNodesQuery = CatNodesQuery::new(),
 ) -> CatNodesRequest {
   { query, }
 }
@@ -5625,7 +5625,7 @@ pub extend CatPendingTasksRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn CatPendingTasksRequest::new(
-  query? : CatPendingTasksQuery = CatPendingTasksQuery::new(),
+  query~ : CatPendingTasksQuery = CatPendingTasksQuery::new(),
 ) -> CatPendingTasksRequest {
   { query, }
 }
@@ -5787,7 +5787,7 @@ pub extend CatPluginsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn CatPluginsRequest::new(
-  query? : CatPluginsQuery = CatPluginsQuery::new(),
+  query~ : CatPluginsQuery = CatPluginsQuery::new(),
 ) -> CatPluginsRequest {
   { query, }
 }
@@ -5948,7 +5948,7 @@ pub extend CatRecoveryRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatRecoveryRequest::new(
   index? : String,
-  query? : CatRecoveryQuery = CatRecoveryQuery::new(),
+  query~ : CatRecoveryQuery = CatRecoveryQuery::new(),
 ) -> CatRecoveryRequest {
   { index, query, }
 }
@@ -6105,7 +6105,7 @@ pub extend CatRepositoriesRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn CatRepositoriesRequest::new(
-  query? : CatRepositoriesQuery = CatRepositoriesQuery::new(),
+  query~ : CatRepositoriesQuery = CatRepositoriesQuery::new(),
 ) -> CatRepositoriesRequest {
   { query, }
 }
@@ -6346,7 +6346,7 @@ pub extend CatSegmentsRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatSegmentsRequest::new(
   index? : String,
-  query? : CatSegmentsQuery = CatSegmentsQuery::new(),
+  query~ : CatSegmentsQuery = CatSegmentsQuery::new(),
 ) -> CatSegmentsRequest {
   { index, query, }
 }
@@ -6488,7 +6488,7 @@ pub extend CatShardsRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatShardsRequest::new(
   index? : String,
-  query? : CatShardsQuery = CatShardsQuery::new(),
+  query~ : CatShardsQuery = CatShardsQuery::new(),
 ) -> CatShardsRequest {
   { index, query, }
 }
@@ -6647,7 +6647,7 @@ pub extend CatSnapshotsRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatSnapshotsRequest::new(
   repository? : String,
-  query? : CatSnapshotsQuery = CatSnapshotsQuery::new(),
+  query~ : CatSnapshotsQuery = CatSnapshotsQuery::new(),
 ) -> CatSnapshotsRequest {
   { repository, query, }
 }
@@ -6871,7 +6871,7 @@ pub extend CatTasksRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn CatTasksRequest::new(
-  query? : CatTasksQuery = CatTasksQuery::new(),
+  query~ : CatTasksQuery = CatTasksQuery::new(),
 ) -> CatTasksRequest {
   { query, }
 }
@@ -7018,7 +7018,7 @@ pub extend CatTemplatesRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatTemplatesRequest::new(
   name? : String,
-  query? : CatTemplatesQuery = CatTemplatesQuery::new(),
+  query~ : CatTemplatesQuery = CatTemplatesQuery::new(),
 ) -> CatTemplatesRequest {
   { name, query, }
 }
@@ -7177,7 +7177,7 @@ pub extend CatThreadPoolRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatThreadPoolRequest::new(
   thread_pool_patterns? : String,
-  query? : CatThreadPoolQuery = CatThreadPoolQuery::new(),
+  query~ : CatThreadPoolQuery = CatThreadPoolQuery::new(),
 ) -> CatThreadPoolRequest {
   { thread_pool_patterns, query, }
 }
@@ -7208,10 +7208,10 @@ pub async fn Client::cat_thread_pool(
 ///|
 pub(all) struct CatTransformsQuery {
   allow_no_match : Bool?
-  from : Int?
+  from : Int32?
   h : String?
   s : String?
-  size : Int?
+  size : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -7292,10 +7292,10 @@ pub extend CatTransformsQuery with @json.FromJson::{from_json}
 ///|
 pub fn CatTransformsQuery::new(
   allow_no_match? : Bool,
-  from? : Int,
+  from? : Int32,
   h? : String,
   s? : String,
-  size? : Int,
+  size? : Int32,
 ) -> CatTransformsQuery {
   { allow_no_match, from, h, s, size, }
 }
@@ -7353,7 +7353,7 @@ pub extend CatTransformsRequest with @json.FromJson::{from_json}
 ///|
 pub fn CatTransformsRequest::new(
   transform_id? : String,
-  query? : CatTransformsQuery = CatTransformsQuery::new(),
+  query~ : CatTransformsQuery = CatTransformsQuery::new(),
 ) -> CatTransformsRequest {
   { transform_id, query, }
 }
@@ -7472,7 +7472,7 @@ pub extend CcrDeleteAutoFollowPatternRequest with @json.FromJson::{from_json}
 ///|
 pub fn CcrDeleteAutoFollowPatternRequest::new(
   name : String,
-  query? : CcrDeleteAutoFollowPatternQuery = CcrDeleteAutoFollowPatternQuery::new(),
+  query~ : CcrDeleteAutoFollowPatternQuery = CcrDeleteAutoFollowPatternQuery::new(),
 ) -> CcrDeleteAutoFollowPatternRequest {
   { name, query, }
 }
@@ -7577,14 +7577,14 @@ pub fn CcrFollowQuery::to_pairs(
 pub(all) struct CcrFollowBody {
   data_stream_name : String?
   leader_index : Json
-  max_outstanding_read_requests : Int?
-  max_outstanding_write_requests : Int?
-  max_read_request_operation_count : Int?
+  max_outstanding_read_requests : Int32?
+  max_outstanding_write_requests : Int32?
+  max_read_request_operation_count : Int32?
   max_read_request_size : Json?
   max_retry_delay : Json?
-  max_write_buffer_count : Int?
+  max_write_buffer_count : Int32?
   max_write_buffer_size : Json?
-  max_write_request_operation_count : Int?
+  max_write_request_operation_count : Int32?
   max_write_request_size : Json?
   read_poll_timeout : Json?
   remote_cluster : String
@@ -7782,14 +7782,14 @@ pub fn CcrFollowBody::new(
   leader_index : Json,
   remote_cluster : String,
   data_stream_name? : String,
-  max_outstanding_read_requests? : Int,
-  max_outstanding_write_requests? : Int,
-  max_read_request_operation_count? : Int,
+  max_outstanding_read_requests? : Int32,
+  max_outstanding_write_requests? : Int32,
+  max_read_request_operation_count? : Int32,
   max_read_request_size? : Json,
   max_retry_delay? : Json,
-  max_write_buffer_count? : Int,
+  max_write_buffer_count? : Int32,
   max_write_buffer_size? : Json,
-  max_write_request_operation_count? : Int,
+  max_write_request_operation_count? : Int32,
   max_write_request_size? : Json,
   read_poll_timeout? : Json,
   settings? : Json,
@@ -7886,7 +7886,7 @@ pub extend CcrFollowRequest with @json.FromJson::{from_json}
 pub fn CcrFollowRequest::new(
   index : String,
   body : CcrFollowBody,
-  query? : CcrFollowQuery = CcrFollowQuery::new(),
+  query~ : CcrFollowQuery = CcrFollowQuery::new(),
 ) -> CcrFollowRequest {
   { index, query, body, }
 }
@@ -8029,7 +8029,7 @@ pub extend CcrFollowInfoRequest with @json.FromJson::{from_json}
 ///|
 pub fn CcrFollowInfoRequest::new(
   index : String,
-  query? : CcrFollowInfoQuery = CcrFollowInfoQuery::new(),
+  query~ : CcrFollowInfoQuery = CcrFollowInfoQuery::new(),
 ) -> CcrFollowInfoRequest {
   { index, query, }
 }
@@ -8169,7 +8169,7 @@ pub extend CcrFollowStatsRequest with @json.FromJson::{from_json}
 ///|
 pub fn CcrFollowStatsRequest::new(
   index : String,
-  query? : CcrFollowStatsQuery = CcrFollowStatsQuery::new(),
+  query~ : CcrFollowStatsQuery = CcrFollowStatsQuery::new(),
 ) -> CcrFollowStatsRequest {
   { index, query, }
 }
@@ -8403,7 +8403,7 @@ pub extend CcrForgetFollowerRequest with @json.FromJson::{from_json}
 pub fn CcrForgetFollowerRequest::new(
   index : String,
   body : CcrForgetFollowerBody,
-  query? : CcrForgetFollowerQuery = CcrForgetFollowerQuery::new(),
+  query~ : CcrForgetFollowerQuery = CcrForgetFollowerQuery::new(),
 ) -> CcrForgetFollowerRequest {
   { index, query, body, }
 }
@@ -8555,7 +8555,7 @@ pub extend CcrGetAutoFollowPatternRequest with @json.FromJson::{from_json}
 ///|
 pub fn CcrGetAutoFollowPatternRequest::new(
   name? : String,
-  query? : CcrGetAutoFollowPatternQuery = CcrGetAutoFollowPatternQuery::new(),
+  query~ : CcrGetAutoFollowPatternQuery = CcrGetAutoFollowPatternQuery::new(),
 ) -> CcrGetAutoFollowPatternRequest {
   { name, query, }
 }
@@ -8674,7 +8674,7 @@ pub extend CcrPauseAutoFollowPatternRequest with @json.FromJson::{from_json}
 ///|
 pub fn CcrPauseAutoFollowPatternRequest::new(
   name : String,
-  query? : CcrPauseAutoFollowPatternQuery = CcrPauseAutoFollowPatternQuery::new(),
+  query~ : CcrPauseAutoFollowPatternQuery = CcrPauseAutoFollowPatternQuery::new(),
 ) -> CcrPauseAutoFollowPatternRequest {
   { name, query, }
 }
@@ -8782,7 +8782,7 @@ pub extend CcrPauseFollowRequest with @json.FromJson::{from_json}
 ///|
 pub fn CcrPauseFollowRequest::new(
   index : String,
-  query? : CcrPauseFollowQuery = CcrPauseFollowQuery::new(),
+  query~ : CcrPauseFollowQuery = CcrPauseFollowQuery::new(),
 ) -> CcrPauseFollowRequest {
   { index, query, }
 }
@@ -8874,16 +8874,16 @@ pub(all) struct CcrPutAutoFollowPatternBody {
   follow_index_pattern : Json?
   leader_index_patterns : Json?
   leader_index_exclusion_patterns : Json?
-  max_outstanding_read_requests : Int?
+  max_outstanding_read_requests : Int32?
   settings : Map[String, Json]?
-  max_outstanding_write_requests : Int?
+  max_outstanding_write_requests : Int32?
   read_poll_timeout : Json?
-  max_read_request_operation_count : Int?
+  max_read_request_operation_count : Int32?
   max_read_request_size : Json?
   max_retry_delay : Json?
-  max_write_buffer_count : Int?
+  max_write_buffer_count : Int32?
   max_write_buffer_size : Json?
-  max_write_request_operation_count : Int?
+  max_write_request_operation_count : Int32?
   max_write_request_size : Json?
 } derive(Eq, Debug)
 
@@ -9104,16 +9104,16 @@ pub fn CcrPutAutoFollowPatternBody::new(
   follow_index_pattern? : Json,
   leader_index_patterns? : Json,
   leader_index_exclusion_patterns? : Json,
-  max_outstanding_read_requests? : Int,
+  max_outstanding_read_requests? : Int32,
   settings? : Map[String, Json],
-  max_outstanding_write_requests? : Int,
+  max_outstanding_write_requests? : Int32,
   read_poll_timeout? : Json,
-  max_read_request_operation_count? : Int,
+  max_read_request_operation_count? : Int32,
   max_read_request_size? : Json,
   max_retry_delay? : Json,
-  max_write_buffer_count? : Int,
+  max_write_buffer_count? : Int32,
   max_write_buffer_size? : Json,
-  max_write_request_operation_count? : Int,
+  max_write_request_operation_count? : Int32,
   max_write_request_size? : Json,
 ) -> CcrPutAutoFollowPatternBody {
   {
@@ -9161,7 +9161,7 @@ pub extend CcrPutAutoFollowPatternRequest with @json.FromJson::{from_json}
 pub fn CcrPutAutoFollowPatternRequest::new(
   name : String,
   body : CcrPutAutoFollowPatternBody,
-  query? : CcrPutAutoFollowPatternQuery = CcrPutAutoFollowPatternQuery::new(),
+  query~ : CcrPutAutoFollowPatternQuery = CcrPutAutoFollowPatternQuery::new(),
 ) -> CcrPutAutoFollowPatternRequest {
   { name, query, body, }
 }
@@ -9275,7 +9275,7 @@ pub extend CcrResumeAutoFollowPatternRequest with @json.FromJson::{from_json}
 ///|
 pub fn CcrResumeAutoFollowPatternRequest::new(
   name : String,
-  query? : CcrResumeAutoFollowPatternQuery = CcrResumeAutoFollowPatternQuery::new(),
+  query~ : CcrResumeAutoFollowPatternQuery = CcrResumeAutoFollowPatternQuery::new(),
 ) -> CcrResumeAutoFollowPatternRequest {
   { name, query, }
 }
@@ -9361,14 +9361,14 @@ pub fn CcrResumeFollowQuery::to_pairs(
 
 ///|
 pub(all) struct CcrResumeFollowBody {
-  max_outstanding_read_requests : Int?
-  max_outstanding_write_requests : Int?
-  max_read_request_operation_count : Int?
+  max_outstanding_read_requests : Int32?
+  max_outstanding_write_requests : Int32?
+  max_read_request_operation_count : Int32?
   max_read_request_size : String?
   max_retry_delay : Json?
-  max_write_buffer_count : Int?
+  max_write_buffer_count : Int32?
   max_write_buffer_size : String?
-  max_write_request_operation_count : Int?
+  max_write_request_operation_count : Int32?
   max_write_request_size : String?
   read_poll_timeout : Json?
 } derive(Eq, Debug)
@@ -9534,14 +9534,14 @@ pub extend CcrResumeFollowBody with @json.FromJson::{from_json}
 
 ///|
 pub fn CcrResumeFollowBody::new(
-  max_outstanding_read_requests? : Int,
-  max_outstanding_write_requests? : Int,
-  max_read_request_operation_count? : Int,
+  max_outstanding_read_requests? : Int32,
+  max_outstanding_write_requests? : Int32,
+  max_read_request_operation_count? : Int32,
   max_read_request_size? : String,
   max_retry_delay? : Json,
-  max_write_buffer_count? : Int,
+  max_write_buffer_count? : Int32,
   max_write_buffer_size? : String,
-  max_write_request_operation_count? : Int,
+  max_write_request_operation_count? : Int32,
   max_write_request_size? : String,
   read_poll_timeout? : Json,
 ) -> CcrResumeFollowBody {
@@ -9584,7 +9584,7 @@ pub extend CcrResumeFollowRequest with @json.FromJson::{from_json}
 ///|
 pub fn CcrResumeFollowRequest::new(
   index : String,
-  query? : CcrResumeFollowQuery = CcrResumeFollowQuery::new(),
+  query~ : CcrResumeFollowQuery = CcrResumeFollowQuery::new(),
   body? : CcrResumeFollowBody,
 ) -> CcrResumeFollowRequest {
   { index, query, body, }
@@ -9746,7 +9746,7 @@ pub extend CcrStatsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn CcrStatsRequest::new(
-  query? : CcrStatsQuery = CcrStatsQuery::new(),
+  query~ : CcrStatsQuery = CcrStatsQuery::new(),
 ) -> CcrStatsRequest {
   { query, }
 }
@@ -9846,7 +9846,7 @@ pub extend CcrUnfollowRequest with @json.FromJson::{from_json}
 ///|
 pub fn CcrUnfollowRequest::new(
   index : String,
-  query? : CcrUnfollowQuery = CcrUnfollowQuery::new(),
+  query~ : CcrUnfollowQuery = CcrUnfollowQuery::new(),
 ) -> CcrUnfollowRequest {
   { index, query, }
 }
@@ -9916,7 +9916,7 @@ pub type ClearScrollBody = String
 ///|
 pub(all) struct ClearScrollResponse {
   succeeded : Bool
-  num_freed : Int
+  num_freed : Int32
 } derive(Eq, Debug)
 
 ///|
@@ -9980,7 +9980,7 @@ pub extend ClearScrollRequest with @json.FromJson::{from_json}
 ///|
 pub fn ClearScrollRequest::new(
   scroll_id? : String,
-  query? : ClearScrollQuery = ClearScrollQuery::new(),
+  query~ : ClearScrollQuery = ClearScrollQuery::new(),
   body? : ClearScrollBody,
 ) -> ClearScrollRequest {
   { scroll_id, query, body, }
@@ -10104,7 +10104,7 @@ pub fn ClosePointInTimeBody::new(id : Json) -> ClosePointInTimeBody {
 ///|
 pub(all) struct ClosePointInTimeResponse {
   succeeded : Bool
-  num_freed : Int
+  num_freed : Int32
 } derive(Eq, Debug)
 
 ///|
@@ -10167,7 +10167,7 @@ pub extend ClosePointInTimeRequest with @json.FromJson::{from_json}
 ///|
 pub fn ClosePointInTimeRequest::new(
   body : ClosePointInTimeBody,
-  query? : ClosePointInTimeQuery = ClosePointInTimeQuery::new(),
+  query~ : ClosePointInTimeQuery = ClosePointInTimeQuery::new(),
 ) -> ClosePointInTimeRequest {
   { query, body, }
 }
@@ -10187,7 +10187,7 @@ pub async fn Client::close_point_in_time(
 ///|
 pub(all) struct ClusterAllocationExplainQuery {
   index : String?
-  shard : Int?
+  shard : Int32?
   primary : Bool?
   current_node : String?
   include_disk_info : Bool?
@@ -10299,7 +10299,7 @@ pub extend ClusterAllocationExplainQuery with @json.FromJson::{from_json}
 ///|
 pub fn ClusterAllocationExplainQuery::new(
   index? : String,
-  shard? : Int,
+  shard? : Int32,
   primary? : Bool,
   current_node? : String,
   include_disk_info? : Bool,
@@ -10359,7 +10359,7 @@ pub fn ClusterAllocationExplainQuery::to_pairs(
 ///|
 pub(all) struct ClusterAllocationExplainBody {
   index : Json?
-  shard : Int?
+  shard : Int32?
   primary : Bool?
   current_node : Json?
 } derive(Eq, Debug)
@@ -10435,7 +10435,7 @@ pub extend ClusterAllocationExplainBody with @json.FromJson::{from_json}
 ///|
 pub fn ClusterAllocationExplainBody::new(
   index? : Json,
-  shard? : Int,
+  shard? : Int32,
   primary? : Bool,
   current_node? : Json,
 ) -> ClusterAllocationExplainBody {
@@ -10466,7 +10466,7 @@ pub(all) struct ClusterAllocationExplainResponse {
   rebalance_explanation : String?
   remaining_delay : Json?
   remaining_delay_in_millis : Json?
-  shard : Int
+  shard : Int32
   unassigned_info : Json?
   note : String?
 } derive(Eq, Debug)
@@ -10786,7 +10786,7 @@ pub extend ClusterAllocationExplainRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn ClusterAllocationExplainRequest::new(
-  query? : ClusterAllocationExplainQuery = ClusterAllocationExplainQuery::new(),
+  query~ : ClusterAllocationExplainQuery = ClusterAllocationExplainQuery::new(),
   body? : ClusterAllocationExplainBody,
 ) -> ClusterAllocationExplainRequest {
   { query, body, }
@@ -10920,7 +10920,7 @@ pub extend ClusterDeleteComponentTemplateRequest with @json.FromJson::{
 ///|
 pub fn ClusterDeleteComponentTemplateRequest::new(
   name : String,
-  query? : ClusterDeleteComponentTemplateQuery = ClusterDeleteComponentTemplateQuery::new(),
+  query~ : ClusterDeleteComponentTemplateQuery = ClusterDeleteComponentTemplateQuery::new(),
 ) -> ClusterDeleteComponentTemplateRequest {
   { name, query, }
 }
@@ -11057,7 +11057,7 @@ pub extend ClusterDeleteVotingConfigExclusionsRequest with @json.FromJson::{
 
 ///|
 pub fn ClusterDeleteVotingConfigExclusionsRequest::new(
-  query? : ClusterDeleteVotingConfigExclusionsQuery = ClusterDeleteVotingConfigExclusionsQuery::new(),
+  query~ : ClusterDeleteVotingConfigExclusionsQuery = ClusterDeleteVotingConfigExclusionsQuery::new(),
 ) -> ClusterDeleteVotingConfigExclusionsRequest {
   { query, }
 }
@@ -11186,7 +11186,7 @@ pub extend ClusterExistsComponentTemplateRequest with @json.FromJson::{
 ///|
 pub fn ClusterExistsComponentTemplateRequest::new(
   name : String,
-  query? : ClusterExistsComponentTemplateQuery = ClusterExistsComponentTemplateQuery::new(),
+  query~ : ClusterExistsComponentTemplateQuery = ClusterExistsComponentTemplateQuery::new(),
 ) -> ClusterExistsComponentTemplateRequest {
   { name, query, }
 }
@@ -11405,7 +11405,7 @@ pub extend ClusterGetComponentTemplateRequest with @json.FromJson::{from_json}
 ///|
 pub fn ClusterGetComponentTemplateRequest::new(
   name? : String,
-  query? : ClusterGetComponentTemplateQuery = ClusterGetComponentTemplateQuery::new(),
+  query~ : ClusterGetComponentTemplateQuery = ClusterGetComponentTemplateQuery::new(),
 ) -> ClusterGetComponentTemplateRequest {
   { name, query, }
 }
@@ -11617,7 +11617,7 @@ pub extend ClusterGetSettingsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn ClusterGetSettingsRequest::new(
-  query? : ClusterGetSettingsQuery = ClusterGetSettingsQuery::new(),
+  query~ : ClusterGetSettingsQuery = ClusterGetSettingsQuery::new(),
 ) -> ClusterGetSettingsRequest {
   { query, }
 }
@@ -11919,7 +11919,7 @@ pub extend ClusterHealthRequest with @json.FromJson::{from_json}
 ///|
 pub fn ClusterHealthRequest::new(
   index? : String,
-  query? : ClusterHealthQuery = ClusterHealthQuery::new(),
+  query~ : ClusterHealthQuery = ClusterHealthQuery::new(),
 ) -> ClusterHealthRequest {
   { index, query, }
 }
@@ -12090,7 +12090,7 @@ pub extend ClusterInfoRequest with @json.FromJson::{from_json}
 ///|
 pub fn ClusterInfoRequest::new(
   target : String,
-  query? : ClusterInfoQuery = ClusterInfoQuery::new(),
+  query~ : ClusterInfoQuery = ClusterInfoQuery::new(),
 ) -> ClusterInfoRequest {
   { target, query, }
 }
@@ -12249,7 +12249,7 @@ pub extend ClusterPendingTasksRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn ClusterPendingTasksRequest::new(
-  query? : ClusterPendingTasksQuery = ClusterPendingTasksQuery::new(),
+  query~ : ClusterPendingTasksQuery = ClusterPendingTasksQuery::new(),
 ) -> ClusterPendingTasksRequest {
   { query, }
 }
@@ -12409,7 +12409,7 @@ pub extend ClusterPostVotingConfigExclusionsRequest with @json.FromJson::{
 
 ///|
 pub fn ClusterPostVotingConfigExclusionsRequest::new(
-  query? : ClusterPostVotingConfigExclusionsQuery = ClusterPostVotingConfigExclusionsQuery::new(),
+  query~ : ClusterPostVotingConfigExclusionsQuery = ClusterPostVotingConfigExclusionsQuery::new(),
 ) -> ClusterPostVotingConfigExclusionsRequest {
   { query, }
 }
@@ -12638,7 +12638,7 @@ pub extend ClusterPutComponentTemplateRequest with @json.FromJson::{from_json}
 pub fn ClusterPutComponentTemplateRequest::new(
   name : String,
   body : ClusterPutComponentTemplateBody,
-  query? : ClusterPutComponentTemplateQuery = ClusterPutComponentTemplateQuery::new(),
+  query~ : ClusterPutComponentTemplateQuery = ClusterPutComponentTemplateQuery::new(),
 ) -> ClusterPutComponentTemplateRequest {
   { name, query, body, }
 }
@@ -12889,7 +12889,7 @@ pub extend ClusterPutSettingsRequest with @json.FromJson::{from_json}
 ///|
 pub fn ClusterPutSettingsRequest::new(
   body : ClusterPutSettingsBody,
-  query? : ClusterPutSettingsQuery = ClusterPutSettingsQuery::new(),
+  query~ : ClusterPutSettingsQuery = ClusterPutSettingsQuery::new(),
 ) -> ClusterPutSettingsRequest {
   { query, body, }
 }
@@ -12974,7 +12974,7 @@ pub extend ClusterRemoteInfoRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn ClusterRemoteInfoRequest::new(
-  query? : ClusterRemoteInfoQuery = ClusterRemoteInfoQuery::new(),
+  query~ : ClusterRemoteInfoQuery = ClusterRemoteInfoQuery::new(),
 ) -> ClusterRemoteInfoRequest {
   { query, }
 }
@@ -13258,7 +13258,7 @@ pub extend ClusterRerouteRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn ClusterRerouteRequest::new(
-  query? : ClusterRerouteQuery = ClusterRerouteQuery::new(),
+  query~ : ClusterRerouteQuery = ClusterRerouteQuery::new(),
   body? : ClusterRerouteBody,
 ) -> ClusterRerouteRequest {
   { query, body, }
@@ -13494,7 +13494,7 @@ pub extend ClusterStateRequest with @json.FromJson::{from_json}
 pub fn ClusterStateRequest::new(
   metric? : String,
   index? : String,
-  query? : ClusterStateQuery = ClusterStateQuery::new(),
+  query~ : ClusterStateQuery = ClusterStateQuery::new(),
 ) -> ClusterStateRequest {
   { metric, index, query, }
 }
@@ -13626,7 +13626,7 @@ pub extend ClusterStatsRequest with @json.FromJson::{from_json}
 ///|
 pub fn ClusterStatsRequest::new(
   node_id? : String,
-  query? : ClusterStatsQuery = ClusterStatsQuery::new(),
+  query~ : ClusterStatsQuery = ClusterStatsQuery::new(),
 ) -> ClusterStatsRequest {
   { node_id, query, }
 }
@@ -13758,7 +13758,7 @@ pub extend ConnectorCheckInRequest with @json.FromJson::{from_json}
 ///|
 pub fn ConnectorCheckInRequest::new(
   connector_id : String,
-  query? : ConnectorCheckInQuery = ConnectorCheckInQuery::new(),
+  query~ : ConnectorCheckInQuery = ConnectorCheckInQuery::new(),
 ) -> ConnectorCheckInRequest {
   { connector_id, query, }
 }
@@ -13881,7 +13881,7 @@ pub extend ConnectorDeleteRequest with @json.FromJson::{from_json}
 ///|
 pub fn ConnectorDeleteRequest::new(
   connector_id : String,
-  query? : ConnectorDeleteQuery = ConnectorDeleteQuery::new(),
+  query~ : ConnectorDeleteQuery = ConnectorDeleteQuery::new(),
 ) -> ConnectorDeleteRequest {
   { connector_id, query, }
 }
@@ -13985,7 +13985,7 @@ pub extend ConnectorGetRequest with @json.FromJson::{from_json}
 ///|
 pub fn ConnectorGetRequest::new(
   connector_id : String,
-  query? : ConnectorGetQuery = ConnectorGetQuery::new(),
+  query~ : ConnectorGetQuery = ConnectorGetQuery::new(),
 ) -> ConnectorGetRequest {
   { connector_id, query, }
 }
@@ -14056,9 +14056,9 @@ pub(all) struct ConnectorLastSyncBody {
   last_access_control_sync_error : String?
   last_access_control_sync_scheduled_at : Json?
   last_access_control_sync_status : Json?
-  last_deleted_document_count : Int?
+  last_deleted_document_count : Int32?
   last_incremental_sync_scheduled_at : Json?
-  last_indexed_document_count : Int?
+  last_indexed_document_count : Int32?
   last_seen : Json?
   last_sync_error : String?
   last_sync_scheduled_at : Json?
@@ -14259,9 +14259,9 @@ pub fn ConnectorLastSyncBody::new(
   last_access_control_sync_error? : String,
   last_access_control_sync_scheduled_at? : Json,
   last_access_control_sync_status? : Json,
-  last_deleted_document_count? : Int,
+  last_deleted_document_count? : Int32,
   last_incremental_sync_scheduled_at? : Json,
-  last_indexed_document_count? : Int,
+  last_indexed_document_count? : Int32,
   last_seen? : Json,
   last_sync_error? : String,
   last_sync_scheduled_at? : Json,
@@ -14347,7 +14347,7 @@ pub extend ConnectorLastSyncRequest with @json.FromJson::{from_json}
 pub fn ConnectorLastSyncRequest::new(
   connector_id : String,
   body : ConnectorLastSyncBody,
-  query? : ConnectorLastSyncQuery = ConnectorLastSyncQuery::new(),
+  query~ : ConnectorLastSyncQuery = ConnectorLastSyncQuery::new(),
 ) -> ConnectorLastSyncRequest {
   { connector_id, query, body, }
 }
@@ -14372,8 +14372,8 @@ pub async fn Client::connector_last_sync(
 
 ///|
 pub(all) struct ConnectorListQuery {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   index_name : String?
   connector_name : String?
   service_type : String?
@@ -14479,8 +14479,8 @@ pub extend ConnectorListQuery with @json.FromJson::{from_json}
 
 ///|
 pub fn ConnectorListQuery::new(
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
   index_name? : String,
   connector_name? : String,
   service_type? : String,
@@ -14538,7 +14538,7 @@ pub fn ConnectorListQuery::to_pairs(
 
 ///|
 pub(all) struct ConnectorListResponse {
-  count : Int
+  count : Int32
   results : Array[Json]
 } derive(Eq, Debug)
 
@@ -14600,7 +14600,7 @@ pub extend ConnectorListRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn ConnectorListRequest::new(
-  query? : ConnectorListQuery = ConnectorListQuery::new(),
+  query~ : ConnectorListQuery = ConnectorListQuery::new(),
 ) -> ConnectorListRequest {
   { query, }
 }
@@ -14834,7 +14834,7 @@ pub extend ConnectorPostRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn ConnectorPostRequest::new(
-  query? : ConnectorPostQuery = ConnectorPostQuery::new(),
+  query~ : ConnectorPostQuery = ConnectorPostQuery::new(),
   body? : ConnectorPostBody,
 ) -> ConnectorPostRequest {
   { query, body, }
@@ -15073,7 +15073,7 @@ pub extend ConnectorPutRequest with @json.FromJson::{from_json}
 ///|
 pub fn ConnectorPutRequest::new(
   connector_id? : String,
-  query? : ConnectorPutQuery = ConnectorPutQuery::new(),
+  query~ : ConnectorPutQuery = ConnectorPutQuery::new(),
   body? : ConnectorPutBody,
 ) -> ConnectorPutRequest {
   { connector_id, query, body, }
@@ -15215,7 +15215,7 @@ pub extend ConnectorSecretDeleteRequest with @json.FromJson::{from_json}
 ///|
 pub fn ConnectorSecretDeleteRequest::new(
   id : String,
-  query? : ConnectorSecretDeleteQuery = ConnectorSecretDeleteQuery::new(),
+  query~ : ConnectorSecretDeleteQuery = ConnectorSecretDeleteQuery::new(),
 ) -> ConnectorSecretDeleteRequest {
   { id, query, }
 }
@@ -15347,7 +15347,7 @@ pub extend ConnectorSecretGetRequest with @json.FromJson::{from_json}
 ///|
 pub fn ConnectorSecretGetRequest::new(
   id : String,
-  query? : ConnectorSecretGetQuery = ConnectorSecretGetQuery::new(),
+  query~ : ConnectorSecretGetQuery = ConnectorSecretGetQuery::new(),
 ) -> ConnectorSecretGetRequest {
   { id, query, }
 }
@@ -15473,7 +15473,7 @@ pub extend ConnectorSecretPostRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn ConnectorSecretPostRequest::new(
-  query? : ConnectorSecretPostQuery = ConnectorSecretPostQuery::new(),
+  query~ : ConnectorSecretPostQuery = ConnectorSecretPostQuery::new(),
 ) -> ConnectorSecretPostRequest {
   { query, }
 }
@@ -15595,7 +15595,7 @@ pub extend ConnectorSecretPutRequest with @json.FromJson::{from_json}
 ///|
 pub fn ConnectorSecretPutRequest::new(
   id : String,
-  query? : ConnectorSecretPutQuery = ConnectorSecretPutQuery::new(),
+  query~ : ConnectorSecretPutQuery = ConnectorSecretPutQuery::new(),
 ) -> ConnectorSecretPutRequest {
   { id, query, }
 }
@@ -15728,7 +15728,7 @@ pub extend ConnectorSyncJobCancelRequest with @json.FromJson::{from_json}
 ///|
 pub fn ConnectorSyncJobCancelRequest::new(
   connector_sync_job_id : String,
-  query? : ConnectorSyncJobCancelQuery = ConnectorSyncJobCancelQuery::new(),
+  query~ : ConnectorSyncJobCancelQuery = ConnectorSyncJobCancelQuery::new(),
 ) -> ConnectorSyncJobCancelRequest {
   { connector_sync_job_id, query, }
 }
@@ -15825,7 +15825,7 @@ pub extend ConnectorSyncJobCheckInRequest with @json.FromJson::{from_json}
 ///|
 pub fn ConnectorSyncJobCheckInRequest::new(
   connector_sync_job_id : String,
-  query? : ConnectorSyncJobCheckInQuery = ConnectorSyncJobCheckInQuery::new(),
+  query~ : ConnectorSyncJobCheckInQuery = ConnectorSyncJobCheckInQuery::new(),
 ) -> ConnectorSyncJobCheckInRequest {
   { connector_sync_job_id, query, }
 }
@@ -15980,7 +15980,7 @@ pub extend ConnectorSyncJobClaimRequest with @json.FromJson::{from_json}
 pub fn ConnectorSyncJobClaimRequest::new(
   connector_sync_job_id : String,
   body : ConnectorSyncJobClaimBody,
-  query? : ConnectorSyncJobClaimQuery = ConnectorSyncJobClaimQuery::new(),
+  query~ : ConnectorSyncJobClaimQuery = ConnectorSyncJobClaimQuery::new(),
 ) -> ConnectorSyncJobClaimRequest {
   { connector_sync_job_id, query, body, }
 }
@@ -16077,7 +16077,7 @@ pub extend ConnectorSyncJobDeleteRequest with @json.FromJson::{from_json}
 ///|
 pub fn ConnectorSyncJobDeleteRequest::new(
   connector_sync_job_id : String,
-  query? : ConnectorSyncJobDeleteQuery = ConnectorSyncJobDeleteQuery::new(),
+  query~ : ConnectorSyncJobDeleteQuery = ConnectorSyncJobDeleteQuery::new(),
 ) -> ConnectorSyncJobDeleteRequest {
   { connector_sync_job_id, query, }
 }
@@ -16219,7 +16219,7 @@ pub extend ConnectorSyncJobErrorRequest with @json.FromJson::{from_json}
 pub fn ConnectorSyncJobErrorRequest::new(
   connector_sync_job_id : String,
   body : ConnectorSyncJobErrorBody,
-  query? : ConnectorSyncJobErrorQuery = ConnectorSyncJobErrorQuery::new(),
+  query~ : ConnectorSyncJobErrorQuery = ConnectorSyncJobErrorQuery::new(),
 ) -> ConnectorSyncJobErrorRequest {
   { connector_sync_job_id, query, body, }
 }
@@ -16314,7 +16314,7 @@ pub extend ConnectorSyncJobGetRequest with @json.FromJson::{from_json}
 ///|
 pub fn ConnectorSyncJobGetRequest::new(
   connector_sync_job_id : String,
-  query? : ConnectorSyncJobGetQuery = ConnectorSyncJobGetQuery::new(),
+  query~ : ConnectorSyncJobGetQuery = ConnectorSyncJobGetQuery::new(),
 ) -> ConnectorSyncJobGetRequest {
   { connector_sync_job_id, query, }
 }
@@ -16340,8 +16340,8 @@ pub async fn Client::connector_sync_job_get(
 
 ///|
 pub(all) struct ConnectorSyncJobListQuery {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   status : String?
   connector_id : String?
   job_type : Json?
@@ -16424,8 +16424,8 @@ pub extend ConnectorSyncJobListQuery with @json.FromJson::{from_json}
 
 ///|
 pub fn ConnectorSyncJobListQuery::new(
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
   status? : String,
   connector_id? : String,
   job_type? : Json,
@@ -16463,7 +16463,7 @@ pub fn ConnectorSyncJobListQuery::to_pairs(
 
 ///|
 pub(all) struct ConnectorSyncJobListResponse {
-  count : Int
+  count : Int32
   results : Array[Json]
 } derive(Eq, Debug)
 
@@ -16527,7 +16527,7 @@ pub extend ConnectorSyncJobListRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn ConnectorSyncJobListRequest::new(
-  query? : ConnectorSyncJobListQuery = ConnectorSyncJobListQuery::new(),
+  query~ : ConnectorSyncJobListQuery = ConnectorSyncJobListQuery::new(),
 ) -> ConnectorSyncJobListRequest {
   { query, }
 }
@@ -16723,7 +16723,7 @@ pub extend ConnectorSyncJobPostRequest with @json.FromJson::{from_json}
 ///|
 pub fn ConnectorSyncJobPostRequest::new(
   body : ConnectorSyncJobPostBody,
-  query? : ConnectorSyncJobPostQuery = ConnectorSyncJobPostQuery::new(),
+  query~ : ConnectorSyncJobPostQuery = ConnectorSyncJobPostQuery::new(),
 ) -> ConnectorSyncJobPostRequest {
   { query, body, }
 }
@@ -16796,12 +16796,12 @@ pub fn ConnectorSyncJobUpdateStatsQuery::to_pairs(
 
 ///|
 pub(all) struct ConnectorSyncJobUpdateStatsBody {
-  deleted_document_count : Int
-  indexed_document_count : Int
-  indexed_document_volume : Int
+  deleted_document_count : Int32
+  indexed_document_count : Int32
+  indexed_document_volume : Int32
   last_seen : Json?
   metadata : Json?
-  total_document_count : Int?
+  total_document_count : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -16884,12 +16884,12 @@ pub extend ConnectorSyncJobUpdateStatsBody with @json.FromJson::{from_json}
 
 ///|
 pub fn ConnectorSyncJobUpdateStatsBody::new(
-  deleted_document_count : Int,
-  indexed_document_count : Int,
-  indexed_document_volume : Int,
+  deleted_document_count : Int32,
+  indexed_document_count : Int32,
+  indexed_document_volume : Int32,
   last_seen? : Json,
   metadata? : Json,
-  total_document_count? : Int,
+  total_document_count? : Int32,
 ) -> ConnectorSyncJobUpdateStatsBody {
   {
     deleted_document_count,
@@ -16927,7 +16927,7 @@ pub extend ConnectorSyncJobUpdateStatsRequest with @json.FromJson::{from_json}
 pub fn ConnectorSyncJobUpdateStatsRequest::new(
   connector_sync_job_id : String,
   body : ConnectorSyncJobUpdateStatsBody,
-  query? : ConnectorSyncJobUpdateStatsQuery = ConnectorSyncJobUpdateStatsQuery::new(),
+  query~ : ConnectorSyncJobUpdateStatsQuery = ConnectorSyncJobUpdateStatsQuery::new(),
 ) -> ConnectorSyncJobUpdateStatsRequest {
   { connector_sync_job_id, query, body, }
 }
@@ -17076,7 +17076,7 @@ pub extend ConnectorUpdateActiveFilteringRequest with @json.FromJson::{
 ///|
 pub fn ConnectorUpdateActiveFilteringRequest::new(
   connector_id : String,
-  query? : ConnectorUpdateActiveFilteringQuery = ConnectorUpdateActiveFilteringQuery::new(),
+  query~ : ConnectorUpdateActiveFilteringQuery = ConnectorUpdateActiveFilteringQuery::new(),
   body? : ConnectorUpdateActiveFilteringBody,
 ) -> ConnectorUpdateActiveFilteringRequest {
   { connector_id, query, body, }
@@ -17285,7 +17285,7 @@ pub extend ConnectorUpdateApiKeyIdRequest with @json.FromJson::{from_json}
 pub fn ConnectorUpdateApiKeyIdRequest::new(
   connector_id : String,
   body : ConnectorUpdateApiKeyIdBody,
-  query? : ConnectorUpdateApiKeyIdQuery = ConnectorUpdateApiKeyIdQuery::new(),
+  query~ : ConnectorUpdateApiKeyIdQuery = ConnectorUpdateApiKeyIdQuery::new(),
 ) -> ConnectorUpdateApiKeyIdRequest {
   { connector_id, query, body, }
 }
@@ -17495,7 +17495,7 @@ pub extend ConnectorUpdateConfigurationRequest with @json.FromJson::{from_json}
 pub fn ConnectorUpdateConfigurationRequest::new(
   connector_id : String,
   body : ConnectorUpdateConfigurationBody,
-  query? : ConnectorUpdateConfigurationQuery = ConnectorUpdateConfigurationQuery::new(),
+  query~ : ConnectorUpdateConfigurationQuery = ConnectorUpdateConfigurationQuery::new(),
 ) -> ConnectorUpdateConfigurationRequest {
   { connector_id, query, body, }
 }
@@ -17674,7 +17674,7 @@ pub extend ConnectorUpdateErrorRequest with @json.FromJson::{from_json}
 pub fn ConnectorUpdateErrorRequest::new(
   connector_id : String,
   body : ConnectorUpdateErrorBody,
-  query? : ConnectorUpdateErrorQuery = ConnectorUpdateErrorQuery::new(),
+  query~ : ConnectorUpdateErrorQuery = ConnectorUpdateErrorQuery::new(),
 ) -> ConnectorUpdateErrorRequest {
   { connector_id, query, body, }
 }
@@ -17858,7 +17858,7 @@ pub extend ConnectorUpdateFeaturesRequest with @json.FromJson::{from_json}
 pub fn ConnectorUpdateFeaturesRequest::new(
   connector_id : String,
   body : ConnectorUpdateFeaturesBody,
-  query? : ConnectorUpdateFeaturesQuery = ConnectorUpdateFeaturesQuery::new(),
+  query~ : ConnectorUpdateFeaturesQuery = ConnectorUpdateFeaturesQuery::new(),
 ) -> ConnectorUpdateFeaturesRequest {
   { connector_id, query, body, }
 }
@@ -18073,7 +18073,7 @@ pub extend ConnectorUpdateFilteringRequest with @json.FromJson::{from_json}
 pub fn ConnectorUpdateFilteringRequest::new(
   connector_id : String,
   body : ConnectorUpdateFilteringBody,
-  query? : ConnectorUpdateFilteringQuery = ConnectorUpdateFilteringQuery::new(),
+  query~ : ConnectorUpdateFilteringQuery = ConnectorUpdateFilteringQuery::new(),
 ) -> ConnectorUpdateFilteringRequest {
   { connector_id, query, body, }
 }
@@ -18280,7 +18280,7 @@ pub extend ConnectorUpdateFilteringValidationRequest with @json.FromJson::{
 pub fn ConnectorUpdateFilteringValidationRequest::new(
   connector_id : String,
   body : ConnectorUpdateFilteringValidationBody,
-  query? : ConnectorUpdateFilteringValidationQuery = ConnectorUpdateFilteringValidationQuery::new(),
+  query~ : ConnectorUpdateFilteringValidationQuery = ConnectorUpdateFilteringValidationQuery::new(),
 ) -> ConnectorUpdateFilteringValidationRequest {
   { connector_id, query, body, }
 }
@@ -18471,7 +18471,7 @@ pub extend ConnectorUpdateIndexNameRequest with @json.FromJson::{from_json}
 pub fn ConnectorUpdateIndexNameRequest::new(
   connector_id : String,
   body : ConnectorUpdateIndexNameBody,
-  query? : ConnectorUpdateIndexNameQuery = ConnectorUpdateIndexNameQuery::new(),
+  query~ : ConnectorUpdateIndexNameQuery = ConnectorUpdateIndexNameQuery::new(),
 ) -> ConnectorUpdateIndexNameRequest {
   { connector_id, query, body, }
 }
@@ -18668,7 +18668,7 @@ pub extend ConnectorUpdateNameRequest with @json.FromJson::{from_json}
 pub fn ConnectorUpdateNameRequest::new(
   connector_id : String,
   body : ConnectorUpdateNameBody,
-  query? : ConnectorUpdateNameQuery = ConnectorUpdateNameQuery::new(),
+  query~ : ConnectorUpdateNameQuery = ConnectorUpdateNameQuery::new(),
 ) -> ConnectorUpdateNameRequest {
   { connector_id, query, body, }
 }
@@ -18848,7 +18848,7 @@ pub extend ConnectorUpdateNativeRequest with @json.FromJson::{from_json}
 pub fn ConnectorUpdateNativeRequest::new(
   connector_id : String,
   body : ConnectorUpdateNativeBody,
-  query? : ConnectorUpdateNativeQuery = ConnectorUpdateNativeQuery::new(),
+  query~ : ConnectorUpdateNativeQuery = ConnectorUpdateNativeQuery::new(),
 ) -> ConnectorUpdateNativeRequest {
   { connector_id, query, body, }
 }
@@ -19032,7 +19032,7 @@ pub extend ConnectorUpdatePipelineRequest with @json.FromJson::{from_json}
 pub fn ConnectorUpdatePipelineRequest::new(
   connector_id : String,
   body : ConnectorUpdatePipelineBody,
-  query? : ConnectorUpdatePipelineQuery = ConnectorUpdatePipelineQuery::new(),
+  query~ : ConnectorUpdatePipelineQuery = ConnectorUpdatePipelineQuery::new(),
 ) -> ConnectorUpdatePipelineRequest {
   { connector_id, query, body, }
 }
@@ -19222,7 +19222,7 @@ pub extend ConnectorUpdateSchedulingRequest with @json.FromJson::{from_json}
 pub fn ConnectorUpdateSchedulingRequest::new(
   connector_id : String,
   body : ConnectorUpdateSchedulingBody,
-  query? : ConnectorUpdateSchedulingQuery = ConnectorUpdateSchedulingQuery::new(),
+  query~ : ConnectorUpdateSchedulingQuery = ConnectorUpdateSchedulingQuery::new(),
 ) -> ConnectorUpdateSchedulingRequest {
   { connector_id, query, body, }
 }
@@ -19416,7 +19416,7 @@ pub extend ConnectorUpdateServiceTypeRequest with @json.FromJson::{from_json}
 pub fn ConnectorUpdateServiceTypeRequest::new(
   connector_id : String,
   body : ConnectorUpdateServiceTypeBody,
-  query? : ConnectorUpdateServiceTypeQuery = ConnectorUpdateServiceTypeQuery::new(),
+  query~ : ConnectorUpdateServiceTypeQuery = ConnectorUpdateServiceTypeQuery::new(),
 ) -> ConnectorUpdateServiceTypeRequest {
   { connector_id, query, body, }
 }
@@ -19600,7 +19600,7 @@ pub extend ConnectorUpdateStatusRequest with @json.FromJson::{from_json}
 pub fn ConnectorUpdateStatusRequest::new(
   connector_id : String,
   body : ConnectorUpdateStatusBody,
-  query? : ConnectorUpdateStatusQuery = ConnectorUpdateStatusQuery::new(),
+  query~ : ConnectorUpdateStatusQuery = ConnectorUpdateStatusQuery::new(),
 ) -> ConnectorUpdateStatusRequest {
   { connector_id, query, body, }
 }
@@ -19635,7 +19635,7 @@ pub(all) struct CountQuery {
   min_score : Double?
   preference : String?
   routing : String?
-  terminate_after : Int?
+  terminate_after : Int32?
   q : String?
 } derive(Eq, Debug)
 
@@ -19815,7 +19815,7 @@ pub fn CountQuery::new(
   min_score? : Double,
   preference? : String,
   routing? : String,
-  terminate_after? : Int,
+  terminate_after? : Int32,
   q? : String,
 ) -> CountQuery {
   {
@@ -19964,7 +19964,7 @@ pub fn CountBody::new(query? : Json, project_routing? : Json) -> CountBody {
 
 ///|
 pub(all) struct CountResponse {
-  count : Int
+  count : Int32
   _shards : Json
 } derive(Eq, Debug)
 
@@ -20027,7 +20027,7 @@ pub extend CountRequest with @json.FromJson::{from_json}
 ///|
 pub fn CountRequest::new(
   index? : String,
-  query? : CountQuery = CountQuery::new(),
+  query~ : CountQuery = CountQuery::new(),
   body? : CountBody,
 ) -> CountRequest {
   { index, query, body, }
@@ -20305,7 +20305,7 @@ pub fn CreateRequest::new(
   index : String,
   id : String,
   body : CreateBody,
-  query? : CreateQuery = CreateQuery::new(),
+  query~ : CreateQuery = CreateQuery::new(),
 ) -> CreateRequest {
   { index, id, query, body, }
 }
@@ -20458,7 +20458,7 @@ pub extend DanglingIndicesDeleteDanglingIndexRequest with @json.FromJson::{
 ///|
 pub fn DanglingIndicesDeleteDanglingIndexRequest::new(
   index_uuid : String,
-  query? : DanglingIndicesDeleteDanglingIndexQuery = DanglingIndicesDeleteDanglingIndexQuery::new(),
+  query~ : DanglingIndicesDeleteDanglingIndexQuery = DanglingIndicesDeleteDanglingIndexQuery::new(),
 ) -> DanglingIndicesDeleteDanglingIndexRequest {
   { index_uuid, query, }
 }
@@ -20609,7 +20609,7 @@ pub extend DanglingIndicesImportDanglingIndexRequest with @json.FromJson::{
 ///|
 pub fn DanglingIndicesImportDanglingIndexRequest::new(
   index_uuid : String,
-  query? : DanglingIndicesImportDanglingIndexQuery = DanglingIndicesImportDanglingIndexQuery::new(),
+  query~ : DanglingIndicesImportDanglingIndexQuery = DanglingIndicesImportDanglingIndexQuery::new(),
 ) -> DanglingIndicesImportDanglingIndexRequest {
   { index_uuid, query, }
 }
@@ -20756,7 +20756,7 @@ pub extend DanglingIndicesListDanglingIndicesRequest with @json.FromJson::{
 
 ///|
 pub fn DanglingIndicesListDanglingIndicesRequest::new(
-  query? : DanglingIndicesListDanglingIndicesQuery = DanglingIndicesListDanglingIndicesQuery::new(),
+  query~ : DanglingIndicesListDanglingIndicesQuery = DanglingIndicesListDanglingIndicesQuery::new(),
 ) -> DanglingIndicesListDanglingIndicesRequest {
   { query, }
 }
@@ -20774,7 +20774,7 @@ pub async fn Client::dangling_indices_list_dangling_indices(
 
 ///|
 pub(all) struct DeleteQuery {
-  if_primary_term : Int?
+  if_primary_term : Int32?
   if_seq_no : String?
   refresh : String?
   routing : String?
@@ -20891,7 +20891,7 @@ pub extend DeleteQuery with @json.FromJson::{from_json}
 
 ///|
 pub fn DeleteQuery::new(
-  if_primary_term? : Int,
+  if_primary_term? : Int32,
   if_seq_no? : String,
   refresh? : String,
   routing? : String,
@@ -20978,7 +20978,7 @@ pub extend DeleteRequest with @json.FromJson::{from_json}
 pub fn DeleteRequest::new(
   index : String,
   id : String,
-  query? : DeleteQuery = DeleteQuery::new(),
+  query~ : DeleteQuery = DeleteQuery::new(),
 ) -> DeleteRequest {
   { index, id, query, }
 }
@@ -21008,10 +21008,10 @@ pub(all) struct DeleteByQueryQuery {
   default_operator : String?
   df : String?
   expand_wildcards : String?
-  from : Int?
+  from : Int32?
   ignore_unavailable : Bool?
   lenient : Bool?
-  max_docs : Int?
+  max_docs : Int32?
   preference : String?
   refresh : Bool?
   request_cache : Bool?
@@ -21019,13 +21019,13 @@ pub(all) struct DeleteByQueryQuery {
   routing : String?
   q : String?
   scroll : String?
-  scroll_size : Int?
+  scroll_size : Int32?
   search_timeout : String?
   search_type : String?
   slices : String?
   sort : Array[String]?
   stats : Array[String]?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   version : Bool?
   wait_for_active_shards : String?
@@ -21348,10 +21348,10 @@ pub fn DeleteByQueryQuery::new(
   default_operator? : String,
   df? : String,
   expand_wildcards? : String,
-  from? : Int,
+  from? : Int32,
   ignore_unavailable? : Bool,
   lenient? : Bool,
-  max_docs? : Int,
+  max_docs? : Int32,
   preference? : String,
   refresh? : Bool,
   request_cache? : Bool,
@@ -21359,13 +21359,13 @@ pub fn DeleteByQueryQuery::new(
   routing? : String,
   q? : String,
   scroll? : String,
-  scroll_size? : Int,
+  scroll_size? : Int32,
   search_timeout? : String,
   search_type? : String,
   slices? : String,
   sort? : Array[String],
   stats? : Array[String],
-  terminate_after? : Int,
+  terminate_after? : Int32,
   timeout? : String,
   version? : Bool,
   wait_for_active_shards? : String,
@@ -21540,7 +21540,7 @@ pub fn DeleteByQueryQuery::to_pairs(
 
 ///|
 pub(all) struct DeleteByQueryBody {
-  max_docs : Int?
+  max_docs : Int32?
   query : Json?
   slice : Json?
   sort : Json?
@@ -21611,7 +21611,7 @@ pub extend DeleteByQueryBody with @json.FromJson::{from_json}
 
 ///|
 pub fn DeleteByQueryBody::new(
-  max_docs? : Int,
+  max_docs? : Int32,
   query? : Json,
   slice? : Json,
   sort? : Json,
@@ -21621,13 +21621,13 @@ pub fn DeleteByQueryBody::new(
 
 ///|
 pub(all) struct DeleteByQueryResponse {
-  batches : Int?
-  deleted : Int?
+  batches : Int32?
+  deleted : Int32?
   failures : Array[Json]?
-  noops : Int?
+  noops : Int32?
   requests_per_second : Double?
   retries : Json?
-  slice_id : Int?
+  slice_id : Int32?
   slices : Array[Json]?
   task : Json?
   throttled : Json?
@@ -21636,8 +21636,8 @@ pub(all) struct DeleteByQueryResponse {
   throttled_until_millis : Json?
   timed_out : Bool?
   took : Json?
-  total : Int?
-  version_conflicts : Int?
+  total : Int32?
+  version_conflicts : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -21854,7 +21854,7 @@ pub extend DeleteByQueryRequest with @json.FromJson::{from_json}
 pub fn DeleteByQueryRequest::new(
   index : String,
   body : DeleteByQueryBody,
-  query? : DeleteByQueryQuery = DeleteByQueryQuery::new(),
+  query~ : DeleteByQueryQuery = DeleteByQueryQuery::new(),
 ) -> DeleteByQueryRequest {
   { index, query, body, }
 }
@@ -22081,7 +22081,7 @@ pub extend DeleteScriptRequest with @json.FromJson::{from_json}
 ///|
 pub fn DeleteScriptRequest::new(
   id : String,
-  query? : DeleteScriptQuery = DeleteScriptQuery::new(),
+  query~ : DeleteScriptQuery = DeleteScriptQuery::new(),
 ) -> DeleteScriptRequest {
   { id, query, }
 }
@@ -22186,7 +22186,7 @@ pub extend EnrichDeletePolicyRequest with @json.FromJson::{from_json}
 ///|
 pub fn EnrichDeletePolicyRequest::new(
   name : String,
-  query? : EnrichDeletePolicyQuery = EnrichDeletePolicyQuery::new(),
+  query~ : EnrichDeletePolicyQuery = EnrichDeletePolicyQuery::new(),
 ) -> EnrichDeletePolicyRequest {
   { name, query, }
 }
@@ -22363,7 +22363,7 @@ pub extend EnrichExecutePolicyRequest with @json.FromJson::{from_json}
 ///|
 pub fn EnrichExecutePolicyRequest::new(
   name : String,
-  query? : EnrichExecutePolicyQuery = EnrichExecutePolicyQuery::new(),
+  query~ : EnrichExecutePolicyQuery = EnrichExecutePolicyQuery::new(),
 ) -> EnrichExecutePolicyRequest {
   { name, query, }
 }
@@ -22507,7 +22507,7 @@ pub extend EnrichGetPolicyRequest with @json.FromJson::{from_json}
 ///|
 pub fn EnrichGetPolicyRequest::new(
   name? : String,
-  query? : EnrichGetPolicyQuery = EnrichGetPolicyQuery::new(),
+  query~ : EnrichGetPolicyQuery = EnrichGetPolicyQuery::new(),
 ) -> EnrichGetPolicyRequest {
   { name, query, }
 }
@@ -22696,7 +22696,7 @@ pub extend EnrichPutPolicyRequest with @json.FromJson::{from_json}
 pub fn EnrichPutPolicyRequest::new(
   name : String,
   body : EnrichPutPolicyBody,
-  query? : EnrichPutPolicyQuery = EnrichPutPolicyQuery::new(),
+  query~ : EnrichPutPolicyQuery = EnrichPutPolicyQuery::new(),
 ) -> EnrichPutPolicyRequest {
   { name, query, body, }
 }
@@ -22852,7 +22852,7 @@ pub extend EnrichStatsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn EnrichStatsRequest::new(
-  query? : EnrichStatsQuery = EnrichStatsQuery::new(),
+  query~ : EnrichStatsQuery = EnrichStatsQuery::new(),
 ) -> EnrichStatsRequest {
   { query, }
 }
@@ -22936,7 +22936,7 @@ pub extend EqlDeleteRequest with @json.FromJson::{from_json}
 ///|
 pub fn EqlDeleteRequest::new(
   id : String,
-  query? : EqlDeleteQuery = EqlDeleteQuery::new(),
+  query~ : EqlDeleteQuery = EqlDeleteQuery::new(),
 ) -> EqlDeleteRequest {
   { id, query, }
 }
@@ -23065,7 +23065,7 @@ pub extend EqlGetRequest with @json.FromJson::{from_json}
 ///|
 pub fn EqlGetRequest::new(
   id : String,
-  query? : EqlGetQuery = EqlGetQuery::new(),
+  query~ : EqlGetQuery = EqlGetQuery::new(),
 ) -> EqlGetRequest {
   { id, query, }
 }
@@ -23136,7 +23136,7 @@ pub(all) struct EqlGetStatusResponse {
   is_running : Bool
   start_time_in_millis : Json?
   expiration_time_in_millis : Json?
-  completion_status : Int?
+  completion_status : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -23236,7 +23236,7 @@ pub extend EqlGetStatusRequest with @json.FromJson::{from_json}
 ///|
 pub fn EqlGetStatusRequest::new(
   id : String,
-  query? : EqlGetStatusQuery = EqlGetStatusQuery::new(),
+  query~ : EqlGetStatusQuery = EqlGetStatusQuery::new(),
 ) -> EqlGetStatusRequest {
   { id, query, }
 }
@@ -23513,7 +23513,7 @@ pub(all) struct EqlSearchBody {
   fields : Json?
   result_position : Json?
   runtime_mappings : Json?
-  max_samples_per_key : Int?
+  max_samples_per_key : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -23751,7 +23751,7 @@ pub fn EqlSearchBody::new(
   fields? : Json,
   result_position? : Json,
   runtime_mappings? : Json,
-  max_samples_per_key? : Int,
+  max_samples_per_key? : Int32,
 ) -> EqlSearchBody {
   {
     project_routing,
@@ -23801,7 +23801,7 @@ pub extend EqlSearchRequest with @json.FromJson::{from_json}
 pub fn EqlSearchRequest::new(
   index : String,
   body : EqlSearchBody,
-  query? : EqlSearchQuery = EqlSearchQuery::new(),
+  query~ : EqlSearchQuery = EqlSearchQuery::new(),
 ) -> EqlSearchRequest {
   { index, query, body, }
 }
@@ -24179,7 +24179,7 @@ pub extend EsqlAsyncQueryRequest with @json.FromJson::{from_json}
 ///|
 pub fn EsqlAsyncQueryRequest::new(
   body : EsqlAsyncQueryBody,
-  query? : EsqlAsyncQueryQuery = EsqlAsyncQueryQuery::new(),
+  query~ : EsqlAsyncQueryQuery = EsqlAsyncQueryQuery::new(),
 ) -> EsqlAsyncQueryRequest {
   { query, body, }
 }
@@ -24266,7 +24266,7 @@ pub extend EsqlAsyncQueryDeleteRequest with @json.FromJson::{from_json}
 ///|
 pub fn EsqlAsyncQueryDeleteRequest::new(
   id : String,
-  query? : EsqlAsyncQueryDeleteQuery = EsqlAsyncQueryDeleteQuery::new(),
+  query~ : EsqlAsyncQueryDeleteQuery = EsqlAsyncQueryDeleteQuery::new(),
 ) -> EsqlAsyncQueryDeleteRequest {
   { id, query, }
 }
@@ -24431,7 +24431,7 @@ pub extend EsqlAsyncQueryGetRequest with @json.FromJson::{from_json}
 ///|
 pub fn EsqlAsyncQueryGetRequest::new(
   id : String,
-  query? : EsqlAsyncQueryGetQuery = EsqlAsyncQueryGetQuery::new(),
+  query~ : EsqlAsyncQueryGetQuery = EsqlAsyncQueryGetQuery::new(),
 ) -> EsqlAsyncQueryGetRequest {
   { id, query, }
 }
@@ -24539,7 +24539,7 @@ pub extend EsqlAsyncQueryStopRequest with @json.FromJson::{from_json}
 ///|
 pub fn EsqlAsyncQueryStopRequest::new(
   id : String,
-  query? : EsqlAsyncQueryStopQuery = EsqlAsyncQueryStopQuery::new(),
+  query~ : EsqlAsyncQueryStopQuery = EsqlAsyncQueryStopQuery::new(),
 ) -> EsqlAsyncQueryStopRequest {
   { id, query, }
 }
@@ -24633,7 +24633,7 @@ pub extend EsqlDeleteViewRequest with @json.FromJson::{from_json}
 ///|
 pub fn EsqlDeleteViewRequest::new(
   name : String,
-  query? : EsqlDeleteViewQuery = EsqlDeleteViewQuery::new(),
+  query~ : EsqlDeleteViewQuery = EsqlDeleteViewQuery::new(),
   body? : EsqlDeleteViewBody,
 ) -> EsqlDeleteViewRequest {
   { name, query, body, }
@@ -24707,10 +24707,10 @@ pub type EsqlGetQueryBody = Json
 
 ///|
 pub(all) struct EsqlGetQueryResponse {
-  id : Int
+  id : Int32
   node : Json
-  start_time_millis : Int
-  running_time_nanos : Int
+  start_time_millis : Int32
+  running_time_nanos : Int32
   query : String
   coordinating_node : Json
   data_nodes : Array[Json]
@@ -24802,7 +24802,7 @@ pub extend EsqlGetQueryRequest with @json.FromJson::{from_json}
 ///|
 pub fn EsqlGetQueryRequest::new(
   id : String,
-  query? : EsqlGetQueryQuery = EsqlGetQueryQuery::new(),
+  query~ : EsqlGetQueryQuery = EsqlGetQueryQuery::new(),
   body? : EsqlGetQueryBody,
 ) -> EsqlGetQueryRequest {
   { id, query, body, }
@@ -24935,7 +24935,7 @@ pub extend EsqlGetViewRequest with @json.FromJson::{from_json}
 ///|
 pub fn EsqlGetViewRequest::new(
   name? : String,
-  query? : EsqlGetViewQuery = EsqlGetViewQuery::new(),
+  query~ : EsqlGetViewQuery = EsqlGetViewQuery::new(),
   body? : EsqlGetViewBody,
 ) -> EsqlGetViewRequest {
   { name, query, body, }
@@ -25074,7 +25074,7 @@ pub extend EsqlListQueriesRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn EsqlListQueriesRequest::new(
-  query? : EsqlListQueriesQuery = EsqlListQueriesQuery::new(),
+  query~ : EsqlListQueriesQuery = EsqlListQueriesQuery::new(),
   body? : EsqlListQueriesBody,
 ) -> EsqlListQueriesRequest {
   { query, body, }
@@ -25207,7 +25207,7 @@ pub extend EsqlPutViewRequest with @json.FromJson::{from_json}
 pub fn EsqlPutViewRequest::new(
   name : String,
   body : EsqlPutViewBody,
-  query? : EsqlPutViewQuery = EsqlPutViewQuery::new(),
+  query~ : EsqlPutViewQuery = EsqlPutViewQuery::new(),
 ) -> EsqlPutViewRequest {
   { name, query, body, }
 }
@@ -25537,7 +25537,7 @@ pub extend EsqlQueryRequest with @json.FromJson::{from_json}
 ///|
 pub fn EsqlQueryRequest::new(
   body : EsqlQueryBody,
-  query? : EsqlQueryQuery = EsqlQueryQuery::new(),
+  query~ : EsqlQueryQuery = EsqlQueryQuery::new(),
 ) -> EsqlQueryRequest {
   { query, body, }
 }
@@ -25791,7 +25791,7 @@ pub extend ExistsRequest with @json.FromJson::{from_json}
 pub fn ExistsRequest::new(
   index : String,
   id : String,
-  query? : ExistsQuery = ExistsQuery::new(),
+  query~ : ExistsQuery = ExistsQuery::new(),
 ) -> ExistsRequest {
   { index, id, query, }
 }
@@ -26034,7 +26034,7 @@ pub extend ExistsSourceRequest with @json.FromJson::{from_json}
 pub fn ExistsSourceRequest::new(
   index : String,
   id : String,
-  query? : ExistsSourceQuery = ExistsSourceQuery::new(),
+  query~ : ExistsSourceQuery = ExistsSourceQuery::new(),
 ) -> ExistsSourceRequest {
   { index, id, query, }
 }
@@ -26441,7 +26441,7 @@ pub extend ExplainRequest with @json.FromJson::{from_json}
 pub fn ExplainRequest::new(
   index : String,
   id : String,
-  query? : ExplainQuery = ExplainQuery::new(),
+  query~ : ExplainQuery = ExplainQuery::new(),
   body? : ExplainBody,
 ) -> ExplainRequest {
   { index, id, query, body, }
@@ -26591,7 +26591,7 @@ pub extend FeaturesGetFeaturesRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn FeaturesGetFeaturesRequest::new(
-  query? : FeaturesGetFeaturesQuery = FeaturesGetFeaturesQuery::new(),
+  query~ : FeaturesGetFeaturesQuery = FeaturesGetFeaturesQuery::new(),
 ) -> FeaturesGetFeaturesRequest {
   { query, }
 }
@@ -26734,7 +26734,7 @@ pub extend FeaturesResetFeaturesRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn FeaturesResetFeaturesRequest::new(
-  query? : FeaturesResetFeaturesQuery = FeaturesResetFeaturesQuery::new(),
+  query~ : FeaturesResetFeaturesQuery = FeaturesResetFeaturesQuery::new(),
 ) -> FeaturesResetFeaturesRequest {
   { query, }
 }
@@ -27083,7 +27083,7 @@ pub extend FieldCapsRequest with @json.FromJson::{from_json}
 ///|
 pub fn FieldCapsRequest::new(
   index? : String,
-  query? : FieldCapsQuery = FieldCapsQuery::new(),
+  query~ : FieldCapsQuery = FieldCapsQuery::new(),
   body? : FieldCapsBody,
 ) -> FieldCapsRequest {
   { index, query, body, }
@@ -27220,7 +27220,7 @@ pub extend FleetDeleteSecretRequest with @json.FromJson::{from_json}
 ///|
 pub fn FleetDeleteSecretRequest::new(
   id : String,
-  query? : FleetDeleteSecretQuery = FleetDeleteSecretQuery::new(),
+  query~ : FleetDeleteSecretQuery = FleetDeleteSecretQuery::new(),
 ) -> FleetDeleteSecretRequest {
   { id, query, }
 }
@@ -27352,7 +27352,7 @@ pub extend FleetGetSecretRequest with @json.FromJson::{from_json}
 ///|
 pub fn FleetGetSecretRequest::new(
   id : String,
-  query? : FleetGetSecretQuery = FleetGetSecretQuery::new(),
+  query~ : FleetGetSecretQuery = FleetGetSecretQuery::new(),
 ) -> FleetGetSecretRequest {
   { id, query, }
 }
@@ -27561,7 +27561,7 @@ pub extend FleetGlobalCheckpointsRequest with @json.FromJson::{from_json}
 ///|
 pub fn FleetGlobalCheckpointsRequest::new(
   index : String,
-  query? : FleetGlobalCheckpointsQuery = FleetGlobalCheckpointsQuery::new(),
+  query~ : FleetGlobalCheckpointsQuery = FleetGlobalCheckpointsQuery::new(),
   body? : FleetGlobalCheckpointsBody,
 ) -> FleetGlobalCheckpointsRequest {
   { index, query, body, }
@@ -27593,9 +27593,9 @@ pub(all) struct FleetMsearchQuery {
   expand_wildcards : String?
   ignore_throttled : Bool?
   ignore_unavailable : Bool?
-  max_concurrent_searches : Int?
-  max_concurrent_shard_requests : Int?
-  pre_filter_shard_size : Int?
+  max_concurrent_searches : Int32?
+  max_concurrent_shard_requests : Int32?
+  pre_filter_shard_size : Int32?
   search_type : String?
   rest_total_hits_as_int : Bool?
   typed_keys : Bool?
@@ -27785,9 +27785,9 @@ pub fn FleetMsearchQuery::new(
   expand_wildcards? : String,
   ignore_throttled? : Bool,
   ignore_unavailable? : Bool,
-  max_concurrent_searches? : Int,
-  max_concurrent_shard_requests? : Int,
-  pre_filter_shard_size? : Int,
+  max_concurrent_searches? : Int32,
+  max_concurrent_shard_requests? : Int32,
+  pre_filter_shard_size? : Int32,
   search_type? : String,
   rest_total_hits_as_int? : Bool,
   typed_keys? : Bool,
@@ -27955,7 +27955,7 @@ pub extend FleetMsearchRequest with @json.FromJson::{from_json}
 pub fn FleetMsearchRequest::new(
   body : FleetMsearchBody,
   index? : String,
-  query? : FleetMsearchQuery = FleetMsearchQuery::new(),
+  query~ : FleetMsearchQuery = FleetMsearchQuery::new(),
 ) -> FleetMsearchRequest {
   { index, query, body, }
 }
@@ -28086,7 +28086,7 @@ pub extend FleetPostSecretRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn FleetPostSecretRequest::new(
-  query? : FleetPostSecretQuery = FleetPostSecretQuery::new(),
+  query~ : FleetPostSecretQuery = FleetPostSecretQuery::new(),
 ) -> FleetPostSecretRequest {
   { query, }
 }
@@ -28107,7 +28107,7 @@ pub(all) struct FleetSearchQuery {
   allow_no_indices : Bool?
   analyzer : String?
   analyze_wildcard : Bool?
-  batched_reduce_size : Int?
+  batched_reduce_size : Int32?
   ccs_minimize_roundtrips : Bool?
   default_operator : String?
   df : String?
@@ -28117,9 +28117,9 @@ pub(all) struct FleetSearchQuery {
   ignore_throttled : Bool?
   ignore_unavailable : Bool?
   lenient : Bool?
-  max_concurrent_shard_requests : Int?
+  max_concurrent_shard_requests : Int32?
   preference : String?
-  pre_filter_shard_size : Int?
+  pre_filter_shard_size : Int32?
   request_cache : Bool?
   routing : String?
   scroll : String?
@@ -28128,9 +28128,9 @@ pub(all) struct FleetSearchQuery {
   stored_fields : String?
   suggest_field : String?
   suggest_mode : String?
-  suggest_size : Int?
+  suggest_size : Int32?
   suggest_text : String?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   track_total_hits : String?
   track_scores : Bool?
@@ -28142,8 +28142,8 @@ pub(all) struct FleetSearchQuery {
   _source_includes : String?
   seq_no_primary_term : Bool?
   q : String?
-  size : Int?
-  from : Int?
+  size : Int32?
+  from : Int32?
   sort : Json?
   wait_for_checkpoints : Array[String]?
   allow_partial_search_results : Bool?
@@ -28613,7 +28613,7 @@ pub fn FleetSearchQuery::new(
   allow_no_indices? : Bool,
   analyzer? : String,
   analyze_wildcard? : Bool,
-  batched_reduce_size? : Int,
+  batched_reduce_size? : Int32,
   ccs_minimize_roundtrips? : Bool,
   default_operator? : String,
   df? : String,
@@ -28623,9 +28623,9 @@ pub fn FleetSearchQuery::new(
   ignore_throttled? : Bool,
   ignore_unavailable? : Bool,
   lenient? : Bool,
-  max_concurrent_shard_requests? : Int,
+  max_concurrent_shard_requests? : Int32,
   preference? : String,
-  pre_filter_shard_size? : Int,
+  pre_filter_shard_size? : Int32,
   request_cache? : Bool,
   routing? : String,
   scroll? : String,
@@ -28634,9 +28634,9 @@ pub fn FleetSearchQuery::new(
   stored_fields? : String,
   suggest_field? : String,
   suggest_mode? : String,
-  suggest_size? : Int,
+  suggest_size? : Int32,
   suggest_text? : String,
-  terminate_after? : Int,
+  terminate_after? : Int32,
   timeout? : String,
   track_total_hits? : String,
   track_scores? : Bool,
@@ -28648,8 +28648,8 @@ pub fn FleetSearchQuery::new(
   _source_includes? : String,
   seq_no_primary_term? : Bool,
   q? : String,
-  size? : Int,
-  from? : Int,
+  size? : Int32,
+  from? : Int32,
   sort? : Json,
   wait_for_checkpoints? : Array[String],
   allow_partial_search_results? : Bool,
@@ -28914,7 +28914,7 @@ pub(all) struct FleetSearchBody {
   collapse : Json?
   explain : Bool?
   ext : Map[String, Json]?
-  from : Int?
+  from : Int32?
   highlight : Json?
   track_total_hits : Json?
   indices_boost : Array[Map[String, Json]]?
@@ -28926,13 +28926,13 @@ pub(all) struct FleetSearchBody {
   rescore : Json?
   script_fields : Map[String, Json]?
   search_after : Json?
-  size : Int?
+  size : Int32?
   slice : Json?
   sort : Json?
   _source : Json?
   fields : Array[Json]?
   suggest : Json?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   track_scores : Bool?
   version : Bool?
@@ -29269,7 +29269,7 @@ pub fn FleetSearchBody::new(
   collapse? : Json,
   explain? : Bool,
   ext? : Map[String, Json],
-  from? : Int,
+  from? : Int32,
   highlight? : Json,
   track_total_hits? : Json,
   indices_boost? : Array[Map[String, Json]],
@@ -29281,13 +29281,13 @@ pub fn FleetSearchBody::new(
   rescore? : Json,
   script_fields? : Map[String, Json],
   search_after? : Json,
-  size? : Int,
+  size? : Int32,
   slice? : Json,
   sort? : Json,
   _source? : Json,
   fields? : Array[Json],
   suggest? : Json,
-  terminate_after? : Int,
+  terminate_after? : Int32,
   timeout? : String,
   track_scores? : Bool,
   version? : Bool,
@@ -29334,7 +29334,7 @@ pub fn FleetSearchBody::new(
 
 ///|
 pub(all) struct FleetSearchResponse {
-  took : Int
+  took : Int32
   timed_out : Bool
   _shards : Json
   hits : Json
@@ -29342,7 +29342,7 @@ pub(all) struct FleetSearchResponse {
   _clusters : Json?
   fields : Map[String, Json]?
   max_score : Double?
-  num_reduce_phases : Int?
+  num_reduce_phases : Int32?
   profile : Json?
   pit_id : Json?
   _scroll_id : Json?
@@ -29518,7 +29518,7 @@ pub extend FleetSearchRequest with @json.FromJson::{from_json}
 pub fn FleetSearchRequest::new(
   index : String,
   body : FleetSearchBody,
-  query? : FleetSearchQuery = FleetSearchQuery::new(),
+  query~ : FleetSearchQuery = FleetSearchQuery::new(),
 ) -> FleetSearchRequest {
   { index, query, body, }
 }
@@ -29816,7 +29816,7 @@ pub extend GetRequest with @json.FromJson::{from_json}
 pub fn GetRequest::new(
   index : String,
   id : String,
-  query? : GetQuery = GetQuery::new(),
+  query~ : GetQuery = GetQuery::new(),
 ) -> GetRequest {
   { index, id, query, }
 }
@@ -30061,7 +30061,7 @@ pub extend GetReindexRequest with @json.FromJson::{from_json}
 ///|
 pub fn GetReindexRequest::new(
   task_id : String,
-  query? : GetReindexQuery = GetReindexQuery::new(),
+  query~ : GetReindexQuery = GetReindexQuery::new(),
 ) -> GetReindexRequest {
   { task_id, query, }
 }
@@ -30215,7 +30215,7 @@ pub extend GetScriptRequest with @json.FromJson::{from_json}
 ///|
 pub fn GetScriptRequest::new(
   id : String,
-  query? : GetScriptQuery = GetScriptQuery::new(),
+  query~ : GetScriptQuery = GetScriptQuery::new(),
 ) -> GetScriptRequest {
   { id, query, }
 }
@@ -30336,7 +30336,7 @@ pub extend GetScriptContextRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn GetScriptContextRequest::new(
-  query? : GetScriptContextQuery = GetScriptContextQuery::new(),
+  query~ : GetScriptContextQuery = GetScriptContextQuery::new(),
 ) -> GetScriptContextRequest {
   { query, }
 }
@@ -30462,7 +30462,7 @@ pub extend GetScriptLanguagesRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn GetScriptLanguagesRequest::new(
-  query? : GetScriptLanguagesQuery = GetScriptLanguagesQuery::new(),
+  query~ : GetScriptLanguagesQuery = GetScriptLanguagesQuery::new(),
 ) -> GetScriptLanguagesRequest {
   { query, }
 }
@@ -30700,7 +30700,7 @@ pub extend GetSourceRequest with @json.FromJson::{from_json}
 pub fn GetSourceRequest::new(
   index : String,
   id : String,
-  query? : GetSourceQuery = GetSourceQuery::new(),
+  query~ : GetSourceQuery = GetSourceQuery::new(),
 ) -> GetSourceRequest {
   { index, id, query, }
 }
@@ -30883,7 +30883,7 @@ pub(all) struct GraphExploreResponse {
   connections : Array[Json]
   failures : Array[Json]
   timed_out : Bool
-  took : Int
+  took : Int32
   vertices : Array[Json]
 } derive(Eq, Debug)
 
@@ -30964,7 +30964,7 @@ pub extend GraphExploreRequest with @json.FromJson::{from_json}
 pub fn GraphExploreRequest::new(
   index : String,
   body : GraphExploreBody,
-  query? : GraphExploreQuery = GraphExploreQuery::new(),
+  query~ : GraphExploreQuery = GraphExploreQuery::new(),
 ) -> GraphExploreRequest {
   { index, query, body, }
 }
@@ -30989,7 +30989,7 @@ pub async fn Client::graph_explore(
 pub(all) struct HealthReportQuery {
   timeout : String?
   verbose : Bool?
-  size : Int?
+  size : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -31050,7 +31050,7 @@ pub extend HealthReportQuery with @json.FromJson::{from_json}
 pub fn HealthReportQuery::new(
   timeout? : String,
   verbose? : Bool,
-  size? : Int,
+  size? : Int32,
 ) -> HealthReportQuery {
   { timeout, verbose, size, }
 }
@@ -31151,7 +31151,7 @@ pub extend HealthReportRequest with @json.FromJson::{from_json}
 ///|
 pub fn HealthReportRequest::new(
   feature? : String,
-  query? : HealthReportQuery = HealthReportQuery::new(),
+  query~ : HealthReportQuery = HealthReportQuery::new(),
 ) -> HealthReportRequest {
   { feature, query, }
 }
@@ -31280,7 +31280,7 @@ pub extend IlmDeleteLifecycleRequest with @json.FromJson::{from_json}
 ///|
 pub fn IlmDeleteLifecycleRequest::new(
   policy : String,
-  query? : IlmDeleteLifecycleQuery = IlmDeleteLifecycleQuery::new(),
+  query~ : IlmDeleteLifecycleQuery = IlmDeleteLifecycleQuery::new(),
 ) -> IlmDeleteLifecycleRequest {
   { policy, query, }
 }
@@ -31458,7 +31458,7 @@ pub extend IlmExplainLifecycleRequest with @json.FromJson::{from_json}
 ///|
 pub fn IlmExplainLifecycleRequest::new(
   index : String,
-  query? : IlmExplainLifecycleQuery = IlmExplainLifecycleQuery::new(),
+  query~ : IlmExplainLifecycleQuery = IlmExplainLifecycleQuery::new(),
 ) -> IlmExplainLifecycleRequest {
   { index, query, }
 }
@@ -31581,7 +31581,7 @@ pub extend IlmGetLifecycleRequest with @json.FromJson::{from_json}
 ///|
 pub fn IlmGetLifecycleRequest::new(
   policy? : String,
-  query? : IlmGetLifecycleQuery = IlmGetLifecycleQuery::new(),
+  query~ : IlmGetLifecycleQuery = IlmGetLifecycleQuery::new(),
 ) -> IlmGetLifecycleRequest {
   { policy, query, }
 }
@@ -31709,7 +31709,7 @@ pub extend IlmGetStatusRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn IlmGetStatusRequest::new(
-  query? : IlmGetStatusQuery = IlmGetStatusQuery::new(),
+  query~ : IlmGetStatusQuery = IlmGetStatusQuery::new(),
 ) -> IlmGetStatusRequest {
   { query, }
 }
@@ -31975,7 +31975,7 @@ pub extend IlmMigrateToDataTiersRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn IlmMigrateToDataTiersRequest::new(
-  query? : IlmMigrateToDataTiersQuery = IlmMigrateToDataTiersQuery::new(),
+  query~ : IlmMigrateToDataTiersQuery = IlmMigrateToDataTiersQuery::new(),
   body? : IlmMigrateToDataTiersBody,
 ) -> IlmMigrateToDataTiersRequest {
   { query, body, }
@@ -32122,7 +32122,7 @@ pub extend IlmMoveToStepRequest with @json.FromJson::{from_json}
 pub fn IlmMoveToStepRequest::new(
   index : String,
   body : IlmMoveToStepBody,
-  query? : IlmMoveToStepQuery = IlmMoveToStepQuery::new(),
+  query~ : IlmMoveToStepQuery = IlmMoveToStepQuery::new(),
 ) -> IlmMoveToStepRequest {
   { index, query, body, }
 }
@@ -32296,7 +32296,7 @@ pub extend IlmPutLifecycleRequest with @json.FromJson::{from_json}
 pub fn IlmPutLifecycleRequest::new(
   policy : String,
   body : IlmPutLifecycleBody,
-  query? : IlmPutLifecycleQuery = IlmPutLifecycleQuery::new(),
+  query~ : IlmPutLifecycleQuery = IlmPutLifecycleQuery::new(),
 ) -> IlmPutLifecycleRequest {
   { policy, query, body, }
 }
@@ -32429,7 +32429,7 @@ pub extend IlmRemovePolicyRequest with @json.FromJson::{from_json}
 ///|
 pub fn IlmRemovePolicyRequest::new(
   index : String,
-  query? : IlmRemovePolicyQuery = IlmRemovePolicyQuery::new(),
+  query~ : IlmRemovePolicyQuery = IlmRemovePolicyQuery::new(),
 ) -> IlmRemovePolicyRequest {
   { index, query, }
 }
@@ -32517,7 +32517,7 @@ pub extend IlmRetryRequest with @json.FromJson::{from_json}
 ///|
 pub fn IlmRetryRequest::new(
   index : String,
-  query? : IlmRetryQuery = IlmRetryQuery::new(),
+  query~ : IlmRetryQuery = IlmRetryQuery::new(),
 ) -> IlmRetryRequest {
   { index, query, }
 }
@@ -32634,7 +32634,7 @@ pub extend IlmStartRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn IlmStartRequest::new(
-  query? : IlmStartQuery = IlmStartQuery::new(),
+  query~ : IlmStartQuery = IlmStartQuery::new(),
 ) -> IlmStartRequest {
   { query, }
 }
@@ -32747,7 +32747,7 @@ pub extend IlmStopRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn IlmStopRequest::new(
-  query? : IlmStopQuery = IlmStopQuery::new(),
+  query~ : IlmStopQuery = IlmStopQuery::new(),
 ) -> IlmStopRequest {
   { query, }
 }
@@ -32765,7 +32765,7 @@ pub async fn Client::ilm_stop(
 
 ///|
 pub(all) struct IndexQuery {
-  if_primary_term : Int?
+  if_primary_term : Int32?
   if_seq_no : String?
   include_source_on_error : Bool?
   op_type : String?
@@ -32937,7 +32937,7 @@ pub extend IndexQuery with @json.FromJson::{from_json}
 
 ///|
 pub fn IndexQuery::new(
-  if_primary_term? : Int,
+  if_primary_term? : Int32,
   if_seq_no? : String,
   include_source_on_error? : Bool,
   op_type? : String,
@@ -33061,7 +33061,7 @@ pub fn IndexRequest::new(
   index : String,
   body : IndexBody,
   id? : String,
-  query? : IndexQuery = IndexQuery::new(),
+  query~ : IndexQuery = IndexQuery::new(),
 ) -> IndexRequest {
   { index, id, query, body, }
 }
@@ -33299,7 +33299,7 @@ pub extend IndicesAddBlockRequest with @json.FromJson::{from_json}
 pub fn IndicesAddBlockRequest::new(
   index : String,
   block : String,
-  query? : IndicesAddBlockQuery = IndicesAddBlockQuery::new(),
+  query~ : IndicesAddBlockQuery = IndicesAddBlockQuery::new(),
 ) -> IndicesAddBlockRequest {
   { index, block, query, }
 }
@@ -33608,7 +33608,7 @@ pub extend IndicesAnalyzeRequest with @json.FromJson::{from_json}
 pub fn IndicesAnalyzeRequest::new(
   body : IndicesAnalyzeBody,
   index? : String,
-  query? : IndicesAnalyzeQuery = IndicesAnalyzeQuery::new(),
+  query~ : IndicesAnalyzeQuery = IndicesAnalyzeQuery::new(),
 ) -> IndicesAnalyzeRequest {
   { index, query, body, }
 }
@@ -33714,7 +33714,7 @@ pub extend IndicesCancelMigrateReindexRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesCancelMigrateReindexRequest::new(
   index : String,
-  query? : IndicesCancelMigrateReindexQuery = IndicesCancelMigrateReindexQuery::new(),
+  query~ : IndicesCancelMigrateReindexQuery = IndicesCancelMigrateReindexQuery::new(),
   body? : IndicesCancelMigrateReindexBody,
 ) -> IndicesCancelMigrateReindexRequest {
   { index, query, body, }
@@ -33946,7 +33946,7 @@ pub extend IndicesClearCacheRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesClearCacheRequest::new(
   index? : String,
-  query? : IndicesClearCacheQuery = IndicesClearCacheQuery::new(),
+  query~ : IndicesClearCacheQuery = IndicesClearCacheQuery::new(),
 ) -> IndicesClearCacheRequest {
   { index, query, }
 }
@@ -34202,7 +34202,7 @@ pub extend IndicesCloneRequest with @json.FromJson::{from_json}
 pub fn IndicesCloneRequest::new(
   index : String,
   target : String,
-  query? : IndicesCloneQuery = IndicesCloneQuery::new(),
+  query~ : IndicesCloneQuery = IndicesCloneQuery::new(),
   body? : IndicesCloneBody,
 ) -> IndicesCloneRequest {
   { index, target, query, body, }
@@ -34454,7 +34454,7 @@ pub extend IndicesCloseRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesCloseRequest::new(
   index : String,
-  query? : IndicesCloseQuery = IndicesCloseQuery::new(),
+  query~ : IndicesCloseQuery = IndicesCloseQuery::new(),
 ) -> IndicesCloseRequest {
   { index, query, }
 }
@@ -34715,7 +34715,7 @@ pub extend IndicesCreateRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesCreateRequest::new(
   index : String,
-  query? : IndicesCreateQuery = IndicesCreateQuery::new(),
+  query~ : IndicesCreateQuery = IndicesCreateQuery::new(),
   body? : IndicesCreateBody,
 ) -> IndicesCreateRequest {
   { index, query, body, }
@@ -34842,7 +34842,7 @@ pub extend IndicesCreateDataStreamRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesCreateDataStreamRequest::new(
   name : String,
-  query? : IndicesCreateDataStreamQuery = IndicesCreateDataStreamQuery::new(),
+  query~ : IndicesCreateDataStreamQuery = IndicesCreateDataStreamQuery::new(),
 ) -> IndicesCreateDataStreamRequest {
   { name, query, }
 }
@@ -34986,7 +34986,7 @@ pub extend IndicesCreateFromRequest with @json.FromJson::{from_json}
 pub fn IndicesCreateFromRequest::new(
   source : String,
   dest : String,
-  query? : IndicesCreateFromQuery = IndicesCreateFromQuery::new(),
+  query~ : IndicesCreateFromQuery = IndicesCreateFromQuery::new(),
   body? : IndicesCreateFromBody,
 ) -> IndicesCreateFromRequest {
   { source, dest, query, body, }
@@ -35081,11 +35081,11 @@ pub fn IndicesDataStreamsStatsQuery::to_pairs(
 ///|
 pub(all) struct IndicesDataStreamsStatsResponse {
   _shards : Json
-  backing_indices : Int
-  data_stream_count : Int
+  backing_indices : Int32
+  data_stream_count : Int32
   data_streams : Array[Json]
   total_store_sizes : Json?
-  total_store_size_bytes : Int
+  total_store_size_bytes : Int32
 } derive(Eq, Debug)
 
 ///|
@@ -35178,7 +35178,7 @@ pub extend IndicesDataStreamsStatsRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesDataStreamsStatsRequest::new(
   name? : String,
-  query? : IndicesDataStreamsStatsQuery = IndicesDataStreamsStatsQuery::new(),
+  query~ : IndicesDataStreamsStatsQuery = IndicesDataStreamsStatsQuery::new(),
 ) -> IndicesDataStreamsStatsRequest {
   { name, query, }
 }
@@ -35364,7 +35364,7 @@ pub extend IndicesDeleteRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesDeleteRequest::new(
   index : String,
-  query? : IndicesDeleteQuery = IndicesDeleteQuery::new(),
+  query~ : IndicesDeleteQuery = IndicesDeleteQuery::new(),
 ) -> IndicesDeleteRequest {
   { index, query, }
 }
@@ -35486,7 +35486,7 @@ pub extend IndicesDeleteAliasRequest with @json.FromJson::{from_json}
 pub fn IndicesDeleteAliasRequest::new(
   index : String,
   name : String,
-  query? : IndicesDeleteAliasQuery = IndicesDeleteAliasQuery::new(),
+  query~ : IndicesDeleteAliasQuery = IndicesDeleteAliasQuery::new(),
 ) -> IndicesDeleteAliasRequest {
   { index, name, query, }
 }
@@ -35635,7 +35635,7 @@ pub extend IndicesDeleteDataLifecycleRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesDeleteDataLifecycleRequest::new(
   name : String,
-  query? : IndicesDeleteDataLifecycleQuery = IndicesDeleteDataLifecycleQuery::new(),
+  query~ : IndicesDeleteDataLifecycleQuery = IndicesDeleteDataLifecycleQuery::new(),
 ) -> IndicesDeleteDataLifecycleRequest {
   { name, query, }
 }
@@ -35762,7 +35762,7 @@ pub extend IndicesDeleteDataStreamRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesDeleteDataStreamRequest::new(
   name : String,
-  query? : IndicesDeleteDataStreamQuery = IndicesDeleteDataStreamQuery::new(),
+  query~ : IndicesDeleteDataStreamQuery = IndicesDeleteDataStreamQuery::new(),
 ) -> IndicesDeleteDataStreamRequest {
   { name, query, }
 }
@@ -35909,7 +35909,7 @@ pub extend IndicesDeleteDataStreamOptionsRequest with @json.FromJson::{
 ///|
 pub fn IndicesDeleteDataStreamOptionsRequest::new(
   name : String,
-  query? : IndicesDeleteDataStreamOptionsQuery = IndicesDeleteDataStreamOptionsQuery::new(),
+  query~ : IndicesDeleteDataStreamOptionsQuery = IndicesDeleteDataStreamOptionsQuery::new(),
 ) -> IndicesDeleteDataStreamOptionsRequest {
   { name, query, }
 }
@@ -36037,7 +36037,7 @@ pub extend IndicesDeleteIndexTemplateRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesDeleteIndexTemplateRequest::new(
   name : String,
-  query? : IndicesDeleteIndexTemplateQuery = IndicesDeleteIndexTemplateQuery::new(),
+  query~ : IndicesDeleteIndexTemplateQuery = IndicesDeleteIndexTemplateQuery::new(),
 ) -> IndicesDeleteIndexTemplateRequest {
   { name, query, }
 }
@@ -36160,7 +36160,7 @@ pub extend IndicesDeleteTemplateRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesDeleteTemplateRequest::new(
   name : String,
-  query? : IndicesDeleteTemplateQuery = IndicesDeleteTemplateQuery::new(),
+  query~ : IndicesDeleteTemplateQuery = IndicesDeleteTemplateQuery::new(),
 ) -> IndicesDeleteTemplateRequest {
   { name, query, }
 }
@@ -36340,7 +36340,7 @@ pub extend IndicesDiskUsageRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesDiskUsageRequest::new(
   index : String,
-  query? : IndicesDiskUsageQuery = IndicesDiskUsageQuery::new(),
+  query~ : IndicesDiskUsageQuery = IndicesDiskUsageQuery::new(),
 ) -> IndicesDiskUsageRequest {
   { index, query, }
 }
@@ -36437,7 +36437,7 @@ pub fn IndicesDownsampleRequest::new(
   index : String,
   target_index : String,
   body : IndicesDownsampleBody,
-  query? : IndicesDownsampleQuery = IndicesDownsampleQuery::new(),
+  query~ : IndicesDownsampleQuery = IndicesDownsampleQuery::new(),
 ) -> IndicesDownsampleRequest {
   { index, target_index, query, body, }
 }
@@ -36640,7 +36640,7 @@ pub extend IndicesExistsRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesExistsRequest::new(
   index : String,
-  query? : IndicesExistsQuery = IndicesExistsQuery::new(),
+  query~ : IndicesExistsQuery = IndicesExistsQuery::new(),
 ) -> IndicesExistsRequest {
   { index, query, }
 }
@@ -36798,7 +36798,7 @@ pub extend IndicesExistsAliasRequest with @json.FromJson::{from_json}
 pub fn IndicesExistsAliasRequest::new(
   name : String,
   index? : String,
-  query? : IndicesExistsAliasQuery = IndicesExistsAliasQuery::new(),
+  query~ : IndicesExistsAliasQuery = IndicesExistsAliasQuery::new(),
 ) -> IndicesExistsAliasRequest {
   { index, name, query, }
 }
@@ -36949,7 +36949,7 @@ pub extend IndicesExistsIndexTemplateRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesExistsIndexTemplateRequest::new(
   name : String,
-  query? : IndicesExistsIndexTemplateQuery = IndicesExistsIndexTemplateQuery::new(),
+  query~ : IndicesExistsIndexTemplateQuery = IndicesExistsIndexTemplateQuery::new(),
 ) -> IndicesExistsIndexTemplateRequest {
   { name, query, }
 }
@@ -37088,7 +37088,7 @@ pub extend IndicesExistsTemplateRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesExistsTemplateRequest::new(
   name : String,
-  query? : IndicesExistsTemplateQuery = IndicesExistsTemplateQuery::new(),
+  query~ : IndicesExistsTemplateQuery = IndicesExistsTemplateQuery::new(),
 ) -> IndicesExistsTemplateRequest {
   { name, query, }
 }
@@ -37259,7 +37259,7 @@ pub extend IndicesExplainDataLifecycleRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesExplainDataLifecycleRequest::new(
   index : String,
-  query? : IndicesExplainDataLifecycleQuery = IndicesExplainDataLifecycleQuery::new(),
+  query~ : IndicesExplainDataLifecycleQuery = IndicesExplainDataLifecycleQuery::new(),
 ) -> IndicesExplainDataLifecycleRequest {
   { index, query, }
 }
@@ -37418,7 +37418,7 @@ pub extend IndicesFieldUsageStatsRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesFieldUsageStatsRequest::new(
   index : String,
-  query? : IndicesFieldUsageStatsQuery = IndicesFieldUsageStatsQuery::new(),
+  query~ : IndicesFieldUsageStatsQuery = IndicesFieldUsageStatsQuery::new(),
 ) -> IndicesFieldUsageStatsRequest {
   { index, query, }
 }
@@ -37596,7 +37596,7 @@ pub extend IndicesFlushRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesFlushRequest::new(
   index? : String,
-  query? : IndicesFlushQuery = IndicesFlushQuery::new(),
+  query~ : IndicesFlushQuery = IndicesFlushQuery::new(),
 ) -> IndicesFlushRequest {
   { index, query, }
 }
@@ -37628,7 +37628,7 @@ pub(all) struct IndicesForcemergeQuery {
   expand_wildcards : String?
   flush : Bool?
   ignore_unavailable : Bool?
-  max_num_segments : Int?
+  max_num_segments : Int32?
   only_expunge_deletes : Bool?
   wait_for_completion : Bool?
 } derive(Eq, Debug)
@@ -37737,7 +37737,7 @@ pub fn IndicesForcemergeQuery::new(
   expand_wildcards? : String,
   flush? : Bool,
   ignore_unavailable? : Bool,
-  max_num_segments? : Int,
+  max_num_segments? : Int32,
   only_expunge_deletes? : Bool,
   wait_for_completion? : Bool,
 ) -> IndicesForcemergeQuery {
@@ -37818,7 +37818,7 @@ pub extend IndicesForcemergeRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesForcemergeRequest::new(
   index? : String,
-  query? : IndicesForcemergeQuery = IndicesForcemergeQuery::new(),
+  query~ : IndicesForcemergeQuery = IndicesForcemergeQuery::new(),
 ) -> IndicesForcemergeRequest {
   { index, query, }
 }
@@ -38053,7 +38053,7 @@ pub extend IndicesGetRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesGetRequest::new(
   index : String,
-  query? : IndicesGetQuery = IndicesGetQuery::new(),
+  query~ : IndicesGetQuery = IndicesGetQuery::new(),
 ) -> IndicesGetRequest {
   { index, query, }
 }
@@ -38211,7 +38211,7 @@ pub extend IndicesGetAliasRequest with @json.FromJson::{from_json}
 pub fn IndicesGetAliasRequest::new(
   index? : String,
   name? : String,
-  query? : IndicesGetAliasQuery = IndicesGetAliasQuery::new(),
+  query~ : IndicesGetAliasQuery = IndicesGetAliasQuery::new(),
 ) -> IndicesGetAliasRequest {
   { index, name, query, }
 }
@@ -38408,7 +38408,7 @@ pub extend IndicesGetDataLifecycleRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesGetDataLifecycleRequest::new(
   name : String,
-  query? : IndicesGetDataLifecycleQuery = IndicesGetDataLifecycleQuery::new(),
+  query~ : IndicesGetDataLifecycleQuery = IndicesGetDataLifecycleQuery::new(),
 ) -> IndicesGetDataLifecycleRequest {
   { name, query, }
 }
@@ -38481,7 +38481,7 @@ pub fn IndicesGetDataLifecycleStatsQuery::to_pairs(
 
 ///|
 pub(all) struct IndicesGetDataLifecycleStatsResponse {
-  data_stream_count : Int
+  data_stream_count : Int32
   data_streams : Array[Json]
   last_run_duration_in_millis : Json?
   time_between_starts_in_millis : Json?
@@ -38581,7 +38581,7 @@ pub extend IndicesGetDataLifecycleStatsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn IndicesGetDataLifecycleStatsRequest::new(
-  query? : IndicesGetDataLifecycleStatsQuery = IndicesGetDataLifecycleStatsQuery::new(),
+  query~ : IndicesGetDataLifecycleStatsQuery = IndicesGetDataLifecycleStatsQuery::new(),
 ) -> IndicesGetDataLifecycleStatsRequest {
   { query, }
 }
@@ -38772,7 +38772,7 @@ pub extend IndicesGetDataStreamRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesGetDataStreamRequest::new(
   name? : String,
-  query? : IndicesGetDataStreamQuery = IndicesGetDataStreamQuery::new(),
+  query~ : IndicesGetDataStreamQuery = IndicesGetDataStreamQuery::new(),
 ) -> IndicesGetDataStreamRequest {
   { name, query, }
 }
@@ -38932,7 +38932,7 @@ pub extend IndicesGetDataStreamMappingsRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesGetDataStreamMappingsRequest::new(
   name : String,
-  query? : IndicesGetDataStreamMappingsQuery = IndicesGetDataStreamMappingsQuery::new(),
+  query~ : IndicesGetDataStreamMappingsQuery = IndicesGetDataStreamMappingsQuery::new(),
 ) -> IndicesGetDataStreamMappingsRequest {
   { name, query, }
 }
@@ -39103,7 +39103,7 @@ pub extend IndicesGetDataStreamOptionsRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesGetDataStreamOptionsRequest::new(
   name : String,
-  query? : IndicesGetDataStreamOptionsQuery = IndicesGetDataStreamOptionsQuery::new(),
+  query~ : IndicesGetDataStreamOptionsQuery = IndicesGetDataStreamOptionsQuery::new(),
 ) -> IndicesGetDataStreamOptionsRequest {
   { name, query, }
 }
@@ -39257,7 +39257,7 @@ pub extend IndicesGetDataStreamSettingsRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesGetDataStreamSettingsRequest::new(
   name : String,
-  query? : IndicesGetDataStreamSettingsQuery = IndicesGetDataStreamSettingsQuery::new(),
+  query~ : IndicesGetDataStreamSettingsQuery = IndicesGetDataStreamSettingsQuery::new(),
 ) -> IndicesGetDataStreamSettingsRequest {
   { name, query, }
 }
@@ -39420,7 +39420,7 @@ pub extend IndicesGetFieldMappingRequest with @json.FromJson::{from_json}
 pub fn IndicesGetFieldMappingRequest::new(
   fields : String,
   index? : String,
-  query? : IndicesGetFieldMappingQuery = IndicesGetFieldMappingQuery::new(),
+  query~ : IndicesGetFieldMappingQuery = IndicesGetFieldMappingQuery::new(),
 ) -> IndicesGetFieldMappingRequest {
   { index, fields, query, }
 }
@@ -39626,7 +39626,7 @@ pub extend IndicesGetIndexTemplateRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesGetIndexTemplateRequest::new(
   name? : String,
-  query? : IndicesGetIndexTemplateQuery = IndicesGetIndexTemplateQuery::new(),
+  query~ : IndicesGetIndexTemplateQuery = IndicesGetIndexTemplateQuery::new(),
 ) -> IndicesGetIndexTemplateRequest {
   { name, query, }
 }
@@ -39812,7 +39812,7 @@ pub extend IndicesGetMappingRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesGetMappingRequest::new(
   index? : String,
-  query? : IndicesGetMappingQuery = IndicesGetMappingQuery::new(),
+  query~ : IndicesGetMappingQuery = IndicesGetMappingQuery::new(),
 ) -> IndicesGetMappingRequest {
   { index, query, }
 }
@@ -39897,11 +39897,11 @@ pub(all) struct IndicesGetMigrateReindexStatusResponse {
   start_time : Json?
   start_time_millis : Json
   complete : Bool
-  total_indices_in_data_stream : Int
-  total_indices_requiring_upgrade : Int
-  successes : Int
+  total_indices_in_data_stream : Int32
+  total_indices_requiring_upgrade : Int32
+  successes : Int32
   in_progress : Array[Json]
-  pending : Int
+  pending : Int32
   errors : Array[Json]
   exception : String?
 } derive(Eq, Debug)
@@ -40030,7 +40030,7 @@ pub extend IndicesGetMigrateReindexStatusRequest with @json.FromJson::{
 ///|
 pub fn IndicesGetMigrateReindexStatusRequest::new(
   index : String,
-  query? : IndicesGetMigrateReindexStatusQuery = IndicesGetMigrateReindexStatusQuery::new(),
+  query~ : IndicesGetMigrateReindexStatusQuery = IndicesGetMigrateReindexStatusQuery::new(),
   body? : IndicesGetMigrateReindexStatusBody,
 ) -> IndicesGetMigrateReindexStatusRequest {
   { index, query, body, }
@@ -40252,7 +40252,7 @@ pub extend IndicesGetSettingsRequest with @json.FromJson::{from_json}
 pub fn IndicesGetSettingsRequest::new(
   index? : String,
   name? : String,
-  query? : IndicesGetSettingsQuery = IndicesGetSettingsQuery::new(),
+  query~ : IndicesGetSettingsQuery = IndicesGetSettingsQuery::new(),
 ) -> IndicesGetSettingsRequest {
   { index, name, query, }
 }
@@ -40403,7 +40403,7 @@ pub extend IndicesGetTemplateRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesGetTemplateRequest::new(
   name? : String,
-  query? : IndicesGetTemplateQuery = IndicesGetTemplateQuery::new(),
+  query~ : IndicesGetTemplateQuery = IndicesGetTemplateQuery::new(),
 ) -> IndicesGetTemplateRequest {
   { name, query, }
 }
@@ -40502,7 +40502,7 @@ pub extend IndicesMigrateReindexRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesMigrateReindexRequest::new(
   body : IndicesMigrateReindexBody,
-  query? : IndicesMigrateReindexQuery = IndicesMigrateReindexQuery::new(),
+  query~ : IndicesMigrateReindexQuery = IndicesMigrateReindexQuery::new(),
 ) -> IndicesMigrateReindexRequest {
   { query, body, }
 }
@@ -40627,7 +40627,7 @@ pub extend IndicesMigrateToDataStreamRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesMigrateToDataStreamRequest::new(
   name : String,
-  query? : IndicesMigrateToDataStreamQuery = IndicesMigrateToDataStreamQuery::new(),
+  query~ : IndicesMigrateToDataStreamQuery = IndicesMigrateToDataStreamQuery::new(),
 ) -> IndicesMigrateToDataStreamRequest {
   { name, query, }
 }
@@ -40767,7 +40767,7 @@ pub extend IndicesModifyDataStreamRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesModifyDataStreamRequest::new(
   body : IndicesModifyDataStreamBody,
-  query? : IndicesModifyDataStreamQuery = IndicesModifyDataStreamQuery::new(),
+  query~ : IndicesModifyDataStreamQuery = IndicesModifyDataStreamQuery::new(),
 ) -> IndicesModifyDataStreamRequest {
   { query, body, }
 }
@@ -41007,7 +41007,7 @@ pub extend IndicesOpenRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesOpenRequest::new(
   index : String,
-  query? : IndicesOpenQuery = IndicesOpenQuery::new(),
+  query~ : IndicesOpenQuery = IndicesOpenQuery::new(),
 ) -> IndicesOpenRequest {
   { index, query, }
 }
@@ -41120,7 +41120,7 @@ pub extend IndicesPromoteDataStreamRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesPromoteDataStreamRequest::new(
   name : String,
-  query? : IndicesPromoteDataStreamQuery = IndicesPromoteDataStreamQuery::new(),
+  query~ : IndicesPromoteDataStreamQuery = IndicesPromoteDataStreamQuery::new(),
 ) -> IndicesPromoteDataStreamRequest {
   { name, query, }
 }
@@ -41343,7 +41343,7 @@ pub extend IndicesPutAliasRequest with @json.FromJson::{from_json}
 pub fn IndicesPutAliasRequest::new(
   index : String,
   name : String,
-  query? : IndicesPutAliasQuery = IndicesPutAliasQuery::new(),
+  query~ : IndicesPutAliasQuery = IndicesPutAliasQuery::new(),
   body? : IndicesPutAliasBody,
 ) -> IndicesPutAliasRequest {
   { index, name, query, body, }
@@ -41584,7 +41584,7 @@ pub extend IndicesPutDataLifecycleRequest with @json.FromJson::{from_json}
 pub fn IndicesPutDataLifecycleRequest::new(
   name : String,
   body : IndicesPutDataLifecycleBody,
-  query? : IndicesPutDataLifecycleQuery = IndicesPutDataLifecycleQuery::new(),
+  query~ : IndicesPutDataLifecycleQuery = IndicesPutDataLifecycleQuery::new(),
 ) -> IndicesPutDataLifecycleRequest {
   { name, query, body, }
 }
@@ -41769,7 +41769,7 @@ pub extend IndicesPutDataStreamMappingsRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesPutDataStreamMappingsRequest::new(
   name : String,
-  query? : IndicesPutDataStreamMappingsQuery = IndicesPutDataStreamMappingsQuery::new(),
+  query~ : IndicesPutDataStreamMappingsQuery = IndicesPutDataStreamMappingsQuery::new(),
 ) -> IndicesPutDataStreamMappingsRequest {
   { name, query, }
 }
@@ -41972,7 +41972,7 @@ pub extend IndicesPutDataStreamOptionsRequest with @json.FromJson::{from_json}
 pub fn IndicesPutDataStreamOptionsRequest::new(
   name : String,
   body : IndicesPutDataStreamOptionsBody,
-  query? : IndicesPutDataStreamOptionsQuery = IndicesPutDataStreamOptionsQuery::new(),
+  query~ : IndicesPutDataStreamOptionsQuery = IndicesPutDataStreamOptionsQuery::new(),
 ) -> IndicesPutDataStreamOptionsRequest {
   { name, query, body, }
 }
@@ -42157,7 +42157,7 @@ pub extend IndicesPutDataStreamSettingsRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesPutDataStreamSettingsRequest::new(
   name : String,
-  query? : IndicesPutDataStreamSettingsQuery = IndicesPutDataStreamSettingsQuery::new(),
+  query~ : IndicesPutDataStreamSettingsQuery = IndicesPutDataStreamSettingsQuery::new(),
 ) -> IndicesPutDataStreamSettingsRequest {
   { name, query, }
 }
@@ -42279,7 +42279,7 @@ pub(all) struct IndicesPutIndexTemplateBody {
   composed_of : Array[Json]?
   template : Json?
   data_stream : Json?
-  priority : Int?
+  priority : Int32?
   version : Json?
   _meta : Json?
   allow_auto_create : Bool?
@@ -42427,7 +42427,7 @@ pub fn IndicesPutIndexTemplateBody::new(
   composed_of? : Array[Json],
   template? : Json,
   data_stream? : Json,
-  priority? : Int,
+  priority? : Int32,
   version? : Json,
   _meta? : Json,
   allow_auto_create? : Bool,
@@ -42474,7 +42474,7 @@ pub extend IndicesPutIndexTemplateRequest with @json.FromJson::{from_json}
 pub fn IndicesPutIndexTemplateRequest::new(
   name : String,
   body : IndicesPutIndexTemplateBody,
-  query? : IndicesPutIndexTemplateQuery = IndicesPutIndexTemplateQuery::new(),
+  query~ : IndicesPutIndexTemplateQuery = IndicesPutIndexTemplateQuery::new(),
 ) -> IndicesPutIndexTemplateRequest {
   { name, query, body, }
 }
@@ -42853,7 +42853,7 @@ pub extend IndicesPutMappingRequest with @json.FromJson::{from_json}
 pub fn IndicesPutMappingRequest::new(
   index : String,
   body : IndicesPutMappingBody,
-  query? : IndicesPutMappingQuery = IndicesPutMappingQuery::new(),
+  query~ : IndicesPutMappingQuery = IndicesPutMappingQuery::new(),
 ) -> IndicesPutMappingRequest {
   { index, query, body, }
 }
@@ -43090,7 +43090,7 @@ pub extend IndicesPutSettingsRequest with @json.FromJson::{from_json}
 pub fn IndicesPutSettingsRequest::new(
   body : IndicesPutSettingsBody,
   index? : String,
-  query? : IndicesPutSettingsQuery = IndicesPutSettingsQuery::new(),
+  query~ : IndicesPutSettingsQuery = IndicesPutSettingsQuery::new(),
 ) -> IndicesPutSettingsRequest {
   { index, query, body, }
 }
@@ -43121,7 +43121,7 @@ pub async fn Client::indices_put_settings(
 pub(all) struct IndicesPutTemplateQuery {
   create : Bool?
   master_timeout : String?
-  order : Int?
+  order : Int32?
   cause : String?
 } derive(Eq, Debug)
 
@@ -43195,7 +43195,7 @@ pub extend IndicesPutTemplateQuery with @json.FromJson::{from_json}
 pub fn IndicesPutTemplateQuery::new(
   create? : Bool,
   master_timeout? : String,
-  order? : Int,
+  order? : Int32,
   cause? : String,
 ) -> IndicesPutTemplateQuery {
   { create, master_timeout, order, cause, }
@@ -43231,7 +43231,7 @@ pub(all) struct IndicesPutTemplateBody {
   aliases : Map[String, Json]?
   index_patterns : Json?
   mappings : Json?
-  order : Int?
+  order : Int32?
   settings : Json?
   version : Json?
 } derive(Eq, Debug)
@@ -43325,7 +43325,7 @@ pub fn IndicesPutTemplateBody::new(
   aliases? : Map[String, Json],
   index_patterns? : Json,
   mappings? : Json,
-  order? : Int,
+  order? : Int32,
   settings? : Json,
   version? : Json,
 ) -> IndicesPutTemplateBody {
@@ -43358,7 +43358,7 @@ pub extend IndicesPutTemplateRequest with @json.FromJson::{from_json}
 pub fn IndicesPutTemplateRequest::new(
   name : String,
   body : IndicesPutTemplateBody,
-  query? : IndicesPutTemplateQuery = IndicesPutTemplateQuery::new(),
+  query~ : IndicesPutTemplateQuery = IndicesPutTemplateQuery::new(),
 ) -> IndicesPutTemplateRequest {
   { name, query, body, }
 }
@@ -43538,7 +43538,7 @@ pub extend IndicesRecoveryRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesRecoveryRequest::new(
   index? : String,
-  query? : IndicesRecoveryQuery = IndicesRecoveryQuery::new(),
+  query~ : IndicesRecoveryQuery = IndicesRecoveryQuery::new(),
 ) -> IndicesRecoveryRequest {
   { index, query, }
 }
@@ -43686,7 +43686,7 @@ pub extend IndicesRefreshRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesRefreshRequest::new(
   index? : String,
-  query? : IndicesRefreshQuery = IndicesRefreshQuery::new(),
+  query~ : IndicesRefreshQuery = IndicesRefreshQuery::new(),
 ) -> IndicesRefreshRequest {
   { index, query, }
 }
@@ -43854,7 +43854,7 @@ pub extend IndicesReloadSearchAnalyzersRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesReloadSearchAnalyzersRequest::new(
   index : String,
-  query? : IndicesReloadSearchAnalyzersQuery = IndicesReloadSearchAnalyzersQuery::new(),
+  query~ : IndicesReloadSearchAnalyzersQuery = IndicesReloadSearchAnalyzersQuery::new(),
 ) -> IndicesReloadSearchAnalyzersRequest {
   { index, query, }
 }
@@ -44078,7 +44078,7 @@ pub extend IndicesRemoveBlockRequest with @json.FromJson::{from_json}
 pub fn IndicesRemoveBlockRequest::new(
   index : String,
   block : String,
-  query? : IndicesRemoveBlockQuery = IndicesRemoveBlockQuery::new(),
+  query~ : IndicesRemoveBlockQuery = IndicesRemoveBlockQuery::new(),
 ) -> IndicesRemoveBlockRequest {
   { index, block, query, }
 }
@@ -44259,7 +44259,7 @@ pub extend IndicesResolveClusterRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesResolveClusterRequest::new(
   name? : String,
-  query? : IndicesResolveClusterQuery = IndicesResolveClusterQuery::new(),
+  query~ : IndicesResolveClusterQuery = IndicesResolveClusterQuery::new(),
 ) -> IndicesResolveClusterRequest {
   { name, query, }
 }
@@ -44472,7 +44472,7 @@ pub extend IndicesResolveIndexRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesResolveIndexRequest::new(
   name : String,
-  query? : IndicesResolveIndexQuery = IndicesResolveIndexQuery::new(),
+  query~ : IndicesResolveIndexQuery = IndicesResolveIndexQuery::new(),
 ) -> IndicesResolveIndexRequest {
   { name, query, }
 }
@@ -44803,7 +44803,7 @@ pub extend IndicesRolloverRequest with @json.FromJson::{from_json}
 pub fn IndicesRolloverRequest::new(
   alias_ : String,
   new_index? : String,
-  query? : IndicesRolloverQuery = IndicesRolloverQuery::new(),
+  query~ : IndicesRolloverQuery = IndicesRolloverQuery::new(),
   body? : IndicesRolloverBody,
 ) -> IndicesRolloverRequest {
   { alias_, new_index, query, body, }
@@ -44999,7 +44999,7 @@ pub extend IndicesSegmentsRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesSegmentsRequest::new(
   index? : String,
-  query? : IndicesSegmentsQuery = IndicesSegmentsQuery::new(),
+  query~ : IndicesSegmentsQuery = IndicesSegmentsQuery::new(),
 ) -> IndicesSegmentsRequest {
   { index, query, }
 }
@@ -45198,7 +45198,7 @@ pub extend IndicesShardStoresRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesShardStoresRequest::new(
   index? : String,
-  query? : IndicesShardStoresQuery = IndicesShardStoresQuery::new(),
+  query~ : IndicesShardStoresQuery = IndicesShardStoresQuery::new(),
 ) -> IndicesShardStoresRequest {
   { index, query, }
 }
@@ -45457,7 +45457,7 @@ pub fn IndicesShrinkRequest::new(
   index : String,
   target : String,
   body : IndicesShrinkBody,
-  query? : IndicesShrinkQuery = IndicesShrinkQuery::new(),
+  query~ : IndicesShrinkQuery = IndicesShrinkQuery::new(),
 ) -> IndicesShrinkRequest {
   { index, target, query, body, }
 }
@@ -45675,7 +45675,7 @@ pub extend IndicesSimulateIndexTemplateRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesSimulateIndexTemplateRequest::new(
   name : String,
-  query? : IndicesSimulateIndexTemplateQuery = IndicesSimulateIndexTemplateQuery::new(),
+  query~ : IndicesSimulateIndexTemplateQuery = IndicesSimulateIndexTemplateQuery::new(),
   body? : IndicesSimulateIndexTemplateBody,
 ) -> IndicesSimulateIndexTemplateRequest {
   { name, query, body, }
@@ -45820,7 +45820,7 @@ pub(all) struct IndicesSimulateTemplateBody {
   composed_of : Array[Json]?
   template : Json?
   data_stream : Json?
-  priority : Int?
+  priority : Int32?
   version : Json?
   _meta : Json?
   ignore_missing_component_templates : Array[String]?
@@ -45968,7 +45968,7 @@ pub fn IndicesSimulateTemplateBody::new(
   composed_of? : Array[Json],
   template? : Json,
   data_stream? : Json,
-  priority? : Int,
+  priority? : Int32,
   version? : Json,
   _meta? : Json,
   ignore_missing_component_templates? : Array[String],
@@ -46065,7 +46065,7 @@ pub extend IndicesSimulateTemplateRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesSimulateTemplateRequest::new(
   name? : String,
-  query? : IndicesSimulateTemplateQuery = IndicesSimulateTemplateQuery::new(),
+  query~ : IndicesSimulateTemplateQuery = IndicesSimulateTemplateQuery::new(),
   body? : IndicesSimulateTemplateBody,
 ) -> IndicesSimulateTemplateRequest {
   { name, query, body, }
@@ -46327,7 +46327,7 @@ pub fn IndicesSplitRequest::new(
   index : String,
   target : String,
   body : IndicesSplitBody,
-  query? : IndicesSplitQuery = IndicesSplitQuery::new(),
+  query~ : IndicesSplitQuery = IndicesSplitQuery::new(),
 ) -> IndicesSplitRequest {
   { index, target, query, body, }
 }
@@ -46636,7 +46636,7 @@ pub extend IndicesStatsRequest with @json.FromJson::{from_json}
 pub fn IndicesStatsRequest::new(
   index? : String,
   metric? : String,
-  query? : IndicesStatsQuery = IndicesStatsQuery::new(),
+  query~ : IndicesStatsQuery = IndicesStatsQuery::new(),
 ) -> IndicesStatsRequest {
   { index, metric, query, }
 }
@@ -46821,7 +46821,7 @@ pub extend IndicesUpdateAliasesRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesUpdateAliasesRequest::new(
   body : IndicesUpdateAliasesBody,
-  query? : IndicesUpdateAliasesQuery = IndicesUpdateAliasesQuery::new(),
+  query~ : IndicesUpdateAliasesQuery = IndicesUpdateAliasesQuery::new(),
 ) -> IndicesUpdateAliasesRequest {
   { query, body, }
 }
@@ -47231,7 +47231,7 @@ pub extend IndicesValidateQueryRequest with @json.FromJson::{from_json}
 ///|
 pub fn IndicesValidateQueryRequest::new(
   index? : String,
-  query? : IndicesValidateQueryQuery = IndicesValidateQueryQuery::new(),
+  query~ : IndicesValidateQueryQuery = IndicesValidateQueryQuery::new(),
   body? : IndicesValidateQueryBody,
 ) -> IndicesValidateQueryRequest {
   { index, query, body, }
@@ -47360,7 +47360,7 @@ pub extend InferenceChatCompletionUnifiedRequest with @json.FromJson::{
 pub fn InferenceChatCompletionUnifiedRequest::new(
   inference_id : String,
   body : InferenceChatCompletionUnifiedBody,
-  query? : InferenceChatCompletionUnifiedQuery = InferenceChatCompletionUnifiedQuery::new(),
+  query~ : InferenceChatCompletionUnifiedQuery = InferenceChatCompletionUnifiedQuery::new(),
 ) -> InferenceChatCompletionUnifiedRequest {
   { inference_id, query, body, }
 }
@@ -47531,7 +47531,7 @@ pub extend InferenceCompletionRequest with @json.FromJson::{from_json}
 pub fn InferenceCompletionRequest::new(
   inference_id : String,
   body : InferenceCompletionBody,
-  query? : InferenceCompletionQuery = InferenceCompletionQuery::new(),
+  query~ : InferenceCompletionQuery = InferenceCompletionQuery::new(),
 ) -> InferenceCompletionRequest {
   { inference_id, query, body, }
 }
@@ -47657,7 +47657,7 @@ pub extend InferenceDeleteRequest with @json.FromJson::{from_json}
 pub fn InferenceDeleteRequest::new(
   inference_id : String,
   task_type? : String,
-  query? : InferenceDeleteQuery = InferenceDeleteQuery::new(),
+  query~ : InferenceDeleteQuery = InferenceDeleteQuery::new(),
 ) -> InferenceDeleteRequest {
   { task_type, inference_id, query, }
 }
@@ -47777,7 +47777,7 @@ pub extend InferenceEmbeddingRequest with @json.FromJson::{from_json}
 pub fn InferenceEmbeddingRequest::new(
   inference_id : String,
   body : InferenceEmbeddingBody,
-  query? : InferenceEmbeddingQuery = InferenceEmbeddingQuery::new(),
+  query~ : InferenceEmbeddingQuery = InferenceEmbeddingQuery::new(),
 ) -> InferenceEmbeddingRequest {
   { inference_id, query, body, }
 }
@@ -47904,7 +47904,7 @@ pub extend InferenceGetRequest with @json.FromJson::{from_json}
 pub fn InferenceGetRequest::new(
   task_type? : String,
   inference_id? : String,
-  query? : InferenceGetQuery = InferenceGetQuery::new(),
+  query~ : InferenceGetQuery = InferenceGetQuery::new(),
 ) -> InferenceGetRequest {
   { task_type, inference_id, query, }
 }
@@ -48109,7 +48109,7 @@ pub fn InferenceInferenceRequest::new(
   inference_id : String,
   body : InferenceInferenceBody,
   task_type? : String,
-  query? : InferenceInferenceQuery = InferenceInferenceQuery::new(),
+  query~ : InferenceInferenceQuery = InferenceInferenceQuery::new(),
 ) -> InferenceInferenceRequest {
   { task_type, inference_id, query, body, }
 }
@@ -48228,7 +48228,7 @@ pub fn InferencePutRequest::new(
   inference_id : String,
   body : InferencePutBody,
   task_type? : String,
-  query? : InferencePutQuery = InferencePutQuery::new(),
+  query~ : InferencePutQuery = InferencePutQuery::new(),
 ) -> InferencePutRequest {
   { task_type, inference_id, query, body, }
 }
@@ -48399,7 +48399,7 @@ pub fn InferencePutAi21Request::new(
   task_type : String,
   ai21_inference_id : String,
   body : InferencePutAi21Body,
-  query? : InferencePutAi21Query = InferencePutAi21Query::new(),
+  query~ : InferencePutAi21Query = InferencePutAi21Query::new(),
 ) -> InferencePutAi21Request {
   { task_type, ai21_inference_id, query, body, }
 }
@@ -48599,7 +48599,7 @@ pub fn InferencePutAlibabacloudRequest::new(
   task_type : String,
   alibabacloud_inference_id : String,
   body : InferencePutAlibabacloudBody,
-  query? : InferencePutAlibabacloudQuery = InferencePutAlibabacloudQuery::new(),
+  query~ : InferencePutAlibabacloudQuery = InferencePutAlibabacloudQuery::new(),
 ) -> InferencePutAlibabacloudRequest {
   { task_type, alibabacloud_inference_id, query, body, }
 }
@@ -48802,7 +48802,7 @@ pub fn InferencePutAmazonbedrockRequest::new(
   task_type : String,
   amazonbedrock_inference_id : String,
   body : InferencePutAmazonbedrockBody,
-  query? : InferencePutAmazonbedrockQuery = InferencePutAmazonbedrockQuery::new(),
+  query~ : InferencePutAmazonbedrockQuery = InferencePutAmazonbedrockQuery::new(),
 ) -> InferencePutAmazonbedrockRequest {
   { task_type, amazonbedrock_inference_id, query, body, }
 }
@@ -49005,7 +49005,7 @@ pub fn InferencePutAmazonsagemakerRequest::new(
   task_type : String,
   amazonsagemaker_inference_id : String,
   body : InferencePutAmazonsagemakerBody,
-  query? : InferencePutAmazonsagemakerQuery = InferencePutAmazonsagemakerQuery::new(),
+  query~ : InferencePutAmazonsagemakerQuery = InferencePutAmazonsagemakerQuery::new(),
 ) -> InferencePutAmazonsagemakerRequest {
   { task_type, amazonsagemaker_inference_id, query, body, }
 }
@@ -49187,7 +49187,7 @@ pub fn InferencePutAnthropicRequest::new(
   task_type : String,
   anthropic_inference_id : String,
   body : InferencePutAnthropicBody,
-  query? : InferencePutAnthropicQuery = InferencePutAnthropicQuery::new(),
+  query~ : InferencePutAnthropicQuery = InferencePutAnthropicQuery::new(),
 ) -> InferencePutAnthropicRequest {
   { task_type, anthropic_inference_id, query, body, }
 }
@@ -49390,7 +49390,7 @@ pub fn InferencePutAzureaistudioRequest::new(
   task_type : String,
   azureaistudio_inference_id : String,
   body : InferencePutAzureaistudioBody,
-  query? : InferencePutAzureaistudioQuery = InferencePutAzureaistudioQuery::new(),
+  query~ : InferencePutAzureaistudioQuery = InferencePutAzureaistudioQuery::new(),
 ) -> InferencePutAzureaistudioRequest {
   { task_type, azureaistudio_inference_id, query, body, }
 }
@@ -49587,7 +49587,7 @@ pub fn InferencePutAzureopenaiRequest::new(
   task_type : String,
   azureopenai_inference_id : String,
   body : InferencePutAzureopenaiBody,
-  query? : InferencePutAzureopenaiQuery = InferencePutAzureopenaiQuery::new(),
+  query~ : InferencePutAzureopenaiQuery = InferencePutAzureopenaiQuery::new(),
 ) -> InferencePutAzureopenaiRequest {
   { task_type, azureopenai_inference_id, query, body, }
 }
@@ -49780,7 +49780,7 @@ pub fn InferencePutCohereRequest::new(
   task_type : String,
   cohere_inference_id : String,
   body : InferencePutCohereBody,
-  query? : InferencePutCohereQuery = InferencePutCohereQuery::new(),
+  query~ : InferencePutCohereQuery = InferencePutCohereQuery::new(),
 ) -> InferencePutCohereRequest {
   { task_type, cohere_inference_id, query, body, }
 }
@@ -49968,7 +49968,7 @@ pub fn InferencePutContextualaiRequest::new(
   task_type : String,
   contextualai_inference_id : String,
   body : InferencePutContextualaiBody,
-  query? : InferencePutContextualaiQuery = InferencePutContextualaiQuery::new(),
+  query~ : InferencePutContextualaiQuery = InferencePutContextualaiQuery::new(),
 ) -> InferencePutContextualaiRequest {
   { task_type, contextualai_inference_id, query, body, }
 }
@@ -50145,7 +50145,7 @@ pub fn InferencePutCustomRequest::new(
   task_type : String,
   custom_inference_id : String,
   body : InferencePutCustomBody,
-  query? : InferencePutCustomQuery = InferencePutCustomQuery::new(),
+  query~ : InferencePutCustomQuery = InferencePutCustomQuery::new(),
 ) -> InferencePutCustomRequest {
   { task_type, custom_inference_id, query, body, }
 }
@@ -50314,7 +50314,7 @@ pub fn InferencePutDeepseekRequest::new(
   task_type : String,
   deepseek_inference_id : String,
   body : InferencePutDeepseekBody,
-  query? : InferencePutDeepseekQuery = InferencePutDeepseekQuery::new(),
+  query~ : InferencePutDeepseekQuery = InferencePutDeepseekQuery::new(),
 ) -> InferencePutDeepseekRequest {
   { task_type, deepseek_inference_id, query, body, }
 }
@@ -50517,7 +50517,7 @@ pub fn InferencePutElasticsearchRequest::new(
   task_type : String,
   elasticsearch_inference_id : String,
   body : InferencePutElasticsearchBody,
-  query? : InferencePutElasticsearchQuery = InferencePutElasticsearchQuery::new(),
+  query~ : InferencePutElasticsearchQuery = InferencePutElasticsearchQuery::new(),
 ) -> InferencePutElasticsearchRequest {
   { task_type, elasticsearch_inference_id, query, body, }
 }
@@ -50696,7 +50696,7 @@ pub fn InferencePutElserRequest::new(
   task_type : String,
   elser_inference_id : String,
   body : InferencePutElserBody,
-  query? : InferencePutElserQuery = InferencePutElserQuery::new(),
+  query~ : InferencePutElserQuery = InferencePutElserQuery::new(),
 ) -> InferencePutElserRequest {
   { task_type, elser_inference_id, query, body, }
 }
@@ -50893,7 +50893,7 @@ pub fn InferencePutFireworksaiRequest::new(
   task_type : String,
   fireworksai_inference_id : String,
   body : InferencePutFireworksaiBody,
-  query? : InferencePutFireworksaiQuery = InferencePutFireworksaiQuery::new(),
+  query~ : InferencePutFireworksaiQuery = InferencePutFireworksaiQuery::new(),
 ) -> InferencePutFireworksaiRequest {
   { task_type, fireworksai_inference_id, query, body, }
 }
@@ -51084,7 +51084,7 @@ pub fn InferencePutGoogleaistudioRequest::new(
   task_type : String,
   googleaistudio_inference_id : String,
   body : InferencePutGoogleaistudioBody,
-  query? : InferencePutGoogleaistudioQuery = InferencePutGoogleaistudioQuery::new(),
+  query~ : InferencePutGoogleaistudioQuery = InferencePutGoogleaistudioQuery::new(),
 ) -> InferencePutGoogleaistudioRequest {
   { task_type, googleaistudio_inference_id, query, body, }
 }
@@ -51288,7 +51288,7 @@ pub fn InferencePutGooglevertexaiRequest::new(
   task_type : String,
   googlevertexai_inference_id : String,
   body : InferencePutGooglevertexaiBody,
-  query? : InferencePutGooglevertexaiQuery = InferencePutGooglevertexaiQuery::new(),
+  query~ : InferencePutGooglevertexaiQuery = InferencePutGooglevertexaiQuery::new(),
 ) -> InferencePutGooglevertexaiRequest {
   { task_type, googlevertexai_inference_id, query, body, }
 }
@@ -51456,7 +51456,7 @@ pub fn InferencePutGroqRequest::new(
   task_type : String,
   groq_inference_id : String,
   body : InferencePutGroqBody,
-  query? : InferencePutGroqQuery = InferencePutGroqQuery::new(),
+  query~ : InferencePutGroqQuery = InferencePutGroqQuery::new(),
 ) -> InferencePutGroqRequest {
   { task_type, groq_inference_id, query, body, }
 }
@@ -51653,7 +51653,7 @@ pub fn InferencePutHuggingFaceRequest::new(
   task_type : String,
   huggingface_inference_id : String,
   body : InferencePutHuggingFaceBody,
-  query? : InferencePutHuggingFaceQuery = InferencePutHuggingFaceQuery::new(),
+  query~ : InferencePutHuggingFaceQuery = InferencePutHuggingFaceQuery::new(),
 ) -> InferencePutHuggingFaceRequest {
   { task_type, huggingface_inference_id, query, body, }
 }
@@ -51846,7 +51846,7 @@ pub fn InferencePutJinaaiRequest::new(
   task_type : String,
   jinaai_inference_id : String,
   body : InferencePutJinaaiBody,
-  query? : InferencePutJinaaiQuery = InferencePutJinaaiQuery::new(),
+  query~ : InferencePutJinaaiQuery = InferencePutJinaaiQuery::new(),
 ) -> InferencePutJinaaiRequest {
   { task_type, jinaai_inference_id, query, body, }
 }
@@ -52025,7 +52025,7 @@ pub fn InferencePutLlamaRequest::new(
   task_type : String,
   llama_inference_id : String,
   body : InferencePutLlamaBody,
-  query? : InferencePutLlamaQuery = InferencePutLlamaQuery::new(),
+  query~ : InferencePutLlamaQuery = InferencePutLlamaQuery::new(),
 ) -> InferencePutLlamaRequest {
   { task_type, llama_inference_id, query, body, }
 }
@@ -52206,7 +52206,7 @@ pub fn InferencePutMistralRequest::new(
   task_type : String,
   mistral_inference_id : String,
   body : InferencePutMistralBody,
-  query? : InferencePutMistralQuery = InferencePutMistralQuery::new(),
+  query~ : InferencePutMistralQuery = InferencePutMistralQuery::new(),
 ) -> InferencePutMistralRequest {
   { task_type, mistral_inference_id, query, body, }
 }
@@ -52399,7 +52399,7 @@ pub fn InferencePutNvidiaRequest::new(
   task_type : String,
   nvidia_inference_id : String,
   body : InferencePutNvidiaBody,
-  query? : InferencePutNvidiaQuery = InferencePutNvidiaQuery::new(),
+  query~ : InferencePutNvidiaQuery = InferencePutNvidiaQuery::new(),
 ) -> InferencePutNvidiaRequest {
   { task_type, nvidia_inference_id, query, body, }
 }
@@ -52592,7 +52592,7 @@ pub fn InferencePutOpenaiRequest::new(
   task_type : String,
   openai_inference_id : String,
   body : InferencePutOpenaiBody,
-  query? : InferencePutOpenaiQuery = InferencePutOpenaiQuery::new(),
+  query~ : InferencePutOpenaiQuery = InferencePutOpenaiQuery::new(),
 ) -> InferencePutOpenaiRequest {
   { task_type, openai_inference_id, query, body, }
 }
@@ -52789,7 +52789,7 @@ pub fn InferencePutOpenshiftAiRequest::new(
   task_type : String,
   openshiftai_inference_id : String,
   body : InferencePutOpenshiftAiBody,
-  query? : InferencePutOpenshiftAiQuery = InferencePutOpenshiftAiQuery::new(),
+  query~ : InferencePutOpenshiftAiQuery = InferencePutOpenshiftAiQuery::new(),
 ) -> InferencePutOpenshiftAiRequest {
   { task_type, openshiftai_inference_id, query, body, }
 }
@@ -52982,7 +52982,7 @@ pub fn InferencePutVoyageaiRequest::new(
   task_type : String,
   voyageai_inference_id : String,
   body : InferencePutVoyageaiBody,
-  query? : InferencePutVoyageaiQuery = InferencePutVoyageaiQuery::new(),
+  query~ : InferencePutVoyageaiQuery = InferencePutVoyageaiQuery::new(),
 ) -> InferencePutVoyageaiRequest {
   { task_type, voyageai_inference_id, query, body, }
 }
@@ -53163,7 +53163,7 @@ pub fn InferencePutWatsonxRequest::new(
   task_type : String,
   watsonx_inference_id : String,
   body : InferencePutWatsonxBody,
-  query? : InferencePutWatsonxQuery = InferencePutWatsonxQuery::new(),
+  query~ : InferencePutWatsonxQuery = InferencePutWatsonxQuery::new(),
 ) -> InferencePutWatsonxRequest {
   { task_type, watsonx_inference_id, query, body, }
 }
@@ -53254,7 +53254,7 @@ pub(all) struct InferenceRerankBody {
   query : String
   input : Array[String]
   return_documents : Bool?
-  top_n : Int?
+  top_n : Int32?
   task_settings : Json?
 } derive(Eq, Debug)
 
@@ -53331,7 +53331,7 @@ pub fn InferenceRerankBody::new(
   query : String,
   input : Array[String],
   return_documents? : Bool,
-  top_n? : Int,
+  top_n? : Int32,
   task_settings? : Json,
 ) -> InferenceRerankBody {
   { query, input, return_documents, top_n, task_settings, }
@@ -53363,7 +53363,7 @@ pub extend InferenceRerankRequest with @json.FromJson::{from_json}
 pub fn InferenceRerankRequest::new(
   inference_id : String,
   body : InferenceRerankBody,
-  query? : InferenceRerankQuery = InferenceRerankQuery::new(),
+  query~ : InferenceRerankQuery = InferenceRerankQuery::new(),
 ) -> InferenceRerankRequest {
   { inference_id, query, body, }
 }
@@ -53537,7 +53537,7 @@ pub extend InferenceSparseEmbeddingRequest with @json.FromJson::{from_json}
 pub fn InferenceSparseEmbeddingRequest::new(
   inference_id : String,
   body : InferenceSparseEmbeddingBody,
-  query? : InferenceSparseEmbeddingQuery = InferenceSparseEmbeddingQuery::new(),
+  query~ : InferenceSparseEmbeddingQuery = InferenceSparseEmbeddingQuery::new(),
 ) -> InferenceSparseEmbeddingRequest {
   { inference_id, query, body, }
 }
@@ -53718,7 +53718,7 @@ pub extend InferenceStreamCompletionRequest with @json.FromJson::{from_json}
 pub fn InferenceStreamCompletionRequest::new(
   inference_id : String,
   body : InferenceStreamCompletionBody,
-  query? : InferenceStreamCompletionQuery = InferenceStreamCompletionQuery::new(),
+  query~ : InferenceStreamCompletionQuery = InferenceStreamCompletionQuery::new(),
 ) -> InferenceStreamCompletionRequest {
   { inference_id, query, body, }
 }
@@ -53903,7 +53903,7 @@ pub extend InferenceTextEmbeddingRequest with @json.FromJson::{from_json}
 pub fn InferenceTextEmbeddingRequest::new(
   inference_id : String,
   body : InferenceTextEmbeddingBody,
-  query? : InferenceTextEmbeddingQuery = InferenceTextEmbeddingQuery::new(),
+  query~ : InferenceTextEmbeddingQuery = InferenceTextEmbeddingQuery::new(),
 ) -> InferenceTextEmbeddingRequest {
   { inference_id, query, body, }
 }
@@ -54005,7 +54005,7 @@ pub fn InferenceUpdateRequest::new(
   inference_id : String,
   body : InferenceUpdateBody,
   task_type? : String,
-  query? : InferenceUpdateQuery = InferenceUpdateQuery::new(),
+  query~ : InferenceUpdateQuery = InferenceUpdateQuery::new(),
 ) -> InferenceUpdateRequest {
   { task_type, inference_id, query, body, }
 }
@@ -54156,7 +54156,7 @@ pub extend InfoRequest with ToJson::{to_json}
 pub extend InfoRequest with @json.FromJson::{from_json}
 
 ///|
-pub fn InfoRequest::new(query? : InfoQuery = InfoQuery::new()) -> InfoRequest {
+pub fn InfoRequest::new(query~ : InfoQuery = InfoQuery::new()) -> InfoRequest {
   { query, }
 }
 
@@ -54279,7 +54279,7 @@ pub extend IngestDeleteGeoipDatabaseRequest with @json.FromJson::{from_json}
 ///|
 pub fn IngestDeleteGeoipDatabaseRequest::new(
   id : String,
-  query? : IngestDeleteGeoipDatabaseQuery = IngestDeleteGeoipDatabaseQuery::new(),
+  query~ : IngestDeleteGeoipDatabaseQuery = IngestDeleteGeoipDatabaseQuery::new(),
 ) -> IngestDeleteGeoipDatabaseRequest {
   { id, query, }
 }
@@ -54409,7 +54409,7 @@ pub extend IngestDeleteIpLocationDatabaseRequest with @json.FromJson::{
 ///|
 pub fn IngestDeleteIpLocationDatabaseRequest::new(
   id : String,
-  query? : IngestDeleteIpLocationDatabaseQuery = IngestDeleteIpLocationDatabaseQuery::new(),
+  query~ : IngestDeleteIpLocationDatabaseQuery = IngestDeleteIpLocationDatabaseQuery::new(),
 ) -> IngestDeleteIpLocationDatabaseRequest {
   { id, query, }
 }
@@ -54532,7 +54532,7 @@ pub extend IngestDeletePipelineRequest with @json.FromJson::{from_json}
 ///|
 pub fn IngestDeletePipelineRequest::new(
   id : String,
-  query? : IngestDeletePipelineQuery = IngestDeletePipelineQuery::new(),
+  query~ : IngestDeletePipelineQuery = IngestDeletePipelineQuery::new(),
 ) -> IngestDeletePipelineRequest {
   { id, query, }
 }
@@ -54662,7 +54662,7 @@ pub extend IngestGeoIpStatsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn IngestGeoIpStatsRequest::new(
-  query? : IngestGeoIpStatsQuery = IngestGeoIpStatsQuery::new(),
+  query~ : IngestGeoIpStatsQuery = IngestGeoIpStatsQuery::new(),
 ) -> IngestGeoIpStatsRequest {
   { query, }
 }
@@ -54791,7 +54791,7 @@ pub extend IngestGetGeoipDatabaseRequest with @json.FromJson::{from_json}
 ///|
 pub fn IngestGetGeoipDatabaseRequest::new(
   id? : String,
-  query? : IngestGetGeoipDatabaseQuery = IngestGetGeoipDatabaseQuery::new(),
+  query~ : IngestGetGeoipDatabaseQuery = IngestGetGeoipDatabaseQuery::new(),
 ) -> IngestGetGeoipDatabaseRequest {
   { id, query, }
 }
@@ -54933,7 +54933,7 @@ pub extend IngestGetIpLocationDatabaseRequest with @json.FromJson::{from_json}
 ///|
 pub fn IngestGetIpLocationDatabaseRequest::new(
   id? : String,
-  query? : IngestGetIpLocationDatabaseQuery = IngestGetIpLocationDatabaseQuery::new(),
+  query~ : IngestGetIpLocationDatabaseQuery = IngestGetIpLocationDatabaseQuery::new(),
 ) -> IngestGetIpLocationDatabaseRequest {
   { id, query, }
 }
@@ -55062,7 +55062,7 @@ pub extend IngestGetPipelineRequest with @json.FromJson::{from_json}
 ///|
 pub fn IngestGetPipelineRequest::new(
   id? : String,
-  query? : IngestGetPipelineQuery = IngestGetPipelineQuery::new(),
+  query~ : IngestGetPipelineQuery = IngestGetPipelineQuery::new(),
 ) -> IngestGetPipelineRequest {
   { id, query, }
 }
@@ -55194,7 +55194,7 @@ pub extend IngestProcessorGrokRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn IngestProcessorGrokRequest::new(
-  query? : IngestProcessorGrokQuery = IngestProcessorGrokQuery::new(),
+  query~ : IngestProcessorGrokQuery = IngestProcessorGrokQuery::new(),
 ) -> IngestProcessorGrokRequest {
   { query, }
 }
@@ -55373,7 +55373,7 @@ pub extend IngestPutGeoipDatabaseRequest with @json.FromJson::{from_json}
 pub fn IngestPutGeoipDatabaseRequest::new(
   id : String,
   body : IngestPutGeoipDatabaseBody,
-  query? : IngestPutGeoipDatabaseQuery = IngestPutGeoipDatabaseQuery::new(),
+  query~ : IngestPutGeoipDatabaseQuery = IngestPutGeoipDatabaseQuery::new(),
 ) -> IngestPutGeoipDatabaseRequest {
   { id, query, body, }
 }
@@ -55507,7 +55507,7 @@ pub extend IngestPutIpLocationDatabaseRequest with @json.FromJson::{from_json}
 pub fn IngestPutIpLocationDatabaseRequest::new(
   id : String,
   body : IngestPutIpLocationDatabaseBody,
-  query? : IngestPutIpLocationDatabaseQuery = IngestPutIpLocationDatabaseQuery::new(),
+  query~ : IngestPutIpLocationDatabaseQuery = IngestPutIpLocationDatabaseQuery::new(),
 ) -> IngestPutIpLocationDatabaseRequest {
   { id, query, body, }
 }
@@ -55532,7 +55532,7 @@ pub async fn Client::ingest_put_ip_location_database(
 pub(all) struct IngestPutPipelineQuery {
   master_timeout : String?
   timeout : String?
-  if_version : Int?
+  if_version : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -55597,7 +55597,7 @@ pub extend IngestPutPipelineQuery with @json.FromJson::{from_json}
 pub fn IngestPutPipelineQuery::new(
   master_timeout? : String,
   timeout? : String,
-  if_version? : Int,
+  if_version? : Int32,
 ) -> IngestPutPipelineQuery {
   { master_timeout, timeout, if_version, }
 }
@@ -55778,7 +55778,7 @@ pub extend IngestPutPipelineRequest with @json.FromJson::{from_json}
 pub fn IngestPutPipelineRequest::new(
   id : String,
   body : IngestPutPipelineBody,
-  query? : IngestPutPipelineQuery = IngestPutPipelineQuery::new(),
+  query~ : IngestPutPipelineQuery = IngestPutPipelineQuery::new(),
 ) -> IngestPutPipelineRequest {
   { id, query, body, }
 }
@@ -55978,7 +55978,7 @@ pub extend IngestSimulateRequest with @json.FromJson::{from_json}
 pub fn IngestSimulateRequest::new(
   body : IngestSimulateBody,
   id? : String,
-  query? : IngestSimulateQuery = IngestSimulateQuery::new(),
+  query~ : IngestSimulateQuery = IngestSimulateQuery::new(),
 ) -> IngestSimulateRequest {
   { id, query, body, }
 }
@@ -56166,7 +56166,7 @@ pub fn KnnSearchBody::new(
 
 ///|
 pub(all) struct KnnSearchResponse {
-  took : Int
+  took : Int32
   timed_out : Bool
   _shards : Json
   hits : Json
@@ -56263,7 +56263,7 @@ pub extend KnnSearchRequest with @json.FromJson::{from_json}
 pub fn KnnSearchRequest::new(
   index : String,
   body : KnnSearchBody,
-  query? : KnnSearchQuery = KnnSearchQuery::new(),
+  query~ : KnnSearchQuery = KnnSearchQuery::new(),
 ) -> KnnSearchRequest {
   { index, query, body, }
 }
@@ -56385,7 +56385,7 @@ pub extend LicenseDeleteRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn LicenseDeleteRequest::new(
-  query? : LicenseDeleteQuery = LicenseDeleteQuery::new(),
+  query~ : LicenseDeleteQuery = LicenseDeleteQuery::new(),
 ) -> LicenseDeleteRequest {
   { query, }
 }
@@ -56536,7 +56536,7 @@ pub extend LicenseGetRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn LicenseGetRequest::new(
-  query? : LicenseGetQuery = LicenseGetQuery::new(),
+  query~ : LicenseGetQuery = LicenseGetQuery::new(),
 ) -> LicenseGetRequest {
   { query, }
 }
@@ -56661,7 +56661,7 @@ pub extend LicenseGetBasicStatusRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn LicenseGetBasicStatusRequest::new(
-  query? : LicenseGetBasicStatusQuery = LicenseGetBasicStatusQuery::new(),
+  query~ : LicenseGetBasicStatusQuery = LicenseGetBasicStatusQuery::new(),
 ) -> LicenseGetBasicStatusRequest {
   { query, }
 }
@@ -56789,7 +56789,7 @@ pub extend LicenseGetTrialStatusRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn LicenseGetTrialStatusRequest::new(
-  query? : LicenseGetTrialStatusQuery = LicenseGetTrialStatusQuery::new(),
+  query~ : LicenseGetTrialStatusQuery = LicenseGetTrialStatusQuery::new(),
 ) -> LicenseGetTrialStatusRequest {
   { query, }
 }
@@ -57036,7 +57036,7 @@ pub extend LicensePostRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn LicensePostRequest::new(
-  query? : LicensePostQuery = LicensePostQuery::new(),
+  query~ : LicensePostQuery = LicensePostQuery::new(),
   body? : LicensePostBody,
 ) -> LicensePostRequest {
   { query, body, }
@@ -57253,7 +57253,7 @@ pub extend LicensePostStartBasicRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn LicensePostStartBasicRequest::new(
-  query? : LicensePostStartBasicQuery = LicensePostStartBasicQuery::new(),
+  query~ : LicensePostStartBasicQuery = LicensePostStartBasicQuery::new(),
 ) -> LicensePostStartBasicRequest {
   { query, }
 }
@@ -57457,7 +57457,7 @@ pub extend LicensePostStartTrialRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn LicensePostStartTrialRequest::new(
-  query? : LicensePostStartTrialQuery = LicensePostStartTrialQuery::new(),
+  query~ : LicensePostStartTrialQuery = LicensePostStartTrialQuery::new(),
 ) -> LicensePostStartTrialRequest {
   { query, }
 }
@@ -57614,7 +57614,7 @@ pub extend ListReindexRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn ListReindexRequest::new(
-  query? : ListReindexQuery = ListReindexQuery::new(),
+  query~ : ListReindexQuery = ListReindexQuery::new(),
 ) -> ListReindexRequest {
   { query, }
 }
@@ -57702,7 +57702,7 @@ pub extend LogstashDeletePipelineRequest with @json.FromJson::{from_json}
 ///|
 pub fn LogstashDeletePipelineRequest::new(
   id : String,
-  query? : LogstashDeletePipelineQuery = LogstashDeletePipelineQuery::new(),
+  query~ : LogstashDeletePipelineQuery = LogstashDeletePipelineQuery::new(),
 ) -> LogstashDeletePipelineRequest {
   { id, query, }
 }
@@ -57792,7 +57792,7 @@ pub extend LogstashGetPipelineRequest with @json.FromJson::{from_json}
 ///|
 pub fn LogstashGetPipelineRequest::new(
   id? : String,
-  query? : LogstashGetPipelineQuery = LogstashGetPipelineQuery::new(),
+  query~ : LogstashGetPipelineQuery = LogstashGetPipelineQuery::new(),
 ) -> LogstashGetPipelineRequest {
   { id, query, }
 }
@@ -57893,7 +57893,7 @@ pub extend LogstashPutPipelineRequest with @json.FromJson::{from_json}
 pub fn LogstashPutPipelineRequest::new(
   id : String,
   body : LogstashPutPipelineBody,
-  query? : LogstashPutPipelineQuery = LogstashPutPipelineQuery::new(),
+  query~ : LogstashPutPipelineQuery = LogstashPutPipelineQuery::new(),
 ) -> LogstashPutPipelineRequest {
   { id, query, body, }
 }
@@ -58228,7 +58228,7 @@ pub extend MgetRequest with @json.FromJson::{from_json}
 pub fn MgetRequest::new(
   body : MgetBody,
   index? : String,
-  query? : MgetQuery = MgetQuery::new(),
+  query~ : MgetQuery = MgetQuery::new(),
 ) -> MgetRequest {
   { index, query, body, }
 }
@@ -58402,7 +58402,7 @@ pub extend MigrationDeprecationsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MigrationDeprecationsRequest::new(
   index? : String,
-  query? : MigrationDeprecationsQuery = MigrationDeprecationsQuery::new(),
+  query~ : MigrationDeprecationsQuery = MigrationDeprecationsQuery::new(),
 ) -> MigrationDeprecationsRequest {
   { index, query, }
 }
@@ -58554,7 +58554,7 @@ pub extend MigrationGetFeatureUpgradeStatusRequest with @json.FromJson::{
 
 ///|
 pub fn MigrationGetFeatureUpgradeStatusRequest::new(
-  query? : MigrationGetFeatureUpgradeStatusQuery = MigrationGetFeatureUpgradeStatusQuery::new(),
+  query~ : MigrationGetFeatureUpgradeStatusQuery = MigrationGetFeatureUpgradeStatusQuery::new(),
 ) -> MigrationGetFeatureUpgradeStatusRequest {
   { query, }
 }
@@ -58707,7 +58707,7 @@ pub extend MigrationPostFeatureUpgradeRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn MigrationPostFeatureUpgradeRequest::new(
-  query? : MigrationPostFeatureUpgradeQuery = MigrationPostFeatureUpgradeQuery::new(),
+  query~ : MigrationPostFeatureUpgradeQuery = MigrationPostFeatureUpgradeQuery::new(),
 ) -> MigrationPostFeatureUpgradeRequest {
   { query, }
 }
@@ -58859,7 +58859,7 @@ pub extend MlClearTrainedModelDeploymentCacheRequest with @json.FromJson::{
 ///|
 pub fn MlClearTrainedModelDeploymentCacheRequest::new(
   model_id : String,
-  query? : MlClearTrainedModelDeploymentCacheQuery = MlClearTrainedModelDeploymentCacheQuery::new(),
+  query~ : MlClearTrainedModelDeploymentCacheQuery = MlClearTrainedModelDeploymentCacheQuery::new(),
   body? : MlClearTrainedModelDeploymentCacheBody,
 ) -> MlClearTrainedModelDeploymentCacheRequest {
   { model_id, query, body, }
@@ -59113,7 +59113,7 @@ pub extend MlCloseJobRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlCloseJobRequest::new(
   job_id : String,
-  query? : MlCloseJobQuery = MlCloseJobQuery::new(),
+  query~ : MlCloseJobQuery = MlCloseJobQuery::new(),
   body? : MlCloseJobBody,
 ) -> MlCloseJobRequest {
   { job_id, query, body, }
@@ -59208,7 +59208,7 @@ pub extend MlDeleteCalendarRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlDeleteCalendarRequest::new(
   calendar_id : String,
-  query? : MlDeleteCalendarQuery = MlDeleteCalendarQuery::new(),
+  query~ : MlDeleteCalendarQuery = MlDeleteCalendarQuery::new(),
 ) -> MlDeleteCalendarRequest {
   { calendar_id, query, }
 }
@@ -59300,7 +59300,7 @@ pub extend MlDeleteCalendarEventRequest with @json.FromJson::{from_json}
 pub fn MlDeleteCalendarEventRequest::new(
   calendar_id : String,
   event_id : String,
-  query? : MlDeleteCalendarEventQuery = MlDeleteCalendarEventQuery::new(),
+  query~ : MlDeleteCalendarEventQuery = MlDeleteCalendarEventQuery::new(),
 ) -> MlDeleteCalendarEventRequest {
   { calendar_id, event_id, query, }
 }
@@ -59452,7 +59452,7 @@ pub extend MlDeleteCalendarJobRequest with @json.FromJson::{from_json}
 pub fn MlDeleteCalendarJobRequest::new(
   calendar_id : String,
   job_id : String,
-  query? : MlDeleteCalendarJobQuery = MlDeleteCalendarJobQuery::new(),
+  query~ : MlDeleteCalendarJobQuery = MlDeleteCalendarJobQuery::new(),
 ) -> MlDeleteCalendarJobRequest {
   { calendar_id, job_id, query, }
 }
@@ -59583,7 +59583,7 @@ pub extend MlDeleteDataFrameAnalyticsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlDeleteDataFrameAnalyticsRequest::new(
   id : String,
-  query? : MlDeleteDataFrameAnalyticsQuery = MlDeleteDataFrameAnalyticsQuery::new(),
+  query~ : MlDeleteDataFrameAnalyticsQuery = MlDeleteDataFrameAnalyticsQuery::new(),
 ) -> MlDeleteDataFrameAnalyticsRequest {
   { id, query, }
 }
@@ -59687,7 +59687,7 @@ pub extend MlDeleteDatafeedRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlDeleteDatafeedRequest::new(
   datafeed_id : String,
-  query? : MlDeleteDatafeedQuery = MlDeleteDatafeedQuery::new(),
+  query~ : MlDeleteDatafeedQuery = MlDeleteDatafeedQuery::new(),
 ) -> MlDeleteDatafeedRequest {
   { datafeed_id, query, }
 }
@@ -59911,7 +59911,7 @@ pub extend MlDeleteExpiredDataRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlDeleteExpiredDataRequest::new(
   job_id? : String,
-  query? : MlDeleteExpiredDataQuery = MlDeleteExpiredDataQuery::new(),
+  query~ : MlDeleteExpiredDataQuery = MlDeleteExpiredDataQuery::new(),
   body? : MlDeleteExpiredDataBody,
 ) -> MlDeleteExpiredDataRequest {
   { job_id, query, body, }
@@ -60012,7 +60012,7 @@ pub extend MlDeleteFilterRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlDeleteFilterRequest::new(
   filter_id : String,
-  query? : MlDeleteFilterQuery = MlDeleteFilterQuery::new(),
+  query~ : MlDeleteFilterQuery = MlDeleteFilterQuery::new(),
 ) -> MlDeleteFilterRequest {
   { filter_id, query, }
 }
@@ -60137,7 +60137,7 @@ pub extend MlDeleteForecastRequest with @json.FromJson::{from_json}
 pub fn MlDeleteForecastRequest::new(
   job_id : String,
   forecast_id? : String,
-  query? : MlDeleteForecastQuery = MlDeleteForecastQuery::new(),
+  query~ : MlDeleteForecastQuery = MlDeleteForecastQuery::new(),
 ) -> MlDeleteForecastRequest {
   { job_id, forecast_id, query, }
 }
@@ -60287,7 +60287,7 @@ pub extend MlDeleteJobRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlDeleteJobRequest::new(
   job_id : String,
-  query? : MlDeleteJobQuery = MlDeleteJobQuery::new(),
+  query~ : MlDeleteJobQuery = MlDeleteJobQuery::new(),
 ) -> MlDeleteJobRequest {
   { job_id, query, }
 }
@@ -60379,7 +60379,7 @@ pub extend MlDeleteModelSnapshotRequest with @json.FromJson::{from_json}
 pub fn MlDeleteModelSnapshotRequest::new(
   job_id : String,
   snapshot_id : String,
-  query? : MlDeleteModelSnapshotQuery = MlDeleteModelSnapshotQuery::new(),
+  query~ : MlDeleteModelSnapshotQuery = MlDeleteModelSnapshotQuery::new(),
 ) -> MlDeleteModelSnapshotRequest {
   { job_id, snapshot_id, query, }
 }
@@ -60506,7 +60506,7 @@ pub extend MlDeleteTrainedModelRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlDeleteTrainedModelRequest::new(
   model_id : String,
-  query? : MlDeleteTrainedModelQuery = MlDeleteTrainedModelQuery::new(),
+  query~ : MlDeleteTrainedModelQuery = MlDeleteTrainedModelQuery::new(),
 ) -> MlDeleteTrainedModelRequest {
   { model_id, query, }
 }
@@ -60607,7 +60607,7 @@ pub extend MlDeleteTrainedModelAliasRequest with @json.FromJson::{from_json}
 pub fn MlDeleteTrainedModelAliasRequest::new(
   model_id : String,
   model_alias : String,
-  query? : MlDeleteTrainedModelAliasQuery = MlDeleteTrainedModelAliasQuery::new(),
+  query~ : MlDeleteTrainedModelAliasQuery = MlDeleteTrainedModelAliasQuery::new(),
   body? : MlDeleteTrainedModelAliasBody,
 ) -> MlDeleteTrainedModelAliasRequest {
   { model_id, model_alias, query, body, }
@@ -60826,7 +60826,7 @@ pub extend MlEstimateModelMemoryRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlEstimateModelMemoryRequest::new(
   body : MlEstimateModelMemoryBody,
-  query? : MlEstimateModelMemoryQuery = MlEstimateModelMemoryQuery::new(),
+  query~ : MlEstimateModelMemoryQuery = MlEstimateModelMemoryQuery::new(),
 ) -> MlEstimateModelMemoryRequest {
   { query, body, }
 }
@@ -61045,7 +61045,7 @@ pub extend MlEvaluateDataFrameRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlEvaluateDataFrameRequest::new(
   body : MlEvaluateDataFrameBody,
-  query? : MlEvaluateDataFrameQuery = MlEvaluateDataFrameQuery::new(),
+  query~ : MlEvaluateDataFrameQuery = MlEvaluateDataFrameQuery::new(),
 ) -> MlEvaluateDataFrameRequest {
   { query, body, }
 }
@@ -61123,7 +61123,7 @@ pub(all) struct MlExplainDataFrameAnalyticsBody {
   analysis : Json?
   description : String?
   model_memory_limit : String?
-  max_num_threads : Int?
+  max_num_threads : Int32?
   analyzed_fields : Json?
   allow_lazy_start : Bool?
 } derive(Eq, Debug)
@@ -61246,7 +61246,7 @@ pub fn MlExplainDataFrameAnalyticsBody::new(
   analysis? : Json,
   description? : String,
   model_memory_limit? : String,
-  max_num_threads? : Int,
+  max_num_threads? : Int32,
   analyzed_fields? : Json,
   allow_lazy_start? : Bool,
 ) -> MlExplainDataFrameAnalyticsBody {
@@ -61334,7 +61334,7 @@ pub extend MlExplainDataFrameAnalyticsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlExplainDataFrameAnalyticsRequest::new(
   id? : String,
-  query? : MlExplainDataFrameAnalyticsQuery = MlExplainDataFrameAnalyticsQuery::new(),
+  query~ : MlExplainDataFrameAnalyticsQuery = MlExplainDataFrameAnalyticsQuery::new(),
   body? : MlExplainDataFrameAnalyticsBody,
 ) -> MlExplainDataFrameAnalyticsRequest {
   { id, query, body, }
@@ -61586,7 +61586,7 @@ pub fn MlFlushJobBody::new(
 ///|
 pub(all) struct MlFlushJobResponse {
   flushed : Bool
-  last_finalized_bucket_end : Int?
+  last_finalized_bucket_end : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -61657,7 +61657,7 @@ pub extend MlFlushJobRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlFlushJobRequest::new(
   job_id : String,
-  query? : MlFlushJobQuery = MlFlushJobQuery::new(),
+  query~ : MlFlushJobQuery = MlFlushJobQuery::new(),
   body? : MlFlushJobBody,
 ) -> MlFlushJobRequest {
   { job_id, query, body, }
@@ -61914,7 +61914,7 @@ pub extend MlForecastRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlForecastRequest::new(
   job_id : String,
-  query? : MlForecastQuery = MlForecastQuery::new(),
+  query~ : MlForecastQuery = MlForecastQuery::new(),
   body? : MlForecastBody,
 ) -> MlForecastRequest {
   { job_id, query, body, }
@@ -61946,8 +61946,8 @@ pub(all) struct MlGetBucketsQuery {
   end : String?
   exclude_interim : Bool?
   expand : Bool?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   sort : String?
   start : String?
 } derive(Eq, Debug)
@@ -62069,8 +62069,8 @@ pub fn MlGetBucketsQuery::new(
   end? : String,
   exclude_interim? : Bool,
   expand? : Bool,
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
   sort? : String,
   start? : String,
 ) -> MlGetBucketsQuery {
@@ -62262,7 +62262,7 @@ pub fn MlGetBucketsBody::new(
 ///|
 pub(all) struct MlGetBucketsResponse {
   buckets : Array[Json]
-  count : Int
+  count : Int32
 } derive(Eq, Debug)
 
 ///|
@@ -62328,7 +62328,7 @@ pub extend MlGetBucketsRequest with @json.FromJson::{from_json}
 pub fn MlGetBucketsRequest::new(
   job_id : String,
   timestamp? : String,
-  query? : MlGetBucketsQuery = MlGetBucketsQuery::new(),
+  query~ : MlGetBucketsQuery = MlGetBucketsQuery::new(),
   body? : MlGetBucketsBody,
 ) -> MlGetBucketsRequest {
   { job_id, timestamp, query, body, }
@@ -62368,9 +62368,9 @@ pub async fn Client::ml_get_buckets(
 ///|
 pub(all) struct MlGetCalendarEventsQuery {
   end : String?
-  from : Int?
+  from : Int32?
   job_id : String?
-  size : Int?
+  size : Int32?
   start : String?
 } derive(Eq, Debug)
 
@@ -62451,9 +62451,9 @@ pub extend MlGetCalendarEventsQuery with @json.FromJson::{from_json}
 ///|
 pub fn MlGetCalendarEventsQuery::new(
   end? : String,
-  from? : Int,
+  from? : Int32,
   job_id? : String,
-  size? : Int,
+  size? : Int32,
   start? : String,
 ) -> MlGetCalendarEventsQuery {
   { end, from, job_id, size, start, }
@@ -62489,7 +62489,7 @@ pub fn MlGetCalendarEventsQuery::to_pairs(
 
 ///|
 pub(all) struct MlGetCalendarEventsResponse {
-  count : Int
+  count : Int32
   events : Array[Json]
 } derive(Eq, Debug)
 
@@ -62555,7 +62555,7 @@ pub extend MlGetCalendarEventsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetCalendarEventsRequest::new(
   calendar_id : String,
-  query? : MlGetCalendarEventsQuery = MlGetCalendarEventsQuery::new(),
+  query~ : MlGetCalendarEventsQuery = MlGetCalendarEventsQuery::new(),
 ) -> MlGetCalendarEventsRequest {
   { calendar_id, query, }
 }
@@ -62577,8 +62577,8 @@ pub async fn Client::ml_get_calendar_events(
 
 ///|
 pub(all) struct MlGetCalendarsQuery {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -62630,8 +62630,8 @@ pub extend MlGetCalendarsQuery with @json.FromJson::{from_json}
 
 ///|
 pub fn MlGetCalendarsQuery::new(
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
 ) -> MlGetCalendarsQuery {
   { from, size, }
 }
@@ -62703,7 +62703,7 @@ pub fn MlGetCalendarsBody::new(page? : Json) -> MlGetCalendarsBody {
 ///|
 pub(all) struct MlGetCalendarsResponse {
   calendars : Array[Json]
-  count : Int
+  count : Int32
 } derive(Eq, Debug)
 
 ///|
@@ -62767,7 +62767,7 @@ pub extend MlGetCalendarsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetCalendarsRequest::new(
   calendar_id? : String,
-  query? : MlGetCalendarsQuery = MlGetCalendarsQuery::new(),
+  query~ : MlGetCalendarsQuery = MlGetCalendarsQuery::new(),
   body? : MlGetCalendarsBody,
 ) -> MlGetCalendarsRequest {
   { calendar_id, query, body, }
@@ -62800,9 +62800,9 @@ pub async fn Client::ml_get_calendars(
 
 ///|
 pub(all) struct MlGetCategoriesQuery {
-  from : Int?
+  from : Int32?
   partition_field_value : String?
-  size : Int?
+  size : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -62864,9 +62864,9 @@ pub extend MlGetCategoriesQuery with @json.FromJson::{from_json}
 
 ///|
 pub fn MlGetCategoriesQuery::new(
-  from? : Int,
+  from? : Int32,
   partition_field_value? : String,
-  size? : Int,
+  size? : Int32,
 ) -> MlGetCategoriesQuery {
   { from, partition_field_value, size, }
 }
@@ -62943,7 +62943,7 @@ pub fn MlGetCategoriesBody::new(page? : Json) -> MlGetCategoriesBody {
 ///|
 pub(all) struct MlGetCategoriesResponse {
   categories : Array[Json]
-  count : Int
+  count : Int32
 } derive(Eq, Debug)
 
 ///|
@@ -63009,7 +63009,7 @@ pub extend MlGetCategoriesRequest with @json.FromJson::{from_json}
 pub fn MlGetCategoriesRequest::new(
   job_id : String,
   category_id? : String,
-  query? : MlGetCategoriesQuery = MlGetCategoriesQuery::new(),
+  query~ : MlGetCategoriesQuery = MlGetCategoriesQuery::new(),
   body? : MlGetCategoriesBody,
 ) -> MlGetCategoriesRequest {
   { job_id, category_id, query, body, }
@@ -63049,8 +63049,8 @@ pub async fn Client::ml_get_categories(
 ///|
 pub(all) struct MlGetDataFrameAnalyticsQuery {
   allow_no_match : Bool?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   exclude_generated : Bool?
 } derive(Eq, Debug)
 
@@ -63126,8 +63126,8 @@ pub extend MlGetDataFrameAnalyticsQuery with @json.FromJson::{from_json}
 ///|
 pub fn MlGetDataFrameAnalyticsQuery::new(
   allow_no_match? : Bool,
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
   exclude_generated? : Bool,
 ) -> MlGetDataFrameAnalyticsQuery {
   { allow_no_match, from, size, exclude_generated, }
@@ -63161,7 +63161,7 @@ pub fn MlGetDataFrameAnalyticsQuery::to_pairs(
 
 ///|
 pub(all) struct MlGetDataFrameAnalyticsResponse {
-  count : Int
+  count : Int32
   data_frame_analytics : Array[Json]
 } derive(Eq, Debug)
 
@@ -63230,7 +63230,7 @@ pub extend MlGetDataFrameAnalyticsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetDataFrameAnalyticsRequest::new(
   id? : String,
-  query? : MlGetDataFrameAnalyticsQuery = MlGetDataFrameAnalyticsQuery::new(),
+  query~ : MlGetDataFrameAnalyticsQuery = MlGetDataFrameAnalyticsQuery::new(),
 ) -> MlGetDataFrameAnalyticsRequest {
   { id, query, }
 }
@@ -63259,8 +63259,8 @@ pub async fn Client::ml_get_data_frame_analytics(
 ///|
 pub(all) struct MlGetDataFrameAnalyticsStatsQuery {
   allow_no_match : Bool?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   verbose : Bool?
 } derive(Eq, Debug)
 
@@ -63338,8 +63338,8 @@ pub extend MlGetDataFrameAnalyticsStatsQuery with @json.FromJson::{from_json}
 ///|
 pub fn MlGetDataFrameAnalyticsStatsQuery::new(
   allow_no_match? : Bool,
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
   verbose? : Bool,
 ) -> MlGetDataFrameAnalyticsStatsQuery {
   { allow_no_match, from, size, verbose, }
@@ -63372,7 +63372,7 @@ pub fn MlGetDataFrameAnalyticsStatsQuery::to_pairs(
 
 ///|
 pub(all) struct MlGetDataFrameAnalyticsStatsResponse {
-  count : Int
+  count : Int32
   data_frame_analytics : Array[Json]
 } derive(Eq, Debug)
 
@@ -63441,7 +63441,7 @@ pub extend MlGetDataFrameAnalyticsStatsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetDataFrameAnalyticsStatsRequest::new(
   id? : String,
-  query? : MlGetDataFrameAnalyticsStatsQuery = MlGetDataFrameAnalyticsStatsQuery::new(),
+  query~ : MlGetDataFrameAnalyticsStatsQuery = MlGetDataFrameAnalyticsStatsQuery::new(),
 ) -> MlGetDataFrameAnalyticsStatsRequest {
   { id, query, }
 }
@@ -63533,7 +63533,7 @@ pub fn MlGetDatafeedStatsQuery::to_pairs(
 
 ///|
 pub(all) struct MlGetDatafeedStatsResponse {
-  count : Int
+  count : Int32
   datafeeds : Array[Json]
 } derive(Eq, Debug)
 
@@ -63597,7 +63597,7 @@ pub extend MlGetDatafeedStatsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetDatafeedStatsRequest::new(
   datafeed_id? : String,
-  query? : MlGetDatafeedStatsQuery = MlGetDatafeedStatsQuery::new(),
+  query~ : MlGetDatafeedStatsQuery = MlGetDatafeedStatsQuery::new(),
 ) -> MlGetDatafeedStatsRequest {
   { datafeed_id, query, }
 }
@@ -63706,7 +63706,7 @@ pub fn MlGetDatafeedsQuery::to_pairs(
 
 ///|
 pub(all) struct MlGetDatafeedsResponse {
-  count : Int
+  count : Int32
   datafeeds : Array[Json]
 } derive(Eq, Debug)
 
@@ -63770,7 +63770,7 @@ pub extend MlGetDatafeedsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetDatafeedsRequest::new(
   datafeed_id? : String,
-  query? : MlGetDatafeedsQuery = MlGetDatafeedsQuery::new(),
+  query~ : MlGetDatafeedsQuery = MlGetDatafeedsQuery::new(),
 ) -> MlGetDatafeedsRequest {
   { datafeed_id, query, }
 }
@@ -63798,8 +63798,8 @@ pub async fn Client::ml_get_datafeeds(
 
 ///|
 pub(all) struct MlGetFiltersQuery {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -63848,7 +63848,10 @@ pub extend MlGetFiltersQuery with ToJson::{to_json}
 pub extend MlGetFiltersQuery with @json.FromJson::{from_json}
 
 ///|
-pub fn MlGetFiltersQuery::new(from? : Int, size? : Int) -> MlGetFiltersQuery {
+pub fn MlGetFiltersQuery::new(
+  from? : Int32,
+  size? : Int32,
+) -> MlGetFiltersQuery {
   { from, size, }
 }
 
@@ -63870,7 +63873,7 @@ pub fn MlGetFiltersQuery::to_pairs(
 
 ///|
 pub(all) struct MlGetFiltersResponse {
-  count : Int
+  count : Int32
   filters : Array[Json]
 } derive(Eq, Debug)
 
@@ -63934,7 +63937,7 @@ pub extend MlGetFiltersRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetFiltersRequest::new(
   filter_id? : String,
-  query? : MlGetFiltersQuery = MlGetFiltersQuery::new(),
+  query~ : MlGetFiltersQuery = MlGetFiltersQuery::new(),
 ) -> MlGetFiltersRequest {
   { filter_id, query, }
 }
@@ -63966,8 +63969,8 @@ pub(all) struct MlGetInfluencersQuery {
   end : String?
   exclude_interim : Bool?
   influencer_score : Double?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   sort : String?
   start : String?
 } derive(Eq, Debug)
@@ -64081,8 +64084,8 @@ pub fn MlGetInfluencersQuery::new(
   end? : String,
   exclude_interim? : Bool,
   influencer_score? : Double,
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
   sort? : String,
   start? : String,
 ) -> MlGetInfluencersQuery {
@@ -64181,7 +64184,7 @@ pub fn MlGetInfluencersBody::new(page? : Json) -> MlGetInfluencersBody {
 
 ///|
 pub(all) struct MlGetInfluencersResponse {
-  count : Int
+  count : Int32
   influencers : Array[Json]
 } derive(Eq, Debug)
 
@@ -64246,7 +64249,7 @@ pub extend MlGetInfluencersRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetInfluencersRequest::new(
   job_id : String,
-  query? : MlGetInfluencersQuery = MlGetInfluencersQuery::new(),
+  query~ : MlGetInfluencersQuery = MlGetInfluencersQuery::new(),
   body? : MlGetInfluencersBody,
 ) -> MlGetInfluencersRequest {
   { job_id, query, body, }
@@ -64339,7 +64342,7 @@ pub fn MlGetJobStatsQuery::to_pairs(
 
 ///|
 pub(all) struct MlGetJobStatsResponse {
-  count : Int
+  count : Int32
   jobs : Array[Json]
 } derive(Eq, Debug)
 
@@ -64403,7 +64406,7 @@ pub extend MlGetJobStatsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetJobStatsRequest::new(
   job_id? : String,
-  query? : MlGetJobStatsQuery = MlGetJobStatsQuery::new(),
+  query~ : MlGetJobStatsQuery = MlGetJobStatsQuery::new(),
 ) -> MlGetJobStatsRequest {
   { job_id, query, }
 }
@@ -64510,7 +64513,7 @@ pub fn MlGetJobsQuery::to_pairs(
 
 ///|
 pub(all) struct MlGetJobsResponse {
-  count : Int
+  count : Int32
   jobs : Array[Json]
 } derive(Eq, Debug)
 
@@ -64572,7 +64575,7 @@ pub extend MlGetJobsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetJobsRequest::new(
   job_id? : String,
-  query? : MlGetJobsQuery = MlGetJobsQuery::new(),
+  query~ : MlGetJobsQuery = MlGetJobsQuery::new(),
 ) -> MlGetJobsRequest {
   { job_id, query, }
 }
@@ -64749,7 +64752,7 @@ pub extend MlGetMemoryStatsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetMemoryStatsRequest::new(
   node_id? : String,
-  query? : MlGetMemoryStatsQuery = MlGetMemoryStatsQuery::new(),
+  query~ : MlGetMemoryStatsQuery = MlGetMemoryStatsQuery::new(),
 ) -> MlGetMemoryStatsRequest {
   { node_id, query, }
 }
@@ -64846,7 +64849,7 @@ pub fn MlGetModelSnapshotUpgradeStatsQuery::to_pairs(
 
 ///|
 pub(all) struct MlGetModelSnapshotUpgradeStatsResponse {
-  count : Int
+  count : Int32
   model_snapshot_upgrades : Array[Json]
 } derive(Eq, Debug)
 
@@ -64921,7 +64924,7 @@ pub extend MlGetModelSnapshotUpgradeStatsRequest with @json.FromJson::{
 pub fn MlGetModelSnapshotUpgradeStatsRequest::new(
   job_id : String,
   snapshot_id : String,
-  query? : MlGetModelSnapshotUpgradeStatsQuery = MlGetModelSnapshotUpgradeStatsQuery::new(),
+  query~ : MlGetModelSnapshotUpgradeStatsQuery = MlGetModelSnapshotUpgradeStatsQuery::new(),
 ) -> MlGetModelSnapshotUpgradeStatsRequest {
   { job_id, snapshot_id, query, }
 }
@@ -64951,8 +64954,8 @@ pub async fn Client::ml_get_model_snapshot_upgrade_stats(
 pub(all) struct MlGetModelSnapshotsQuery {
   desc : Bool?
   end : String?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   sort : String?
   start : String?
 } derive(Eq, Debug)
@@ -65044,8 +65047,8 @@ pub extend MlGetModelSnapshotsQuery with @json.FromJson::{from_json}
 pub fn MlGetModelSnapshotsQuery::new(
   desc? : Bool,
   end? : String,
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
   sort? : String,
   start? : String,
 ) -> MlGetModelSnapshotsQuery {
@@ -65180,7 +65183,7 @@ pub fn MlGetModelSnapshotsBody::new(
 
 ///|
 pub(all) struct MlGetModelSnapshotsResponse {
-  count : Int
+  count : Int32
   model_snapshots : Array[Json]
 } derive(Eq, Debug)
 
@@ -65249,7 +65252,7 @@ pub extend MlGetModelSnapshotsRequest with @json.FromJson::{from_json}
 pub fn MlGetModelSnapshotsRequest::new(
   job_id : String,
   snapshot_id? : String,
-  query? : MlGetModelSnapshotsQuery = MlGetModelSnapshotsQuery::new(),
+  query~ : MlGetModelSnapshotsQuery = MlGetModelSnapshotsQuery::new(),
   body? : MlGetModelSnapshotsBody,
 ) -> MlGetModelSnapshotsRequest {
   { job_id, snapshot_id, query, body, }
@@ -65294,7 +65297,7 @@ pub(all) struct MlGetOverallBucketsQuery {
   exclude_interim : Bool?
   overall_score : Double?
   start : String?
-  top_n : Int?
+  top_n : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -65401,7 +65404,7 @@ pub fn MlGetOverallBucketsQuery::new(
   exclude_interim? : Bool,
   overall_score? : Double,
   start? : String,
-  top_n? : Int,
+  top_n? : Int32,
 ) -> MlGetOverallBucketsQuery {
   {
     allow_no_match,
@@ -65460,7 +65463,7 @@ pub(all) struct MlGetOverallBucketsBody {
   exclude_interim : Bool?
   overall_score : Double?
   start : Json?
-  top_n : Int?
+  top_n : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -65567,7 +65570,7 @@ pub fn MlGetOverallBucketsBody::new(
   exclude_interim? : Bool,
   overall_score? : Double,
   start? : Json,
-  top_n? : Int,
+  top_n? : Int32,
 ) -> MlGetOverallBucketsBody {
   {
     allow_no_match,
@@ -65582,7 +65585,7 @@ pub fn MlGetOverallBucketsBody::new(
 
 ///|
 pub(all) struct MlGetOverallBucketsResponse {
-  count : Int
+  count : Int32
   overall_buckets : Array[Json]
 } derive(Eq, Debug)
 
@@ -65649,7 +65652,7 @@ pub extend MlGetOverallBucketsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetOverallBucketsRequest::new(
   job_id : String,
-  query? : MlGetOverallBucketsQuery = MlGetOverallBucketsQuery::new(),
+  query~ : MlGetOverallBucketsQuery = MlGetOverallBucketsQuery::new(),
   body? : MlGetOverallBucketsBody,
 ) -> MlGetOverallBucketsRequest {
   { job_id, query, body, }
@@ -65684,9 +65687,9 @@ pub(all) struct MlGetRecordsQuery {
   desc : Bool?
   end : String?
   exclude_interim : Bool?
-  from : Int?
+  from : Int32?
   record_score : Double?
-  size : Int?
+  size : Int32?
   sort : String?
   start : String?
 } derive(Eq, Debug)
@@ -65797,9 +65800,9 @@ pub fn MlGetRecordsQuery::new(
   desc? : Bool,
   end? : String,
   exclude_interim? : Bool,
-  from? : Int,
+  from? : Int32,
   record_score? : Double,
-  size? : Int,
+  size? : Int32,
   sort? : String,
   start? : String,
 ) -> MlGetRecordsQuery {
@@ -65965,7 +65968,7 @@ pub fn MlGetRecordsBody::new(
 
 ///|
 pub(all) struct MlGetRecordsResponse {
-  count : Int
+  count : Int32
   records : Array[Json]
 } derive(Eq, Debug)
 
@@ -66030,7 +66033,7 @@ pub extend MlGetRecordsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetRecordsRequest::new(
   job_id : String,
-  query? : MlGetRecordsQuery = MlGetRecordsQuery::new(),
+  query~ : MlGetRecordsQuery = MlGetRecordsQuery::new(),
   body? : MlGetRecordsBody,
 ) -> MlGetRecordsRequest {
   { job_id, query, body, }
@@ -66064,9 +66067,9 @@ pub(all) struct MlGetTrainedModelsQuery {
   allow_no_match : Bool?
   decompress_definition : Bool?
   exclude_generated : Bool?
-  from : Int?
+  from : Int32?
   include_ : String?
-  size : Int?
+  size : Int32?
   tags : Json?
 } derive(Eq, Debug)
 
@@ -66170,9 +66173,9 @@ pub fn MlGetTrainedModelsQuery::new(
   allow_no_match? : Bool,
   decompress_definition? : Bool,
   exclude_generated? : Bool,
-  from? : Int,
+  from? : Int32,
   include_? : String,
-  size? : Int,
+  size? : Int32,
   tags? : Json,
 ) -> MlGetTrainedModelsQuery {
   {
@@ -66227,7 +66230,7 @@ pub fn MlGetTrainedModelsQuery::to_pairs(
 
 ///|
 pub(all) struct MlGetTrainedModelsResponse {
-  count : Int
+  count : Int32
   trained_model_configs : Array[Json]
 } derive(Eq, Debug)
 
@@ -66291,7 +66294,7 @@ pub extend MlGetTrainedModelsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetTrainedModelsRequest::new(
   model_id? : String,
-  query? : MlGetTrainedModelsQuery = MlGetTrainedModelsQuery::new(),
+  query~ : MlGetTrainedModelsQuery = MlGetTrainedModelsQuery::new(),
 ) -> MlGetTrainedModelsRequest {
   { model_id, query, }
 }
@@ -66320,8 +66323,8 @@ pub async fn Client::ml_get_trained_models(
 ///|
 pub(all) struct MlGetTrainedModelsStatsQuery {
   allow_no_match : Bool?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -66386,8 +66389,8 @@ pub extend MlGetTrainedModelsStatsQuery with @json.FromJson::{from_json}
 ///|
 pub fn MlGetTrainedModelsStatsQuery::new(
   allow_no_match? : Bool,
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
 ) -> MlGetTrainedModelsStatsQuery {
   { allow_no_match, from, size, }
 }
@@ -66415,7 +66418,7 @@ pub fn MlGetTrainedModelsStatsQuery::to_pairs(
 
 ///|
 pub(all) struct MlGetTrainedModelsStatsResponse {
-  count : Int
+  count : Int32
   trained_model_stats : Array[Json]
 } derive(Eq, Debug)
 
@@ -66484,7 +66487,7 @@ pub extend MlGetTrainedModelsStatsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlGetTrainedModelsStatsRequest::new(
   model_id? : String,
-  query? : MlGetTrainedModelsStatsQuery = MlGetTrainedModelsStatsQuery::new(),
+  query~ : MlGetTrainedModelsStatsQuery = MlGetTrainedModelsStatsQuery::new(),
 ) -> MlGetTrainedModelsStatsRequest {
   { model_id, query, }
 }
@@ -66694,7 +66697,7 @@ pub extend MlInferTrainedModelRequest with @json.FromJson::{from_json}
 pub fn MlInferTrainedModelRequest::new(
   model_id : String,
   body : MlInferTrainedModelBody,
-  query? : MlInferTrainedModelQuery = MlInferTrainedModelQuery::new(),
+  query~ : MlInferTrainedModelQuery = MlInferTrainedModelQuery::new(),
 ) -> MlInferTrainedModelRequest {
   { model_id, query, body, }
 }
@@ -66831,7 +66834,7 @@ pub extend MlInfoRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn MlInfoRequest::new(
-  query? : MlInfoQuery = MlInfoQuery::new(),
+  query~ : MlInfoQuery = MlInfoQuery::new(),
 ) -> MlInfoRequest {
   { query, }
 }
@@ -67016,7 +67019,7 @@ pub extend MlOpenJobRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlOpenJobRequest::new(
   job_id : String,
-  query? : MlOpenJobQuery = MlOpenJobQuery::new(),
+  query~ : MlOpenJobQuery = MlOpenJobQuery::new(),
   body? : MlOpenJobBody,
 ) -> MlOpenJobRequest {
   { job_id, query, body, }
@@ -67197,7 +67200,7 @@ pub extend MlPostCalendarEventsRequest with @json.FromJson::{from_json}
 pub fn MlPostCalendarEventsRequest::new(
   calendar_id : String,
   body : MlPostCalendarEventsBody,
-  query? : MlPostCalendarEventsQuery = MlPostCalendarEventsQuery::new(),
+  query~ : MlPostCalendarEventsQuery = MlPostCalendarEventsQuery::new(),
 ) -> MlPostCalendarEventsRequest {
   { calendar_id, query, body, }
 }
@@ -67301,22 +67304,22 @@ pub type MlPostDataBody = Array[Json]
 ///|
 pub(all) struct MlPostDataResponse {
   job_id : Json
-  processed_record_count : Int
-  processed_field_count : Int
-  input_bytes : Int
-  input_field_count : Int
-  invalid_date_count : Int
-  missing_field_count : Int
-  out_of_order_timestamp_count : Int
-  empty_bucket_count : Int
-  sparse_bucket_count : Int
-  bucket_count : Int
+  processed_record_count : Int32
+  processed_field_count : Int32
+  input_bytes : Int32
+  input_field_count : Int32
+  invalid_date_count : Int32
+  missing_field_count : Int32
+  out_of_order_timestamp_count : Int32
+  empty_bucket_count : Int32
+  sparse_bucket_count : Int32
+  bucket_count : Int32
   earliest_record_timestamp : Json?
   latest_record_timestamp : Json?
   last_data_time : Json?
   latest_empty_bucket_timestamp : Json?
   latest_sparse_bucket_timestamp : Json?
-  input_record_count : Int
+  input_record_count : Int32
   log_time : Json?
 } derive(Eq, Debug)
 
@@ -67509,7 +67512,7 @@ pub extend MlPostDataRequest with @json.FromJson::{from_json}
 pub fn MlPostDataRequest::new(
   job_id : String,
   body : MlPostDataBody,
-  query? : MlPostDataQuery = MlPostDataQuery::new(),
+  query~ : MlPostDataQuery = MlPostDataQuery::new(),
 ) -> MlPostDataRequest {
   { job_id, query, body, }
 }
@@ -67702,7 +67705,7 @@ pub extend MlPreviewDataFrameAnalyticsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlPreviewDataFrameAnalyticsRequest::new(
   id? : String,
-  query? : MlPreviewDataFrameAnalyticsQuery = MlPreviewDataFrameAnalyticsQuery::new(),
+  query~ : MlPreviewDataFrameAnalyticsQuery = MlPreviewDataFrameAnalyticsQuery::new(),
   body? : MlPreviewDataFrameAnalyticsBody,
 ) -> MlPreviewDataFrameAnalyticsRequest {
   { id, query, body, }
@@ -67898,7 +67901,7 @@ pub extend MlPreviewDatafeedRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlPreviewDatafeedRequest::new(
   datafeed_id? : String,
-  query? : MlPreviewDatafeedQuery = MlPreviewDatafeedQuery::new(),
+  query~ : MlPreviewDatafeedQuery = MlPreviewDatafeedQuery::new(),
   body? : MlPreviewDatafeedBody,
 ) -> MlPreviewDatafeedRequest {
   { datafeed_id, query, body, }
@@ -68113,7 +68116,7 @@ pub extend MlPutCalendarRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlPutCalendarRequest::new(
   calendar_id : String,
-  query? : MlPutCalendarQuery = MlPutCalendarQuery::new(),
+  query~ : MlPutCalendarQuery = MlPutCalendarQuery::new(),
   body? : MlPutCalendarBody,
 ) -> MlPutCalendarRequest {
   { calendar_id, query, body, }
@@ -68263,7 +68266,7 @@ pub extend MlPutCalendarJobRequest with @json.FromJson::{from_json}
 pub fn MlPutCalendarJobRequest::new(
   calendar_id : String,
   job_id : String,
-  query? : MlPutCalendarJobQuery = MlPutCalendarJobQuery::new(),
+  query~ : MlPutCalendarJobQuery = MlPutCalendarJobQuery::new(),
 ) -> MlPutCalendarJobRequest {
   { calendar_id, job_id, query, }
 }
@@ -68343,7 +68346,7 @@ pub(all) struct MlPutDataFrameAnalyticsBody {
   analyzed_fields : Json?
   description : String?
   dest : Json
-  max_num_threads : Int?
+  max_num_threads : Int32?
   _meta : Json?
   model_memory_limit : String?
   source : Json
@@ -68482,7 +68485,7 @@ pub fn MlPutDataFrameAnalyticsBody::new(
   allow_lazy_start? : Bool,
   analyzed_fields? : Json,
   description? : String,
-  max_num_threads? : Int,
+  max_num_threads? : Int32,
   _meta? : Json,
   model_memory_limit? : String,
   headers? : Json,
@@ -68513,7 +68516,7 @@ pub(all) struct MlPutDataFrameAnalyticsResponse {
   description : String?
   dest : Json
   id : Json
-  max_num_threads : Int
+  max_num_threads : Int32
   _meta : Json?
   model_memory_limit : String
   source : Json
@@ -68661,7 +68664,7 @@ pub extend MlPutDataFrameAnalyticsRequest with @json.FromJson::{from_json}
 pub fn MlPutDataFrameAnalyticsRequest::new(
   id : String,
   body : MlPutDataFrameAnalyticsBody,
-  query? : MlPutDataFrameAnalyticsQuery = MlPutDataFrameAnalyticsQuery::new(),
+  query~ : MlPutDataFrameAnalyticsQuery = MlPutDataFrameAnalyticsQuery::new(),
 ) -> MlPutDataFrameAnalyticsRequest {
   { id, query, body, }
 }
@@ -68806,12 +68809,12 @@ pub(all) struct MlPutDatafeedBody {
   indices : Json?
   indices_options : Json?
   job_id : Json?
-  max_empty_searches : Int?
+  max_empty_searches : Int32?
   query : Json?
   query_delay : Json?
   runtime_mappings : Json?
   script_fields : Map[String, Json]?
-  scroll_size : Int?
+  scroll_size : Int32?
   headers : Json?
 } derive(Eq, Debug)
 
@@ -68989,12 +68992,12 @@ pub fn MlPutDatafeedBody::new(
   indices? : Json,
   indices_options? : Json,
   job_id? : Json,
-  max_empty_searches? : Int,
+  max_empty_searches? : Int32,
   query? : Json,
   query_delay? : Json,
   runtime_mappings? : Json,
   script_fields? : Map[String, Json],
-  scroll_size? : Int,
+  scroll_size? : Int32,
   headers? : Json,
 ) -> MlPutDatafeedBody {
   {
@@ -69026,12 +69029,12 @@ pub(all) struct MlPutDatafeedResponse {
   indices : Array[String]
   job_id : Json
   indices_options : Json?
-  max_empty_searches : Int?
+  max_empty_searches : Int32?
   query : Json
   query_delay : Json
   runtime_mappings : Json?
   script_fields : Map[String, Json]?
-  scroll_size : Int
+  scroll_size : Int32
 } derive(Eq, Debug)
 
 ///|
@@ -69203,7 +69206,7 @@ pub extend MlPutDatafeedRequest with @json.FromJson::{from_json}
 pub fn MlPutDatafeedRequest::new(
   datafeed_id : String,
   body : MlPutDatafeedBody,
-  query? : MlPutDatafeedQuery = MlPutDatafeedQuery::new(),
+  query~ : MlPutDatafeedQuery = MlPutDatafeedQuery::new(),
 ) -> MlPutDatafeedRequest {
   { datafeed_id, query, body, }
 }
@@ -69402,7 +69405,7 @@ pub extend MlPutFilterRequest with @json.FromJson::{from_json}
 pub fn MlPutFilterRequest::new(
   filter_id : String,
   body : MlPutFilterBody,
-  query? : MlPutFilterQuery = MlPutFilterQuery::new(),
+  query~ : MlPutFilterQuery = MlPutFilterQuery::new(),
 ) -> MlPutFilterRequest {
   { filter_id, query, body, }
 }
@@ -69541,17 +69544,17 @@ pub(all) struct MlPutJobBody {
   analysis_limits : Json?
   background_persist_interval : Json?
   custom_settings : Json?
-  daily_model_snapshot_retention_after_days : Int?
+  daily_model_snapshot_retention_after_days : Int32?
   data_description : Json
   datafeed_config : Json?
   description : String?
   job_id : Json?
   groups : Array[String]?
   model_plot_config : Json?
-  model_snapshot_retention_days : Int?
-  renormalization_window_days : Int?
+  model_snapshot_retention_days : Int32?
+  renormalization_window_days : Int32?
   results_index_name : Json?
-  results_retention_days : Int?
+  results_retention_days : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -69762,16 +69765,16 @@ pub fn MlPutJobBody::new(
   analysis_limits? : Json,
   background_persist_interval? : Json,
   custom_settings? : Json,
-  daily_model_snapshot_retention_after_days? : Int,
+  daily_model_snapshot_retention_after_days? : Int32,
   datafeed_config? : Json,
   description? : String,
   job_id? : Json,
   groups? : Array[String],
   model_plot_config? : Json,
-  model_snapshot_retention_days? : Int,
-  renormalization_window_days? : Int,
+  model_snapshot_retention_days? : Int32,
+  renormalization_window_days? : Int32,
   results_index_name? : Json,
-  results_retention_days? : Int,
+  results_retention_days? : Int32,
 ) -> MlPutJobBody {
   {
     allow_lazy_open,
@@ -69801,7 +69804,7 @@ pub(all) struct MlPutJobResponse {
   background_persist_interval : Json?
   create_time : Json
   custom_settings : Json?
-  daily_model_snapshot_retention_after_days : Int
+  daily_model_snapshot_retention_after_days : Int32
   data_description : Json
   datafeed_config : Json?
   description : String?
@@ -69811,10 +69814,10 @@ pub(all) struct MlPutJobResponse {
   job_version : String
   model_plot_config : Json?
   model_snapshot_id : Json?
-  model_snapshot_retention_days : Int
-  renormalization_window_days : Int?
+  model_snapshot_retention_days : Int32
+  renormalization_window_days : Int32?
   results_index_name : String
-  results_retention_days : Int?
+  results_retention_days : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -70029,7 +70032,7 @@ pub extend MlPutJobRequest with @json.FromJson::{from_json}
 pub fn MlPutJobRequest::new(
   job_id : String,
   body : MlPutJobBody,
-  query? : MlPutJobQuery = MlPutJobQuery::new(),
+  query~ : MlPutJobQuery = MlPutJobQuery::new(),
 ) -> MlPutJobRequest {
   { job_id, query, body, }
 }
@@ -70150,7 +70153,7 @@ pub(all) struct MlPutTrainedModelBody {
   input : Json?
   metadata : Json?
   model_type : Json?
-  model_size_bytes : Int?
+  model_size_bytes : Int32?
   platform_architecture : String?
   tags : Array[String]?
   prefix_strings : Json?
@@ -70301,7 +70304,7 @@ pub fn MlPutTrainedModelBody::new(
   input? : Json,
   metadata? : Json,
   model_type? : Json,
-  model_size_bytes? : Int,
+  model_size_bytes? : Int32,
   platform_architecture? : String,
   tags? : Array[String],
   prefix_strings? : Json,
@@ -70347,7 +70350,7 @@ pub extend MlPutTrainedModelRequest with @json.FromJson::{from_json}
 pub fn MlPutTrainedModelRequest::new(
   model_id : String,
   body : MlPutTrainedModelBody,
-  query? : MlPutTrainedModelQuery = MlPutTrainedModelQuery::new(),
+  query~ : MlPutTrainedModelQuery = MlPutTrainedModelQuery::new(),
 ) -> MlPutTrainedModelRequest {
   { model_id, query, body, }
 }
@@ -70462,7 +70465,7 @@ pub extend MlPutTrainedModelAliasRequest with @json.FromJson::{from_json}
 pub fn MlPutTrainedModelAliasRequest::new(
   model_id : String,
   model_alias : String,
-  query? : MlPutTrainedModelAliasQuery = MlPutTrainedModelAliasQuery::new(),
+  query~ : MlPutTrainedModelAliasQuery = MlPutTrainedModelAliasQuery::new(),
   body? : MlPutTrainedModelAliasBody,
 ) -> MlPutTrainedModelAliasRequest {
   { model_id, model_alias, query, body, }
@@ -70547,8 +70550,8 @@ pub fn MlPutTrainedModelDefinitionPartQuery::to_pairs(
 ///|
 pub(all) struct MlPutTrainedModelDefinitionPartBody {
   definition : String
-  total_definition_length : Int
-  total_parts : Int
+  total_definition_length : Int32
+  total_parts : Int32
 } derive(Eq, Debug)
 
 ///|
@@ -70603,8 +70606,8 @@ pub extend MlPutTrainedModelDefinitionPartBody with @json.FromJson::{from_json}
 ///|
 pub fn MlPutTrainedModelDefinitionPartBody::new(
   definition : String,
-  total_definition_length : Int,
-  total_parts : Int,
+  total_definition_length : Int32,
+  total_parts : Int32,
 ) -> MlPutTrainedModelDefinitionPartBody {
   { definition, total_definition_length, total_parts, }
 }
@@ -70639,7 +70642,7 @@ pub fn MlPutTrainedModelDefinitionPartRequest::new(
   model_id : String,
   part : String,
   body : MlPutTrainedModelDefinitionPartBody,
-  query? : MlPutTrainedModelDefinitionPartQuery = MlPutTrainedModelDefinitionPartQuery::new(),
+  query~ : MlPutTrainedModelDefinitionPartQuery = MlPutTrainedModelDefinitionPartQuery::new(),
 ) -> MlPutTrainedModelDefinitionPartRequest {
   { model_id, part, query, body, }
 }
@@ -70815,7 +70818,7 @@ pub extend MlPutTrainedModelVocabularyRequest with @json.FromJson::{from_json}
 pub fn MlPutTrainedModelVocabularyRequest::new(
   model_id : String,
   body : MlPutTrainedModelVocabularyBody,
-  query? : MlPutTrainedModelVocabularyQuery = MlPutTrainedModelVocabularyQuery::new(),
+  query~ : MlPutTrainedModelVocabularyQuery = MlPutTrainedModelVocabularyQuery::new(),
 ) -> MlPutTrainedModelVocabularyRequest {
   { model_id, query, body, }
 }
@@ -70943,7 +70946,7 @@ pub extend MlResetJobRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlResetJobRequest::new(
   job_id : String,
-  query? : MlResetJobQuery = MlResetJobQuery::new(),
+  query~ : MlResetJobQuery = MlResetJobQuery::new(),
 ) -> MlResetJobRequest {
   { job_id, query, }
 }
@@ -71156,7 +71159,7 @@ pub extend MlRevertModelSnapshotRequest with @json.FromJson::{from_json}
 pub fn MlRevertModelSnapshotRequest::new(
   job_id : String,
   snapshot_id : String,
-  query? : MlRevertModelSnapshotQuery = MlRevertModelSnapshotQuery::new(),
+  query~ : MlRevertModelSnapshotQuery = MlRevertModelSnapshotQuery::new(),
   body? : MlRevertModelSnapshotBody,
 ) -> MlRevertModelSnapshotRequest {
   { job_id, snapshot_id, query, body, }
@@ -71286,7 +71289,7 @@ pub extend MlSetUpgradeModeRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn MlSetUpgradeModeRequest::new(
-  query? : MlSetUpgradeModeQuery = MlSetUpgradeModeQuery::new(),
+  query~ : MlSetUpgradeModeQuery = MlSetUpgradeModeQuery::new(),
 ) -> MlSetUpgradeModeRequest {
   { query, }
 }
@@ -71510,7 +71513,7 @@ pub extend MlStartDataFrameAnalyticsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlStartDataFrameAnalyticsRequest::new(
   id : String,
-  query? : MlStartDataFrameAnalyticsQuery = MlStartDataFrameAnalyticsQuery::new(),
+  query~ : MlStartDataFrameAnalyticsQuery = MlStartDataFrameAnalyticsQuery::new(),
   body? : MlStartDataFrameAnalyticsBody,
 ) -> MlStartDataFrameAnalyticsRequest {
   { id, query, body, }
@@ -71766,7 +71769,7 @@ pub extend MlStartDatafeedRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlStartDatafeedRequest::new(
   datafeed_id : String,
-  query? : MlStartDatafeedQuery = MlStartDatafeedQuery::new(),
+  query~ : MlStartDatafeedQuery = MlStartDatafeedQuery::new(),
   body? : MlStartDatafeedBody,
 ) -> MlStartDatafeedRequest {
   { datafeed_id, query, body, }
@@ -71795,10 +71798,10 @@ pub async fn Client::ml_start_datafeed(
 pub(all) struct MlStartTrainedModelDeploymentQuery {
   cache_size : String?
   deployment_id : String?
-  number_of_allocations : Int?
+  number_of_allocations : Int32?
   priority : String?
-  queue_capacity : Int?
-  threads_per_allocation : Int?
+  queue_capacity : Int32?
+  threads_per_allocation : Int32?
   timeout : String?
   wait_for : String?
 } derive(Eq, Debug)
@@ -71920,10 +71923,10 @@ pub extend MlStartTrainedModelDeploymentQuery with @json.FromJson::{from_json}
 pub fn MlStartTrainedModelDeploymentQuery::new(
   cache_size? : String,
   deployment_id? : String,
-  number_of_allocations? : Int,
+  number_of_allocations? : Int32,
   priority? : String,
-  queue_capacity? : Int,
-  threads_per_allocation? : Int,
+  queue_capacity? : Int32,
+  threads_per_allocation? : Int32,
   timeout? : String,
   wait_for? : String,
 ) -> MlStartTrainedModelDeploymentQuery {
@@ -72106,7 +72109,7 @@ pub extend MlStartTrainedModelDeploymentRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlStartTrainedModelDeploymentRequest::new(
   model_id : String,
-  query? : MlStartTrainedModelDeploymentQuery = MlStartTrainedModelDeploymentQuery::new(),
+  query~ : MlStartTrainedModelDeploymentQuery = MlStartTrainedModelDeploymentQuery::new(),
   body? : MlStartTrainedModelDeploymentBody,
 ) -> MlStartTrainedModelDeploymentRequest {
   { model_id, query, body, }
@@ -72386,7 +72389,7 @@ pub extend MlStopDataFrameAnalyticsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlStopDataFrameAnalyticsRequest::new(
   id : String,
-  query? : MlStopDataFrameAnalyticsQuery = MlStopDataFrameAnalyticsQuery::new(),
+  query~ : MlStopDataFrameAnalyticsQuery = MlStopDataFrameAnalyticsQuery::new(),
   body? : MlStopDataFrameAnalyticsBody,
 ) -> MlStopDataFrameAnalyticsRequest {
   { id, query, body, }
@@ -72667,7 +72670,7 @@ pub extend MlStopDatafeedRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlStopDatafeedRequest::new(
   datafeed_id : String,
-  query? : MlStopDatafeedQuery = MlStopDatafeedQuery::new(),
+  query~ : MlStopDatafeedQuery = MlStopDatafeedQuery::new(),
   body? : MlStopDatafeedBody,
 ) -> MlStopDatafeedRequest {
   { datafeed_id, query, body, }
@@ -72920,7 +72923,7 @@ pub extend MlStopTrainedModelDeploymentRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlStopTrainedModelDeploymentRequest::new(
   model_id : String,
-  query? : MlStopTrainedModelDeploymentQuery = MlStopTrainedModelDeploymentQuery::new(),
+  query~ : MlStopTrainedModelDeploymentQuery = MlStopTrainedModelDeploymentQuery::new(),
   body? : MlStopTrainedModelDeploymentBody,
 ) -> MlStopTrainedModelDeploymentRequest {
   { model_id, query, body, }
@@ -73004,7 +73007,7 @@ pub fn MlUpdateDataFrameAnalyticsQuery::to_pairs(
 pub(all) struct MlUpdateDataFrameAnalyticsBody {
   description : String?
   model_memory_limit : String?
-  max_num_threads : Int?
+  max_num_threads : Int32?
   allow_lazy_start : Bool?
 } derive(Eq, Debug)
 
@@ -73086,7 +73089,7 @@ pub extend MlUpdateDataFrameAnalyticsBody with @json.FromJson::{from_json}
 pub fn MlUpdateDataFrameAnalyticsBody::new(
   description? : String,
   model_memory_limit? : String,
-  max_num_threads? : Int,
+  max_num_threads? : Int32,
   allow_lazy_start? : Bool,
 ) -> MlUpdateDataFrameAnalyticsBody {
   { description, model_memory_limit, max_num_threads, allow_lazy_start, }
@@ -73098,11 +73101,11 @@ pub(all) struct MlUpdateDataFrameAnalyticsResponse {
   allow_lazy_start : Bool
   analysis : Json
   analyzed_fields : Json?
-  create_time : Int
+  create_time : Int32
   description : String?
   dest : Json
   id : Json
-  max_num_threads : Int
+  max_num_threads : Int32
   model_memory_limit : String
   source : Json
   version : Json
@@ -73240,7 +73243,7 @@ pub extend MlUpdateDataFrameAnalyticsRequest with @json.FromJson::{from_json}
 pub fn MlUpdateDataFrameAnalyticsRequest::new(
   id : String,
   body : MlUpdateDataFrameAnalyticsBody,
-  query? : MlUpdateDataFrameAnalyticsQuery = MlUpdateDataFrameAnalyticsQuery::new(),
+  query~ : MlUpdateDataFrameAnalyticsQuery = MlUpdateDataFrameAnalyticsQuery::new(),
 ) -> MlUpdateDataFrameAnalyticsRequest {
   { id, query, body, }
 }
@@ -73385,12 +73388,12 @@ pub(all) struct MlUpdateDatafeedBody {
   indices : Array[String]?
   indices_options : Json?
   job_id : Json?
-  max_empty_searches : Int?
+  max_empty_searches : Int32?
   query : Json?
   query_delay : Json?
   runtime_mappings : Json?
   script_fields : Map[String, Json]?
-  scroll_size : Int?
+  scroll_size : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -73560,12 +73563,12 @@ pub fn MlUpdateDatafeedBody::new(
   indices? : Array[String],
   indices_options? : Json,
   job_id? : Json,
-  max_empty_searches? : Int,
+  max_empty_searches? : Int32,
   query? : Json,
   query_delay? : Json,
   runtime_mappings? : Json,
   script_fields? : Map[String, Json],
-  scroll_size? : Int,
+  scroll_size? : Int32,
 ) -> MlUpdateDatafeedBody {
   {
     aggregations,
@@ -73595,12 +73598,12 @@ pub(all) struct MlUpdateDatafeedResponse {
   indices : Array[String]
   indices_options : Json?
   job_id : Json
-  max_empty_searches : Int?
+  max_empty_searches : Int32?
   query : Json
   query_delay : Json
   runtime_mappings : Json?
   script_fields : Map[String, Json]?
-  scroll_size : Int
+  scroll_size : Int32
 } derive(Eq, Debug)
 
 ///|
@@ -73772,7 +73775,7 @@ pub extend MlUpdateDatafeedRequest with @json.FromJson::{from_json}
 pub fn MlUpdateDatafeedRequest::new(
   datafeed_id : String,
   body : MlUpdateDatafeedBody,
-  query? : MlUpdateDatafeedQuery = MlUpdateDatafeedQuery::new(),
+  query~ : MlUpdateDatafeedQuery = MlUpdateDatafeedQuery::new(),
 ) -> MlUpdateDatafeedRequest {
   { datafeed_id, query, body, }
 }
@@ -73988,7 +73991,7 @@ pub extend MlUpdateFilterRequest with @json.FromJson::{from_json}
 pub fn MlUpdateFilterRequest::new(
   filter_id : String,
   body : MlUpdateFilterBody,
-  query? : MlUpdateFilterQuery = MlUpdateFilterQuery::new(),
+  query~ : MlUpdateFilterQuery = MlUpdateFilterQuery::new(),
 ) -> MlUpdateFilterRequest {
   { filter_id, query, body, }
 }
@@ -74063,10 +74066,10 @@ pub(all) struct MlUpdateJobBody {
   description : String?
   model_plot_config : Json?
   model_prune_window : Json?
-  daily_model_snapshot_retention_after_days : Int?
-  model_snapshot_retention_days : Int?
-  renormalization_window_days : Int?
-  results_retention_days : Int?
+  daily_model_snapshot_retention_after_days : Int32?
+  model_snapshot_retention_days : Int32?
+  renormalization_window_days : Int32?
+  results_retention_days : Int32?
   groups : Array[String]?
   detectors : Array[Json]?
   per_partition_categorization : Json?
@@ -74291,10 +74294,10 @@ pub fn MlUpdateJobBody::new(
   description? : String,
   model_plot_config? : Json,
   model_prune_window? : Json,
-  daily_model_snapshot_retention_after_days? : Int,
-  model_snapshot_retention_days? : Int,
-  renormalization_window_days? : Int,
-  results_retention_days? : Int,
+  daily_model_snapshot_retention_after_days? : Int32,
+  model_snapshot_retention_days? : Int32,
+  renormalization_window_days? : Int32,
+  results_retention_days? : Int32,
   groups? : Array[String],
   detectors? : Array[Json],
   per_partition_categorization? : Json,
@@ -74327,7 +74330,7 @@ pub(all) struct MlUpdateJobResponse {
   create_time : Json
   finished_time : Json?
   custom_settings : Map[String, Json]?
-  daily_model_snapshot_retention_after_days : Int
+  daily_model_snapshot_retention_after_days : Int32
   data_description : Json
   datafeed_config : Json?
   description : String?
@@ -74337,10 +74340,10 @@ pub(all) struct MlUpdateJobResponse {
   job_version : Json
   model_plot_config : Json?
   model_snapshot_id : Json?
-  model_snapshot_retention_days : Int
-  renormalization_window_days : Int?
+  model_snapshot_retention_days : Int32
+  renormalization_window_days : Int32?
   results_index_name : Json
-  results_retention_days : Int?
+  results_retention_days : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -74567,7 +74570,7 @@ pub extend MlUpdateJobRequest with @json.FromJson::{from_json}
 pub fn MlUpdateJobRequest::new(
   job_id : String,
   body : MlUpdateJobBody,
-  query? : MlUpdateJobQuery = MlUpdateJobQuery::new(),
+  query~ : MlUpdateJobQuery = MlUpdateJobQuery::new(),
 ) -> MlUpdateJobRequest {
   { job_id, query, body, }
 }
@@ -74771,7 +74774,7 @@ pub fn MlUpdateModelSnapshotRequest::new(
   job_id : String,
   snapshot_id : String,
   body : MlUpdateModelSnapshotBody,
-  query? : MlUpdateModelSnapshotQuery = MlUpdateModelSnapshotQuery::new(),
+  query~ : MlUpdateModelSnapshotQuery = MlUpdateModelSnapshotQuery::new(),
 ) -> MlUpdateModelSnapshotRequest {
   { job_id, snapshot_id, query, body, }
 }
@@ -74800,7 +74803,7 @@ pub async fn Client::ml_update_model_snapshot(
 
 ///|
 pub(all) struct MlUpdateTrainedModelDeploymentQuery {
-  number_of_allocations : Int?
+  number_of_allocations : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -74849,7 +74852,7 @@ pub extend MlUpdateTrainedModelDeploymentQuery with @json.FromJson::{from_json}
 
 ///|
 pub fn MlUpdateTrainedModelDeploymentQuery::new(
-  number_of_allocations? : Int,
+  number_of_allocations? : Int32,
 ) -> MlUpdateTrainedModelDeploymentQuery {
   { number_of_allocations, }
 }
@@ -74869,7 +74872,7 @@ pub fn MlUpdateTrainedModelDeploymentQuery::to_pairs(
 
 ///|
 pub(all) struct MlUpdateTrainedModelDeploymentBody {
-  number_of_allocations : Int?
+  number_of_allocations : Int32?
   adaptive_allocations : Json?
 } derive(Eq, Debug)
 
@@ -74929,7 +74932,7 @@ pub extend MlUpdateTrainedModelDeploymentBody with @json.FromJson::{from_json}
 
 ///|
 pub fn MlUpdateTrainedModelDeploymentBody::new(
-  number_of_allocations? : Int,
+  number_of_allocations? : Int32,
   adaptive_allocations? : Json,
 ) -> MlUpdateTrainedModelDeploymentBody {
   { number_of_allocations, adaptive_allocations, }
@@ -75005,7 +75008,7 @@ pub extend MlUpdateTrainedModelDeploymentRequest with @json.FromJson::{
 ///|
 pub fn MlUpdateTrainedModelDeploymentRequest::new(
   model_id : String,
-  query? : MlUpdateTrainedModelDeploymentQuery = MlUpdateTrainedModelDeploymentQuery::new(),
+  query~ : MlUpdateTrainedModelDeploymentQuery = MlUpdateTrainedModelDeploymentQuery::new(),
   body? : MlUpdateTrainedModelDeploymentBody,
 ) -> MlUpdateTrainedModelDeploymentRequest {
   { model_id, query, body, }
@@ -75183,7 +75186,7 @@ pub extend MlUpgradeJobSnapshotRequest with @json.FromJson::{from_json}
 pub fn MlUpgradeJobSnapshotRequest::new(
   job_id : String,
   snapshot_id : String,
-  query? : MlUpgradeJobSnapshotQuery = MlUpgradeJobSnapshotQuery::new(),
+  query~ : MlUpgradeJobSnapshotQuery = MlUpgradeJobSnapshotQuery::new(),
 ) -> MlUpgradeJobSnapshotRequest {
   { job_id, snapshot_id, query, }
 }
@@ -75262,7 +75265,7 @@ pub(all) struct MlValidateBody {
   description : String?
   model_plot : Json?
   model_snapshot_id : Json?
-  model_snapshot_retention_days : Int?
+  model_snapshot_retention_days : Int32?
   results_index_name : Json?
 } derive(Eq, Debug)
 
@@ -75397,7 +75400,7 @@ pub fn MlValidateBody::new(
   description? : String,
   model_plot? : Json,
   model_snapshot_id? : Json,
-  model_snapshot_retention_days? : Int,
+  model_snapshot_retention_days? : Int32,
   results_index_name? : Json,
 ) -> MlValidateBody {
   {
@@ -75437,7 +75440,7 @@ pub extend MlValidateRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlValidateRequest::new(
   body : MlValidateBody,
-  query? : MlValidateQuery = MlValidateQuery::new(),
+  query~ : MlValidateQuery = MlValidateQuery::new(),
 ) -> MlValidateRequest {
   { query, body, }
 }
@@ -75530,7 +75533,7 @@ pub extend MlValidateDetectorRequest with @json.FromJson::{from_json}
 ///|
 pub fn MlValidateDetectorRequest::new(
   body : MlValidateDetectorBody,
-  query? : MlValidateDetectorQuery = MlValidateDetectorQuery::new(),
+  query~ : MlValidateDetectorQuery = MlValidateDetectorQuery::new(),
 ) -> MlValidateDetectorRequest {
   { query, body, }
 }
@@ -75633,7 +75636,7 @@ pub(all) struct MonitoringBulkResponse {
   error : Json?
   errors : Bool
   ignored : Bool
-  took : Int
+  took : Int32
 } derive(Eq, Debug)
 
 ///|
@@ -75736,9 +75739,9 @@ pub(all) struct MsearchQuery {
   ignore_unavailable : Bool?
   include_named_queries_score : Bool?
   index : String?
-  max_concurrent_searches : Int?
-  max_concurrent_shard_requests : Int?
-  pre_filter_shard_size : Int?
+  max_concurrent_searches : Int32?
+  max_concurrent_shard_requests : Int32?
+  pre_filter_shard_size : Int32?
   project_routing : String?
   rest_total_hits_as_int : Bool?
   routing : String?
@@ -75947,9 +75950,9 @@ pub fn MsearchQuery::new(
   ignore_unavailable? : Bool,
   include_named_queries_score? : Bool,
   index? : String,
-  max_concurrent_searches? : Int,
-  max_concurrent_shard_requests? : Int,
-  pre_filter_shard_size? : Int,
+  max_concurrent_searches? : Int32,
+  max_concurrent_shard_requests? : Int32,
+  pre_filter_shard_size? : Int32,
   project_routing? : String,
   rest_total_hits_as_int? : Bool,
   routing? : String,
@@ -76089,7 +76092,7 @@ pub extend MsearchRequest with @json.FromJson::{from_json}
 pub fn MsearchRequest::new(
   body : MsearchBody,
   index? : String,
-  query? : MsearchQuery = MsearchQuery::new(),
+  query~ : MsearchQuery = MsearchQuery::new(),
 ) -> MsearchRequest {
   { index, query, body, }
 }
@@ -76119,7 +76122,7 @@ pub async fn Client::msearch(
 ///|
 pub(all) struct MsearchTemplateQuery {
   ccs_minimize_roundtrips : Bool?
-  max_concurrent_searches : Int?
+  max_concurrent_searches : Int32?
   project_routing : String?
   search_type : String?
   rest_total_hits_as_int : Bool?
@@ -76224,7 +76227,7 @@ pub extend MsearchTemplateQuery with @json.FromJson::{from_json}
 ///|
 pub fn MsearchTemplateQuery::new(
   ccs_minimize_roundtrips? : Bool,
-  max_concurrent_searches? : Int,
+  max_concurrent_searches? : Int32,
   project_routing? : String,
   search_type? : String,
   rest_total_hits_as_int? : Bool,
@@ -76305,7 +76308,7 @@ pub extend MsearchTemplateRequest with @json.FromJson::{from_json}
 pub fn MsearchTemplateRequest::new(
   body : MsearchTemplateBody,
   index? : String,
-  query? : MsearchTemplateQuery = MsearchTemplateQuery::new(),
+  query~ : MsearchTemplateQuery = MsearchTemplateQuery::new(),
 ) -> MsearchTemplateRequest {
   { index, query, body, }
 }
@@ -76697,7 +76700,7 @@ pub extend MtermvectorsRequest with @json.FromJson::{from_json}
 ///|
 pub fn MtermvectorsRequest::new(
   index? : String,
-  query? : MtermvectorsQuery = MtermvectorsQuery::new(),
+  query~ : MtermvectorsQuery = MtermvectorsQuery::new(),
   body? : MtermvectorsBody,
 ) -> MtermvectorsRequest {
   { index, query, body, }
@@ -76819,7 +76822,7 @@ pub extend NodesClearRepositoriesMeteringArchiveRequest with @json.FromJson::{
 pub fn NodesClearRepositoriesMeteringArchiveRequest::new(
   node_id : String,
   max_archive_version : String,
-  query? : NodesClearRepositoriesMeteringArchiveQuery = NodesClearRepositoriesMeteringArchiveQuery::new(),
+  query~ : NodesClearRepositoriesMeteringArchiveQuery = NodesClearRepositoriesMeteringArchiveQuery::new(),
 ) -> NodesClearRepositoriesMeteringArchiveRequest {
   { node_id, max_archive_version, query, }
 }
@@ -76924,7 +76927,7 @@ pub extend NodesGetRepositoriesMeteringInfoRequest with @json.FromJson::{
 ///|
 pub fn NodesGetRepositoriesMeteringInfoRequest::new(
   node_id : String,
-  query? : NodesGetRepositoriesMeteringInfoQuery = NodesGetRepositoriesMeteringInfoQuery::new(),
+  query~ : NodesGetRepositoriesMeteringInfoQuery = NodesGetRepositoriesMeteringInfoQuery::new(),
 ) -> NodesGetRepositoriesMeteringInfoRequest {
   { node_id, query, }
 }
@@ -76948,8 +76951,8 @@ pub async fn Client::nodes_get_repositories_metering_info(
 pub(all) struct NodesHotThreadsQuery {
   ignore_idle_threads : Bool?
   interval : String?
-  snapshots : Int?
-  threads : Int?
+  snapshots : Int32?
+  threads : Int32?
   timeout : String?
   type_ : String?
   sort : String?
@@ -77053,8 +77056,8 @@ pub extend NodesHotThreadsQuery with @json.FromJson::{from_json}
 pub fn NodesHotThreadsQuery::new(
   ignore_idle_threads? : Bool,
   interval? : String,
-  snapshots? : Int,
-  threads? : Int,
+  snapshots? : Int32,
+  threads? : Int32,
   timeout? : String,
   type_? : String,
   sort? : String,
@@ -77123,7 +77126,7 @@ pub extend NodesHotThreadsRequest with @json.FromJson::{from_json}
 ///|
 pub fn NodesHotThreadsRequest::new(
   node_id? : String,
-  query? : NodesHotThreadsQuery = NodesHotThreadsQuery::new(),
+  query~ : NodesHotThreadsQuery = NodesHotThreadsQuery::new(),
 ) -> NodesHotThreadsRequest {
   { node_id, query, }
 }
@@ -77251,7 +77254,7 @@ pub extend NodesInfoRequest with @json.FromJson::{from_json}
 pub fn NodesInfoRequest::new(
   node_id? : String,
   metric? : String,
-  query? : NodesInfoQuery = NodesInfoQuery::new(),
+  query~ : NodesInfoQuery = NodesInfoQuery::new(),
 ) -> NodesInfoRequest {
   { node_id, metric, query, }
 }
@@ -77433,7 +77436,7 @@ pub extend NodesReloadSecureSettingsRequest with @json.FromJson::{from_json}
 ///|
 pub fn NodesReloadSecureSettingsRequest::new(
   node_id? : String,
-  query? : NodesReloadSecureSettingsQuery = NodesReloadSecureSettingsQuery::new(),
+  query~ : NodesReloadSecureSettingsQuery = NodesReloadSecureSettingsQuery::new(),
   body? : NodesReloadSecureSettingsBody,
 ) -> NodesReloadSecureSettingsRequest {
   { node_id, query, body, }
@@ -77697,7 +77700,7 @@ pub fn NodesStatsRequest::new(
   node_id? : String,
   metric? : String,
   index_metric? : String,
-  query? : NodesStatsQuery = NodesStatsQuery::new(),
+  query~ : NodesStatsQuery = NodesStatsQuery::new(),
 ) -> NodesStatsRequest {
   { node_id, metric, index_metric, query, }
 }
@@ -77823,7 +77826,7 @@ pub extend NodesUsageRequest with @json.FromJson::{from_json}
 pub fn NodesUsageRequest::new(
   node_id? : String,
   metric? : String,
-  query? : NodesUsageQuery = NodesUsageQuery::new(),
+  query~ : NodesUsageQuery = NodesUsageQuery::new(),
 ) -> NodesUsageRequest {
   { node_id, metric, query, }
 }
@@ -77863,7 +77866,7 @@ pub(all) struct OpenPointInTimeQuery {
   routing : String?
   expand_wildcards : String?
   allow_partial_search_results : Bool?
-  max_concurrent_shard_requests : Int?
+  max_concurrent_shard_requests : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -77979,7 +77982,7 @@ pub fn OpenPointInTimeQuery::new(
   routing? : String,
   expand_wildcards? : String,
   allow_partial_search_results? : Bool,
-  max_concurrent_shard_requests? : Int,
+  max_concurrent_shard_requests? : Int32,
 ) -> OpenPointInTimeQuery {
   {
     keep_alive,
@@ -78252,7 +78255,7 @@ pub extend PingRequest with ToJson::{to_json}
 pub extend PingRequest with @json.FromJson::{from_json}
 
 ///|
-pub fn PingRequest::new(query? : PingQuery = PingQuery::new()) -> PingRequest {
+pub fn PingRequest::new(query~ : PingQuery = PingQuery::new()) -> PingRequest {
   { query, }
 }
 
@@ -78340,7 +78343,7 @@ pub extend ProfilingFlamegraphRequest with @json.FromJson::{from_json}
 ///|
 pub fn ProfilingFlamegraphRequest::new(
   body : ProfilingFlamegraphBody,
-  query? : ProfilingFlamegraphQuery = ProfilingFlamegraphQuery::new(),
+  query~ : ProfilingFlamegraphQuery = ProfilingFlamegraphQuery::new(),
 ) -> ProfilingFlamegraphRequest {
   { query, body, }
 }
@@ -78433,7 +78436,7 @@ pub extend ProfilingStacktracesRequest with @json.FromJson::{from_json}
 ///|
 pub fn ProfilingStacktracesRequest::new(
   body : ProfilingStacktracesBody,
-  query? : ProfilingStacktracesQuery = ProfilingStacktracesQuery::new(),
+  query~ : ProfilingStacktracesQuery = ProfilingStacktracesQuery::new(),
 ) -> ProfilingStacktracesRequest {
   { query, body, }
 }
@@ -78612,7 +78615,7 @@ pub extend ProfilingStatusRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn ProfilingStatusRequest::new(
-  query? : ProfilingStatusQuery = ProfilingStatusQuery::new(),
+  query~ : ProfilingStatusQuery = ProfilingStatusQuery::new(),
 ) -> ProfilingStatusRequest {
   { query, }
 }
@@ -78703,7 +78706,7 @@ pub extend ProfilingTopnFunctionsRequest with @json.FromJson::{from_json}
 ///|
 pub fn ProfilingTopnFunctionsRequest::new(
   body : ProfilingTopnFunctionsBody,
-  query? : ProfilingTopnFunctionsQuery = ProfilingTopnFunctionsQuery::new(),
+  query~ : ProfilingTopnFunctionsQuery = ProfilingTopnFunctionsQuery::new(),
 ) -> ProfilingTopnFunctionsRequest {
   { query, body, }
 }
@@ -78801,7 +78804,7 @@ pub extend ProjectCreateManyRoutingRequest with @json.FromJson::{from_json}
 ///|
 pub fn ProjectCreateManyRoutingRequest::new(
   body : ProjectCreateManyRoutingBody,
-  query? : ProjectCreateManyRoutingQuery = ProjectCreateManyRoutingQuery::new(),
+  query~ : ProjectCreateManyRoutingQuery = ProjectCreateManyRoutingQuery::new(),
 ) -> ProjectCreateManyRoutingRequest {
   { query, body, }
 }
@@ -78893,7 +78896,7 @@ pub extend ProjectCreateRoutingRequest with @json.FromJson::{from_json}
 pub fn ProjectCreateRoutingRequest::new(
   name : String,
   body : ProjectCreateRoutingBody,
-  query? : ProjectCreateRoutingQuery = ProjectCreateRoutingQuery::new(),
+  query~ : ProjectCreateRoutingQuery = ProjectCreateRoutingQuery::new(),
 ) -> ProjectCreateRoutingRequest {
   { name, query, body, }
 }
@@ -78984,7 +78987,7 @@ pub extend ProjectDeleteRoutingRequest with @json.FromJson::{from_json}
 ///|
 pub fn ProjectDeleteRoutingRequest::new(
   name : String,
-  query? : ProjectDeleteRoutingQuery = ProjectDeleteRoutingQuery::new(),
+  query~ : ProjectDeleteRoutingQuery = ProjectDeleteRoutingQuery::new(),
 ) -> ProjectDeleteRoutingRequest {
   { name, query, }
 }
@@ -79072,7 +79075,7 @@ pub extend ProjectGetManyRoutingRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn ProjectGetManyRoutingRequest::new(
-  query? : ProjectGetManyRoutingQuery = ProjectGetManyRoutingQuery::new(),
+  query~ : ProjectGetManyRoutingQuery = ProjectGetManyRoutingQuery::new(),
 ) -> ProjectGetManyRoutingRequest {
   { query, }
 }
@@ -79158,7 +79161,7 @@ pub extend ProjectGetRoutingRequest with @json.FromJson::{from_json}
 ///|
 pub fn ProjectGetRoutingRequest::new(
   name : String,
-  query? : ProjectGetRoutingQuery = ProjectGetRoutingQuery::new(),
+  query~ : ProjectGetRoutingQuery = ProjectGetRoutingQuery::new(),
 ) -> ProjectGetRoutingRequest {
   { name, query, }
 }
@@ -79244,7 +79247,7 @@ pub extend ProjectTagsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn ProjectTagsRequest::new(
-  query? : ProjectTagsQuery = ProjectTagsQuery::new(),
+  query~ : ProjectTagsQuery = ProjectTagsQuery::new(),
 ) -> ProjectTagsRequest {
   { query, }
 }
@@ -79422,7 +79425,7 @@ pub fn PutScriptRequest::new(
   id : String,
   body : PutScriptBody,
   context? : String,
-  query? : PutScriptQuery = PutScriptQuery::new(),
+  query~ : PutScriptQuery = PutScriptQuery::new(),
 ) -> PutScriptRequest {
   { id, context, query, body, }
 }
@@ -79522,7 +79525,7 @@ pub extend QueryRulesDeleteRuleRequest with @json.FromJson::{from_json}
 pub fn QueryRulesDeleteRuleRequest::new(
   ruleset_id : String,
   rule_id : String,
-  query? : QueryRulesDeleteRuleQuery = QueryRulesDeleteRuleQuery::new(),
+  query~ : QueryRulesDeleteRuleQuery = QueryRulesDeleteRuleQuery::new(),
 ) -> QueryRulesDeleteRuleRequest {
   { ruleset_id, rule_id, query, }
 }
@@ -79619,7 +79622,7 @@ pub extend QueryRulesDeleteRulesetRequest with @json.FromJson::{from_json}
 ///|
 pub fn QueryRulesDeleteRulesetRequest::new(
   ruleset_id : String,
-  query? : QueryRulesDeleteRulesetQuery = QueryRulesDeleteRulesetQuery::new(),
+  query~ : QueryRulesDeleteRulesetQuery = QueryRulesDeleteRulesetQuery::new(),
 ) -> QueryRulesDeleteRulesetRequest {
   { ruleset_id, query, }
 }
@@ -79711,7 +79714,7 @@ pub extend QueryRulesGetRuleRequest with @json.FromJson::{from_json}
 pub fn QueryRulesGetRuleRequest::new(
   ruleset_id : String,
   rule_id : String,
-  query? : QueryRulesGetRuleQuery = QueryRulesGetRuleQuery::new(),
+  query~ : QueryRulesGetRuleQuery = QueryRulesGetRuleQuery::new(),
 ) -> QueryRulesGetRuleRequest {
   { ruleset_id, rule_id, query, }
 }
@@ -79806,7 +79809,7 @@ pub extend QueryRulesGetRulesetRequest with @json.FromJson::{from_json}
 ///|
 pub fn QueryRulesGetRulesetRequest::new(
   ruleset_id : String,
-  query? : QueryRulesGetRulesetQuery = QueryRulesGetRulesetQuery::new(),
+  query~ : QueryRulesGetRulesetQuery = QueryRulesGetRulesetQuery::new(),
 ) -> QueryRulesGetRulesetRequest {
   { ruleset_id, query, }
 }
@@ -79828,8 +79831,8 @@ pub async fn Client::query_rules_get_ruleset(
 
 ///|
 pub(all) struct QueryRulesListRulesetsQuery {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -79883,8 +79886,8 @@ pub extend QueryRulesListRulesetsQuery with @json.FromJson::{from_json}
 
 ///|
 pub fn QueryRulesListRulesetsQuery::new(
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
 ) -> QueryRulesListRulesetsQuery {
   { from, size, }
 }
@@ -79907,7 +79910,7 @@ pub fn QueryRulesListRulesetsQuery::to_pairs(
 
 ///|
 pub(all) struct QueryRulesListRulesetsResponse {
-  count : Int
+  count : Int32
   results : Array[Json]
 } derive(Eq, Debug)
 
@@ -79974,7 +79977,7 @@ pub extend QueryRulesListRulesetsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn QueryRulesListRulesetsRequest::new(
-  query? : QueryRulesListRulesetsQuery = QueryRulesListRulesetsQuery::new(),
+  query~ : QueryRulesListRulesetsQuery = QueryRulesListRulesetsQuery::new(),
 ) -> QueryRulesListRulesetsRequest {
   { query, }
 }
@@ -80041,7 +80044,7 @@ pub(all) struct QueryRulesPutRuleBody {
   type_ : Json
   criteria : Json
   actions : Json
-  priority : Int?
+  priority : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -80102,7 +80105,7 @@ pub fn QueryRulesPutRuleBody::new(
   type_ : Json,
   criteria : Json,
   actions : Json,
-  priority? : Int,
+  priority? : Int32,
 ) -> QueryRulesPutRuleBody {
   { type_, criteria, actions, priority, }
 }
@@ -80171,7 +80174,7 @@ pub fn QueryRulesPutRuleRequest::new(
   ruleset_id : String,
   rule_id : String,
   body : QueryRulesPutRuleBody,
-  query? : QueryRulesPutRuleQuery = QueryRulesPutRuleQuery::new(),
+  query~ : QueryRulesPutRuleQuery = QueryRulesPutRuleQuery::new(),
 ) -> QueryRulesPutRuleRequest {
   { ruleset_id, rule_id, query, body, }
 }
@@ -80351,7 +80354,7 @@ pub extend QueryRulesPutRulesetRequest with @json.FromJson::{from_json}
 pub fn QueryRulesPutRulesetRequest::new(
   ruleset_id : String,
   body : QueryRulesPutRulesetBody,
-  query? : QueryRulesPutRulesetQuery = QueryRulesPutRulesetQuery::new(),
+  query~ : QueryRulesPutRulesetQuery = QueryRulesPutRulesetQuery::new(),
 ) -> QueryRulesPutRulesetRequest {
   { ruleset_id, query, body, }
 }
@@ -80466,7 +80469,7 @@ pub fn QueryRulesTestBody::new(
 
 ///|
 pub(all) struct QueryRulesTestResponse {
-  total_matched_rules : Int
+  total_matched_rules : Int32
   matched_rules : Array[Json]
 } derive(Eq, Debug)
 
@@ -80532,7 +80535,7 @@ pub extend QueryRulesTestRequest with @json.FromJson::{from_json}
 pub fn QueryRulesTestRequest::new(
   ruleset_id : String,
   body : QueryRulesTestBody,
-  query? : QueryRulesTestQuery = QueryRulesTestQuery::new(),
+  query~ : QueryRulesTestQuery = QueryRulesTestQuery::new(),
 ) -> QueryRulesTestRequest {
   { ruleset_id, query, body, }
 }
@@ -80790,7 +80793,7 @@ pub extend RankEvalRequest with @json.FromJson::{from_json}
 pub fn RankEvalRequest::new(
   body : RankEvalBody,
   index? : String,
-  query? : RankEvalQuery = RankEvalQuery::new(),
+  query~ : RankEvalQuery = RankEvalQuery::new(),
 ) -> RankEvalRequest {
   { index, query, body, }
 }
@@ -80823,7 +80826,7 @@ pub(all) struct ReindexQuery {
   requests_per_second : Double?
   scroll : String?
   slices : String?
-  max_docs : Int?
+  max_docs : Int32?
   timeout : String?
   wait_for_active_shards : String?
   wait_for_completion : Bool?
@@ -80950,7 +80953,7 @@ pub fn ReindexQuery::new(
   requests_per_second? : Double,
   scroll? : String,
   slices? : String,
-  max_docs? : Int,
+  max_docs? : Int32,
   timeout? : String,
   wait_for_active_shards? : String,
   wait_for_completion? : Bool,
@@ -81018,7 +81021,7 @@ pub fn ReindexQuery::to_pairs(self : ReindexQuery) -> Array[(String, String)] {
 pub(all) struct ReindexBody {
   conflicts : Json?
   dest : Json
-  max_docs : Int?
+  max_docs : Int32?
   script : Json?
   source : Json
 } derive(Eq, Debug)
@@ -81093,7 +81096,7 @@ pub fn ReindexBody::new(
   dest : Json,
   source : Json,
   conflicts? : Json,
-  max_docs? : Int,
+  max_docs? : Int32,
   script? : Json,
 ) -> ReindexBody {
   { conflicts, dest, max_docs, script, source, }
@@ -81101,23 +81104,23 @@ pub fn ReindexBody::new(
 
 ///|
 pub(all) struct ReindexResponse {
-  batches : Int?
-  created : Int?
-  deleted : Int?
+  batches : Int32?
+  created : Int32?
+  deleted : Int32?
   failures : Array[Json]?
-  noops : Int?
+  noops : Int32?
   retries : Json?
   requests_per_second : Double?
-  slice_id : Int?
+  slice_id : Int32?
   slices : Array[Json]?
   task : Json?
   throttled_millis : Json?
   throttled_until_millis : Json?
   timed_out : Bool?
   took : Json?
-  total : Int?
-  updated : Int?
-  version_conflicts : Int?
+  total : Int32?
+  updated : Int32?
+  version_conflicts : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -81328,7 +81331,7 @@ pub extend ReindexRequest with @json.FromJson::{from_json}
 ///|
 pub fn ReindexRequest::new(
   body : ReindexBody,
-  query? : ReindexQuery = ReindexQuery::new(),
+  query~ : ReindexQuery = ReindexQuery::new(),
 ) -> ReindexRequest {
   { query, body, }
 }
@@ -81728,7 +81731,7 @@ pub extend RenderSearchTemplateRequest with @json.FromJson::{from_json}
 pub fn RenderSearchTemplateRequest::new(
   body : RenderSearchTemplateBody,
   id? : String,
-  query? : RenderSearchTemplateQuery = RenderSearchTemplateQuery::new(),
+  query~ : RenderSearchTemplateQuery = RenderSearchTemplateQuery::new(),
 ) -> RenderSearchTemplateRequest {
   { id, query, body, }
 }
@@ -81872,7 +81875,7 @@ pub extend RollupDeleteJobRequest with @json.FromJson::{from_json}
 ///|
 pub fn RollupDeleteJobRequest::new(
   id : String,
-  query? : RollupDeleteJobQuery = RollupDeleteJobQuery::new(),
+  query~ : RollupDeleteJobQuery = RollupDeleteJobQuery::new(),
 ) -> RollupDeleteJobRequest {
   { id, query, }
 }
@@ -81998,7 +82001,7 @@ pub extend RollupGetJobsRequest with @json.FromJson::{from_json}
 ///|
 pub fn RollupGetJobsRequest::new(
   id? : String,
-  query? : RollupGetJobsQuery = RollupGetJobsQuery::new(),
+  query~ : RollupGetJobsQuery = RollupGetJobsQuery::new(),
 ) -> RollupGetJobsRequest {
   { id, query, }
 }
@@ -82094,7 +82097,7 @@ pub extend RollupGetRollupCapsRequest with @json.FromJson::{from_json}
 ///|
 pub fn RollupGetRollupCapsRequest::new(
   id? : String,
-  query? : RollupGetRollupCapsQuery = RollupGetRollupCapsQuery::new(),
+  query~ : RollupGetRollupCapsQuery = RollupGetRollupCapsQuery::new(),
 ) -> RollupGetRollupCapsRequest {
   { id, query, }
 }
@@ -82195,7 +82198,7 @@ pub extend RollupGetRollupIndexCapsRequest with @json.FromJson::{from_json}
 ///|
 pub fn RollupGetRollupIndexCapsRequest::new(
   index : String,
-  query? : RollupGetRollupIndexCapsQuery = RollupGetRollupIndexCapsQuery::new(),
+  query~ : RollupGetRollupIndexCapsQuery = RollupGetRollupIndexCapsQuery::new(),
 ) -> RollupGetRollupIndexCapsRequest {
   { index, query, }
 }
@@ -82265,7 +82268,7 @@ pub(all) struct RollupPutJobBody {
   groups : Json
   index_pattern : String
   metrics : Array[Json]?
-  page_size : Int
+  page_size : Int32
   rollup_index : Json
   timeout : Json?
   headers : Json?
@@ -82355,7 +82358,7 @@ pub fn RollupPutJobBody::new(
   cron : String,
   groups : Json,
   index_pattern : String,
-  page_size : Int,
+  page_size : Int32,
   rollup_index : Json,
   metrics? : Array[Json],
   timeout? : Json,
@@ -82399,7 +82402,7 @@ pub extend RollupPutJobRequest with @json.FromJson::{from_json}
 pub fn RollupPutJobRequest::new(
   id : String,
   body : RollupPutJobBody,
-  query? : RollupPutJobQuery = RollupPutJobQuery::new(),
+  query~ : RollupPutJobQuery = RollupPutJobQuery::new(),
 ) -> RollupPutJobRequest {
   { id, query, body, }
 }
@@ -82506,7 +82509,7 @@ pub fn RollupRollupSearchQuery::to_pairs(
 pub(all) struct RollupRollupSearchBody {
   aggregations : Map[String, Json]?
   query : Json?
-  size : Int?
+  size : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -82570,14 +82573,14 @@ pub extend RollupRollupSearchBody with @json.FromJson::{from_json}
 pub fn RollupRollupSearchBody::new(
   aggregations? : Map[String, Json],
   query? : Json,
-  size? : Int,
+  size? : Int32,
 ) -> RollupRollupSearchBody {
   { aggregations, query, size, }
 }
 
 ///|
 pub(all) struct RollupRollupSearchResponse {
-  took : Int
+  took : Int32
   timed_out : Bool
   terminated_early : Bool?
   _shards : Json
@@ -82677,7 +82680,7 @@ pub extend RollupRollupSearchRequest with @json.FromJson::{from_json}
 pub fn RollupRollupSearchRequest::new(
   index : String,
   body : RollupRollupSearchBody,
-  query? : RollupRollupSearchQuery = RollupRollupSearchQuery::new(),
+  query~ : RollupRollupSearchQuery = RollupRollupSearchQuery::new(),
 ) -> RollupRollupSearchRequest {
   { index, query, body, }
 }
@@ -82804,7 +82807,7 @@ pub extend RollupStartJobRequest with @json.FromJson::{from_json}
 ///|
 pub fn RollupStartJobRequest::new(
   id : String,
-  query? : RollupStartJobQuery = RollupStartJobQuery::new(),
+  query~ : RollupStartJobQuery = RollupStartJobQuery::new(),
 ) -> RollupStartJobRequest {
   { id, query, }
 }
@@ -82963,7 +82966,7 @@ pub extend RollupStopJobRequest with @json.FromJson::{from_json}
 ///|
 pub fn RollupStopJobRequest::new(
   id : String,
-  query? : RollupStopJobQuery = RollupStopJobQuery::new(),
+  query~ : RollupStopJobQuery = RollupStopJobQuery::new(),
 ) -> RollupStopJobRequest {
   { id, query, }
 }
@@ -83169,7 +83172,7 @@ pub extend ScriptsPainlessExecuteRequest with @json.FromJson::{from_json}
 ///|
 pub fn ScriptsPainlessExecuteRequest::new(
   body : ScriptsPainlessExecuteBody,
-  query? : ScriptsPainlessExecuteQuery = ScriptsPainlessExecuteQuery::new(),
+  query~ : ScriptsPainlessExecuteQuery = ScriptsPainlessExecuteQuery::new(),
 ) -> ScriptsPainlessExecuteRequest {
   { query, body, }
 }
@@ -83359,7 +83362,7 @@ pub extend ScrollRequest with @json.FromJson::{from_json}
 ///|
 pub fn ScrollRequest::new(
   scroll_id? : String,
-  query? : ScrollQuery = ScrollQuery::new(),
+  query~ : ScrollQuery = ScrollQuery::new(),
   body? : ScrollBody,
 ) -> ScrollRequest {
   { scroll_id, query, body, }
@@ -83396,7 +83399,7 @@ pub(all) struct SearchQuery {
   allow_partial_search_results : Bool?
   analyzer : String?
   analyze_wildcard : Bool?
-  batched_reduce_size : Int?
+  batched_reduce_size : Int32?
   ccs_minimize_roundtrips : Bool?
   default_operator : String?
   df : String?
@@ -83407,9 +83410,9 @@ pub(all) struct SearchQuery {
   ignore_unavailable : Bool?
   include_named_queries_score : Bool?
   lenient : Bool?
-  max_concurrent_shard_requests : Int?
+  max_concurrent_shard_requests : Int32?
   preference : String?
-  pre_filter_shard_size : Int?
+  pre_filter_shard_size : Int32?
   request_cache : Bool?
   routing : String?
   scroll : String?
@@ -83418,9 +83421,9 @@ pub(all) struct SearchQuery {
   stored_fields : String?
   suggest_field : String?
   suggest_mode : String?
-  suggest_size : Int?
+  suggest_size : Int32?
   suggest_text : String?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   track_total_hits : String?
   track_scores : Bool?
@@ -83433,8 +83436,8 @@ pub(all) struct SearchQuery {
   _source_includes : String?
   seq_no_primary_term : Bool?
   q : String?
-  size : Int?
-  from : Int?
+  size : Int32?
+  from : Int32?
   sort : Json?
   force_synthetic_source : Bool?
 } derive(Eq, Debug)
@@ -83933,7 +83936,7 @@ pub fn SearchQuery::new(
   allow_partial_search_results? : Bool,
   analyzer? : String,
   analyze_wildcard? : Bool,
-  batched_reduce_size? : Int,
+  batched_reduce_size? : Int32,
   ccs_minimize_roundtrips? : Bool,
   default_operator? : String,
   df? : String,
@@ -83944,9 +83947,9 @@ pub fn SearchQuery::new(
   ignore_unavailable? : Bool,
   include_named_queries_score? : Bool,
   lenient? : Bool,
-  max_concurrent_shard_requests? : Int,
+  max_concurrent_shard_requests? : Int32,
   preference? : String,
-  pre_filter_shard_size? : Int,
+  pre_filter_shard_size? : Int32,
   request_cache? : Bool,
   routing? : String,
   scroll? : String,
@@ -83955,9 +83958,9 @@ pub fn SearchQuery::new(
   stored_fields? : String,
   suggest_field? : String,
   suggest_mode? : String,
-  suggest_size? : Int,
+  suggest_size? : Int32,
   suggest_text? : String,
-  terminate_after? : Int,
+  terminate_after? : Int32,
   timeout? : String,
   track_total_hits? : String,
   track_scores? : Bool,
@@ -83970,8 +83973,8 @@ pub fn SearchQuery::new(
   _source_includes? : String,
   seq_no_primary_term? : Bool,
   q? : String,
-  size? : Int,
-  from? : Int,
+  size? : Int32,
+  from? : Int32,
   sort? : Json,
   force_synthetic_source? : Bool,
 ) -> SearchQuery {
@@ -84249,7 +84252,7 @@ pub(all) struct SearchBody {
   collapse : Json?
   explain : Bool?
   ext : Map[String, Json]?
-  from : Int?
+  from : Int32?
   highlight : Json?
   track_total_hits : Json?
   indices_boost : Array[Map[String, Json]]?
@@ -84264,13 +84267,13 @@ pub(all) struct SearchBody {
   retriever : Json?
   script_fields : Map[String, Json]?
   search_after : Json?
-  size : Int?
+  size : Int32?
   slice : Json?
   sort : Json?
   _source : Json?
   fields : Array[Json]?
   suggest : Json?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   track_scores : Bool?
   version : Bool?
@@ -84646,7 +84649,7 @@ pub fn SearchBody::new(
   collapse? : Json,
   explain? : Bool,
   ext? : Map[String, Json],
-  from? : Int,
+  from? : Int32,
   highlight? : Json,
   track_total_hits? : Json,
   indices_boost? : Array[Map[String, Json]],
@@ -84661,13 +84664,13 @@ pub fn SearchBody::new(
   retriever? : Json,
   script_fields? : Map[String, Json],
   search_after? : Json,
-  size? : Int,
+  size? : Int32,
   slice? : Json,
   sort? : Json,
   _source? : Json,
   fields? : Array[Json],
   suggest? : Json,
-  terminate_after? : Int,
+  terminate_after? : Int32,
   timeout? : String,
   track_scores? : Bool,
   version? : Bool,
@@ -84742,7 +84745,7 @@ pub extend SearchRequest with @json.FromJson::{from_json}
 ///|
 pub fn SearchRequest::new(
   index? : String,
-  query? : SearchQuery = SearchQuery::new(),
+  query~ : SearchQuery = SearchQuery::new(),
   body? : SearchBody,
 ) -> SearchRequest {
   { index, query, body, }
@@ -84845,7 +84848,7 @@ pub extend SearchApplicationDeleteRequest with @json.FromJson::{from_json}
 ///|
 pub fn SearchApplicationDeleteRequest::new(
   name : String,
-  query? : SearchApplicationDeleteQuery = SearchApplicationDeleteQuery::new(),
+  query~ : SearchApplicationDeleteQuery = SearchApplicationDeleteQuery::new(),
 ) -> SearchApplicationDeleteRequest {
   { name, query, }
 }
@@ -84961,7 +84964,7 @@ pub extend SearchApplicationDeleteBehavioralAnalyticsRequest with @json.FromJson
 ///|
 pub fn SearchApplicationDeleteBehavioralAnalyticsRequest::new(
   name : String,
-  query? : SearchApplicationDeleteBehavioralAnalyticsQuery = SearchApplicationDeleteBehavioralAnalyticsQuery::new(),
+  query~ : SearchApplicationDeleteBehavioralAnalyticsQuery = SearchApplicationDeleteBehavioralAnalyticsQuery::new(),
 ) -> SearchApplicationDeleteBehavioralAnalyticsRequest {
   { name, query, }
 }
@@ -85051,7 +85054,7 @@ pub extend SearchApplicationGetRequest with @json.FromJson::{from_json}
 ///|
 pub fn SearchApplicationGetRequest::new(
   name : String,
-  query? : SearchApplicationGetQuery = SearchApplicationGetQuery::new(),
+  query~ : SearchApplicationGetQuery = SearchApplicationGetQuery::new(),
 ) -> SearchApplicationGetRequest {
   { name, query, }
 }
@@ -85160,7 +85163,7 @@ pub extend SearchApplicationGetBehavioralAnalyticsRequest with @json.FromJson::{
 ///|
 pub fn SearchApplicationGetBehavioralAnalyticsRequest::new(
   name? : String,
-  query? : SearchApplicationGetBehavioralAnalyticsQuery = SearchApplicationGetBehavioralAnalyticsQuery::new(),
+  query~ : SearchApplicationGetBehavioralAnalyticsQuery = SearchApplicationGetBehavioralAnalyticsQuery::new(),
 ) -> SearchApplicationGetBehavioralAnalyticsRequest {
   { name, query, }
 }
@@ -85189,8 +85192,8 @@ pub async fn Client::search_application_get_behavioral_analytics(
 ///|
 pub(all) struct SearchApplicationListQuery {
   q : String?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -85252,8 +85255,8 @@ pub extend SearchApplicationListQuery with @json.FromJson::{from_json}
 ///|
 pub fn SearchApplicationListQuery::new(
   q? : String,
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
 ) -> SearchApplicationListQuery {
   { q, from, size, }
 }
@@ -85280,7 +85283,7 @@ pub fn SearchApplicationListQuery::to_pairs(
 
 ///|
 pub(all) struct SearchApplicationListResponse {
-  count : Int
+  count : Int32
   results : Array[Json]
 } derive(Eq, Debug)
 
@@ -85347,7 +85350,7 @@ pub extend SearchApplicationListRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SearchApplicationListRequest::new(
-  query? : SearchApplicationListQuery = SearchApplicationListQuery::new(),
+  query~ : SearchApplicationListQuery = SearchApplicationListQuery::new(),
 ) -> SearchApplicationListRequest {
   { query, }
 }
@@ -85546,7 +85549,7 @@ pub fn SearchApplicationPostBehavioralAnalyticsEventRequest::new(
   collection_name : String,
   event_type : String,
   body : SearchApplicationPostBehavioralAnalyticsEventBody,
-  query? : SearchApplicationPostBehavioralAnalyticsEventQuery = SearchApplicationPostBehavioralAnalyticsEventQuery::new(),
+  query~ : SearchApplicationPostBehavioralAnalyticsEventQuery = SearchApplicationPostBehavioralAnalyticsEventQuery::new(),
 ) -> SearchApplicationPostBehavioralAnalyticsEventRequest {
   { collection_name, event_type, query, body, }
 }
@@ -85702,7 +85705,7 @@ pub extend SearchApplicationPutRequest with @json.FromJson::{from_json}
 pub fn SearchApplicationPutRequest::new(
   name : String,
   body : SearchApplicationPutBody,
-  query? : SearchApplicationPutQuery = SearchApplicationPutQuery::new(),
+  query~ : SearchApplicationPutQuery = SearchApplicationPutQuery::new(),
 ) -> SearchApplicationPutRequest {
   { name, query, body, }
 }
@@ -85812,7 +85815,7 @@ pub extend SearchApplicationPutBehavioralAnalyticsRequest with @json.FromJson::{
 ///|
 pub fn SearchApplicationPutBehavioralAnalyticsRequest::new(
   name : String,
-  query? : SearchApplicationPutBehavioralAnalyticsQuery = SearchApplicationPutBehavioralAnalyticsQuery::new(),
+  query~ : SearchApplicationPutBehavioralAnalyticsQuery = SearchApplicationPutBehavioralAnalyticsQuery::new(),
 ) -> SearchApplicationPutBehavioralAnalyticsRequest {
   { name, query, }
 }
@@ -85963,7 +85966,7 @@ pub extend SearchApplicationRenderQueryRequest with @json.FromJson::{from_json}
 ///|
 pub fn SearchApplicationRenderQueryRequest::new(
   name : String,
-  query? : SearchApplicationRenderQueryQuery = SearchApplicationRenderQueryQuery::new(),
+  query~ : SearchApplicationRenderQueryQuery = SearchApplicationRenderQueryQuery::new(),
   body? : SearchApplicationRenderQueryBody,
 ) -> SearchApplicationRenderQueryRequest {
   { name, query, body, }
@@ -86135,7 +86138,7 @@ pub extend SearchApplicationSearchRequest with @json.FromJson::{from_json}
 ///|
 pub fn SearchApplicationSearchRequest::new(
   name : String,
-  query? : SearchApplicationSearchQuery = SearchApplicationSearchQuery::new(),
+  query~ : SearchApplicationSearchQuery = SearchApplicationSearchQuery::new(),
   body? : SearchApplicationSearchBody,
 ) -> SearchApplicationSearchRequest {
   { name, query, body, }
@@ -86167,11 +86170,11 @@ pub async fn Client::search_application_search(
 ///|
 pub(all) struct SearchMvtQuery {
   exact_bounds : Bool?
-  extent : Int?
+  extent : Int32?
   grid_agg : String?
-  grid_precision : Int?
+  grid_precision : Int32?
   grid_type : String?
-  size : Int?
+  size : Int32?
   track_total_hits : String?
   with_labels : Bool?
 } derive(Eq, Debug)
@@ -86283,11 +86286,11 @@ pub extend SearchMvtQuery with @json.FromJson::{from_json}
 ///|
 pub fn SearchMvtQuery::new(
   exact_bounds? : Bool,
-  extent? : Int,
+  extent? : Int32,
   grid_agg? : String,
-  grid_precision? : Int,
+  grid_precision? : Int32,
   grid_type? : String,
-  size? : Int,
+  size? : Int32,
   track_total_hits? : String,
   with_labels? : Bool,
 ) -> SearchMvtQuery {
@@ -86348,16 +86351,16 @@ pub fn SearchMvtQuery::to_pairs(
 ///|
 pub(all) struct SearchMvtBody {
   aggs : Map[String, Json]?
-  buffer : Int?
+  buffer : Int32?
   exact_bounds : Bool?
-  extent : Int?
+  extent : Int32?
   fields : Json?
   grid_agg : Json?
-  grid_precision : Int?
+  grid_precision : Int32?
   grid_type : Json?
   query : Json?
   runtime_mappings : Json?
-  size : Int?
+  size : Int32?
   sort : Json?
   track_total_hits : Json?
   with_labels : Bool?
@@ -86536,16 +86539,16 @@ pub extend SearchMvtBody with @json.FromJson::{from_json}
 ///|
 pub fn SearchMvtBody::new(
   aggs? : Map[String, Json],
-  buffer? : Int,
+  buffer? : Int32,
   exact_bounds? : Bool,
-  extent? : Int,
+  extent? : Int32,
   fields? : Json,
   grid_agg? : Json,
-  grid_precision? : Int,
+  grid_precision? : Int32,
   grid_type? : Json,
   query? : Json,
   runtime_mappings? : Json,
-  size? : Int,
+  size? : Int32,
   sort? : Json,
   track_total_hits? : Json,
   with_labels? : Bool,
@@ -86603,7 +86606,7 @@ pub fn SearchMvtRequest::new(
   zoom : String,
   x : String,
   y : String,
-  query? : SearchMvtQuery = SearchMvtQuery::new(),
+  query~ : SearchMvtQuery = SearchMvtQuery::new(),
   body? : SearchMvtBody,
 ) -> SearchMvtRequest {
   { index, field, zoom, x, y, query, body, }
@@ -86875,7 +86878,7 @@ pub extend SearchShardsRequest with @json.FromJson::{from_json}
 ///|
 pub fn SearchShardsRequest::new(
   index? : String,
-  query? : SearchShardsQuery = SearchShardsQuery::new(),
+  query~ : SearchShardsQuery = SearchShardsQuery::new(),
 ) -> SearchShardsRequest {
   { index, query, }
 }
@@ -87284,7 +87287,7 @@ pub fn SearchTemplateBody::new(
 
 ///|
 pub(all) struct SearchTemplateResponse {
-  took : Int
+  took : Int32
   timed_out : Bool
   _shards : Json
   hits : Json
@@ -87292,7 +87295,7 @@ pub(all) struct SearchTemplateResponse {
   _clusters : Json?
   fields : Map[String, Json]?
   max_score : Double?
-  num_reduce_phases : Int?
+  num_reduce_phases : Int32?
   profile : Json?
   pit_id : Json?
   _scroll_id : Json?
@@ -87468,7 +87471,7 @@ pub extend SearchTemplateRequest with @json.FromJson::{from_json}
 pub fn SearchTemplateRequest::new(
   body : SearchTemplateBody,
   index? : String,
-  query? : SearchTemplateQuery = SearchTemplateQuery::new(),
+  query~ : SearchTemplateQuery = SearchTemplateQuery::new(),
 ) -> SearchTemplateRequest {
   { index, query, body, }
 }
@@ -87613,7 +87616,7 @@ pub extend SearchableSnapshotsCacheStatsRequest with @json.FromJson::{from_json}
 ///|
 pub fn SearchableSnapshotsCacheStatsRequest::new(
   node_id? : String,
-  query? : SearchableSnapshotsCacheStatsQuery = SearchableSnapshotsCacheStatsQuery::new(),
+  query~ : SearchableSnapshotsCacheStatsQuery = SearchableSnapshotsCacheStatsQuery::new(),
 ) -> SearchableSnapshotsCacheStatsRequest {
   { node_id, query, }
 }
@@ -87768,7 +87771,7 @@ pub extend SearchableSnapshotsClearCacheRequest with @json.FromJson::{from_json}
 ///|
 pub fn SearchableSnapshotsClearCacheRequest::new(
   index? : String,
-  query? : SearchableSnapshotsClearCacheQuery = SearchableSnapshotsClearCacheQuery::new(),
+  query~ : SearchableSnapshotsClearCacheQuery = SearchableSnapshotsClearCacheQuery::new(),
 ) -> SearchableSnapshotsClearCacheRequest {
   { index, query, }
 }
@@ -88048,7 +88051,7 @@ pub fn SearchableSnapshotsMountRequest::new(
   repository : String,
   snapshot : String,
   body : SearchableSnapshotsMountBody,
-  query? : SearchableSnapshotsMountQuery = SearchableSnapshotsMountQuery::new(),
+  query~ : SearchableSnapshotsMountQuery = SearchableSnapshotsMountQuery::new(),
 ) -> SearchableSnapshotsMountRequest {
   { repository, snapshot, query, body, }
 }
@@ -88212,7 +88215,7 @@ pub extend SearchableSnapshotsStatsRequest with @json.FromJson::{from_json}
 ///|
 pub fn SearchableSnapshotsStatsRequest::new(
   index? : String,
-  query? : SearchableSnapshotsStatsQuery = SearchableSnapshotsStatsQuery::new(),
+  query~ : SearchableSnapshotsStatsQuery = SearchableSnapshotsStatsQuery::new(),
 ) -> SearchableSnapshotsStatsRequest {
   { index, query, }
 }
@@ -88398,7 +88401,7 @@ pub extend SecurityActivateUserProfileRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityActivateUserProfileRequest::new(
   body : SecurityActivateUserProfileBody,
-  query? : SecurityActivateUserProfileQuery = SecurityActivateUserProfileQuery::new(),
+  query~ : SecurityActivateUserProfileQuery = SecurityActivateUserProfileQuery::new(),
 ) -> SecurityActivateUserProfileRequest {
   { query, body, }
 }
@@ -88601,7 +88604,7 @@ pub extend SecurityAuthenticateRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SecurityAuthenticateRequest::new(
-  query? : SecurityAuthenticateQuery = SecurityAuthenticateQuery::new(),
+  query~ : SecurityAuthenticateQuery = SecurityAuthenticateQuery::new(),
 ) -> SecurityAuthenticateRequest {
   { query, }
 }
@@ -88820,7 +88823,7 @@ pub extend SecurityBulkDeleteRoleRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityBulkDeleteRoleRequest::new(
   body : SecurityBulkDeleteRoleBody,
-  query? : SecurityBulkDeleteRoleQuery = SecurityBulkDeleteRoleQuery::new(),
+  query~ : SecurityBulkDeleteRoleQuery = SecurityBulkDeleteRoleQuery::new(),
 ) -> SecurityBulkDeleteRoleRequest {
   { query, body, }
 }
@@ -89041,7 +89044,7 @@ pub extend SecurityBulkPutRoleRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityBulkPutRoleRequest::new(
   body : SecurityBulkPutRoleBody,
-  query? : SecurityBulkPutRoleQuery = SecurityBulkPutRoleQuery::new(),
+  query~ : SecurityBulkPutRoleQuery = SecurityBulkPutRoleQuery::new(),
 ) -> SecurityBulkPutRoleRequest {
   { query, body, }
 }
@@ -89276,7 +89279,7 @@ pub extend SecurityBulkUpdateApiKeysRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityBulkUpdateApiKeysRequest::new(
   body : SecurityBulkUpdateApiKeysBody,
-  query? : SecurityBulkUpdateApiKeysQuery = SecurityBulkUpdateApiKeysQuery::new(),
+  query~ : SecurityBulkUpdateApiKeysQuery = SecurityBulkUpdateApiKeysQuery::new(),
 ) -> SecurityBulkUpdateApiKeysRequest {
   { query, body, }
 }
@@ -89448,7 +89451,7 @@ pub extend SecurityChangePasswordRequest with @json.FromJson::{from_json}
 pub fn SecurityChangePasswordRequest::new(
   body : SecurityChangePasswordBody,
   username? : String,
-  query? : SecurityChangePasswordQuery = SecurityChangePasswordQuery::new(),
+  query~ : SecurityChangePasswordQuery = SecurityChangePasswordQuery::new(),
 ) -> SecurityChangePasswordRequest {
   { username, query, body, }
 }
@@ -89603,7 +89606,7 @@ pub extend SecurityClearApiKeyCacheRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityClearApiKeyCacheRequest::new(
   ids : String,
-  query? : SecurityClearApiKeyCacheQuery = SecurityClearApiKeyCacheQuery::new(),
+  query~ : SecurityClearApiKeyCacheQuery = SecurityClearApiKeyCacheQuery::new(),
 ) -> SecurityClearApiKeyCacheRequest {
   { ids, query, }
 }
@@ -89753,7 +89756,7 @@ pub extend SecurityClearCachedPrivilegesRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityClearCachedPrivilegesRequest::new(
   application : String,
-  query? : SecurityClearCachedPrivilegesQuery = SecurityClearCachedPrivilegesQuery::new(),
+  query~ : SecurityClearCachedPrivilegesQuery = SecurityClearCachedPrivilegesQuery::new(),
 ) -> SecurityClearCachedPrivilegesRequest {
   { application, query, }
 }
@@ -89922,7 +89925,7 @@ pub extend SecurityClearCachedRealmsRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityClearCachedRealmsRequest::new(
   realms : String,
-  query? : SecurityClearCachedRealmsQuery = SecurityClearCachedRealmsQuery::new(),
+  query~ : SecurityClearCachedRealmsQuery = SecurityClearCachedRealmsQuery::new(),
 ) -> SecurityClearCachedRealmsRequest {
   { realms, query, }
 }
@@ -90070,7 +90073,7 @@ pub extend SecurityClearCachedRolesRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityClearCachedRolesRequest::new(
   name : String,
-  query? : SecurityClearCachedRolesQuery = SecurityClearCachedRolesQuery::new(),
+  query~ : SecurityClearCachedRolesQuery = SecurityClearCachedRolesQuery::new(),
 ) -> SecurityClearCachedRolesRequest {
   { name, query, }
 }
@@ -90228,7 +90231,7 @@ pub fn SecurityClearCachedServiceTokensRequest::new(
   namespace_ : String,
   service : String,
   name : String,
-  query? : SecurityClearCachedServiceTokensQuery = SecurityClearCachedServiceTokensQuery::new(),
+  query~ : SecurityClearCachedServiceTokensQuery = SecurityClearCachedServiceTokensQuery::new(),
 ) -> SecurityClearCachedServiceTokensRequest {
   { namespace_, service, name, query, }
 }
@@ -90400,7 +90403,7 @@ pub fn SecurityCloneApiKeyBody::new(
 ///|
 pub(all) struct SecurityCloneApiKeyResponse {
   api_key : String
-  expiration : Int?
+  expiration : Int32?
   id : Json
   name : Json
   encoded : String
@@ -90488,7 +90491,7 @@ pub extend SecurityCloneApiKeyRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityCloneApiKeyRequest::new(
   body : SecurityCloneApiKeyBody,
-  query? : SecurityCloneApiKeyQuery = SecurityCloneApiKeyQuery::new(),
+  query~ : SecurityCloneApiKeyQuery = SecurityCloneApiKeyQuery::new(),
 ) -> SecurityCloneApiKeyRequest {
   { query, body, }
 }
@@ -90658,7 +90661,7 @@ pub fn SecurityCreateApiKeyBody::new(
 ///|
 pub(all) struct SecurityCreateApiKeyResponse {
   api_key : String
-  expiration : Int?
+  expiration : Int32?
   id : Json
   name : Json
   encoded : String
@@ -90746,7 +90749,7 @@ pub extend SecurityCreateApiKeyRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityCreateApiKeyRequest::new(
   body : SecurityCreateApiKeyBody,
-  query? : SecurityCreateApiKeyQuery = SecurityCreateApiKeyQuery::new(),
+  query~ : SecurityCreateApiKeyQuery = SecurityCreateApiKeyQuery::new(),
 ) -> SecurityCreateApiKeyRequest {
   { query, body, }
 }
@@ -91007,7 +91010,7 @@ pub extend SecurityCreateCrossClusterApiKeyRequest with @json.FromJson::{
 ///|
 pub fn SecurityCreateCrossClusterApiKeyRequest::new(
   body : SecurityCreateCrossClusterApiKeyBody,
-  query? : SecurityCreateCrossClusterApiKeyQuery = SecurityCreateCrossClusterApiKeyQuery::new(),
+  query~ : SecurityCreateCrossClusterApiKeyQuery = SecurityCreateCrossClusterApiKeyQuery::new(),
 ) -> SecurityCreateCrossClusterApiKeyRequest {
   { query, body, }
 }
@@ -91169,7 +91172,7 @@ pub fn SecurityCreateServiceTokenRequest::new(
   namespace_ : String,
   service : String,
   name? : String,
-  query? : SecurityCreateServiceTokenQuery = SecurityCreateServiceTokenQuery::new(),
+  query~ : SecurityCreateServiceTokenQuery = SecurityCreateServiceTokenQuery::new(),
 ) -> SecurityCreateServiceTokenRequest {
   { namespace_, service, name, query, }
 }
@@ -91252,7 +91255,7 @@ pub fn SecurityDelegatePkiQuery::to_pairs(
 ///|
 pub(all) struct SecurityDelegatePkiResponse {
   access_token : String
-  expires_in : Int
+  expires_in : Int32
   type_ : String
   authentication : Json?
 } derive(Eq, Debug)
@@ -91332,7 +91335,7 @@ pub extend SecurityDelegatePkiRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SecurityDelegatePkiRequest::new(
-  query? : SecurityDelegatePkiQuery = SecurityDelegatePkiQuery::new(),
+  query~ : SecurityDelegatePkiQuery = SecurityDelegatePkiQuery::new(),
 ) -> SecurityDelegatePkiRequest {
   { query, }
 }
@@ -91444,7 +91447,7 @@ pub extend SecurityDeletePrivilegesRequest with @json.FromJson::{from_json}
 pub fn SecurityDeletePrivilegesRequest::new(
   application : String,
   name : String,
-  query? : SecurityDeletePrivilegesQuery = SecurityDeletePrivilegesQuery::new(),
+  query~ : SecurityDeletePrivilegesQuery = SecurityDeletePrivilegesQuery::new(),
 ) -> SecurityDeletePrivilegesRequest {
   { application, name, query, }
 }
@@ -91591,7 +91594,7 @@ pub extend SecurityDeleteRoleRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityDeleteRoleRequest::new(
   name : String,
-  query? : SecurityDeleteRoleQuery = SecurityDeleteRoleQuery::new(),
+  query~ : SecurityDeleteRoleQuery = SecurityDeleteRoleQuery::new(),
 ) -> SecurityDeleteRoleRequest {
   { name, query, }
 }
@@ -91743,7 +91746,7 @@ pub extend SecurityDeleteRoleMappingRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityDeleteRoleMappingRequest::new(
   name : String,
-  query? : SecurityDeleteRoleMappingQuery = SecurityDeleteRoleMappingQuery::new(),
+  query~ : SecurityDeleteRoleMappingQuery = SecurityDeleteRoleMappingQuery::new(),
 ) -> SecurityDeleteRoleMappingRequest {
   { name, query, }
 }
@@ -91899,7 +91902,7 @@ pub fn SecurityDeleteServiceTokenRequest::new(
   namespace_ : String,
   service : String,
   name : String,
-  query? : SecurityDeleteServiceTokenQuery = SecurityDeleteServiceTokenQuery::new(),
+  query~ : SecurityDeleteServiceTokenQuery = SecurityDeleteServiceTokenQuery::new(),
 ) -> SecurityDeleteServiceTokenRequest {
   { namespace_, service, name, query, }
 }
@@ -92048,7 +92051,7 @@ pub extend SecurityDeleteUserRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityDeleteUserRequest::new(
   username : String,
-  query? : SecurityDeleteUserQuery = SecurityDeleteUserQuery::new(),
+  query~ : SecurityDeleteUserQuery = SecurityDeleteUserQuery::new(),
 ) -> SecurityDeleteUserRequest {
   { username, query, }
 }
@@ -92154,7 +92157,7 @@ pub extend SecurityDisableUserRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityDisableUserRequest::new(
   username : String,
-  query? : SecurityDisableUserQuery = SecurityDisableUserQuery::new(),
+  query~ : SecurityDisableUserQuery = SecurityDisableUserQuery::new(),
 ) -> SecurityDisableUserRequest {
   { username, query, }
 }
@@ -92265,7 +92268,7 @@ pub extend SecurityDisableUserProfileRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityDisableUserProfileRequest::new(
   uid : String,
-  query? : SecurityDisableUserProfileQuery = SecurityDisableUserProfileQuery::new(),
+  query~ : SecurityDisableUserProfileQuery = SecurityDisableUserProfileQuery::new(),
 ) -> SecurityDisableUserProfileRequest {
   { uid, query, }
 }
@@ -92371,7 +92374,7 @@ pub extend SecurityEnableUserRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityEnableUserRequest::new(
   username : String,
-  query? : SecurityEnableUserQuery = SecurityEnableUserQuery::new(),
+  query~ : SecurityEnableUserQuery = SecurityEnableUserQuery::new(),
 ) -> SecurityEnableUserRequest {
   { username, query, }
 }
@@ -92482,7 +92485,7 @@ pub extend SecurityEnableUserProfileRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityEnableUserProfileRequest::new(
   uid : String,
-  query? : SecurityEnableUserProfileQuery = SecurityEnableUserProfileQuery::new(),
+  query~ : SecurityEnableUserProfileQuery = SecurityEnableUserProfileQuery::new(),
 ) -> SecurityEnableUserProfileRequest {
   { uid, query, }
 }
@@ -92618,7 +92621,7 @@ pub extend SecurityEnrollKibanaRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SecurityEnrollKibanaRequest::new(
-  query? : SecurityEnrollKibanaQuery = SecurityEnrollKibanaQuery::new(),
+  query~ : SecurityEnrollKibanaQuery = SecurityEnrollKibanaQuery::new(),
   body? : SecurityEnrollKibanaBody,
 ) -> SecurityEnrollKibanaRequest {
   { query, body, }
@@ -92780,7 +92783,7 @@ pub extend SecurityEnrollNodeRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SecurityEnrollNodeRequest::new(
-  query? : SecurityEnrollNodeQuery = SecurityEnrollNodeQuery::new(),
+  query~ : SecurityEnrollNodeQuery = SecurityEnrollNodeQuery::new(),
   body? : SecurityEnrollNodeBody,
 ) -> SecurityEnrollNodeRequest {
   { query, body, }
@@ -93044,7 +93047,7 @@ pub extend SecurityGetApiKeyRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SecurityGetApiKeyRequest::new(
-  query? : SecurityGetApiKeyQuery = SecurityGetApiKeyQuery::new(),
+  query~ : SecurityGetApiKeyQuery = SecurityGetApiKeyQuery::new(),
 ) -> SecurityGetApiKeyRequest {
   { query, }
 }
@@ -93186,7 +93189,7 @@ pub extend SecurityGetBuiltinPrivilegesRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SecurityGetBuiltinPrivilegesRequest::new(
-  query? : SecurityGetBuiltinPrivilegesQuery = SecurityGetBuiltinPrivilegesQuery::new(),
+  query~ : SecurityGetBuiltinPrivilegesQuery = SecurityGetBuiltinPrivilegesQuery::new(),
 ) -> SecurityGetBuiltinPrivilegesRequest {
   { query, }
 }
@@ -93277,7 +93280,7 @@ pub extend SecurityGetPrivilegesRequest with @json.FromJson::{from_json}
 pub fn SecurityGetPrivilegesRequest::new(
   application? : String,
   name? : String,
-  query? : SecurityGetPrivilegesQuery = SecurityGetPrivilegesQuery::new(),
+  query~ : SecurityGetPrivilegesQuery = SecurityGetPrivilegesQuery::new(),
 ) -> SecurityGetPrivilegesRequest {
   { application, name, query, }
 }
@@ -93380,7 +93383,7 @@ pub extend SecurityGetRoleRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityGetRoleRequest::new(
   name? : String,
-  query? : SecurityGetRoleQuery = SecurityGetRoleQuery::new(),
+  query~ : SecurityGetRoleQuery = SecurityGetRoleQuery::new(),
 ) -> SecurityGetRoleRequest {
   { name, query, }
 }
@@ -93478,7 +93481,7 @@ pub extend SecurityGetRoleMappingRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityGetRoleMappingRequest::new(
   name? : String,
-  query? : SecurityGetRoleMappingQuery = SecurityGetRoleMappingQuery::new(),
+  query~ : SecurityGetRoleMappingQuery = SecurityGetRoleMappingQuery::new(),
 ) -> SecurityGetRoleMappingRequest {
   { name, query, }
 }
@@ -93581,7 +93584,7 @@ pub extend SecurityGetServiceAccountsRequest with @json.FromJson::{from_json}
 pub fn SecurityGetServiceAccountsRequest::new(
   namespace_? : String,
   service? : String,
-  query? : SecurityGetServiceAccountsQuery = SecurityGetServiceAccountsQuery::new(),
+  query~ : SecurityGetServiceAccountsQuery = SecurityGetServiceAccountsQuery::new(),
 ) -> SecurityGetServiceAccountsRequest {
   { namespace_, service, query, }
 }
@@ -93668,7 +93671,7 @@ pub fn SecurityGetServiceCredentialsQuery::to_pairs(
 ///|
 pub(all) struct SecurityGetServiceCredentialsResponse {
   service_account : String
-  count : Int
+  count : Int32
   tokens : Map[String, Json]
   nodes_credentials : Json
 } derive(Eq, Debug)
@@ -93752,7 +93755,7 @@ pub extend SecurityGetServiceCredentialsRequest with @json.FromJson::{from_json}
 pub fn SecurityGetServiceCredentialsRequest::new(
   namespace_ : String,
   service : String,
-  query? : SecurityGetServiceCredentialsQuery = SecurityGetServiceCredentialsQuery::new(),
+  query~ : SecurityGetServiceCredentialsQuery = SecurityGetServiceCredentialsQuery::new(),
 ) -> SecurityGetServiceCredentialsRequest {
   { namespace_, service, query, }
 }
@@ -93917,7 +93920,7 @@ pub extend SecurityGetSettingsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SecurityGetSettingsRequest::new(
-  query? : SecurityGetSettingsQuery = SecurityGetSettingsQuery::new(),
+  query~ : SecurityGetSettingsQuery = SecurityGetSettingsQuery::new(),
   body? : SecurityGetSettingsBody,
 ) -> SecurityGetSettingsRequest {
   { query, body, }
@@ -94046,7 +94049,7 @@ pub extend SecurityGetStatsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SecurityGetStatsRequest::new(
-  query? : SecurityGetStatsQuery = SecurityGetStatsQuery::new(),
+  query~ : SecurityGetStatsQuery = SecurityGetStatsQuery::new(),
   body? : SecurityGetStatsBody,
 ) -> SecurityGetStatsRequest {
   { query, body, }
@@ -94224,7 +94227,7 @@ pub fn SecurityGetTokenBody::new(
 ///|
 pub(all) struct SecurityGetTokenResponse {
   access_token : String
-  expires_in : Int
+  expires_in : Int32
   scope : String?
   type_ : String
   refresh_token : String?
@@ -94338,7 +94341,7 @@ pub extend SecurityGetTokenRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityGetTokenRequest::new(
   body : SecurityGetTokenBody,
-  query? : SecurityGetTokenQuery = SecurityGetTokenQuery::new(),
+  query~ : SecurityGetTokenQuery = SecurityGetTokenQuery::new(),
 ) -> SecurityGetTokenRequest {
   { query, body, }
 }
@@ -94446,7 +94449,7 @@ pub extend SecurityGetUserRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityGetUserRequest::new(
   username? : String,
-  query? : SecurityGetUserQuery = SecurityGetUserQuery::new(),
+  query~ : SecurityGetUserQuery = SecurityGetUserQuery::new(),
 ) -> SecurityGetUserRequest {
   { username, query, }
 }
@@ -94632,7 +94635,7 @@ pub extend SecurityGetUserPrivilegesRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SecurityGetUserPrivilegesRequest::new(
-  query? : SecurityGetUserPrivilegesQuery = SecurityGetUserPrivilegesQuery::new(),
+  query~ : SecurityGetUserPrivilegesQuery = SecurityGetUserPrivilegesQuery::new(),
 ) -> SecurityGetUserPrivilegesRequest {
   { query, }
 }
@@ -94790,7 +94793,7 @@ pub extend SecurityGetUserProfileRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityGetUserProfileRequest::new(
   uid : String,
-  query? : SecurityGetUserProfileQuery = SecurityGetUserProfileQuery::new(),
+  query~ : SecurityGetUserProfileQuery = SecurityGetUserProfileQuery::new(),
 ) -> SecurityGetUserProfileRequest {
   { uid, query, }
 }
@@ -95061,7 +95064,7 @@ pub extend SecurityGrantApiKeyRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityGrantApiKeyRequest::new(
   body : SecurityGrantApiKeyBody,
-  query? : SecurityGrantApiKeyQuery = SecurityGrantApiKeyQuery::new(),
+  query~ : SecurityGrantApiKeyQuery = SecurityGrantApiKeyQuery::new(),
 ) -> SecurityGrantApiKeyRequest {
   { query, body, }
 }
@@ -95291,7 +95294,7 @@ pub extend SecurityHasPrivilegesRequest with @json.FromJson::{from_json}
 pub fn SecurityHasPrivilegesRequest::new(
   body : SecurityHasPrivilegesBody,
   user? : String,
-  query? : SecurityHasPrivilegesQuery = SecurityHasPrivilegesQuery::new(),
+  query~ : SecurityHasPrivilegesQuery = SecurityHasPrivilegesQuery::new(),
 ) -> SecurityHasPrivilegesRequest {
   { user, query, body, }
 }
@@ -95508,7 +95511,7 @@ pub extend SecurityHasPrivilegesUserProfileRequest with @json.FromJson::{
 ///|
 pub fn SecurityHasPrivilegesUserProfileRequest::new(
   body : SecurityHasPrivilegesUserProfileBody,
-  query? : SecurityHasPrivilegesUserProfileQuery = SecurityHasPrivilegesUserProfileQuery::new(),
+  query~ : SecurityHasPrivilegesUserProfileQuery = SecurityHasPrivilegesUserProfileQuery::new(),
 ) -> SecurityHasPrivilegesUserProfileRequest {
   { query, body, }
 }
@@ -95689,7 +95692,7 @@ pub fn SecurityInvalidateApiKeyBody::new(
 
 ///|
 pub(all) struct SecurityInvalidateApiKeyResponse {
-  error_count : Int
+  error_count : Int32
   error_details : Array[Json]?
   invalidated_api_keys : Array[String]
   previously_invalidated_api_keys : Array[String]
@@ -95777,7 +95780,7 @@ pub extend SecurityInvalidateApiKeyRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityInvalidateApiKeyRequest::new(
   body : SecurityInvalidateApiKeyBody,
-  query? : SecurityInvalidateApiKeyQuery = SecurityInvalidateApiKeyQuery::new(),
+  query~ : SecurityInvalidateApiKeyQuery = SecurityInvalidateApiKeyQuery::new(),
 ) -> SecurityInvalidateApiKeyRequest {
   { query, body, }
 }
@@ -95931,10 +95934,10 @@ pub fn SecurityInvalidateTokenBody::new(
 
 ///|
 pub(all) struct SecurityInvalidateTokenResponse {
-  error_count : Int
+  error_count : Int32
   error_details : Array[Json]?
-  invalidated_tokens : Int
-  previously_invalidated_tokens : Int
+  invalidated_tokens : Int32
+  previously_invalidated_tokens : Int32
 } derive(Eq, Debug)
 
 ///|
@@ -96019,7 +96022,7 @@ pub extend SecurityInvalidateTokenRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityInvalidateTokenRequest::new(
   body : SecurityInvalidateTokenBody,
-  query? : SecurityInvalidateTokenQuery = SecurityInvalidateTokenQuery::new(),
+  query~ : SecurityInvalidateTokenQuery = SecurityInvalidateTokenQuery::new(),
 ) -> SecurityInvalidateTokenRequest {
   { query, body, }
 }
@@ -96166,7 +96169,7 @@ pub fn SecurityOidcAuthenticateBody::new(
 ///|
 pub(all) struct SecurityOidcAuthenticateResponse {
   access_token : String
-  expires_in : Int
+  expires_in : Int32
   refresh_token : String
   type_ : String
 } derive(Eq, Debug)
@@ -96246,7 +96249,7 @@ pub extend SecurityOidcAuthenticateRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityOidcAuthenticateRequest::new(
   body : SecurityOidcAuthenticateBody,
-  query? : SecurityOidcAuthenticateQuery = SecurityOidcAuthenticateQuery::new(),
+  query~ : SecurityOidcAuthenticateQuery = SecurityOidcAuthenticateQuery::new(),
 ) -> SecurityOidcAuthenticateRequest {
   { query, body, }
 }
@@ -96430,7 +96433,7 @@ pub extend SecurityOidcLogoutRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityOidcLogoutRequest::new(
   body : SecurityOidcLogoutBody,
-  query? : SecurityOidcLogoutQuery = SecurityOidcLogoutQuery::new(),
+  query~ : SecurityOidcLogoutQuery = SecurityOidcLogoutQuery::new(),
 ) -> SecurityOidcLogoutRequest {
   { query, body, }
 }
@@ -96694,7 +96697,7 @@ pub extend SecurityOidcPrepareAuthenticationRequest with @json.FromJson::{
 ///|
 pub fn SecurityOidcPrepareAuthenticationRequest::new(
   body : SecurityOidcPrepareAuthenticationBody,
-  query? : SecurityOidcPrepareAuthenticationQuery = SecurityOidcPrepareAuthenticationQuery::new(),
+  query~ : SecurityOidcPrepareAuthenticationQuery = SecurityOidcPrepareAuthenticationQuery::new(),
 ) -> SecurityOidcPrepareAuthenticationRequest {
   { query, body, }
 }
@@ -96803,7 +96806,7 @@ pub extend SecurityPutPrivilegesRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityPutPrivilegesRequest::new(
   body : SecurityPutPrivilegesBody,
-  query? : SecurityPutPrivilegesQuery = SecurityPutPrivilegesQuery::new(),
+  query~ : SecurityPutPrivilegesQuery = SecurityPutPrivilegesQuery::new(),
 ) -> SecurityPutPrivilegesRequest {
   { query, body, }
 }
@@ -97107,7 +97110,7 @@ pub extend SecurityPutRoleRequest with @json.FromJson::{from_json}
 pub fn SecurityPutRoleRequest::new(
   name : String,
   body : SecurityPutRoleBody,
-  query? : SecurityPutRoleQuery = SecurityPutRoleQuery::new(),
+  query~ : SecurityPutRoleQuery = SecurityPutRoleQuery::new(),
 ) -> SecurityPutRoleRequest {
   { name, query, body, }
 }
@@ -97375,7 +97378,7 @@ pub extend SecurityPutRoleMappingRequest with @json.FromJson::{from_json}
 pub fn SecurityPutRoleMappingRequest::new(
   name : String,
   body : SecurityPutRoleMappingBody,
-  query? : SecurityPutRoleMappingQuery = SecurityPutRoleMappingQuery::new(),
+  query~ : SecurityPutRoleMappingQuery = SecurityPutRoleMappingQuery::new(),
 ) -> SecurityPutRoleMappingRequest {
   { name, query, body, }
 }
@@ -97656,7 +97659,7 @@ pub extend SecurityPutUserRequest with @json.FromJson::{from_json}
 pub fn SecurityPutUserRequest::new(
   username : String,
   body : SecurityPutUserBody,
-  query? : SecurityPutUserQuery = SecurityPutUserQuery::new(),
+  query~ : SecurityPutUserQuery = SecurityPutUserQuery::new(),
 ) -> SecurityPutUserRequest {
   { username, query, body, }
 }
@@ -97778,9 +97781,9 @@ pub fn SecurityQueryApiKeysQuery::to_pairs(
 pub(all) struct SecurityQueryApiKeysBody {
   aggregations : Map[String, Json]?
   query : Json?
-  from : Int?
+  from : Int32?
   sort : Json?
-  size : Int?
+  size : Int32?
   search_after : Json?
 } derive(Eq, Debug)
 
@@ -97873,9 +97876,9 @@ pub extend SecurityQueryApiKeysBody with @json.FromJson::{from_json}
 pub fn SecurityQueryApiKeysBody::new(
   aggregations? : Map[String, Json],
   query? : Json,
-  from? : Int,
+  from? : Int32,
   sort? : Json,
-  size? : Int,
+  size? : Int32,
   search_after? : Json,
 ) -> SecurityQueryApiKeysBody {
   { aggregations, query, from, sort, size, search_after, }
@@ -97883,8 +97886,8 @@ pub fn SecurityQueryApiKeysBody::new(
 
 ///|
 pub(all) struct SecurityQueryApiKeysResponse {
-  total : Int
-  count : Int
+  total : Int32
+  count : Int32
   api_keys : Array[Json]
   aggregations : Map[String, Json]?
 } derive(Eq, Debug)
@@ -97965,7 +97968,7 @@ pub extend SecurityQueryApiKeysRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SecurityQueryApiKeysRequest::new(
-  query? : SecurityQueryApiKeysQuery = SecurityQueryApiKeysQuery::new(),
+  query~ : SecurityQueryApiKeysQuery = SecurityQueryApiKeysQuery::new(),
   body? : SecurityQueryApiKeysBody,
 ) -> SecurityQueryApiKeysRequest {
   { query, body, }
@@ -98038,9 +98041,9 @@ pub fn SecurityQueryRoleQuery::to_pairs(
 ///|
 pub(all) struct SecurityQueryRoleBody {
   query : Json?
-  from : Int?
+  from : Int32?
   sort : Json?
-  size : Int?
+  size : Int32?
   search_after : Json?
 } derive(Eq, Debug)
 
@@ -98122,9 +98125,9 @@ pub extend SecurityQueryRoleBody with @json.FromJson::{from_json}
 ///|
 pub fn SecurityQueryRoleBody::new(
   query? : Json,
-  from? : Int,
+  from? : Int32,
   sort? : Json,
-  size? : Int,
+  size? : Int32,
   search_after? : Json,
 ) -> SecurityQueryRoleBody {
   { query, from, sort, size, search_after, }
@@ -98132,8 +98135,8 @@ pub fn SecurityQueryRoleBody::new(
 
 ///|
 pub(all) struct SecurityQueryRoleResponse {
-  total : Int
-  count : Int
+  total : Int32
+  count : Int32
   roles : Array[Json]
 } derive(Eq, Debug)
 
@@ -98201,7 +98204,7 @@ pub extend SecurityQueryRoleRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SecurityQueryRoleRequest::new(
-  query? : SecurityQueryRoleQuery = SecurityQueryRoleQuery::new(),
+  query~ : SecurityQueryRoleQuery = SecurityQueryRoleQuery::new(),
   body? : SecurityQueryRoleBody,
 ) -> SecurityQueryRoleRequest {
   { query, body, }
@@ -98292,9 +98295,9 @@ pub fn SecurityQueryUserQuery::to_pairs(
 ///|
 pub(all) struct SecurityQueryUserBody {
   query : Json?
-  from : Int?
+  from : Int32?
   sort : Json?
-  size : Int?
+  size : Int32?
   search_after : Json?
 } derive(Eq, Debug)
 
@@ -98376,9 +98379,9 @@ pub extend SecurityQueryUserBody with @json.FromJson::{from_json}
 ///|
 pub fn SecurityQueryUserBody::new(
   query? : Json,
-  from? : Int,
+  from? : Int32,
   sort? : Json,
-  size? : Int,
+  size? : Int32,
   search_after? : Json,
 ) -> SecurityQueryUserBody {
   { query, from, sort, size, search_after, }
@@ -98386,8 +98389,8 @@ pub fn SecurityQueryUserBody::new(
 
 ///|
 pub(all) struct SecurityQueryUserResponse {
-  total : Int
-  count : Int
+  total : Int32
+  count : Int32
   users : Array[Json]
 } derive(Eq, Debug)
 
@@ -98455,7 +98458,7 @@ pub extend SecurityQueryUserRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SecurityQueryUserRequest::new(
-  query? : SecurityQueryUserQuery = SecurityQueryUserQuery::new(),
+  query~ : SecurityQueryUserQuery = SecurityQueryUserQuery::new(),
   body? : SecurityQueryUserBody,
 ) -> SecurityQueryUserRequest {
   { query, body, }
@@ -98600,7 +98603,7 @@ pub fn SecuritySamlAuthenticateBody::new(
 pub(all) struct SecuritySamlAuthenticateResponse {
   access_token : String
   username : String
-  expires_in : Int
+  expires_in : Int32
   refresh_token : String
   realm : String
   in_response_to : String?
@@ -98696,7 +98699,7 @@ pub extend SecuritySamlAuthenticateRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecuritySamlAuthenticateRequest::new(
   body : SecuritySamlAuthenticateBody,
-  query? : SecuritySamlAuthenticateQuery = SecuritySamlAuthenticateQuery::new(),
+  query~ : SecuritySamlAuthenticateQuery = SecuritySamlAuthenticateQuery::new(),
 ) -> SecuritySamlAuthenticateRequest {
   { query, body, }
 }
@@ -98872,7 +98875,7 @@ pub extend SecuritySamlCompleteLogoutRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecuritySamlCompleteLogoutRequest::new(
   body : SecuritySamlCompleteLogoutBody,
-  query? : SecuritySamlCompleteLogoutQuery = SecuritySamlCompleteLogoutQuery::new(),
+  query~ : SecuritySamlCompleteLogoutQuery = SecuritySamlCompleteLogoutQuery::new(),
 ) -> SecuritySamlCompleteLogoutRequest {
   { query, body, }
 }
@@ -99010,7 +99013,7 @@ pub fn SecuritySamlInvalidateBody::new(
 
 ///|
 pub(all) struct SecuritySamlInvalidateResponse {
-  invalidated : Int
+  invalidated : Int32
   realm : String
   redirect : String
 } derive(Eq, Debug)
@@ -99085,7 +99088,7 @@ pub extend SecuritySamlInvalidateRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecuritySamlInvalidateRequest::new(
   body : SecuritySamlInvalidateBody,
-  query? : SecuritySamlInvalidateQuery = SecuritySamlInvalidateQuery::new(),
+  query~ : SecuritySamlInvalidateQuery = SecuritySamlInvalidateQuery::new(),
 ) -> SecuritySamlInvalidateRequest {
   { query, body, }
 }
@@ -99269,7 +99272,7 @@ pub extend SecuritySamlLogoutRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecuritySamlLogoutRequest::new(
   body : SecuritySamlLogoutBody,
-  query? : SecuritySamlLogoutQuery = SecuritySamlLogoutQuery::new(),
+  query~ : SecuritySamlLogoutQuery = SecuritySamlLogoutQuery::new(),
 ) -> SecuritySamlLogoutRequest {
   { query, body, }
 }
@@ -99505,7 +99508,7 @@ pub extend SecuritySamlPrepareAuthenticationRequest with @json.FromJson::{
 ///|
 pub fn SecuritySamlPrepareAuthenticationRequest::new(
   body : SecuritySamlPrepareAuthenticationBody,
-  query? : SecuritySamlPrepareAuthenticationQuery = SecuritySamlPrepareAuthenticationQuery::new(),
+  query~ : SecuritySamlPrepareAuthenticationQuery = SecuritySamlPrepareAuthenticationQuery::new(),
 ) -> SecuritySamlPrepareAuthenticationRequest {
   { query, body, }
 }
@@ -99661,7 +99664,7 @@ pub extend SecuritySamlServiceProviderMetadataRequest with @json.FromJson::{
 ///|
 pub fn SecuritySamlServiceProviderMetadataRequest::new(
   realm_name : String,
-  query? : SecuritySamlServiceProviderMetadataQuery = SecuritySamlServiceProviderMetadataQuery::new(),
+  query~ : SecuritySamlServiceProviderMetadataQuery = SecuritySamlServiceProviderMetadataQuery::new(),
   body? : SecuritySamlServiceProviderMetadataBody,
 ) -> SecuritySamlServiceProviderMetadataRequest {
   { realm_name, query, body, }
@@ -99756,7 +99759,7 @@ pub fn SecuritySuggestUserProfilesQuery::to_pairs(
 ///|
 pub(all) struct SecuritySuggestUserProfilesBody {
   name : String?
-  size : Int?
+  size : Int32?
   data : Json?
   hint : Json?
 } derive(Eq, Debug)
@@ -99834,7 +99837,7 @@ pub extend SecuritySuggestUserProfilesBody with @json.FromJson::{from_json}
 ///|
 pub fn SecuritySuggestUserProfilesBody::new(
   name? : String,
-  size? : Int,
+  size? : Int32,
   data? : Json,
   hint? : Json,
 ) -> SecuritySuggestUserProfilesBody {
@@ -99844,7 +99847,7 @@ pub fn SecuritySuggestUserProfilesBody::new(
 ///|
 pub(all) struct SecuritySuggestUserProfilesResponse {
   total : Json
-  took : Int
+  took : Int32
   profiles : Array[Json]
 } derive(Eq, Debug)
 
@@ -99917,7 +99920,7 @@ pub extend SecuritySuggestUserProfilesRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SecuritySuggestUserProfilesRequest::new(
-  query? : SecuritySuggestUserProfilesQuery = SecuritySuggestUserProfilesQuery::new(),
+  query~ : SecuritySuggestUserProfilesQuery = SecuritySuggestUserProfilesQuery::new(),
   body? : SecuritySuggestUserProfilesBody,
 ) -> SecuritySuggestUserProfilesRequest {
   { query, body, }
@@ -100124,7 +100127,7 @@ pub extend SecurityUpdateApiKeyRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityUpdateApiKeyRequest::new(
   id : String,
-  query? : SecurityUpdateApiKeyQuery = SecurityUpdateApiKeyQuery::new(),
+  query~ : SecurityUpdateApiKeyQuery = SecurityUpdateApiKeyQuery::new(),
   body? : SecurityUpdateApiKeyBody,
 ) -> SecurityUpdateApiKeyRequest {
   { id, query, body, }
@@ -100359,7 +100362,7 @@ pub extend SecurityUpdateCrossClusterApiKeyRequest with @json.FromJson::{
 pub fn SecurityUpdateCrossClusterApiKeyRequest::new(
   id : String,
   body : SecurityUpdateCrossClusterApiKeyBody,
-  query? : SecurityUpdateCrossClusterApiKeyQuery = SecurityUpdateCrossClusterApiKeyQuery::new(),
+  query~ : SecurityUpdateCrossClusterApiKeyQuery = SecurityUpdateCrossClusterApiKeyQuery::new(),
 ) -> SecurityUpdateCrossClusterApiKeyRequest {
   { id, query, body, }
 }
@@ -100600,7 +100603,7 @@ pub extend SecurityUpdateSettingsRequest with @json.FromJson::{from_json}
 ///|
 pub fn SecurityUpdateSettingsRequest::new(
   body : SecurityUpdateSettingsBody,
-  query? : SecurityUpdateSettingsQuery = SecurityUpdateSettingsQuery::new(),
+  query~ : SecurityUpdateSettingsQuery = SecurityUpdateSettingsQuery::new(),
 ) -> SecurityUpdateSettingsRequest {
   { query, body, }
 }
@@ -100620,7 +100623,7 @@ pub async fn Client::security_update_settings(
 ///|
 pub(all) struct SecurityUpdateUserProfileDataQuery {
   if_seq_no : String?
-  if_primary_term : Int?
+  if_primary_term : Int32?
   refresh : String?
 } derive(Eq, Debug)
 
@@ -100690,7 +100693,7 @@ pub extend SecurityUpdateUserProfileDataQuery with @json.FromJson::{from_json}
 ///|
 pub fn SecurityUpdateUserProfileDataQuery::new(
   if_seq_no? : String,
-  if_primary_term? : Int,
+  if_primary_term? : Int32,
   refresh? : String,
 ) -> SecurityUpdateUserProfileDataQuery {
   { if_seq_no, if_primary_term, refresh, }
@@ -100809,7 +100812,7 @@ pub extend SecurityUpdateUserProfileDataRequest with @json.FromJson::{from_json}
 pub fn SecurityUpdateUserProfileDataRequest::new(
   uid : String,
   body : SecurityUpdateUserProfileDataBody,
-  query? : SecurityUpdateUserProfileDataQuery = SecurityUpdateUserProfileDataQuery::new(),
+  query~ : SecurityUpdateUserProfileDataQuery = SecurityUpdateUserProfileDataQuery::new(),
 ) -> SecurityUpdateUserProfileDataRequest {
   { uid, query, body, }
 }
@@ -100937,7 +100940,7 @@ pub extend ShutdownDeleteNodeRequest with @json.FromJson::{from_json}
 ///|
 pub fn ShutdownDeleteNodeRequest::new(
   node_id : String,
-  query? : ShutdownDeleteNodeQuery = ShutdownDeleteNodeQuery::new(),
+  query~ : ShutdownDeleteNodeQuery = ShutdownDeleteNodeQuery::new(),
   body? : ShutdownDeleteNodeBody,
 ) -> ShutdownDeleteNodeRequest {
   { node_id, query, body, }
@@ -101090,7 +101093,7 @@ pub extend ShutdownGetNodeRequest with @json.FromJson::{from_json}
 ///|
 pub fn ShutdownGetNodeRequest::new(
   node_id? : String,
-  query? : ShutdownGetNodeQuery = ShutdownGetNodeQuery::new(),
+  query~ : ShutdownGetNodeQuery = ShutdownGetNodeQuery::new(),
   body? : ShutdownGetNodeBody,
 ) -> ShutdownGetNodeRequest {
   { node_id, query, body, }
@@ -101303,7 +101306,7 @@ pub extend ShutdownPutNodeRequest with @json.FromJson::{from_json}
 pub fn ShutdownPutNodeRequest::new(
   node_id : String,
   body : ShutdownPutNodeBody,
-  query? : ShutdownPutNodeQuery = ShutdownPutNodeQuery::new(),
+  query~ : ShutdownPutNodeQuery = ShutdownPutNodeQuery::new(),
 ) -> ShutdownPutNodeRequest {
   { node_id, query, body, }
 }
@@ -101579,7 +101582,7 @@ pub extend SimulateIngestRequest with @json.FromJson::{from_json}
 pub fn SimulateIngestRequest::new(
   body : SimulateIngestBody,
   index? : String,
-  query? : SimulateIngestQuery = SimulateIngestQuery::new(),
+  query~ : SimulateIngestQuery = SimulateIngestQuery::new(),
 ) -> SimulateIngestRequest {
   { index, query, body, }
 }
@@ -101709,7 +101712,7 @@ pub extend SlmDeleteLifecycleRequest with @json.FromJson::{from_json}
 ///|
 pub fn SlmDeleteLifecycleRequest::new(
   policy_id : String,
-  query? : SlmDeleteLifecycleQuery = SlmDeleteLifecycleQuery::new(),
+  query~ : SlmDeleteLifecycleQuery = SlmDeleteLifecycleQuery::new(),
 ) -> SlmDeleteLifecycleRequest {
   { policy_id, query, }
 }
@@ -101870,7 +101873,7 @@ pub extend SlmExecuteLifecycleRequest with @json.FromJson::{from_json}
 ///|
 pub fn SlmExecuteLifecycleRequest::new(
   policy_id : String,
-  query? : SlmExecuteLifecycleQuery = SlmExecuteLifecycleQuery::new(),
+  query~ : SlmExecuteLifecycleQuery = SlmExecuteLifecycleQuery::new(),
 ) -> SlmExecuteLifecycleRequest {
   { policy_id, query, }
 }
@@ -101991,7 +101994,7 @@ pub extend SlmExecuteRetentionRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SlmExecuteRetentionRequest::new(
-  query? : SlmExecuteRetentionQuery = SlmExecuteRetentionQuery::new(),
+  query~ : SlmExecuteRetentionQuery = SlmExecuteRetentionQuery::new(),
 ) -> SlmExecuteRetentionRequest {
   { query, }
 }
@@ -102113,7 +102116,7 @@ pub extend SlmGetLifecycleRequest with @json.FromJson::{from_json}
 ///|
 pub fn SlmGetLifecycleRequest::new(
   policy_id? : String,
-  query? : SlmGetLifecycleQuery = SlmGetLifecycleQuery::new(),
+  query~ : SlmGetLifecycleQuery = SlmGetLifecycleQuery::new(),
 ) -> SlmGetLifecycleRequest {
   { policy_id, query, }
 }
@@ -102220,13 +102223,13 @@ pub fn SlmGetStatsQuery::to_pairs(
 pub(all) struct SlmGetStatsResponse {
   retention_deletion_time : Json
   retention_deletion_time_millis : Json
-  retention_failed : Int
-  retention_runs : Int
-  retention_timed_out : Int
-  total_snapshots_deleted : Int
-  total_snapshot_deletion_failures : Int
-  total_snapshots_failed : Int
-  total_snapshots_taken : Int
+  retention_failed : Int32
+  retention_runs : Int32
+  retention_timed_out : Int32
+  total_snapshots_deleted : Int32
+  total_snapshot_deletion_failures : Int32
+  total_snapshots_failed : Int32
+  total_snapshots_taken : Int32
   policy_stats : Array[Json]
 } derive(Eq, Debug)
 
@@ -102332,7 +102335,7 @@ pub extend SlmGetStatsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SlmGetStatsRequest::new(
-  query? : SlmGetStatsQuery = SlmGetStatsQuery::new(),
+  query~ : SlmGetStatsQuery = SlmGetStatsQuery::new(),
 ) -> SlmGetStatsRequest {
   { query, }
 }
@@ -102483,7 +102486,7 @@ pub extend SlmGetStatusRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SlmGetStatusRequest::new(
-  query? : SlmGetStatusQuery = SlmGetStatusQuery::new(),
+  query~ : SlmGetStatusQuery = SlmGetStatusQuery::new(),
 ) -> SlmGetStatusRequest {
   { query, }
 }
@@ -102700,7 +102703,7 @@ pub extend SlmPutLifecycleRequest with @json.FromJson::{from_json}
 pub fn SlmPutLifecycleRequest::new(
   policy_id : String,
   body : SlmPutLifecycleBody,
-  query? : SlmPutLifecycleQuery = SlmPutLifecycleQuery::new(),
+  query~ : SlmPutLifecycleQuery = SlmPutLifecycleQuery::new(),
 ) -> SlmPutLifecycleRequest {
   { policy_id, query, body, }
 }
@@ -102818,7 +102821,7 @@ pub extend SlmStartRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SlmStartRequest::new(
-  query? : SlmStartQuery = SlmStartQuery::new(),
+  query~ : SlmStartQuery = SlmStartQuery::new(),
 ) -> SlmStartRequest {
   { query, }
 }
@@ -102931,7 +102934,7 @@ pub extend SlmStopRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SlmStopRequest::new(
-  query? : SlmStopQuery = SlmStopQuery::new(),
+  query~ : SlmStopQuery = SlmStopQuery::new(),
 ) -> SlmStopRequest {
   { query, }
 }
@@ -103096,7 +103099,7 @@ pub extend SnapshotCleanupRepositoryRequest with @json.FromJson::{from_json}
 ///|
 pub fn SnapshotCleanupRepositoryRequest::new(
   repository : String,
-  query? : SnapshotCleanupRepositoryQuery = SnapshotCleanupRepositoryQuery::new(),
+  query~ : SnapshotCleanupRepositoryQuery = SnapshotCleanupRepositoryQuery::new(),
 ) -> SnapshotCleanupRepositoryRequest {
   { repository, query, }
 }
@@ -103250,7 +103253,7 @@ pub fn SnapshotCloneRequest::new(
   snapshot : String,
   target_snapshot : String,
   body : SnapshotCloneBody,
-  query? : SnapshotCloneQuery = SnapshotCloneQuery::new(),
+  query~ : SnapshotCloneQuery = SnapshotCloneQuery::new(),
 ) -> SnapshotCloneRequest {
   { repository, snapshot, target_snapshot, query, body, }
 }
@@ -103564,7 +103567,7 @@ pub extend SnapshotCreateRequest with @json.FromJson::{from_json}
 pub fn SnapshotCreateRequest::new(
   repository : String,
   snapshot : String,
-  query? : SnapshotCreateQuery = SnapshotCreateQuery::new(),
+  query~ : SnapshotCreateQuery = SnapshotCreateQuery::new(),
   body? : SnapshotCreateBody,
 ) -> SnapshotCreateRequest {
   { repository, snapshot, query, body, }
@@ -103722,7 +103725,7 @@ pub extend SnapshotCreateRepositoryRequest with @json.FromJson::{from_json}
 pub fn SnapshotCreateRepositoryRequest::new(
   repository : String,
   body : SnapshotCreateRepositoryBody,
-  query? : SnapshotCreateRepositoryQuery = SnapshotCreateRepositoryQuery::new(),
+  query~ : SnapshotCreateRepositoryQuery = SnapshotCreateRepositoryQuery::new(),
 ) -> SnapshotCreateRepositoryRequest {
   { repository, query, body, }
 }
@@ -103850,7 +103853,7 @@ pub extend SnapshotDeleteRequest with @json.FromJson::{from_json}
 pub fn SnapshotDeleteRequest::new(
   repository : String,
   snapshot : String,
-  query? : SnapshotDeleteQuery = SnapshotDeleteQuery::new(),
+  query~ : SnapshotDeleteQuery = SnapshotDeleteQuery::new(),
 ) -> SnapshotDeleteRequest {
   { repository, snapshot, query, }
 }
@@ -103983,7 +103986,7 @@ pub extend SnapshotDeleteRepositoryRequest with @json.FromJson::{from_json}
 ///|
 pub fn SnapshotDeleteRepositoryRequest::new(
   repository : String,
-  query? : SnapshotDeleteRepositoryQuery = SnapshotDeleteRepositoryQuery::new(),
+  query~ : SnapshotDeleteRepositoryQuery = SnapshotDeleteRepositoryQuery::new(),
 ) -> SnapshotDeleteRepositoryRequest {
   { repository, query, }
 }
@@ -104013,8 +104016,8 @@ pub(all) struct SnapshotGetQuery {
   include_repository : Bool?
   master_timeout : String?
   order : String?
-  offset : Int?
-  size : Int?
+  offset : Int32?
+  size : Int32?
   slm_policy_filter : String?
   sort : String?
   state : Json?
@@ -104191,8 +104194,8 @@ pub fn SnapshotGetQuery::new(
   include_repository? : Bool,
   master_timeout? : String,
   order? : String,
-  offset? : Int,
-  size? : Int,
+  offset? : Int32,
+  size? : Int32,
   slm_policy_filter? : String,
   sort? : String,
   state? : Json,
@@ -104287,8 +104290,8 @@ pub fn SnapshotGetQuery::to_pairs(
 
 ///|
 pub(all) struct SnapshotGetResponse {
-  remaining : Int
-  total : Int
+  remaining : Int32
+  total : Int32
   next : String?
   responses : Array[Json]?
   snapshots : Array[Json]?
@@ -104385,7 +104388,7 @@ pub extend SnapshotGetRequest with @json.FromJson::{from_json}
 pub fn SnapshotGetRequest::new(
   repository : String,
   snapshot : String,
-  query? : SnapshotGetQuery = SnapshotGetQuery::new(),
+  query~ : SnapshotGetQuery = SnapshotGetQuery::new(),
 ) -> SnapshotGetRequest {
   { repository, snapshot, query, }
 }
@@ -104513,7 +104516,7 @@ pub extend SnapshotGetRepositoryRequest with @json.FromJson::{from_json}
 ///|
 pub fn SnapshotGetRepositoryRequest::new(
   repository? : String,
-  query? : SnapshotGetRepositoryQuery = SnapshotGetRepositoryQuery::new(),
+  query~ : SnapshotGetRepositoryQuery = SnapshotGetRepositoryQuery::new(),
 ) -> SnapshotGetRepositoryRequest {
   { repository, query, }
 }
@@ -104541,18 +104544,18 @@ pub async fn Client::snapshot_get_repository(
 
 ///|
 pub(all) struct SnapshotRepositoryAnalyzeQuery {
-  blob_count : Int?
+  blob_count : Int32?
   check_overwrite_protection : Bool?
-  concurrency : Int?
+  concurrency : Int32?
   detailed : Bool?
-  early_read_node_count : Int?
+  early_read_node_count : Int32?
   max_blob_size : String?
   max_total_data_size : String?
   rare_action_probability : Double?
   rarely_abort_writes : Bool?
-  read_node_count : Int?
-  register_operation_count : Int?
-  seed : Int?
+  read_node_count : Int32?
+  register_operation_count : Int32?
+  seed : Int32?
   timeout : String?
 } derive(Eq, Debug)
 
@@ -104728,18 +104731,18 @@ pub extend SnapshotRepositoryAnalyzeQuery with @json.FromJson::{from_json}
 
 ///|
 pub fn SnapshotRepositoryAnalyzeQuery::new(
-  blob_count? : Int,
+  blob_count? : Int32,
   check_overwrite_protection? : Bool,
-  concurrency? : Int,
+  concurrency? : Int32,
   detailed? : Bool,
-  early_read_node_count? : Int,
+  early_read_node_count? : Int32,
   max_blob_size? : String,
   max_total_data_size? : String,
   rare_action_probability? : Double,
   rarely_abort_writes? : Bool,
-  read_node_count? : Int,
-  register_operation_count? : Int,
-  seed? : Int,
+  read_node_count? : Int32,
+  register_operation_count? : Int32,
+  seed? : Int32,
   timeout? : String,
 ) -> SnapshotRepositoryAnalyzeQuery {
   {
@@ -104828,25 +104831,25 @@ pub fn SnapshotRepositoryAnalyzeQuery::to_pairs(
 
 ///|
 pub(all) struct SnapshotRepositoryAnalyzeResponse {
-  blob_count : Int
+  blob_count : Int32
   blob_path : String
-  concurrency : Int
+  concurrency : Int32
   coordinating_node : Json
   delete_elapsed : Json
   delete_elapsed_nanos : Json
   details : Json
-  early_read_node_count : Int
+  early_read_node_count : Int32
   issues_detected : Array[String]
   listing_elapsed : Json
   listing_elapsed_nanos : Json
   max_blob_size : Json
-  max_blob_size_bytes : Int
+  max_blob_size_bytes : Int32
   max_total_data_size : Json
-  max_total_data_size_bytes : Int
+  max_total_data_size_bytes : Int32
   rare_action_probability : Double
-  read_node_count : Int
+  read_node_count : Int32
   repository : String
-  seed : Int
+  seed : Int32
   summary : Json
 } derive(Eq, Debug)
 
@@ -105007,7 +105010,7 @@ pub extend SnapshotRepositoryAnalyzeRequest with @json.FromJson::{from_json}
 ///|
 pub fn SnapshotRepositoryAnalyzeRequest::new(
   repository : String,
-  query? : SnapshotRepositoryAnalyzeQuery = SnapshotRepositoryAnalyzeQuery::new(),
+  query~ : SnapshotRepositoryAnalyzeQuery = SnapshotRepositoryAnalyzeQuery::new(),
 ) -> SnapshotRepositoryAnalyzeRequest {
   { repository, query, }
 }
@@ -105029,13 +105032,13 @@ pub async fn Client::snapshot_repository_analyze(
 
 ///|
 pub(all) struct SnapshotRepositoryVerifyIntegrityQuery {
-  blob_thread_pool_concurrency : Int?
-  index_snapshot_verification_concurrency : Int?
-  index_verification_concurrency : Int?
+  blob_thread_pool_concurrency : Int32?
+  index_snapshot_verification_concurrency : Int32?
+  index_verification_concurrency : Int32?
   max_bytes_per_sec : String?
-  max_failed_shard_snapshots : Int?
-  meta_thread_pool_concurrency : Int?
-  snapshot_verification_concurrency : Int?
+  max_failed_shard_snapshots : Int32?
+  meta_thread_pool_concurrency : Int32?
+  snapshot_verification_concurrency : Int32?
   verify_blob_contents : Bool?
 } derive(Eq, Debug)
 
@@ -105194,13 +105197,13 @@ pub extend SnapshotRepositoryVerifyIntegrityQuery with @json.FromJson::{
 
 ///|
 pub fn SnapshotRepositoryVerifyIntegrityQuery::new(
-  blob_thread_pool_concurrency? : Int,
-  index_snapshot_verification_concurrency? : Int,
-  index_verification_concurrency? : Int,
+  blob_thread_pool_concurrency? : Int32,
+  index_snapshot_verification_concurrency? : Int32,
+  index_verification_concurrency? : Int32,
   max_bytes_per_sec? : String,
-  max_failed_shard_snapshots? : Int,
-  meta_thread_pool_concurrency? : Int,
-  snapshot_verification_concurrency? : Int,
+  max_failed_shard_snapshots? : Int32,
+  meta_thread_pool_concurrency? : Int32,
+  snapshot_verification_concurrency? : Int32,
   verify_blob_contents? : Bool,
 ) -> SnapshotRepositoryVerifyIntegrityQuery {
   {
@@ -105309,7 +105312,7 @@ pub extend SnapshotRepositoryVerifyIntegrityRequest with @json.FromJson::{
 ///|
 pub fn SnapshotRepositoryVerifyIntegrityRequest::new(
   repository : String,
-  query? : SnapshotRepositoryVerifyIntegrityQuery = SnapshotRepositoryVerifyIntegrityQuery::new(),
+  query~ : SnapshotRepositoryVerifyIntegrityQuery = SnapshotRepositoryVerifyIntegrityQuery::new(),
 ) -> SnapshotRepositoryVerifyIntegrityRequest {
   { repository, query, }
 }
@@ -105659,7 +105662,7 @@ pub extend SnapshotRestoreRequest with @json.FromJson::{from_json}
 pub fn SnapshotRestoreRequest::new(
   repository : String,
   snapshot : String,
-  query? : SnapshotRestoreQuery = SnapshotRestoreQuery::new(),
+  query~ : SnapshotRestoreQuery = SnapshotRestoreQuery::new(),
   body? : SnapshotRestoreBody,
 ) -> SnapshotRestoreRequest {
   { repository, snapshot, query, body, }
@@ -105832,7 +105835,7 @@ pub extend SnapshotStatusRequest with @json.FromJson::{from_json}
 pub fn SnapshotStatusRequest::new(
   repository? : String,
   snapshot? : String,
-  query? : SnapshotStatusQuery = SnapshotStatusQuery::new(),
+  query~ : SnapshotStatusQuery = SnapshotStatusQuery::new(),
 ) -> SnapshotStatusRequest {
   { repository, snapshot, query, }
 }
@@ -106014,7 +106017,7 @@ pub extend SnapshotVerifyRepositoryRequest with @json.FromJson::{from_json}
 ///|
 pub fn SnapshotVerifyRepositoryRequest::new(
   repository : String,
-  query? : SnapshotVerifyRepositoryQuery = SnapshotVerifyRepositoryQuery::new(),
+  query~ : SnapshotVerifyRepositoryQuery = SnapshotVerifyRepositoryQuery::new(),
 ) -> SnapshotVerifyRepositoryRequest {
   { repository, query, }
 }
@@ -106184,7 +106187,7 @@ pub extend SqlClearCursorRequest with @json.FromJson::{from_json}
 ///|
 pub fn SqlClearCursorRequest::new(
   body : SqlClearCursorBody,
-  query? : SqlClearCursorQuery = SqlClearCursorQuery::new(),
+  query~ : SqlClearCursorQuery = SqlClearCursorQuery::new(),
 ) -> SqlClearCursorRequest {
   { query, body, }
 }
@@ -106271,7 +106274,7 @@ pub extend SqlDeleteAsyncRequest with @json.FromJson::{from_json}
 ///|
 pub fn SqlDeleteAsyncRequest::new(
   id : String,
-  query? : SqlDeleteAsyncQuery = SqlDeleteAsyncQuery::new(),
+  query~ : SqlDeleteAsyncQuery = SqlDeleteAsyncQuery::new(),
 ) -> SqlDeleteAsyncRequest {
   { id, query, }
 }
@@ -106507,7 +106510,7 @@ pub extend SqlGetAsyncRequest with @json.FromJson::{from_json}
 ///|
 pub fn SqlGetAsyncRequest::new(
   id : String,
-  query? : SqlGetAsyncQuery = SqlGetAsyncQuery::new(),
+  query~ : SqlGetAsyncQuery = SqlGetAsyncQuery::new(),
 ) -> SqlGetAsyncRequest {
   { id, query, }
 }
@@ -106667,7 +106670,7 @@ pub extend SqlGetAsyncStatusRequest with @json.FromJson::{from_json}
 ///|
 pub fn SqlGetAsyncStatusRequest::new(
   id : String,
-  query? : SqlGetAsyncStatusQuery = SqlGetAsyncStatusQuery::new(),
+  query~ : SqlGetAsyncStatusQuery = SqlGetAsyncStatusQuery::new(),
 ) -> SqlGetAsyncStatusRequest {
   { id, query, }
 }
@@ -106749,7 +106752,7 @@ pub(all) struct SqlQueryBody {
   catalog : String?
   columnar : Bool?
   cursor : String?
-  fetch_size : Int?
+  fetch_size : Int32?
   field_multi_value_leniency : Bool?
   filter : Json?
   index_using_frozen : Bool?
@@ -106988,7 +106991,7 @@ pub fn SqlQueryBody::new(
   catalog? : String,
   columnar? : Bool,
   cursor? : String,
-  fetch_size? : Int,
+  fetch_size? : Int32,
   field_multi_value_leniency? : Bool,
   filter? : Json,
   index_using_frozen? : Bool,
@@ -107135,7 +107138,7 @@ pub extend SqlQueryRequest with @json.FromJson::{from_json}
 ///|
 pub fn SqlQueryRequest::new(
   body : SqlQueryBody,
-  query? : SqlQueryQuery = SqlQueryQuery::new(),
+  query~ : SqlQueryQuery = SqlQueryQuery::new(),
 ) -> SqlQueryRequest {
   { query, body, }
 }
@@ -107198,7 +107201,7 @@ pub fn SqlTranslateQuery::to_pairs(
 
 ///|
 pub(all) struct SqlTranslateBody {
-  fetch_size : Int?
+  fetch_size : Int32?
   filter : Json?
   query : String
   time_zone : Json?
@@ -107268,7 +107271,7 @@ pub extend SqlTranslateBody with @json.FromJson::{from_json}
 ///|
 pub fn SqlTranslateBody::new(
   query : String,
-  fetch_size? : Int,
+  fetch_size? : Int32,
   filter? : Json,
   time_zone? : Json,
 ) -> SqlTranslateBody {
@@ -107278,7 +107281,7 @@ pub fn SqlTranslateBody::new(
 ///|
 pub(all) struct SqlTranslateResponse {
   aggregations : Map[String, Json]?
-  size : Int?
+  size : Int32?
   _source : Json?
   fields : Array[Json]?
   query : Json?
@@ -107401,7 +107404,7 @@ pub extend SqlTranslateRequest with @json.FromJson::{from_json}
 ///|
 pub fn SqlTranslateRequest::new(
   body : SqlTranslateBody,
-  query? : SqlTranslateQuery = SqlTranslateQuery::new(),
+  query~ : SqlTranslateQuery = SqlTranslateQuery::new(),
 ) -> SqlTranslateRequest {
   { query, body, }
 }
@@ -107486,7 +107489,7 @@ pub extend SslCertificatesRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SslCertificatesRequest::new(
-  query? : SslCertificatesQuery = SslCertificatesQuery::new(),
+  query~ : SslCertificatesQuery = SslCertificatesQuery::new(),
 ) -> SslCertificatesRequest {
   { query, }
 }
@@ -107605,7 +107608,7 @@ pub extend StreamsLogsDisableRequest with @json.FromJson::{from_json}
 ///|
 pub fn StreamsLogsDisableRequest::new(
   name : String,
-  query? : StreamsLogsDisableQuery = StreamsLogsDisableQuery::new(),
+  query~ : StreamsLogsDisableQuery = StreamsLogsDisableQuery::new(),
 ) -> StreamsLogsDisableRequest {
   { name, query, }
 }
@@ -107728,7 +107731,7 @@ pub extend StreamsLogsEnableRequest with @json.FromJson::{from_json}
 ///|
 pub fn StreamsLogsEnableRequest::new(
   name : String,
-  query? : StreamsLogsEnableQuery = StreamsLogsEnableQuery::new(),
+  query~ : StreamsLogsEnableQuery = StreamsLogsEnableQuery::new(),
 ) -> StreamsLogsEnableRequest {
   { name, query, }
 }
@@ -107880,7 +107883,7 @@ pub extend StreamsStatusRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn StreamsStatusRequest::new(
-  query? : StreamsStatusQuery = StreamsStatusQuery::new(),
+  query~ : StreamsStatusQuery = StreamsStatusQuery::new(),
 ) -> StreamsStatusRequest {
   { query, }
 }
@@ -107966,7 +107969,7 @@ pub extend SynonymsDeleteSynonymRequest with @json.FromJson::{from_json}
 ///|
 pub fn SynonymsDeleteSynonymRequest::new(
   id : String,
-  query? : SynonymsDeleteSynonymQuery = SynonymsDeleteSynonymQuery::new(),
+  query~ : SynonymsDeleteSynonymQuery = SynonymsDeleteSynonymQuery::new(),
 ) -> SynonymsDeleteSynonymRequest {
   { id, query, }
 }
@@ -108080,7 +108083,7 @@ pub extend SynonymsDeleteSynonymRuleRequest with @json.FromJson::{from_json}
 pub fn SynonymsDeleteSynonymRuleRequest::new(
   set_id : String,
   rule_id : String,
-  query? : SynonymsDeleteSynonymRuleQuery = SynonymsDeleteSynonymRuleQuery::new(),
+  query~ : SynonymsDeleteSynonymRuleQuery = SynonymsDeleteSynonymRuleQuery::new(),
   body? : SynonymsDeleteSynonymRuleBody,
 ) -> SynonymsDeleteSynonymRuleRequest {
   { set_id, rule_id, query, body, }
@@ -108108,8 +108111,8 @@ pub async fn Client::synonyms_delete_synonym_rule(
 
 ///|
 pub(all) struct SynonymsGetSynonymQuery {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -108161,8 +108164,8 @@ pub extend SynonymsGetSynonymQuery with @json.FromJson::{from_json}
 
 ///|
 pub fn SynonymsGetSynonymQuery::new(
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
 ) -> SynonymsGetSynonymQuery {
   { from, size, }
 }
@@ -108185,7 +108188,7 @@ pub fn SynonymsGetSynonymQuery::to_pairs(
 
 ///|
 pub(all) struct SynonymsGetSynonymResponse {
-  count : Int
+  count : Int32
   synonyms_set : Array[Json]
 } derive(Eq, Debug)
 
@@ -108249,7 +108252,7 @@ pub extend SynonymsGetSynonymRequest with @json.FromJson::{from_json}
 ///|
 pub fn SynonymsGetSynonymRequest::new(
   id : String,
-  query? : SynonymsGetSynonymQuery = SynonymsGetSynonymQuery::new(),
+  query~ : SynonymsGetSynonymQuery = SynonymsGetSynonymQuery::new(),
 ) -> SynonymsGetSynonymRequest {
   { id, query, }
 }
@@ -108344,7 +108347,7 @@ pub extend SynonymsGetSynonymRuleRequest with @json.FromJson::{from_json}
 pub fn SynonymsGetSynonymRuleRequest::new(
   set_id : String,
   rule_id : String,
-  query? : SynonymsGetSynonymRuleQuery = SynonymsGetSynonymRuleQuery::new(),
+  query~ : SynonymsGetSynonymRuleQuery = SynonymsGetSynonymRuleQuery::new(),
   body? : SynonymsGetSynonymRuleBody,
 ) -> SynonymsGetSynonymRuleRequest {
   { set_id, rule_id, query, body, }
@@ -108372,8 +108375,8 @@ pub async fn Client::synonyms_get_synonym_rule(
 
 ///|
 pub(all) struct SynonymsGetSynonymsSetsQuery {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -108427,8 +108430,8 @@ pub extend SynonymsGetSynonymsSetsQuery with @json.FromJson::{from_json}
 
 ///|
 pub fn SynonymsGetSynonymsSetsQuery::new(
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
 ) -> SynonymsGetSynonymsSetsQuery {
   { from, size, }
 }
@@ -108451,7 +108454,7 @@ pub fn SynonymsGetSynonymsSetsQuery::to_pairs(
 
 ///|
 pub(all) struct SynonymsGetSynonymsSetsResponse {
-  count : Int
+  count : Int32
   results : Array[Json]
 } derive(Eq, Debug)
 
@@ -108518,7 +108521,7 @@ pub extend SynonymsGetSynonymsSetsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn SynonymsGetSynonymsSetsRequest::new(
-  query? : SynonymsGetSynonymsSetsQuery = SynonymsGetSynonymsSetsQuery::new(),
+  query~ : SynonymsGetSynonymsSetsQuery = SynonymsGetSynonymsSetsQuery::new(),
 ) -> SynonymsGetSynonymsSetsRequest {
   { query, }
 }
@@ -108715,7 +108718,7 @@ pub extend SynonymsPutSynonymRequest with @json.FromJson::{from_json}
 pub fn SynonymsPutSynonymRequest::new(
   id : String,
   body : SynonymsPutSynonymBody,
-  query? : SynonymsPutSynonymQuery = SynonymsPutSynonymQuery::new(),
+  query~ : SynonymsPutSynonymQuery = SynonymsPutSynonymQuery::new(),
 ) -> SynonymsPutSynonymRequest {
   { id, query, body, }
 }
@@ -108871,7 +108874,7 @@ pub fn SynonymsPutSynonymRuleRequest::new(
   set_id : String,
   rule_id : String,
   body : SynonymsPutSynonymRuleBody,
-  query? : SynonymsPutSynonymRuleQuery = SynonymsPutSynonymRuleQuery::new(),
+  query~ : SynonymsPutSynonymRuleQuery = SynonymsPutSynonymRuleQuery::new(),
 ) -> SynonymsPutSynonymRuleRequest {
   { set_id, rule_id, query, body, }
 }
@@ -109026,7 +109029,7 @@ pub extend TasksCancelRequest with @json.FromJson::{from_json}
 ///|
 pub fn TasksCancelRequest::new(
   task_id? : String,
-  query? : TasksCancelQuery = TasksCancelQuery::new(),
+  query~ : TasksCancelQuery = TasksCancelQuery::new(),
 ) -> TasksCancelRequest {
   { task_id, query, }
 }
@@ -109228,7 +109231,7 @@ pub extend TasksGetRequest with @json.FromJson::{from_json}
 ///|
 pub fn TasksGetRequest::new(
   task_id : String,
-  query? : TasksGetQuery = TasksGetQuery::new(),
+  query~ : TasksGetQuery = TasksGetQuery::new(),
 ) -> TasksGetRequest {
   { task_id, query, }
 }
@@ -109432,7 +109435,7 @@ pub extend TasksListRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn TasksListRequest::new(
-  query? : TasksListQuery = TasksListQuery::new(),
+  query~ : TasksListQuery = TasksListQuery::new(),
 ) -> TasksListRequest {
   { query, }
 }
@@ -109495,7 +109498,7 @@ pub fn TermsEnumQuery::to_pairs(
 ///|
 pub(all) struct TermsEnumBody {
   field : Json
-  size : Int?
+  size : Int32?
   timeout : Json?
   case_insensitive : Bool?
   index_filter : Json?
@@ -109595,7 +109598,7 @@ pub extend TermsEnumBody with @json.FromJson::{from_json}
 ///|
 pub fn TermsEnumBody::new(
   field : Json,
-  size? : Int,
+  size? : Int32,
   timeout? : Json,
   case_insensitive? : Bool,
   index_filter? : Json,
@@ -109685,7 +109688,7 @@ pub extend TermsEnumRequest with @json.FromJson::{from_json}
 pub fn TermsEnumRequest::new(
   index : String,
   body : TermsEnumBody,
-  query? : TermsEnumQuery = TermsEnumQuery::new(),
+  query~ : TermsEnumQuery = TermsEnumQuery::new(),
 ) -> TermsEnumRequest {
   { index, query, body, }
 }
@@ -110128,7 +110131,7 @@ pub(all) struct TermvectorsResponse {
   _id : Json?
   _index : Json
   term_vectors : Map[String, Json]?
-  took : Int
+  took : Int32
   _version : Json
 } derive(Eq, Debug)
 
@@ -110224,7 +110227,7 @@ pub extend TermvectorsRequest with @json.FromJson::{from_json}
 pub fn TermvectorsRequest::new(
   index : String,
   id? : String,
-  query? : TermvectorsQuery = TermvectorsQuery::new(),
+  query~ : TermvectorsQuery = TermvectorsQuery::new(),
   body? : TermvectorsBody,
 ) -> TermvectorsRequest {
   { index, id, query, body, }
@@ -110565,8 +110568,8 @@ pub(all) struct TextStructureFindFieldStructureResponse {
   mappings : Json
   multiline_start_pattern : String?
   need_client_timezone : Bool
-  num_lines_analyzed : Int
-  num_messages_analyzed : Int
+  num_lines_analyzed : Int32
+  num_messages_analyzed : Int32
   sample_start : String
   timestamp_field : Json?
 } derive(Eq, Debug)
@@ -111086,8 +111089,8 @@ pub(all) struct TextStructureFindMessageStructureResponse {
   mappings : Json
   multiline_start_pattern : String?
   need_client_timezone : Bool
-  num_lines_analyzed : Int
-  num_messages_analyzed : Int
+  num_lines_analyzed : Int32
+  num_messages_analyzed : Int32
   sample_start : String
   timestamp_field : Json?
 } derive(Eq, Debug)
@@ -111264,7 +111267,7 @@ pub extend TextStructureFindMessageStructureRequest with @json.FromJson::{
 ///|
 pub fn TextStructureFindMessageStructureRequest::new(
   body : TextStructureFindMessageStructureBody,
-  query? : TextStructureFindMessageStructureQuery = TextStructureFindMessageStructureQuery::new(),
+  query~ : TextStructureFindMessageStructureQuery = TextStructureFindMessageStructureQuery::new(),
 ) -> TextStructureFindMessageStructureRequest {
   { query, body, }
 }
@@ -111625,12 +111628,12 @@ pub(all) struct TextStructureFindStructureResponse {
   format : String
   field_stats : Map[String, Json]
   sample_start : String
-  num_messages_analyzed : Int
+  num_messages_analyzed : Int32
   mappings : Json
   quote : String?
   delimiter : String?
   need_client_timezone : Bool
-  num_lines_analyzed : Int
+  num_lines_analyzed : Int32
   column_names : Array[String]?
   explanation : Array[String]?
   grok_pattern : Json?
@@ -111873,7 +111876,7 @@ pub extend TextStructureFindStructureRequest with @json.FromJson::{from_json}
 ///|
 pub fn TextStructureFindStructureRequest::new(
   body : TextStructureFindStructureBody,
-  query? : TextStructureFindStructureQuery = TextStructureFindStructureQuery::new(),
+  query~ : TextStructureFindStructureQuery = TextStructureFindStructureQuery::new(),
 ) -> TextStructureFindStructureRequest {
   { query, body, }
 }
@@ -112085,7 +112088,7 @@ pub extend TextStructureTestGrokPatternRequest with @json.FromJson::{from_json}
 ///|
 pub fn TextStructureTestGrokPatternRequest::new(
   body : TextStructureTestGrokPatternBody,
-  query? : TextStructureTestGrokPatternQuery = TextStructureTestGrokPatternQuery::new(),
+  query~ : TextStructureTestGrokPatternQuery = TextStructureTestGrokPatternQuery::new(),
 ) -> TextStructureTestGrokPatternRequest {
   { query, body, }
 }
@@ -112228,7 +112231,7 @@ pub extend TransformDeleteTransformRequest with @json.FromJson::{from_json}
 ///|
 pub fn TransformDeleteTransformRequest::new(
   transform_id : String,
-  query? : TransformDeleteTransformQuery = TransformDeleteTransformQuery::new(),
+  query~ : TransformDeleteTransformQuery = TransformDeleteTransformQuery::new(),
 ) -> TransformDeleteTransformRequest {
   { transform_id, query, }
 }
@@ -112316,7 +112319,7 @@ pub extend TransformGetNodeStatsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn TransformGetNodeStatsRequest::new(
-  query? : TransformGetNodeStatsQuery = TransformGetNodeStatsQuery::new(),
+  query~ : TransformGetNodeStatsQuery = TransformGetNodeStatsQuery::new(),
 ) -> TransformGetNodeStatsRequest {
   { query, }
 }
@@ -112338,8 +112341,8 @@ pub async fn Client::transform_get_node_stats(
 ///|
 pub(all) struct TransformGetTransformQuery {
   allow_no_match : Bool?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   exclude_generated : Bool?
 } derive(Eq, Debug)
 
@@ -112413,8 +112416,8 @@ pub extend TransformGetTransformQuery with @json.FromJson::{from_json}
 ///|
 pub fn TransformGetTransformQuery::new(
   allow_no_match? : Bool,
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
   exclude_generated? : Bool,
 ) -> TransformGetTransformQuery {
   { allow_no_match, from, size, exclude_generated, }
@@ -112448,7 +112451,7 @@ pub fn TransformGetTransformQuery::to_pairs(
 
 ///|
 pub(all) struct TransformGetTransformResponse {
-  count : Int
+  count : Int32
   transforms : Array[Json]
 } derive(Eq, Debug)
 
@@ -112517,7 +112520,7 @@ pub extend TransformGetTransformRequest with @json.FromJson::{from_json}
 ///|
 pub fn TransformGetTransformRequest::new(
   transform_id? : String,
-  query? : TransformGetTransformQuery = TransformGetTransformQuery::new(),
+  query~ : TransformGetTransformQuery = TransformGetTransformQuery::new(),
 ) -> TransformGetTransformRequest {
   { transform_id, query, }
 }
@@ -112546,8 +112549,8 @@ pub async fn Client::transform_get_transform(
 ///|
 pub(all) struct TransformGetTransformStatsQuery {
   allow_no_match : Bool?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   timeout : String?
 } derive(Eq, Debug)
 
@@ -112625,8 +112628,8 @@ pub extend TransformGetTransformStatsQuery with @json.FromJson::{from_json}
 ///|
 pub fn TransformGetTransformStatsQuery::new(
   allow_no_match? : Bool,
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
   timeout? : String,
 ) -> TransformGetTransformStatsQuery {
   { allow_no_match, from, size, timeout, }
@@ -112659,7 +112662,7 @@ pub fn TransformGetTransformStatsQuery::to_pairs(
 
 ///|
 pub(all) struct TransformGetTransformStatsResponse {
-  count : Int
+  count : Int32
   transforms : Array[Json]
 } derive(Eq, Debug)
 
@@ -112728,7 +112731,7 @@ pub extend TransformGetTransformStatsRequest with @json.FromJson::{from_json}
 ///|
 pub fn TransformGetTransformStatsRequest::new(
   transform_id : String,
-  query? : TransformGetTransformStatsQuery = TransformGetTransformStatsQuery::new(),
+  query~ : TransformGetTransformStatsQuery = TransformGetTransformStatsQuery::new(),
 ) -> TransformGetTransformStatsRequest {
   { transform_id, query, }
 }
@@ -113043,7 +113046,7 @@ pub extend TransformPreviewTransformRequest with @json.FromJson::{from_json}
 ///|
 pub fn TransformPreviewTransformRequest::new(
   transform_id? : String,
-  query? : TransformPreviewTransformQuery = TransformPreviewTransformQuery::new(),
+  query~ : TransformPreviewTransformQuery = TransformPreviewTransformQuery::new(),
   body? : TransformPreviewTransformBody,
 ) -> TransformPreviewTransformRequest {
   { transform_id, query, body, }
@@ -113334,7 +113337,7 @@ pub extend TransformPutTransformRequest with @json.FromJson::{from_json}
 pub fn TransformPutTransformRequest::new(
   transform_id : String,
   body : TransformPutTransformBody,
-  query? : TransformPutTransformQuery = TransformPutTransformQuery::new(),
+  query~ : TransformPutTransformQuery = TransformPutTransformQuery::new(),
 ) -> TransformPutTransformRequest {
   { transform_id, query, body, }
 }
@@ -113458,7 +113461,7 @@ pub extend TransformResetTransformRequest with @json.FromJson::{from_json}
 ///|
 pub fn TransformResetTransformRequest::new(
   transform_id : String,
-  query? : TransformResetTransformQuery = TransformResetTransformQuery::new(),
+  query~ : TransformResetTransformQuery = TransformResetTransformQuery::new(),
 ) -> TransformResetTransformRequest {
   { transform_id, query, }
 }
@@ -113588,7 +113591,7 @@ pub extend TransformScheduleNowTransformRequest with @json.FromJson::{from_json}
 ///|
 pub fn TransformScheduleNowTransformRequest::new(
   transform_id : String,
-  query? : TransformScheduleNowTransformQuery = TransformScheduleNowTransformQuery::new(),
+  query~ : TransformScheduleNowTransformQuery = TransformScheduleNowTransformQuery::new(),
   body? : TransformScheduleNowTransformBody,
 ) -> TransformScheduleNowTransformRequest {
   { transform_id, query, body, }
@@ -113718,7 +113721,7 @@ pub extend TransformSetUpgradeModeRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn TransformSetUpgradeModeRequest::new(
-  query? : TransformSetUpgradeModeQuery = TransformSetUpgradeModeQuery::new(),
+  query~ : TransformSetUpgradeModeQuery = TransformSetUpgradeModeQuery::new(),
 ) -> TransformSetUpgradeModeRequest {
   { query, }
 }
@@ -113840,7 +113843,7 @@ pub extend TransformStartTransformRequest with @json.FromJson::{from_json}
 ///|
 pub fn TransformStartTransformRequest::new(
   transform_id : String,
-  query? : TransformStartTransformQuery = TransformStartTransformQuery::new(),
+  query~ : TransformStartTransformQuery = TransformStartTransformQuery::new(),
 ) -> TransformStartTransformRequest {
   { transform_id, query, }
 }
@@ -114014,7 +114017,7 @@ pub extend TransformStopTransformRequest with @json.FromJson::{from_json}
 ///|
 pub fn TransformStopTransformRequest::new(
   transform_id : String,
-  query? : TransformStopTransformQuery = TransformStopTransformQuery::new(),
+  query~ : TransformStopTransformQuery = TransformStopTransformQuery::new(),
 ) -> TransformStopTransformRequest {
   { transform_id, query, }
 }
@@ -114262,7 +114265,7 @@ pub fn TransformUpdateTransformBody::new(
 ///|
 pub(all) struct TransformUpdateTransformResponse {
   authorization : Json?
-  create_time : Int
+  create_time : Int32
   description : String
   dest : Json
   frequency : Json?
@@ -114435,7 +114438,7 @@ pub extend TransformUpdateTransformRequest with @json.FromJson::{from_json}
 pub fn TransformUpdateTransformRequest::new(
   transform_id : String,
   body : TransformUpdateTransformBody,
-  query? : TransformUpdateTransformQuery = TransformUpdateTransformQuery::new(),
+  query~ : TransformUpdateTransformQuery = TransformUpdateTransformQuery::new(),
 ) -> TransformUpdateTransformRequest {
   { transform_id, query, body, }
 }
@@ -114543,9 +114546,9 @@ pub type TransformUpgradeTransformsBody = Json
 
 ///|
 pub(all) struct TransformUpgradeTransformsResponse {
-  needs_update : Int
-  no_action : Int
-  updated : Int
+  needs_update : Int32
+  no_action : Int32
+  updated : Int32
 } derive(Eq, Debug)
 
 ///|
@@ -114617,7 +114620,7 @@ pub extend TransformUpgradeTransformsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn TransformUpgradeTransformsRequest::new(
-  query? : TransformUpgradeTransformsQuery = TransformUpgradeTransformsQuery::new(),
+  query~ : TransformUpgradeTransformsQuery = TransformUpgradeTransformsQuery::new(),
   body? : TransformUpgradeTransformsBody,
 ) -> TransformUpgradeTransformsRequest {
   { query, body, }
@@ -114640,13 +114643,13 @@ pub async fn Client::transform_upgrade_transforms(
 
 ///|
 pub(all) struct UpdateQuery {
-  if_primary_term : Int?
+  if_primary_term : Int32?
   if_seq_no : String?
   include_source_on_error : Bool?
   lang : String?
   refresh : String?
   require_alias : Bool?
-  retry_on_conflict : Int?
+  retry_on_conflict : Int32?
   routing : String?
   timeout : String?
   wait_for_active_shards : String?
@@ -114813,13 +114816,13 @@ pub extend UpdateQuery with @json.FromJson::{from_json}
 
 ///|
 pub fn UpdateQuery::new(
-  if_primary_term? : Int,
+  if_primary_term? : Int32,
   if_seq_no? : String,
   include_source_on_error? : Bool,
   lang? : String,
   refresh? : String,
   require_alias? : Bool,
-  retry_on_conflict? : Int,
+  retry_on_conflict? : Int32,
   routing? : String,
   timeout? : String,
   wait_for_active_shards? : String,
@@ -115053,7 +115056,7 @@ pub fn UpdateRequest::new(
   index : String,
   id : String,
   body : UpdateBody,
-  query? : UpdateQuery = UpdateQuery::new(),
+  query~ : UpdateQuery = UpdateQuery::new(),
 ) -> UpdateRequest {
   { index, id, query, body, }
 }
@@ -115084,10 +115087,10 @@ pub(all) struct UpdateByQueryQuery {
   default_operator : String?
   df : String?
   expand_wildcards : String?
-  from : Int?
+  from : Int32?
   ignore_unavailable : Bool?
   lenient : Bool?
-  max_docs : Int?
+  max_docs : Int32?
   pipeline : String?
   preference : String?
   q : String?
@@ -115096,13 +115099,13 @@ pub(all) struct UpdateByQueryQuery {
   requests_per_second : Double?
   routing : String?
   scroll : String?
-  scroll_size : Int?
+  scroll_size : Int32?
   search_timeout : String?
   search_type : String?
   slices : String?
   sort : Array[String]?
   stats : Array[String]?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   version : Bool?
   version_type : Bool?
@@ -115445,10 +115448,10 @@ pub fn UpdateByQueryQuery::new(
   default_operator? : String,
   df? : String,
   expand_wildcards? : String,
-  from? : Int,
+  from? : Int32,
   ignore_unavailable? : Bool,
   lenient? : Bool,
-  max_docs? : Int,
+  max_docs? : Int32,
   pipeline? : String,
   preference? : String,
   q? : String,
@@ -115457,13 +115460,13 @@ pub fn UpdateByQueryQuery::new(
   requests_per_second? : Double,
   routing? : String,
   scroll? : String,
-  scroll_size? : Int,
+  scroll_size? : Int32,
   search_timeout? : String,
   search_type? : String,
   slices? : String,
   sort? : Array[String],
   stats? : Array[String],
-  terminate_after? : Int,
+  terminate_after? : Int32,
   timeout? : String,
   version? : Bool,
   version_type? : Bool,
@@ -115649,7 +115652,7 @@ pub fn UpdateByQueryQuery::to_pairs(
 
 ///|
 pub(all) struct UpdateByQueryBody {
-  max_docs : Int?
+  max_docs : Int32?
   query : Json?
   script : Json?
   slice : Json?
@@ -115731,7 +115734,7 @@ pub extend UpdateByQueryBody with @json.FromJson::{from_json}
 
 ///|
 pub fn UpdateByQueryBody::new(
-  max_docs? : Int,
+  max_docs? : Int32,
   query? : Json,
   script? : Json,
   slice? : Json,
@@ -115742,19 +115745,19 @@ pub fn UpdateByQueryBody::new(
 
 ///|
 pub(all) struct UpdateByQueryResponse {
-  batches : Int?
+  batches : Int32?
   failures : Array[Json]?
-  noops : Int?
-  deleted : Int?
+  noops : Int32?
+  deleted : Int32?
   requests_per_second : Double?
   retries : Json?
   slices : Array[Json]?
   task : Json?
   timed_out : Bool?
   took : Json?
-  total : Int?
-  updated : Int?
-  version_conflicts : Int?
+  total : Int32?
+  updated : Int32?
+  version_conflicts : Int32?
   throttled : Json?
   throttled_millis : Json?
   throttled_until : Json?
@@ -115974,7 +115977,7 @@ pub extend UpdateByQueryRequest with @json.FromJson::{from_json}
 ///|
 pub fn UpdateByQueryRequest::new(
   index : String,
-  query? : UpdateByQueryQuery = UpdateByQueryQuery::new(),
+  query~ : UpdateByQueryQuery = UpdateByQueryQuery::new(),
   body? : UpdateByQueryBody,
 ) -> UpdateByQueryRequest {
   { index, query, body, }
@@ -116253,7 +116256,7 @@ pub extend WatcherAckWatchRequest with @json.FromJson::{from_json}
 pub fn WatcherAckWatchRequest::new(
   watch_id : String,
   action_id? : String,
-  query? : WatcherAckWatchQuery = WatcherAckWatchQuery::new(),
+  query~ : WatcherAckWatchQuery = WatcherAckWatchQuery::new(),
 ) -> WatcherAckWatchRequest {
   { watch_id, action_id, query, }
 }
@@ -116390,7 +116393,7 @@ pub extend WatcherActivateWatchRequest with @json.FromJson::{from_json}
 ///|
 pub fn WatcherActivateWatchRequest::new(
   watch_id : String,
-  query? : WatcherActivateWatchQuery = WatcherActivateWatchQuery::new(),
+  query~ : WatcherActivateWatchQuery = WatcherActivateWatchQuery::new(),
 ) -> WatcherActivateWatchRequest {
   { watch_id, query, }
 }
@@ -116523,7 +116526,7 @@ pub extend WatcherDeactivateWatchRequest with @json.FromJson::{from_json}
 ///|
 pub fn WatcherDeactivateWatchRequest::new(
   watch_id : String,
-  query? : WatcherDeactivateWatchQuery = WatcherDeactivateWatchQuery::new(),
+  query~ : WatcherDeactivateWatchQuery = WatcherDeactivateWatchQuery::new(),
 ) -> WatcherDeactivateWatchRequest {
   { watch_id, query, }
 }
@@ -116661,7 +116664,7 @@ pub extend WatcherDeleteWatchRequest with @json.FromJson::{from_json}
 ///|
 pub fn WatcherDeleteWatchRequest::new(
   id : String,
-  query? : WatcherDeleteWatchQuery = WatcherDeleteWatchQuery::new(),
+  query~ : WatcherDeleteWatchQuery = WatcherDeleteWatchQuery::new(),
 ) -> WatcherDeleteWatchRequest {
   { id, query, }
 }
@@ -116940,7 +116943,7 @@ pub extend WatcherExecuteWatchRequest with @json.FromJson::{from_json}
 ///|
 pub fn WatcherExecuteWatchRequest::new(
   id? : String,
-  query? : WatcherExecuteWatchQuery = WatcherExecuteWatchQuery::new(),
+  query~ : WatcherExecuteWatchQuery = WatcherExecuteWatchQuery::new(),
   body? : WatcherExecuteWatchBody,
 ) -> WatcherExecuteWatchRequest {
   { id, query, body, }
@@ -117097,7 +117100,7 @@ pub extend WatcherGetSettingsRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn WatcherGetSettingsRequest::new(
-  query? : WatcherGetSettingsQuery = WatcherGetSettingsQuery::new(),
+  query~ : WatcherGetSettingsQuery = WatcherGetSettingsQuery::new(),
   body? : WatcherGetSettingsBody,
 ) -> WatcherGetSettingsRequest {
   { query, body, }
@@ -117170,7 +117173,7 @@ pub(all) struct WatcherGetWatchResponse {
   _id : Json
   status : Json?
   watch : Json?
-  _primary_term : Int?
+  _primary_term : Int32?
   _seq_no : Json?
   _version : Json?
 } derive(Eq, Debug)
@@ -117281,7 +117284,7 @@ pub extend WatcherGetWatchRequest with @json.FromJson::{from_json}
 ///|
 pub fn WatcherGetWatchRequest::new(
   id : String,
-  query? : WatcherGetWatchQuery = WatcherGetWatchQuery::new(),
+  query~ : WatcherGetWatchQuery = WatcherGetWatchQuery::new(),
 ) -> WatcherGetWatchRequest {
   { id, query, }
 }
@@ -117304,7 +117307,7 @@ pub async fn Client::watcher_get_watch(
 ///|
 pub(all) struct WatcherPutWatchQuery {
   active : Bool?
-  if_primary_term : Int?
+  if_primary_term : Int32?
   if_seq_no : String?
   version : String?
 } derive(Eq, Debug)
@@ -117379,7 +117382,7 @@ pub extend WatcherPutWatchQuery with @json.FromJson::{from_json}
 ///|
 pub fn WatcherPutWatchQuery::new(
   active? : Bool,
-  if_primary_term? : Int,
+  if_primary_term? : Int32,
   if_seq_no? : String,
   version? : String,
 ) -> WatcherPutWatchQuery {
@@ -117557,7 +117560,7 @@ pub fn WatcherPutWatchBody::new(
 pub(all) struct WatcherPutWatchResponse {
   created : Bool
   _id : Json
-  _primary_term : Int
+  _primary_term : Int32
   _seq_no : Json
   _version : Json
 } derive(Eq, Debug)
@@ -117639,7 +117642,7 @@ pub extend WatcherPutWatchRequest with @json.FromJson::{from_json}
 pub fn WatcherPutWatchRequest::new(
   id : String,
   body : WatcherPutWatchBody,
-  query? : WatcherPutWatchQuery = WatcherPutWatchQuery::new(),
+  query~ : WatcherPutWatchQuery = WatcherPutWatchQuery::new(),
 ) -> WatcherPutWatchRequest {
   { id, query, body, }
 }
@@ -117708,8 +117711,8 @@ pub fn WatcherQueryWatchesQuery::to_pairs(
 
 ///|
 pub(all) struct WatcherQueryWatchesBody {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   query : Json?
   sort : Json?
   search_after : Json?
@@ -117792,8 +117795,8 @@ pub extend WatcherQueryWatchesBody with @json.FromJson::{from_json}
 
 ///|
 pub fn WatcherQueryWatchesBody::new(
-  from? : Int,
-  size? : Int,
+  from? : Int32,
+  size? : Int32,
   query? : Json,
   sort? : Json,
   search_after? : Json,
@@ -117803,7 +117806,7 @@ pub fn WatcherQueryWatchesBody::new(
 
 ///|
 pub(all) struct WatcherQueryWatchesResponse {
-  count : Int
+  count : Int32
   watches : Array[Json]
 } derive(Eq, Debug)
 
@@ -117868,7 +117871,7 @@ pub extend WatcherQueryWatchesRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn WatcherQueryWatchesRequest::new(
-  query? : WatcherQueryWatchesQuery = WatcherQueryWatchesQuery::new(),
+  query~ : WatcherQueryWatchesQuery = WatcherQueryWatchesQuery::new(),
   body? : WatcherQueryWatchesBody,
 ) -> WatcherQueryWatchesRequest {
   { query, body, }
@@ -117974,7 +117977,7 @@ pub extend WatcherStartRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn WatcherStartRequest::new(
-  query? : WatcherStartQuery = WatcherStartQuery::new(),
+  query~ : WatcherStartQuery = WatcherStartQuery::new(),
 ) -> WatcherStartRequest {
   { query, }
 }
@@ -118145,7 +118148,7 @@ pub extend WatcherStatsRequest with @json.FromJson::{from_json}
 ///|
 pub fn WatcherStatsRequest::new(
   metric? : String,
-  query? : WatcherStatsQuery = WatcherStatsQuery::new(),
+  query~ : WatcherStatsQuery = WatcherStatsQuery::new(),
 ) -> WatcherStatsRequest {
   { metric, query, }
 }
@@ -118253,7 +118256,7 @@ pub extend WatcherStopRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn WatcherStopRequest::new(
-  query? : WatcherStopQuery = WatcherStopQuery::new(),
+  query~ : WatcherStopQuery = WatcherStopQuery::new(),
 ) -> WatcherStopRequest {
   { query, }
 }
@@ -118351,7 +118354,7 @@ pub fn WatcherUpdateSettingsQuery::to_pairs(
 ///|
 pub(all) struct WatcherUpdateSettingsBody {
   index_auto_expand_replicas : String?
-  index_number_of_replicas : Int?
+  index_number_of_replicas : Int32?
 } derive(Eq, Debug)
 
 ///|
@@ -118413,7 +118416,7 @@ pub extend WatcherUpdateSettingsBody with @json.FromJson::{from_json}
 ///|
 pub fn WatcherUpdateSettingsBody::new(
   index_auto_expand_replicas? : String,
-  index_number_of_replicas? : Int,
+  index_number_of_replicas? : Int32,
 ) -> WatcherUpdateSettingsBody {
   { index_auto_expand_replicas, index_number_of_replicas, }
 }
@@ -118483,7 +118486,7 @@ pub extend WatcherUpdateSettingsRequest with @json.FromJson::{from_json}
 ///|
 pub fn WatcherUpdateSettingsRequest::new(
   body : WatcherUpdateSettingsBody,
-  query? : WatcherUpdateSettingsQuery = WatcherUpdateSettingsQuery::new(),
+  query~ : WatcherUpdateSettingsQuery = WatcherUpdateSettingsQuery::new(),
 ) -> WatcherUpdateSettingsRequest {
   { query, body, }
 }
@@ -118667,7 +118670,7 @@ pub extend XpackInfoRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn XpackInfoRequest::new(
-  query? : XpackInfoQuery = XpackInfoQuery::new(),
+  query~ : XpackInfoQuery = XpackInfoQuery::new(),
 ) -> XpackInfoRequest {
   { query, }
 }
@@ -119012,7 +119015,7 @@ pub extend XpackUsageRequest with @json.FromJson::{from_json}
 
 ///|
 pub fn XpackUsageRequest::new(
-  query? : XpackUsageQuery = XpackUsageQuery::new(),
+  query~ : XpackUsageQuery = XpackUsageQuery::new(),
 ) -> XpackUsageRequest {
   { query, }
 }
