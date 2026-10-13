@@ -23,4 +23,3 @@ type UrlSpec derive(@debug.Debug)
 // Type aliases
 
 // Traits
-

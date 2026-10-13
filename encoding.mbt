@@ -12,7 +12,7 @@ fn is_unreserved_byte(byte : Byte) -> Bool {
 
 ///|
 pub fn percent_encode(value : String) -> String {
-  let out = StringBuilder::new(size_hint=value.length())
+  let out = StringBuilder(size_hint=value.length())
   for byte in @utf8.encode(value) {
     if is_unreserved_byte(byte) {
       out.write_char(byte.to_char())
@@ -26,7 +26,7 @@ pub fn percent_encode(value : String) -> String {
 
 ///|
 pub fn encode_query(query : ArrayView[(String, String)]) -> String {
-  let out = StringBuilder::new()
+  let out = StringBuilder()
   let mut first = true
   for pair in query {
     let (key, value) = pair
@@ -56,7 +56,7 @@ pub fn append_query(
 
 ///|
 pub fn encode_ndjson(items : ArrayView[Json]) -> String {
-  let out = StringBuilder::new()
+  let out = StringBuilder()
   for item in items {
     out.write_string(item.stringify())
     out.write_char('\n')
@@ -71,7 +71,7 @@ fn query_json_value_to_string(value : Json) -> String {
     True => "true"
     False => "false"
     Array(items) => {
-      let out = StringBuilder::new()
+      let out = StringBuilder()
       let mut first = true
       for item in items {
         if first {

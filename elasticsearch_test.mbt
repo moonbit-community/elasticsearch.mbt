@@ -130,21 +130,21 @@ async test "generated endpoints integrate request rendering http and decoding" {
       ),
     )
     defer client.close()
-    let info = client.info(InfoRequest::new())
+    let info = client.info(@elasticsearch.InfoRequest::new())
     assert_eq(info.status, 200)
     assert_eq(info.body.tagline, "You Know, for Search")
     assert_true(
       info.body.version == Json::object({ "number": Json::string("9.0.0") }),
     )
     let search = client.search(
-      SearchRequest::new(
+      @elasticsearch.SearchRequest::new(
         index="logs/2026",
-        query=SearchQuery::new(
+        query=@elasticsearch.SearchQuery::new(
           q="status:200",
           stats=["latency", "errors"],
           typed_keys=true,
         ),
-        body=SearchBody::new(
+        body=@elasticsearch.SearchBody::new(
           query=Json::object({ "match_all": Json::empty_object() }),
           size=2,
         ),
@@ -179,10 +179,10 @@ async test "generated endpoints integrate request rendering http and decoding" {
       }),
     )
     let count = client.count(
-      CountRequest::new(
+      @elasticsearch.CountRequest::new(
         index="logs/2026",
-        query=CountQuery::new(q="status:200", terminate_after=10),
-        body=CountBody::new(
+        query=@elasticsearch.CountQuery::new(q="status:200", terminate_after=10),
+        body=@elasticsearch.CountBody::new(
           query=Json::object({
             "term": Json::object({ "status": Json::number(200) }),
           }),
@@ -194,11 +194,14 @@ async test "generated endpoints integrate request rendering http and decoding" {
       count.body._shards == Json::object({ "successful": Json::number(1) }),
     )
     let indexed = client.index(
-      IndexRequest::new(
+      @elasticsearch.IndexRequest::new(
         "logs/2026",
         Json::object({ "message": Json::string("hello") }),
         id="id/1",
-        query=IndexQuery::new(refresh="wait_for", require_alias=false),
+        query=@elasticsearch.IndexQuery::new(
+          refresh="wait_for",
+          require_alias=false,
+        ),
       ),
     )
     let index_path = test_json_string_field(indexed.body, "path")
@@ -210,13 +213,13 @@ async test "generated endpoints integrate request rendering http and decoding" {
       Json::object({ "message": Json::string("hello") }),
     )
     let bulk = client.bulk(
-      BulkRequest::new(
+      @elasticsearch.BulkRequest::new(
         [
           Json::object({ "index": Json::object({ "_id": Json::string("1") }) }),
           Json::object({ "message": Json::string("hello") }),
         ],
         index="logs/2026",
-        query=BulkQuery::new(refresh="wait_for"),
+        query=@elasticsearch.BulkQuery::new(refresh="wait_for"),
       ),
     )
     assert_eq(bulk.body.errors, false)
