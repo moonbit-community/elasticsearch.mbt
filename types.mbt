@@ -53,9 +53,9 @@ pub(all) struct ClientConfig {
 ///|
 pub fn ClientConfig::new(
   base_url : String,
-  auth? : Auth = NoAuth,
-  compatibility? : ApiCompatibility = Default,
-  headers? : Map[String, String] = Map([]),
+  auth~ : Auth = NoAuth,
+  compatibility~ : ApiCompatibility = Default,
+  headers~ : Map[String, String] = Map([]),
 ) -> ClientConfig {
   { base_url, auth, compatibility, default_headers: headers, }
 }
@@ -79,16 +79,16 @@ pub(all) struct EsRequest {
 pub fn EsRequest::new(
   meth : HttpMethod,
   path : String,
-  query? : Array[(String, String)] = [],
-  headers? : Map[String, String] = Map([]),
-  body? : RequestBody = NoBody,
+  query~ : Array[(String, String)] = [],
+  headers~ : Map[String, String] = Map([]),
+  body~ : RequestBody = NoBody,
 ) -> EsRequest {
   { meth, path, query, headers, body, }
 }
 
 ///|
 pub(all) struct EsResponse[T] {
-  status : Int
+  status : Int32
   headers : Map[String, String]
   body : T
 } derive(Eq, Debug, ToJson)
@@ -98,7 +98,7 @@ pub(all) suberror EsError {
   ClosedClient
   Request(String)
   Decode(String)
-  Http(status~ : Int, reason~ : String, body~ : Json)
+  Http(status~ : Int32, reason~ : String, body~ : Json)
 } derive(Debug, ToJson)
 
 ///|
@@ -114,3 +114,81 @@ pub fn PathVariant::new(
 ) -> PathVariant {
   { template, required, }
 }
+
+///|
+pub extend Auth with Eq::{equal, not_equal}
+
+///|
+pub extend Auth with @debug.Debug::{to_repr}
+
+///|
+pub extend Auth with ToJson::{to_json}
+
+///|
+pub extend ApiCompatibility with Eq::{equal, not_equal}
+
+///|
+pub extend ApiCompatibility with @debug.Debug::{to_repr}
+
+///|
+pub extend ApiCompatibility with ToJson::{to_json}
+
+///|
+pub extend HttpMethod with Eq::{equal, not_equal}
+
+///|
+pub extend HttpMethod with @debug.Debug::{to_repr}
+
+///|
+pub extend HttpMethod with ToJson::{to_json}
+
+///|
+pub extend RequestBody with Eq::{equal, not_equal}
+
+///|
+pub extend RequestBody with @debug.Debug::{to_repr}
+
+///|
+pub extend RequestBody with ToJson::{to_json}
+
+///|
+pub extend ClientConfig with Eq::{equal, not_equal}
+
+///|
+pub extend ClientConfig with @debug.Debug::{to_repr}
+
+///|
+pub extend ClientConfig with ToJson::{to_json}
+
+///|
+pub extend EsRequest with Eq::{equal, not_equal}
+
+///|
+pub extend EsRequest with @debug.Debug::{to_repr}
+
+///|
+pub extend EsRequest with ToJson::{to_json}
+
+///|
+pub extend EsResponse with Eq::{equal, not_equal}
+
+///|
+pub extend EsResponse with @debug.Debug::{to_repr}
+
+///|
+pub extend EsResponse with ToJson::{to_json}
+
+///|
+pub extend EsError with @debug.Debug::{to_repr}
+
+///|
+pub extend EsError with ToJson::{to_json}
+
+///|
+pub extend PathVariant with Eq::{equal, not_equal}
+
+///|
+pub extend PathVariant with @debug.Debug::{to_repr}
+
+///|
+pub extend PathVariant with ToJson::{to_json}

@@ -5251,4 +5251,3 @@ pub using @elasticsearch {type XpackUsageRequest}
 pub using @elasticsearch {type XpackUsageResponse}
 
 // Traits
-

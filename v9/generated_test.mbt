@@ -1,10 +1,13 @@
 ///|
 fn test_header_value(
-  headers : Map[String, String],
+  headers : Map[@http.CaseInsensitiveString, String],
   canonical : String,
   lowercase : String,
 ) -> String {
-  headers.get_or_default(canonical, headers.get_or_default(lowercase, ""))
+  headers.get_or_default(
+    @http.CaseInsensitiveString(canonical),
+    headers.get_or_default(@http.CaseInsensitiveString(lowercase), ""),
+  )
 }
 
 ///|
@@ -85,13 +88,13 @@ async test "v9 wrappers integrate with root client endpoints" {
       @es.ClientConfig::new("http://127.0.0.1:\{server.addr.port()}"),
     )
     defer client.close()
-    let info = @v9.info(client, InfoRequest::new())
+    let info = @v9.info(client, @v9.InfoRequest::new())
     @debug.assert_eq(info.body.cluster_uuid, Json::string("uuid-v9"))
     let search = @v9.search(
       client,
-      SearchRequest::new(
+      @v9.SearchRequest::new(
         index="v9/logs",
-        body=SearchBody::new(
+        body=@v9.SearchBody::new(
           query=Json::object({ "match_all": Json::empty_object() }),
         ),
       ),
@@ -101,7 +104,7 @@ async test "v9 wrappers integrate with root client endpoints" {
     )
     let msearch = @v9.msearch(
       client,
-      MsearchRequest::new(
+      @v9.MsearchRequest::new(
         [
           Json::object({ "index": Json::string("v9/logs") }),
           Json::object({
