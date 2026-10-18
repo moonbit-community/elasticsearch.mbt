@@ -7,6 +7,15 @@ pub(all) enum Auth {
 } derive(Eq, Debug, ToJson)
 
 ///|
+pub extend Auth with Eq::{not_equal, equal}
+
+///|
+pub extend Auth with @debug.Debug::{to_repr}
+
+///|
+pub extend Auth with ToJson::{to_json}
+
+///|
 pub fn Auth::api_key(id~ : String, api_key~ : String) -> Auth {
   let raw = "\{id}:\{api_key}"
   ApiKey(@base64.encode(@utf8.encode(raw)))
@@ -114,3 +123,72 @@ pub fn PathVariant::new(
 ) -> PathVariant {
   { template, required, }
 }
+
+///|
+pub extend ApiCompatibility with Eq::{not_equal, equal}
+
+///|
+pub extend ApiCompatibility with @debug.Debug::{to_repr}
+
+///|
+pub extend ApiCompatibility with ToJson::{to_json}
+
+///|
+pub extend HttpMethod with Eq::{not_equal, equal}
+
+///|
+pub extend HttpMethod with @debug.Debug::{to_repr}
+
+///|
+pub extend HttpMethod with ToJson::{to_json}
+
+///|
+pub extend RequestBody with Eq::{not_equal, equal}
+
+///|
+pub extend RequestBody with @debug.Debug::{to_repr}
+
+///|
+pub extend RequestBody with ToJson::{to_json}
+
+///|
+pub extend ClientConfig with Eq::{not_equal, equal}
+
+///|
+pub extend ClientConfig with @debug.Debug::{to_repr}
+
+///|
+pub extend ClientConfig with ToJson::{to_json}
+
+///|
+pub extend EsRequest with Eq::{not_equal, equal}
+
+///|
+pub extend EsRequest with @debug.Debug::{to_repr}
+
+///|
+pub extend EsRequest with ToJson::{to_json}
+
+///|
+pub extend EsResponse with Eq::{not_equal, equal}
+
+///|
+pub extend EsResponse with @debug.Debug::{to_repr}
+
+///|
+pub extend EsResponse with ToJson::{to_json}
+
+///|
+pub extend EsError with @debug.Debug::{to_repr}
+
+///|
+pub extend EsError with ToJson::{to_json}
+
+///|
+pub extend PathVariant with Eq::{not_equal, equal}
+
+///|
+pub extend PathVariant with @debug.Debug::{to_repr}
+
+///|
+pub extend PathVariant with ToJson::{to_json}
