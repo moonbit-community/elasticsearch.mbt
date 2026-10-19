@@ -96,9 +96,9 @@ pub async fn Client::new(config : ClientConfig) -> Client {
 ///|
 pub async fn new(
   base_url : String,
-  auth? : Auth = NoAuth,
-  compatibility? : ApiCompatibility = Default,
-  headers? : Map[String, String] = Map([]),
+  auth~ : Auth = NoAuth,
+  compatibility~ : ApiCompatibility = Default,
+  headers~ : Map[String, String] = Map([]),
 ) -> Client {
   Client::new(ClientConfig::new(base_url, auth~, compatibility~, headers~))
 }
