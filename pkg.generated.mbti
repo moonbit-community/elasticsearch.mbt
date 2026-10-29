@@ -28,7 +28,7 @@ pub(all) suberror EsError {
   ClosedClient
   Request(String)
   Decode(String)
-  Http(status~ : Int, reason~ : String, body~ : Json)
+  Http(status~ : Int32, reason~ : String, body~ : Json)
 } derive(ToJson, @debug.Debug)
 pub fn EsError::to_json(Self) -> Json
 pub fn EsError::to_repr(Self) -> @debug.Repr
@@ -123,7 +123,7 @@ pub(all) struct AsyncSearchSubmitBody {
   collapse : Json?
   explain : Bool?
   ext : Map[String, Json]?
-  from : Int?
+  from : Int32?
   highlight : Json?
   track_total_hits : Json?
   indices_boost : Array[Map[String, Json]]?
@@ -136,13 +136,13 @@ pub(all) struct AsyncSearchSubmitBody {
   rescore : Json?
   script_fields : Map[String, Json]?
   search_after : Json?
-  size : Int?
+  size : Int32?
   slice : Json?
   sort : Json?
   _source : Json?
   fields : Array[Json]?
   suggest : Json?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   track_scores : Bool?
   version : Bool?
@@ -155,7 +155,7 @@ pub(all) struct AsyncSearchSubmitBody {
 } derive(Eq, @debug.Debug)
 pub fn AsyncSearchSubmitBody::equal(Self, Self) -> Bool
 pub fn AsyncSearchSubmitBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn AsyncSearchSubmitBody::new(aggregations? : Map[String, Json], collapse? : Json, explain? : Bool, ext? : Map[String, Json], from? : Int, highlight? : Json, track_total_hits? : Json, indices_boost? : Array[Map[String, Json]], docvalue_fields? : Array[Json], knn? : Json, min_score? : Double, post_filter? : Json, profile? : Bool, query? : Json, rescore? : Json, script_fields? : Map[String, Json], search_after? : Json, size? : Int, slice? : Json, sort? : Json, _source? : Json, fields? : Array[Json], suggest? : Json, terminate_after? : Int, timeout? : String, track_scores? : Bool, version? : Bool, seq_no_primary_term? : Bool, stored_fields? : Json, pit? : Json, runtime_mappings? : Json, stats? : Array[String], project_routing? : Json) -> Self
+pub fn AsyncSearchSubmitBody::new(aggregations? : Map[String, Json], collapse? : Json, explain? : Bool, ext? : Map[String, Json], from? : Int32, highlight? : Json, track_total_hits? : Json, indices_boost? : Array[Map[String, Json]], docvalue_fields? : Array[Json], knn? : Json, min_score? : Double, post_filter? : Json, profile? : Bool, query? : Json, rescore? : Json, script_fields? : Map[String, Json], search_after? : Json, size? : Int32, slice? : Json, sort? : Json, _source? : Json, fields? : Array[Json], suggest? : Json, terminate_after? : Int32, timeout? : String, track_scores? : Bool, version? : Bool, seq_no_primary_term? : Bool, stored_fields? : Json, pit? : Json, runtime_mappings? : Json, stats? : Array[String], project_routing? : Json) -> Self
 pub fn AsyncSearchSubmitBody::not_equal(Self, Self) -> Bool
 pub fn AsyncSearchSubmitBody::to_json(Self) -> Json
 pub fn AsyncSearchSubmitBody::to_repr(Self) -> @debug.Repr
@@ -170,7 +170,7 @@ pub(all) struct AsyncSearchSubmitQuery {
   allow_partial_search_results : Bool?
   analyzer : String?
   analyze_wildcard : Bool?
-  batched_reduce_size : Int?
+  batched_reduce_size : Int32?
   ccs_minimize_roundtrips : Bool?
   default_operator : String?
   df : String?
@@ -180,7 +180,7 @@ pub(all) struct AsyncSearchSubmitQuery {
   ignore_throttled : Bool?
   ignore_unavailable : Bool?
   lenient : Bool?
-  max_concurrent_shard_requests : Int?
+  max_concurrent_shard_requests : Int32?
   preference : String?
   request_cache : Bool?
   routing : String?
@@ -189,9 +189,9 @@ pub(all) struct AsyncSearchSubmitQuery {
   stored_fields : String?
   suggest_field : String?
   suggest_mode : String?
-  suggest_size : Int?
+  suggest_size : Int32?
   suggest_text : String?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   track_total_hits : String?
   track_scores : Bool?
@@ -203,13 +203,13 @@ pub(all) struct AsyncSearchSubmitQuery {
   _source_includes : String?
   seq_no_primary_term : Bool?
   q : String?
-  size : Int?
-  from : Int?
+  size : Int32?
+  from : Int32?
   sort : Json?
 } derive(Eq, @debug.Debug)
 pub fn AsyncSearchSubmitQuery::equal(Self, Self) -> Bool
 pub fn AsyncSearchSubmitQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn AsyncSearchSubmitQuery::new(wait_for_completion_timeout? : String, keep_alive? : String, keep_on_completion? : Bool, allow_no_indices? : Bool, allow_partial_search_results? : Bool, analyzer? : String, analyze_wildcard? : Bool, batched_reduce_size? : Int, ccs_minimize_roundtrips? : Bool, default_operator? : String, df? : String, docvalue_fields? : String, expand_wildcards? : String, explain? : Bool, ignore_throttled? : Bool, ignore_unavailable? : Bool, lenient? : Bool, max_concurrent_shard_requests? : Int, preference? : String, request_cache? : Bool, routing? : String, search_type? : String, stats? : Array[String], stored_fields? : String, suggest_field? : String, suggest_mode? : String, suggest_size? : Int, suggest_text? : String, terminate_after? : Int, timeout? : String, track_total_hits? : String, track_scores? : Bool, typed_keys? : Bool, rest_total_hits_as_int? : Bool, version? : Bool, _source? : String, _source_excludes? : String, _source_includes? : String, seq_no_primary_term? : Bool, q? : String, size? : Int, from? : Int, sort? : Json) -> Self
+pub fn AsyncSearchSubmitQuery::new(wait_for_completion_timeout? : String, keep_alive? : String, keep_on_completion? : Bool, allow_no_indices? : Bool, allow_partial_search_results? : Bool, analyzer? : String, analyze_wildcard? : Bool, batched_reduce_size? : Int32, ccs_minimize_roundtrips? : Bool, default_operator? : String, df? : String, docvalue_fields? : String, expand_wildcards? : String, explain? : Bool, ignore_throttled? : Bool, ignore_unavailable? : Bool, lenient? : Bool, max_concurrent_shard_requests? : Int32, preference? : String, request_cache? : Bool, routing? : String, search_type? : String, stats? : Array[String], stored_fields? : String, suggest_field? : String, suggest_mode? : String, suggest_size? : Int32, suggest_text? : String, terminate_after? : Int32, timeout? : String, track_total_hits? : String, track_scores? : Bool, typed_keys? : Bool, rest_total_hits_as_int? : Bool, version? : Bool, _source? : String, _source_excludes? : String, _source_includes? : String, seq_no_primary_term? : Bool, q? : String, size? : Int32, from? : Int32, sort? : Json) -> Self
 pub fn AsyncSearchSubmitQuery::not_equal(Self, Self) -> Bool
 pub fn AsyncSearchSubmitQuery::to_json(Self) -> Json
 pub fn AsyncSearchSubmitQuery::to_pairs(Self) -> Array[(String, String)]
@@ -390,8 +390,8 @@ pub fn BulkRequest::to_repr(Self) -> @debug.Repr
 pub(all) struct BulkResponse {
   errors : Bool
   items : Array[Map[String, Json]]
-  took : Int
-  ingest_took : Int?
+  took : Int32
+  ingest_took : Int32?
 } derive(Eq, @debug.Debug)
 pub fn BulkResponse::equal(Self, Self) -> Bool
 pub fn BulkResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -833,12 +833,12 @@ pub(all) struct CatMlTrainedModelsQuery {
   allow_no_match : Bool?
   h : String?
   s : String?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, @debug.Debug)
 pub fn CatMlTrainedModelsQuery::equal(Self, Self) -> Bool
 pub fn CatMlTrainedModelsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn CatMlTrainedModelsQuery::new(allow_no_match? : Bool, h? : String, s? : String, from? : Int, size? : Int) -> Self
+pub fn CatMlTrainedModelsQuery::new(allow_no_match? : Bool, h? : String, s? : String, from? : Int32, size? : Int32) -> Self
 pub fn CatMlTrainedModelsQuery::not_equal(Self, Self) -> Bool
 pub fn CatMlTrainedModelsQuery::to_json(Self) -> Json
 pub fn CatMlTrainedModelsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -1188,14 +1188,14 @@ pub fn CatThreadPoolRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct CatTransformsQuery {
   allow_no_match : Bool?
-  from : Int?
+  from : Int32?
   h : String?
   s : String?
-  size : Int?
+  size : Int32?
 } derive(Eq, @debug.Debug)
 pub fn CatTransformsQuery::equal(Self, Self) -> Bool
 pub fn CatTransformsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn CatTransformsQuery::new(allow_no_match? : Bool, from? : Int, h? : String, s? : String, size? : Int) -> Self
+pub fn CatTransformsQuery::new(allow_no_match? : Bool, from? : Int32, h? : String, s? : String, size? : Int32) -> Self
 pub fn CatTransformsQuery::not_equal(Self, Self) -> Bool
 pub fn CatTransformsQuery::to_json(Self) -> Json
 pub fn CatTransformsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -1241,14 +1241,14 @@ pub fn CcrDeleteAutoFollowPatternRequest::to_repr(Self) -> @debug.Repr
 pub(all) struct CcrFollowBody {
   data_stream_name : String?
   leader_index : Json
-  max_outstanding_read_requests : Int?
-  max_outstanding_write_requests : Int?
-  max_read_request_operation_count : Int?
+  max_outstanding_read_requests : Int32?
+  max_outstanding_write_requests : Int32?
+  max_read_request_operation_count : Int32?
   max_read_request_size : Json?
   max_retry_delay : Json?
-  max_write_buffer_count : Int?
+  max_write_buffer_count : Int32?
   max_write_buffer_size : Json?
-  max_write_request_operation_count : Int?
+  max_write_request_operation_count : Int32?
   max_write_request_size : Json?
   read_poll_timeout : Json?
   remote_cluster : String
@@ -1256,7 +1256,7 @@ pub(all) struct CcrFollowBody {
 } derive(Eq, @debug.Debug)
 pub fn CcrFollowBody::equal(Self, Self) -> Bool
 pub fn CcrFollowBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn CcrFollowBody::new(Json, String, data_stream_name? : String, max_outstanding_read_requests? : Int, max_outstanding_write_requests? : Int, max_read_request_operation_count? : Int, max_read_request_size? : Json, max_retry_delay? : Json, max_write_buffer_count? : Int, max_write_buffer_size? : Json, max_write_request_operation_count? : Int, max_write_request_size? : Json, read_poll_timeout? : Json, settings? : Json) -> Self
+pub fn CcrFollowBody::new(Json, String, data_stream_name? : String, max_outstanding_read_requests? : Int32, max_outstanding_write_requests? : Int32, max_read_request_operation_count? : Int32, max_read_request_size? : Json, max_retry_delay? : Json, max_write_buffer_count? : Int32, max_write_buffer_size? : Json, max_write_request_operation_count? : Int32, max_write_request_size? : Json, read_poll_timeout? : Json, settings? : Json) -> Self
 pub fn CcrFollowBody::not_equal(Self, Self) -> Bool
 pub fn CcrFollowBody::to_json(Self) -> Json
 pub fn CcrFollowBody::to_repr(Self) -> @debug.Repr
@@ -1511,21 +1511,21 @@ pub(all) struct CcrPutAutoFollowPatternBody {
   follow_index_pattern : Json?
   leader_index_patterns : Json?
   leader_index_exclusion_patterns : Json?
-  max_outstanding_read_requests : Int?
+  max_outstanding_read_requests : Int32?
   settings : Map[String, Json]?
-  max_outstanding_write_requests : Int?
+  max_outstanding_write_requests : Int32?
   read_poll_timeout : Json?
-  max_read_request_operation_count : Int?
+  max_read_request_operation_count : Int32?
   max_read_request_size : Json?
   max_retry_delay : Json?
-  max_write_buffer_count : Int?
+  max_write_buffer_count : Int32?
   max_write_buffer_size : Json?
-  max_write_request_operation_count : Int?
+  max_write_request_operation_count : Int32?
   max_write_request_size : Json?
 } derive(Eq, @debug.Debug)
 pub fn CcrPutAutoFollowPatternBody::equal(Self, Self) -> Bool
 pub fn CcrPutAutoFollowPatternBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn CcrPutAutoFollowPatternBody::new(String, follow_index_pattern? : Json, leader_index_patterns? : Json, leader_index_exclusion_patterns? : Json, max_outstanding_read_requests? : Int, settings? : Map[String, Json], max_outstanding_write_requests? : Int, read_poll_timeout? : Json, max_read_request_operation_count? : Int, max_read_request_size? : Json, max_retry_delay? : Json, max_write_buffer_count? : Int, max_write_buffer_size? : Json, max_write_request_operation_count? : Int, max_write_request_size? : Json) -> Self
+pub fn CcrPutAutoFollowPatternBody::new(String, follow_index_pattern? : Json, leader_index_patterns? : Json, leader_index_exclusion_patterns? : Json, max_outstanding_read_requests? : Int32, settings? : Map[String, Json], max_outstanding_write_requests? : Int32, read_poll_timeout? : Json, max_read_request_operation_count? : Int32, max_read_request_size? : Json, max_retry_delay? : Json, max_write_buffer_count? : Int32, max_write_buffer_size? : Json, max_write_request_operation_count? : Int32, max_write_request_size? : Json) -> Self
 pub fn CcrPutAutoFollowPatternBody::not_equal(Self, Self) -> Bool
 pub fn CcrPutAutoFollowPatternBody::to_json(Self) -> Json
 pub fn CcrPutAutoFollowPatternBody::to_repr(Self) -> @debug.Repr
@@ -1582,20 +1582,20 @@ pub fn CcrResumeAutoFollowPatternRequest::to_json(Self) -> Json
 pub fn CcrResumeAutoFollowPatternRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct CcrResumeFollowBody {
-  max_outstanding_read_requests : Int?
-  max_outstanding_write_requests : Int?
-  max_read_request_operation_count : Int?
+  max_outstanding_read_requests : Int32?
+  max_outstanding_write_requests : Int32?
+  max_read_request_operation_count : Int32?
   max_read_request_size : String?
   max_retry_delay : Json?
-  max_write_buffer_count : Int?
+  max_write_buffer_count : Int32?
   max_write_buffer_size : String?
-  max_write_request_operation_count : Int?
+  max_write_request_operation_count : Int32?
   max_write_request_size : String?
   read_poll_timeout : Json?
 } derive(Eq, @debug.Debug)
 pub fn CcrResumeFollowBody::equal(Self, Self) -> Bool
 pub fn CcrResumeFollowBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn CcrResumeFollowBody::new(max_outstanding_read_requests? : Int, max_outstanding_write_requests? : Int, max_read_request_operation_count? : Int, max_read_request_size? : String, max_retry_delay? : Json, max_write_buffer_count? : Int, max_write_buffer_size? : String, max_write_request_operation_count? : Int, max_write_request_size? : String, read_poll_timeout? : Json) -> Self
+pub fn CcrResumeFollowBody::new(max_outstanding_read_requests? : Int32, max_outstanding_write_requests? : Int32, max_read_request_operation_count? : Int32, max_read_request_size? : String, max_retry_delay? : Json, max_write_buffer_count? : Int32, max_write_buffer_size? : String, max_write_request_operation_count? : Int32, max_write_request_size? : String, read_poll_timeout? : Json) -> Self
 pub fn CcrResumeFollowBody::not_equal(Self, Self) -> Bool
 pub fn CcrResumeFollowBody::to_json(Self) -> Json
 pub fn CcrResumeFollowBody::to_repr(Self) -> @debug.Repr
@@ -1713,7 +1713,7 @@ pub fn ClearScrollRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct ClearScrollResponse {
   succeeded : Bool
-  num_freed : Int
+  num_freed : Int32
 } derive(Eq, @debug.Debug)
 pub fn ClearScrollResponse::equal(Self, Self) -> Bool
 pub fn ClearScrollResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -2370,7 +2370,7 @@ pub fn ClosePointInTimeRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct ClosePointInTimeResponse {
   succeeded : Bool
-  num_freed : Int
+  num_freed : Int32
 } derive(Eq, @debug.Debug)
 pub fn ClosePointInTimeResponse::equal(Self, Self) -> Bool
 pub fn ClosePointInTimeResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -2382,13 +2382,13 @@ pub impl @json.FromJson for ClosePointInTimeResponse
 
 pub(all) struct ClusterAllocationExplainBody {
   index : Json?
-  shard : Int?
+  shard : Int32?
   primary : Bool?
   current_node : Json?
 } derive(Eq, @debug.Debug)
 pub fn ClusterAllocationExplainBody::equal(Self, Self) -> Bool
 pub fn ClusterAllocationExplainBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn ClusterAllocationExplainBody::new(index? : Json, shard? : Int, primary? : Bool, current_node? : Json) -> Self
+pub fn ClusterAllocationExplainBody::new(index? : Json, shard? : Int32, primary? : Bool, current_node? : Json) -> Self
 pub fn ClusterAllocationExplainBody::not_equal(Self, Self) -> Bool
 pub fn ClusterAllocationExplainBody::to_json(Self) -> Json
 pub fn ClusterAllocationExplainBody::to_repr(Self) -> @debug.Repr
@@ -2397,7 +2397,7 @@ pub impl @json.FromJson for ClusterAllocationExplainBody
 
 pub(all) struct ClusterAllocationExplainQuery {
   index : String?
-  shard : Int?
+  shard : Int32?
   primary : Bool?
   current_node : String?
   include_disk_info : Bool?
@@ -2406,7 +2406,7 @@ pub(all) struct ClusterAllocationExplainQuery {
 } derive(Eq, @debug.Debug)
 pub fn ClusterAllocationExplainQuery::equal(Self, Self) -> Bool
 pub fn ClusterAllocationExplainQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn ClusterAllocationExplainQuery::new(index? : String, shard? : Int, primary? : Bool, current_node? : String, include_disk_info? : Bool, include_yes_decisions? : Bool, master_timeout? : String) -> Self
+pub fn ClusterAllocationExplainQuery::new(index? : String, shard? : Int32, primary? : Bool, current_node? : String, include_disk_info? : Bool, include_yes_decisions? : Bool, master_timeout? : String) -> Self
 pub fn ClusterAllocationExplainQuery::not_equal(Self, Self) -> Bool
 pub fn ClusterAllocationExplainQuery::to_json(Self) -> Json
 pub fn ClusterAllocationExplainQuery::to_pairs(Self) -> Array[(String, String)]
@@ -2448,7 +2448,7 @@ pub(all) struct ClusterAllocationExplainResponse {
   rebalance_explanation : String?
   remaining_delay : Json?
   remaining_delay_in_millis : Json?
-  shard : Int
+  shard : Int32
   unassigned_info : Json?
   note : String?
 } derive(Eq, @debug.Debug)
@@ -3059,9 +3059,9 @@ pub(all) struct ConnectorLastSyncBody {
   last_access_control_sync_error : String?
   last_access_control_sync_scheduled_at : Json?
   last_access_control_sync_status : Json?
-  last_deleted_document_count : Int?
+  last_deleted_document_count : Int32?
   last_incremental_sync_scheduled_at : Json?
-  last_indexed_document_count : Int?
+  last_indexed_document_count : Int32?
   last_seen : Json?
   last_sync_error : String?
   last_sync_scheduled_at : Json?
@@ -3071,7 +3071,7 @@ pub(all) struct ConnectorLastSyncBody {
 } derive(Eq, @debug.Debug)
 pub fn ConnectorLastSyncBody::equal(Self, Self) -> Bool
 pub fn ConnectorLastSyncBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn ConnectorLastSyncBody::new(last_access_control_sync_error? : String, last_access_control_sync_scheduled_at? : Json, last_access_control_sync_status? : Json, last_deleted_document_count? : Int, last_incremental_sync_scheduled_at? : Json, last_indexed_document_count? : Int, last_seen? : Json, last_sync_error? : String, last_sync_scheduled_at? : Json, last_sync_status? : Json, last_synced? : Json, sync_cursor? : Json) -> Self
+pub fn ConnectorLastSyncBody::new(last_access_control_sync_error? : String, last_access_control_sync_scheduled_at? : Json, last_access_control_sync_status? : Json, last_deleted_document_count? : Int32, last_incremental_sync_scheduled_at? : Json, last_indexed_document_count? : Int32, last_seen? : Json, last_sync_error? : String, last_sync_scheduled_at? : Json, last_sync_status? : Json, last_synced? : Json, sync_cursor? : Json) -> Self
 pub fn ConnectorLastSyncBody::not_equal(Self, Self) -> Bool
 pub fn ConnectorLastSyncBody::to_json(Self) -> Json
 pub fn ConnectorLastSyncBody::to_repr(Self) -> @debug.Repr
@@ -3114,8 +3114,8 @@ pub impl ToJson for ConnectorLastSyncResponse
 pub impl @json.FromJson for ConnectorLastSyncResponse
 
 pub(all) struct ConnectorListQuery {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   index_name : String?
   connector_name : String?
   service_type : String?
@@ -3124,7 +3124,7 @@ pub(all) struct ConnectorListQuery {
 } derive(Eq, @debug.Debug)
 pub fn ConnectorListQuery::equal(Self, Self) -> Bool
 pub fn ConnectorListQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn ConnectorListQuery::new(from? : Int, size? : Int, index_name? : String, connector_name? : String, service_type? : String, include_deleted? : Bool, query? : String) -> Self
+pub fn ConnectorListQuery::new(from? : Int32, size? : Int32, index_name? : String, connector_name? : String, service_type? : String, include_deleted? : Bool, query? : String) -> Self
 pub fn ConnectorListQuery::not_equal(Self, Self) -> Bool
 pub fn ConnectorListQuery::to_json(Self) -> Json
 pub fn ConnectorListQuery::to_pairs(Self) -> Array[(String, String)]
@@ -3143,7 +3143,7 @@ pub fn ConnectorListRequest::to_json(Self) -> Json
 pub fn ConnectorListRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct ConnectorListResponse {
-  count : Int
+  count : Int32
   results : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn ConnectorListResponse::equal(Self, Self) -> Bool
@@ -3572,15 +3572,15 @@ pub fn ConnectorSyncJobGetRequest::to_json(Self) -> Json
 pub fn ConnectorSyncJobGetRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct ConnectorSyncJobListQuery {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   status : String?
   connector_id : String?
   job_type : Json?
 } derive(Eq, @debug.Debug)
 pub fn ConnectorSyncJobListQuery::equal(Self, Self) -> Bool
 pub fn ConnectorSyncJobListQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn ConnectorSyncJobListQuery::new(from? : Int, size? : Int, status? : String, connector_id? : String, job_type? : Json) -> Self
+pub fn ConnectorSyncJobListQuery::new(from? : Int32, size? : Int32, status? : String, connector_id? : String, job_type? : Json) -> Self
 pub fn ConnectorSyncJobListQuery::not_equal(Self, Self) -> Bool
 pub fn ConnectorSyncJobListQuery::to_json(Self) -> Json
 pub fn ConnectorSyncJobListQuery::to_pairs(Self) -> Array[(String, String)]
@@ -3599,7 +3599,7 @@ pub fn ConnectorSyncJobListRequest::to_json(Self) -> Json
 pub fn ConnectorSyncJobListRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct ConnectorSyncJobListResponse {
-  count : Int
+  count : Int32
   results : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn ConnectorSyncJobListResponse::equal(Self, Self) -> Bool
@@ -3659,16 +3659,16 @@ pub impl ToJson for ConnectorSyncJobPostResponse
 pub impl @json.FromJson for ConnectorSyncJobPostResponse
 
 pub(all) struct ConnectorSyncJobUpdateStatsBody {
-  deleted_document_count : Int
-  indexed_document_count : Int
-  indexed_document_volume : Int
+  deleted_document_count : Int32
+  indexed_document_count : Int32
+  indexed_document_volume : Int32
   last_seen : Json?
   metadata : Json?
-  total_document_count : Int?
+  total_document_count : Int32?
 } derive(Eq, @debug.Debug)
 pub fn ConnectorSyncJobUpdateStatsBody::equal(Self, Self) -> Bool
 pub fn ConnectorSyncJobUpdateStatsBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn ConnectorSyncJobUpdateStatsBody::new(Int, Int, Int, last_seen? : Json, metadata? : Json, total_document_count? : Int) -> Self
+pub fn ConnectorSyncJobUpdateStatsBody::new(Int32, Int32, Int32, last_seen? : Json, metadata? : Json, total_document_count? : Int32) -> Self
 pub fn ConnectorSyncJobUpdateStatsBody::not_equal(Self, Self) -> Bool
 pub fn ConnectorSyncJobUpdateStatsBody::to_json(Self) -> Json
 pub fn ConnectorSyncJobUpdateStatsBody::to_repr(Self) -> @debug.Repr
@@ -4376,12 +4376,12 @@ pub(all) struct CountQuery {
   min_score : Double?
   preference : String?
   routing : String?
-  terminate_after : Int?
+  terminate_after : Int32?
   q : String?
 } derive(Eq, @debug.Debug)
 pub fn CountQuery::equal(Self, Self) -> Bool
 pub fn CountQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn CountQuery::new(allow_no_indices? : Bool, analyzer? : String, analyze_wildcard? : Bool, default_operator? : String, df? : String, expand_wildcards? : String, ignore_throttled? : Bool, ignore_unavailable? : Bool, lenient? : Bool, min_score? : Double, preference? : String, routing? : String, terminate_after? : Int, q? : String) -> Self
+pub fn CountQuery::new(allow_no_indices? : Bool, analyzer? : String, analyze_wildcard? : Bool, default_operator? : String, df? : String, expand_wildcards? : String, ignore_throttled? : Bool, ignore_unavailable? : Bool, lenient? : Bool, min_score? : Double, preference? : String, routing? : String, terminate_after? : Int32, q? : String) -> Self
 pub fn CountQuery::not_equal(Self, Self) -> Bool
 pub fn CountQuery::to_json(Self) -> Json
 pub fn CountQuery::to_pairs(Self) -> Array[(String, String)]
@@ -4402,7 +4402,7 @@ pub fn CountRequest::to_json(Self) -> Json
 pub fn CountRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct CountResponse {
-  count : Int
+  count : Int32
   _shards : Json
 } derive(Eq, @debug.Debug)
 pub fn CountResponse::equal(Self, Self) -> Bool
@@ -4534,14 +4534,14 @@ pub impl ToJson for DanglingIndicesListDanglingIndicesResponse
 pub impl @json.FromJson for DanglingIndicesListDanglingIndicesResponse
 
 pub(all) struct DeleteByQueryBody {
-  max_docs : Int?
+  max_docs : Int32?
   query : Json?
   slice : Json?
   sort : Json?
 } derive(Eq, @debug.Debug)
 pub fn DeleteByQueryBody::equal(Self, Self) -> Bool
 pub fn DeleteByQueryBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn DeleteByQueryBody::new(max_docs? : Int, query? : Json, slice? : Json, sort? : Json) -> Self
+pub fn DeleteByQueryBody::new(max_docs? : Int32, query? : Json, slice? : Json, sort? : Json) -> Self
 pub fn DeleteByQueryBody::not_equal(Self, Self) -> Bool
 pub fn DeleteByQueryBody::to_json(Self) -> Json
 pub fn DeleteByQueryBody::to_repr(Self) -> @debug.Repr
@@ -4556,10 +4556,10 @@ pub(all) struct DeleteByQueryQuery {
   default_operator : String?
   df : String?
   expand_wildcards : String?
-  from : Int?
+  from : Int32?
   ignore_unavailable : Bool?
   lenient : Bool?
-  max_docs : Int?
+  max_docs : Int32?
   preference : String?
   refresh : Bool?
   request_cache : Bool?
@@ -4567,13 +4567,13 @@ pub(all) struct DeleteByQueryQuery {
   routing : String?
   q : String?
   scroll : String?
-  scroll_size : Int?
+  scroll_size : Int32?
   search_timeout : String?
   search_type : String?
   slices : String?
   sort : Array[String]?
   stats : Array[String]?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   version : Bool?
   wait_for_active_shards : String?
@@ -4581,7 +4581,7 @@ pub(all) struct DeleteByQueryQuery {
 } derive(Eq, @debug.Debug)
 pub fn DeleteByQueryQuery::equal(Self, Self) -> Bool
 pub fn DeleteByQueryQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn DeleteByQueryQuery::new(allow_no_indices? : Bool, analyzer? : String, analyze_wildcard? : Bool, conflicts? : String, default_operator? : String, df? : String, expand_wildcards? : String, from? : Int, ignore_unavailable? : Bool, lenient? : Bool, max_docs? : Int, preference? : String, refresh? : Bool, request_cache? : Bool, requests_per_second? : Double, routing? : String, q? : String, scroll? : String, scroll_size? : Int, search_timeout? : String, search_type? : String, slices? : String, sort? : Array[String], stats? : Array[String], terminate_after? : Int, timeout? : String, version? : Bool, wait_for_active_shards? : String, wait_for_completion? : Bool) -> Self
+pub fn DeleteByQueryQuery::new(allow_no_indices? : Bool, analyzer? : String, analyze_wildcard? : Bool, conflicts? : String, default_operator? : String, df? : String, expand_wildcards? : String, from? : Int32, ignore_unavailable? : Bool, lenient? : Bool, max_docs? : Int32, preference? : String, refresh? : Bool, request_cache? : Bool, requests_per_second? : Double, routing? : String, q? : String, scroll? : String, scroll_size? : Int32, search_timeout? : String, search_type? : String, slices? : String, sort? : Array[String], stats? : Array[String], terminate_after? : Int32, timeout? : String, version? : Bool, wait_for_active_shards? : String, wait_for_completion? : Bool) -> Self
 pub fn DeleteByQueryQuery::not_equal(Self, Self) -> Bool
 pub fn DeleteByQueryQuery::to_json(Self) -> Json
 pub fn DeleteByQueryQuery::to_pairs(Self) -> Array[(String, String)]
@@ -4602,13 +4602,13 @@ pub fn DeleteByQueryRequest::to_json(Self) -> Json
 pub fn DeleteByQueryRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct DeleteByQueryResponse {
-  batches : Int?
-  deleted : Int?
+  batches : Int32?
+  deleted : Int32?
   failures : Array[Json]?
-  noops : Int?
+  noops : Int32?
   requests_per_second : Double?
   retries : Json?
-  slice_id : Int?
+  slice_id : Int32?
   slices : Array[Json]?
   task : Json?
   throttled : Json?
@@ -4617,8 +4617,8 @@ pub(all) struct DeleteByQueryResponse {
   throttled_until_millis : Json?
   timed_out : Bool?
   took : Json?
-  total : Int?
-  version_conflicts : Int?
+  total : Int32?
+  version_conflicts : Int32?
 } derive(Eq, @debug.Debug)
 pub fn DeleteByQueryResponse::equal(Self, Self) -> Bool
 pub fn DeleteByQueryResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -4653,7 +4653,7 @@ pub fn DeleteByQueryRethrottleRequest::to_json(Self) -> Json
 pub fn DeleteByQueryRethrottleRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct DeleteQuery {
-  if_primary_term : Int?
+  if_primary_term : Int32?
   if_seq_no : String?
   refresh : String?
   routing : String?
@@ -4664,7 +4664,7 @@ pub(all) struct DeleteQuery {
 } derive(Eq, @debug.Debug)
 pub fn DeleteQuery::equal(Self, Self) -> Bool
 pub fn DeleteQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn DeleteQuery::new(if_primary_term? : Int, if_seq_no? : String, refresh? : String, routing? : String, timeout? : String, version? : String, version_type? : String, wait_for_active_shards? : String) -> Self
+pub fn DeleteQuery::new(if_primary_term? : Int32, if_seq_no? : String, refresh? : String, routing? : String, timeout? : String, version? : String, version_type? : String, wait_for_active_shards? : String) -> Self
 pub fn DeleteQuery::not_equal(Self, Self) -> Bool
 pub fn DeleteQuery::to_json(Self) -> Json
 pub fn DeleteQuery::to_pairs(Self) -> Array[(String, String)]
@@ -4957,7 +4957,7 @@ pub(all) struct EqlGetStatusResponse {
   is_running : Bool
   start_time_in_millis : Json?
   expiration_time_in_millis : Json?
-  completion_status : Int?
+  completion_status : Int32?
 } derive(Eq, @debug.Debug)
 pub fn EqlGetStatusResponse::equal(Self, Self) -> Bool
 pub fn EqlGetStatusResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -4985,11 +4985,11 @@ pub(all) struct EqlSearchBody {
   fields : Json?
   result_position : Json?
   runtime_mappings : Json?
-  max_samples_per_key : Int?
+  max_samples_per_key : Int32?
 } derive(Eq, @debug.Debug)
 pub fn EqlSearchBody::equal(Self, Self) -> Bool
 pub fn EqlSearchBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn EqlSearchBody::new(String, project_routing? : Json, case_sensitive? : Bool, event_category_field? : Json, tiebreaker_field? : Json, timestamp_field? : Json, fetch_size? : Json, filter? : Json, keep_alive? : Json, keep_on_completion? : Bool, wait_for_completion_timeout? : Json, allow_partial_search_results? : Bool, allow_partial_sequence_results? : Bool, size? : Json, fields? : Json, result_position? : Json, runtime_mappings? : Json, max_samples_per_key? : Int) -> Self
+pub fn EqlSearchBody::new(String, project_routing? : Json, case_sensitive? : Bool, event_category_field? : Json, tiebreaker_field? : Json, timestamp_field? : Json, fetch_size? : Json, filter? : Json, keep_alive? : Json, keep_on_completion? : Bool, wait_for_completion_timeout? : Json, allow_partial_search_results? : Bool, allow_partial_sequence_results? : Bool, size? : Json, fields? : Json, result_position? : Json, runtime_mappings? : Json, max_samples_per_key? : Int32) -> Self
 pub fn EqlSearchBody::not_equal(Self, Self) -> Bool
 pub fn EqlSearchBody::to_json(Self) -> Json
 pub fn EqlSearchBody::to_repr(Self) -> @debug.Repr
@@ -5043,7 +5043,7 @@ pub fn EsRequest::to_json(Self) -> Json
 pub fn EsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct EsResponse[T] {
-  status : Int
+  status : Int32
   headers : Map[String, String]
   body : T
 } derive(Eq, ToJson, @debug.Debug)
@@ -5227,10 +5227,10 @@ pub fn EsqlGetQueryRequest::to_json(Self) -> Json
 pub fn EsqlGetQueryRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct EsqlGetQueryResponse {
-  id : Int
+  id : Int32
   node : Json
-  start_time_millis : Int
-  running_time_nanos : Int
+  start_time_millis : Int32
+  running_time_nanos : Int32
   query : String
   coordinating_node : Json
   data_nodes : Array[Json]
@@ -5770,9 +5770,9 @@ pub(all) struct FleetMsearchQuery {
   expand_wildcards : String?
   ignore_throttled : Bool?
   ignore_unavailable : Bool?
-  max_concurrent_searches : Int?
-  max_concurrent_shard_requests : Int?
-  pre_filter_shard_size : Int?
+  max_concurrent_searches : Int32?
+  max_concurrent_shard_requests : Int32?
+  pre_filter_shard_size : Int32?
   search_type : String?
   rest_total_hits_as_int : Bool?
   typed_keys : Bool?
@@ -5781,7 +5781,7 @@ pub(all) struct FleetMsearchQuery {
 } derive(Eq, @debug.Debug)
 pub fn FleetMsearchQuery::equal(Self, Self) -> Bool
 pub fn FleetMsearchQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn FleetMsearchQuery::new(allow_no_indices? : Bool, ccs_minimize_roundtrips? : Bool, expand_wildcards? : String, ignore_throttled? : Bool, ignore_unavailable? : Bool, max_concurrent_searches? : Int, max_concurrent_shard_requests? : Int, pre_filter_shard_size? : Int, search_type? : String, rest_total_hits_as_int? : Bool, typed_keys? : Bool, wait_for_checkpoints? : Array[String], allow_partial_search_results? : Bool) -> Self
+pub fn FleetMsearchQuery::new(allow_no_indices? : Bool, ccs_minimize_roundtrips? : Bool, expand_wildcards? : String, ignore_throttled? : Bool, ignore_unavailable? : Bool, max_concurrent_searches? : Int32, max_concurrent_shard_requests? : Int32, pre_filter_shard_size? : Int32, search_type? : String, rest_total_hits_as_int? : Bool, typed_keys? : Bool, wait_for_checkpoints? : Array[String], allow_partial_search_results? : Bool) -> Self
 pub fn FleetMsearchQuery::not_equal(Self, Self) -> Bool
 pub fn FleetMsearchQuery::to_json(Self) -> Json
 pub fn FleetMsearchQuery::to_pairs(Self) -> Array[(String, String)]
@@ -5850,7 +5850,7 @@ pub(all) struct FleetSearchBody {
   collapse : Json?
   explain : Bool?
   ext : Map[String, Json]?
-  from : Int?
+  from : Int32?
   highlight : Json?
   track_total_hits : Json?
   indices_boost : Array[Map[String, Json]]?
@@ -5862,13 +5862,13 @@ pub(all) struct FleetSearchBody {
   rescore : Json?
   script_fields : Map[String, Json]?
   search_after : Json?
-  size : Int?
+  size : Int32?
   slice : Json?
   sort : Json?
   _source : Json?
   fields : Array[Json]?
   suggest : Json?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   track_scores : Bool?
   version : Bool?
@@ -5880,7 +5880,7 @@ pub(all) struct FleetSearchBody {
 } derive(Eq, @debug.Debug)
 pub fn FleetSearchBody::equal(Self, Self) -> Bool
 pub fn FleetSearchBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn FleetSearchBody::new(aggregations? : Map[String, Json], collapse? : Json, explain? : Bool, ext? : Map[String, Json], from? : Int, highlight? : Json, track_total_hits? : Json, indices_boost? : Array[Map[String, Json]], docvalue_fields? : Array[Json], min_score? : Double, post_filter? : Json, profile? : Bool, query? : Json, rescore? : Json, script_fields? : Map[String, Json], search_after? : Json, size? : Int, slice? : Json, sort? : Json, _source? : Json, fields? : Array[Json], suggest? : Json, terminate_after? : Int, timeout? : String, track_scores? : Bool, version? : Bool, seq_no_primary_term? : Bool, stored_fields? : Json, pit? : Json, runtime_mappings? : Json, stats? : Array[String]) -> Self
+pub fn FleetSearchBody::new(aggregations? : Map[String, Json], collapse? : Json, explain? : Bool, ext? : Map[String, Json], from? : Int32, highlight? : Json, track_total_hits? : Json, indices_boost? : Array[Map[String, Json]], docvalue_fields? : Array[Json], min_score? : Double, post_filter? : Json, profile? : Bool, query? : Json, rescore? : Json, script_fields? : Map[String, Json], search_after? : Json, size? : Int32, slice? : Json, sort? : Json, _source? : Json, fields? : Array[Json], suggest? : Json, terminate_after? : Int32, timeout? : String, track_scores? : Bool, version? : Bool, seq_no_primary_term? : Bool, stored_fields? : Json, pit? : Json, runtime_mappings? : Json, stats? : Array[String]) -> Self
 pub fn FleetSearchBody::not_equal(Self, Self) -> Bool
 pub fn FleetSearchBody::to_json(Self) -> Json
 pub fn FleetSearchBody::to_repr(Self) -> @debug.Repr
@@ -5891,7 +5891,7 @@ pub(all) struct FleetSearchQuery {
   allow_no_indices : Bool?
   analyzer : String?
   analyze_wildcard : Bool?
-  batched_reduce_size : Int?
+  batched_reduce_size : Int32?
   ccs_minimize_roundtrips : Bool?
   default_operator : String?
   df : String?
@@ -5901,9 +5901,9 @@ pub(all) struct FleetSearchQuery {
   ignore_throttled : Bool?
   ignore_unavailable : Bool?
   lenient : Bool?
-  max_concurrent_shard_requests : Int?
+  max_concurrent_shard_requests : Int32?
   preference : String?
-  pre_filter_shard_size : Int?
+  pre_filter_shard_size : Int32?
   request_cache : Bool?
   routing : String?
   scroll : String?
@@ -5912,9 +5912,9 @@ pub(all) struct FleetSearchQuery {
   stored_fields : String?
   suggest_field : String?
   suggest_mode : String?
-  suggest_size : Int?
+  suggest_size : Int32?
   suggest_text : String?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   track_total_hits : String?
   track_scores : Bool?
@@ -5926,15 +5926,15 @@ pub(all) struct FleetSearchQuery {
   _source_includes : String?
   seq_no_primary_term : Bool?
   q : String?
-  size : Int?
-  from : Int?
+  size : Int32?
+  from : Int32?
   sort : Json?
   wait_for_checkpoints : Array[String]?
   allow_partial_search_results : Bool?
 } derive(Eq, @debug.Debug)
 pub fn FleetSearchQuery::equal(Self, Self) -> Bool
 pub fn FleetSearchQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn FleetSearchQuery::new(allow_no_indices? : Bool, analyzer? : String, analyze_wildcard? : Bool, batched_reduce_size? : Int, ccs_minimize_roundtrips? : Bool, default_operator? : String, df? : String, docvalue_fields? : String, expand_wildcards? : String, explain? : Bool, ignore_throttled? : Bool, ignore_unavailable? : Bool, lenient? : Bool, max_concurrent_shard_requests? : Int, preference? : String, pre_filter_shard_size? : Int, request_cache? : Bool, routing? : String, scroll? : String, search_type? : String, stats? : Array[String], stored_fields? : String, suggest_field? : String, suggest_mode? : String, suggest_size? : Int, suggest_text? : String, terminate_after? : Int, timeout? : String, track_total_hits? : String, track_scores? : Bool, typed_keys? : Bool, rest_total_hits_as_int? : Bool, version? : Bool, _source? : String, _source_excludes? : String, _source_includes? : String, seq_no_primary_term? : Bool, q? : String, size? : Int, from? : Int, sort? : Json, wait_for_checkpoints? : Array[String], allow_partial_search_results? : Bool) -> Self
+pub fn FleetSearchQuery::new(allow_no_indices? : Bool, analyzer? : String, analyze_wildcard? : Bool, batched_reduce_size? : Int32, ccs_minimize_roundtrips? : Bool, default_operator? : String, df? : String, docvalue_fields? : String, expand_wildcards? : String, explain? : Bool, ignore_throttled? : Bool, ignore_unavailable? : Bool, lenient? : Bool, max_concurrent_shard_requests? : Int32, preference? : String, pre_filter_shard_size? : Int32, request_cache? : Bool, routing? : String, scroll? : String, search_type? : String, stats? : Array[String], stored_fields? : String, suggest_field? : String, suggest_mode? : String, suggest_size? : Int32, suggest_text? : String, terminate_after? : Int32, timeout? : String, track_total_hits? : String, track_scores? : Bool, typed_keys? : Bool, rest_total_hits_as_int? : Bool, version? : Bool, _source? : String, _source_excludes? : String, _source_includes? : String, seq_no_primary_term? : Bool, q? : String, size? : Int32, from? : Int32, sort? : Json, wait_for_checkpoints? : Array[String], allow_partial_search_results? : Bool) -> Self
 pub fn FleetSearchQuery::not_equal(Self, Self) -> Bool
 pub fn FleetSearchQuery::to_json(Self) -> Json
 pub fn FleetSearchQuery::to_pairs(Self) -> Array[(String, String)]
@@ -5955,7 +5955,7 @@ pub fn FleetSearchRequest::to_json(Self) -> Json
 pub fn FleetSearchRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct FleetSearchResponse {
-  took : Int
+  took : Int32
   timed_out : Bool
   _shards : Json
   hits : Json
@@ -5963,7 +5963,7 @@ pub(all) struct FleetSearchResponse {
   _clusters : Json?
   fields : Map[String, Json]?
   max_score : Double?
-  num_reduce_phases : Int?
+  num_reduce_phases : Int32?
   profile : Json?
   pit_id : Json?
   _scroll_id : Json?
@@ -6242,7 +6242,7 @@ pub(all) struct GraphExploreResponse {
   connections : Array[Json]
   failures : Array[Json]
   timed_out : Bool
-  took : Int
+  took : Int32
   vertices : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn GraphExploreResponse::equal(Self, Self) -> Bool
@@ -6256,11 +6256,11 @@ pub impl @json.FromJson for GraphExploreResponse
 pub(all) struct HealthReportQuery {
   timeout : String?
   verbose : Bool?
-  size : Int?
+  size : Int32?
 } derive(Eq, @debug.Debug)
 pub fn HealthReportQuery::equal(Self, Self) -> Bool
 pub fn HealthReportQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn HealthReportQuery::new(timeout? : String, verbose? : Bool, size? : Int) -> Self
+pub fn HealthReportQuery::new(timeout? : String, verbose? : Bool, size? : Int32) -> Self
 pub fn HealthReportQuery::not_equal(Self, Self) -> Bool
 pub fn HealthReportQuery::to_json(Self) -> Json
 pub fn HealthReportQuery::to_pairs(Self) -> Array[(String, String)]
@@ -6662,7 +6662,7 @@ pub fn IlmStopRequest::to_json(Self) -> Json
 pub fn IlmStopRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct IndexQuery {
-  if_primary_term : Int?
+  if_primary_term : Int32?
   if_seq_no : String?
   include_source_on_error : Bool?
   op_type : String?
@@ -6678,7 +6678,7 @@ pub(all) struct IndexQuery {
 } derive(Eq, @debug.Debug)
 pub fn IndexQuery::equal(Self, Self) -> Bool
 pub fn IndexQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn IndexQuery::new(if_primary_term? : Int, if_seq_no? : String, include_source_on_error? : Bool, op_type? : String, pipeline? : String, refresh? : String, routing? : String, timeout? : String, version? : String, version_type? : String, wait_for_active_shards? : String, require_alias? : Bool, require_data_stream? : Bool) -> Self
+pub fn IndexQuery::new(if_primary_term? : Int32, if_seq_no? : String, include_source_on_error? : Bool, op_type? : String, pipeline? : String, refresh? : String, routing? : String, timeout? : String, version? : String, version_type? : String, wait_for_active_shards? : String, require_alias? : Bool, require_data_stream? : Bool) -> Self
 pub fn IndexQuery::not_equal(Self, Self) -> Bool
 pub fn IndexQuery::to_json(Self) -> Json
 pub fn IndexQuery::to_pairs(Self) -> Array[(String, String)]
@@ -7092,11 +7092,11 @@ pub fn IndicesDataStreamsStatsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct IndicesDataStreamsStatsResponse {
   _shards : Json
-  backing_indices : Int
-  data_stream_count : Int
+  backing_indices : Int32
+  data_stream_count : Int32
   data_streams : Array[Json]
   total_store_sizes : Json?
-  total_store_size_bytes : Int
+  total_store_size_bytes : Int32
 } derive(Eq, @debug.Debug)
 pub fn IndicesDataStreamsStatsResponse::equal(Self, Self) -> Bool
 pub fn IndicesDataStreamsStatsResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -7545,13 +7545,13 @@ pub(all) struct IndicesForcemergeQuery {
   expand_wildcards : String?
   flush : Bool?
   ignore_unavailable : Bool?
-  max_num_segments : Int?
+  max_num_segments : Int32?
   only_expunge_deletes : Bool?
   wait_for_completion : Bool?
 } derive(Eq, @debug.Debug)
 pub fn IndicesForcemergeQuery::equal(Self, Self) -> Bool
 pub fn IndicesForcemergeQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn IndicesForcemergeQuery::new(allow_no_indices? : Bool, expand_wildcards? : String, flush? : Bool, ignore_unavailable? : Bool, max_num_segments? : Int, only_expunge_deletes? : Bool, wait_for_completion? : Bool) -> Self
+pub fn IndicesForcemergeQuery::new(allow_no_indices? : Bool, expand_wildcards? : String, flush? : Bool, ignore_unavailable? : Bool, max_num_segments? : Int32, only_expunge_deletes? : Bool, wait_for_completion? : Bool) -> Self
 pub fn IndicesForcemergeQuery::not_equal(Self, Self) -> Bool
 pub fn IndicesForcemergeQuery::to_json(Self) -> Json
 pub fn IndicesForcemergeQuery::to_pairs(Self) -> Array[(String, String)]
@@ -7658,7 +7658,7 @@ pub fn IndicesGetDataLifecycleStatsRequest::to_json(Self) -> Json
 pub fn IndicesGetDataLifecycleStatsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct IndicesGetDataLifecycleStatsResponse {
-  data_stream_count : Int
+  data_stream_count : Int32
   data_streams : Array[Json]
   last_run_duration_in_millis : Json?
   time_between_starts_in_millis : Json?
@@ -7937,11 +7937,11 @@ pub(all) struct IndicesGetMigrateReindexStatusResponse {
   start_time : Json?
   start_time_millis : Json
   complete : Bool
-  total_indices_in_data_stream : Int
-  total_indices_requiring_upgrade : Int
-  successes : Int
+  total_indices_in_data_stream : Int32
+  total_indices_requiring_upgrade : Int32
+  successes : Int32
   in_progress : Array[Json]
-  pending : Int
+  pending : Int32
   errors : Array[Json]
   exception : String?
 } derive(Eq, @debug.Debug)
@@ -8392,7 +8392,7 @@ pub(all) struct IndicesPutIndexTemplateBody {
   composed_of : Array[Json]?
   template : Json?
   data_stream : Json?
-  priority : Int?
+  priority : Int32?
   version : Json?
   _meta : Json?
   allow_auto_create : Bool?
@@ -8401,7 +8401,7 @@ pub(all) struct IndicesPutIndexTemplateBody {
 } derive(Eq, @debug.Debug)
 pub fn IndicesPutIndexTemplateBody::equal(Self, Self) -> Bool
 pub fn IndicesPutIndexTemplateBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn IndicesPutIndexTemplateBody::new(index_patterns? : Json, composed_of? : Array[Json], template? : Json, data_stream? : Json, priority? : Int, version? : Json, _meta? : Json, allow_auto_create? : Bool, ignore_missing_component_templates? : Array[String], deprecated? : Bool) -> Self
+pub fn IndicesPutIndexTemplateBody::new(index_patterns? : Json, composed_of? : Array[Json], template? : Json, data_stream? : Json, priority? : Int32, version? : Json, _meta? : Json, allow_auto_create? : Bool, ignore_missing_component_templates? : Array[String], deprecated? : Bool) -> Self
 pub fn IndicesPutIndexTemplateBody::not_equal(Self, Self) -> Bool
 pub fn IndicesPutIndexTemplateBody::to_json(Self) -> Json
 pub fn IndicesPutIndexTemplateBody::to_repr(Self) -> @debug.Repr
@@ -8523,13 +8523,13 @@ pub(all) struct IndicesPutTemplateBody {
   aliases : Map[String, Json]?
   index_patterns : Json?
   mappings : Json?
-  order : Int?
+  order : Int32?
   settings : Json?
   version : Json?
 } derive(Eq, @debug.Debug)
 pub fn IndicesPutTemplateBody::equal(Self, Self) -> Bool
 pub fn IndicesPutTemplateBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn IndicesPutTemplateBody::new(aliases? : Map[String, Json], index_patterns? : Json, mappings? : Json, order? : Int, settings? : Json, version? : Json) -> Self
+pub fn IndicesPutTemplateBody::new(aliases? : Map[String, Json], index_patterns? : Json, mappings? : Json, order? : Int32, settings? : Json, version? : Json) -> Self
 pub fn IndicesPutTemplateBody::not_equal(Self, Self) -> Bool
 pub fn IndicesPutTemplateBody::to_json(Self) -> Json
 pub fn IndicesPutTemplateBody::to_repr(Self) -> @debug.Repr
@@ -8539,12 +8539,12 @@ pub impl @json.FromJson for IndicesPutTemplateBody
 pub(all) struct IndicesPutTemplateQuery {
   create : Bool?
   master_timeout : String?
-  order : Int?
+  order : Int32?
   cause : String?
 } derive(Eq, @debug.Debug)
 pub fn IndicesPutTemplateQuery::equal(Self, Self) -> Bool
 pub fn IndicesPutTemplateQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn IndicesPutTemplateQuery::new(create? : Bool, master_timeout? : String, order? : Int, cause? : String) -> Self
+pub fn IndicesPutTemplateQuery::new(create? : Bool, master_timeout? : String, order? : Int32, cause? : String) -> Self
 pub fn IndicesPutTemplateQuery::not_equal(Self, Self) -> Bool
 pub fn IndicesPutTemplateQuery::to_json(Self) -> Json
 pub fn IndicesPutTemplateQuery::to_pairs(Self) -> Array[(String, String)]
@@ -8992,7 +8992,7 @@ pub(all) struct IndicesSimulateTemplateBody {
   composed_of : Array[Json]?
   template : Json?
   data_stream : Json?
-  priority : Int?
+  priority : Int32?
   version : Json?
   _meta : Json?
   ignore_missing_component_templates : Array[String]?
@@ -9000,7 +9000,7 @@ pub(all) struct IndicesSimulateTemplateBody {
 } derive(Eq, @debug.Debug)
 pub fn IndicesSimulateTemplateBody::equal(Self, Self) -> Bool
 pub fn IndicesSimulateTemplateBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn IndicesSimulateTemplateBody::new(allow_auto_create? : Bool, index_patterns? : Json, composed_of? : Array[Json], template? : Json, data_stream? : Json, priority? : Int, version? : Json, _meta? : Json, ignore_missing_component_templates? : Array[String], deprecated? : Bool) -> Self
+pub fn IndicesSimulateTemplateBody::new(allow_auto_create? : Bool, index_patterns? : Json, composed_of? : Array[Json], template? : Json, data_stream? : Json, priority? : Int32, version? : Json, _meta? : Json, ignore_missing_component_templates? : Array[String], deprecated? : Bool) -> Self
 pub fn IndicesSimulateTemplateBody::not_equal(Self, Self) -> Bool
 pub fn IndicesSimulateTemplateBody::to_json(Self) -> Json
 pub fn IndicesSimulateTemplateBody::to_repr(Self) -> @debug.Repr
@@ -10518,12 +10518,12 @@ pub(all) struct InferenceRerankBody {
   query : String
   input : Array[String]
   return_documents : Bool?
-  top_n : Int?
+  top_n : Int32?
   task_settings : Json?
 } derive(Eq, @debug.Debug)
 pub fn InferenceRerankBody::equal(Self, Self) -> Bool
 pub fn InferenceRerankBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn InferenceRerankBody::new(String, Array[String], return_documents? : Bool, top_n? : Int, task_settings? : Json) -> Self
+pub fn InferenceRerankBody::new(String, Array[String], return_documents? : Bool, top_n? : Int32, task_settings? : Json) -> Self
 pub fn InferenceRerankBody::not_equal(Self, Self) -> Bool
 pub fn InferenceRerankBody::to_json(Self) -> Json
 pub fn InferenceRerankBody::to_repr(Self) -> @debug.Repr
@@ -11053,11 +11053,11 @@ pub impl @json.FromJson for IngestPutPipelineBody
 pub(all) struct IngestPutPipelineQuery {
   master_timeout : String?
   timeout : String?
-  if_version : Int?
+  if_version : Int32?
 } derive(Eq, @debug.Debug)
 pub fn IngestPutPipelineQuery::equal(Self, Self) -> Bool
 pub fn IngestPutPipelineQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn IngestPutPipelineQuery::new(master_timeout? : String, timeout? : String, if_version? : Int) -> Self
+pub fn IngestPutPipelineQuery::new(master_timeout? : String, timeout? : String, if_version? : Int32) -> Self
 pub fn IngestPutPipelineQuery::not_equal(Self, Self) -> Bool
 pub fn IngestPutPipelineQuery::to_json(Self) -> Json
 pub fn IngestPutPipelineQuery::to_pairs(Self) -> Array[(String, String)]
@@ -11169,7 +11169,7 @@ pub fn KnnSearchRequest::to_json(Self) -> Json
 pub fn KnnSearchRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct KnnSearchResponse {
-  took : Int
+  took : Int32
   timed_out : Bool
   _shards : Json
   hits : Json
@@ -12235,13 +12235,13 @@ pub(all) struct MlExplainDataFrameAnalyticsBody {
   analysis : Json?
   description : String?
   model_memory_limit : String?
-  max_num_threads : Int?
+  max_num_threads : Int32?
   analyzed_fields : Json?
   allow_lazy_start : Bool?
 } derive(Eq, @debug.Debug)
 pub fn MlExplainDataFrameAnalyticsBody::equal(Self, Self) -> Bool
 pub fn MlExplainDataFrameAnalyticsBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlExplainDataFrameAnalyticsBody::new(source? : Json, dest? : Json, analysis? : Json, description? : String, model_memory_limit? : String, max_num_threads? : Int, analyzed_fields? : Json, allow_lazy_start? : Bool) -> Self
+pub fn MlExplainDataFrameAnalyticsBody::new(source? : Json, dest? : Json, analysis? : Json, description? : String, model_memory_limit? : String, max_num_threads? : Int32, analyzed_fields? : Json, allow_lazy_start? : Bool) -> Self
 pub fn MlExplainDataFrameAnalyticsBody::not_equal(Self, Self) -> Bool
 pub fn MlExplainDataFrameAnalyticsBody::to_json(Self) -> Json
 pub fn MlExplainDataFrameAnalyticsBody::to_repr(Self) -> @debug.Repr
@@ -12331,7 +12331,7 @@ pub fn MlFlushJobRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlFlushJobResponse {
   flushed : Bool
-  last_finalized_bucket_end : Int?
+  last_finalized_bucket_end : Int32?
 } derive(Eq, @debug.Debug)
 pub fn MlFlushJobResponse::equal(Self, Self) -> Bool
 pub fn MlFlushJobResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -12419,14 +12419,14 @@ pub(all) struct MlGetBucketsQuery {
   end : String?
   exclude_interim : Bool?
   expand : Bool?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   sort : String?
   start : String?
 } derive(Eq, @debug.Debug)
 pub fn MlGetBucketsQuery::equal(Self, Self) -> Bool
 pub fn MlGetBucketsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlGetBucketsQuery::new(anomaly_score? : Double, desc? : Bool, end? : String, exclude_interim? : Bool, expand? : Bool, from? : Int, size? : Int, sort? : String, start? : String) -> Self
+pub fn MlGetBucketsQuery::new(anomaly_score? : Double, desc? : Bool, end? : String, exclude_interim? : Bool, expand? : Bool, from? : Int32, size? : Int32, sort? : String, start? : String) -> Self
 pub fn MlGetBucketsQuery::not_equal(Self, Self) -> Bool
 pub fn MlGetBucketsQuery::to_json(Self) -> Json
 pub fn MlGetBucketsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -12449,7 +12449,7 @@ pub fn MlGetBucketsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetBucketsResponse {
   buckets : Array[Json]
-  count : Int
+  count : Int32
 } derive(Eq, @debug.Debug)
 pub fn MlGetBucketsResponse::equal(Self, Self) -> Bool
 pub fn MlGetBucketsResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -12461,14 +12461,14 @@ pub impl @json.FromJson for MlGetBucketsResponse
 
 pub(all) struct MlGetCalendarEventsQuery {
   end : String?
-  from : Int?
+  from : Int32?
   job_id : String?
-  size : Int?
+  size : Int32?
   start : String?
 } derive(Eq, @debug.Debug)
 pub fn MlGetCalendarEventsQuery::equal(Self, Self) -> Bool
 pub fn MlGetCalendarEventsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlGetCalendarEventsQuery::new(end? : String, from? : Int, job_id? : String, size? : Int, start? : String) -> Self
+pub fn MlGetCalendarEventsQuery::new(end? : String, from? : Int32, job_id? : String, size? : Int32, start? : String) -> Self
 pub fn MlGetCalendarEventsQuery::not_equal(Self, Self) -> Bool
 pub fn MlGetCalendarEventsQuery::to_json(Self) -> Json
 pub fn MlGetCalendarEventsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -12488,7 +12488,7 @@ pub fn MlGetCalendarEventsRequest::to_json(Self) -> Json
 pub fn MlGetCalendarEventsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetCalendarEventsResponse {
-  count : Int
+  count : Int32
   events : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetCalendarEventsResponse::equal(Self, Self) -> Bool
@@ -12512,12 +12512,12 @@ pub impl ToJson for MlGetCalendarsBody
 pub impl @json.FromJson for MlGetCalendarsBody
 
 pub(all) struct MlGetCalendarsQuery {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, @debug.Debug)
 pub fn MlGetCalendarsQuery::equal(Self, Self) -> Bool
 pub fn MlGetCalendarsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlGetCalendarsQuery::new(from? : Int, size? : Int) -> Self
+pub fn MlGetCalendarsQuery::new(from? : Int32, size? : Int32) -> Self
 pub fn MlGetCalendarsQuery::not_equal(Self, Self) -> Bool
 pub fn MlGetCalendarsQuery::to_json(Self) -> Json
 pub fn MlGetCalendarsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -12539,7 +12539,7 @@ pub fn MlGetCalendarsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetCalendarsResponse {
   calendars : Array[Json]
-  count : Int
+  count : Int32
 } derive(Eq, @debug.Debug)
 pub fn MlGetCalendarsResponse::equal(Self, Self) -> Bool
 pub fn MlGetCalendarsResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -12562,13 +12562,13 @@ pub impl ToJson for MlGetCategoriesBody
 pub impl @json.FromJson for MlGetCategoriesBody
 
 pub(all) struct MlGetCategoriesQuery {
-  from : Int?
+  from : Int32?
   partition_field_value : String?
-  size : Int?
+  size : Int32?
 } derive(Eq, @debug.Debug)
 pub fn MlGetCategoriesQuery::equal(Self, Self) -> Bool
 pub fn MlGetCategoriesQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlGetCategoriesQuery::new(from? : Int, partition_field_value? : String, size? : Int) -> Self
+pub fn MlGetCategoriesQuery::new(from? : Int32, partition_field_value? : String, size? : Int32) -> Self
 pub fn MlGetCategoriesQuery::not_equal(Self, Self) -> Bool
 pub fn MlGetCategoriesQuery::to_json(Self) -> Json
 pub fn MlGetCategoriesQuery::to_pairs(Self) -> Array[(String, String)]
@@ -12591,7 +12591,7 @@ pub fn MlGetCategoriesRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetCategoriesResponse {
   categories : Array[Json]
-  count : Int
+  count : Int32
 } derive(Eq, @debug.Debug)
 pub fn MlGetCategoriesResponse::equal(Self, Self) -> Bool
 pub fn MlGetCategoriesResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -12603,13 +12603,13 @@ pub impl @json.FromJson for MlGetCategoriesResponse
 
 pub(all) struct MlGetDataFrameAnalyticsQuery {
   allow_no_match : Bool?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   exclude_generated : Bool?
 } derive(Eq, @debug.Debug)
 pub fn MlGetDataFrameAnalyticsQuery::equal(Self, Self) -> Bool
 pub fn MlGetDataFrameAnalyticsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlGetDataFrameAnalyticsQuery::new(allow_no_match? : Bool, from? : Int, size? : Int, exclude_generated? : Bool) -> Self
+pub fn MlGetDataFrameAnalyticsQuery::new(allow_no_match? : Bool, from? : Int32, size? : Int32, exclude_generated? : Bool) -> Self
 pub fn MlGetDataFrameAnalyticsQuery::not_equal(Self, Self) -> Bool
 pub fn MlGetDataFrameAnalyticsQuery::to_json(Self) -> Json
 pub fn MlGetDataFrameAnalyticsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -12629,7 +12629,7 @@ pub fn MlGetDataFrameAnalyticsRequest::to_json(Self) -> Json
 pub fn MlGetDataFrameAnalyticsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetDataFrameAnalyticsResponse {
-  count : Int
+  count : Int32
   data_frame_analytics : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetDataFrameAnalyticsResponse::equal(Self, Self) -> Bool
@@ -12642,13 +12642,13 @@ pub impl @json.FromJson for MlGetDataFrameAnalyticsResponse
 
 pub(all) struct MlGetDataFrameAnalyticsStatsQuery {
   allow_no_match : Bool?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   verbose : Bool?
 } derive(Eq, @debug.Debug)
 pub fn MlGetDataFrameAnalyticsStatsQuery::equal(Self, Self) -> Bool
 pub fn MlGetDataFrameAnalyticsStatsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlGetDataFrameAnalyticsStatsQuery::new(allow_no_match? : Bool, from? : Int, size? : Int, verbose? : Bool) -> Self
+pub fn MlGetDataFrameAnalyticsStatsQuery::new(allow_no_match? : Bool, from? : Int32, size? : Int32, verbose? : Bool) -> Self
 pub fn MlGetDataFrameAnalyticsStatsQuery::not_equal(Self, Self) -> Bool
 pub fn MlGetDataFrameAnalyticsStatsQuery::to_json(Self) -> Json
 pub fn MlGetDataFrameAnalyticsStatsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -12668,7 +12668,7 @@ pub fn MlGetDataFrameAnalyticsStatsRequest::to_json(Self) -> Json
 pub fn MlGetDataFrameAnalyticsStatsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetDataFrameAnalyticsStatsResponse {
-  count : Int
+  count : Int32
   data_frame_analytics : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetDataFrameAnalyticsStatsResponse::equal(Self, Self) -> Bool
@@ -12704,7 +12704,7 @@ pub fn MlGetDatafeedStatsRequest::to_json(Self) -> Json
 pub fn MlGetDatafeedStatsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetDatafeedStatsResponse {
-  count : Int
+  count : Int32
   datafeeds : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetDatafeedStatsResponse::equal(Self, Self) -> Bool
@@ -12741,7 +12741,7 @@ pub fn MlGetDatafeedsRequest::to_json(Self) -> Json
 pub fn MlGetDatafeedsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetDatafeedsResponse {
-  count : Int
+  count : Int32
   datafeeds : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetDatafeedsResponse::equal(Self, Self) -> Bool
@@ -12753,12 +12753,12 @@ pub impl ToJson for MlGetDatafeedsResponse
 pub impl @json.FromJson for MlGetDatafeedsResponse
 
 pub(all) struct MlGetFiltersQuery {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, @debug.Debug)
 pub fn MlGetFiltersQuery::equal(Self, Self) -> Bool
 pub fn MlGetFiltersQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlGetFiltersQuery::new(from? : Int, size? : Int) -> Self
+pub fn MlGetFiltersQuery::new(from? : Int32, size? : Int32) -> Self
 pub fn MlGetFiltersQuery::not_equal(Self, Self) -> Bool
 pub fn MlGetFiltersQuery::to_json(Self) -> Json
 pub fn MlGetFiltersQuery::to_pairs(Self) -> Array[(String, String)]
@@ -12778,7 +12778,7 @@ pub fn MlGetFiltersRequest::to_json(Self) -> Json
 pub fn MlGetFiltersRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetFiltersResponse {
-  count : Int
+  count : Int32
   filters : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetFiltersResponse::equal(Self, Self) -> Bool
@@ -12806,14 +12806,14 @@ pub(all) struct MlGetInfluencersQuery {
   end : String?
   exclude_interim : Bool?
   influencer_score : Double?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   sort : String?
   start : String?
 } derive(Eq, @debug.Debug)
 pub fn MlGetInfluencersQuery::equal(Self, Self) -> Bool
 pub fn MlGetInfluencersQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlGetInfluencersQuery::new(desc? : Bool, end? : String, exclude_interim? : Bool, influencer_score? : Double, from? : Int, size? : Int, sort? : String, start? : String) -> Self
+pub fn MlGetInfluencersQuery::new(desc? : Bool, end? : String, exclude_interim? : Bool, influencer_score? : Double, from? : Int32, size? : Int32, sort? : String, start? : String) -> Self
 pub fn MlGetInfluencersQuery::not_equal(Self, Self) -> Bool
 pub fn MlGetInfluencersQuery::to_json(Self) -> Json
 pub fn MlGetInfluencersQuery::to_pairs(Self) -> Array[(String, String)]
@@ -12834,7 +12834,7 @@ pub fn MlGetInfluencersRequest::to_json(Self) -> Json
 pub fn MlGetInfluencersRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetInfluencersResponse {
-  count : Int
+  count : Int32
   influencers : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetInfluencersResponse::equal(Self, Self) -> Bool
@@ -12870,7 +12870,7 @@ pub fn MlGetJobStatsRequest::to_json(Self) -> Json
 pub fn MlGetJobStatsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetJobStatsResponse {
-  count : Int
+  count : Int32
   jobs : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetJobStatsResponse::equal(Self, Self) -> Bool
@@ -12907,7 +12907,7 @@ pub fn MlGetJobsRequest::to_json(Self) -> Json
 pub fn MlGetJobsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetJobsResponse {
-  count : Int
+  count : Int32
   jobs : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetJobsResponse::equal(Self, Self) -> Bool
@@ -12982,7 +12982,7 @@ pub fn MlGetModelSnapshotUpgradeStatsRequest::to_json(Self) -> Json
 pub fn MlGetModelSnapshotUpgradeStatsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetModelSnapshotUpgradeStatsResponse {
-  count : Int
+  count : Int32
   model_snapshot_upgrades : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetModelSnapshotUpgradeStatsResponse::equal(Self, Self) -> Bool
@@ -13012,14 +13012,14 @@ pub impl @json.FromJson for MlGetModelSnapshotsBody
 pub(all) struct MlGetModelSnapshotsQuery {
   desc : Bool?
   end : String?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   sort : String?
   start : String?
 } derive(Eq, @debug.Debug)
 pub fn MlGetModelSnapshotsQuery::equal(Self, Self) -> Bool
 pub fn MlGetModelSnapshotsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlGetModelSnapshotsQuery::new(desc? : Bool, end? : String, from? : Int, size? : Int, sort? : String, start? : String) -> Self
+pub fn MlGetModelSnapshotsQuery::new(desc? : Bool, end? : String, from? : Int32, size? : Int32, sort? : String, start? : String) -> Self
 pub fn MlGetModelSnapshotsQuery::not_equal(Self, Self) -> Bool
 pub fn MlGetModelSnapshotsQuery::to_json(Self) -> Json
 pub fn MlGetModelSnapshotsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -13041,7 +13041,7 @@ pub fn MlGetModelSnapshotsRequest::to_json(Self) -> Json
 pub fn MlGetModelSnapshotsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetModelSnapshotsResponse {
-  count : Int
+  count : Int32
   model_snapshots : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetModelSnapshotsResponse::equal(Self, Self) -> Bool
@@ -13059,11 +13059,11 @@ pub(all) struct MlGetOverallBucketsBody {
   exclude_interim : Bool?
   overall_score : Double?
   start : Json?
-  top_n : Int?
+  top_n : Int32?
 } derive(Eq, @debug.Debug)
 pub fn MlGetOverallBucketsBody::equal(Self, Self) -> Bool
 pub fn MlGetOverallBucketsBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlGetOverallBucketsBody::new(allow_no_match? : Bool, bucket_span? : Json, end? : Json, exclude_interim? : Bool, overall_score? : Double, start? : Json, top_n? : Int) -> Self
+pub fn MlGetOverallBucketsBody::new(allow_no_match? : Bool, bucket_span? : Json, end? : Json, exclude_interim? : Bool, overall_score? : Double, start? : Json, top_n? : Int32) -> Self
 pub fn MlGetOverallBucketsBody::not_equal(Self, Self) -> Bool
 pub fn MlGetOverallBucketsBody::to_json(Self) -> Json
 pub fn MlGetOverallBucketsBody::to_repr(Self) -> @debug.Repr
@@ -13077,11 +13077,11 @@ pub(all) struct MlGetOverallBucketsQuery {
   exclude_interim : Bool?
   overall_score : Double?
   start : String?
-  top_n : Int?
+  top_n : Int32?
 } derive(Eq, @debug.Debug)
 pub fn MlGetOverallBucketsQuery::equal(Self, Self) -> Bool
 pub fn MlGetOverallBucketsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlGetOverallBucketsQuery::new(allow_no_match? : Bool, bucket_span? : String, end? : String, exclude_interim? : Bool, overall_score? : Double, start? : String, top_n? : Int) -> Self
+pub fn MlGetOverallBucketsQuery::new(allow_no_match? : Bool, bucket_span? : String, end? : String, exclude_interim? : Bool, overall_score? : Double, start? : String, top_n? : Int32) -> Self
 pub fn MlGetOverallBucketsQuery::not_equal(Self, Self) -> Bool
 pub fn MlGetOverallBucketsQuery::to_json(Self) -> Json
 pub fn MlGetOverallBucketsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -13102,7 +13102,7 @@ pub fn MlGetOverallBucketsRequest::to_json(Self) -> Json
 pub fn MlGetOverallBucketsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetOverallBucketsResponse {
-  count : Int
+  count : Int32
   overall_buckets : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetOverallBucketsResponse::equal(Self, Self) -> Bool
@@ -13135,15 +13135,15 @@ pub(all) struct MlGetRecordsQuery {
   desc : Bool?
   end : String?
   exclude_interim : Bool?
-  from : Int?
+  from : Int32?
   record_score : Double?
-  size : Int?
+  size : Int32?
   sort : String?
   start : String?
 } derive(Eq, @debug.Debug)
 pub fn MlGetRecordsQuery::equal(Self, Self) -> Bool
 pub fn MlGetRecordsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlGetRecordsQuery::new(desc? : Bool, end? : String, exclude_interim? : Bool, from? : Int, record_score? : Double, size? : Int, sort? : String, start? : String) -> Self
+pub fn MlGetRecordsQuery::new(desc? : Bool, end? : String, exclude_interim? : Bool, from? : Int32, record_score? : Double, size? : Int32, sort? : String, start? : String) -> Self
 pub fn MlGetRecordsQuery::not_equal(Self, Self) -> Bool
 pub fn MlGetRecordsQuery::to_json(Self) -> Json
 pub fn MlGetRecordsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -13164,7 +13164,7 @@ pub fn MlGetRecordsRequest::to_json(Self) -> Json
 pub fn MlGetRecordsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetRecordsResponse {
-  count : Int
+  count : Int32
   records : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetRecordsResponse::equal(Self, Self) -> Bool
@@ -13179,14 +13179,14 @@ pub(all) struct MlGetTrainedModelsQuery {
   allow_no_match : Bool?
   decompress_definition : Bool?
   exclude_generated : Bool?
-  from : Int?
+  from : Int32?
   include_ : String?
-  size : Int?
+  size : Int32?
   tags : Json?
 } derive(Eq, @debug.Debug)
 pub fn MlGetTrainedModelsQuery::equal(Self, Self) -> Bool
 pub fn MlGetTrainedModelsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlGetTrainedModelsQuery::new(allow_no_match? : Bool, decompress_definition? : Bool, exclude_generated? : Bool, from? : Int, include_? : String, size? : Int, tags? : Json) -> Self
+pub fn MlGetTrainedModelsQuery::new(allow_no_match? : Bool, decompress_definition? : Bool, exclude_generated? : Bool, from? : Int32, include_? : String, size? : Int32, tags? : Json) -> Self
 pub fn MlGetTrainedModelsQuery::not_equal(Self, Self) -> Bool
 pub fn MlGetTrainedModelsQuery::to_json(Self) -> Json
 pub fn MlGetTrainedModelsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -13206,7 +13206,7 @@ pub fn MlGetTrainedModelsRequest::to_json(Self) -> Json
 pub fn MlGetTrainedModelsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetTrainedModelsResponse {
-  count : Int
+  count : Int32
   trained_model_configs : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetTrainedModelsResponse::equal(Self, Self) -> Bool
@@ -13219,12 +13219,12 @@ pub impl @json.FromJson for MlGetTrainedModelsResponse
 
 pub(all) struct MlGetTrainedModelsStatsQuery {
   allow_no_match : Bool?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, @debug.Debug)
 pub fn MlGetTrainedModelsStatsQuery::equal(Self, Self) -> Bool
 pub fn MlGetTrainedModelsStatsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlGetTrainedModelsStatsQuery::new(allow_no_match? : Bool, from? : Int, size? : Int) -> Self
+pub fn MlGetTrainedModelsStatsQuery::new(allow_no_match? : Bool, from? : Int32, size? : Int32) -> Self
 pub fn MlGetTrainedModelsStatsQuery::not_equal(Self, Self) -> Bool
 pub fn MlGetTrainedModelsStatsQuery::to_json(Self) -> Json
 pub fn MlGetTrainedModelsStatsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -13244,7 +13244,7 @@ pub fn MlGetTrainedModelsStatsRequest::to_json(Self) -> Json
 pub fn MlGetTrainedModelsStatsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlGetTrainedModelsStatsResponse {
-  count : Int
+  count : Int32
   trained_model_stats : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn MlGetTrainedModelsStatsResponse::equal(Self, Self) -> Bool
@@ -13464,22 +13464,22 @@ pub fn MlPostDataRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MlPostDataResponse {
   job_id : Json
-  processed_record_count : Int
-  processed_field_count : Int
-  input_bytes : Int
-  input_field_count : Int
-  invalid_date_count : Int
-  missing_field_count : Int
-  out_of_order_timestamp_count : Int
-  empty_bucket_count : Int
-  sparse_bucket_count : Int
-  bucket_count : Int
+  processed_record_count : Int32
+  processed_field_count : Int32
+  input_bytes : Int32
+  input_field_count : Int32
+  invalid_date_count : Int32
+  missing_field_count : Int32
+  out_of_order_timestamp_count : Int32
+  empty_bucket_count : Int32
+  sparse_bucket_count : Int32
+  bucket_count : Int32
   earliest_record_timestamp : Json?
   latest_record_timestamp : Json?
   last_data_time : Json?
   latest_empty_bucket_timestamp : Json?
   latest_sparse_bucket_timestamp : Json?
-  input_record_count : Int
+  input_record_count : Int32
   log_time : Json?
 } derive(Eq, @debug.Debug)
 pub fn MlPostDataResponse::equal(Self, Self) -> Bool
@@ -13669,7 +13669,7 @@ pub(all) struct MlPutDataFrameAnalyticsBody {
   analyzed_fields : Json?
   description : String?
   dest : Json
-  max_num_threads : Int?
+  max_num_threads : Int32?
   _meta : Json?
   model_memory_limit : String?
   source : Json
@@ -13678,7 +13678,7 @@ pub(all) struct MlPutDataFrameAnalyticsBody {
 } derive(Eq, @debug.Debug)
 pub fn MlPutDataFrameAnalyticsBody::equal(Self, Self) -> Bool
 pub fn MlPutDataFrameAnalyticsBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlPutDataFrameAnalyticsBody::new(Json, Json, Json, allow_lazy_start? : Bool, analyzed_fields? : Json, description? : String, max_num_threads? : Int, _meta? : Json, model_memory_limit? : String, headers? : Json, version? : Json) -> Self
+pub fn MlPutDataFrameAnalyticsBody::new(Json, Json, Json, allow_lazy_start? : Bool, analyzed_fields? : Json, description? : String, max_num_threads? : Int32, _meta? : Json, model_memory_limit? : String, headers? : Json, version? : Json) -> Self
 pub fn MlPutDataFrameAnalyticsBody::not_equal(Self, Self) -> Bool
 pub fn MlPutDataFrameAnalyticsBody::to_json(Self) -> Json
 pub fn MlPutDataFrameAnalyticsBody::to_repr(Self) -> @debug.Repr
@@ -13718,7 +13718,7 @@ pub(all) struct MlPutDataFrameAnalyticsResponse {
   description : String?
   dest : Json
   id : Json
-  max_num_threads : Int
+  max_num_threads : Int32
   _meta : Json?
   model_memory_limit : String
   source : Json
@@ -13740,17 +13740,17 @@ pub(all) struct MlPutDatafeedBody {
   indices : Json?
   indices_options : Json?
   job_id : Json?
-  max_empty_searches : Int?
+  max_empty_searches : Int32?
   query : Json?
   query_delay : Json?
   runtime_mappings : Json?
   script_fields : Map[String, Json]?
-  scroll_size : Int?
+  scroll_size : Int32?
   headers : Json?
 } derive(Eq, @debug.Debug)
 pub fn MlPutDatafeedBody::equal(Self, Self) -> Bool
 pub fn MlPutDatafeedBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlPutDatafeedBody::new(aggregations? : Map[String, Json], chunking_config? : Json, delayed_data_check_config? : Json, frequency? : Json, indices? : Json, indices_options? : Json, job_id? : Json, max_empty_searches? : Int, query? : Json, query_delay? : Json, runtime_mappings? : Json, script_fields? : Map[String, Json], scroll_size? : Int, headers? : Json) -> Self
+pub fn MlPutDatafeedBody::new(aggregations? : Map[String, Json], chunking_config? : Json, delayed_data_check_config? : Json, frequency? : Json, indices? : Json, indices_options? : Json, job_id? : Json, max_empty_searches? : Int32, query? : Json, query_delay? : Json, runtime_mappings? : Json, script_fields? : Map[String, Json], scroll_size? : Int32, headers? : Json) -> Self
 pub fn MlPutDatafeedBody::not_equal(Self, Self) -> Bool
 pub fn MlPutDatafeedBody::to_json(Self) -> Json
 pub fn MlPutDatafeedBody::to_repr(Self) -> @debug.Repr
@@ -13795,12 +13795,12 @@ pub(all) struct MlPutDatafeedResponse {
   indices : Array[String]
   job_id : Json
   indices_options : Json?
-  max_empty_searches : Int?
+  max_empty_searches : Int32?
   query : Json
   query_delay : Json
   runtime_mappings : Json?
   script_fields : Map[String, Json]?
-  scroll_size : Int
+  scroll_size : Int32
 } derive(Eq, @debug.Debug)
 pub fn MlPutDatafeedResponse::equal(Self, Self) -> Bool
 pub fn MlPutDatafeedResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -13866,21 +13866,21 @@ pub(all) struct MlPutJobBody {
   analysis_limits : Json?
   background_persist_interval : Json?
   custom_settings : Json?
-  daily_model_snapshot_retention_after_days : Int?
+  daily_model_snapshot_retention_after_days : Int32?
   data_description : Json
   datafeed_config : Json?
   description : String?
   job_id : Json?
   groups : Array[String]?
   model_plot_config : Json?
-  model_snapshot_retention_days : Int?
-  renormalization_window_days : Int?
+  model_snapshot_retention_days : Int32?
+  renormalization_window_days : Int32?
   results_index_name : Json?
-  results_retention_days : Int?
+  results_retention_days : Int32?
 } derive(Eq, @debug.Debug)
 pub fn MlPutJobBody::equal(Self, Self) -> Bool
 pub fn MlPutJobBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlPutJobBody::new(Json, Json, allow_lazy_open? : Bool, analysis_limits? : Json, background_persist_interval? : Json, custom_settings? : Json, daily_model_snapshot_retention_after_days? : Int, datafeed_config? : Json, description? : String, job_id? : Json, groups? : Array[String], model_plot_config? : Json, model_snapshot_retention_days? : Int, renormalization_window_days? : Int, results_index_name? : Json, results_retention_days? : Int) -> Self
+pub fn MlPutJobBody::new(Json, Json, allow_lazy_open? : Bool, analysis_limits? : Json, background_persist_interval? : Json, custom_settings? : Json, daily_model_snapshot_retention_after_days? : Int32, datafeed_config? : Json, description? : String, job_id? : Json, groups? : Array[String], model_plot_config? : Json, model_snapshot_retention_days? : Int32, renormalization_window_days? : Int32, results_index_name? : Json, results_retention_days? : Int32) -> Self
 pub fn MlPutJobBody::not_equal(Self, Self) -> Bool
 pub fn MlPutJobBody::to_json(Self) -> Json
 pub fn MlPutJobBody::to_repr(Self) -> @debug.Repr
@@ -13922,7 +13922,7 @@ pub(all) struct MlPutJobResponse {
   background_persist_interval : Json?
   create_time : Json
   custom_settings : Json?
-  daily_model_snapshot_retention_after_days : Int
+  daily_model_snapshot_retention_after_days : Int32
   data_description : Json
   datafeed_config : Json?
   description : String?
@@ -13932,10 +13932,10 @@ pub(all) struct MlPutJobResponse {
   job_version : String
   model_plot_config : Json?
   model_snapshot_id : Json?
-  model_snapshot_retention_days : Int
-  renormalization_window_days : Int?
+  model_snapshot_retention_days : Int32
+  renormalization_window_days : Int32?
   results_index_name : String
-  results_retention_days : Int?
+  results_retention_days : Int32?
 } derive(Eq, @debug.Debug)
 pub fn MlPutJobResponse::equal(Self, Self) -> Bool
 pub fn MlPutJobResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -13979,14 +13979,14 @@ pub(all) struct MlPutTrainedModelBody {
   input : Json?
   metadata : Json?
   model_type : Json?
-  model_size_bytes : Int?
+  model_size_bytes : Int32?
   platform_architecture : String?
   tags : Array[String]?
   prefix_strings : Json?
 } derive(Eq, @debug.Debug)
 pub fn MlPutTrainedModelBody::equal(Self, Self) -> Bool
 pub fn MlPutTrainedModelBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlPutTrainedModelBody::new(compressed_definition? : String, definition? : Json, description? : String, inference_config? : Json, input? : Json, metadata? : Json, model_type? : Json, model_size_bytes? : Int, platform_architecture? : String, tags? : Array[String], prefix_strings? : Json) -> Self
+pub fn MlPutTrainedModelBody::new(compressed_definition? : String, definition? : Json, description? : String, inference_config? : Json, input? : Json, metadata? : Json, model_type? : Json, model_size_bytes? : Int32, platform_architecture? : String, tags? : Array[String], prefix_strings? : Json) -> Self
 pub fn MlPutTrainedModelBody::not_equal(Self, Self) -> Bool
 pub fn MlPutTrainedModelBody::to_json(Self) -> Json
 pub fn MlPutTrainedModelBody::to_repr(Self) -> @debug.Repr
@@ -13995,12 +13995,12 @@ pub impl @json.FromJson for MlPutTrainedModelBody
 
 pub(all) struct MlPutTrainedModelDefinitionPartBody {
   definition : String
-  total_definition_length : Int
-  total_parts : Int
+  total_definition_length : Int32
+  total_parts : Int32
 } derive(Eq, @debug.Debug)
 pub fn MlPutTrainedModelDefinitionPartBody::equal(Self, Self) -> Bool
 pub fn MlPutTrainedModelDefinitionPartBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlPutTrainedModelDefinitionPartBody::new(String, Int, Int) -> Self
+pub fn MlPutTrainedModelDefinitionPartBody::new(String, Int32, Int32) -> Self
 pub fn MlPutTrainedModelDefinitionPartBody::not_equal(Self, Self) -> Bool
 pub fn MlPutTrainedModelDefinitionPartBody::to_json(Self) -> Json
 pub fn MlPutTrainedModelDefinitionPartBody::to_repr(Self) -> @debug.Repr
@@ -14312,16 +14312,16 @@ pub impl @json.FromJson for MlStartTrainedModelDeploymentBody
 pub(all) struct MlStartTrainedModelDeploymentQuery {
   cache_size : String?
   deployment_id : String?
-  number_of_allocations : Int?
+  number_of_allocations : Int32?
   priority : String?
-  queue_capacity : Int?
-  threads_per_allocation : Int?
+  queue_capacity : Int32?
+  threads_per_allocation : Int32?
   timeout : String?
   wait_for : String?
 } derive(Eq, @debug.Debug)
 pub fn MlStartTrainedModelDeploymentQuery::equal(Self, Self) -> Bool
 pub fn MlStartTrainedModelDeploymentQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlStartTrainedModelDeploymentQuery::new(cache_size? : String, deployment_id? : String, number_of_allocations? : Int, priority? : String, queue_capacity? : Int, threads_per_allocation? : Int, timeout? : String, wait_for? : String) -> Self
+pub fn MlStartTrainedModelDeploymentQuery::new(cache_size? : String, deployment_id? : String, number_of_allocations? : Int32, priority? : String, queue_capacity? : Int32, threads_per_allocation? : Int32, timeout? : String, wait_for? : String) -> Self
 pub fn MlStartTrainedModelDeploymentQuery::not_equal(Self, Self) -> Bool
 pub fn MlStartTrainedModelDeploymentQuery::to_json(Self) -> Json
 pub fn MlStartTrainedModelDeploymentQuery::to_pairs(Self) -> Array[(String, String)]
@@ -14513,12 +14513,12 @@ pub impl @json.FromJson for MlStopTrainedModelDeploymentResponse
 pub(all) struct MlUpdateDataFrameAnalyticsBody {
   description : String?
   model_memory_limit : String?
-  max_num_threads : Int?
+  max_num_threads : Int32?
   allow_lazy_start : Bool?
 } derive(Eq, @debug.Debug)
 pub fn MlUpdateDataFrameAnalyticsBody::equal(Self, Self) -> Bool
 pub fn MlUpdateDataFrameAnalyticsBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlUpdateDataFrameAnalyticsBody::new(description? : String, model_memory_limit? : String, max_num_threads? : Int, allow_lazy_start? : Bool) -> Self
+pub fn MlUpdateDataFrameAnalyticsBody::new(description? : String, model_memory_limit? : String, max_num_threads? : Int32, allow_lazy_start? : Bool) -> Self
 pub fn MlUpdateDataFrameAnalyticsBody::not_equal(Self, Self) -> Bool
 pub fn MlUpdateDataFrameAnalyticsBody::to_json(Self) -> Json
 pub fn MlUpdateDataFrameAnalyticsBody::to_repr(Self) -> @debug.Repr
@@ -14554,11 +14554,11 @@ pub(all) struct MlUpdateDataFrameAnalyticsResponse {
   allow_lazy_start : Bool
   analysis : Json
   analyzed_fields : Json?
-  create_time : Int
+  create_time : Int32
   description : String?
   dest : Json
   id : Json
-  max_num_threads : Int
+  max_num_threads : Int32
   model_memory_limit : String
   source : Json
   version : Json
@@ -14579,16 +14579,16 @@ pub(all) struct MlUpdateDatafeedBody {
   indices : Array[String]?
   indices_options : Json?
   job_id : Json?
-  max_empty_searches : Int?
+  max_empty_searches : Int32?
   query : Json?
   query_delay : Json?
   runtime_mappings : Json?
   script_fields : Map[String, Json]?
-  scroll_size : Int?
+  scroll_size : Int32?
 } derive(Eq, @debug.Debug)
 pub fn MlUpdateDatafeedBody::equal(Self, Self) -> Bool
 pub fn MlUpdateDatafeedBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlUpdateDatafeedBody::new(aggregations? : Map[String, Json], chunking_config? : Json, delayed_data_check_config? : Json, frequency? : Json, indices? : Array[String], indices_options? : Json, job_id? : Json, max_empty_searches? : Int, query? : Json, query_delay? : Json, runtime_mappings? : Json, script_fields? : Map[String, Json], scroll_size? : Int) -> Self
+pub fn MlUpdateDatafeedBody::new(aggregations? : Map[String, Json], chunking_config? : Json, delayed_data_check_config? : Json, frequency? : Json, indices? : Array[String], indices_options? : Json, job_id? : Json, max_empty_searches? : Int32, query? : Json, query_delay? : Json, runtime_mappings? : Json, script_fields? : Map[String, Json], scroll_size? : Int32) -> Self
 pub fn MlUpdateDatafeedBody::not_equal(Self, Self) -> Bool
 pub fn MlUpdateDatafeedBody::to_json(Self) -> Json
 pub fn MlUpdateDatafeedBody::to_repr(Self) -> @debug.Repr
@@ -14633,12 +14633,12 @@ pub(all) struct MlUpdateDatafeedResponse {
   indices : Array[String]
   indices_options : Json?
   job_id : Json
-  max_empty_searches : Int?
+  max_empty_searches : Int32?
   query : Json
   query_delay : Json
   runtime_mappings : Json?
   script_fields : Map[String, Json]?
-  scroll_size : Int
+  scroll_size : Int32
 } derive(Eq, @debug.Debug)
 pub fn MlUpdateDatafeedResponse::equal(Self, Self) -> Bool
 pub fn MlUpdateDatafeedResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -14708,17 +14708,17 @@ pub(all) struct MlUpdateJobBody {
   description : String?
   model_plot_config : Json?
   model_prune_window : Json?
-  daily_model_snapshot_retention_after_days : Int?
-  model_snapshot_retention_days : Int?
-  renormalization_window_days : Int?
-  results_retention_days : Int?
+  daily_model_snapshot_retention_after_days : Int32?
+  model_snapshot_retention_days : Int32?
+  renormalization_window_days : Int32?
+  results_retention_days : Int32?
   groups : Array[String]?
   detectors : Array[Json]?
   per_partition_categorization : Json?
 } derive(Eq, @debug.Debug)
 pub fn MlUpdateJobBody::equal(Self, Self) -> Bool
 pub fn MlUpdateJobBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlUpdateJobBody::new(allow_lazy_open? : Bool, analysis_limits? : Json, background_persist_interval? : Json, custom_settings? : Map[String, Json], categorization_filters? : Array[String], description? : String, model_plot_config? : Json, model_prune_window? : Json, daily_model_snapshot_retention_after_days? : Int, model_snapshot_retention_days? : Int, renormalization_window_days? : Int, results_retention_days? : Int, groups? : Array[String], detectors? : Array[Json], per_partition_categorization? : Json) -> Self
+pub fn MlUpdateJobBody::new(allow_lazy_open? : Bool, analysis_limits? : Json, background_persist_interval? : Json, custom_settings? : Map[String, Json], categorization_filters? : Array[String], description? : String, model_plot_config? : Json, model_prune_window? : Json, daily_model_snapshot_retention_after_days? : Int32, model_snapshot_retention_days? : Int32, renormalization_window_days? : Int32, results_retention_days? : Int32, groups? : Array[String], detectors? : Array[Json], per_partition_categorization? : Json) -> Self
 pub fn MlUpdateJobBody::not_equal(Self, Self) -> Bool
 pub fn MlUpdateJobBody::to_json(Self) -> Json
 pub fn MlUpdateJobBody::to_repr(Self) -> @debug.Repr
@@ -14757,7 +14757,7 @@ pub(all) struct MlUpdateJobResponse {
   create_time : Json
   finished_time : Json?
   custom_settings : Map[String, Json]?
-  daily_model_snapshot_retention_after_days : Int
+  daily_model_snapshot_retention_after_days : Int32
   data_description : Json
   datafeed_config : Json?
   description : String?
@@ -14767,10 +14767,10 @@ pub(all) struct MlUpdateJobResponse {
   job_version : Json
   model_plot_config : Json?
   model_snapshot_id : Json?
-  model_snapshot_retention_days : Int
-  renormalization_window_days : Int?
+  model_snapshot_retention_days : Int32
+  renormalization_window_days : Int32?
   results_index_name : Json
-  results_retention_days : Int?
+  results_retention_days : Int32?
 } derive(Eq, @debug.Debug)
 pub fn MlUpdateJobResponse::equal(Self, Self) -> Bool
 pub fn MlUpdateJobResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -14831,12 +14831,12 @@ pub impl ToJson for MlUpdateModelSnapshotResponse
 pub impl @json.FromJson for MlUpdateModelSnapshotResponse
 
 pub(all) struct MlUpdateTrainedModelDeploymentBody {
-  number_of_allocations : Int?
+  number_of_allocations : Int32?
   adaptive_allocations : Json?
 } derive(Eq, @debug.Debug)
 pub fn MlUpdateTrainedModelDeploymentBody::equal(Self, Self) -> Bool
 pub fn MlUpdateTrainedModelDeploymentBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlUpdateTrainedModelDeploymentBody::new(number_of_allocations? : Int, adaptive_allocations? : Json) -> Self
+pub fn MlUpdateTrainedModelDeploymentBody::new(number_of_allocations? : Int32, adaptive_allocations? : Json) -> Self
 pub fn MlUpdateTrainedModelDeploymentBody::not_equal(Self, Self) -> Bool
 pub fn MlUpdateTrainedModelDeploymentBody::to_json(Self) -> Json
 pub fn MlUpdateTrainedModelDeploymentBody::to_repr(Self) -> @debug.Repr
@@ -14844,11 +14844,11 @@ pub impl ToJson for MlUpdateTrainedModelDeploymentBody
 pub impl @json.FromJson for MlUpdateTrainedModelDeploymentBody
 
 pub(all) struct MlUpdateTrainedModelDeploymentQuery {
-  number_of_allocations : Int?
+  number_of_allocations : Int32?
 } derive(Eq, @debug.Debug)
 pub fn MlUpdateTrainedModelDeploymentQuery::equal(Self, Self) -> Bool
 pub fn MlUpdateTrainedModelDeploymentQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlUpdateTrainedModelDeploymentQuery::new(number_of_allocations? : Int) -> Self
+pub fn MlUpdateTrainedModelDeploymentQuery::new(number_of_allocations? : Int32) -> Self
 pub fn MlUpdateTrainedModelDeploymentQuery::not_equal(Self, Self) -> Bool
 pub fn MlUpdateTrainedModelDeploymentQuery::to_json(Self) -> Json
 pub fn MlUpdateTrainedModelDeploymentQuery::to_pairs(Self) -> Array[(String, String)]
@@ -14925,12 +14925,12 @@ pub(all) struct MlValidateBody {
   description : String?
   model_plot : Json?
   model_snapshot_id : Json?
-  model_snapshot_retention_days : Int?
+  model_snapshot_retention_days : Int32?
   results_index_name : Json?
 } derive(Eq, @debug.Debug)
 pub fn MlValidateBody::equal(Self, Self) -> Bool
 pub fn MlValidateBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MlValidateBody::new(job_id? : Json, analysis_config? : Json, analysis_limits? : Json, data_description? : Json, description? : String, model_plot? : Json, model_snapshot_id? : Json, model_snapshot_retention_days? : Int, results_index_name? : Json) -> Self
+pub fn MlValidateBody::new(job_id? : Json, analysis_config? : Json, analysis_limits? : Json, data_description? : Json, description? : String, model_plot? : Json, model_snapshot_id? : Json, model_snapshot_retention_days? : Int32, results_index_name? : Json) -> Self
 pub fn MlValidateBody::not_equal(Self, Self) -> Bool
 pub fn MlValidateBody::to_json(Self) -> Json
 pub fn MlValidateBody::to_repr(Self) -> @debug.Repr
@@ -15013,7 +15013,7 @@ pub(all) struct MonitoringBulkResponse {
   error : Json?
   errors : Bool
   ignored : Bool
-  took : Int
+  took : Int32
 } derive(Eq, @debug.Debug)
 pub fn MonitoringBulkResponse::equal(Self, Self) -> Bool
 pub fn MonitoringBulkResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -15031,9 +15031,9 @@ pub(all) struct MsearchQuery {
   ignore_unavailable : Bool?
   include_named_queries_score : Bool?
   index : String?
-  max_concurrent_searches : Int?
-  max_concurrent_shard_requests : Int?
-  pre_filter_shard_size : Int?
+  max_concurrent_searches : Int32?
+  max_concurrent_shard_requests : Int32?
+  pre_filter_shard_size : Int32?
   project_routing : String?
   rest_total_hits_as_int : Bool?
   routing : String?
@@ -15042,7 +15042,7 @@ pub(all) struct MsearchQuery {
 } derive(Eq, @debug.Debug)
 pub fn MsearchQuery::equal(Self, Self) -> Bool
 pub fn MsearchQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MsearchQuery::new(allow_no_indices? : Bool, ccs_minimize_roundtrips? : Bool, expand_wildcards? : String, ignore_throttled? : Bool, ignore_unavailable? : Bool, include_named_queries_score? : Bool, index? : String, max_concurrent_searches? : Int, max_concurrent_shard_requests? : Int, pre_filter_shard_size? : Int, project_routing? : String, rest_total_hits_as_int? : Bool, routing? : String, search_type? : String, typed_keys? : Bool) -> Self
+pub fn MsearchQuery::new(allow_no_indices? : Bool, ccs_minimize_roundtrips? : Bool, expand_wildcards? : String, ignore_throttled? : Bool, ignore_unavailable? : Bool, include_named_queries_score? : Bool, index? : String, max_concurrent_searches? : Int32, max_concurrent_shard_requests? : Int32, pre_filter_shard_size? : Int32, project_routing? : String, rest_total_hits_as_int? : Bool, routing? : String, search_type? : String, typed_keys? : Bool) -> Self
 pub fn MsearchQuery::not_equal(Self, Self) -> Bool
 pub fn MsearchQuery::to_json(Self) -> Json
 pub fn MsearchQuery::to_pairs(Self) -> Array[(String, String)]
@@ -15064,7 +15064,7 @@ pub fn MsearchRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct MsearchTemplateQuery {
   ccs_minimize_roundtrips : Bool?
-  max_concurrent_searches : Int?
+  max_concurrent_searches : Int32?
   project_routing : String?
   search_type : String?
   rest_total_hits_as_int : Bool?
@@ -15072,7 +15072,7 @@ pub(all) struct MsearchTemplateQuery {
 } derive(Eq, @debug.Debug)
 pub fn MsearchTemplateQuery::equal(Self, Self) -> Bool
 pub fn MsearchTemplateQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn MsearchTemplateQuery::new(ccs_minimize_roundtrips? : Bool, max_concurrent_searches? : Int, project_routing? : String, search_type? : String, rest_total_hits_as_int? : Bool, typed_keys? : Bool) -> Self
+pub fn MsearchTemplateQuery::new(ccs_minimize_roundtrips? : Bool, max_concurrent_searches? : Int32, project_routing? : String, search_type? : String, rest_total_hits_as_int? : Bool, typed_keys? : Bool) -> Self
 pub fn MsearchTemplateQuery::not_equal(Self, Self) -> Bool
 pub fn MsearchTemplateQuery::to_json(Self) -> Json
 pub fn MsearchTemplateQuery::to_pairs(Self) -> Array[(String, String)]
@@ -15202,15 +15202,15 @@ pub fn NodesGetRepositoriesMeteringInfoRequest::to_repr(Self) -> @debug.Repr
 pub(all) struct NodesHotThreadsQuery {
   ignore_idle_threads : Bool?
   interval : String?
-  snapshots : Int?
-  threads : Int?
+  snapshots : Int32?
+  threads : Int32?
   timeout : String?
   type_ : String?
   sort : String?
 } derive(Eq, @debug.Debug)
 pub fn NodesHotThreadsQuery::equal(Self, Self) -> Bool
 pub fn NodesHotThreadsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn NodesHotThreadsQuery::new(ignore_idle_threads? : Bool, interval? : String, snapshots? : Int, threads? : Int, timeout? : String, type_? : String, sort? : String) -> Self
+pub fn NodesHotThreadsQuery::new(ignore_idle_threads? : Bool, interval? : String, snapshots? : Int32, threads? : Int32, timeout? : String, type_? : String, sort? : String) -> Self
 pub fn NodesHotThreadsQuery::not_equal(Self, Self) -> Bool
 pub fn NodesHotThreadsQuery::to_json(Self) -> Json
 pub fn NodesHotThreadsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -15371,11 +15371,11 @@ pub(all) struct OpenPointInTimeQuery {
   routing : String?
   expand_wildcards : String?
   allow_partial_search_results : Bool?
-  max_concurrent_shard_requests : Int?
+  max_concurrent_shard_requests : Int32?
 } derive(Eq, @debug.Debug)
 pub fn OpenPointInTimeQuery::equal(Self, Self) -> Bool
 pub fn OpenPointInTimeQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn OpenPointInTimeQuery::new(String, ignore_unavailable? : Bool, preference? : String, routing? : String, expand_wildcards? : String, allow_partial_search_results? : Bool, max_concurrent_shard_requests? : Int) -> Self
+pub fn OpenPointInTimeQuery::new(String, ignore_unavailable? : Bool, preference? : String, routing? : String, expand_wildcards? : String, allow_partial_search_results? : Bool, max_concurrent_shard_requests? : Int32) -> Self
 pub fn OpenPointInTimeQuery::not_equal(Self, Self) -> Bool
 pub fn OpenPointInTimeQuery::to_json(Self) -> Json
 pub fn OpenPointInTimeQuery::to_pairs(Self) -> Array[(String, String)]
@@ -15816,12 +15816,12 @@ pub fn QueryRulesGetRulesetRequest::to_json(Self) -> Json
 pub fn QueryRulesGetRulesetRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct QueryRulesListRulesetsQuery {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, @debug.Debug)
 pub fn QueryRulesListRulesetsQuery::equal(Self, Self) -> Bool
 pub fn QueryRulesListRulesetsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn QueryRulesListRulesetsQuery::new(from? : Int, size? : Int) -> Self
+pub fn QueryRulesListRulesetsQuery::new(from? : Int32, size? : Int32) -> Self
 pub fn QueryRulesListRulesetsQuery::not_equal(Self, Self) -> Bool
 pub fn QueryRulesListRulesetsQuery::to_json(Self) -> Json
 pub fn QueryRulesListRulesetsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -15840,7 +15840,7 @@ pub fn QueryRulesListRulesetsRequest::to_json(Self) -> Json
 pub fn QueryRulesListRulesetsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct QueryRulesListRulesetsResponse {
-  count : Int
+  count : Int32
   results : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn QueryRulesListRulesetsResponse::equal(Self, Self) -> Bool
@@ -15855,11 +15855,11 @@ pub(all) struct QueryRulesPutRuleBody {
   type_ : Json
   criteria : Json
   actions : Json
-  priority : Int?
+  priority : Int32?
 } derive(Eq, @debug.Debug)
 pub fn QueryRulesPutRuleBody::equal(Self, Self) -> Bool
 pub fn QueryRulesPutRuleBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn QueryRulesPutRuleBody::new(Json, Json, Json, priority? : Int) -> Self
+pub fn QueryRulesPutRuleBody::new(Json, Json, Json, priority? : Int32) -> Self
 pub fn QueryRulesPutRuleBody::not_equal(Self, Self) -> Bool
 pub fn QueryRulesPutRuleBody::to_json(Self) -> Json
 pub fn QueryRulesPutRuleBody::to_repr(Self) -> @debug.Repr
@@ -15986,7 +15986,7 @@ pub fn QueryRulesTestRequest::to_json(Self) -> Json
 pub fn QueryRulesTestRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct QueryRulesTestResponse {
-  total_matched_rules : Int
+  total_matched_rules : Int32
   matched_rules : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn QueryRulesTestResponse::equal(Self, Self) -> Bool
@@ -16054,13 +16054,13 @@ pub impl @json.FromJson for RankEvalResponse
 pub(all) struct ReindexBody {
   conflicts : Json?
   dest : Json
-  max_docs : Int?
+  max_docs : Int32?
   script : Json?
   source : Json
 } derive(Eq, @debug.Debug)
 pub fn ReindexBody::equal(Self, Self) -> Bool
 pub fn ReindexBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn ReindexBody::new(Json, Json, conflicts? : Json, max_docs? : Int, script? : Json) -> Self
+pub fn ReindexBody::new(Json, Json, conflicts? : Json, max_docs? : Int32, script? : Json) -> Self
 pub fn ReindexBody::not_equal(Self, Self) -> Bool
 pub fn ReindexBody::to_json(Self) -> Json
 pub fn ReindexBody::to_repr(Self) -> @debug.Repr
@@ -16072,7 +16072,7 @@ pub(all) struct ReindexQuery {
   requests_per_second : Double?
   scroll : String?
   slices : String?
-  max_docs : Int?
+  max_docs : Int32?
   timeout : String?
   wait_for_active_shards : String?
   wait_for_completion : Bool?
@@ -16080,7 +16080,7 @@ pub(all) struct ReindexQuery {
 } derive(Eq, @debug.Debug)
 pub fn ReindexQuery::equal(Self, Self) -> Bool
 pub fn ReindexQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn ReindexQuery::new(refresh? : Bool, requests_per_second? : Double, scroll? : String, slices? : String, max_docs? : Int, timeout? : String, wait_for_active_shards? : String, wait_for_completion? : Bool, require_alias? : Bool) -> Self
+pub fn ReindexQuery::new(refresh? : Bool, requests_per_second? : Double, scroll? : String, slices? : String, max_docs? : Int32, timeout? : String, wait_for_active_shards? : String, wait_for_completion? : Bool, require_alias? : Bool) -> Self
 pub fn ReindexQuery::not_equal(Self, Self) -> Bool
 pub fn ReindexQuery::to_json(Self) -> Json
 pub fn ReindexQuery::to_pairs(Self) -> Array[(String, String)]
@@ -16100,23 +16100,23 @@ pub fn ReindexRequest::to_json(Self) -> Json
 pub fn ReindexRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct ReindexResponse {
-  batches : Int?
-  created : Int?
-  deleted : Int?
+  batches : Int32?
+  created : Int32?
+  deleted : Int32?
   failures : Array[Json]?
-  noops : Int?
+  noops : Int32?
   retries : Json?
   requests_per_second : Double?
-  slice_id : Int?
+  slice_id : Int32?
   slices : Array[Json]?
   task : Json?
   throttled_millis : Json?
   throttled_until_millis : Json?
   timed_out : Bool?
   took : Json?
-  total : Int?
-  updated : Int?
-  version_conflicts : Int?
+  total : Int32?
+  updated : Int32?
+  version_conflicts : Int32?
 } derive(Eq, @debug.Debug)
 pub fn ReindexResponse::equal(Self, Self) -> Bool
 pub fn ReindexResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -16348,14 +16348,14 @@ pub(all) struct RollupPutJobBody {
   groups : Json
   index_pattern : String
   metrics : Array[Json]?
-  page_size : Int
+  page_size : Int32
   rollup_index : Json
   timeout : Json?
   headers : Json?
 } derive(Eq, @debug.Debug)
 pub fn RollupPutJobBody::equal(Self, Self) -> Bool
 pub fn RollupPutJobBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn RollupPutJobBody::new(String, Json, String, Int, Json, metrics? : Array[Json], timeout? : Json, headers? : Json) -> Self
+pub fn RollupPutJobBody::new(String, Json, String, Int32, Json, metrics? : Array[Json], timeout? : Json, headers? : Json) -> Self
 pub fn RollupPutJobBody::not_equal(Self, Self) -> Bool
 pub fn RollupPutJobBody::to_json(Self) -> Json
 pub fn RollupPutJobBody::to_repr(Self) -> @debug.Repr
@@ -16389,11 +16389,11 @@ pub fn RollupPutJobRequest::to_repr(Self) -> @debug.Repr
 pub(all) struct RollupRollupSearchBody {
   aggregations : Map[String, Json]?
   query : Json?
-  size : Int?
+  size : Int32?
 } derive(Eq, @debug.Debug)
 pub fn RollupRollupSearchBody::equal(Self, Self) -> Bool
 pub fn RollupRollupSearchBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn RollupRollupSearchBody::new(aggregations? : Map[String, Json], query? : Json, size? : Int) -> Self
+pub fn RollupRollupSearchBody::new(aggregations? : Map[String, Json], query? : Json, size? : Int32) -> Self
 pub fn RollupRollupSearchBody::not_equal(Self, Self) -> Bool
 pub fn RollupRollupSearchBody::to_json(Self) -> Json
 pub fn RollupRollupSearchBody::to_repr(Self) -> @debug.Repr
@@ -16427,7 +16427,7 @@ pub fn RollupRollupSearchRequest::to_json(Self) -> Json
 pub fn RollupRollupSearchRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct RollupRollupSearchResponse {
-  took : Int
+  took : Int32
   timed_out : Bool
   terminated_early : Bool?
   _shards : Json
@@ -16694,12 +16694,12 @@ pub fn SearchApplicationGetRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SearchApplicationListQuery {
   q : String?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, @debug.Debug)
 pub fn SearchApplicationListQuery::equal(Self, Self) -> Bool
 pub fn SearchApplicationListQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SearchApplicationListQuery::new(q? : String, from? : Int, size? : Int) -> Self
+pub fn SearchApplicationListQuery::new(q? : String, from? : Int32, size? : Int32) -> Self
 pub fn SearchApplicationListQuery::not_equal(Self, Self) -> Bool
 pub fn SearchApplicationListQuery::to_json(Self) -> Json
 pub fn SearchApplicationListQuery::to_pairs(Self) -> Array[(String, String)]
@@ -16718,7 +16718,7 @@ pub fn SearchApplicationListRequest::to_json(Self) -> Json
 pub fn SearchApplicationListRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SearchApplicationListResponse {
-  count : Int
+  count : Int32
   results : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn SearchApplicationListResponse::equal(Self, Self) -> Bool
@@ -16904,7 +16904,7 @@ pub(all) struct SearchBody {
   collapse : Json?
   explain : Bool?
   ext : Map[String, Json]?
-  from : Int?
+  from : Int32?
   highlight : Json?
   track_total_hits : Json?
   indices_boost : Array[Map[String, Json]]?
@@ -16919,13 +16919,13 @@ pub(all) struct SearchBody {
   retriever : Json?
   script_fields : Map[String, Json]?
   search_after : Json?
-  size : Int?
+  size : Int32?
   slice : Json?
   sort : Json?
   _source : Json?
   fields : Array[Json]?
   suggest : Json?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   track_scores : Bool?
   version : Bool?
@@ -16938,7 +16938,7 @@ pub(all) struct SearchBody {
 } derive(Eq, @debug.Debug)
 pub fn SearchBody::equal(Self, Self) -> Bool
 pub fn SearchBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SearchBody::new(aggregations? : Map[String, Json], collapse? : Json, explain? : Bool, ext? : Map[String, Json], from? : Int, highlight? : Json, track_total_hits? : Json, indices_boost? : Array[Map[String, Json]], docvalue_fields? : Array[Json], knn? : Json, rank? : Json, min_score? : Double, post_filter? : Json, profile? : Bool, query? : Json, rescore? : Json, retriever? : Json, script_fields? : Map[String, Json], search_after? : Json, size? : Int, slice? : Json, sort? : Json, _source? : Json, fields? : Array[Json], suggest? : Json, terminate_after? : Int, timeout? : String, track_scores? : Bool, version? : Bool, seq_no_primary_term? : Bool, stored_fields? : Json, pit? : Json, runtime_mappings? : Json, stats? : Array[String], project_routing? : Json) -> Self
+pub fn SearchBody::new(aggregations? : Map[String, Json], collapse? : Json, explain? : Bool, ext? : Map[String, Json], from? : Int32, highlight? : Json, track_total_hits? : Json, indices_boost? : Array[Map[String, Json]], docvalue_fields? : Array[Json], knn? : Json, rank? : Json, min_score? : Double, post_filter? : Json, profile? : Bool, query? : Json, rescore? : Json, retriever? : Json, script_fields? : Map[String, Json], search_after? : Json, size? : Int32, slice? : Json, sort? : Json, _source? : Json, fields? : Array[Json], suggest? : Json, terminate_after? : Int32, timeout? : String, track_scores? : Bool, version? : Bool, seq_no_primary_term? : Bool, stored_fields? : Json, pit? : Json, runtime_mappings? : Json, stats? : Array[String], project_routing? : Json) -> Self
 pub fn SearchBody::not_equal(Self, Self) -> Bool
 pub fn SearchBody::to_json(Self) -> Json
 pub fn SearchBody::to_repr(Self) -> @debug.Repr
@@ -16947,16 +16947,16 @@ pub impl @json.FromJson for SearchBody
 
 pub(all) struct SearchMvtBody {
   aggs : Map[String, Json]?
-  buffer : Int?
+  buffer : Int32?
   exact_bounds : Bool?
-  extent : Int?
+  extent : Int32?
   fields : Json?
   grid_agg : Json?
-  grid_precision : Int?
+  grid_precision : Int32?
   grid_type : Json?
   query : Json?
   runtime_mappings : Json?
-  size : Int?
+  size : Int32?
   sort : Json?
   track_total_hits : Json?
   with_labels : Bool?
@@ -16964,7 +16964,7 @@ pub(all) struct SearchMvtBody {
 } derive(Eq, @debug.Debug)
 pub fn SearchMvtBody::equal(Self, Self) -> Bool
 pub fn SearchMvtBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SearchMvtBody::new(aggs? : Map[String, Json], buffer? : Int, exact_bounds? : Bool, extent? : Int, fields? : Json, grid_agg? : Json, grid_precision? : Int, grid_type? : Json, query? : Json, runtime_mappings? : Json, size? : Int, sort? : Json, track_total_hits? : Json, with_labels? : Bool, project_routing? : Json) -> Self
+pub fn SearchMvtBody::new(aggs? : Map[String, Json], buffer? : Int32, exact_bounds? : Bool, extent? : Int32, fields? : Json, grid_agg? : Json, grid_precision? : Int32, grid_type? : Json, query? : Json, runtime_mappings? : Json, size? : Int32, sort? : Json, track_total_hits? : Json, with_labels? : Bool, project_routing? : Json) -> Self
 pub fn SearchMvtBody::not_equal(Self, Self) -> Bool
 pub fn SearchMvtBody::to_json(Self) -> Json
 pub fn SearchMvtBody::to_repr(Self) -> @debug.Repr
@@ -16973,17 +16973,17 @@ pub impl @json.FromJson for SearchMvtBody
 
 pub(all) struct SearchMvtQuery {
   exact_bounds : Bool?
-  extent : Int?
+  extent : Int32?
   grid_agg : String?
-  grid_precision : Int?
+  grid_precision : Int32?
   grid_type : String?
-  size : Int?
+  size : Int32?
   track_total_hits : String?
   with_labels : Bool?
 } derive(Eq, @debug.Debug)
 pub fn SearchMvtQuery::equal(Self, Self) -> Bool
 pub fn SearchMvtQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SearchMvtQuery::new(exact_bounds? : Bool, extent? : Int, grid_agg? : String, grid_precision? : Int, grid_type? : String, size? : Int, track_total_hits? : String, with_labels? : Bool) -> Self
+pub fn SearchMvtQuery::new(exact_bounds? : Bool, extent? : Int32, grid_agg? : String, grid_precision? : Int32, grid_type? : String, size? : Int32, track_total_hits? : String, with_labels? : Bool) -> Self
 pub fn SearchMvtQuery::not_equal(Self, Self) -> Bool
 pub fn SearchMvtQuery::to_json(Self) -> Json
 pub fn SearchMvtQuery::to_pairs(Self) -> Array[(String, String)]
@@ -17012,7 +17012,7 @@ pub(all) struct SearchQuery {
   allow_partial_search_results : Bool?
   analyzer : String?
   analyze_wildcard : Bool?
-  batched_reduce_size : Int?
+  batched_reduce_size : Int32?
   ccs_minimize_roundtrips : Bool?
   default_operator : String?
   df : String?
@@ -17023,9 +17023,9 @@ pub(all) struct SearchQuery {
   ignore_unavailable : Bool?
   include_named_queries_score : Bool?
   lenient : Bool?
-  max_concurrent_shard_requests : Int?
+  max_concurrent_shard_requests : Int32?
   preference : String?
-  pre_filter_shard_size : Int?
+  pre_filter_shard_size : Int32?
   request_cache : Bool?
   routing : String?
   scroll : String?
@@ -17034,9 +17034,9 @@ pub(all) struct SearchQuery {
   stored_fields : String?
   suggest_field : String?
   suggest_mode : String?
-  suggest_size : Int?
+  suggest_size : Int32?
   suggest_text : String?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   track_total_hits : String?
   track_scores : Bool?
@@ -17049,14 +17049,14 @@ pub(all) struct SearchQuery {
   _source_includes : String?
   seq_no_primary_term : Bool?
   q : String?
-  size : Int?
-  from : Int?
+  size : Int32?
+  from : Int32?
   sort : Json?
   force_synthetic_source : Bool?
 } derive(Eq, @debug.Debug)
 pub fn SearchQuery::equal(Self, Self) -> Bool
 pub fn SearchQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SearchQuery::new(allow_no_indices? : Bool, allow_partial_search_results? : Bool, analyzer? : String, analyze_wildcard? : Bool, batched_reduce_size? : Int, ccs_minimize_roundtrips? : Bool, default_operator? : String, df? : String, docvalue_fields? : String, expand_wildcards? : String, explain? : Bool, ignore_throttled? : Bool, ignore_unavailable? : Bool, include_named_queries_score? : Bool, lenient? : Bool, max_concurrent_shard_requests? : Int, preference? : String, pre_filter_shard_size? : Int, request_cache? : Bool, routing? : String, scroll? : String, search_type? : String, stats? : Array[String], stored_fields? : String, suggest_field? : String, suggest_mode? : String, suggest_size? : Int, suggest_text? : String, terminate_after? : Int, timeout? : String, track_total_hits? : String, track_scores? : Bool, typed_keys? : Bool, rest_total_hits_as_int? : Bool, version? : Bool, _source? : String, _source_excludes? : String, _source_exclude_vectors? : Bool, _source_includes? : String, seq_no_primary_term? : Bool, q? : String, size? : Int, from? : Int, sort? : Json, force_synthetic_source? : Bool) -> Self
+pub fn SearchQuery::new(allow_no_indices? : Bool, allow_partial_search_results? : Bool, analyzer? : String, analyze_wildcard? : Bool, batched_reduce_size? : Int32, ccs_minimize_roundtrips? : Bool, default_operator? : String, df? : String, docvalue_fields? : String, expand_wildcards? : String, explain? : Bool, ignore_throttled? : Bool, ignore_unavailable? : Bool, include_named_queries_score? : Bool, lenient? : Bool, max_concurrent_shard_requests? : Int32, preference? : String, pre_filter_shard_size? : Int32, request_cache? : Bool, routing? : String, scroll? : String, search_type? : String, stats? : Array[String], stored_fields? : String, suggest_field? : String, suggest_mode? : String, suggest_size? : Int32, suggest_text? : String, terminate_after? : Int32, timeout? : String, track_total_hits? : String, track_scores? : Bool, typed_keys? : Bool, rest_total_hits_as_int? : Bool, version? : Bool, _source? : String, _source_excludes? : String, _source_exclude_vectors? : Bool, _source_includes? : String, seq_no_primary_term? : Bool, q? : String, size? : Int32, from? : Int32, sort? : Json, force_synthetic_source? : Bool) -> Self
 pub fn SearchQuery::not_equal(Self, Self) -> Bool
 pub fn SearchQuery::to_json(Self) -> Json
 pub fn SearchQuery::to_pairs(Self) -> Array[(String, String)]
@@ -17174,7 +17174,7 @@ pub fn SearchTemplateRequest::to_json(Self) -> Json
 pub fn SearchTemplateRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SearchTemplateResponse {
-  took : Int
+  took : Int32
   timed_out : Bool
   _shards : Json
   hits : Json
@@ -17182,7 +17182,7 @@ pub(all) struct SearchTemplateResponse {
   _clusters : Json?
   fields : Map[String, Json]?
   max_score : Double?
-  num_reduce_phases : Int?
+  num_reduce_phases : Int32?
   profile : Json?
   pit_id : Json?
   _scroll_id : Json?
@@ -17840,7 +17840,7 @@ pub fn SecurityCloneApiKeyRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SecurityCloneApiKeyResponse {
   api_key : String
-  expiration : Int?
+  expiration : Int32?
   id : Json
   name : Json
   encoded : String
@@ -17894,7 +17894,7 @@ pub fn SecurityCreateApiKeyRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SecurityCreateApiKeyResponse {
   api_key : String
-  expiration : Int?
+  expiration : Int32?
   id : Json
   name : Json
   encoded : String
@@ -18023,7 +18023,7 @@ pub fn SecurityDelegatePkiRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SecurityDelegatePkiResponse {
   access_token : String
-  expires_in : Int
+  expires_in : Int32
   type_ : String
   authentication : Json?
 } derive(Eq, @debug.Debug)
@@ -18568,7 +18568,7 @@ pub fn SecurityGetServiceCredentialsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SecurityGetServiceCredentialsResponse {
   service_account : String
-  count : Int
+  count : Int32
   tokens : Map[String, Json]
   nodes_credentials : Json
 } derive(Eq, @debug.Debug)
@@ -18693,7 +18693,7 @@ pub fn SecurityGetTokenRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SecurityGetTokenResponse {
   access_token : String
-  expires_in : Int
+  expires_in : Int32
   scope : String?
   type_ : String
   refresh_token : String?
@@ -19005,7 +19005,7 @@ pub fn SecurityInvalidateApiKeyRequest::to_json(Self) -> Json
 pub fn SecurityInvalidateApiKeyRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SecurityInvalidateApiKeyResponse {
-  error_count : Int
+  error_count : Int32
   error_details : Array[Json]?
   invalidated_api_keys : Array[String]
   previously_invalidated_api_keys : Array[String]
@@ -19057,10 +19057,10 @@ pub fn SecurityInvalidateTokenRequest::to_json(Self) -> Json
 pub fn SecurityInvalidateTokenRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SecurityInvalidateTokenResponse {
-  error_count : Int
+  error_count : Int32
   error_details : Array[Json]?
-  invalidated_tokens : Int
-  previously_invalidated_tokens : Int
+  invalidated_tokens : Int32
+  previously_invalidated_tokens : Int32
 } derive(Eq, @debug.Debug)
 pub fn SecurityInvalidateTokenResponse::equal(Self, Self) -> Bool
 pub fn SecurityInvalidateTokenResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -19110,7 +19110,7 @@ pub fn SecurityOidcAuthenticateRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SecurityOidcAuthenticateResponse {
   access_token : String
-  expires_in : Int
+  expires_in : Int32
   refresh_token : String
   type_ : String
 } derive(Eq, @debug.Debug)
@@ -19415,14 +19415,14 @@ pub impl @json.FromJson for SecurityPutUserResponse
 pub(all) struct SecurityQueryApiKeysBody {
   aggregations : Map[String, Json]?
   query : Json?
-  from : Int?
+  from : Int32?
   sort : Json?
-  size : Int?
+  size : Int32?
   search_after : Json?
 } derive(Eq, @debug.Debug)
 pub fn SecurityQueryApiKeysBody::equal(Self, Self) -> Bool
 pub fn SecurityQueryApiKeysBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SecurityQueryApiKeysBody::new(aggregations? : Map[String, Json], query? : Json, from? : Int, sort? : Json, size? : Int, search_after? : Json) -> Self
+pub fn SecurityQueryApiKeysBody::new(aggregations? : Map[String, Json], query? : Json, from? : Int32, sort? : Json, size? : Int32, search_after? : Json) -> Self
 pub fn SecurityQueryApiKeysBody::not_equal(Self, Self) -> Bool
 pub fn SecurityQueryApiKeysBody::to_json(Self) -> Json
 pub fn SecurityQueryApiKeysBody::to_repr(Self) -> @debug.Repr
@@ -19456,8 +19456,8 @@ pub fn SecurityQueryApiKeysRequest::to_json(Self) -> Json
 pub fn SecurityQueryApiKeysRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SecurityQueryApiKeysResponse {
-  total : Int
-  count : Int
+  total : Int32
+  count : Int32
   api_keys : Array[Json]
   aggregations : Map[String, Json]?
 } derive(Eq, @debug.Debug)
@@ -19471,14 +19471,14 @@ pub impl @json.FromJson for SecurityQueryApiKeysResponse
 
 pub(all) struct SecurityQueryRoleBody {
   query : Json?
-  from : Int?
+  from : Int32?
   sort : Json?
-  size : Int?
+  size : Int32?
   search_after : Json?
 } derive(Eq, @debug.Debug)
 pub fn SecurityQueryRoleBody::equal(Self, Self) -> Bool
 pub fn SecurityQueryRoleBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SecurityQueryRoleBody::new(query? : Json, from? : Int, sort? : Json, size? : Int, search_after? : Json) -> Self
+pub fn SecurityQueryRoleBody::new(query? : Json, from? : Int32, sort? : Json, size? : Int32, search_after? : Json) -> Self
 pub fn SecurityQueryRoleBody::not_equal(Self, Self) -> Bool
 pub fn SecurityQueryRoleBody::to_json(Self) -> Json
 pub fn SecurityQueryRoleBody::to_repr(Self) -> @debug.Repr
@@ -19509,8 +19509,8 @@ pub fn SecurityQueryRoleRequest::to_json(Self) -> Json
 pub fn SecurityQueryRoleRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SecurityQueryRoleResponse {
-  total : Int
-  count : Int
+  total : Int32
+  count : Int32
   roles : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn SecurityQueryRoleResponse::equal(Self, Self) -> Bool
@@ -19523,14 +19523,14 @@ pub impl @json.FromJson for SecurityQueryRoleResponse
 
 pub(all) struct SecurityQueryUserBody {
   query : Json?
-  from : Int?
+  from : Int32?
   sort : Json?
-  size : Int?
+  size : Int32?
   search_after : Json?
 } derive(Eq, @debug.Debug)
 pub fn SecurityQueryUserBody::equal(Self, Self) -> Bool
 pub fn SecurityQueryUserBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SecurityQueryUserBody::new(query? : Json, from? : Int, sort? : Json, size? : Int, search_after? : Json) -> Self
+pub fn SecurityQueryUserBody::new(query? : Json, from? : Int32, sort? : Json, size? : Int32, search_after? : Json) -> Self
 pub fn SecurityQueryUserBody::not_equal(Self, Self) -> Bool
 pub fn SecurityQueryUserBody::to_json(Self) -> Json
 pub fn SecurityQueryUserBody::to_repr(Self) -> @debug.Repr
@@ -19562,8 +19562,8 @@ pub fn SecurityQueryUserRequest::to_json(Self) -> Json
 pub fn SecurityQueryUserRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SecurityQueryUserResponse {
-  total : Int
-  count : Int
+  total : Int32
+  count : Int32
   users : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn SecurityQueryUserResponse::equal(Self, Self) -> Bool
@@ -19614,7 +19614,7 @@ pub fn SecuritySamlAuthenticateRequest::to_repr(Self) -> @debug.Repr
 pub(all) struct SecuritySamlAuthenticateResponse {
   access_token : String
   username : String
-  expires_in : Int
+  expires_in : Int32
   refresh_token : String
   realm : String
   in_response_to : String?
@@ -19703,7 +19703,7 @@ pub fn SecuritySamlInvalidateRequest::to_json(Self) -> Json
 pub fn SecuritySamlInvalidateRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SecuritySamlInvalidateResponse {
-  invalidated : Int
+  invalidated : Int32
   realm : String
   redirect : String
 } derive(Eq, @debug.Debug)
@@ -19849,13 +19849,13 @@ pub impl @json.FromJson for SecuritySamlServiceProviderMetadataResponse
 
 pub(all) struct SecuritySuggestUserProfilesBody {
   name : String?
-  size : Int?
+  size : Int32?
   data : Json?
   hint : Json?
 } derive(Eq, @debug.Debug)
 pub fn SecuritySuggestUserProfilesBody::equal(Self, Self) -> Bool
 pub fn SecuritySuggestUserProfilesBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SecuritySuggestUserProfilesBody::new(name? : String, size? : Int, data? : Json, hint? : Json) -> Self
+pub fn SecuritySuggestUserProfilesBody::new(name? : String, size? : Int32, data? : Json, hint? : Json) -> Self
 pub fn SecuritySuggestUserProfilesBody::not_equal(Self, Self) -> Bool
 pub fn SecuritySuggestUserProfilesBody::to_json(Self) -> Json
 pub fn SecuritySuggestUserProfilesBody::to_repr(Self) -> @debug.Repr
@@ -19888,7 +19888,7 @@ pub fn SecuritySuggestUserProfilesRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SecuritySuggestUserProfilesResponse {
   total : Json
-  took : Int
+  took : Int32
   profiles : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn SecuritySuggestUserProfilesResponse::equal(Self, Self) -> Bool
@@ -20063,12 +20063,12 @@ pub impl @json.FromJson for SecurityUpdateUserProfileDataBody
 
 pub(all) struct SecurityUpdateUserProfileDataQuery {
   if_seq_no : String?
-  if_primary_term : Int?
+  if_primary_term : Int32?
   refresh : String?
 } derive(Eq, @debug.Debug)
 pub fn SecurityUpdateUserProfileDataQuery::equal(Self, Self) -> Bool
 pub fn SecurityUpdateUserProfileDataQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SecurityUpdateUserProfileDataQuery::new(if_seq_no? : String, if_primary_term? : Int, refresh? : String) -> Self
+pub fn SecurityUpdateUserProfileDataQuery::new(if_seq_no? : String, if_primary_term? : Int32, refresh? : String) -> Self
 pub fn SecurityUpdateUserProfileDataQuery::not_equal(Self, Self) -> Bool
 pub fn SecurityUpdateUserProfileDataQuery::to_json(Self) -> Json
 pub fn SecurityUpdateUserProfileDataQuery::to_pairs(Self) -> Array[(String, String)]
@@ -20381,13 +20381,13 @@ pub fn SlmGetStatsRequest::to_repr(Self) -> @debug.Repr
 pub(all) struct SlmGetStatsResponse {
   retention_deletion_time : Json
   retention_deletion_time_millis : Json
-  retention_failed : Int
-  retention_runs : Int
-  retention_timed_out : Int
-  total_snapshots_deleted : Int
-  total_snapshot_deletion_failures : Int
-  total_snapshots_failed : Int
-  total_snapshots_taken : Int
+  retention_failed : Int32
+  retention_runs : Int32
+  retention_timed_out : Int32
+  total_snapshots_deleted : Int32
+  total_snapshot_deletion_failures : Int32
+  total_snapshots_failed : Int32
+  total_snapshots_taken : Int32
   policy_stats : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn SlmGetStatsResponse::equal(Self, Self) -> Bool
@@ -20742,8 +20742,8 @@ pub(all) struct SnapshotGetQuery {
   include_repository : Bool?
   master_timeout : String?
   order : String?
-  offset : Int?
-  size : Int?
+  offset : Int32?
+  size : Int32?
   slm_policy_filter : String?
   sort : String?
   state : Json?
@@ -20751,7 +20751,7 @@ pub(all) struct SnapshotGetQuery {
 } derive(Eq, @debug.Debug)
 pub fn SnapshotGetQuery::equal(Self, Self) -> Bool
 pub fn SnapshotGetQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SnapshotGetQuery::new(after? : String, from_sort_value? : String, ignore_unavailable? : Bool, index_details? : Bool, index_names? : Bool, include_repository? : Bool, master_timeout? : String, order? : String, offset? : Int, size? : Int, slm_policy_filter? : String, sort? : String, state? : Json, verbose? : Bool) -> Self
+pub fn SnapshotGetQuery::new(after? : String, from_sort_value? : String, ignore_unavailable? : Bool, index_details? : Bool, index_names? : Bool, include_repository? : Bool, master_timeout? : String, order? : String, offset? : Int32, size? : Int32, slm_policy_filter? : String, sort? : String, state? : Json, verbose? : Bool) -> Self
 pub fn SnapshotGetQuery::not_equal(Self, Self) -> Bool
 pub fn SnapshotGetQuery::to_json(Self) -> Json
 pub fn SnapshotGetQuery::to_pairs(Self) -> Array[(String, String)]
@@ -20797,8 +20797,8 @@ pub fn SnapshotGetRequest::to_json(Self) -> Json
 pub fn SnapshotGetRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SnapshotGetResponse {
-  remaining : Int
-  total : Int
+  remaining : Int32
+  total : Int32
   next : String?
   responses : Array[Json]?
   snapshots : Array[Json]?
@@ -20812,23 +20812,23 @@ pub impl ToJson for SnapshotGetResponse
 pub impl @json.FromJson for SnapshotGetResponse
 
 pub(all) struct SnapshotRepositoryAnalyzeQuery {
-  blob_count : Int?
+  blob_count : Int32?
   check_overwrite_protection : Bool?
-  concurrency : Int?
+  concurrency : Int32?
   detailed : Bool?
-  early_read_node_count : Int?
+  early_read_node_count : Int32?
   max_blob_size : String?
   max_total_data_size : String?
   rare_action_probability : Double?
   rarely_abort_writes : Bool?
-  read_node_count : Int?
-  register_operation_count : Int?
-  seed : Int?
+  read_node_count : Int32?
+  register_operation_count : Int32?
+  seed : Int32?
   timeout : String?
 } derive(Eq, @debug.Debug)
 pub fn SnapshotRepositoryAnalyzeQuery::equal(Self, Self) -> Bool
 pub fn SnapshotRepositoryAnalyzeQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SnapshotRepositoryAnalyzeQuery::new(blob_count? : Int, check_overwrite_protection? : Bool, concurrency? : Int, detailed? : Bool, early_read_node_count? : Int, max_blob_size? : String, max_total_data_size? : String, rare_action_probability? : Double, rarely_abort_writes? : Bool, read_node_count? : Int, register_operation_count? : Int, seed? : Int, timeout? : String) -> Self
+pub fn SnapshotRepositoryAnalyzeQuery::new(blob_count? : Int32, check_overwrite_protection? : Bool, concurrency? : Int32, detailed? : Bool, early_read_node_count? : Int32, max_blob_size? : String, max_total_data_size? : String, rare_action_probability? : Double, rarely_abort_writes? : Bool, read_node_count? : Int32, register_operation_count? : Int32, seed? : Int32, timeout? : String) -> Self
 pub fn SnapshotRepositoryAnalyzeQuery::not_equal(Self, Self) -> Bool
 pub fn SnapshotRepositoryAnalyzeQuery::to_json(Self) -> Json
 pub fn SnapshotRepositoryAnalyzeQuery::to_pairs(Self) -> Array[(String, String)]
@@ -20848,25 +20848,25 @@ pub fn SnapshotRepositoryAnalyzeRequest::to_json(Self) -> Json
 pub fn SnapshotRepositoryAnalyzeRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SnapshotRepositoryAnalyzeResponse {
-  blob_count : Int
+  blob_count : Int32
   blob_path : String
-  concurrency : Int
+  concurrency : Int32
   coordinating_node : Json
   delete_elapsed : Json
   delete_elapsed_nanos : Json
   details : Json
-  early_read_node_count : Int
+  early_read_node_count : Int32
   issues_detected : Array[String]
   listing_elapsed : Json
   listing_elapsed_nanos : Json
   max_blob_size : Json
-  max_blob_size_bytes : Int
+  max_blob_size_bytes : Int32
   max_total_data_size : Json
-  max_total_data_size_bytes : Int
+  max_total_data_size_bytes : Int32
   rare_action_probability : Double
-  read_node_count : Int
+  read_node_count : Int32
   repository : String
-  seed : Int
+  seed : Int32
   summary : Json
 } derive(Eq, @debug.Debug)
 pub fn SnapshotRepositoryAnalyzeResponse::equal(Self, Self) -> Bool
@@ -20878,18 +20878,18 @@ pub impl ToJson for SnapshotRepositoryAnalyzeResponse
 pub impl @json.FromJson for SnapshotRepositoryAnalyzeResponse
 
 pub(all) struct SnapshotRepositoryVerifyIntegrityQuery {
-  blob_thread_pool_concurrency : Int?
-  index_snapshot_verification_concurrency : Int?
-  index_verification_concurrency : Int?
+  blob_thread_pool_concurrency : Int32?
+  index_snapshot_verification_concurrency : Int32?
+  index_verification_concurrency : Int32?
   max_bytes_per_sec : String?
-  max_failed_shard_snapshots : Int?
-  meta_thread_pool_concurrency : Int?
-  snapshot_verification_concurrency : Int?
+  max_failed_shard_snapshots : Int32?
+  meta_thread_pool_concurrency : Int32?
+  snapshot_verification_concurrency : Int32?
   verify_blob_contents : Bool?
 } derive(Eq, @debug.Debug)
 pub fn SnapshotRepositoryVerifyIntegrityQuery::equal(Self, Self) -> Bool
 pub fn SnapshotRepositoryVerifyIntegrityQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SnapshotRepositoryVerifyIntegrityQuery::new(blob_thread_pool_concurrency? : Int, index_snapshot_verification_concurrency? : Int, index_verification_concurrency? : Int, max_bytes_per_sec? : String, max_failed_shard_snapshots? : Int, meta_thread_pool_concurrency? : Int, snapshot_verification_concurrency? : Int, verify_blob_contents? : Bool) -> Self
+pub fn SnapshotRepositoryVerifyIntegrityQuery::new(blob_thread_pool_concurrency? : Int32, index_snapshot_verification_concurrency? : Int32, index_verification_concurrency? : Int32, max_bytes_per_sec? : String, max_failed_shard_snapshots? : Int32, meta_thread_pool_concurrency? : Int32, snapshot_verification_concurrency? : Int32, verify_blob_contents? : Bool) -> Self
 pub fn SnapshotRepositoryVerifyIntegrityQuery::not_equal(Self, Self) -> Bool
 pub fn SnapshotRepositoryVerifyIntegrityQuery::to_json(Self) -> Json
 pub fn SnapshotRepositoryVerifyIntegrityQuery::to_pairs(Self) -> Array[(String, String)]
@@ -21197,7 +21197,7 @@ pub(all) struct SqlQueryBody {
   catalog : String?
   columnar : Bool?
   cursor : String?
-  fetch_size : Int?
+  fetch_size : Int32?
   field_multi_value_leniency : Bool?
   filter : Json?
   index_using_frozen : Bool?
@@ -21214,7 +21214,7 @@ pub(all) struct SqlQueryBody {
 } derive(Eq, @debug.Debug)
 pub fn SqlQueryBody::equal(Self, Self) -> Bool
 pub fn SqlQueryBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SqlQueryBody::new(allow_partial_search_results? : Bool, catalog? : String, columnar? : Bool, cursor? : String, fetch_size? : Int, field_multi_value_leniency? : Bool, filter? : Json, index_using_frozen? : Bool, keep_alive? : Json, keep_on_completion? : Bool, page_timeout? : Json, params? : Array[Json], query? : String, project_routing? : Json, request_timeout? : Json, runtime_mappings? : Json, time_zone? : Json, wait_for_completion_timeout? : Json) -> Self
+pub fn SqlQueryBody::new(allow_partial_search_results? : Bool, catalog? : String, columnar? : Bool, cursor? : String, fetch_size? : Int32, field_multi_value_leniency? : Bool, filter? : Json, index_using_frozen? : Bool, keep_alive? : Json, keep_on_completion? : Bool, page_timeout? : Json, params? : Array[Json], query? : String, project_routing? : Json, request_timeout? : Json, runtime_mappings? : Json, time_zone? : Json, wait_for_completion_timeout? : Json) -> Self
 pub fn SqlQueryBody::not_equal(Self, Self) -> Bool
 pub fn SqlQueryBody::to_json(Self) -> Json
 pub fn SqlQueryBody::to_repr(Self) -> @debug.Repr
@@ -21262,14 +21262,14 @@ pub impl ToJson for SqlQueryResponse
 pub impl @json.FromJson for SqlQueryResponse
 
 pub(all) struct SqlTranslateBody {
-  fetch_size : Int?
+  fetch_size : Int32?
   filter : Json?
   query : String
   time_zone : Json?
 } derive(Eq, @debug.Debug)
 pub fn SqlTranslateBody::equal(Self, Self) -> Bool
 pub fn SqlTranslateBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SqlTranslateBody::new(String, fetch_size? : Int, filter? : Json, time_zone? : Json) -> Self
+pub fn SqlTranslateBody::new(String, fetch_size? : Int32, filter? : Json, time_zone? : Json) -> Self
 pub fn SqlTranslateBody::not_equal(Self, Self) -> Bool
 pub fn SqlTranslateBody::to_json(Self) -> Json
 pub fn SqlTranslateBody::to_repr(Self) -> @debug.Repr
@@ -21301,7 +21301,7 @@ pub fn SqlTranslateRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SqlTranslateResponse {
   aggregations : Map[String, Json]?
-  size : Int?
+  size : Int32?
   _source : Json?
   fields : Array[Json]?
   query : Json?
@@ -21474,12 +21474,12 @@ pub fn SynonymsDeleteSynonymRuleRequest::to_json(Self) -> Json
 pub fn SynonymsDeleteSynonymRuleRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SynonymsGetSynonymQuery {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, @debug.Debug)
 pub fn SynonymsGetSynonymQuery::equal(Self, Self) -> Bool
 pub fn SynonymsGetSynonymQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SynonymsGetSynonymQuery::new(from? : Int, size? : Int) -> Self
+pub fn SynonymsGetSynonymQuery::new(from? : Int32, size? : Int32) -> Self
 pub fn SynonymsGetSynonymQuery::not_equal(Self, Self) -> Bool
 pub fn SynonymsGetSynonymQuery::to_json(Self) -> Json
 pub fn SynonymsGetSynonymQuery::to_pairs(Self) -> Array[(String, String)]
@@ -21499,7 +21499,7 @@ pub fn SynonymsGetSynonymRequest::to_json(Self) -> Json
 pub fn SynonymsGetSynonymRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SynonymsGetSynonymResponse {
-  count : Int
+  count : Int32
   synonyms_set : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn SynonymsGetSynonymResponse::equal(Self, Self) -> Bool
@@ -21536,12 +21536,12 @@ pub fn SynonymsGetSynonymRuleRequest::to_json(Self) -> Json
 pub fn SynonymsGetSynonymRuleRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SynonymsGetSynonymsSetsQuery {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
 } derive(Eq, @debug.Debug)
 pub fn SynonymsGetSynonymsSetsQuery::equal(Self, Self) -> Bool
 pub fn SynonymsGetSynonymsSetsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn SynonymsGetSynonymsSetsQuery::new(from? : Int, size? : Int) -> Self
+pub fn SynonymsGetSynonymsSetsQuery::new(from? : Int32, size? : Int32) -> Self
 pub fn SynonymsGetSynonymsSetsQuery::not_equal(Self, Self) -> Bool
 pub fn SynonymsGetSynonymsSetsQuery::to_json(Self) -> Json
 pub fn SynonymsGetSynonymsSetsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -21560,7 +21560,7 @@ pub fn SynonymsGetSynonymsSetsRequest::to_json(Self) -> Json
 pub fn SynonymsGetSynonymsSetsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct SynonymsGetSynonymsSetsResponse {
-  count : Int
+  count : Int32
   results : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn SynonymsGetSynonymsSetsResponse::equal(Self, Self) -> Bool
@@ -21756,7 +21756,7 @@ pub fn TasksListRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct TermsEnumBody {
   field : Json
-  size : Int?
+  size : Int32?
   timeout : Json?
   case_insensitive : Bool?
   index_filter : Json?
@@ -21765,7 +21765,7 @@ pub(all) struct TermsEnumBody {
 } derive(Eq, @debug.Debug)
 pub fn TermsEnumBody::equal(Self, Self) -> Bool
 pub fn TermsEnumBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn TermsEnumBody::new(Json, size? : Int, timeout? : Json, case_insensitive? : Bool, index_filter? : Json, string? : String, search_after? : String) -> Self
+pub fn TermsEnumBody::new(Json, size? : Int32, timeout? : Json, case_insensitive? : Bool, index_filter? : Json, string? : String, search_after? : String) -> Self
 pub fn TermsEnumBody::not_equal(Self, Self) -> Bool
 pub fn TermsEnumBody::to_json(Self) -> Json
 pub fn TermsEnumBody::to_repr(Self) -> @debug.Repr
@@ -21873,7 +21873,7 @@ pub(all) struct TermvectorsResponse {
   _id : Json?
   _index : Json
   term_vectors : Map[String, Json]?
-  took : Int
+  took : Int32
   _version : Json
 } derive(Eq, @debug.Debug)
 pub fn TermvectorsResponse::equal(Self, Self) -> Bool
@@ -21933,8 +21933,8 @@ pub(all) struct TextStructureFindFieldStructureResponse {
   mappings : Json
   multiline_start_pattern : String?
   need_client_timezone : Bool
-  num_lines_analyzed : Int
-  num_messages_analyzed : Int
+  num_lines_analyzed : Int32
+  num_messages_analyzed : Int32
   sample_start : String
   timestamp_field : Json?
 } derive(Eq, @debug.Debug)
@@ -22005,8 +22005,8 @@ pub(all) struct TextStructureFindMessageStructureResponse {
   mappings : Json
   multiline_start_pattern : String?
   need_client_timezone : Bool
-  num_lines_analyzed : Int
-  num_messages_analyzed : Int
+  num_lines_analyzed : Int32
+  num_messages_analyzed : Int32
   sample_start : String
   timestamp_field : Json?
 } derive(Eq, @debug.Debug)
@@ -22064,12 +22064,12 @@ pub(all) struct TextStructureFindStructureResponse {
   format : String
   field_stats : Map[String, Json]
   sample_start : String
-  num_messages_analyzed : Int
+  num_messages_analyzed : Int32
   mappings : Json
   quote : String?
   delimiter : String?
   need_client_timezone : Bool
-  num_lines_analyzed : Int
+  num_lines_analyzed : Int32
   column_names : Array[String]?
   explanation : Array[String]?
   grok_pattern : Json?
@@ -22187,13 +22187,13 @@ pub fn TransformGetNodeStatsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct TransformGetTransformQuery {
   allow_no_match : Bool?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   exclude_generated : Bool?
 } derive(Eq, @debug.Debug)
 pub fn TransformGetTransformQuery::equal(Self, Self) -> Bool
 pub fn TransformGetTransformQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn TransformGetTransformQuery::new(allow_no_match? : Bool, from? : Int, size? : Int, exclude_generated? : Bool) -> Self
+pub fn TransformGetTransformQuery::new(allow_no_match? : Bool, from? : Int32, size? : Int32, exclude_generated? : Bool) -> Self
 pub fn TransformGetTransformQuery::not_equal(Self, Self) -> Bool
 pub fn TransformGetTransformQuery::to_json(Self) -> Json
 pub fn TransformGetTransformQuery::to_pairs(Self) -> Array[(String, String)]
@@ -22213,7 +22213,7 @@ pub fn TransformGetTransformRequest::to_json(Self) -> Json
 pub fn TransformGetTransformRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct TransformGetTransformResponse {
-  count : Int
+  count : Int32
   transforms : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn TransformGetTransformResponse::equal(Self, Self) -> Bool
@@ -22226,13 +22226,13 @@ pub impl @json.FromJson for TransformGetTransformResponse
 
 pub(all) struct TransformGetTransformStatsQuery {
   allow_no_match : Bool?
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   timeout : String?
 } derive(Eq, @debug.Debug)
 pub fn TransformGetTransformStatsQuery::equal(Self, Self) -> Bool
 pub fn TransformGetTransformStatsQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn TransformGetTransformStatsQuery::new(allow_no_match? : Bool, from? : Int, size? : Int, timeout? : String) -> Self
+pub fn TransformGetTransformStatsQuery::new(allow_no_match? : Bool, from? : Int32, size? : Int32, timeout? : String) -> Self
 pub fn TransformGetTransformStatsQuery::not_equal(Self, Self) -> Bool
 pub fn TransformGetTransformStatsQuery::to_json(Self) -> Json
 pub fn TransformGetTransformStatsQuery::to_pairs(Self) -> Array[(String, String)]
@@ -22252,7 +22252,7 @@ pub fn TransformGetTransformStatsRequest::to_json(Self) -> Json
 pub fn TransformGetTransformStatsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct TransformGetTransformStatsResponse {
-  count : Int
+  count : Int32
   transforms : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn TransformGetTransformStatsResponse::equal(Self, Self) -> Bool
@@ -22542,7 +22542,7 @@ pub fn TransformUpdateTransformRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct TransformUpdateTransformResponse {
   authorization : Json?
-  create_time : Int
+  create_time : Int32
   description : String
   dest : Json
   frequency : Json?
@@ -22590,9 +22590,9 @@ pub fn TransformUpgradeTransformsRequest::to_json(Self) -> Json
 pub fn TransformUpgradeTransformsRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct TransformUpgradeTransformsResponse {
-  needs_update : Int
-  no_action : Int
-  updated : Int
+  needs_update : Int32
+  no_action : Int32
+  updated : Int32
 } derive(Eq, @debug.Debug)
 pub fn TransformUpgradeTransformsResponse::equal(Self, Self) -> Bool
 pub fn TransformUpgradeTransformsResponse::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
@@ -22621,7 +22621,7 @@ pub impl ToJson for UpdateBody
 pub impl @json.FromJson for UpdateBody
 
 pub(all) struct UpdateByQueryBody {
-  max_docs : Int?
+  max_docs : Int32?
   query : Json?
   script : Json?
   slice : Json?
@@ -22629,7 +22629,7 @@ pub(all) struct UpdateByQueryBody {
 } derive(Eq, @debug.Debug)
 pub fn UpdateByQueryBody::equal(Self, Self) -> Bool
 pub fn UpdateByQueryBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn UpdateByQueryBody::new(max_docs? : Int, query? : Json, script? : Json, slice? : Json, conflicts? : Json) -> Self
+pub fn UpdateByQueryBody::new(max_docs? : Int32, query? : Json, script? : Json, slice? : Json, conflicts? : Json) -> Self
 pub fn UpdateByQueryBody::not_equal(Self, Self) -> Bool
 pub fn UpdateByQueryBody::to_json(Self) -> Json
 pub fn UpdateByQueryBody::to_repr(Self) -> @debug.Repr
@@ -22644,10 +22644,10 @@ pub(all) struct UpdateByQueryQuery {
   default_operator : String?
   df : String?
   expand_wildcards : String?
-  from : Int?
+  from : Int32?
   ignore_unavailable : Bool?
   lenient : Bool?
-  max_docs : Int?
+  max_docs : Int32?
   pipeline : String?
   preference : String?
   q : String?
@@ -22656,13 +22656,13 @@ pub(all) struct UpdateByQueryQuery {
   requests_per_second : Double?
   routing : String?
   scroll : String?
-  scroll_size : Int?
+  scroll_size : Int32?
   search_timeout : String?
   search_type : String?
   slices : String?
   sort : Array[String]?
   stats : Array[String]?
-  terminate_after : Int?
+  terminate_after : Int32?
   timeout : String?
   version : Bool?
   version_type : Bool?
@@ -22671,7 +22671,7 @@ pub(all) struct UpdateByQueryQuery {
 } derive(Eq, @debug.Debug)
 pub fn UpdateByQueryQuery::equal(Self, Self) -> Bool
 pub fn UpdateByQueryQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn UpdateByQueryQuery::new(allow_no_indices? : Bool, analyzer? : String, analyze_wildcard? : Bool, conflicts? : String, default_operator? : String, df? : String, expand_wildcards? : String, from? : Int, ignore_unavailable? : Bool, lenient? : Bool, max_docs? : Int, pipeline? : String, preference? : String, q? : String, refresh? : Bool, request_cache? : Bool, requests_per_second? : Double, routing? : String, scroll? : String, scroll_size? : Int, search_timeout? : String, search_type? : String, slices? : String, sort? : Array[String], stats? : Array[String], terminate_after? : Int, timeout? : String, version? : Bool, version_type? : Bool, wait_for_active_shards? : String, wait_for_completion? : Bool) -> Self
+pub fn UpdateByQueryQuery::new(allow_no_indices? : Bool, analyzer? : String, analyze_wildcard? : Bool, conflicts? : String, default_operator? : String, df? : String, expand_wildcards? : String, from? : Int32, ignore_unavailable? : Bool, lenient? : Bool, max_docs? : Int32, pipeline? : String, preference? : String, q? : String, refresh? : Bool, request_cache? : Bool, requests_per_second? : Double, routing? : String, scroll? : String, scroll_size? : Int32, search_timeout? : String, search_type? : String, slices? : String, sort? : Array[String], stats? : Array[String], terminate_after? : Int32, timeout? : String, version? : Bool, version_type? : Bool, wait_for_active_shards? : String, wait_for_completion? : Bool) -> Self
 pub fn UpdateByQueryQuery::not_equal(Self, Self) -> Bool
 pub fn UpdateByQueryQuery::to_json(Self) -> Json
 pub fn UpdateByQueryQuery::to_pairs(Self) -> Array[(String, String)]
@@ -22692,19 +22692,19 @@ pub fn UpdateByQueryRequest::to_json(Self) -> Json
 pub fn UpdateByQueryRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct UpdateByQueryResponse {
-  batches : Int?
+  batches : Int32?
   failures : Array[Json]?
-  noops : Int?
-  deleted : Int?
+  noops : Int32?
+  deleted : Int32?
   requests_per_second : Double?
   retries : Json?
   slices : Array[Json]?
   task : Json?
   timed_out : Bool?
   took : Json?
-  total : Int?
-  updated : Int?
-  version_conflicts : Int?
+  total : Int32?
+  updated : Int32?
+  version_conflicts : Int32?
   throttled : Json?
   throttled_millis : Json?
   throttled_until : Json?
@@ -22754,13 +22754,13 @@ pub impl ToJson for UpdateByQueryRethrottleResponse
 pub impl @json.FromJson for UpdateByQueryRethrottleResponse
 
 pub(all) struct UpdateQuery {
-  if_primary_term : Int?
+  if_primary_term : Int32?
   if_seq_no : String?
   include_source_on_error : Bool?
   lang : String?
   refresh : String?
   require_alias : Bool?
-  retry_on_conflict : Int?
+  retry_on_conflict : Int32?
   routing : String?
   timeout : String?
   wait_for_active_shards : String?
@@ -22770,7 +22770,7 @@ pub(all) struct UpdateQuery {
 } derive(Eq, @debug.Debug)
 pub fn UpdateQuery::equal(Self, Self) -> Bool
 pub fn UpdateQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn UpdateQuery::new(if_primary_term? : Int, if_seq_no? : String, include_source_on_error? : Bool, lang? : String, refresh? : String, require_alias? : Bool, retry_on_conflict? : Int, routing? : String, timeout? : String, wait_for_active_shards? : String, _source? : String, _source_excludes? : String, _source_includes? : String) -> Self
+pub fn UpdateQuery::new(if_primary_term? : Int32, if_seq_no? : String, include_source_on_error? : Bool, lang? : String, refresh? : String, require_alias? : Bool, retry_on_conflict? : Int32, routing? : String, timeout? : String, wait_for_active_shards? : String, _source? : String, _source_excludes? : String, _source_includes? : String) -> Self
 pub fn UpdateQuery::not_equal(Self, Self) -> Bool
 pub fn UpdateQuery::to_json(Self) -> Json
 pub fn UpdateQuery::to_pairs(Self) -> Array[(String, String)]
@@ -23048,7 +23048,7 @@ pub(all) struct WatcherGetWatchResponse {
   _id : Json
   status : Json?
   watch : Json?
-  _primary_term : Int?
+  _primary_term : Int32?
   _seq_no : Json?
   _version : Json?
 } derive(Eq, @debug.Debug)
@@ -23081,13 +23081,13 @@ pub impl @json.FromJson for WatcherPutWatchBody
 
 pub(all) struct WatcherPutWatchQuery {
   active : Bool?
-  if_primary_term : Int?
+  if_primary_term : Int32?
   if_seq_no : String?
   version : String?
 } derive(Eq, @debug.Debug)
 pub fn WatcherPutWatchQuery::equal(Self, Self) -> Bool
 pub fn WatcherPutWatchQuery::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn WatcherPutWatchQuery::new(active? : Bool, if_primary_term? : Int, if_seq_no? : String, version? : String) -> Self
+pub fn WatcherPutWatchQuery::new(active? : Bool, if_primary_term? : Int32, if_seq_no? : String, version? : String) -> Self
 pub fn WatcherPutWatchQuery::not_equal(Self, Self) -> Bool
 pub fn WatcherPutWatchQuery::to_json(Self) -> Json
 pub fn WatcherPutWatchQuery::to_pairs(Self) -> Array[(String, String)]
@@ -23110,7 +23110,7 @@ pub fn WatcherPutWatchRequest::to_repr(Self) -> @debug.Repr
 pub(all) struct WatcherPutWatchResponse {
   created : Bool
   _id : Json
-  _primary_term : Int
+  _primary_term : Int32
   _seq_no : Json
   _version : Json
 } derive(Eq, @debug.Debug)
@@ -23123,15 +23123,15 @@ pub impl ToJson for WatcherPutWatchResponse
 pub impl @json.FromJson for WatcherPutWatchResponse
 
 pub(all) struct WatcherQueryWatchesBody {
-  from : Int?
-  size : Int?
+  from : Int32?
+  size : Int32?
   query : Json?
   sort : Json?
   search_after : Json?
 } derive(Eq, @debug.Debug)
 pub fn WatcherQueryWatchesBody::equal(Self, Self) -> Bool
 pub fn WatcherQueryWatchesBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn WatcherQueryWatchesBody::new(from? : Int, size? : Int, query? : Json, sort? : Json, search_after? : Json) -> Self
+pub fn WatcherQueryWatchesBody::new(from? : Int32, size? : Int32, query? : Json, sort? : Json, search_after? : Json) -> Self
 pub fn WatcherQueryWatchesBody::not_equal(Self, Self) -> Bool
 pub fn WatcherQueryWatchesBody::to_json(Self) -> Json
 pub fn WatcherQueryWatchesBody::to_repr(Self) -> @debug.Repr
@@ -23162,7 +23162,7 @@ pub fn WatcherQueryWatchesRequest::to_json(Self) -> Json
 pub fn WatcherQueryWatchesRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct WatcherQueryWatchesResponse {
-  count : Int
+  count : Int32
   watches : Array[Json]
 } derive(Eq, @debug.Debug)
 pub fn WatcherQueryWatchesResponse::equal(Self, Self) -> Bool
@@ -23260,11 +23260,11 @@ pub fn WatcherStopRequest::to_repr(Self) -> @debug.Repr
 
 pub(all) struct WatcherUpdateSettingsBody {
   index_auto_expand_replicas : String?
-  index_number_of_replicas : Int?
+  index_number_of_replicas : Int32?
 } derive(Eq, @debug.Debug)
 pub fn WatcherUpdateSettingsBody::equal(Self, Self) -> Bool
 pub fn WatcherUpdateSettingsBody::from_json(Json, @json.JsonPath) -> Self raise @json.JsonDecodeError
-pub fn WatcherUpdateSettingsBody::new(index_auto_expand_replicas? : String, index_number_of_replicas? : Int) -> Self
+pub fn WatcherUpdateSettingsBody::new(index_auto_expand_replicas? : String, index_number_of_replicas? : Int32) -> Self
 pub fn WatcherUpdateSettingsBody::not_equal(Self, Self) -> Bool
 pub fn WatcherUpdateSettingsBody::to_json(Self) -> Json
 pub fn WatcherUpdateSettingsBody::to_repr(Self) -> @debug.Repr
