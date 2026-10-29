@@ -50,6 +50,9 @@ jobs:
       - name: moon update
         run: moon update
 
+      - name: Verify generated endpoints
+        run: moon run cmd/codegen --target native -- --check
+
       - name: moon check
         run: moon check --deny-warn
 
@@ -65,6 +68,5 @@ jobs:
       
       - name: moon test
         run: |
-          moon test --target all --serial
-          moon test --target all --serial --release
-          
+          moon test --target all --no-parallelize
+          moon test --target all --no-parallelize --release
