@@ -42,6 +42,13 @@ jobs:
         if: ${{ matrix.os.name == 'windows-latest' }}
         uses: ilammy/msvc-dev-cmd@v1
 
+      - name: Link Windows sockets
+        if: ${{ matrix.os.name == 'windows-latest' }}
+        shell: pwsh
+        # async 0.20.2's file-system stubs also reference Winsock. In release
+        # builds, the object carrying its automatic link directive is unused.
+        run: '"LINK=$env:LINK /DEFAULTLIB:ws2_32.lib" >> $env:GITHUB_ENV'
+
       - name: moon version
         run: |
           moon version --all
